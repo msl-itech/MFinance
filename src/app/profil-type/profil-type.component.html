@@ -1,0 +1,44 @@
+<div class="slider-container py-5">
+  <div class="row">
+    <div class="col-md-6 m-auto text-center">
+      <div class="hadding hadding-p">
+        <p class="text-red">
+          <span class="text-red">Profil</span>
+        </p>
+        <h1>Secteur d'activité</h1>
+      </div>
+    </div>
+  </div>
+  <div class="slider" [style.transform]="getTransform()">
+    <div
+      class="card"
+      *ngFor="let item of items; let i = index"
+      [ngClass]="i % 2 === 0 ? 'card-blue' : 'card-red'"
+      [routerLink]="item.route" 
+    >
+      <img [src]="item.image" alt="image">
+      <div class="card-content">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <a [routerLink]="item.route" class="learn-more">En savoir plus →</a> <!-- Lien vers la page -->
+      </div>
+    </div>
+  </div>
+  <div class="navigation-buttons">
+    <!-- Bouton précédent -->
+    <button 
+      class="nav-btn" 
+      (click)="prevSlide()" 
+      [disabled]="currentIndex === 0">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  
+    <!-- Bouton suivant -->
+    <button 
+      class="nav-btn" 
+      (click)="nextSlide()" 
+      [disabled]="currentIndex === items.length - 1">
+      <i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+</div>
