@@ -22,6 +22,11 @@ import { TimelinePatrimonialeComponent } from './timeline-patrimoniale/timeline-
 import { RecommandationProfilComponent } from './recommandation-profil/recommandation-profil.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TimelineIndependantComponent } from './timeline-independant/timeline-independant.component';
+import { ProfilSocieteMoyenComponent } from './profil-societe-moyen/profil-societe-moyen.component';
+import { ProfilSocieteExploitationComponent } from './profil-societe-exploitation/profil-societe-exploitation.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProfilCommercantHorecaComponent } from './profil-commercant-horeca/profil-commercant-horeca.component';
+import { ProfessionelSanteComponent } from './professionel-sante/professionel-sante.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,12 @@ import { TimelineIndependantComponent } from './timeline-independant/timeline-in
     TimelinePatrimonialeComponent,
     RecommandationProfilComponent,
     SidebarComponent,
-    TimelineIndependantComponent
+    TimelineIndependantComponent,
+    ProfilSocieteMoyenComponent,
+    ProfilSocieteExploitationComponent,
+    ContactComponent,
+    ProfilCommercantHorecaComponent,
+    ProfessionelSanteComponent
   ],
   imports: [
     BrowserModule,

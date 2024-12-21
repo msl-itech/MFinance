@@ -1,0 +1,23 @@
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #111;
+}
+.case-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.2s;
+}
+.case-card:hover {
+    transform: translateY(-10px);
+}
+.problem, .solution, .result {
+    margin-bottom: 1rem;
+}
+.h4{
+    font-weight: 700;
+}

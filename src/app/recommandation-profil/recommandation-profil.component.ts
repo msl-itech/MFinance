@@ -34,21 +34,21 @@ export class RecommandationProfilComponent {
     },
     {
       image: 'https://www.indy.fr/wp-content/uploads/reeduc.png',
-      title: 'Société',
+      title: 'Société d exploitation',
       description: 'Gérant de SAS, SASU, SARL, EURL',
-      route: '/societe',
+      route: '/societe-exploitation',
     },
     {
       image: 'https://www.indy.fr/wp-content/uploads/reeduc.png',
-      title: 'Commerçant',
+      title: 'Societe de moyen',
       description: 'Coiffeur, fleuriste, vendeur, e-commerçant...',
-      route: '/commercant',
+      route: '/societe-moyen',
     },
     {
       image: 'https://www.indy.fr/wp-content/uploads/pro-sante.png',
       title: 'SCI',
-      description: 'Gérant de Société Civile Immobilière',
-      route: '/sci',
+      description: 'Professionel de sante',
+      route: '/professionelSante',
     },
   ];
 

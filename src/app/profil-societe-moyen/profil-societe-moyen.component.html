@@ -1,0 +1,730 @@
+<style>
+      .challenge-solution-container {
+      position: relative;
+      padding: 2rem 0;
+    }
+    .vertical-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: #FF3333;
+      margin-left: -1.5px;
+      z-index: 1;
+    }
+
+
+    .custom-card {
+        border: 2px solid #e6e9f1; 
+        border-radius: 12px; 
+        background-color: #f8f9fb; 
+        padding: 20px; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%; 
+    }
+  
+    .icon-wrapper {
+        min-width: 80px;
+        min-height: 80px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+  
+    .icon-wrapper img {
+        max-width: 100%;
+        height: auto;
+    }
+  
+    .custom-image-size {
+    width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
+    height: auto; /* Maintient le ratio d'aspect */
+    }
+    .second-card {
+        position: relative;
+    }
+  
+    @media (min-width: 992px) {
+        .second-card {
+            left: -64px;
+        }
+    }
+  
+    @media (max-width: 991px) {
+        .second-card {
+            left: 0;
+        }
+    }
+  
+    .color-red, i {
+        color: #FF3333;
+    }
+  
+    .bg-custom--primary {
+        background-color: #00204A;
+    }
+  
+    .bg-custom--primary p,
+    .bg-custom--primary ul,
+    .bg-custom--primary h1,
+    .bg-custom--primary h2 {
+        color: white;
+    }
+  
+    .rectangle-red {
+        background-color: #FF3333;
+        border-radius: 8px;
+        padding: 6px;
+    }
+  
+    .hadding h1 {
+        color: white;
+        font-size: 29px !important;
+        line-height: 48px;
+        padding-bottom: 18px;
+    }
+  
+    .highlighted {
+        background-color: #ff4136;
+        color: #fff;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.25rem;
+    }
+  
+    .vertical-divider {
+        border-left: 1px solid #d1d1d1;
+        height: 100%;
+    }
+  
+    .icon-red {
+        color: #ff4136;
+        font-size: 1.5rem;
+        margin-right: 1rem; 
+    }
+  
+    .section-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+  
+    .flex-content {
+        display: flex;
+        align-items: flex-start; 
+        margin-bottom: 1rem;
+    }
+  
+    .section-content h5 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+  
+    .section-content ul {
+        list-style: none;
+        padding: 0;
+    }
+  
+    .header {
+        background: url('../../assets/img/bg/bg_about.png') no-repeat center center/cover;
+        min-height: 300px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  
+    .header-overlay {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+  
+    /* Media queries pour adapter sur plus petits écrans */
+    @media (max-width: 767px) {
+        .hadding h1 {
+            font-size: 24px;
+            line-height: 36px;
+        }
+  
+        .custom-card {
+            padding: 15px;
+        }
+  
+        .icon-wrapper {
+            min-width: 60px;
+            min-height: 60px;
+        }
+  
+        .works-items h2 {
+            font-size: 1.2rem;
+        }
+  
+        .section-title {
+            font-size: 1.5rem;
+        }
+    }
+  
+    @media (max-width: 575px) {
+        .hadding h1 {
+            font-size: 20px;
+            line-height: 32px;
+        }
+    }
+  </style>
+  <header class="header">
+      <div class="header-overlay">
+          <div class="container">
+              <h1>Indépendants et Starter</h1>
+              <p class="text-white">Accueil &gt; Indépendants et Starter</p>
+          </div>
+      </div>
+  </header>
+  
+  <!-- Service single start -->
+  <section class="service-single pt-120 pb-130" style="padding: 64px;">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar -->
+             <div class="col-lg-4">
+              <app-sidebar></app-sidebar>
+             </div>
+          
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <div class="single-content">
+                    <h2 class="display-5 fw-bold">
+                        Qu’est-ce qu’une  <br> 
+                      <span class="bg-custom--primary text-white px-2 rounded"> société de moyens ?</span>
+                    </h2>
+                    <div>
+                      <p>Devenir indépendant, c’est plus qu’un simple changement de statut. C’est une aventure excitante, un saut vers la liberté professionnelle et une opportunité unique de transformer vos idées en réalité. </p>
+                      <p>Elle permet de partager des charges d’exploitation (loyer, matériel, abonnements) sans compromettre l’indépendance juridique ou professionnelle de chaque membre. </p>
+                      <br>
+                      <p>Objectif principal : Réduire les coûts grâce à la mise en commun des ressources et négocier des tarifs avantageux auprès des fournisseurs, tout en maintenant l’autonomie de chaque associé dans l’exercice de son activité.  </p>     
+                  </div>
+                    <div class="single-img mt-35 mb-4">
+                        <img src="../../assets/img/image/c_single.png" alt="">
+                    </div>
+                
+                    <div class="defis row align-items-center mt-10">
+                      <h1>Fonctionnement et objectifs d’une société de moyens </h1>
+                      <!-- Image -->
+                      <div class="col-md-4">
+                          <img src="../../assets/img/image/profil/success-follows.jpg" alt="Défis ASBL" class="img-fluid" style="border-radius: 16px;" >
+                      </div>
+                      <!-- Content -->
+                      <div class="col-md-8 mt-30">
+                        <strong>Objectifs principaux </strong>
+                        <ul class="list-unstyled pl-25">
+                            <li>
+                                <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> 
+                                <strong>Mutualisation des moyens matériels et financiers : </strong>
+                                <br>
+                                Mise en commun des locaux, équipements, et abonnements nécessaires à l’activité professionnelle. Partage des frais communs comme les charges d’électricité, les fournitures de bureau ou les frais d’entretien.
+                            </li>
+                            <li>
+                                <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> 
+                                <strong>Réduction des coûts :</strong>
+                                <br>
+                                En centralisant les achats, la SCM bénéficie d’une puissance de négociation accrue auprès des fournisseurs, obtenant ainsi des tarifs préférentiels pour ses adhérents. 
+                            </li>
+                            <li>
+                                <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> 
+                                <strong>Facturation aux adhérents : </strong>
+                                <br>
+                                Les frais engagés par la SCM sont répartis équitablement entre les membres. Cette contribution constitue la principale source de revenus de la société de moyens. 
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    
+                  </div>
+                </div>
+            </div>
+            <!-- End Main Content -->
+        </div>
+    </div>
+  </section>
+  <section class="bg-custom--primary">
+    <div class="works sec-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12 col-lg-6">
+                    <div class="how-in-work-sec">
+                        <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
+                            <h1>Besoins spécifiques des <br><span class="rectangle-red"> Sociétés de Moyens </span></h1>
+                        </div>
+                        <div class="space20"></div>
+                        <div class="works-items">
+                            <!-- Service 1 -->
+                            <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="me-3">
+                                    <div class="work-icon img-border">
+                                        <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="hadding hadding-p">
+                                    <h2>Répartition équitable des charges </h2>
+                                    <ul>
+                                        <li>Mise en place d’un système comptable permettant de répartir les coûts en fonction de l’usage réel des ressources par chaque membre. </li>
+                                        <li>Transparence des flux financiers pour éviter les tensions entre associés.  </li>
+                                    </ul>
+                                </div>
+                            </div>
+  
+                            <!-- Service 2 -->
+                            <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
+                                <div class="me-3">
+                                    <div class="work-icon">
+                                        <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="hadding hadding-p">
+                                    <h2>Gestion comptable et fiscale rigoureuse </h2>
+                                    <ul>
+                                        <li>Suivi précis des dépenses et des recettes. </li>
+                                        <li>Respect des obligations fiscales et des déclarations spécifiques à la SCM. </li>
+                                        <li>Préparation des documents financiers nécessaires pour justifier la répartition des charges entre les membres. </li>
+                                    </ul>
+                                </div>
+                            </div>
+  
+                            <!-- Service 3 -->
+                            <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
+                                <div class="me-3">
+                                    <div class="work-icon">
+                                        <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="hadding hadding-p">
+                                    <h2>Planification des achats et négociation avec les fournisseurs </h2>
+                                    <ul>
+                                        <li>Centralisation des commandes pour bénéficier de remises importantes grâce à des volumes d’achat élevés. </li>
+                                        <li>Planification des achats pour anticiper les besoins des membres et éviter des dépenses imprévues. </li>
+                                    </ul>
+                                </div>
+                            </div>
+  
+                            <!-- Service 4 -->
+                            <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
+                                <div class="me-3">
+                                    <div class="work-icon">
+                                        <img src="../../assets/img/image/profil/about-vision-icon-2.png" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="hadding hadding-p">
+                                    <h2>Cash Collecting : Gestion des cotisations des membres </h2>
+                                    <ul>
+                                        <li>Suivi des paiements des membres : Garantir que chaque adhérent contribue équitablement aux frais communs. </li>
+                                        <li>Transparence et impartialité : En externalisant cette tâche à MFINANCES, les membres évitent les tensions potentielles liées à la collecte des contributions. </li>
+                                        <li>Suivi des paiements des membres : Garantir que chaque adhérent contribue équitablement aux frais communs. </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  
+                <!-- Image de droite -->
+                <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
+                    <div class="works-img space-sm-50 img-border">
+                        <img src="../../assets/img/image/profil/works.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  
+  <section>
+    <!--=====about-start=======-->
+    <div class="about sec-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+                    <div class="about-img img-border">
+                        <img src="../../assets/img/image/about-07.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
+                    <div class="about-haddings">
+                        <div class="hadding hadding-p">
+                            <h3>Comment MFINANCES peut vous aider ?</h3>
+                        </div>
+                        <div class="check-list-all" style="padding: 1px 0 !important">
+                            <div class="row">
+                                <div>
+                                    <div class="chek-list">
+                                        <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Gestion comptable et financière sur mesure :</strong> Suivi détaillé des flux financiers pour une répartition transparente des charges entre les membres. Préparation des bilans et des rapports financiers pour garantir la conformité aux obligations légales et fiscales.</p>
+                                    </div>
+                                    <div class="space20"></div>
+                                    <div class="chek-list">
+                                        <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Cash Collecting :</strong> Gestion des cotisations des membres de manière automatisée et transparente. Relances régulières en cas de retard de paiement, tout en préservant la bonne entente entre les membres.</p>
+                                    </div>
+                                    <div class="space20"></div>
+                                    <div class="chek-list">
+                                        <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Accompagnement dans les négociations avec les fournisseurs :</strong> Centralisation des achats et gestion des négociations pour obtenir des tarifs avantageux pour vos adhérents. Mise en place de tableaux de bord pour suivre les économies réalisées.</p>
+                                    </div>
+                                    <div class="space20"></div>
+                                    <div class="chek-list">
+                                        <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Rédaction et optimisation des statuts :</strong> Assistance juridique pour rédiger des statuts qui définissent clairement les modalités de fonctionnement de la SCM. Conseil stratégique pour éviter les litiges entre membres et garantir une gestion efficace.</p>
+                                    </div>
+                                    <div class="space20"></div>
+                                    <div class="chek-list">
+                                        <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Outils de suivi des performances :</strong> Mise en place d’indicateurs clés pour suivre les économies générées, les contributions des membres, et la rentabilité des moyens partagés. Tableaux de bord personnalisés pour une vue d’ensemble des finances de la SCM.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home2-btn mt-4">
+                            <a href="about.html" class="btn-red">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====about-end=======-->
+  </section>
+  
+  <!-- <app-timeline-independant></app-timeline-independant> -->
+  <section class="bg-custom--primary  py-5">
+    <div class="container">
+        <h2 class="section-title text-center">Exemple concret : Comment <span class="color-red">MFINANCES</span> a optimisé une SCM</h2>
+        
+        <div class="challenge-solution-container">
+          <div class="vertical-line d-none d-md-block"></div>
+          <div class="row">
+            <!-- Colonne des défis -->
+            <div class="col-12 col-md-6 challenges-col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title mb-3"><i class="fas fa-exclamation-triangle icon mr-3" style="margin-right:8px"></i>Défis rencontrés</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item mb-2">
+                      Répartition équitable des charges locatives et des frais de personnel.
+                    </li>
+                    <li class="list-group-item mb-2">
+                      Centralisation des achats (équipements médicaux, consommables) pour réduire les coûts.
+                    </li>
+                    <li class="list-group-item mb-2">
+                      Gestion des tensions liées à des perceptions inégales des contributions.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Colonne des solutions -->
+            <div class="col-12 col-md-6 solutions-col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title mb-3"><i class="fas fa-lightbulb icon" style="margin-right:8px"></i>Avec MFINANCES, ils ont :</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item mb-2">
+                      Mis en place une comptabilité transparente pour répartir les charges en fonction de l’activité réelle de chaque praticien.
+                    </li>
+                    <li class="list-group-item mb-2">
+                      Centralisé les commandes auprès de fournisseurs et obtenu une réduction de 15% sur les consommables médicaux.
+                    </li>
+                    <li class="list-group-item mb-2">
+                      Géré le cash collecting, assurant le paiement des cotisations par tous les membres sans créer de tensions.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 d-flex justify-content-center">
+              <div class="border-start border-3 border-danger ps-3 text-white">
+                <strong>Résultat :</strong> Une gestion simplifiée, une réduction globale des charges et une collaboration harmonieuse entre les membres.
+              </div>
+            </div>
+          </div>
+      </div>
+  </section>
+
+
+  
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Colonne gauche (texte) -->
+        <div class="col-8 col-md-6 mb-4" data-aos="fade-right">
+          <h2 class="display-5 fw-bold" style="font-size: 40px !important;">
+            Pourquoi choisir MFINANCES pour votre <br>
+            <span class="bg-danger text-white px-2 rounded"> société de moyens ? </span>
+          </h2>
+          <p class="text-muted mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+  
+        <!-- Colonne droite (cartes) -->
+        <div class="col-12 col-md-6 d-flex flex-column gap-4">
+          <!-- Carte 1 -->
+          <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+              <img src="../../assets/img/image/profil/Background+Border.png" alt="Icone Facturer" class="img-fluid" style="max-width: 50px;">
+            </div>
+            <div>
+              <h5 class="fw-semibold mb-2">Expertise spécifique : </h5>
+              <p class="mb-0 text-muted">Une expérience approfondie dans la gestion des structures collaboratives.  </p>
+            </div>
+          </div>
+  
+          <!-- Carte 2 -->
+          <div class="custom-card p-4 d-flex align-items-start second-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+              <img src="../../assets/img/image/profil/Background+Border2.png" alt="Icone Patrimoine" class="img-fluid" style="max-width: 50px;">
+            </div>
+            <div>
+              <h5 class="fw-semibold mb-2">Solutions personnalisées :</h5>
+              <p class="mb-0 text-muted">Des outils et services adaptés aux besoins de votre SCM. </p>
+            </div>
+          </div>
+  
+          <!-- Carte 3 -->
+          <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+              <img src="../../assets/img/image/profil/Background+Border3.png" alt="Icone Risques" class="img-fluid" style="max-width: 50px;">
+            </div>
+            <div>
+              <h5 class="fw-semibold mb-2">Cash Collecting intégré :</h5>
+              <p class="mb-0 text-muted">Une gestion transparente et impartiale des cotisations, pour simplifier les relations entre membres. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+  
+    <div class="service-faq sec-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 m-auto text-center">
+                    <div class="hadding">
+                        <h1 class="text-white">FAQ : Tout savoir sur les  <br><span class="rectangle-red">Sociétés de Moyens (SCM)</span></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="space40"></div>
+            <div class="row align-items-center">
+                <div>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Qu’est-ce qu’une société de moyens (SCM) ?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Une SCM est une structure juridique qui permet à plusieurs professionnels de mettre en commun des ressources matérielles, humaines ou financières pour réduire leurs coûts d’exploitation. Elle est souvent utilisée par des professions libérales (médecins, avocats, dentistes) pour partager des locaux, des équipements ou des services administratifs.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Quels sont les principaux avantages d’une SCM ?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><strong>Réduction des coûts :</strong> La mutualisation des charges permet à chaque membre de réaliser des économies substantielles.</li>
+                                        <li><strong>Autonomie professionnelle :</strong> Chaque associé conserve son indépendance juridique et professionnelle.</li>
+                                        <li><strong>Flexibilité juridique :</strong> Aucun capital social minimum n’est requis pour créer une SCM, et les modalités de fonctionnement sont définies librement dans les statuts.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Quelle est la différence entre une SCM et d’autres sociétés civiles ?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Contrairement à une Société Civile Professionnelle (SCP), la SCM ne permet pas aux associés d’exercer leur activité professionnelle en commun. Elle se limite à la mise en commun des moyens nécessaires à l’exercice de leurs professions. De même, elle ne gère pas directement d’actifs immobiliers, contrairement à une Société Civile Immobilière (SCI).
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Comment une SCM est-elle financée ?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    La SCM est financée principalement par les cotisations de ses membres, calculées en fonction des frais communs. Ces cotisations couvrent les charges partagées comme le loyer, les abonnements ou les salaires du personnel.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Quels types de dépenses peuvent être partagés dans une SCM ?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Les dépenses mutualisables comprennent :
+                                    <ul>
+                                        <li>Les locaux professionnels (loyer, électricité, chauffage, entretien).</li>
+                                        <li>Le mobilier et les fournitures de bureau.</li>
+                                        <li>Les abonnements (téléphonie, internet, logiciels professionnels).</li>
+                                        <li>Les frais administratifs (secrétariat, gestion).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    Quelles sont les obligations fiscales et comptables d’une SCM ?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Une SCM doit tenir une comptabilité rigoureuse et respecter ses obligations fiscales, notamment :
+                                    <ul>
+                                        <li>Déclaration des recettes et des dépenses.</li>
+                                        <li>Dépôt des déclarations de TVA, si elle est assujettie.</li>
+                                        <li>Répartition équitable des charges entre les membres, justifiée par des documents financiers clairs.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    Comment fonctionne la répartition des charges dans une SCM ?
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Les charges de la SCM sont réparties entre les membres selon des critères définis dans les statuts. Cela peut être basé sur :
+                                    <ul>
+                                        <li>Le temps d’utilisation des locaux ou du matériel.</li>
+                                        <li>Le nombre de collaborateurs utilisés par chaque membre.</li>
+                                        <li>Toute autre règle convenue entre les associés.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingEight">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    Pourquoi externaliser la gestion des cotisations (cash collecting) ?
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Externaliser le suivi des cotisations des membres à une société comme MFINANCES présente plusieurs avantages :
+                                    <ul>
+                                        <li><strong>Impartialité et transparence :</strong> Évite les tensions entre les membres en confiant cette tâche à un tiers.</li>
+                                        <li><strong>Efficacité :</strong> Mise en place d’un système automatisé pour le suivi des paiements et les relances en cas de retard.</li>
+                                        <li><strong>Gain de temps :</strong> Les membres peuvent se concentrer sur leur activité principale sans se soucier de la gestion administrative.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingNine">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                    Quels sont les risques liés à une SCM ?
+                                </button>
+                            </h2>
+                            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Bien que la SCM offre de nombreux avantages, elle présente certains risques :
+                                    <ul>
+                                        <li>Responsabilité solidaire : Chaque associé est solidairement responsable des dettes de la SCM.</li>
+                                        <li>Gestion des conflits : Les tensions peuvent survenir en cas de perception d’inégalité dans la répartition des charges.</li>
+                                        <li>Limites légales : Une SCM ne peut pas exercer une activité commerciale ni générer de bénéfices.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTen">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                    Comment MFINANCES peut-elle aider votre SCM ?
+                                </button>
+                            </h2>
+                            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    MFINANCES propose :
+                                    <ul>
+                                        <li>Gestion comptable : Suivi précis des charges et des cotisations.</li>
+                                        <li>Cash collecting : Gestion automatisée et transparente des contributions des membres.</li>
+                                        <li>Accompagnement administratif : Rédaction des statuts, aide à la répartition des charges, et négociation avec les fournisseurs.</li>
+                                        <li>Outils de suivi : Mise en place de tableaux de bord pour visualiser les performances de la SCM et optimiser les ressources.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+  
+  
+  </section>
+  <section class="container my-5">
+    <div class="rounded-4 bg-custom--primary text-white px-4">
+      <div class="row align-items-center">
+        <!-- Image visible uniquement à partir du md (desktop) -->
+        <div 
+          class="col-md-6 d-none d-md-flex justify-content-center align-items-end" 
+          data-aos="fade-left" 
+          data-aos-delay="200"
+        >
+          <img
+            src="../../assets/img/image/profil/h9_footer_banner_img 1 1.png"
+            alt="Personne souriante"
+            class="img-fluid custom-image-size"
+            style="z-index: 2; position: relative;"
+          />
+        </div>
+  
+        <!-- Texte et bouton, centrés sur mobile/tablette -->
+        <div 
+          class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
+          data-aos="fade-right"
+          data-aos-delay="400"
+        >
+          <h2 class="fw-bold mb-4">
+            Vous avez une<br>
+            <span class="bg-danger text-white px-2 py-1 rounded-2">question spécifique ?</span>.
+          </h2>
+          <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
+            Contactez MFINANCES dès aujourd’hui pour une consultation gratuite.
+          </p>
+          <a 
+            href="#" 
+            class="btn btn-danger btn-sm px-3 py-2" 
+            data-aos="zoom-in" 
+            data-aos-delay="800"
+          >
+            Contactez-nous <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-recommandation-profil></app-recommandation-profil>
