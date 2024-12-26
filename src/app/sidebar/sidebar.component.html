@@ -1,41 +1,22 @@
 <div class="sidebar-widget">
-    <!-- Categories Widget -->
     <div class="widget">
         <h2>Secteur d'activité</h2>
         <ul class="widget-category list-unstyled d-flex flex-column gap-2">
-            <li>
-                <a routerLink="/profil-independant" routerLinkActive="active">Independant et Startup
-                    <span><img src="assets/img/icon/arrow_up.svg" alt=""></span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/absl" routerLinkActive="active">ASBL
-                    <span><img src="assets/img/icon/arrow_up.svg" alt=""></span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/societe-exploitation" routerLinkActive="active">Sociétés d’exploitation commerciale ou civile
-                    <span><img src="assets/img/icon/arrow_up.svg" alt=""></span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/societe-management-patrimoniale" routerLinkActive="active">Sociétés de management patrimoniale
-                    <span><img src="assets/img/icon/arrow_up.svg" alt=""></span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/societe-moyen" routerLinkActive="active">Sociétés de moyens
-                    <span><img src="assets/img/icon/arrow_up.svg" alt=""></span>
-                </a>
-            </li>
-            <li>
-                <a routerLink="/commercant-horeca" routerLinkActive="active">Commercant & Horeca
+            <!-- Affichage dynamique des catégories -->
+            <li *ngFor="let category of categories.slice(0, maxVisibleCategories)">
+                <a [routerLink]="category.route" routerLinkActive="active">
+                    {{ category.name }}
                     <span><img src="assets/img/icon/arrow_up.svg" alt=""></span>
                 </a>
             </li>
         </ul>
+        <div *ngIf="maxVisibleCategories < categories.length" class="mt-3">
+            <a (click)="showAllCategories()" class="text-danger" style="cursor: pointer;">
+                Voir plus -> 
+            </a>
+        </div>
     </div>
-    <!-- Contact Widget -->
+
     <div class="widget contact-widget">
         <h2>Contact</h2>
         <div class="contact-info d-flex gap-3 flex-column">

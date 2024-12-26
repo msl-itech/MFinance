@@ -27,6 +27,8 @@ import { ProfilSocieteExploitationComponent } from './profil-societe-exploitatio
 import { ContactComponent } from './contact/contact.component';
 import { ProfilCommercantHorecaComponent } from './profil-commercant-horeca/profil-commercant-horeca.component';
 import { ProfessionelSanteComponent } from './professionel-sante/professionel-sante.component';
+import { ProfilGrandeEntrepriseComponent } from './profil-grande-entreprise/profil-grande-entreprise.component';
+import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilier/profil-promoteur-immobilier.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { ProfessionelSanteComponent } from './professionel-sante/professionel-sa
     ProfilSocieteExploitationComponent,
     ContactComponent,
     ProfilCommercantHorecaComponent,
-    ProfessionelSanteComponent
+    ProfessionelSanteComponent,
+    ProfilGrandeEntrepriseComponent,
+    ProfilPromoteurImmobilierComponent
   ],
   imports: [
     BrowserModule,

@@ -1,200 +1,188 @@
 <style>
     .challenge-solution-container {
-        position: relative;
-        padding: 2rem 0;
-    }
-    .vertical-line {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 2px;
-        background: #FF3333;
-        margin-left: -1.5px;
-        z-index: 1;
-    }
+    position: relative;
+    padding: 2rem 0;
+  }
+  .vertical-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #FF3333;
+    margin-left: -1.5px;
+    z-index: 1;
+  }
 
-    .custom-card {
-        border: 2px solid #e6e9f1; 
-        border-radius: 12px; 
-        background-color: #f8f9fb; 
-        padding: 20px; 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 100%; 
-    }
 
-    .icon-wrapper {
-        min-width: 80px;
-        min-height: 80px;
-        background-color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
+  .custom-card {
+      border: 2px solid #e6e9f1; 
+      border-radius: 12px; 
+      background-color: #f8f9fb; 
+      padding: 20px; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%; 
+  }
 
-    .icon-wrapper img {
-        max-width: 100%;
-        height: auto;
-    }
+  .icon-wrapper {
+      min-width: 80px;
+      min-height: 80px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+  }
 
-    .custom-image-size {
-        width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
-        height: auto; /* Maintient le ratio d'aspect */
-    }
-    .second-card {
-        position: relative;
-    }
+  .icon-wrapper img {
+      max-width: 100%;
+      height: auto;
+  }
 
-    @media (min-width: 992px) {
-        .second-card {
-            left: -64px;
-        }
-    }
+  .custom-image-size {
+  width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
+  height: auto; /* Maintient le ratio d'aspect */
+  }
+  .second-card {
+      position: relative;
+  }
 
-    @media (max-width: 991px) {
-        .second-card {
-            left: 0;
-        }
-    }
+  @media (min-width: 992px) {
+      .second-card {
+          left: -64px;
+      }
+  }
 
-    .color-red, i {
-        color: #FF3333;
-    }
+  @media (max-width: 991px) {
+      .second-card {
+          left: 0;
+      }
+  }
 
-    .bg-custom--primary {
-        background-color: #00204A;
-    }
+  .color-red, i {
+      color: #FF3333;
+  }
 
-    .bg-custom--primary p,
-    .bg-custom--primary ul,
-    .bg-custom--primary h1,
-    .bg-custom--primary h2 {
-        color: white;
-    }
+  .bg-custom--primary {
+      background-color: #00204A;
+  }
 
-    .rectangle-red {
-        background-color: #FF3333;
-        border-radius: 8px;
-        padding: 6px;
-    }
+  .bg-custom--primary p,
+  .bg-custom--primary ul,
+  .bg-custom--primary h1,
+  .bg-custom--primary h2 {
+      color: white;
+  }
 
-    .hadding h1,
-    .hadding h2,
-    .hadding h3,
-    .hadding h4,
-    .hadding h5 {
-        color: white;
-        font-size: 29px !important;
-        line-height: 48px;
-        padding-bottom: 18px;
-    }
+  .rectangle-red {
+      background-color: #FF3333;
+      border-radius: 8px;
+      padding: 6px;
+  }
 
-    .highlighted {
-        background-color: #ff4136;
-        color: #fff;
-        padding: 0.2rem 0.5rem;
-        border-radius: 0.25rem;
-    }
+  .hadding h1 {
+      color: white;
+      font-size: 29px !important;
+      line-height: 48px;
+      padding-bottom: 18px;
+  }
 
-    .vertical-divider {
-        border-left: 1px solid #d1d1d1;
-        height: 100%;
-    }
+  .highlighted {
+      background-color: #ff4136;
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+  }
 
-    .icon-red {
-        color: #ff4136;
-        font-size: 1.5rem;
-        margin-right: 1rem; 
-    }
+  .vertical-divider {
+      border-left: 1px solid #d1d1d1;
+      height: 100%;
+  }
 
-    .section-title {
-        font-size: 1.75rem;
-        font-weight: 700;
-        margin-bottom: 2rem;
-    }
+  .icon-red {
+      color: #ff4136;
+      font-size: 1.5rem;
+      margin-right: 1rem; 
+  }
 
-    .flex-content {
-        display: flex;
-        align-items: flex-start; 
-        margin-bottom: 1rem;
-    }
+  .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+  }
 
-    .section-content h5 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-    }
+  .flex-content {
+      display: flex;
+      align-items: flex-start; 
+      margin-bottom: 1rem;
+  }
 
-    .section-content ul {
-        list-style: none;
-        padding: 0;
-    }
+  .section-content h5 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+  }
 
-    .header {
-        background: url('../../assets/img/bg/bg_about.png') no-repeat center center/cover;
-        min-height: 300px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .section-content ul {
+      list-style: none;
+      padding: 0;
+  }
 
-    .header-overlay {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        color: white;
-    }
+  .header {
+      background: url('../../assets/img/bg/bg_about.png') no-repeat center center/cover;
+      min-height: 300px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
 
-    /* Media queries pour adapter sur plus petits écrans */
-    @media (max-width: 767px) {
-        .hadding h1,
-        .hadding h2,
-        .hadding h3,
-        .hadding h4,
-        .hadding h5 {
-            font-size: 24px;
-            line-height: 36px;
-        }
+  .header-overlay {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      color: white;
+  }
 
-        .custom-card {
-            padding: 15px;
-        }
+  /* Media queries pour adapter sur plus petits écrans */
+  @media (max-width: 767px) {
+      .hadding h1 {
+          font-size: 24px;
+          line-height: 36px;
+      }
 
-        .icon-wrapper {
-            min-width: 60px;
-            min-height: 60px;
-        }
+      .custom-card {
+          padding: 15px;
+      }
 
-        .works-items h2 {
-            font-size: 1.2rem;
-        }
+      .icon-wrapper {
+          min-width: 60px;
+          min-height: 60px;
+      }
 
-        .section-title {
-            font-size: 1.5rem;
-        }
-    }
+      .works-items h2 {
+          font-size: 1.2rem;
+      }
 
-    @media (max-width: 575px) {
-        .hadding h1,
-        .hadding h2,
-        .hadding h3,
-        .hadding h4,
-        .hadding h5 {
-            font-size: 20px;
-            line-height: 32px;
-        }
-    }
+      .section-title {
+          font-size: 1.5rem;
+      }
+  }
+
+  @media (max-width: 575px) {
+      .hadding h1 {
+          font-size: 20px;
+          line-height: 32px;
+      }
+  }
 </style>
-
 <header class="header">
     <div class="header-overlay">
         <div class="container">
-            <h1>Promoteurs Immobiliers : Une Gestion Comptable et Financière Optimisée</h1>
-            <p class="text-white">Accueil &gt; Promoteurs Immobiliers</p>
+            <h1>Professionnels de la santé</h1>
+            <p class="text-white">Accueil &gt; Professionnels de la santé</p>
         </div>
     </div>
 </header>
@@ -212,564 +200,347 @@
           <div class="col-lg-8">
               <div class="single-content">
                   <h2 class="display-5 fw-bold">
-                    Pourquoi MFINANCES est votre allié stratégique ?
+                    Des solutions adaptées à vos
+                    <span class="bg-custom--primary text-white px-2 rounded"> défis spécifiques </span>
                   </h2>
                   <div>
-                    <p>
-                        La promotion immobilière est une activité complexe qui exige une gestion rigoureuse des finances, de la fiscalité, et des flux de trésorerie. En tant qu’acteurs clés du développement immobilier, les promoteurs doivent relever plusieurs défis spécifiques :
-                    </p>
-                    <ul>
-                        <li>Budgets conséquents et marges serrées nécessitant une planification financière précise.</li>
-                        <li>Règles TVA complexes qui varient selon la finalité des immeubles (revente, location, rénovation).</li>
-                        <li>Analyse détaillée des coûts par projet, essentielle pour optimiser la rentabilité.</li>
-                    </ul>
-                    <p>
-                        Chez MFINANCES, nous proposons des solutions personnalisées qui incluent la comptabilité analytique, l’optimisation fiscale, et des outils digitaux avancés pour un suivi efficace à chaque étape de vos projets immobiliers.
-                    </p>
+                    <p>Médecins, dentistes, vétérinaires ou kinésithérapeutes, votre quotidien oscille entre la prise en charge des patients et la gestion de vos obligations comptables et fiscales. Que vous soyez indépendant, gestionnaire d’un centre médical, membre d’une association ou en situation hybride, MFINANCES est là pour vous accompagner avec des solutions sur mesure.  </p>
                     <br>
                 </div>
                   <div class="single-img mt-35 mb-4">
                       <img src="../../assets/img/image/c_single.png" alt="">
                   </div>
-              
-                  <div class="defis row align-items-center mt-10">
-                    <h1>Besoin spécifiques des Promoteurs Immobiliers</h1>
-                    <!-- Image -->
-                    <div class="col-md-4">
-                        <img src="../../assets/img/image/profil/success-follows.jpg" alt="Défis ASBL" class="img-fluid" style="border-radius: 16px;">
-                    </div>
-                    <!-- Content -->
-                    <div class="col-md-8 mt-30">
-                        <h2>1. Planification financière précise et prévisions budgétaires</h2>
-                        <p>La réussite de tout projet repose sur une planification rigoureuse :</p>
-                        <ul>
-                            <li>Budgets détaillés : Prévoir les coûts liés à l’acquisition, la construction, et la commercialisation.</li>
-                            <li>Analyse des besoins en financement : Planifier les apports nécessaires pour éviter les tensions de trésorerie.</li>
-                            <li>Projection des flux de trésorerie : Prévoir les entrées (ventes ou locations) et les sorties (charges fixes et imprévus) pour équilibrer vos finances.</li>
-                        </ul>
-                        
-                        <h2>2. Suivi rigoureux des coûts et reporting financier transparent</h2>
-                        <p>Un suivi précis des dépenses et des marges est indispensable pour assurer la rentabilité :</p>
-                        <ul>
-                            <li>Gestion des postes budgétaires : Contrôler les coûts de construction, les taxes, et les charges administratives.</li>
-                            <li>Reporting financier : Offrir une vue claire et synthétique des revenus et dépenses, facilitant une prise de décision éclairée.</li>
-                            <li>Digitalisation des processus : Automatiser le suivi des flux financiers pour une visibilité en temps réel et une gestion optimale des ressources.</li>
-                        </ul>
-                        
-                        <h2>3. TVA : Entre opportunité et complexité</h2>
-                        <p>Bien que technique, la TVA représente un levier clé pour optimiser la rentabilité des promoteurs immobiliers :</p>
-                        <ul>
-                            <li>Immeuble neuf destiné à la revente : TVA de 21 % déductible.</li>
-                            <li>Immeuble neuf destiné à la location : TVA de 21 % non déductible.</li>
-                            <li>Immeuble ancien (plus de 10 ans) destiné à l’habitation : TVA réduite à 6 %, non déductible.</li>
-                            <li>Régime d’autoliquidation : Lors de travaux entre assujettis, le promoteur déclare et paie directement la TVA dans sa déclaration périodique, nécessitant un suivi rigoureux pour éviter les erreurs coûteuses.</li>
-                        </ul>
-                        <p>
-                            En tant qu’assujetti mixte à la TVA, le promoteur doit également :
-                        </p>
-                        <ul>
-                            <li>Calculer le prorata de déductibilité : Frais généraux déductibles au prorata du chiffre d’affaires TVA.</li>
-                            <li>Documenter précisément les frais spécifiques : Assurer une traçabilité complète des dépenses pour chaque projet immobilier.</li>
-                        </ul>
-                        
-                        <h2>4. Comptabilité analytique pour optimiser la rentabilité</h2>
-                        <p>La comptabilité analytique est essentielle pour maîtriser les coûts et améliorer les performances financières :</p>
-                        <ul>
-                            <li>Zoom sur la structure des coûts : Segmentation des dépenses par projet ou service, permettant une analyse fine des postes les plus coûteux.</li>
-                            <li>Identification des coûts par projet : Cette méthode aide à cibler les projets ou phases nécessitant des ajustements budgétaires.</li>
-                            <li>Prise de décisions éclairées : Les données analytiques permettent de revoir les modèles économiques pour optimiser la rentabilité.</li>
-                        </ul>
-                        <p>
-                            <strong>Différence entre comptabilité générale et analytique :</strong>
-                        </p>
-                        <ul>
-                            <li>La comptabilité générale donne une vue d’ensemble de l’entreprise, tandis que la comptabilité analytique zoome sur chaque projet ou service, offrant des données stratégiques pour piloter l’activité.</li>
-                        </ul>
-                        <p>
-                            Chez MFINANCES, nous assurons un suivi rigoureux de la comptabilité analytique, répondant aux besoins spécifiques des promoteurs immobiliers.
-                        </p>
-                        
-                        <h2>5. Collaboration étroite et accompagnement stratégique</h2>
-                        <p>Chaque projet immobilier est unique ; c’est pourquoi nous adoptons une approche personnalisée :</p>
-                        <ul>
-                            <li>Compréhension des objectifs : Identifier les priorités et ajuster les stratégies pour atteindre vos ambitions.</li>
-                            <li>Leviers de rentabilité : Proposer des solutions concrètes pour améliorer les marges et anticiper les imprévus.</li>
-                            <li>Conseils stratégiques : Vous accompagner dans toutes les étapes, de l’acquisition à la commercialisation.</li>
-                        </ul>
-                    </div>
-                </div>
-                
               </div>
           </div>
           <!-- End Main Content -->
       </div>
   </div>
 </section>
-
-<!-- Nouvelle Section : Grandes Entreprises -->
-<header class="header">
-    <div class="header-overlay">
-        <div class="container">
-            <h1>Grande Entreprise : Pilotez vos finances pour une croissance durable et un pilotage stratégique</h1>
-            <p class="text-white">Accueil &gt; Grandes Entreprises</p>
-        </div>
-    </div>
-</header>
-
-<section class="service-single pt-120 pb-130" style="padding: 64px;">
-  <div class="container">
-      <div class="row">
-          <!-- Sidebar -->
-           <div class="col-lg-4">
-            <app-sidebar></app-sidebar>
-           </div>
-        
-          <!-- Main Content -->
-          <div class="col-lg-8">
-              <div class="single-content">
-                  <h2 class="display-5 fw-bold">
-                    Introduction : Anticipez, gérez et innovez pour maximiser votre rentabilité
-                  </h2>
-                  <div>
-                    <p>
-                        Les grandes entreprises évoluent dans un environnement complexe où une gestion rigoureuse des finances est essentielle pour garantir leur compétitivité. Entre le pilotage stratégique, la gestion des flux de trésorerie, et l’optimisation des ressources, il est crucial de disposer d’outils adaptés et d’un accompagnement expert.
-                    </p>
-                    <p>
-                        Chez MFINANCES, nous proposons des solutions sur mesure, intégrant des budgets prévisionnels, des situations mensuelles détaillées, et un système de cash collecting optimisé. Grâce à l’intervention d’un contrôleur de gestion et d’un directeur financier (DAF) à temps partiel, vous bénéficiez d’un pilotage financier précis et accessible, avec des bénéfices immédiats : réduction des coûts opérationnels, meilleure allocation des ressources, et capacité accrue à investir dans l’innovation.
-                    </p>
-                    <br>
-                </div>
-                  <div class="single-img mt-35 mb-4">
-                      <img src="../../assets/img/image/c_single.png" alt="">
-                  </div>
-              
-                  <div class="defis row align-items-center mt-10">
-                    <h1>Besoins spécifiques des grandes entreprises : Une gestion sur mesure pour des résultats concrets</h1>
-                    <!-- Image -->
-                    <div class="col-md-4">
-                        <img src="../../assets/img/image/profil/success-follows.jpg" alt="Défis Grandes Entreprises" class="img-fluid" style="border-radius: 16px;">
-                    </div>
-                    <!-- Content -->
-                    <div class="col-md-8 mt-30">
-                        <h2>1. Budgets prévisionnels dynamiques : Une planification stratégique pour sécuriser vos investissements</h2>
-                        <p><strong>Définition :</strong> Le budget prévisionnel projette vos recettes et dépenses, vous offrant une vue claire sur votre rentabilité et vos opportunités de croissance.</p>
-                        <h3>Objectifs :</h3>
-                        <ul>
-                            <li>Anticiper vos besoins financiers pour éviter les tensions de trésorerie.</li>
-                            <li>Réévaluer vos objectifs pour aligner vos ressources sur les priorités stratégiques.</li>
-                            <li>Renforcer vos partenariats financiers, en rassurant investisseurs et banques grâce à des projections fiables.</li>
-                        </ul>
-                        <p><strong>Résultat pour votre entreprise :</strong> Une prise de décision éclairée, une réduction des imprévus financiers, et un accès facilité à de nouvelles sources de financement.</p>
-                        
-                        <h2>2. Gestion proactive de la trésorerie : Assurez votre stabilité financière avec des outils avancés</h2>
-                        <h3>Tableau de trésorerie prévisionnel :</h3>
-                        <ul>
-                            <li>Identifiez à l’avance les périodes critiques pour éviter les découverts coûteux.</li>
-                            <li>Optimisez vos flux financiers pour maintenir un équilibre entre vos encaissements et décaissements.</li>
-                        </ul>
-                        <h3>Système de cash collecting :</h3>
-                        <ul>
-                            <li>Accélérez vos encaissements grâce à des relances automatiques et une gestion active des créances.</li>
-                            <li>Réduisez les délais de paiement clients pour libérer des liquidités immédiatement mobilisables.</li>
-                        </ul>
-                        <p><strong>Résultat pour votre entreprise :</strong> Une meilleure capacité d’investissement et une visibilité renforcée sur vos projets stratégiques.</p>
-                        
-                        <h2>3. Contrôle de gestion avancé : Maximisez votre performance opérationnelle</h2>
-                        <ul>
-                            <li>Mise en place de tableaux de bord personnalisés pour suivre vos indicateurs clés (rentabilité, trésorerie, délais).</li>
-                            <li>Analyse proactive des écarts entre le prévisionnel et le réalisé pour mettre en œuvre des ajustements rapides.</li>
-                        </ul>
-                        <p><strong>Résultat pour votre entreprise :</strong> Une allocation optimisée des ressources, des décisions plus rapides et une performance accrue.</p>
-                        
-                        <h2>4. Flexibilité avec un DAF à temps partiel : Expertise stratégique à coût maîtrisé</h2>
-                        <h3>Rôle stratégique :</h3>
-                        <ul>
-                            <li>Élaboration de business plans, supervision des projets complexes (fusions, acquisitions, levées de fonds) et gestion de la trésorerie.</li>
-                        </ul>
-                        <h3>Optimisation opérationnelle :</h3>
-                        <ul>
-                            <li>Supervision des fonctions financières, RH et juridiques pour garantir votre conformité légale et fiscale.</li>
-                        </ul>
-                        <p><strong>Résultat pour votre entreprise :</strong> Une expertise de haut niveau accessible sans supporter les coûts d’un DAF à plein temps, offrant un gain immédiat en efficacité et flexibilité.</p>
-                        
-                        <h2>5. Digitalisation et automatisation des processus : Gagnez en productivité et en précision</h2>
-                        <ul>
-                            <li>Intégrez des outils ERP et CRM pour centraliser vos données financières et commerciales.</li>
-                            <li>Automatisez vos reportings pour une réduction des erreurs et un suivi en temps réel.</li>
-                        </ul>
-                        <p><strong>Résultat pour votre entreprise :</strong> Une productivité accrue et des analyses financières plus fiables.</p>
-                    </div>
-                </div>
-                
-              </div>
-          </div>
-          <!-- End Main Content -->
-      </div>
-  </div>
-</section>
-
 <section class="bg-custom--primary">
-  <div class="works sec-padding">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-12 col-lg-6">
-                  <div class="how-in-work-sec">
-                      <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
-                          <h1>Comment MFINANCES transforme vos projets immobiliers ?</h1>
-                          <p>
-                              <strong>1. Gestion comptable et analytique dédiée</strong>
-                          </p>
-                          <ul>
-                              <li>Comptabilité analytique par projet pour une traçabilité optimale des flux financiers.</li>
-                              <li>Suivi précis des marges à chaque phase du projet.</li>
-                              <li>Élaboration de bilans intermédiaires pour ajuster les stratégies en temps réel.</li>
-                          </ul>
-                          <p>
-                              <strong>2. Optimisation fiscale et TVA</strong>
-                          </p>
-                          <ul>
-                              <li>Récupération de la TVA sur les travaux et acquisitions.</li>
-                              <li>Calcul précis du prorata pour optimiser les déductions fiscales.</li>
-                              <li>Stratégies fiscales adaptées, comme la méthode à l’achèvement, pour réduire les charges.</li>
-                          </ul>
-                          <p>
-                              <strong>3. Outils digitaux et reporting avancé</strong>
-                          </p>
-                          <ul>
-                              <li>Tableaux de bord personnalisés pour surveiller les coûts, marges, et flux financiers en temps réel.</li>
-                              <li>Automatisation des rapports comptables et fiscaux pour une gestion rapide et sans erreur.</li>
-                              <li>Prévisions financières pour anticiper les besoins en trésorerie et ajuster vos stratégies.</li>
-                          </ul>
-                      </div>
-                      <div class="space20"></div>
-                      <div class="works-items">
-                        
-                        <!-- Service 2 -->
-                        <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
-                            <div class="me-3">
-                                <div class="work-icon">
-                                    <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="hadding hadding-p">
-                                <h2>Exemple concret : MFINANCES optimise la rentabilité et la trésorerie d’un projet résidentiel</h2>
-                                <p>
-                                    <strong>Contexte :</strong>
-                                </p>
-                                <ul>
-                                    <li>Un promoteur immobilier gérait plusieurs projets résidentiels avec des ventes concentrées en fin de projet. Les principaux défis incluaient :</li>
-                                    <li>Une gestion complexe des coûts par unité, impactant les marges globales.</li>
-                                    <li>La nécessité de lisser les flux financiers pour éviter des tensions de trésorerie.</li>
-                                    <li>L’annualité de l’impôt, rendant certaines ventes défavorables d’un point de vue fiscal.</li>
-                                </ul>
-                                <p>
-                                    <strong>Solutions apportées par MFINANCES :</strong>
-                                </p>
-                                <ul>
-                                    <li>Comptabilité analytique détaillée : Ventilation des coûts par projet et par unité pour mieux évaluer la rentabilité.</li>
-                                    <li>Suivi budgétaire rigoureux : Analyse des scénarios de vente et des implications fiscales pour optimiser la trésorerie.</li>
-                                    <li>Stratégie d’ajustement des ventes : Report stratégique de la vente de certaines unités pour les faire coïncider avec le lancement de nouveaux projets, réduisant ainsi l’impact fiscal.</li>
-                                </ul>
-                                <p>
-                                    <strong>Résultats :</strong>
-                                </p>
-                                <ul>
-                                    <li>Une rentabilité globale accrue, avec une augmentation de 12 à 20 % selon les projets.</li>
-                                    <li>Une trésorerie renforcée grâce à des flux financiers équilibrés, permettant d’initier un nouveau projet sans financement externe.</li>
-                                    <li>Une gestion fiscale optimisée, réduisant les charges liées à l’annualité de l’impôt.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    
-                        <!-- Service 3 -->
-                        <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                            <div class="me-3">
-                                <div class="work-icon">
-                                    <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="hadding hadding-p">
-                                <h2>Pourquoi choisir MFINANCES pour vos projets immobiliers ?</h2>
-                                <p>
-                                    <strong>1. Une expertise sectorielle éprouvée</strong>
-                                </p>
-                                <ul>
-                                    <li>Une maîtrise approfondie des spécificités fiscales, comptables, et financières des promoteurs immobiliers.</li>
-                                    <li>Des solutions sur mesure pour répondre aux besoins de chaque projet.</li>
-                                </ul>
-                                <p>
-                                    <strong>2. Des outils et stratégies adaptés</strong>
-                                </p>
-                                <ul>
-                                    <li>Automatisation et digitalisation pour un pilotage efficace et en temps réel.</li>
-                                    <li>Conseils stratégiques pour maximiser la rentabilité à chaque étape.</li>
-                                </ul>
-                                <p>
-                                    <strong>3. Un suivi avancé pour des résultats durables</strong>
-                                </p>
-                                <ul>
-                                    <li>Prévisions financières claires pour lisser les revenus et anticiper les besoins en trésorerie.</li>
-                                    <li>Analyses détaillées pour ajuster rapidement vos stratégies et sécuriser vos marges.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                  </div>
-          </div>
-
-          <!-- Image de droite -->
-          <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
-              <div class="works-img space-sm-50 img-border">
-                  <img src="../../assets/img/image/profil/works.png" alt="" class="img-fluid">
-              </div>
-          </div>
-      </div>
-  </div>
-  </div>
-</section>
-
-<section>
-  <!--=====about-start=======-->
-  <div class="about sec-padding">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
-                  <div class="about-img img-border">
-                      <img src="../../assets/img/image/about-07.png" alt="">
-                  </div>
-              </div>
-              <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
-                  <div class="about-haddings">
-                      <div class="hadding hadding-p">
-                          <h3>Optimisation de la trésorerie : Gardez le contrôle sur <br><span class="rectangle-red">vos finances</span></h3>
-                          <p>
-                              Une gestion rigoureuse de la trésorerie vous permet de répondre aux imprévus et de financer vos projets de développement sans compromettre votre stabilité financière.
-                          </p>
-                      </div>
-                      <div class="space20"></div>
-                      <div class="works-items">
-                        
-                        <!-- Service 2 -->
-                        <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
-                            <div class="me-3">
-                                <div class="work-icon">
-                                    <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="hadding hadding-p">
-                                <h2>Prévisions et planification</h2>
-                                <ul>
-                                    <li>Élaborez des scénarios financiers pour anticiper vos besoins et éviter les pénuries de liquidités.</li>
-                                    <li>Analysez vos flux de trésorerie pour identifier les gaspillages et réduire les coûts superflus.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    
-                        <!-- Service 3 -->
-                        <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                            <div class="me-3">
-                                <div class="work-icon">
-                                    <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="hadding hadding-p">
-                                <h2>Solutions de financement adaptées</h2>
-                                <ul>
-                                    <li><strong>Prêts bancaires :</strong> Idéal pour financer des projets à long terme tout en préservant votre indépendance.</li>
-                                    <li><strong>Leasing :</strong> Une option flexible pour acquérir des équipements sans grever votre trésorerie.</li>
-                                    <li><strong>Franchise en capital :</strong> Payez uniquement les intérêts pendant une période initiale pour préserver vos liquidités.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <!--=====about-end=======-->
-</section>
-
-<!-- Nouvelle Section : Grandes Entreprises -->
-<section class="service-single pt-120 pb-130" style="padding: 64px;">
-  <div class="container">
-      <div class="row">
-          <!-- Sidebar -->
-           <div class="col-lg-4">
-            <app-sidebar></app-sidebar>
-           </div>
-        
-          <!-- Main Content -->
-          <div class="col-lg-8">
-              <div class="single-content">
-                  <h2 class="display-5 fw-bold">
-                    Besoins spécifiques des grandes entreprises : Une gestion sur mesure pour des résultats concrets
-                  </h2>
-                  <div>
-                    <h3>Budgets prévisionnels dynamiques : Une planification stratégique pour sécuriser vos investissements</h3>
-                    <p><strong>Définition :</strong> Le budget prévisionnel projette vos recettes et dépenses, vous offrant une vue claire sur votre rentabilité et vos opportunités de croissance.</p>
-                    <h3>Objectifs :</h3>
-                    <ul>
-                        <li>Anticiper vos besoins financiers pour éviter les tensions de trésorerie.</li>
-                        <li>Réévaluer vos objectifs pour aligner vos ressources sur les priorités stratégiques.</li>
-                        <li>Renforcer vos partenariats financiers, en rassurant investisseurs et banques grâce à des projections fiables.</li>
-                    </ul>
-                    <p><strong>Résultat pour votre entreprise :</strong> Une prise de décision éclairée, une réduction des imprévus financiers, et un accès facilité à de nouvelles sources de financement.</p>
-                    
-                    <h3>Gestion proactive de la trésorerie : Assurez votre stabilité financière avec des outils avancés</h3>
-                    <h4>Tableau de trésorerie prévisionnel :</h4>
-                    <ul>
-                        <li>Identifiez à l’avance les périodes critiques pour éviter les découverts coûteux.</li>
-                        <li>Optimisez vos flux financiers pour maintenir un équilibre entre vos encaissements et décaissements.</li>
-                    </ul>
-                    <h4>Système de cash collecting :</h4>
-                    <ul>
-                        <li>Accélérez vos encaissements grâce à des relances automatiques et une gestion active des créances.</li>
-                        <li>Réduisez les délais de paiement clients pour libérer des liquidités immédiatement mobilisables.</li>
-                    </ul>
-                    <p><strong>Résultat pour votre entreprise :</strong> Une meilleure capacité d’investissement et une visibilité renforcée sur vos projets stratégiques.</p>
-                    
-                    <h3>Contrôle de gestion avancé : Maximisez votre performance opérationnelle</h3>
-                    <ul>
-                        <li>Mise en place de tableaux de bord personnalisés pour suivre vos indicateurs clés (rentabilité, trésorerie, délais).</li>
-                        <li>Analyse proactive des écarts entre le prévisionnel et le réalisé pour mettre en œuvre des ajustements rapides.</li>
-                    </ul>
-                    <p><strong>Résultat pour votre entreprise :</strong> Une allocation optimisée des ressources, des décisions plus rapides et une performance accrue.</p>
-                    
-                    <h3>Flexibilité avec un DAF à temps partiel : Expertise stratégique à coût maîtrisé</h3>
-                    <h4>Rôle stratégique :</h4>
-                    <ul>
-                        <li>Élaboration de business plans, supervision des projets complexes (fusions, acquisitions, levées de fonds) et gestion de la trésorerie.</li>
-                    </ul>
-                    <h4>Optimisation opérationnelle :</h4>
-                    <ul>
-                        <li>Supervision des fonctions financières, RH et juridiques pour garantir votre conformité légale et fiscale.</li>
-                    </ul>
-                    <p><strong>Résultat pour votre entreprise :</strong> Une expertise de haut niveau accessible sans supporter les coûts d’un DAF à plein temps, offrant un gain immédiat en efficacité et flexibilité.</p>
-                    
-                    <h3>Digitalisation et automatisation des processus : Gagnez en productivité et en précision</h3>
-                    <ul>
-                        <li>Intégrez des outils ERP et CRM pour centraliser vos données financières et commerciales.</li>
-                        <li>Automatisez vos reportings pour une réduction des erreurs et un suivi en temps réel.</li>
-                    </ul>
-                    <p><strong>Résultat pour votre entreprise :</strong> Une productivité accrue et des analyses financières plus fiables.</p>
-                  </div>
-              </div>
-          </div>
-          <!-- End Main Content -->
-      </div>
-  </div>
-</section>
-
-<section class="bg-custom--primary mt-5">
-    <div class="container py-5">
-        <h1 class="section-title">Exemples concrets : Résultats obtenus avec MFINANCES</h1>
-
-        <div class="row g-4">
-            <!-- Entreprise industrielle multi-sites -->
-            <div class="col-md-6">
-                <div class="case-card">
-                    <h2 class="h4 text-danger">Entreprise industrielle multi-sites</h2>
-                    <p class="problem text-dark"><strong>Problème :</strong> Manque de visibilité sur les flux financiers et tensions fréquentes sur la trésorerie.</p>
-                    <p class="solution text-dark"><strong>Solution :</strong></p>
-                    <ul>
-                        <li>Situations mensuelles intermédiaires.</li>
-                        <li>Tableaux de trésorerie prévisionnels actualisés chaque semaine.</li>
-                        <li>Système de cash collecting centralisé.</li>
-                    </ul>
-                    <p class="result text-dark"><strong>Résultat :</strong></p>
-                    <ul>
-                        <li>Réduction des retards de paiement de 40 %.</li>
-                        <li>Projections financières fiables sur 12 mois, permettant une planification optimisée.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Groupe technologique en pleine croissance -->
-            <div class="col-md-6">
-                <div class="case-card">
-                    <h2 class="h4 text-danger">Groupe technologique en pleine croissance</h2>
-                    <p class="problem text-dark"><strong>Problème :</strong> Retards dans les encaissements clients, entraînant des difficultés à financer l’innovation.</p>
-                    <p class="solution text-dark"><strong>Solution :</strong></p>
-                    <ul>
-                        <li>Mise en place de budgets prévisionnels dynamiques et tableaux de trésorerie.</li>
-                        <li>Formation des équipes au cash collecting.</li>
-                    </ul>
-                    <p class="result text-dark"><strong>Résultat :</strong></p>
-                    <ul>
-                        <li>Diminution des délais de paiement clients de 20 jours.</li>
-                        <li>Augmentation des liquidités, permettant de financer un projet stratégique en R&D.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <!--=====about-start=======-->
-    <div class="about sec-padding">
+    <div class="works sec-padding">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
-                    <div class="about-haddings">
-                        <div class="hadding hadding-p">
-                            <h3>Pourquoi choisir MFINANCES pour votre grande entreprise ?</h3>
-                            <p>Des solutions sur mesure pour répondre aux défis spécifiques de votre secteur et accompagner votre croissance.</p>
+                <div class="col-md-12 col-lg-6">
+                    <div class="how-in-work-sec">
+                        <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
+                            <h1>Centres médicaux et professionnels de santé : <br><span class="rectangle-red">Optimisez votre organisation</span></h1>
+                            <p>Des solutions adaptées à chaque structure pour maximiser vos revenus, mutualiser vos frais et simplifier la gestion comptable.</p>
                         </div>
-                        <div class="check-list-all" style="padding: 1px 0 !important">
-                            <div class="row">
-                                <div>
-                                    <div class="chek-list" style="display: block;">
-                                        <p>
-                                            <img src="../../assets/img/icons/checkfill.png" alt="">
-                                            <strong>Un accompagnement stratégique et personnalisé :</strong>
-                                        </p>
-                                        <ul>
-                                            <li>Nos contrôleurs de gestion et DAF apportent des solutions spécifiques à vos défis.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="space20"></div>
-                                    <div class="chek-list" style="display: block;">
-                                        <p>
-                                            <img src="../../assets/img/icons/checkfill.png" alt="">
-                                            <strong>Des outils modernes et flexibles :</strong>
-                                        </p>
-                                        <ul>
-                                            <li>Intégration de tableaux de bord, ERP, et CRM pour un pilotage précis.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="space20"></div>
-                                    <div class="chek-list" style="display: block;">
-                                        <p>
-                                            <img src="../../assets/img/icons/checkfill.png" alt="">
-                                            <strong>Des résultats concrets et mesurables :</strong>
-                                        </p>
-                                        <ul>
-                                            <li>Réduction des coûts opérationnels, amélioration des liquidités, et croissance durable.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home2-btn mt-4">
-                            <a href="about.html" class="btn-red">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
+                        <div class="space20"></div>
+                        <div class="works-items">
+                          
+                          <!-- Service 1 -->
+                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
+                              <div class="me-3">
+                                  <div class="work-icon">
+                                      <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid">
+                                  </div>
+                              </div>
+                              <div class="hadding hadding-p">
+                                  <h2>Centres médicaux</h2>
+                                  <ul>
+                                      <li>Organisez vos finances collectives avec une tenue comptable transparente.</li>
+                                      <li>Optimisez la fiscalité collective et individuelle grâce à des déductions stratégiques.</li>
+                                      <li>Facilitez les décisions stratégiques pour le développement du centre.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      
+                          <!-- Service 2 -->
+                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
+                              <div class="me-3">
+                                  <div class="work-icon">
+                                      <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid">
+                                  </div>
+                              </div>
+                              <div class="hadding hadding-p">
+                                  <h2>Associations médicales</h2>
+                                  <ul>
+                                      <li>Réduisez les coûts grâce à la mutualisation des charges (loyers, abonnements, etc.).</li>
+                                      <li>Assurez une répartition équitable et transparente des charges communes.</li>
+                                      <li>Préservez l'indépendance de chaque médecin pour ses revenus et décisions professionnelles.</li>
+                                  </ul>
+                              </div>
+                          </div>
+  
+                          <!-- Service 3 -->
+                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1600">
+                              <div class="me-3">
+                                  <div class="work-icon">
+                                      <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
+                                  </div>
+                              </div>
+                              <div class="hadding hadding-p">
+                                  <h2>Professionnels indépendants</h2>
+                                  <ul>
+                                      <li>Facturez vos prestations avec des management fees déductibles.</li>
+                                      <li>Optimisez votre patrimoine en réinvestissant dans des projets stratégiques.</li>
+                                      <li>Réduisez vos charges fiscales tout en restant en conformité légale.</li>
+                                  </ul>
+                              </div>
+                          </div>
+  
+                          <!-- Service 4 -->
+                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1800">
+                              <div class="me-3">
+                                  <div class="work-icon">
+                                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                                  </div>
+                              </div>
+                              <div class="hadding hadding-p">
+                                  <h2>Combinaison : Activité mixte</h2>
+                                  <ul>
+                                      <li>Combinez les avantages des modèles société d’exploitation et société de management patrimoniale.</li>
+                                      <li>Optimisez la gestion fiscale globale pour chaque source de revenus.</li>
+                                      <li>Simplifiez la gestion comptable avec des outils adaptés et centralisés.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      
+                      </div>
                     </div>
                 </div>
-                
-                <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
-                    <div class="about-img img-border">
-                        <img src="../../assets/img/image/profil/front-view-man.jpg" alt="">
+  
+                <!-- Image de droite -->
+                <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
+                    <div class="works-img space-sm-50 img-border">
+                        <img src="../../assets/img/image/profil/works.png" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--=====about-end=======-->
   </section>
+  
+
+  <section>
+    <div class="home2-about sec-padding">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12 col-lg-6" data-aos="flip-left" data-aos-duration="800">
+              <div class="home2-about-img img-border">
+                <img src="../../assets/img/image/profil/front-view-man.jpg" alt="">
+                <div class="home2-about-text">
+                 <div class="home2-about-after">
+                    <p>Résultat : Une rentabilité accrue et une sécurité financière renforcée pour anticiper sa retraite et transmettre son patrimoine.</p>
+                 </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6" data-aos="fade-left" data-aos-duration="800">
+              <div class="home2-hadding home2-hadding-p home2-about hadding-span home2-padding-after">
+                <h2>Exemple concret : Maximisez vos avantages fiscaux et patrimoniaux</h2>
+                <p>Un médecin généraliste, avec un revenu annuel de 120 000 €, a sollicité MFINANCES pour optimiser sa gestion fiscale et patrimoniale. Nos experts ont proposé une restructuration complète :</p>
+              </div>
+              <div class="space30"></div>
+              <div class="home2-about-list">
+                <ul class="li-custom">
+                  <li>
+                    <img src="assets/img/icons/chek-cercle.svg" alt="">Passage en société avec une stratégie de développement immobilier.
+                  </li>
+                  <li>
+                    <img src="assets/img/icons/chek-cercle.svg" alt="">Réduction des impôts annuels de 60 %, soit 36 000 € économisés.
+                  </li>
+                  <li>
+                    <img src="assets/img/icons/chek-cercle.svg" alt="">Constitution d’un patrimoine immobilier valorisé à 500 000 € sur 10 ans.
+                  </li>
+                </ul>
+              </div>
+              <div class="space10"></div>
+              <div class="home2-btn">
+                <a href="about.html">Contactez-Nous<i class="fa fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+<div class="about sec-padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
+                <div class="about-haddings">
+                    <div class="home2-hadding hadding-p">
+                        <h2>TVA et professions médicales : Comprendre l’assujettissement mixte</h2>
+                    </div>
+                    <div class="check-list-all" style="padding: 1px 0 !important">
+                        <div class="row">
+                            <div>
+                                <div class="chek-list">
+                                    <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Optimisez vos déductions :</strong> Déduisez la TVA sur les frais spécifiques liés à vos prestations taxables.</p>
+                                </div>
+                                <div class="space20"></div>
+                                <div class="chek-list">
+                                    <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Appliquez un prorata général :</strong> Gérez efficacement la TVA sur les frais généraux, en tenant compte du ratio entre vos revenus soumis et non soumis à TVA.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Une gestion rigoureuse est essentielle pour éviter les erreurs et maximiser vos avantages fiscaux. Contactez un expert MFINANCES dès aujourd’hui pour clarifier vos obligations et optimiser votre gestion TVA.</p>
+                    <div class="home2-btn mt-4">
+                        <a href="about.html" class="btn-red">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+                <div class="about-img img-border">
+                    <img src="../../assets/img/image/about-07.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="bg-custom--primary">
+    <div class="works sec-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Image de droite -->
+                <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
+                    <div class="works-img space-sm-50 img-border">
+                        <img src="../../assets/img/image/profil/works.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-6">
+                    <div class="how-in-work-sec">
+                        <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
+                            <h1>Les services de MFINANCES pour les professionnels de la santé : <br><span class="rectangle-red">Un accompagnement complet et sur mesure</span></h1>
+                        </div>
+                        <div class="space20"></div>
+                        <div class="works-items">
+                          
+                          <!-- Service 1 -->
+                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
+                              <div class="me-3">
+                                  <div class="work-icon">
+                                      <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid">
+                                  </div>
+                              </div>
+                              <div class="hadding hadding-p">
+                                  <h2>Développer et structurer votre activité médicale</h2>
+                                  <ul>
+                                      <li>Passage en société : Optimisez vos revenus et votre fiscalité grâce à des structures adaptées et bien conçues.</li>
+                                      <li>Investissements stratégiques : Planifiez vos acquisitions, comme du matériel médical ou des locaux, pour maximiser leur rentabilité et réduire votre charge fiscale.</li>
+                                      <li>Gestion immobilière proactive : Transformez vos dépenses en un patrimoine immobilier solide pour assurer votre sécurité financière à long terme et préparer une transmission optimale.</li>
+                                      <li>Optimisation des ressources professionnelles : Profitez d’avantages fiscaux tels que le choix optimal entre indemnités kilométriques ou véhicule de société.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      
+                          <!-- Service 2 -->
+                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
+                              <div class="me-3">
+                                  <div class="work-icon">
+                                      <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid">
+                                  </div>
+                              </div>
+                              <div class="hadding hadding-p">
+                                  <h2>Préparer l’avenir : Sécurisez votre patrimoine et votre succession</h2>
+                                  <ul>
+                                      <li>Transmission ou cession de patientèle : Maximisez la valeur de votre activité grâce à une stratégie de cession bien structurée.</li>
+                                      <li>Préparation de la retraite : Identifiez et mettez en œuvre des dispositifs d’épargne et d’investissement qui sécurisent vos revenus futurs.</li>
+                                      <li>Optimisation fiscale en fin de carrière : Réduisez vos charges fiscales grâce à des stratégies adaptées à votre situation personnelle et professionnelle.</li>
+                                  </ul>
+                              </div>
+                          </div>
+  
+                          <!-- Service 3 -->
+                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1600">
+                              <div class="me-3">
+                                  <div class="work-icon">
+                                      <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
+                                  </div>
+                              </div>
+                              <div class="hadding hadding-p">
+                                  <h2>Créer votre entreprise dans le secteur médical</h2>
+                                  <ul>
+                                      <li>Choix du statut juridique : Adaptez votre structure à vos ambitions, qu’il s’agisse d’exercer seul ou en groupe.</li>
+                                      <li>Planification stratégique : Élaboration d’un plan financier à plusieurs années pour définir des objectifs clairs et garantir une croissance durable.</li>
+                                      <li>Support administratif complet : Simplifiez vos démarches légales et assurez la conformité de votre entreprise dès sa création.</li>
+                                  </ul>
+                              </div>
+                          </div>
+  
+                          <!-- Service 4 -->
+                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1800">
+                              <div class="me-3">
+                                  <div class="work-icon">
+                                      <i class="fa fa-cogs" aria-hidden="true"></i>
+                                  </div>
+                              </div>
+                              <div class="hadding hadding-p">
+                                  <h2>Simplifier la gestion de votre activité</h2>
+                                  <ul>
+                                      <li>Gestion comptable complète : Comptes annuels, déclarations fiscales, gestion des notes de frais, factures clients et fournisseurs.</li>
+                                      <li>Suivi des indicateurs clés : Analyse de votre rentabilité, de vos flux de trésorerie et de vos performances financières pour une maîtrise totale de votre activité.</li>
+                                      <li>Conseils quotidiens : Résolution rapide de vos problématiques administratives et financières grâce à nos experts dédiés.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      
+                      </div>
+                    </div>
+                </div>
+  
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <app-timeline-independant></app-timeline-independant> -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Colonne gauche (texte) -->
+            <div class="col-8 col-md-6 mb-4" data-aos="fade-right">
+                <h2 class="display-5 fw-bold" style="font-size: 40px !important;">
+                    Pourquoi choisir <br>
+                    <span class="bg-danger text-white px-2 rounded">MFINANCES</span> pour vous accompagner ?
+                </h2>
+            </div>
+      
+            <!-- Colonne droite (cartes) -->
+            <div class="col-12 col-md-6 d-flex flex-column gap-4">
+                <!-- Carte 1 -->
+                <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+                        <img src="../../assets/img/image/profil/Background+Border.png" alt="Icone Expertise" class="img-fluid" style="max-width: 50px;">
+                    </div>
+                    <div>
+                        <h5 class="fw-semibold mb-2">Une expertise ciblée :</h5>
+                        <p class="mb-0 text-muted">Nos spécialistes maîtrisent les spécificités du secteur médical et paramédical.</p>
+                    </div>
+                </div>
+      
+                <!-- Carte 2 -->
+                <div class="custom-card p-4 d-flex align-items-start second-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+                        <img src="../../assets/img/image/profil/Background+Border2.png" alt="Icone Accompagnement" class="img-fluid" style="max-width: 50px;">
+                    </div>
+                    <div>
+                        <h5 class="fw-semibold mb-2">Un accompagnement global :</h5>
+                        <p class="mb-0 text-muted">De la création de votre structure à la transmission de votre activité, nous sommes à vos côtés à chaque étape.</p>
+                    </div>
+                </div>
+      
+                <!-- Carte 3 -->
+                <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="600">
+                    <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+                        <img src="../../assets/img/image/profil/Background+Border3.png" alt="Icone Solutions" class="img-fluid" style="max-width: 50px;">
+                    </div>
+                    <div>
+                        <h5 class="fw-semibold mb-2">Des solutions personnalisées :</h5>
+                        <p class="mb-0 text-muted">Adaptées à vos besoins, pour optimiser vos finances et faciliter votre quotidien.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="container my-5">
   <div class="rounded-4 bg-custom--primary text-white px-4">
@@ -795,11 +566,11 @@
         data-aos-delay="400"
       >
         <h2 class="fw-bold mb-4">
-            Transformez vos  <br>
-          <span class="bg-danger text-white px-2 py-1 rounded-2">défis en opportunités</span>.
+            Confiez votre activité à<br>
+          <span class="bg-danger text-white px-2 py-1 rounded-2">des experts</span>.
         </h2>
         <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
-            Contactez-nous pour un diagnostic gratuit et découvrez comment MFINANCES peut vous aider à optimiser vos marges, digitaliser vos processus et libérer votre trésorerie.
+            Prenez rendez-vous dès aujourd’hui avec un conseiller MFINANCES pour bénéficier d’une analyse personnalisée et d’un accompagnement complet. Transformez vos défis financiers en opportunités de croissance. 
         </p>
         <a 
           href="#" 
@@ -813,5 +584,4 @@
     </div>
   </div>
 </section>
-
 <app-recommandation-profil></app-recommandation-profil>

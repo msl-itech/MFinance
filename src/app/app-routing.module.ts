@@ -9,6 +9,9 @@ import { ProfilSocieteMoyenComponent } from './profil-societe-moyen/profil-socie
 import { ProfilSocieteExploitationComponent } from './profil-societe-exploitation/profil-societe-exploitation.component';
 import { ProfilCommercantHorecaComponent } from './profil-commercant-horeca/profil-commercant-horeca.component';
 import { ProfessionelSanteComponent } from './professionel-sante/professionel-sante.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProfilGrandeEntrepriseComponent } from './profil-grande-entreprise/profil-grande-entreprise.component';
+import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilier/profil-promoteur-immobilier.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -21,7 +24,9 @@ const routes: Routes = [
   { path: 'societe-exploitation', component: ProfilSocieteExploitationComponent },
   { path: 'commercant-horeca', component: ProfilCommercantHorecaComponent },
   { path: 'professionel-sante', component: ProfessionelSanteComponent },
-  { path: 'contact', component: ProfilSocieteExploitationComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: 'grande-entreprise', component: ProfilGrandeEntrepriseComponent },
+  { path: 'promoteur-immobilier', component: ProfilPromoteurImmobilierComponent }
 ];
 
 @NgModule({

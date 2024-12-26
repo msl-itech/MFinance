@@ -1,0 +1,522 @@
+<style>
+    .challenge-solution-container {
+    position: relative;
+    padding: 2rem 0;
+  }
+  .vertical-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #FF3333;
+    margin-left: -1.5px;
+    z-index: 1;
+  }
+
+
+  .custom-card {
+      border: 2px solid #e6e9f1; 
+      border-radius: 12px; 
+      background-color: #f8f9fb; 
+      padding: 20px; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%; 
+  }
+
+  .icon-wrapper {
+      min-width: 80px;
+      min-height: 80px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+  }
+
+  .icon-wrapper img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .custom-image-size {
+  width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
+  height: auto; /* Maintient le ratio d'aspect */
+  }
+  .second-card {
+      position: relative;
+  }
+
+  @media (min-width: 992px) {
+      .second-card {
+          left: -64px;
+      }
+  }
+
+  @media (max-width: 991px) {
+      .second-card {
+          left: 0;
+      }
+  }
+
+  .color-red, i {
+      color: #FF3333;
+  }
+
+  .bg-custom--primary {
+      background-color: #00204A;
+  }
+
+  .bg-custom--primary p,
+  .bg-custom--primary ul,
+  .bg-custom--primary h1,
+  .bg-custom--primary h2 {
+      color: white;
+  }
+
+  .rectangle-red {
+      background-color: #FF3333;
+      border-radius: 8px;
+      padding: 6px;
+  }
+
+  .hadding h1 {
+      color: white;
+      font-size: 29px !important;
+      line-height: 48px;
+      padding-bottom: 18px;
+  }
+
+  .highlighted {
+      background-color: #ff4136;
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+  }
+
+  .vertical-divider {
+      border-left: 1px solid #d1d1d1;
+      height: 100%;
+  }
+
+  .icon-red {
+      color: #ff4136;
+      font-size: 1.5rem;
+      margin-right: 1rem; 
+  }
+
+  .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+  }
+
+  .flex-content {
+      display: flex;
+      align-items: flex-start; 
+      margin-bottom: 1rem;
+  }
+
+  .section-content h5 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+  }
+
+  .section-content ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  .header {
+      background: url('../../assets/img/bg/bg_about.png') no-repeat center center/cover;
+      min-height: 300px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .header-overlay {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      color: white;
+  }
+
+  /* Media queries pour adapter sur plus petits écrans */
+  @media (max-width: 767px) {
+      .hadding h1 {
+          font-size: 24px;
+          line-height: 36px;
+      }
+
+      .custom-card {
+          padding: 15px;
+      }
+
+      .icon-wrapper {
+          min-width: 60px;
+          min-height: 60px;
+      }
+
+      .works-items h2 {
+          font-size: 1.2rem;
+      }
+
+      .section-title {
+          font-size: 1.5rem;
+      }
+  }
+
+  @media (max-width: 575px) {
+      .hadding h1 {
+          font-size: 20px;
+          line-height: 32px;
+      }
+  }
+</style>
+<header class="header">
+    <div class="header-overlay">
+        <div class="container">
+            <h1>Promoteur Immobilier</h1>
+            <p class="text-white">Accueil &gt; Promoteur Immobilier</p>
+        </div>
+    </div>
+</header>
+
+<!-- Service single start -->
+<section class="service-single pt-120 pb-130" style="padding: 64px;">
+  <div class="container">
+      <div class="row">
+          <!-- Sidebar -->
+           <div class="col-lg-4">
+            <app-sidebar></app-sidebar>
+           </div>
+        
+          <!-- Main Content -->
+          <div class="col-lg-8">
+              <div class="single-content">
+                  <h2 class="display-5 fw-bold">
+                    Anticipez, gérez et innovez pour maximiser 
+                    <span class="bg-custom--primary text-white px-2 rounded"> votre rentabilité </span>
+                  </h2>
+                  <div>
+                    <p>La promotion immobilière est une activité complexe qui exige une gestion rigoureuse des finances, de la fiscalité, et des flux de trésorerie.</p>
+                    <p>Chez MFINANCES, nous proposons des solutions sur mesure, intégrant des budgets prévisionnels, des situations mensuelles détaillées, et un système de cash collecting optimisé</p>
+                    <br>
+                </div>
+                  <div class="single-img mt-35 mb-4">
+                      <img src="../../assets/img/image/c_single.png" alt="">
+                  </div>
+              </div>
+             
+            <div class="defis row align-items-center mt-10">
+              <!-- <h1>Transition numérique : Digitalisez vos processus pour un service client fluide</h1> -->
+              <!-- Image -->
+              <div class="col-md-4">
+                  <img src="../../assets/img/image/profil/success-follows.jpg" alt="Défis ASBL" class="img-fluid" style="border-radius: 16px;">
+              </div>
+              <!-- Content -->
+              <div class="col-md-8 mt-30">
+                  <p>En tant qu’acteurs clés du développement immobilier, les promoteurs doivent relever plusieurs défis spécifiques : </p>
+                  
+                  <ul class="list-unstyled pl-25">
+                      <li>
+                          <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>
+                          <strong>Budgets conséquents et marges serrées</strong>
+                          nécessitant une planification financière précise. 
+                      </li>
+                      <li>
+                          <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>
+                          <strong>Règles TVA complexes </strong>
+                          qui varient selon la finalité des immeubles (revente, location, rénovation). 
+                      </li>
+                      <li>
+                        <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>
+                        <strong>Analyse détaillée des coûts par projet</strong>
+                        essentielle pour optimiser la rentabilité. 
+                    </li>
+                  </ul>
+              </div>
+          </div>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="bg-custom--primary">
+    <div class="works sec-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12 col-lg-6">
+                    <div class="how-in-work-sec">
+                        <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
+                            <h1>Besoins spécifiques des Promoteurs Immobiliers</h1>
+                        </div>
+                        <div class="space20"></div>
+                        <div class="works-items">
+                            <!-- Service 1 -->
+                            <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
+                                <div class="me-3">
+                                    <div class="work-icon">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+                                </div>
+                                <div class="hadding hadding-p">
+                                    <h2>Planification financière précise et prévisions budgétaires</h2>
+                                    <ul>
+                                        <li>Budgets détaillés : Prévoir les coûts liés à l’acquisition, la construction, et la commercialisation.</li>
+                                        <li>Analyse des besoins en financement : Planifier les apports nécessaires pour éviter les tensions de trésorerie.</li>
+                                        <li>Projection des flux de trésorerie : Prévoir les entrées (ventes ou locations) et les sorties (charges fixes et imprévus) pour équilibrer vos finances.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Service 2 -->
+                            <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
+                                <div class="me-3">
+                                    <div class="work-icon">
+                                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                                    </div>
+                                </div>
+                                <div class="hadding hadding-p">
+                                    <h2>Suivi rigoureux des coûts et reporting financier transparent</h2>
+                                    <ul>
+                                        <li>Gestion des postes budgétaires : Contrôler les coûts de construction, les taxes, et les charges administratives.</li>
+                                        <li>Reporting financier : Offrir une vue claire et synthétique des revenus et dépenses, facilitant une prise de décision éclairée.</li>
+                                        <li>Digitalisation des processus : Automatiser le suivi des flux financiers pour une visibilité en temps réel et une gestion optimale des ressources.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Service 3 -->
+                            <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1600">
+                                <div class="me-3">
+                                    <div class="work-icon">
+                                        <i class="fa-solid fa-calculator"></i>
+                                    </div>
+                                </div>
+                                <div class="hadding hadding-p">
+                                    <h2>TVA : Entre opportunité et complexité</h2>
+                                    <ul>
+                                        <li>Immeuble neuf destiné à la revente : TVA de 21 % déductible.</li>
+                                        <li>Immeuble neuf destiné à la location : TVA de 21 % non déductible.</li>
+                                        <li>Immeuble ancien (plus de 10 ans) destiné à l’habitation : TVA réduite à 6 %, non déductible.</li>
+                                        <li>Régime d’autoliquidation : Nécessite un suivi rigoureux pour éviter les erreurs coûteuses.</li>
+                                        <li>Calcul du prorata de déductibilité : Frais généraux déductibles au prorata du chiffre d’affaires TVA.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Service 4 -->
+                            <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1800">
+                                <div class="me-3">
+                                    <div class="work-icon">
+                                        <i class="fa-solid fa-cogs"></i>
+                                    </div>
+                                </div>
+                                <div class="hadding hadding-p">
+                                    <h2>Comptabilité analytique pour optimiser la rentabilité</h2>
+                                    <ul>
+                                        <li>Zoom sur la structure des coûts : Segmentation des dépenses par projet ou service.</li>
+                                        <li>Identification des coûts par projet : Analyse fine des postes les plus coûteux.</li>
+                                        <li>Prise de décisions éclairées : Revoir les modèles économiques pour optimiser la rentabilité.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Service 5 -->
+                            <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="2000">
+                                <div class="me-3">
+                                    <div class="work-icon">
+                                        <i class="fa-solid fa-handshake"></i>
+                                    </div>
+                                </div>
+                                <div class="hadding hadding-p">
+                                    <h2>Collaboration étroite et accompagnement stratégique</h2>
+                                    <ul>
+                                        <li>Compréhension des objectifs : Identifier les priorités et ajuster les stratégies.</li>
+                                        <li>Leviers de rentabilité : Proposer des solutions concrètes pour améliorer les marges.</li>
+                                        <li>Conseils stratégiques : Vous accompagner dans toutes les étapes, de l’acquisition à la commercialisation.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image de droite -->
+                <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
+                    <div class="works-img space-sm-50 img-border">
+                        <img src="../../assets/img/image/profil/works.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+  <section class="py-5">
+    <h2 class="text-center">Comment MFINANCES transforme vos projets immobiliers ?</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h2>01</h2>
+            <h3>Gestion comptable et analytique dédiée</h3>
+            <p> <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> Comptabilité analytique par projet pour une traçabilité optimale des flux financiers.</p>
+            <p> <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>Suivi précis des marges à chaque phase du projet.</p>
+            <p> <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>Élaboration de bilans intermédiaires pour ajuster les stratégies en temps réel.</p>
+        </div>
+        <div class="card">
+            <h2>02</h2>
+            <h3>Optimisation fiscale et TVA</h3>
+            <p> <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> Récupération de la TVA sur les travaux et acquisitions.</p>
+            <p> <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>Calcul précis du prorata pour optimiser les déductions fiscales.</p>
+            <p> <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>Stratégies fiscales adaptées, comme la méthode à l’achèvement, pour réduire les charges.</p>
+        </div>
+        <div class="card">
+            <h2>03</h2>
+            <h3>Outils digitaux et reporting avancé</h3>
+            <p><i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> Tableaux de bord personnalisés pour surveiller les coûts, marges, et flux financiers en temps réel.</p>
+            <p><i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> Automatisation des rapports comptables et fiscaux pour une gestion rapide et sans erreur.</p>
+            <p><i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> Prévisions financières pour anticiper les besoins en trésorerie et ajuster vos stratégies.</p>
+        </div>
+    </div>
+    
+</section>
+
+<section class="bg-custom--primary mt-5">
+    <div class="container py-5">
+        <h1 class="section-title text-white">Exemple concret : MFINANCES optimise la rentabilité et la trésorerie d’un projet résidentiel</h1>
+
+        <div class="row g-4 align-items-center">
+            <!-- Image à gauche -->
+            <div class="col-md-6">
+                <img src="../../assets/img/image/profil/front-view-man.jpg" alt="Projet immobilier" class="img-fluid">
+            </div>
+
+            <!-- Texte à droite -->
+            <div class="col-md-6 text-white">
+                <h2 class="h4" style="color: #FF3333;">Contexte :</h2>
+                <ul>
+                    <li>Un promoteur immobilier gérait plusieurs projets résidentiels avec des ventes concentrées en fin de projet. Les principaux défis incluaient :</li>
+                    <li>Une gestion complexe des coûts par unité, impactant les marges globales.</li>
+                    <li>La nécessité de lisser les flux financiers pour éviter des tensions de trésorerie.</li>
+                    <li>L’annualité de l’impôt, rendant certaines ventes défavorables d’un point de vue fiscal.</li>
+                </ul>
+
+                <h2 class="h4 " style="color: #FF3333;">Solutions apportées par MFINANCES :</h2>
+                <ul>
+                    <li><strong>Comptabilité analytique détaillée :</strong> Ventilation des coûts par projet et par unité pour mieux évaluer la rentabilité.</li>
+                    <li><strong>Suivi budgétaire rigoureux :</strong> Analyse des scénarios de vente et des implications fiscales pour optimiser la trésorerie.</li>
+                    <li><strong>Stratégie d’ajustement des ventes :</strong> Report stratégique de la vente de certaines unités pour les faire coïncider avec le lancement de nouveaux projets, réduisant ainsi l’impact fiscal.</li>
+                </ul>
+
+                <h2 class="h4" style="color: #FF3333;">Résultats :</h2>
+                <ul>
+                    <li>Une rentabilité globale accrue, avec une augmentation de 12 à 20 % selon les projets.</li>
+                    <li>Une trésorerie renforcée grâce à des flux financiers équilibrés, permettant d’initier un nouveau projet sans financement externe.</li>
+                    <li>Une gestion fiscale optimisée, réduisant les charges liées à l’annualité de l’impôt.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <app-timeline-independant></app-timeline-independant> -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Colonne gauche (texte) -->
+            <div class="col-8 col-md-6 mb-4" data-aos="fade-right">
+                <h2 class="display-5 fw-bold" style="font-size: 40px !important;">
+                    Pourquoi choisir <br>
+                    <span class="bg-danger text-white px-2 rounded">MFINANCES</span> pour vos projets immobiliers ?
+                </h2>
+            </div>
+
+            <!-- Colonne droite (cartes) -->
+            <div class="col-12 col-md-6 d-flex flex-column gap-4">
+                <!-- Carte 1 -->
+                <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+                        <img src="../../assets/img/image/profil/Background+Border.png" alt="Icone Expertise" class="img-fluid" style="max-width: 50px;">
+                    </div>
+                    <div>
+                        <h5 class="fw-semibold mb-2">Une expertise sectorielle éprouvée</h5>
+                        <p class="mb-0 text-muted">Une maîtrise approfondie des spécificités fiscales, comptables, et financières des promoteurs immobiliers.</p>
+                        <p class="mb-0 text-muted">Des solutions sur mesure pour répondre aux besoins de chaque projet.</p>
+                    </div>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="custom-card p-4 d-flex align-items-start second-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+                        <img src="../../assets/img/image/profil/Background+Border2.png" alt="Icone Accompagnement" class="img-fluid" style="max-width: 50px;">
+                    </div>
+                    <div>
+                        <h5 class="fw-semibold mb-2">Des outils et stratégies adaptés</h5>
+                        <p class="mb-0 text-muted">Automatisation et digitalisation pour un pilotage efficace et en temps réel.</p>
+                        <p class="mb-0 text-muted">Conseils stratégiques pour maximiser la rentabilité à chaque étape.</p>
+                    </div>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="600">
+                    <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+                        <img src="../../assets/img/image/profil/Background+Border3.png" alt="Icone Solutions" class="img-fluid" style="max-width: 50px;">
+                    </div>
+                    <div>
+                        <h5 class="fw-semibold mb-2">Un suivi avancé pour des résultats durables</h5>
+                        <p class="mb-0 text-muted">Prévisions financières claires pour lisser les revenus et anticiper les besoins en trésorerie.</p>
+                        <p class="mb-0 text-muted">Analyses détaillées pour ajuster rapidement vos stratégies et sécuriser vos marges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container my-5">
+  <div class="rounded-4 bg-custom--primary text-white px-4">
+    <div class="row align-items-center">
+      <!-- Image visible uniquement à partir du md (desktop) -->
+      <div 
+        class="col-md-6 d-none d-md-flex justify-content-center align-items-end" 
+        data-aos="fade-left" 
+        data-aos-delay="200"
+      >
+        <img
+          src="../../assets/img/image/profil/h9_footer_banner_img 1 1.png"
+          alt="Personne souriante"
+          class="img-fluid custom-image-size"
+          style="z-index: 2; position: relative;"
+        />
+      </div>
+
+      <!-- Texte et bouton, centrés sur mobile/tablette -->
+      <div 
+        class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
+        data-aos="fade-right"
+        data-aos-delay="400"
+      >
+        <h2 class="fw-bold mb-4">
+            Pilotez vos projets immobiliers avec MFINANCES et transformez vos défis <br>
+          <span class="bg-danger text-white px-2 py-1 rounded-2">en opportunités</span>.
+        </h2>
+        <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
+            Contactez-nous dès aujourd’hui pour un diagnostic fiscal et financier personnalisé.  
+        </p>
+        <a 
+          href="#" 
+          class="btn btn-danger btn-sm px-3 py-2" 
+          data-aos="zoom-in" 
+          data-aos-delay="800"
+        >
+          Contactez-nous <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<app-recommandation-profil></app-recommandation-profil>
