@@ -81,6 +81,21 @@
         color: white;
     }
 
+    .works-img {
+  overflow: hidden; /* Empêche le débordement de l'image */
+  position: relative; /* Permet les transformations absolues si nécessaire */
+}
+
+/* Stylisation de l'image */
+.works-img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.2s ease-out; /* Transition fluide lors des transformations */
+}
+.image-active {
+  transform: translateY(0); /* Position finale */
+}
 </style>
 <header class="header">
     <div class="header-overlay">
@@ -91,37 +106,6 @@
     </div>
 </header>
 
-<!-- Service single start -->
-<!-- <section>
-  <div class="about sec-padding">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
-                  <div class="about-img img-border">
-                      <img src="../../assets/img/image/c_single.png" alt="ASBL Image" class="img-fluid">
-                  </div>
-              </div>
-              <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
-                  <div class="about-haddings">
-                      <div class="hadding hadding-p">
-                          <p class="text-red">
-                              <span class="text-red">Pourquoi choisir l’ASBL ?</span>
-                          </p>
-                          <h3>Accompagnement pour les ASBL : Donnez vie à votre mission sociale</h3>
-                      </div>
-                      <p>
-                          Les Associations Sans But Lucratif (ASBL) en Belgique sont des structures incontournables pour porter des projets sociaux, culturels, éducatifs ou environnementaux.
-                      </p>
-                      <p>
-                          Chez MFINANCES, nous comprenons les réalités des ASBL belges et offrons un accompagnement sur mesure pour simplifier votre gestion et maximiser l’impact de votre mission.
-                      </p>
-                      <a href="#" class="btn btn-danger mt-3">Contactez-nous</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</section> -->
 <!-- Service single start -->
 <section class="service-single pt-120 pb-130">
   <div class="container">
@@ -145,8 +129,8 @@
                       Chez MFINANCES, nous comprenons les réalités des ASBL belges et offrons un accompagnement 
                       sur mesure pour simplifier votre gestion et maximiser l’impact de votre mission.
                   </p>
-                  <div class="single-img mt-35 mb-4">
-                      <img src="../../assets/img/image/c_single.png" alt="">
+                  <div class="single-img mt-35 mb-4 ">
+                      <img src="../../assets/img/webp/23.webp" alt="" class="rounded-4">
                   </div>
               </div>
               <!-- Challenges Section -->
@@ -189,75 +173,7 @@
   </div>
 </section>
 
-
-<!-- <section>
-  <div class="container py-5">
-      <div class="text-center mb-5" data-aos="fade-down">
-          <h1 class="section-title">
-              Pourquoi choisir une <span class="highlighted">ASBL</span> ?
-          </h1>
-      </div>
-
-      <div class="row align-items-start">
-          <div class="col-md-5 section-content" data-aos="fade-right" data-aos-delay="200">
-              <div class="custom-card">
-                  <h5>Avantages clés :</h5>
-                  <ul>
-                      <li>
-                          <i class="fas fa-check-circle"></i>
-                          <span><strong>Accessibilité :</strong> Aucun capital de départ requis. Création rapide et procédures simplifiées.</span>
-                      </li>
-                      <li>
-                          <i class="fas fa-check-circle"></i>
-                          <span><strong>Soutien financier :</strong> Accès à des subsides publics, donations privées, mécénat et sponsoring. Mobilisation de bénévoles et aides à l’emploi pour réduire les coûts.</span>
-                      </li>
-                      <li>
-                          <i class="fas fa-check-circle"></i>
-                          <span><strong>Responsabilité limitée :</strong> Patrimoine personnel des membres protégé en cas de problème.</span>
-                      </li>
-                      <li>
-                          <i class="fas fa-check-circle"></i>
-                          <span><strong>Indépendance juridique :</strong> Une personnalité morale propre garantissant autonomie et durabilité.</span>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-
-          <div
-              class="col-md-2 text-center d-flex flex-column align-items-center mb-4 mb-md-0"
-              data-aos="zoom-in"
-              data-aos-delay="600"
-          >
-              <div>
-                  <i class="fas fa-star icon-red"></i>
-              </div>
-              <div class="vertical-divider mx-auto d-none d-md-block mt-3"></div>
-          </div>
-
-          <div class="col-md-5 section-content" data-aos="fade-left" data-aos-delay="200">
-              <div class="custom-card">
-                  <h5>Les défis à relever :</h5>
-                  <ul>
-                      <li>
-                          <i class="fas fa-check-circle"></i>
-                          <span><strong>Respect des obligations légales :</strong> Assemblées générales, rapports, dépôt des comptes annuels.</span>
-                      </li>
-                      <li>
-                          <i class="fas fa-check-circle"></i>
-                          <span><strong>Recherche et diversification des financements :</strong> Trouver des subsides pour des projets spécifiques ou structurels. Répondre aux critères d’éligibilité et suivre les obligations associées.</span>
-                      </li>
-                      <li>
-                          <i class="fas fa-check-circle"></i>
-                          <span><strong>Suivi des activités et des ressources :</strong> Gestion des bénévoles et employés. Répartition des frais généraux entre projets. Maintien d’un équilibre entre mission sociale et viabilité financière.</span>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>  -->
-
-<section class="bg-custom--primary">
+<section class="bg-custom--primary" #serviceSection>
   <div class="works sec-padding">
       <div class="container">
           <div class="row align-items-center">
@@ -361,97 +277,15 @@
               </div>
 
               <!-- Image de droite -->
-              <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
+              <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000" #serviceImageContainer>
                   <div class="works-img space-sm-50 img-border">
-                      <img src="../../assets/img/image/profil/works.png" alt="" class="img-fluid">
+                      <img src="../../assets/img/webp/3.webp" alt="" class="img-fluid">
                   </div>
               </div>
           </div>
       </div>
   </div>
 </section>
-
-
-<!-- <section>
-  
-  <div class="service sec-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 m-auto text-center">
-          <div class="hadding">
-            <h1 class="text-white">Nos services pour les <span class="rectangle-red">ASBL</span></h1>
-          </div>
-        </div>
-      </div>
-      <div class="space20"></div>
-      <div class="row">
-        <div class="col-md-6 col-lg-4">
-          <div class="box-after">
-            <div class="service-box hadding hadding-p">
-                <img src="../../assets/img/image/about-choose-icon-1.png" alt="">
-            <div class="space20"></div>
-            <h2>Création et gestion administrative</h2>
-            <p>Nous prenons en charge la rédaction des statuts, l'enregistrement au Moniteur belge, l'automatisation ou l'externalisation des tâches administratives  et le suivi des obligations légales </p>
-            <div class="space20"></div>
-            
-          </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div class="box-after">
-            <div class="service-box hadding hadding-p">
-                <img src="../../assets/img/image/about-choose-icon-4.png" alt="">
-            <div class="space20"></div>
-            <h2>Gestion comptable et fiscale </h2>
-            <p>Comptabilité analytique, déclarations fiscales et TVA, ainsi que préparation et dépôt des comptes annuels à la Banque Nationale de Belgique. </p>
-            <div class="space20"></div>
-            
-          </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="box-after">
-            <div class="service-box hadding hadding-p">
-            <img src="../../assets/img/image/about-vision-icon-3.png" alt="">
-            <div class="space20"></div>
-            <h2>Accompagnement en recherche de financements</h2>
-            <p>Elaboration de plans financiers détaillés, suivi des coûts via la comptabilité analytique pour optimiser les demandes de subsides, et consolidation des budgets pour assurer une trésorerie saine</p>
-            <div class="space20"></div>
-          
-          </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="box-after">
-              <div class="service-box hadding hadding-p">
-              <img src="../../assets/img/image/RH.png" alt="">
-              <div class="space20"></div>
-              <h2>Gestion des ressources humaines</h2>
-              <p>suivi des bénévoles dans le respect des obligations légales, gestion des indemnités, et analyse des charges salariales pour anticiper leur impact sur la trésorerie.</p>
-              <div class="space20"></div>
-              
-            </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="box-after">
-              <div class="service-box hadding hadding-p">
-                <img src="../../assets/img/image/CFO.png" alt="">
-              <div class="space20"></div>
-              <h2>Service de direction financière (CFO)</h2>
-              <p>expertise stratégique avec analyse financière, suivi des budgets et de la trésorerie, et optimisation des ressources pour maximiser votre impact.</p>
-              <div class="space20"></div>
-            
-            </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
 <section>
   <!--=====about-start=======-->
   <div class="about sec-padding">
@@ -459,7 +293,7 @@
           <div class="row align-items-center">
               <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
                   <div class="about-img img-border">
-                      <img src="../../assets/img/image/about-07.png" alt="">
+                      <img src="../../assets/img/webp/8.webp" alt="">
                   </div>
               </div>
               <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">

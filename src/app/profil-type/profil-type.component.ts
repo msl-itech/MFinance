@@ -9,12 +9,15 @@ export class ProfilTypeComponent {
   currentIndex = 0;
 
   items = [
-    { image: 'https://www.indy.fr/wp-content/uploads/slider-freelance-1.png', title: 'ABSL', description: 'Les Associations Sans But Lucratif en Belgique sont des structures incontournables pour porter des projets sociaux, culturels, éducatifs ou environnementaux...',route: '/absl' },
-    { image: 'https://www.indy.fr/wp-content/uploads/pro-sante.png', title: 'Indépendant et Startup', description: 'Médecin, IDEL, dentiste, sage-femme...',route: '/profil-independant' },
-    { image: '../../assets/img/image/profilw-societemanagement.jpg', title: 'Société de Management Patrimoniale', description: 'La Société de Management Patrimoniale permet au dirigeant d’entreprise de facturer ses prestations à sa société d’exploitation tout en optimisant ... ',route: '/societe-management-patrimoniale' },
-    { image: 'https://www.indy.fr/wp-content/uploads/reeduc.png', title: 'Société', description: 'Gérant de SAS, SASU, SARL, EURL',route: '/independant-startup' },
-    { image: 'https://www.indy.fr/wp-content/uploads/reeduc.png', title: 'Commerçant', description: 'Coiffeur, fleuriste, vendeur, e-commerçant...',route: '/independant-startup' },
-    { image: 'https://www.indy.fr/wp-content/uploads/pro-sante.png', title: 'SCI', description: 'Gérant de Société Civile Immobilière',route: '/independant-startup' },
+    { image: '../../assets/img/webp/1.webp', title: 'ABSL', description: 'Les Associations Sans But Lucratif en Belgique sont des structures incontournables pour porter des projets sociaux, culturels, éducatifs ou environnementaux...',route: '/absl' },
+    { image: '../../assets/img/webp/6.webp', title: 'Indépendant et Startup', description: 'Devenir indépendant, c’est plus qu’un simple changement de statut. C’est une aventure excitante, un saut vers la liberté professionnelle ...',route: '/profil-independant' },
+    { image: '../../assets/img/webp/18.webp', title: 'Société de Management Patrimoniale', description: 'La Société de Management Patrimoniale permet au dirigeant d’entreprise de facturer ses prestations à sa société d’exploitation tout en optimisant ... ',route: '/societe-management-patrimoniale' },
+    { image: '../../assets/img/webp/21.webp', title: 'Personnel de sante', description: 'Médecins, dentistes, vétérinaires ou kinésithérapeutes, votre quotidien oscille entre la prise en charge des patients et la gestion de vos obligations comptables...',route: '/professionel-sante' },
+    { image: '../../assets/img/webp/11.webp', title: 'Societe de moyen', description: 'Devenir indépendant, c’est plus qu’un simple changement de statut. C’est une aventure excitante, un saut vers la liberté professionnelle et une opportunité unique ...',route: '/societe-moyen' },
+    { image: '../../assets/img/webp/12.webp', title: `Societe d'exploitation`, description: 'Une société d’exploitation est le pilier de votre activité professionnelle ou commerciale. Elle se concentre sur la création de valeur à travers une...',route: '/societe-exploitation' },
+    { image: '../../assets/img/webp/22.webp', title: `Promoteur immobilier`, description: 'La promotion immobilière est une activité complexe qui exige une gestion rigoureuse des finances, de la fiscalité, et des flux de trésorerie...',route: '/promoteur-immobilier' },
+    { image: '../../assets/img/webp/15.webp', title: 'Grande Entreprise', description: 'Les grandes entreprises évoluent dans un environnement complexe où une gestion rigoureuse des finances est essentielle pour garantir leur compétitivité...',route: '/grande-entreprise' },
+    { image: '../../assets/img/webp/19.webp', title: 'Commercant et Horeca', description: 'En tant que commerçant ou acteur du secteur HORECA (hôtellerie, restauration, cafés), vous jonglez quotidiennement avec de multiples responsabilités...',route: '/commercant-horeca' },
   ];
 
   prevSlide() {

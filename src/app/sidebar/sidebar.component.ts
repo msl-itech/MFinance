@@ -19,7 +19,7 @@ export class SidebarComponent {
     { name: 'Promoteur Immobilier', route: '/promoteur-immobilier' }
   ];
 
-  maxVisibleCategories = 5;
+  maxVisibleCategories = 9;
 
   showAllCategories() {
     this.maxVisibleCategories = this.categories.length;
