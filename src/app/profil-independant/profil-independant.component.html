@@ -1,12 +1,20 @@
 <style>
-  .custom-card {
-      border: 2px solid #e6e9f1; 
-      border-radius: 12px; 
-      background-color: #f8f9fb; 
-      padding: 20px; 
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%; 
-  }
+ .custom-card {
+  border: 2px solid #e6e9f1;
+  border-radius: 12px;
+  background-color: #f8f9fb;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-10px); /* Légère élévation */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre plus grande */
+  border-color: #c3c9d9; /* Changement de couleur de bordure */
+}
+
 
   .icon-wrapper {
       min-width: 80px;
@@ -114,7 +122,7 @@
   }
 
   .header {
-      background: url('../../assets/img/bg/bg_about.png') no-repeat center center/cover;
+      background: url('../../assets/img/bg/bg_about.webp') no-repeat center center/cover;
       min-height: 300px;
       position: relative;
       display: flex;
@@ -197,7 +205,7 @@
                   </div>
                   <!-- <div class="row align-items-center mt-10">
                     <div class="col-lg-4 mt-30">
-                      <img src="../../assets/img/image/profil/success-follows.jpg" class="img-fluid rounded" alt="">
+                      <img src="../../assets/img/image/profil/success-follows.webp" class="img-fluid rounded" alt="">
                     </div>
                     <div class="col-lg-8 mt-30">
                       <h1>Les défis des indépendants : un statut exigeant </h1>
@@ -222,7 +230,7 @@
                     <p>Si devenir indépendant offre une liberté unique, il comporte également des défis importants : </p>
                     <!-- Image -->
                     <div class="col-md-4">
-                        <img src="../../assets/img/image/profil/success-follows.jpg" alt="Défis ASBL" class="img-fluid" style="border-radius: 16px;" >
+                        <img src="../../assets/img/image/profil/success-follows.webp" alt="Défis ASBL" class="img-fluid" style="border-radius: 16px;" >
                     </div>
                     <!-- Content -->
                     <div class="col-md-8 mt-30">
@@ -319,7 +327,7 @@
                           <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
                               <div class="me-3">
                                   <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/about-vision-icon-2.png" alt="" class="img-fluid">
+                                      <img src="../../assets/img/image/profil/about-vision-icon-2.webp" alt="" class="img-fluid">
                                   </div>
                               </div>
                               <div class="hadding hadding-p">
@@ -483,7 +491,7 @@
         <div class="row align-items-center">
             <!-- <div class="col-md-6">
                 <div class="service-details-img img-border">
-                    <img src="../../assets/img/image/service-faq.png" alt="">
+                    <img src="../../assets/img/image/service-faq.webp" alt="">
                 </div>
             </div> -->
             <div >
@@ -678,7 +686,7 @@
         data-aos-delay="200"
       >
         <img
-          src="../../assets/img/image/profil/h9_footer_banner_img 1 1.png"
+          src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
           alt="Personne souriante"
           class="img-fluid custom-image-size"
           style="z-index: 2; position: relative;"

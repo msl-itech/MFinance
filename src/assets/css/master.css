@@ -2244,7 +2244,7 @@ body {
 .home2-padding-after span.after::after {
   content: "";
   position: absolute;
-  background-image: url(../img/image/hadding-after-2.png);
+  background-image: url(../img/image/Group20.webp);
   height: 37px;
   width: 30px;
   top: 0;
@@ -3695,7 +3695,7 @@ span.play-iocn svg {
 .home2-hadding-after span.after::after {
   content: "";
   position: absolute;
-  background-image: url(../img/image/hadding-after-2.png);
+  background-image: url(../img/image/Group20.webp);
   height: 37px;
   width: 30px;
   top: 0;
