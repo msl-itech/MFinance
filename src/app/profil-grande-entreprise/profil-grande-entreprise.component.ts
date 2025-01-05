@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-profil-grande-entreprise',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './profil-grande-entreprise.component.css'
 })
 export class ProfilGrandeEntrepriseComponent {
+  constructor(private renderer: Renderer2) {}
 
+  onScroll(event: Event): void {
+    const image = document.querySelector('.works-img img');
+    const scrollTop = (event.target as HTMLElement).scrollTop;
+    if (image) {
+      const translateY = Math.min(scrollTop * 0.2, 200); // Ajustez la vitesse
+      this.renderer.setStyle(image, 'transform', `translateY(${translateY}px)`);
+    }
+  }
 }

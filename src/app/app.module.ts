@@ -4,15 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { HeaderAccueilComponent } from './header-accueil/header-accueil.component';
-import { ProfilTypeComponent } from './profil-type/profil-type.component';
-import { ServicesComponent } from './services/services.component';
-import { WhyChoiseComponent } from './why-choise/why-choise.component';
-import { CeoSectionComponent } from './ceo-section/ceo-section.component';
-import { PodcastAccueilComponent } from './podcast-accueil/podcast-accueil.component';
-import { ZoneContactComponent } from './zone-contact/zone-contact.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { AccueilComponent } from './accueil/accueil.component';
 import { AboutComponent } from './about/about.component';
 import { HeaderAboutComponent } from './header-about/header-about.component';
 import { AbslComponent } from './absl/absl.component';
@@ -29,20 +21,14 @@ import { ProfilCommercantHorecaComponent } from './profil-commercant-horeca/prof
 import { ProfessionelSanteComponent } from './professionel-sante/professionel-sante.component';
 import { ProfilGrandeEntrepriseComponent } from './profil-grande-entreprise/profil-grande-entreprise.component';
 import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilier/profil-promoteur-immobilier.component';
+import { TestScrollComponent } from './test-scroll/test-scroll.component';
+import { ShardeModuleModule } from './sharde-module/sharde-module.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    HeaderAccueilComponent,
-    ProfilTypeComponent,
-    ServicesComponent,
-    WhyChoiseComponent,
-    CeoSectionComponent,
-    PodcastAccueilComponent,
-    ZoneContactComponent,
     TopBarComponent,
-    AccueilComponent,
     AboutComponent,
     HeaderAboutComponent,
     AbslComponent,
@@ -58,11 +44,13 @@ import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilie
     ProfilCommercantHorecaComponent,
     ProfessionelSanteComponent,
     ProfilGrandeEntrepriseComponent,
-    ProfilPromoteurImmobilierComponent
+    ProfilPromoteurImmobilierComponent,
+    TestScrollComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ShardeModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

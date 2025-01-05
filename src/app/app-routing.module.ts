@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccueilComponent } from './accueil/accueil.component';
+import { AccueilComponent } from './module-accueil/accueil/accueil.component';
 import { AboutComponent } from './about/about.component';
 import { AbslComponent } from './absl/absl.component';
 import { ProfilIndependantComponent } from './profil-independant/profil-independant.component';
@@ -15,7 +15,10 @@ import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilie
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
-  { path: 'accueil', component: AccueilComponent },
+  { 
+    path: 'accueil', 
+    loadChildren: () => import('./module-accueil/module-accueil.module').then(m => m.ModuleAccueilModule) 
+  },
   { path: 'about', component: AboutComponent },
   { path: 'absl', component: AbslComponent },
   { path: 'profil-independant', component: ProfilIndependantComponent },
@@ -26,8 +29,13 @@ const routes: Routes = [
   { path: 'professionel-sante', component: ProfessionelSanteComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'grande-entreprise', component: ProfilGrandeEntrepriseComponent },
-  { path: 'promoteur-immobilier', component: ProfilPromoteurImmobilierComponent }
+  { path: 'promoteur-immobilier', component: ProfilPromoteurImmobilierComponent },
+  {
+    path: 'services',
+    loadChildren: () => import('./ServiceModules/services.module').then(m => m.ServicesModule)
+  }
 ];
+
 
 @NgModule({
   imports: [

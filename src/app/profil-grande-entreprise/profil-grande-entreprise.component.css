@@ -69,3 +69,15 @@
     margin-bottom: 1rem;
     color: #111;
 }
+
+.demo-section {
+    min-height: 2000px; /* Force la page à avoir un gros défilement */
+    background-color: #f3f3f3;
+  }
+
+  
+  .works-img {
+    position: sticky;
+    top: 50px; /* Distance par rapport au haut */
+    z-index: 10;
+  }

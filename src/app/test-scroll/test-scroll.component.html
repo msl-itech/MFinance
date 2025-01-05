@@ -1,0 +1,21 @@
+<!-- test-sticky.component.html -->
+<div style="height: 2000px; background: lightgrey;">
+    <!-- Colonne gauche, super haute -->
+    <div style="float:left; width:50%;">
+      <p>Bloc de texte très long ... (ou height forcée pour scroller)</p>
+      <p style="height: 1800px;"></p>
+    </div>
+  
+    <!-- Colonne droite avec sticky -->
+    <div style="float:left; width:50%;">
+      <div style="
+           position: sticky;
+           top: 30px;
+           background: white;
+           border: 2px solid red;">
+        <p>Mon image ou mon bloc sticky</p>
+        <img src="https://via.placeholder.com/300x300" alt="" />
+      </div>
+    </div>
+  </div>
+  
