@@ -1,4 +1,4 @@
-<div class="slider-container py-5">
+<div class="slider-container py-5" #sliderContainer>
   <div class="row">
     <div class="col-md-6 m-auto text-center">
       <div class="hadding hadding-p">
@@ -14,13 +14,13 @@
       class="card"
       *ngFor="let item of items; let i = index"
       [ngClass]="i % 2 === 0 ? 'card-blue' : 'card-red'"
-      [routerLink]="item.route" 
+      [routerLink]="item.route"
     >
       <img [src]="item.image" alt="image">
       <div class="card-content">
         <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
-        <a [routerLink]="item.route" class="learn-more">En savoir plus →</a> <!-- Lien vers la page -->
+        <a [routerLink]="item.route" class="learn-more">En savoir plus →</a>
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@
     <button 
       class="nav-btn" 
       (click)="nextSlide()" 
-      [disabled]="currentIndex === items.length - 1">
+      [disabled]="isNextDisabled">
       <i class="fas fa-arrow-right"></i>
     </button>
   </div>
