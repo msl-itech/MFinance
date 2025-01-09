@@ -18,7 +18,12 @@ export class AbslComponent {
   private sectionHeight: number = 0;
   private imageHeight: number = 0;
   private maxTranslateY: number = 0;
-
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   ngAfterViewInit() {
     // Calculer les dimensions initiales
     this.calculateDimensions();

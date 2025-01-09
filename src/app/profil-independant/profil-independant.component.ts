@@ -8,5 +8,10 @@ import { RecommandationProfilComponent } from "../recommandation-profil/recomman
   styleUrl: './profil-independant.component.css',
 })
 export class ProfilIndependantComponent {
-
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

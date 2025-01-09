@@ -335,3 +335,9 @@ a{
   position: sticky;
   top: 10px; /* Distance par rapport au haut de la page */
 }
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Place le bouton à droite */
+  margin-top: 20px; /* Ajustez l'espacement si nécessaire */
+}

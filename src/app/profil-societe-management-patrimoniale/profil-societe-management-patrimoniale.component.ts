@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './profil-societe-management-patrimoniale.component.css'
 })
 export class ProfilSocieteManagementPatrimonialeComponent {
-
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

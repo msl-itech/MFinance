@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './profil-promoteur-immobilier.component.css'
 })
 export class ProfilPromoteurImmobilierComponent {
-
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

@@ -68,3 +68,15 @@
   width: 100%;
   object-fit: cover;
 }
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Place le bouton à droite */
+  margin-top: 20px; /* Ajustez l'espacement si nécessaire */
+}
+
+.custom-single img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

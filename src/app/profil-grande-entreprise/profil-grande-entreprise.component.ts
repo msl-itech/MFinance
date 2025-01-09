@@ -6,6 +6,13 @@ import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
   styleUrl: './profil-grande-entreprise.component.css'
 })
 export class ProfilGrandeEntrepriseComponent {
+
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   constructor(private renderer: Renderer2) {}
 
   onScroll(event: Event): void {
@@ -16,4 +23,5 @@ export class ProfilGrandeEntrepriseComponent {
       this.renderer.setStyle(image, 'transform', `translateY(${translateY}px)`);
     }
   }
+
 }

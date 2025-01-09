@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './profil-societe-moyen.component.css'
 })
 export class ProfilSocieteMoyenComponent {
-
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

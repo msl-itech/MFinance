@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './profil-commercant-horeca.component.css'
 })
 export class ProfilCommercantHorecaComponent {
-
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
