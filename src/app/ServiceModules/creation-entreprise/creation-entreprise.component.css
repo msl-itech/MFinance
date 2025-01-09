@@ -1,0 +1,133 @@
+.header {
+    background: url('../../../assets/img/services/Background_Compta.png') no-repeat center center/cover;
+    min-height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-overlay {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.home2-about{
+    background-color: #25335B;
+}
+
+a {
+    text-decoration: none;
+  }
+  h1{
+    padding: 0;
+  }
+  .home2-hadding h1, .home2-hadding p, .home2-hadding li{
+    color: #fff;
+  }
+  
+  .expert-text {
+    font-size: 1em; /* Ajustez la taille selon vos besoins */
+  }
+  
+  .text-red {
+    color: #F34947; /* Rouge vif */
+    font-style: italic;
+  }
+
+  .about-choose{
+    background-color: #00204A;
+}
+
+
+.font-red {
+    background-color: #F34947;
+    border-radius: 8px;
+    padding: 2px;
+}
+.text-custom{
+    color: #F34947;
+}
+.btn-custom-red {
+    background-color: #ff2424;
+    border-color: #ff2424;
+    color: white;
+    transition: all 0.3s ease;
+}
+.btn-custom-red:hover {
+    background-color: #e60000;
+    border-color: #e60000;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.legal-services {
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+.py-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.text-navy {
+    color: #0a2463;
+}
+
+.animate-text {
+    background: linear-gradient(120deg, #0a2463, #4a90e2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.custom-alert {
+    background-color: rgba(13, 202, 240, 0.1);
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+}
+
+.red-line {
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff4b4b, #ff8080);
+}
+
+.service-card, .assistance-block {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover, .assistance-block:hover {
+    transform: translateY(-5px);
+}
+
+.img-background {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #4a90e2, #0a2463);
+    top: 20px;
+    left: 20px;
+    border-radius: 1rem;
+    z-index: 0;
+}
+
+.shape-overlay {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0) 70%);
+    bottom: -200px;
+    right: -200px;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+@media (max-width: 991.98px) {
+    .image-wrapper {
+        margin-top: 2rem;
+    }
+}

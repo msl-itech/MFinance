@@ -1,0 +1,46 @@
+.text-navy { color: #00204A; }
+.pricing-card {
+    transition: transform 0.3s ease;
+    border-radius: 1rem;
+}
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+.popular {
+    border: 2px solid #00204A;
+}
+.popular-badge {
+    background: #ff3e3e;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0 0 1rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.pricing-value .currency,
+.pricing-value .period {
+    font-size: 1.25rem;
+    vertical-align: middle;
+}
+.pricing-value .amount {
+    margin: 0 0.2rem;
+}
+.py-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.text-custom{
+    color: #F34947;
+}
+.about-choose{
+    background-color: #00204A;
+}
+
+.text-red {
+    color: #F34947; /* Rouge vif */
+    font-style: italic;
+  }

@@ -1,0 +1,50 @@
+.header {
+    background: url('../../../assets/img/services/Background_Compta.png') no-repeat center center/cover;
+    min-height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-overlay {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.home2-about{
+    background-color: #25335B;
+}
+
+a {
+    text-decoration: none;
+  }
+  h1{
+    padding: 0;
+  }
+  .home2-hadding h1, .home2-hadding p, .home2-hadding li{
+    color: #fff;
+  }
+  
+  .expert-text {
+    font-size: 1em; /* Ajustez la taille selon vos besoins */
+  }
+  
+  .text-red {
+    color: #F34947; /* Rouge vif */
+    font-style: italic;
+  }
+
+  .about-choose{
+    background-color: #00204A;
+}
+
+
+.font-red {
+    background-color: #F34947;
+    border-radius: 8px;
+    padding: 2px;
+}

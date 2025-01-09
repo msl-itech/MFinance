@@ -1,0 +1,126 @@
+.header {
+    background: url('../../../assets/img/services/Background_Compta.png') no-repeat center center/cover;
+    min-height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-overlay {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.home2-about{
+    background-color: #25335B;
+}
+
+a {
+    text-decoration: none;
+  }
+  h1{
+    padding: 0;
+  }
+  .home2-hadding h1, .home2-hadding p, .home2-hadding li{
+    color: #fff;
+  }
+  
+  .expert-text {
+    font-size: 1em; /* Ajustez la taille selon vos besoins */
+  }
+  
+  .text-red {
+    color: #F34947; /* Rouge vif */
+    font-style: italic;
+  }
+
+  .about-choose{
+    background-color: #00204A;
+}
+
+
+.font-red {
+    background-color: #F34947;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.text-navy { color: #25335B; }
+.bg-navy { background-color: #25335B; }
+
+.py-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.shadow-hover {
+    transition: all 0.3s ease;
+}
+
+.shadow-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
+.decoration-bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0a2463, #4a90e2);
+    top: 20px;
+    left: 20px;
+    border-radius: 1rem;
+    z-index: 0;
+}
+
+.shape-1, .shape-2 {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.1;
+}
+
+.shape-1 {
+    background: #4a90e2;
+    top: -150px;
+    right: -150px;
+}
+
+.shape-2 {
+    background: #25335B;
+    bottom: -150px;
+    left: -150px;
+}
+
+.icon-wrapper {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-custom{
+    color: #F34947;
+}
+
+.btn-red {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+}
+.btn-red:hover {
+    background-color: #E60000;
+   
+}
+@media (max-width: 991.98px) {
+    .image-wrapper {
+        margin-top: 2rem;
+    }
+}
