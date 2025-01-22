@@ -1,5 +1,5 @@
 .header {
-    background: url('../../assets/img/services/Background_Compta.png') no-repeat center center/cover;
+    background: url('../../assets/img/webp/banner_contact.webp') no-repeat center center/cover;
     min-height: 300px;
     position: relative;
     display: flex;
@@ -7,11 +7,27 @@
     justify-content: center;
 }
 
+.header::after {
+  content: '';
+  background-color: #09132D;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  z-index: 0;
+}
+
+
 .header-overlay {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
+    color: white;
+    z-index: 1;
 }
 
 .contact-section {
