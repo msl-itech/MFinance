@@ -1,0 +1,293 @@
+.promo-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f4f8 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  
+  /* Countdown Styles */
+  .countdown-wrapper {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .countdown-item {
+    background: #0f172a;
+    padding: 16px;
+    border-radius: 12px;
+    min-width: 80px;
+    text-align: center;
+  }
+  
+  .countdown-item .number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff3b30;
+    line-height: 1;
+  }
+  
+  .countdown-item .label {
+    font-size: 14px;
+    color: white;
+    margin-top: 4px;
+  }
+  
+  /* Text Content Styles */
+  .text-content h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1a2c51;
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+  
+  .promo-highlight {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .saving-tag {
+    background: #ff3b30;
+    padding: 12px 24px;
+    border-radius: 50px;
+    color: white;
+  }
+  
+  .save-text {
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 8px;
+  }
+  
+  .save-amount {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  .promo-code {
+    background: rgba(15, 23, 42, 0.05);
+    padding: 12px 24px;
+    border-radius: 50px;
+  }
+  
+  .code-label {
+    font-size: 14px;
+    color: #64748b;
+    margin-right: 8px;
+  }
+  
+  .code {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a2c51;
+    letter-spacing: 1px;
+  }
+  
+  .price-info {
+    margin-bottom: 24px;
+  }
+  
+  .original-price {
+    font-size: 20px;
+    color: #64748b;
+    text-decoration: line-through;
+    margin-bottom: 8px;
+  }
+  
+  .current-price {
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .current-price .currency {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a2c51;
+  }
+  
+  .current-price .amount {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1a2c51;
+    margin: 0 4px;
+  }
+  
+  .current-price .period {
+    font-size: 20px;
+    color: #64748b;
+  }
+  
+  .description {
+    font-size: 18px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #ff3b30;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #e62e24;
+    transform: translateY(-2px);
+  }
+  
+  /* Offer Card Styles */
+  .offer-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .icon-wrapper {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 59, 48, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff3b30;
+    font-size: 24px;
+  }
+  
+  .card-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a2c51;
+    margin: 0;
+  }
+  
+  .price-display {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .price-display .currency {
+    font-size: 32px;
+    font-weight: 600;
+  }
+  
+  .price-display .amount {
+    font-size: 64px;
+    font-weight: 800;
+  }
+  
+  .price-display .type {
+    font-size: 20px;
+    color: #64748b;
+  }
+  
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .feature-item i {
+    color: #16a34a;
+    font-size: 16px;
+  }
+  
+  .feature-item span {
+    color: #1a2c51;
+    font-size: 16px;
+  }
+  
+  .profitez-button {
+    width: 100%;
+    background: #ff3b30;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .profitez-button:hover {
+    background: #e62e24;
+    transform: translateY(-2px);
+  }
+
+  .number{
+    margin: 0 !important;
+  }
+  
+  @media (max-width: 992px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  
+    .text-content h1 {
+      font-size: 32px;
+    }
+  
+    .countdown-wrapper {
+      justify-content: center;
+    }
+  
+    .countdown-item {
+      min-width: 60px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .promo-highlight {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  
+    .countdown-item {
+      min-width: auto;
+      flex: 1;
+    }
+  
+    .countdown-item .number {
+      font-size: 24px;
+    }
+  }

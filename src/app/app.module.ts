@@ -23,6 +23,9 @@ import { ProfilGrandeEntrepriseComponent } from './profil-grande-entreprise/prof
 import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilier/profil-promoteur-immobilier.component';
 import { TestScrollComponent } from './test-scroll/test-scroll.component';
 import { ShardeModuleModule } from './sharde-module/sharde-module.module';
+import { TarifComponent } from './tarif/tarif.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GuerrePrixComponent } from './venteModule/guerre-prix/guerre-prix.component';
 
 @NgModule({
   declarations: [
@@ -46,11 +49,13 @@ import { ShardeModuleModule } from './sharde-module/sharde-module.module';
     ProfilGrandeEntrepriseComponent,
     ProfilPromoteurImmobilierComponent,
     TestScrollComponent,
+    TarifComponent,
+    GuerrePrixComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ShardeModuleModule
+    ShardeModuleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

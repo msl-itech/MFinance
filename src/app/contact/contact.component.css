@@ -1,0 +1,137 @@
+.header {
+    background: url('../../assets/img/services/Background_Compta.png') no-repeat center center/cover;
+    min-height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-overlay {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.contact-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-card {
+    background: #F0F2F3;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border: #fff 10px solid;
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: #ff3b30;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .icon-wrapper i {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .contact-card h3 {
+    color: #1a2c51;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+  }
+  
+  .contact-card p {
+    color: #4a5568;
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .social-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  
+  .follow-text {
+    color: #4a5568;
+    font-weight: 500;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-link:hover {
+    transform: scale(1.1);
+  }
+  
+  .social-link.facebook {
+    background: #1877f2;
+  }
+  
+  .social-link.linkedin {
+    background: #0A66C2;
+  }
+  
+  .social-link.youtube {
+    background: #FF0000;
+  }
+  
+  .social-link i {
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .social-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .contact-section {
+      padding: 2rem 1rem;
+    }
+  }

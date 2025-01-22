@@ -12,6 +12,7 @@ import { ProfessionelSanteComponent } from './professionel-sante/professionel-sa
 import { ContactComponent } from './contact/contact.component';
 import { ProfilGrandeEntrepriseComponent } from './profil-grande-entreprise/profil-grande-entreprise.component';
 import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilier/profil-promoteur-immobilier.component';
+import { TarifComponent } from './tarif/tarif.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
     loadChildren: () => import('./module-accueil/module-accueil.module').then(m => m.ModuleAccueilModule) 
   },
   { path: 'about', component: AboutComponent },
+  { path: 'tarif', component: TarifComponent },
   { path: 'absl', component: AbslComponent },
   { path: 'profil-independant', component: ProfilIndependantComponent },
   { path: 'societe-management-patrimoniale', component: ProfilSocieteManagementPatrimonialeComponent },
@@ -33,6 +35,10 @@ const routes: Routes = [
   {
     path: 'services',
     loadChildren: () => import('./ServiceModules/services.module').then(m => m.ServicesModule)
+  },
+  {
+    path: 'vente',
+    loadChildren: () => import('./venteModule/vente/vente.module').then(m => m.VenteModule)
   }
 ];
 
