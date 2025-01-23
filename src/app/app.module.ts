@@ -24,7 +24,6 @@ import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilie
 import { TestScrollComponent } from './test-scroll/test-scroll.component';
 import { ShardeModuleModule } from './sharde-module/sharde-module.module';
 import { TarifComponent } from './tarif/tarif.component';
-import { GuerrePrixComponent } from './venteModule/guerre-prix/guerre-prix.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +48,6 @@ import { GuerrePrixComponent } from './venteModule/guerre-prix/guerre-prix.compo
     ProfilPromoteurImmobilierComponent,
     TestScrollComponent,
     TarifComponent,
-    GuerrePrixComponent,
   ],
   imports: [
     BrowserModule,

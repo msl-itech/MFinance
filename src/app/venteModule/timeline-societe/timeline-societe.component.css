@@ -81,6 +81,10 @@
     max-width: 600px;
   }
   
+  .service-item:hover .service-text p {
+    color: black !important;
+  }
+
   .expand-btn {
     width: 48px;
     height: 48px;
