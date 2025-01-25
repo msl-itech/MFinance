@@ -8,11 +8,12 @@ import { PromoSocieteComponent } from '../promo-societe/promo-societe.component'
 import { TimelineGuerrePrixComponent } from '../timeline-guerre-prix/timeline-guerre-prix.component';
 import { GuerrePrixComponent } from '../guerre-prix/guerre-prix.component';
 import { SalarieIndependantComponent } from '../salarie-independant/salarie-independant.component';
+import { CompteCourantAdministrateurComponent } from '../compte-courant-administrateur/compte-courant-administrateur.component';
 
 
 
 @NgModule({
-  declarations: [PassageSocieteComponent,TimelineSocieteComponent,PromoSocieteComponent,TimelineGuerrePrixComponent,GuerrePrixComponent,SalarieIndependantComponent],
+  declarations: [PassageSocieteComponent,TimelineSocieteComponent,PromoSocieteComponent,TimelineGuerrePrixComponent,GuerrePrixComponent,SalarieIndependantComponent,CompteCourantAdministrateurComponent],
   imports: [
     CommonModule,
     ShardeModuleModule,

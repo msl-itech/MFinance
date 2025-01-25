@@ -1,3 +1,4 @@
+
 .header {
     background: url('../../../assets/img/vente/banner-img-1.webp') no-repeat center center/cover;
     min-height: 500px;
@@ -581,4 +582,7 @@
 
   button.cta-button {
     border: none;
+}
+.home2-about,.service-faq{
+    background-color: #25335B;
 }
