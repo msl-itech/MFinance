@@ -51,24 +51,7 @@
   .video-side {
     position: relative;
   }
-  
-  .video-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 59, 48, 0.1);
-    color: #ff3b30;
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    
-    i {
-      font-size: 1.2rem;
-    }
-  }
-  
+
   .video-container {
     position: relative;
     border-radius: 20px;
@@ -176,34 +159,18 @@
     color: #2d3748;
     line-height: 1.7;
   }
-  
-  .strategy-block {
-    background: rgba(34, 197, 94, 0.1);
-    padding: 1.5rem;
-    border-radius: 12px;
-    
-    .subtitle {
-      color: #16a34a;
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    
-    p {
-      color: #2d3748;
-    }
+  .title {
+    font-size: 2.5rem;
+    color: #1a2c51;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
   }
   
-  .maximization-block {
-    background: #f8fafc;
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-  }
-  
-  .warning {
-    margin-top: 1rem;
-    color: #ff3b30;
+  .subtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
   
   .cta-button {
@@ -231,63 +198,6 @@
         transform: translateX(5px);
       }
     }
-  }
-  
-
-  .features-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .feature-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .feature-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  }
-  
-  .icon-wrapper {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    background: #ff3b30;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .icon-wrapper i {
-    color: white;
-    font-size: 24px;
-  }
-  
-  .feature-content {
-    flex-grow: 1;
-  }
-  
-  .feature-content h3 {
-    color: #1a2c51;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .feature-content p {
-    color: #4b5563;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0;
   }
   
   business-section {
@@ -321,7 +231,6 @@
   .content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
   }
   
   .content p {
@@ -431,159 +340,16 @@
       }
     }
   }
-
-
-
-  .steps-section {
-    padding: 5rem 2rem;
-    background: #f8fafc;
-  }
-  
-  .section-header {
-    max-width: 800px;
-    margin: 0 auto 4rem;
-    text-align: center;
-  }
-  
-  .tag {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 59, 48, 0.1);
-    color: #ff3b30;
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-  }
-  
-  .title {
-    font-size: 2.5rem;
-    color: #1a2c51;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-  
-  .subtitle {
-    color: #64748b;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  
-  .steps-timeline {
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-  }
-  
-  .step-card {
-    display: flex;
-    position: relative;
-    padding: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .step-number {
-    width: 40px;
-    height: 40px;
-    background: #ff3b30;
+  .background{
+    background-color: #00204A;
+    min-height: 500px;
     color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2;
+  }
+  .background h1,.background p{
+    color: white;
   }
   
-  .progress-line {
-    position: absolute;
-    left: 20px;
-    top: 60px;
-    bottom: -30px;
-    width: 2px;
-    background: #e2e8f0;
-    z-index: 1;
+  
+  .service-faq{
+    background-color: #00204A;
   }
-  
-  .step-content {
-    margin-left: 2rem;
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    flex-grow: 1;
-  }
-  
-  .step-icon {
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 59, 48, 0.1);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  
-  .step-icon i {
-    color: #ff3b30;
-    font-size: 1.5rem;
-  }
-  
-  .step-content h3 {
-    color: #1a2c51;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  
-  .step-content p {
-    color: #4b5563;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-  
-  .step-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #ff3b30;
-    font-weight: 500;
-    text-decoration: none;
-    transition: gap 0.3s ease;
-  }
-  
-  .step-link:hover {
-    gap: 0.75rem;
-  }
-  
-  @media (max-width: 768px) {
-    .section-header {
-      padding: 0 1rem;
-    }
-  
-    .title {
-      font-size: 2rem;
-    }
-  
-    .step-card {
-      padding: 1rem;
-    }
-  
-    .step-content {
-      padding: 1.5rem;
-      margin-left: 1.5rem;
-    }
-  }
-
-  button.cta-button {
-    border: none;
-}
-
-.home2-about,.service-faq {
-    background-color: #25335B;
-}

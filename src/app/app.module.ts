@@ -24,8 +24,8 @@ import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilie
 import { TestScrollComponent } from './test-scroll/test-scroll.component';
 import { ShardeModuleModule } from './sharde-module/sharde-module.module';
 import { TarifComponent } from './tarif/tarif.component';
-import { CompteCourantAdministrateurComponent } from './venteModule/compte-courant-administrateur/compte-courant-administrateur.component';
 import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
+import { StockTresorerieComponent } from './TresorerieModule/stock-tresorerie/stock-tresorerie.component';
 
 @NgModule({
   declarations: [
