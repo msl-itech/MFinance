@@ -26,6 +26,8 @@ import { ShardeModuleModule } from './sharde-module/sharde-module.module';
 import { TarifComponent } from './tarif/tarif.component';
 import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
 import { StockTresorerieComponent } from './TresorerieModule/stock-tresorerie/stock-tresorerie.component';
+import { AlerteTresorerieComponent } from './TresorerieModule/alerte-tresorerie/alerte-tresorerie.component';
+import { ProtegerTresorerieComponent } from './TresorerieModule/proteger-tresorerie/proteger-tresorerie.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { StockTresorerieComponent } from './TresorerieModule/stock-tresorerie/st
     TestScrollComponent,
     TarifComponent,
     EconomieAnalysieComponent,
+    AlerteTresorerieComponent,
+    ProtegerTresorerieComponent,
   ],
   imports: [
     BrowserModule,
