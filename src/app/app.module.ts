@@ -33,6 +33,7 @@ import { BlockSurveillanceComponent } from './TresorerieModule/block-surveillanc
 import { AnticiperTresorerieComponent } from './TresorerieModule/anticiper-tresorerie/anticiper-tresorerie.component';
 import { BlockNegligerTresorerieComponent } from './TresorerieModule/block-negliger-tresorerie/block-negliger-tresorerie.component';
 import { AccompagnementComponent } from './TresorerieModule/accompagnement/accompagnement.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { AccompagnementComponent } from './TresorerieModule/accompagnement/accom
     EconomieAnalysieComponent,
     AlerteTresorerieComponent,
     AccompagnementComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
