@@ -108,7 +108,7 @@ a {
   }
 
   .about-choose{
-    background-color: #25335b
+    background-color: #25335b;
 }
 
 
@@ -262,7 +262,7 @@ a {
 }
 .offer-section {
     width: 100%;
-    background: #25335b;
+    background: #25335b;;
     padding: 4rem 2rem;
   }
   .offer-section2 {
@@ -477,7 +477,7 @@ a {
   }
 
   .bg-custom--primary {
-    background-color: #25335b
+    background-color: #25335b;
   }
 
   .btn-red{

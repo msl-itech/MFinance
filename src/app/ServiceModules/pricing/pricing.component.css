@@ -1,4 +1,4 @@
-.text-navy { color: #25335b }
+.text-navy { color: #25335b; }
 .pricing-card {
     transition: transform 0.3s ease;
     border-radius: 1rem;
@@ -7,7 +7,7 @@
     transform: translateY(-10px);
 }
 .popular {
-    border: 2px solid #25335b
+    border: 2px solid #25335b;
 }
 .popular-badge {
     background: #ff3e3e;
@@ -37,7 +37,7 @@
     color: #F34947;
 }
 .about-choose{
-    background-color: #25335b
+    background-color: #25335b;
 }
 
 .text-red {

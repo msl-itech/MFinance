@@ -1,5 +1,5 @@
 .service-faq{
-    background-color: #25335b
+    background-color: #25335b;
   }
   .practical-section {
     background-color: #f8f9fa;
@@ -51,7 +51,7 @@
 
 /* .mutualisation-section {
   padding: 6rem 0;
-  background: #25335b
+  background: #25335b;
   position: relative;
   overflow: hidden;
 } */
@@ -295,7 +295,7 @@
 /*  */
 .case-study-section {
   padding: 6rem 0;
-  background-color: #25335b
+  background-color: #25335b;
 }
 
 .timeline-wrapper {
