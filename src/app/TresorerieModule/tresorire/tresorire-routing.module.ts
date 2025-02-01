@@ -6,6 +6,7 @@ import { StockTresorerieComponent } from '../stock-tresorerie/stock-tresorerie.c
 import { AlerteTresorerieComponent } from '../alerte-tresorerie/alerte-tresorerie.component';
 import { ProtegerTresorerieComponent } from '../proteger-tresorerie/proteger-tresorerie.component';
 import { AnticiperTresorerieComponent } from '../anticiper-tresorerie/anticiper-tresorerie.component';
+import { AccompagnementComponent } from '../accompagnement/accompagnement.component';
 
 const routes: Routes = [
   { path: 'tresorerie-benefice', component: TresorerieBeneficeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'alerte-tresorerie', component: AlerteTresorerieComponent },
   { path: 'proteger-sa-tresorerie', component: ProtegerTresorerieComponent },
   { path: 'anticiper-sa-tresorerie', component: AnticiperTresorerieComponent },
+  { path: 'accompagnement', component: AccompagnementComponent },
 ];
 
 @NgModule({
