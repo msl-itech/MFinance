@@ -29,6 +29,7 @@ import { AlerteTresorerieComponent } from './TresorerieModule/alerte-tresorerie/
 import { AccompagnementComponent } from './TresorerieModule/accompagnement/accompagnement.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormCodePromoComponent } from './form-code-promo/form-code-promo.component';
+import { PromoBannerComponent } from './promo-banner/promo-banner.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { FormCodePromoComponent } from './form-code-promo/form-code-promo.compon
     AlerteTresorerieComponent,
     AccompagnementComponent,
     FooterComponent,
+    PromoBannerComponent,
   ],
   imports: [
     BrowserModule,
