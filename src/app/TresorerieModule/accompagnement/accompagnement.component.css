@@ -83,7 +83,7 @@
 
 
 .hero {
-    background-color: #1e40af;
+    background-color: #1a2c51;
     color: #ffffff;
     padding: 80px 0;
 }
@@ -136,52 +136,64 @@
 }
 
 /* Défis Grid */
-.defis-grid {
+.defis-section {
+    /* padding: 0rem 0; */
+    overflow: hidden;
+    perspective: 1000px;
+  }
+
+  .defis-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-}
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
 
-.defi-card {
+  .defi-card {
     background: #ffffff;
     border-radius: 12px;
     padding: 2rem;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     border: 1px solid #e5e7eb;
     height: 100%;
-}
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
 
-.defi-card:hover {
-    transform: translateY(-5px);
+  .defi-card:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+  }
 
-.defi-icon {
+  .defi-icon {
     width: 50px;
     height: 50px;
-    background: 1e40af;
+    background: #1a2c51;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-}
+  }
 
-.defi-icon i {
+  .defi-icon i {
     color: #dc2626;
     font-size: 1.5rem;
-}
+  }
 
-.defi-title {
+  .defi-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: 1e40af;
+    color: #1a2c51;
     margin-bottom: 1rem;
     position: relative;
     padding-bottom: 1rem;
-}
+  }
 
-.defi-title::after {
+  .defi-title::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -189,7 +201,7 @@
     width: 50px;
     height: 3px;
     background: #dc2626;
-}
+  }
 
 /* Étapes */
 .steps {
@@ -259,7 +271,7 @@
 
 /* CTA */
 .cta {
-    background: #1e40af;
+    background: #1a2c51;
     color: #ffffff;
     text-align: center;
 }
@@ -332,4 +344,17 @@
 .background{
     background-color: #00204A;
     min-height: 500px;
+  }
+
+  .title {
+    font-size: 2.4rem;
+    color: #1a2c51;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+   
+  .highlight {
+    color: #ff3b30;
   }

@@ -9,6 +9,7 @@ import { TimelineGuerrePrixComponent } from '../timeline-guerre-prix/timeline-gu
 import { GuerrePrixComponent } from '../guerre-prix/guerre-prix.component';
 import { SalarieIndependantComponent } from '../salarie-independant/salarie-independant.component';
 import { CompteCourantAdministrateurComponent } from '../compte-courant-administrateur/compte-courant-administrateur.component';
+import { TimelineStockComponent } from '../timeline-stock/timeline-stock.component';
 
 
 

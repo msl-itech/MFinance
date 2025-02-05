@@ -25,15 +25,10 @@ import { TestScrollComponent } from './test-scroll/test-scroll.component';
 import { ShardeModuleModule } from './sharde-module/sharde-module.module';
 import { TarifComponent } from './tarif/tarif.component';
 import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
-import { StockTresorerieComponent } from './TresorerieModule/stock-tresorerie/stock-tresorerie.component';
 import { AlerteTresorerieComponent } from './TresorerieModule/alerte-tresorerie/alerte-tresorerie.component';
-import { ProtegerTresorerieComponent } from './TresorerieModule/proteger-tresorerie/proteger-tresorerie.component';
-import { BlockFidelisationComponent } from './TresorerieModule/block-fidelisation/block-fidelisation.component';
-import { BlockSurveillanceComponent } from './TresorerieModule/block-surveillance/block-surveillance.component';
-import { AnticiperTresorerieComponent } from './TresorerieModule/anticiper-tresorerie/anticiper-tresorerie.component';
-import { BlockNegligerTresorerieComponent } from './TresorerieModule/block-negliger-tresorerie/block-negliger-tresorerie.component';
 import { AccompagnementComponent } from './TresorerieModule/accompagnement/accompagnement.component';
 import { FooterComponent } from './footer/footer.component';
+import { FormCodePromoComponent } from './form-code-promo/form-code-promo.component';
 
 @NgModule({
   declarations: [

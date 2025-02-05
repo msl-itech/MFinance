@@ -20,6 +20,10 @@ h1,p,li{
   font-style: italic;
 }
 
+.text-white{
+  font-style: italic;
+}
+
 .text-dark {
   color: #fff; /* Noir */
   font-style: italic;

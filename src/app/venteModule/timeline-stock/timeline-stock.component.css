@@ -1,0 +1,173 @@
+.services-section {
+    padding: 80px 0;
+    background: #25335b;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .subtitle {
+    color: #ff4444;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 16px;
+  }
+  
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin: 0;
+  }
+  
+  .services-list {
+    position: relative;
+  }
+  
+  .service-item {
+    position: relative;
+    padding: 40px;
+    border-bottom: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .service-item:hover {
+    background: #f1f5f9;
+  }
+  
+  .service-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+  }
+  
+  .service-number {
+    font-size: 20px;
+    color: #b89494;
+    font-weight: 500;
+    width: 40px;
+  }
+  
+  .service-text {
+    flex: 1;
+  }
+  
+  .service-text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 8px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .service-text ul {
+    color: white;
+  }
+
+  .service-text p {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+    max-width: 600px;
+  }
+  
+  .service-item:hover .service-text p, .service-item:hover .service-text ul {
+    color: black !important;
+  }
+
+  .expand-btn {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #1a2c51;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+  
+  .hover-image {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%) scale(0.8) rotate(-10deg); /* Inclinaison ajoutée */
+    opacity: 0;
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    pointer-events: none;
+    border: 2px solid white; /* Bordure blanche ajoutée */
+}
+
+  
+  .hover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Hover Effects */
+  .service-item:hover .hover-image {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  
+  .service-item:hover .service-text h3 {
+    color: #ff4444;
+  }
+  
+  .service-item:hover .expand-btn {
+    background: #ff4444;
+    color: white;
+    border-color: #ff4444;
+    transform: rotate(45deg);
+  }
+  
+  @media (max-width: 768px) {
+    .section-header h2 {
+      font-size: 32px;
+    }
+  
+    .service-content {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+  
+    .service-number {
+      width: auto;
+    }
+  
+    .hover-image {
+      display: none;
+    }
+  
+    .service-item {
+      padding: 30px 20px;
+    }
+  }
+
+  .success-story {
+    border-left: 4px solid #ff4444;
+    color: white;
+}

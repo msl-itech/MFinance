@@ -189,7 +189,26 @@
   z-index: 10; 
 }
 
+.works-img2 {
+  position: sticky;
+  top: 2rem; /* Ajustez cette valeur selon votre header */
+  height: fit-content;
+  padding: 1rem;
+}
 
+/* Assurer que le conteneur parent a une hauteur suffisante pour le défilement */
+.works2 {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Style pour l'image */
+.works-img2 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optionnel: pour des coins arrondis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optionnel: pour ajouter une ombre */
+}
 
 </style>
 <header class="header">
@@ -266,7 +285,7 @@
   </div>
 </section>
 <section class="bg-custom--primary">
-  <div class="works sec-padding">
+  <div class="works2 sec-padding">
     <div class="container">
       <div class="row align-items-start">
         <!-- Contenu principal -->
@@ -364,11 +383,21 @@
         </div>
 
         <!-- Image sticky -->
-        <div class="col-md-12 col-lg-6">
-          <div class="works-img">
-            <img src="../../assets/img/webp/5.webp" alt="Image illustrative" class="img-fluid">
+        <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
+          <div class="works-img-gallery space-sm-50 img-border">
+              <div class="row g-3">
+                  <div class="col-12 mb-3">
+                      <img src="../../assets/img/webp/5.webp" alt="Image illustrative" class="img-fluid w-100 main-image">
+                  </div>
+                  <div class="col-12">
+                      <img src="../../assets/img/webp/grande_entreprise.webp" alt="Image illustrative" class="img-fluid w-100 secondary-image">
+                  </div>
+                  <div class="col-12">
+                      <img src="../../assets/img/webp/16.webp" alt="Image illustrative" class="img-fluid w-100 secondary-image">
+                  </div>
+              </div>
           </div>
-        </div>
+      </div>
       </div>
     </div>
   </div>
