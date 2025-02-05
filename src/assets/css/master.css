@@ -495,6 +495,7 @@ ul.theme-mega-menu li.mega-menu {
 }
 
 .main-menu-ex li ul li ul {
+  background: #bf1f1f;
   left:100% !important;
   right: 100%;
   top: 10% !important;     
@@ -849,7 +850,7 @@ ul.theme-mega-menu li.mega-menu {
   height: 80%;
   top: 19px;
   left: 0;
-  background-color: #00204A;
+  background-color: #25335b;
   z-index: -1;
   border-radius: 4px;
 }
@@ -1229,7 +1230,7 @@ ul.theme-mega-menu li.mega-menu {
   height: 100%;
  
   left: 0;
-  background-color: #00204A;
+  background-color: #25335b;
   z-index: -1;
   border-radius: 4px;
 }
@@ -1471,7 +1472,7 @@ ul.theme-mega-menu li.mega-menu {
 
 }
 .work-item:hover .work-icon {
-  background-color: #25335B;
+  background-color: #25335b;;
 }
 .work-item::after {
   content: "";

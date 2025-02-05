@@ -6,16 +6,17 @@ import { TresorerieBeneficeComponent } from '../tresorerie-benefice/tresorerie-b
 import { TimelineTresorieComponent } from '../timeline-tresorie/timeline-tresorie.component';
 import { ShardeModuleModule } from "../../sharde-module/sharde-module.module";
 import { InvestirTresorerieComponent } from '../investir-tresorerie/investir-tresorerie.component';
-import { StockTresorerieComponent } from '../stock-tresorerie/stock-tresorerie.component';
+import { StockTresorerieComponent } from '../../venteModule/stock-tresorerie/stock-tresorerie.component';
 import { ProtegerTresorerieComponent } from '../proteger-tresorerie/proteger-tresorerie.component';
 import { BlockFidelisationComponent } from '../block-fidelisation/block-fidelisation.component';
 import { BlockSurveillanceComponent } from '../block-surveillance/block-surveillance.component';
 import { BlockNegligerTresorerieComponent } from '../block-negliger-tresorerie/block-negliger-tresorerie.component';
 import { AnticiperTresorerieComponent } from '../anticiper-tresorerie/anticiper-tresorerie.component';
+import { TimelineStockComponent } from '../../venteModule/timeline-stock/timeline-stock.component';
 
 
 @NgModule({
-  declarations: [TresorerieBeneficeComponent,TimelineTresorieComponent,InvestirTresorerieComponent,StockTresorerieComponent,ProtegerTresorerieComponent,BlockFidelisationComponent,BlockSurveillanceComponent,BlockNegligerTresorerieComponent,AnticiperTresorerieComponent],
+  declarations: [TresorerieBeneficeComponent,TimelineTresorieComponent,InvestirTresorerieComponent,StockTresorerieComponent,ProtegerTresorerieComponent,BlockFidelisationComponent,BlockSurveillanceComponent,BlockNegligerTresorerieComponent,AnticiperTresorerieComponent,TimelineStockComponent],
   imports: [
     CommonModule,
     TresorireRoutingModule,

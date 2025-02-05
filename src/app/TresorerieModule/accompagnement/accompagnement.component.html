@@ -25,7 +25,7 @@
   
       <!-- Text Side -->
       <div class="text-side">
-        <h2 class="title"> LE HÉROS DE L’ENTREPRISE </h2>
+        <h2 class="title"> LE HÉROS DE <span class="highlight">L’ENTREPRISE </span></h2>
         
         <div class="content-text">
           <p class="intro">
@@ -80,55 +80,20 @@
         <h2 class="section-title text-white">
             Identifiez-vous à ces défis courants ?
         </h2>
-        <div class="defis-grid">
-            <div class="defi-card">
+        <div class="defis-section" #container>
+            <div class="defis-grid">
+              <div class="defi-card" 
+                   *ngFor="let defi of defis" 
+                   [attr.data-speed]="defi.speed"
+                   [ngStyle]="getCardStyle(defi)">
                 <div class="defi-icon">
-                    <i class="fas fa-coins"></i>
+                  <i class="fas {{defi.icon}}"></i>
                 </div>
-                <h3 class="defi-title">Manque de liquidités</h3>
-                <p>Vous constatez des difficultés à maintenir une trésorerie suffisante pour couvrir vos besoins opérationnels.</p>
+                <h3 class="defi-title">{{defi.title}}</h3>
+                <p>{{defi.description}}</p>
+              </div>
             </div>
-
-            <div class="defi-card">
-                <div class="defi-icon">
-                    <i class="fas fa-money-bill-wave"></i>
-                </div>
-                <h3 class="defi-title">Financement complexe</h3>
-                <p>Vous avez du mal à choisir les meilleures options de financement pour soutenir votre croissance.</p>
-            </div>
-
-            <div class="defi-card">
-                <div class="defi-icon">
-                    <i class="fas fa-boxes"></i>
-                </div>
-                <h3 class="defi-title">Gestion de stock inefficace</h3>
-                <p>Votre stock immobilise une partie importante de vos ressources, impactant vos flux de trésorerie.</p>
-            </div>
-
-            <div class="defi-card">
-                <div class="defi-icon">
-                    <i class="fas fa-chess"></i>
-                </div>
-                <h3 class="defi-title">Concurrence agressive</h3>
-                <p>L'environnement concurrentiel exige une rapidité de réaction, mais vos ressources limitées freinent votre croissance.</p>
-            </div>
-
-            <div class="defi-card">
-                <div class="defi-icon">
-                    <i class="fas fa-bullseye"></i>
-                </div>
-                <h3 class="defi-title">Stratégie commerciale inefficace</h3>
-                <p>Vous souhaitez développer une approche qui fidélise vos clients actuels et en attire de nouveaux.</p>
-            </div>
-
-            <div class="defi-card">
-                <div class="defi-icon">
-                    <i class="fas fa-chart-bar"></i>
-                </div>
-                <h3 class="defi-title">Difficulté à planifier</h3>
-                <p>Vous peinez à mettre en place un tableau de trésorerie dynamique et flexible.</p>
-            </div>
-        </div>
+          </div>
     </div>
 </section>
 
@@ -180,4 +145,4 @@
         </div>
     </div>
 </section>
-<app-zone-contact></app-zone-contact>
+<app-form-code-promo></app-form-code-promo>

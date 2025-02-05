@@ -1,4 +1,4 @@
-.text-navy { color: #00204A; }
+.text-navy { color: #25335b; }
 .pricing-card {
     transition: transform 0.3s ease;
     border-radius: 1rem;
@@ -7,7 +7,7 @@
     transform: translateY(-10px);
 }
 .popular {
-    border: 2px solid #00204A;
+    border: 2px solid #25335b;
 }
 .popular-badge {
     background: #ff3e3e;
@@ -37,10 +37,63 @@
     color: #F34947;
 }
 .about-choose{
-    background-color: #00204A;
+    background-color: #25335b;
 }
 
 .text-red {
     color: #F34947; /* Rouge vif */
     font-style: italic;
+  }
+
+  .booking-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+  
+  .booking-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #dc3545;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .booking-button:hover {
+    background-color: #bb2d3b;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .booking-button i {
+    font-size: 1.25rem;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .booking-button {
+      padding: 0.875rem 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .booking-button i {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .booking-button {
+      flex-direction: column;
+      text-align: center;
+      padding: 1rem;
+    }
   }

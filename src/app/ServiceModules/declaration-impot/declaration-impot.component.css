@@ -16,7 +16,7 @@
 }
 
 .home2-about{
-    background-color: #25335B;
+    background-color: #25335b;;
 }
 
 a {
@@ -39,7 +39,7 @@ a {
   }
 
   .about-choose{
-    background-color: #00204A;
+    background-color: #25335b;;
 }
 
 
@@ -49,8 +49,8 @@ a {
     padding: 2px;
 }
 
-.text-navy { color: #25335B; }
-.bg-navy { background-color: #25335B; }
+.text-navy { color: #25335b;; }
+.bg-navy { background-color: #25335b;; }
 
 .py-6 {
     padding-top: 5rem;
@@ -91,7 +91,7 @@ a {
 }
 
 .shape-2 {
-    background: #25335B;
+    background: #25335b;;
     bottom: -150px;
     left: -150px;
 }

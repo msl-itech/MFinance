@@ -1,5 +1,5 @@
 .home2-about{
-    background-color: #25335B;
+    background-color: #25335b;;
 }
 a {
   text-decoration: none;
@@ -17,6 +17,10 @@ h1,p,li{
 
 .text-red {
   color: #F34947; /* Rouge vif */
+  font-style: italic;
+}
+
+.text-white{
   font-style: italic;
 }
 
