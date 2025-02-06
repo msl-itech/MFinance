@@ -14,37 +14,69 @@
       </div>
 
       <!-- Formulaire à droite -->
-      <div class="col-md-4 ml-auto">
-        <div class="contact-form p-6">
+      <div class="col-md-4 ml-auto mt-5">
+        <div class="contact-form p-4">
           <h2>Formulaire de contact</h2>
-          <p class=" mb-4">Remplissez le formulaire de contact, et notre expert-comptable vous répondra dans les plus brefs délais, par e-mail ou par téléphone.</p>
+          <p class="mb-4">Remplissez le formulaire, et notre expert-comptable vous répondra rapidement.</p>
           <form>
-            <div class="form-row">
-              <div class="row mb-4">
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control" placeholder="Nom & Prénom">
-                </div>
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control" placeholder="Téléphone">
-                </div>
-              </div>
-
-              <div class="row mb-4">
+              <!-- Première ligne -->
+              <div class="form-row">
                   <div class="form-group col-md-6">
-                    <input type="email" class="form-control" placeholder="Email">
+                      <input type="text" class="form-control" placeholder="Nom & Prénom" required>
                   </div>
                   <div class="form-group col-md-6">
-                    <input type="text" class="form-control" placeholder="Secteur d'activité">
+                      <input type="text" class="form-control" placeholder="Téléphone" required>
                   </div>
               </div>
-            </div>
-
-            <div class="form-group mb-4">
-              <textarea class="form-control" rows="3" placeholder="Votre message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary-custom">Envoyer</button>
+      
+              <!-- Deuxième ligne -->
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <input type="email" class="form-control" placeholder="Email" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <input type="text" class="form-control" placeholder="Secteur d'activité" required>
+                  </div>
+              </div>
+      
+              <!-- Troisième ligne -->
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <input type="text" class="form-control" placeholder="N° de TVA / BCE">
+                  </div>
+                  <div class="form-group col-md-6">
+                      <select class="form-control" name="service_needed" required>
+                          <option value="">-- De quel service avez-vous besoin ? --</option>
+                          <option value="devenir_independant">Devenir indépendant</option>
+                          <option value="creation_societe">Création d'une société</option>
+                          <option value="passage_societe">Passage en société</option>
+                          <option value="changer_expert">Changer d'Expert-Comptable</option>
+                          <option value="declaration_impot">Déclaration impôt des personnes physiques</option>
+                          <option value="autres">Autres</option>
+                      </select>
+                  </div>
+              </div>
+      
+              <!-- Quatrième ligne (Meilleur moment en pleine largeur) -->
+              <div class="form-group2 mb-3">
+                  <select class="form-control" name="best_time" required>
+                      <option value="">-- Meilleur moment pour être contacté --</option>
+                      <option value="8h-11h">8h-11h</option>
+                      <option value="11h-15h">11h-15h</option>
+                      <option value="15h-19h">15h-19h</option>
+                      <option value="no_preference">Pas de préférence</option>
+                  </select>
+              </div>
+      
+              <!-- Cinquième ligne (Description en pleine largeur) -->
+              <div class="form-group2 mb-3">
+                  <textarea class="form-control" rows="4" placeholder="Décrivez votre besoin en détail"></textarea>
+              </div>
+      
+              <button type="submit" class="btn btn-primary-custom">Envoyer</button>
           </form>
-        </div>
+      </div>
+      
       </div>
     </div>
   </div>
