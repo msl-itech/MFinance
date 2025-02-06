@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './passage-societe.component.css'
 })
 export class PassageSocieteComponent {
-
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

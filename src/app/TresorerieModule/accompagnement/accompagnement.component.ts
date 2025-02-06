@@ -12,7 +12,12 @@ export class AccompagnementComponent {
   mouseY: number = 0;
   bounds: DOMRect | null = null;
   cardPositions: Map<number, { x: number, y: number, rotate: number }> = new Map();
-
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
   defis: any[] = [
     {
       icon: 'fa-coins',

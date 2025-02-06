@@ -34,6 +34,9 @@
     color: #333;
   }
   
+  .red{
+    color:#ff4b4b
+  }
   .btn-primary-custom {
     background-color: #ff4b4b;
     border: none;

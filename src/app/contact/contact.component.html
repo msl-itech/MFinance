@@ -58,45 +58,79 @@
 
         <!--=====contact-start=======--> 
 
-  <div class="contact ">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-6" data-aos="flip-right" data-aos-duration="800">
-              <div class="contact-img img-border"><img src="../../assets/img/webp/44.webp" alt=""></div>
-            </div>
-            <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="1000">
-              <div class="home2-hadding home2-hadding-p home2-padding-after hadding-span">
-                <span class="text-red">
-                  CONTACTEZ NOUS
-                </span>
-                <h1>Prêt à optimiser vos <br> <span  style="background-color: red; border-radius: 8px; color: white;">finances ?</span> <br> </h1>
-                <p>Remplissez le formulaire de contact et notre expert-comptable vous répondra dans les plus brefs délais, par e-mail ou par téléphone.</p>
+        <div class="contact">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-md-6" data-aos="flip-right" data-aos-duration="800">
+                      <div class="contact-img img-border"><img src="../../assets/img/webp/44.webp" alt=""></div>
+                  </div>
+                  <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="1000">
+                      <div class="home2-hadding home2-hadding-p home2-padding-after hadding-span">
+                          <span class="text-red">CONTACTEZ-NOUS</span>
+                          <h1>Prêt à optimiser vos <br> 
+                              <span style="background-color: red; border-radius: 8px; color: white;">finances ?</span>
+                          </h1>
+                          <p>Remplissez le formulaire de contact et notre expert-comptable vous répondra dans les plus brefs délais, par e-mail ou par téléphone.</p>
+                      </div>
+                      <div class="space30"></div>
+      
+                      <form action="#">
+                          <div class="contact-form">
+                              <!-- Nom & Email -->
+                              <div class="contact-from-input">
+                                  <input type="text" name="name" placeholder="Nom & Prénom" required>
+                                  <input type="email" name="email" placeholder="Email" required>
+                              </div>
+      
+                              <!-- Téléphone & Meilleur moment pour être contacté -->
+                              <div class="contact-from-input">
+                                  <input type="number" name="phone" placeholder="Téléphone" required>
+                                  <select name="best_time" required>
+                                      <option value="">📅 Meilleur moment pour être contacté</option>
+                                      <option value="8h-11h">8h-11h</option>
+                                      <option value="11h-15h">11h-15h</option>
+                                      <option value="15h-19h">15h-19h</option>
+                                      <option value="no_preference">Pas de préférence</option>
+                                  </select>
+                              </div>
+      
+                              <!-- Secteur d'activité & N° TVA / BCE -->
+                              <div class="contact-from-input">
+                                  <input type="text" name="sector" placeholder="Secteur d'activité" required>
+                                  <input type="text" name="tva_bce" placeholder="N° de TVA / BCE">
+                              </div>
+      
+                              <!-- Liste déroulante pour le service demandé -->
+                              <div class="contact-from-input">
+                                  <select name="service_needed" required>
+                                      <option value="">📋 De quel service avez-vous besoin ?</option>
+                                      <option value="devenir_independant">Devenir indépendant</option>
+                                      <option value="creation_societe">Création d'une société</option>
+                                      <option value="passage_societe">Passage en société</option>
+                                      <option value="changer_expert">Changer d'Expert-Comptable</option>
+                                      <option value="declaration_impot">Déclaration impôt des personnes physiques</option>
+                                      <option value="autres">Autres</option>
+                                  </select>
+                              </div>
+      
+                              <!-- Zone de texte pour description -->
+                              <div class="contact-from-input">
+                                  <textarea name="description" cols="30" rows="4" placeholder="Décrivez votre besoin en détail"></textarea>
+                              </div>
+      
+                              <div class="space20"></div>
+                              <div class="home2-btn">
+                                  <button type="submit">Envoyer</button>
+                              </div>
+                          </div>
+                      </form>
+      
+                  </div>
               </div>
-              <div class="space30"></div>
-              <form action="#">
-                <div class="contact-form">
-                  <div class="contact-from-input">
-                    <input type="text" name="name" placeholder="Nom & Prenom">
-                    <input type="text" name="email" placeholder="Email">
-                  </div>
-                  <div class="contact-from-input">
-                    <input type="number" name="phone" placeholder="Telephone">
-                    <input type="text" placeholder="Secteur d'activite">
-                  </div>
-                  <div class="contact-from-input">
-                    <textarea cols="30" rows="4" placeholder="De quel service avez vous besoin?"></textarea>
-                  </div> 
-                  <div class="space20"></div>
-                  <div class="home2-btn">
-                    <button>Envoyer</button>
-                  </div>
-                </div>
-              </form>
-            </div>
           </div>
-        </div>
       </div>
-    
+      
+      
       <!--=====contact-end=======-->
 
 

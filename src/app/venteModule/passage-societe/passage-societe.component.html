@@ -43,7 +43,7 @@
           Maximisez vos revenus et atteignez vos objectifs financiers grâce aux conseils fiscaux de votre expert-comptable. Ne laissez pas vos impôts freiner votre croissance : adoptez une approche intelligente pour booster votre succès.
         </p>
         
-        <a href="#" class="cta-button">
+        <a (click)="scrollToSection('targetSection')"  class="cta-button">
           Prenez rendez-vous
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -69,7 +69,7 @@
             il s'agit d'une véritable évolution stratégique pour tout entrepreneur. Chaque étape de ce processus n'est pas seulement un pas vers une nouvelle forme juridique, mais un bond en avant dans la gestion de vos responsabilités et de vos actifs. Ce tournant, à la fois délicat et prometteur, ouvre la porte à des opportunités expansives, tout en consolidant les bases sur lesquelles repose votre avenir professionnel. 
           </p>
   
-          <button class="cta-button">
+          <button (click)="scrollToSection('targetSection')" class="cta-button" style="cursor: pointer;">
             Lancer votre procédure
             <i class="fas fa-arrow-right"></i>
           </button>
@@ -256,4 +256,4 @@
     </div>
 </section>
 
-<app-form-code-promo></app-form-code-promo>
+<app-form-code-promo id="targetSection"></app-form-code-promo>

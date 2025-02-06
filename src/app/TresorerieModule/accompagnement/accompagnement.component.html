@@ -65,8 +65,9 @@
                Votre trésorerie est le cœur battant de votre entreprise. Une gestion inadéquate peut non seulement compromettre vos opérations quotidiennes, mais aussi limiter vos opportunités de croissance. Imaginez une situation où chaque euro est maximisé, où vous anticipez chaque dépense et où chaque rentrée d'argent est fluide et prévisible.
               </p>
               <div class="home2-btn" data-aos="zoom-in" data-aos-duration="1000">
-                <a routerLink="/contact">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
+                <a (click)="scrollToSection('targetSection')" style="cursor: pointer; color: white;">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
             </div>
           </div>
         </div>
@@ -124,7 +125,7 @@
     </div>
 </section>
 
-<section class="background section">
+<!-- <section class="background section">
     <div class="container">
         <div class="price-card">
             <h2 class="section-title">
@@ -144,5 +145,5 @@
             </a>
         </div>
     </div>
-</section>
-<app-form-code-promo></app-form-code-promo>
+</section> -->
+<app-form-code-promo  id="targetSection"></app-form-code-promo>
