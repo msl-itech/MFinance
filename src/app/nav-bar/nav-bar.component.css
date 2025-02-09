@@ -254,7 +254,7 @@ ul.mobile-nav-list {
   top: 10% !important;     
 }
 
-.main-menu-ex li ul li ul li a[routerLink="/tresorerie/accompagnement"] {
+.main-menu-ex li ul li ul li a[href="/tresorerie/accompagnement"] {
   background-color: #ff0000 !important; /* Fond rouge */
   color: white !important; /* Texte blanc */
   padding: 10px 15px;
@@ -263,7 +263,7 @@ ul.mobile-nav-list {
 }
 
 /* Style au survol */
-.main-menu-ex li ul li ul li a[routerLink="/tresorerie/accompagnement"]:hover {
+.main-menu-ex li ul li ul li a[href="/tresorerie/accompagnement"]:hover {
   background-color:  #25335b !important; /* Fond bleu au survol */
   color: white !important; /* Texte blanc */
 }

@@ -5,39 +5,39 @@
         <div class="col-12">
           <div class="header-elements">
             <div class="site-logo">
-              <a routerLink="/accueil" routerLinkActive="actived"><img src="../../assets/img/logo/logoMfinances.png" alt="Logo"></a>
+              <a href="/accueil" hrefActive="actived"><img src="../../assets/img/logo/logoMfinances.png" alt="Logo"></a>
             </div>
             <div class="main-menu-ex home2-menu">
               <ul>
-                <li><a routerLink="/about" routerLinkActive="actived">À propos</a></li>
+                <li><a href="/about" hrefActive="actived">À propos</a></li>
                 <li>
-                  <a routerLink="/services">Services <i class="fa-solid fa-angle-down"></i></a>
+                  <a href="/services">Services <i class="fa-solid fa-angle-down"></i></a>
                   <ul>
-                    <li><a routerLink="/services/comptabilite">Comptabilité</a></li>
-                    <li><a routerLink="/services/creation-entreprise">Création d'entreprise</a></li>
-                    <li><a routerLink="/services/fiscalite">Fiscalité</a></li>
-                    <li><a routerLink="/services/declaration-impot">Déclaration d'impot</a></li>
+                    <li><a href="/services/comptabilite">Comptabilité</a></li>
+                    <li><a href="/services/creation-entreprise">Création d'entreprise</a></li>
+                    <li><a href="/services/fiscalite">Fiscalité</a></li>
+                    <li><a href="/services/declaration-impot">Déclaration d'impot</a></li>
                   </ul>
                 </li>
-                <li><a routerLink="/tarif">Nos Tarifs</a></li>
+                <li><a href="/tarif">Nos Tarifs</a></li>
                 <li>
                   <a href="#">Boostez votre entreprise <i class="fa-solid fa-angle-down"></i></a>
                   <ul>
-                    <li><a routerLink="/vente/salarie-independant">Salarié et indépendants</a></li>
-                    <li><a routerLink="/vente/passage-en-societe">Passage en societe</a></li>
-                    <li><a routerLink="/vente/compte-courant">Compte Courant administrateur</a></li>
+                    <li><a href="/vente/salarie-independant">Salarié et indépendants</a></li>
+                    <li><a href="/vente/passage-en-societe">Passage en societe</a></li>
+                    <li><a href="/vente/compte-courant">Compte Courant administrateur</a></li>
                     <li>
-                      <a routerLink="/tresorerie/proteger-sa-tresorerie" style="display: flex; justify-content: space-between; align-items: center;">
+                      <a href="/tresorerie/proteger-sa-tresorerie" style="display: flex; justify-content: space-between; align-items: center;">
                         Trésorerie Transformez le Stress en Succès <i class="fa-solid fa-angle-right" style="margin-left: auto;"></i>
                       </a>
                       <ul style="right: 0; left: auto;">
-                        <li><a routerLink="/tresorerie/tresorerie-benefice">Trésorerie vs Bénéfices : L’essentiel</a></li>
-                        <li><a routerLink="/tresorerie/investir-tresorerie">Investir sans risquer sa trésorerie</a></li>
-                        <li><a routerLink="/tresorerie/optimiser-stock">Optimisez vos Stocks, Libérez vos Liquidités </a></li>
-                        <li><a routerLink="/tresorerie/alerte-tresorerie">Alerte trésorerie face à la concurrence ! </a></li>
-                        <li><a routerLink="/tresorerie/proteger-sa-tresorerie">Protégez Votre Trésorerie Grâce à la Fidélisation </a></li>
-                        <li><a routerLink="/tresorerie/anticiper-sa-tresorerie">Anticipez, Stabilisez Vos Finances </a></li>
-                        <li><a routerLink="/tresorerie/accompagnement">Service d'accompagnement </a></li>
+                        <li><a href="/tresorerie/tresorerie-benefice">Trésorerie vs Bénéfices : L’essentiel</a></li>
+                        <li><a href="/tresorerie/investir-tresorerie">Investir sans risquer sa trésorerie</a></li>
+                        <li><a href="/tresorerie/optimiser-stock">Optimisez vos Stocks, Libérez vos Liquidités </a></li>
+                        <li><a href="/tresorerie/alerte-tresorerie">Alerte trésorerie face à la concurrence ! </a></li>
+                        <li><a href="/tresorerie/proteger-sa-tresorerie">Protégez Votre Trésorerie Grâce à la Fidélisation </a></li>
+                        <li><a href="/tresorerie/anticiper-sa-tresorerie">Anticipez, Stabilisez Vos Finances </a></li>
+                        <li><a href="/tresorerie/accompagnement">Service d'accompagnement </a></li>
                       </ul>
                     </li>
                   </ul>
@@ -53,7 +53,7 @@
               </ul>
             </div>
             <div class="header-btn d-none d-lg-block">
-              <a routerLink="/contact" class="btn-red">Nos contacts <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="/contact" class="btn-red">Nos contacts <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -86,17 +86,17 @@
   </div>
   <div class="mobile-nav">
     <ul class="mobile-nav-list">
-      <li><a routerLink="/about" routerLinkActive="actived">À propos</a></li>
+      <li><a href="/about" hrefActive="actived">À propos</a></li>
       <li>
-        <a routerLink="/services">Services <i class="fa-solid fa-angle-down"></i></a>
+        <a href="/services">Services <i class="fa-solid fa-angle-down"></i></a>
         <ul class="sub-menu" [ngClass]="{'open': activeSubmenus['services']}">
-          <li><a routerLink="/services/comptabilite">Comptabilité</a></li>
-                    <li><a routerLink="/services/fiscalite">Fiscalité</a></li>
-                    <li><a routerLink="/services/creation-entreprise">Création d'entreprise</a></li>
-                    <li><a routerLink="/services/declaration-impot">Déclaration d'impot</a></li>
+          <li><a href="/services/comptabilite">Comptabilité</a></li>
+                    <li><a href="/services/fiscalite">Fiscalité</a></li>
+                    <li><a href="/services/creation-entreprise">Création d'entreprise</a></li>
+                    <li><a href="/services/declaration-impot">Déclaration d'impot</a></li>
         </ul>
       </li>
-      <li><a routerLink="/tarif">Nos Tarifs</a></li>
+      <li><a href="/tarif">Nos Tarifs</a></li>
       <li>
         <a href="#" (click)="toggleSubmenu('boost')">
           Boostez votre entreprise <i class="fas fa-angle-down"></i>
@@ -119,7 +119,7 @@
       <li><a href="about.html">Podcast</a></li>
     </ul>
     <div class="header-btn">
-      <a routerLink="/contact" class="btn-red">Nos contacts <i class="fas fa-arrow-right"></i></a>
+      <a href="/contact" class="btn-red">Nos contacts <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 </div>

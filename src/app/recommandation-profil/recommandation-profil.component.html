@@ -19,9 +19,10 @@
     >
       <img [src]="item.image" alt="image">
       <div class="card-content">
+
         <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
-        <a [routerLink]="item.route" class="learn-more">En savoir plus →</a>
+        <a [href]="item.route" class="learn-more">En savoir plus →</a>
       </div>
     </div>
   </div>
