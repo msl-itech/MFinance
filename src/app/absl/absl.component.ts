@@ -1,14 +1,15 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, OnInit } from '@angular/core';
 import { RecommandationProfilComponent } from "../recommandation-profil/recommandation-profil.component";
 import { Subscription } from 'rxjs';
 import { fromEvent, throttleTime } from 'rxjs';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-absl',
   templateUrl: './absl.component.html',
   styleUrl: './absl.component.css',
 })
-export class AbslComponent {
+export class AbslComponent implements OnInit {
 
   @ViewChild('serviceSection') serviceSection!: ElementRef;
   @ViewChild('serviceImage') serviceImage!: ElementRef;
@@ -18,6 +19,18 @@ export class AbslComponent {
   private sectionHeight: number = 0;
   private imageHeight: number = 0;
   private maxTranslateY: number = 0;
+
+  constructor(private meta: Meta, private titleService: Title) {}
+
+  ngOnInit() {
+    this.titleService.setTitle('ASBL - MFinances');
+    this.meta.addTags([
+      { name: 'description', content: 'Tout savoir sur les ASBL et comment MFinances peut vous aider.' },
+      { name: 'keywords', content: 'ASBL, MFinances, expert comptable' },
+      { name: 'author', content: 'MIKA MUSUNGAYI' }
+    ]);
+  }
+
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {

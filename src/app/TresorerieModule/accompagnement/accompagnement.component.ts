@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-accompagnement',
@@ -57,9 +58,15 @@ export class AccompagnementComponent {
     }
   ];
 
-  constructor() { }
+  constructor(private meta: Meta, private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Accompagnement en Trésorerie - MFinances');
+    this.meta.addTags([
+      { name: 'description', content: 'Nous vous accompagnons dans la gestion de votre trésorerie.' },
+      { name: 'keywords', content: 'accompagnement, trésorerie, MFinances, expert comptable' },
+      { name: 'author', content: 'MIKA MUSUNGAYI' }
+    ]);
     this.defis.forEach((_, index) => {
       this.cardPositions.set(index, { x: 0, y: 0, rotate: 0 });
     });
