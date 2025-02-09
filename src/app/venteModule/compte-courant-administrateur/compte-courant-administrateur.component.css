@@ -498,6 +498,14 @@
     position: relative;
     z-index: 2;
   }
+
+  .step {
+    color: #ff3b30;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
   
   .progress-line {
     position: absolute;

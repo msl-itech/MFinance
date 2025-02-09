@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ServicesComponent } from '../services/services.component';
 import { ZoneContactComponent } from '../zone-contact/zone-contact.component';
 import { FormCodePromoComponent } from '../form-code-promo/form-code-promo.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     ServicesComponent,
@@ -11,7 +11,8 @@ import { FormCodePromoComponent } from '../form-code-promo/form-code-promo.compo
     FormCodePromoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
   ],
   exports: [
     ServicesComponent,

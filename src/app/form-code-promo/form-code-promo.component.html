@@ -21,56 +21,50 @@
           <div class="contact-form p-6">
               <h2>Commandez votre étude personnalisée</h2>
               <p class="mb-4">Recevez une analyse claire et des recommandations adaptées à votre situation.</p>
-              <form>
-                  <div class="form-group mb-4">
-                      <label for="studyType">Choisissez votre étude :</label>
-                      <select id="studyType" class="form-control" required>
-                          <option value="">-- Sélectionnez une étude --</option>
-                          <option value="passage_societe">Passage en société - Évaluation du gain</option>
-                          <option value="compte_courant">Compte courant admin. - Comment le résorber ?</option>
-                          <option value="tresorerie">Améliorer votre trésorerie</option>
-                      </select>
-                  </div>
-      
-                  <div class="row">
-                      <div class="col-md-6">
-                          <div class="form-group mb-4">
-                              <input type="text" class="form-control" placeholder="Nom & Prénom" required>
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                          <div class="form-group mb-4">
-                              <input type="email" class="form-control" placeholder="Email" required>
-                          </div>
-                      </div>
-                  </div>
-      
-                  <div class="row">
-                      <div class="col-md-6">
-                          <div class="form-group mb-4">
-                              <input type="text" class="form-control" placeholder="Numéro de téléphone">
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                          <div class="form-group mb-4">
-                              <input type="text" class="form-control" placeholder="Code Promo">
-                          </div>
-                      </div>
-                  </div>
-      
-                  <div class="form-group mb-4">
-                      <textarea class="form-control" rows="3" placeholder="Décrivez brièvement votre situation"></textarea>
-                  </div>
-      
-                  <button type="submit" class="btn btn-primary-custom">Envoyer</button>
-                  <div class="mt-3">
-                    <p>Planifier un rendez-vous en ligne pour un premier debriefing<a href="https://calendly.com/mfinances/rdv-client-en-teleconference?preview_source=et_card" 
-                      target="_blank" class="red font-weight-bold">
-                       Cliquez ici pour réserver un rendez-vous
-                   </a></p>
-                  </div>
-                 
-              </form>
+              <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+                <div class="form-group mb-4">
+                    <label for="studyType">Choisissez votre étude :</label>
+                    <select id="studyType" class="form-control" [(ngModel)]="formData.studyType" name="studyType" required>
+                        <option value="">-- Sélectionnez une étude --</option>
+                        <option value="passage_societe">Passage en société - Évaluation du gain</option>
+                        <option value="compte_courant">Compte courant admin. - Comment le résorber ?</option>
+                        <option value="tresorerie">Améliorer votre trésorerie</option>
+                    </select>
+                </div>
+            
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-4">
+                            <input type="text" class="form-control" placeholder="Nom & Prénom" [(ngModel)]="formData.name" name="name" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-4">
+                            <input type="email" class="form-control" placeholder="Email" [(ngModel)]="formData.email" name="email" required>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-4">
+                            <input type="text" class="form-control" placeholder="Numéro de téléphone" [(ngModel)]="formData.phone" name="phone">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-4">
+                            <input type="text" class="form-control" placeholder="Code Promo" [(ngModel)]="formData.promoCode" name="promoCode">
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="form-group mb-4">
+                    <textarea class="form-control" rows="3" placeholder="Décrivez brièvement votre situation" [(ngModel)]="formData.description" name="description"></textarea>
+                </div>
+            
+                <button type="submit" class="btn btn-primary-custom">Envoyer</button>
+            </form>
+            
           </div>
       </div>
       
