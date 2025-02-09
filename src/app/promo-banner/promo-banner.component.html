@@ -1,0 +1,11 @@
+<div class="promo-banner" *ngIf="showBanner">
+    <div class="promo-content">
+      <span class="promo-text">
+        Profitez de 400 € de réduction avec le code <strong>"BOOSTPME"</strong> - Valable sur la toute section "Boostez votre Entreprise"
+        La promotion se termine dans {{ countdownDisplay }}
+      </span>
+      <button class="close-banner" (click)="closeBanner()">
+        ×
+      </button>
+    </div>
+  </div>

@@ -65,8 +65,9 @@
                Votre trésorerie est le cœur battant de votre entreprise. Une gestion inadéquate peut non seulement compromettre vos opérations quotidiennes, mais aussi limiter vos opportunités de croissance. Imaginez une situation où chaque euro est maximisé, où vous anticipez chaque dépense et où chaque rentrée d'argent est fluide et prévisible.
               </p>
               <div class="home2-btn" data-aos="zoom-in" data-aos-duration="1000">
-                <a routerLink="/contact">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
+                <a (click)="scrollToSection('targetSection')" style="cursor: pointer; color: white;">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
             </div>
           </div>
         </div>
@@ -97,34 +98,57 @@
     </div>
 </section>
 
-<section class="section">
-    <div class="container">
-        <h2 class="section-title">
-            Notre Programme en Trois Étapes
-        </h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>L'échange Diagnostic</h3>
-                <p>Initiez votre parcours par un rendez-vous en visioconférence pour partager vos défis.</p>
-            </div>
+<section class="services-section">
+  <div class="container">
+      <!-- En-tête de section -->
+      <div class="section-header">
+          <h2 class="main-title">Notre proposition d'accompagnement</h2>
+          <h3 class="sub-title">MFinances et MSL-iTECH</h3>
+          <p class="section-description">Nous vous accompagnons avec un plan stratégique pour revitaliser votre entreprise.</p>
+      </div>
 
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>L'analyse approfondie</h3>
-                <p>Analyse rigoureuse de votre gestion avec identification des opportunités.</p>
-            </div>
+      <!-- Étape 1 : L’échange Diagnostic -->
+      <div class="services-grid">
+          <div class="service-card">
+              <div class="card-image">
+                  <img src="../../../assets/img/webp/Etape3.webp" alt="Échange Diagnostic">
+              </div>
+              <div class="card-content">
+                  <h3>Étape 1 : L’échange Diagnostic</h3>
+                  <p>Initiez votre parcours vers une meilleure gestion financière par un rendez-vous en visioconférence. Au cours de cette session, vous partagerez avec nous les détails de votre métier, votre mode de fonctionnement, vos principales difficultés. Cette discussion nous permet de comprendre en profondeur votre secteur d’activité, vos objectifs, et votre vision stratégique.</p>
+                  <p>À l'issue de cet échange, nous vous fournirons une liste d'éléments comptables et financiers à transmettre, afin de réaliser une analyse complète de votre situation.</p>
+              </div>
+          </div>
 
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Recommandations</h3>
-                <p>Mise en place de solutions automatisées pour votre trésorerie.</p>
-            </div>
-        </div>
-    </div>
+          <!-- Étape 2 : L’analyse approfondie -->
+          <div class="service-card">
+              <div class="card-image">
+                  <img src="../../../assets/img/webp/Etape1.webp" alt="Analyse approfondie">
+              </div>
+              <div class="card-content">
+                  <h3>Étape 2 : L’analyse approfondie</h3>
+                  <p>Une fois vos documents en main, nous procédons à une analyse rigoureuse de votre gestion de trésorerie actuelle. Nous vous présentons ensuite un schéma clair de votre fonctionnement, en identifiant les dysfonctionnements et leurs causes.</p>
+                  <p>Vous recevrez également des recommandations précises sur les points à améliorer, ce qui vous permettra de prendre des décisions éclairées pour une optimisation durable. En ayant un regard extérieur sur votre situation, vous bénéficierez d'insights innovants qui vous ouvriront la voie à des solutions inédites et des stratégies financières novatrices.</p>
+              </div>
+          </div>
+
+          <!-- Étape 3 : Recommandations et Automatisation -->
+          <div class="service-card">
+              <div class="card-image">
+                  <img src="../../../assets/img/webp/Etape2.webp" alt="Recommandations et Automatisation">
+              </div>
+              <div class="card-content">
+                  <h3>Étape 3 : Recommandations et Automatisation</h3>
+                  <p>À cette étape, notre objectif est de vous proposer des solutions pour automatiser la création de votre tableau de trésorerie prévisionnel. Nous analysons d’abord votre entreprise, ses workflows spécifiques et la manière dont elle fonctionne, afin de mettre en place un système évolutif et personnalisé qui s'adapte à vos besoins.</p>
+                  <p>Ce système permet de construire et d’adapter automatiquement votre tableau de trésorerie, vous offrant ainsi une vision claire et précise de vos finances à tout moment. Pour atteindre cet objectif, nous pouvons vous proposer une solution comme Odoo, une suite de logiciels personnalisables qui peut être facilement configurée pour répondre aux besoins spécifiques de votre entreprise.</p>
+              </div>
+          </div>
+      </div>
+  </div>
 </section>
 
-<section class="background section">
+
+<!-- <section class="background section">
     <div class="container">
         <div class="price-card">
             <h2 class="section-title">
@@ -144,5 +168,5 @@
             </a>
         </div>
     </div>
-</section>
-<app-form-code-promo></app-form-code-promo>
+</section> -->
+<app-form-code-promo  id="targetSection"></app-form-code-promo>

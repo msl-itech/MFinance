@@ -40,7 +40,7 @@
 
 /* Inner border */
 .inner-border {
-  border: 1px solid #25335b; !important; /* Couleur visible */
+  border: 1px solid #25335b; 
   border-radius: 14px; /* Coins arrondis */
   padding: 20px; /* Espace intérieur */
   background-color: white; 

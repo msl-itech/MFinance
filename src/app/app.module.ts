@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { AlerteTresorerieComponent } from './TresorerieModule/alerte-tresorerie/
 import { AccompagnementComponent } from './TresorerieModule/accompagnement/accompagnement.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormCodePromoComponent } from './form-code-promo/form-code-promo.component';
+import { PromoBannerComponent } from './promo-banner/promo-banner.component';
 
 @NgModule({
   declarations: [
@@ -57,11 +59,13 @@ import { FormCodePromoComponent } from './form-code-promo/form-code-promo.compon
     AlerteTresorerieComponent,
     AccompagnementComponent,
     FooterComponent,
+    PromoBannerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ShardeModuleModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

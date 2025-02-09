@@ -1,0 +1,50 @@
+.promo-banner {
+    background-color: #ff4b4b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* z-index: 1000; */
+    animation: slideDown 0.5s ease-out;
+  }
+
+  .promo-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .promo-text {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .close-banner {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

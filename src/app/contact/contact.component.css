@@ -134,6 +134,106 @@
   .social-link i {
     font-size: 1.2rem;
   }
+
+  .contact-from-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Gère l'affichage en responsive */
+  }
+  
+  /* Styles pour les champs de saisie (input) */
+  .contact-from-input input {
+    border-radius: 4px;
+    border: none;
+    padding: 16px;
+    width: 49%;
+    margin: 8px 0;
+    background-color: #f3f3f3;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contact-from-input input:focus,
+  .contact-from-input textarea:focus,
+  .contact-from-input select:focus {
+    outline: none;
+    background-color: #e6e6e6; /* Changement léger au focus */
+  }
+  
+  /* Styles pour les selects (listes déroulantes) */
+  .contact-from-input select,   .contact-from-input2 select  {
+    border-radius: 4px;
+    border: none;
+    padding: 16px;
+    width: 45%;
+    margin: 8px 0;
+    background-color: #f3f3f3;
+    height: 55px;
+    font-size: 16px;
+    appearance: none; /* Supprime le style natif du navigateur */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contact-from-input select:focus, .contact-from-input select:focus {
+    background-color: #e6e6e6;
+  }
+  
+  /* Ajustement pour garantir l'homogénéité avec .nice-select */
+  .nice-select,
+  .contact-from-input select {
+    width: 49%;
+  }
+  
+  .nice-select,
+  .contact-from-input2 select {
+    width: 100%;
+  }
+  
+
+  /* Champ texte (textarea) */
+  .contact-from-input textarea {
+    border-radius: 4px;
+    border: none;
+    padding: 16px;
+    width: 100%;
+    margin: 8px 0;
+    background-color: #f3f3f3;
+    font-size: 16px;
+    resize: none;
+  }
+  
+  /* Bouton d'envoi */
+  .contact-form-btn button {
+    background-color: #FF3333;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contact-form-btn button:hover {
+    background-color: #CC0000;
+  }
+  
+  /* Responsive : Empêcher les éléments de se serrer trop sur mobile */
+  @media screen and (max-width: 768px) {
+    .contact-from-input {
+      flex-direction: column;
+    }
+  
+    .contact-from-input input,
+    .contact-from-input select,
+    .nice-select {
+      width: 100%;
+    }
+  }
+  
   
   @media (max-width: 768px) {
     .contact-grid {
@@ -151,3 +251,7 @@
       padding: 2rem 1rem;
     }
   }
+
+  .contact-form {
+    width: 100%;
+}
