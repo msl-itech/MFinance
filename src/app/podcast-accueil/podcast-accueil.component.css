@@ -120,7 +120,7 @@
 
 .blog-content p {
   font-size: 0.95rem;
-  color: var(--text-color);
+  color: #333;
   margin-bottom: 15px;
   line-height: 1.5;
 }

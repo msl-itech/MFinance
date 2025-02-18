@@ -18,62 +18,70 @@
         <div class="contact-form p-4">
           <h2>Formulaire de contact</h2>
           <p class="mb-4">Remplissez le formulaire, et notre expert-comptable vous répondra rapidement.</p>
-          <form>
-              <!-- Première ligne -->
-              <div class="form-row">
-                  <div class="form-group col-md-6">
-                      <input type="text" class="form-control" placeholder="Nom & Prénom" required>
-                  </div>
-                  <div class="form-group col-md-6">
-                      <input type="text" class="form-control" placeholder="Téléphone" required>
-                  </div>
+          <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <!-- Première ligne -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" placeholder="Nom & Prénom" 
+                       name="contact_name" [(ngModel)]="contact_name" required>
               </div>
-      
-              <!-- Deuxième ligne -->
-              <div class="form-row">
-                  <div class="form-group col-md-6">
-                      <input type="email" class="form-control" placeholder="Email" required>
-                  </div>
-                  <div class="form-group col-md-6">
-                      <input type="text" class="form-control" placeholder="Secteur d'activité" required>
-                  </div>
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" placeholder="Téléphone" 
+                       name="phone" [(ngModel)]="phone" required>
               </div>
+            </div>
       
-              <!-- Troisième ligne -->
-              <div class="form-row">
-                  <div class="form-group col-md-6">
-                      <input type="text" class="form-control" placeholder="N° de TVA / BCE">
-                  </div>
-                  <div class="form-group col-md-6">
-                      <select class="form-control" name="service_needed" required>
-                          <option value="">-- De quel service avez-vous besoin ? --</option>
-                          <option value="devenir_independant">Devenir indépendant</option>
-                          <option value="creation_societe">Création d'une société</option>
-                          <option value="passage_societe">Passage en société</option>
-                          <option value="changer_expert">Changer d'Expert-Comptable</option>
-                          <option value="declaration_impot">Déclaration impôt des personnes physiques</option>
-                          <option value="autres">Autres</option>
-                      </select>
-                  </div>
+            <!-- Deuxième ligne -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" placeholder="Email" 
+                       name="email_from" [(ngModel)]="email_from" required>
               </div>
-      
-              <!-- Quatrième ligne (Meilleur moment en pleine largeur) -->
-              <div class="form-group2 mb-3">
-                  <select class="form-control" name="best_time" required>
-                      <option value="">-- Meilleur moment pour être contacté --</option>
-                      <option value="8h-11h">8h-11h</option>
-                      <option value="11h-15h">11h-15h</option>
-                      <option value="15h-19h">15h-19h</option>
-                      <option value="no_preference">Pas de préférence</option>
-                  </select>
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" placeholder="Secteur d'activité" 
+                       name="industry" [(ngModel)]="industry" required>
               </div>
+            </div>
       
-              <!-- Cinquième ligne (Description en pleine largeur) -->
-              <div class="form-group2 mb-3">
-                  <textarea class="form-control" rows="4" placeholder="Décrivez votre besoin en détail"></textarea>
+            <!-- Troisième ligne -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" placeholder="N° de TVA / BCE" 
+                       name="vat_number" [(ngModel)]="vat_number">
               </div>
+              <div class="form-group col-md-6">
+                <select class="form-control" name="service_type" [(ngModel)]="service_type" required>
+                  <option value="">-- De quel service avez-vous besoin ? --</option>
+                  <option *ngFor="let option of serviceOptions" [value]="option.value">
+                    {{option.label}}
+                  </option>
+                </select>
+              </div>
+            </div>
       
-              <button type="submit" class="btn btn-primary-custom">Envoyer</button>
+            <!-- Quatrième ligne -->
+            <div class="form-group2 mb-3">
+              <select class="form-control" name="best_time" [(ngModel)]="best_time" required>
+                <option value="">-- Meilleur moment pour être contacté --</option>
+                <option *ngFor="let option of timeOptions" [value]="option.value">
+                  {{option.label}}
+                </option>
+              </select>
+            </div>
+      
+            <!-- Cinquième ligne -->
+            <div class="form-group2 mb-3">
+              <textarea class="form-control" rows="4" placeholder="Décrivez votre besoin en détail" 
+                        name="description" [(ngModel)]="description"></textarea>
+            </div>
+      
+            <!-- Bouton de soumission -->
+            <button type="submit" class="btn btn-primary-custom" [disabled]="isLoading || !contactForm.valid">
+              <span *ngIf="!isLoading">Envoyer</span>
+              <span *ngIf="isLoading" class="spinner">
+                <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
+              </span>
+            </button>
           </form>
       </div>
       

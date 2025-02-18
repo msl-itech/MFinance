@@ -21,7 +21,7 @@
           <div class="contact-form p-6">
               <h2>Commandez votre étude personnalisée</h2>
               <p class="mb-4">Recevez une analyse claire et des recommandations adaptées à votre situation.</p>
-              <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+              <form (ngSubmit)="submitForm(contactForm)" #contactForm="ngForm">
                 <div class="form-group mb-4">
                     <label for="studyType">Choisissez votre étude :</label>
                     <select id="studyType" class="form-control" [(ngModel)]="formData.studyType" name="studyType" required>
@@ -62,7 +62,12 @@
                     <textarea class="form-control" rows="3" placeholder="Décrivez brièvement votre situation" [(ngModel)]="formData.description" name="description"></textarea>
                 </div>
             
-                <button type="submit" class="btn btn-primary-custom">Envoyer</button>
+                <button type="submit" class="btn btn-primary-custom" [disabled]="isLoading || !contactForm.valid">
+                    <span *ngIf="!isLoading">Envoyer</span>
+                    <span *ngIf="isLoading" class="spinner">
+                      <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
+                    </span>
+                  </button>
             </form>
             
           </div>

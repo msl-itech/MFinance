@@ -7,7 +7,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 30px;
     min-height: 40px;
     /* z-index: 1000; */
     animation: slideDown 0.5s ease-out;
@@ -20,12 +19,15 @@
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    padding: 0 40px;
   }
 
   .promo-text {
     flex-grow: 1;
     text-align: center;
     font-size: 0.9rem;
+    line-height: 1.2;
+    margin: 0;
   }
 
   .close-banner {
@@ -38,6 +40,10 @@
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   @keyframes slideDown {
@@ -48,5 +54,49 @@
     to {
       transform: translateY(0);
       opacity: 1;
+    }
+  }
+
+  /* Media Queries pour la responsivité */
+  @media screen and (max-width: 768px) {
+    .promo-banner {
+      min-height: 50px;
+      padding: 8px 5px;
+    }
+
+    .promo-text {
+      font-size: 0.8rem;
+      padding: 0 25px;
+    }
+
+    .close-banner {
+      font-size: 1.2rem;
+      right: 5px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .promo-banner {
+      min-height: 60px;
+    }
+
+    .promo-text {
+      font-size: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .promo-content {
+      padding: 0 30px;
+    }
+  }
+
+  /* Pour les très petits écrans */
+  @media screen and (max-width: 320px) {
+    .promo-banner {
+      min-height: 70px;
+    }
+
+    .promo-text {
+      font-size: 0.7rem;
     }
   }

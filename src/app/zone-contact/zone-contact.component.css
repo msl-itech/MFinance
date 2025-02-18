@@ -126,3 +126,24 @@ textarea{
       width: 100%;
   }
 }
+
+.spinner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Animation du spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fa-spinner {
+  animation: spin 1s linear infinite;
+}

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { OdooService } from '../services/odoo.service';
+import { ToastrService } from 'ngx-toastr';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form-code-promo',
@@ -15,24 +18,40 @@ export class FormCodePromoComponent {
     description: ''
   };
 
-  submitForm() {
-    if (!this.formData.studyType || !this.formData.name || !this.formData.email) {
-      alert('Veuillez remplir tous les champs obligatoires.');
+  isLoading: boolean = false;
+
+  constructor(
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
+
+  submitForm(form: NgForm): void {
+    if (form.invalid) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
       return;
     }
-
-    // Construire l'URL avec les paramètres dynamiques pour Calendly
     const calendlyBaseUrl = 'https://calendly.com/mfinances/rdv-client-en-teleconference';
-    const queryParams = new URLSearchParams({
+  
+    const leadData = {
       name: this.formData.name,
-      email: this.formData.email,
-      phone: this.formData.phone || '',
-      promoCode: this.formData.promoCode || '',
-      studyType: this.formData.studyType,
-      description: this.formData.description || ''
-    }).toString();
+      email_from: this.formData.email,
+      phone: this.formData.phone,
+      description: `Type d'étude: ${this.formData.studyType}\n | Code Promo: ${this.formData.promoCode}\n | Description: ${this.formData.description}`
+    };
 
-    // Redirection vers Calendly avec les informations de l'utilisateur
-    window.location.href = `${calendlyBaseUrl}?${queryParams}`;
+    this.isLoading = true;
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+        form.reset();
+        window.location.href = `${calendlyBaseUrl}`;
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error('Une erreur est survenue lors de l\'envoi de la demande.', 'Erreur');
+        console.error('Erreur lors de la création du lead:', error);
+      }
+    });
   }
 }

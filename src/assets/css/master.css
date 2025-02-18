@@ -536,11 +536,12 @@ ul.theme-mega-menu li.mega-menu {
   transform: rotateX(0deg);
   background-color: #FF3333;
   border-radius: 4px;
+  color: white;
 }
 .main-menu-ex li li a .main-menu-ex li li a:hover {
   background-color: #FF3333;
   transform: rotateX(0deg);
-
+  color: white;
   border-radius: 4px;
 }
 
@@ -591,6 +592,7 @@ ul.theme-mega-menu li.mega-menu {
   transform: rotateX(0deg);
   background-color: #ff3e55;
   border-radius: 4px;
+  color: white;
 }
 
 .main-menu-ex.home2-menu li li a {
