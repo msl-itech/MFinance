@@ -1,4 +1,7 @@
-User-agent: *
-Disallow:
+user-agent: *
+disallow: 
 
-Sitemap: https://www.mfinances.be/sitemap.xml
+user-agent: magicsearchbot
+disallow:
+
+sitemap: https://www.mfinances.be/sitemap.xml
