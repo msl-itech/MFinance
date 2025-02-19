@@ -37,17 +37,58 @@ export class ProfilTypeComponent {
     }
   }
 
+  private itemsPerView = 3; // Default for desktop
+
+  ngOnInit() {
+    this.setItemsPerView();
+    window.addEventListener('resize', () => this.setItemsPerView());
+  }
+  
+  ngOnDestroy() {
+    window.removeEventListener('resize', () => this.setItemsPerView());
+  }
+  
+  setItemsPerView() {
+    if (window.innerWidth <= 576) {
+      this.itemsPerView = 1;
+    } else if (window.innerWidth <= 768) {
+      this.itemsPerView = 2;
+    } else {
+      this.itemsPerView = 3;
+    }
+    // Ensure current index doesn't cause overflow
+    if (this.currentIndex > this.items.length - this.itemsPerView) {
+      this.currentIndex = this.items.length - this.itemsPerView;
+    }
+  }
+  
+  // Update getTransform to use itemsPerView
+  getTransform() {
+    const cardWidth = this.getCardWidth();
+    return `translateX(-${this.currentIndex * cardWidth}px)`;
+  }
+  
+  getCardWidth() {
+    if (window.innerWidth <= 576) {
+      return 270; // Card width + margins for mobile
+    } else if (window.innerWidth <= 768) {
+      return 200; // Card width + margins for tablet
+    } else if (window.innerWidth <= 992) {
+      return 220; // Card width + margins for small desktop
+    } else {
+      return 270; // Card width + margins for large desktop
+    }
+  }
+  
+  // Update nextSlide method
   nextSlide() {
-    if (this.currentIndex < this.items.length - this.visibleCards) {
+    if (this.currentIndex < this.items.length - this.itemsPerView) {
       this.currentIndex++;
     }
   }
-
-  getTransform() {
-    return `translateX(-${this.currentIndex * (100 / this.visibleCards)}%)`;
-  }
-
-  get isNextDisabled(): boolean {
-    return this.currentIndex >= this.items.length - this.visibleCards;
+  
+  // Update isNextDisabled computed property
+  get isNextDisabled() {
+    return this.currentIndex >= this.items.length - this.itemsPerView;
   }
 }

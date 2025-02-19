@@ -9,37 +9,38 @@
       </div>
     </div>
   </div>
-  <div class="slider" [style.transform]="getTransform()">
-    <div
-      class="card"
-      *ngFor="let item of items; let i = index"
-      [ngClass]="i % 2 === 0 ? 'card-blue' : 'card-red'"
-      [routerLink]="item.route"
-    >
-      <img [src]="item.image" alt="image">
-      <div class="card-content">
-
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-        <a [routerLink]="item.route" class="learn-more">En savoir plus →</a>
+  <div class="slider-wrapper">
+    <div class="slider" [style.transform]="getTransform()" role="region" aria-label="Secteurs d'activité">
+      <div
+        class="card"
+        *ngFor="let item of items; let i = index"
+        [ngClass]="i % 2 === 0 ? 'card-blue' : 'card-red'"
+        [routerLink]="item.route"
+      >
+        <img [src]="item.image" alt="image">
+        <div class="card-content">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <a [routerLink]="item.route" class="learn-more">En savoir plus →</a>
+        </div>
       </div>
     </div>
-
   </div>
   <div class="navigation-buttons">
-    <!-- Bouton précédent -->
-    <button 
-      class="nav-btn" 
-      (click)="prevSlide()" 
-      [disabled]="currentIndex === 0">
+    <button
+      class="nav-btn"
+      (click)="prevSlide()"
+      [disabled]="currentIndex === 0"
+      aria-label="Slide précédent"
+    >
       <i class="fas fa-arrow-left"></i>
     </button>
-  
-    <!-- Bouton suivant -->
-    <button 
-      class="nav-btn" 
-      (click)="nextSlide()" 
-      [disabled]="isNextDisabled">
+    <button
+      class="nav-btn"
+      (click)="nextSlide()"
+      [disabled]="isNextDisabled"
+      aria-label="Slide suivant"
+    >
       <i class="fas fa-arrow-right"></i>
     </button>
   </div>
