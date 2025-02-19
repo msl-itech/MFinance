@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { ModuleAccueilRoutingModule } from './module-accueil-routing.module';
 import { ShardeModuleModule } from '../sharde-module/sharde-module.module';
@@ -23,7 +23,7 @@ import { PodcastAccueilComponent } from '../podcast-accueil/podcast-accueil.comp
   imports: [
     CommonModule,
     ModuleAccueilRoutingModule,
-    ShardeModuleModule
+    ShardeModuleModule,
   ]
 })
 export class ModuleAccueilModule { }

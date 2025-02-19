@@ -34,10 +34,6 @@
               "src/favicon.ico",
               "src/assets",
               {
-                "glob": "**/*",
-                "input": "public"
-              },
-              {
                 "glob": "robots.txt",
                 "input": "src/assets",
                 "output": "/"
