@@ -13,7 +13,7 @@ export class TarifComponent implements OnInit {
   videoUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer, private modalService: NgbModal, private meta: Meta) {
-    const url = 'https://www.youtube.com/embed/ghSPTixak4cc';
+    const url = 'https://www.youtube.com/embed/ghSPTixak4c';
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
