@@ -9,7 +9,7 @@
 /* Desktop Navigation */
 .header-area-home1 {
   background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-elements {
@@ -49,9 +49,25 @@
 .main-menu-ex ul li:hover > a {
   color: #ff4d4d;
 }
+
+/* Nouveau style pour garder la couleur du lien parent lors du survol des sous-menus */
+.main-menu-ex ul li:hover > a[href="/tresorerie/proteger-sa-tresorerie"] {
+  color: #ff4d4d;
+}
+
 .main-menu-ex ul li ul li:hover > a {
   color: #ffffff;
 }
+
+/* Style spécifique pour le lien parent Trésorerie */
+.main-menu-ex ul li ul li a[href="/tresorerie/proteger-sa-tresorerie"] {
+  color: #333;
+}
+
+.main-menu-ex ul li ul li:hover a[href="/tresorerie/proteger-sa-tresorerie"] {
+  color: #333;
+}
+
 /* Sous-menus */
 .main-menu-ex ul li ul {
   position: absolute;
@@ -62,7 +78,7 @@
   display: none;
   flex-direction: column;
   gap: 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
 
@@ -108,7 +124,7 @@
   display: none;
   padding: 1rem;
   background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-header-elements {
@@ -134,7 +150,7 @@
   padding: 1.5rem;
   transition: all 0.3s ease;
   overflow-y: auto;
-  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav-icon {
@@ -226,7 +242,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
@@ -243,7 +259,7 @@
   .header-elements {
     padding: 1rem 2rem;
   }
-  
+
   .main-menu-ex ul {
     gap: 1.5rem;
   }
@@ -257,16 +273,16 @@
   .mobile-header {
     padding: 0.8rem 1.5rem;
   }
-  
+
   .mobile-logo img {
     width: 100px;
   }
-  
+
   .mobile-nav-icon i {
     font-size: 1.5rem;
     cursor: pointer;
   }
-  
+
   .btn-red {
     padding: 0.7rem 1.2rem;
     font-size: 0.95em;
@@ -278,7 +294,7 @@
     width: 100%;
     right: -100%;
   }
-  
+
   .mobile-header {
     padding: 0.8rem 1rem;
   }
