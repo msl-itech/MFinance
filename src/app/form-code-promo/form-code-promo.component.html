@@ -1,79 +1,129 @@
 <div class="contact-section">
-    <div class="container contact-overlay">
-      <div class="row align-items-center">
-        <!-- Texte à gauche -->
-        <div class="col-md-8 contact-text">
-          <p class="text-uppercase font-weight-bold">Prendre Contact</p>
-          <h1>Prêt à optimiser vos <br> finances ?</h1>
-          <p>Contactez-nous dès aujourd'hui pour une consultation personnalisée.<br> 
-             Nous sommes impatients de participer à votre succès financier.</p>
-          <!-- <p>Avec le code promo bénéficiez jusqu'à <strong class="text-red">400 Euros</strong> de réduction</p> -->
-      
-          <div class="contact-button mt-4">
-              <a href="/contact" class="btn btn-red">Contactez-nous</a>
-              <a href="tel:+3228838686" class="btn btn-outline">+32 2 886 05 50</a>
-          </div>
+  <div class="container contact-overlay">
+    <div class="row align-items-center">
+      <!-- Texte à gauche -->
+      <div class="col-md-8 contact-text">
+        <p class="text-uppercase font-weight-bold">Prendre Contact</p>
+        <h1>
+          Prêt à optimiser vos <br />
+          finances ?
+        </h1>
+        <p>
+          Contactez-nous dès aujourd'hui pour une consultation personnalisée.<br />
+          Nous sommes impatients de participer à votre succès financier.
+        </p>
+        <!-- <p>Avec le code promo bénéficiez jusqu'à <strong class="text-red">400 Euros</strong> de réduction</p> -->
+
+        <div class="contact-button mt-4">
+          <a href="/contact" class="btn btn-red">Contactez-nous</a>
+          <a href="tel:+3228838686" class="btn btn-outline">+32 2 886 05 50</a>
+        </div>
       </div>
-      
-  
-        <!-- Formulaire à droite -->
-        <div class="col-md-4 ml-auto">
-          <div class="contact-form p-6">
-              <h2>Commandez votre étude personnalisée</h2>
-              <p class="mb-4">Recevez une analyse claire et des recommandations adaptées à votre situation.</p>
-              <form (ngSubmit)="submitForm(contactForm)" #contactForm="ngForm">
+
+      <!-- Formulaire à droite -->
+      <div class="col-md-4 ml-auto">
+        <div class="contact-form p-6">
+          <h2>Commandez votre étude personnalisée</h2>
+          <p class="mb-4">
+            Recevez une analyse claire et des recommandations adaptées à votre
+            situation.
+          </p>
+          <form (ngSubmit)="submitForm(contactForm)" #contactForm="ngForm">
+            <div class="form-group mb-4">
+              <label for="studyType">Choisissez votre étude :</label>
+              <select
+                id="studyType"
+                class="form-control"
+                [(ngModel)]="formData.studyType"
+                name="studyType"
+                required
+              >
+                <option value="">-- Sélectionnez une étude --</option>
+                <option value="passage_societe">
+                  Passage en société - Évaluation du gain
+                </option>
+                <option value="compte_courant">
+                  Compte courant admin. - Comment le résorber ?
+                </option>
+                <option value="tresorerie">Améliorer votre trésorerie</option>
+              </select>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
                 <div class="form-group mb-4">
-                    <label for="studyType">Choisissez votre étude :</label>
-                    <select id="studyType" class="form-control" [(ngModel)]="formData.studyType" name="studyType" required>
-                        <option value="">-- Sélectionnez une étude --</option>
-                        <option value="passage_societe">Passage en société - Évaluation du gain</option>
-                        <option value="compte_courant">Compte courant admin. - Comment le résorber ?</option>
-                        <option value="tresorerie">Améliorer votre trésorerie</option>
-                    </select>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Nom & Prénom"
+                    [(ngModel)]="formData.name"
+                    name="name"
+                    required
+                  />
                 </div>
-            
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mb-4">
-                            <input type="text" class="form-control" placeholder="Nom & Prénom" [(ngModel)]="formData.name" name="name" required>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-4">
-                            <input type="email" class="form-control" placeholder="Email" [(ngModel)]="formData.email" name="email" required>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mb-4">
-                            <input type="text" class="form-control" placeholder="Numéro de téléphone" [(ngModel)]="formData.phone" name="phone">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-4">
-                            <input type="text" class="form-control" placeholder="Code Promo" [(ngModel)]="formData.promoCode" name="promoCode">
-                        </div>
-                    </div>
-                </div>
-            
+              </div>
+              <div class="col-md-6">
                 <div class="form-group mb-4">
-                    <textarea class="form-control" rows="3" placeholder="Décrivez brièvement votre situation" [(ngModel)]="formData.description" name="description"></textarea>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email"
+                    [(ngModel)]="formData.email"
+                    name="email"
+                    required
+                  />
                 </div>
-            
-                <button type="submit" class="btn btn-primary-custom" [disabled]="isLoading || !contactForm.valid">
-                    <span *ngIf="!isLoading">Envoyer</span>
-                    <span *ngIf="isLoading" class="spinner">
-                      <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
-                    </span>
-                  </button>
-            </form>
-            
-          </div>
-      </div>
-      
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group mb-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Numéro de téléphone"
+                    [(ngModel)]="formData.phone"
+                    name="phone"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Code Promo"
+                    [(ngModel)]="formData.promoCode"
+                    name="promoCode"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group mb-4">
+              <textarea
+                class="form-control"
+                rows="3"
+                placeholder="Décrivez brièvement votre situation"
+                [(ngModel)]="formData.description"
+                name="description"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary-custom"
+              [disabled]="isLoading || !contactForm.valid"
+            >
+              <span *ngIf="!isLoading">Envoyer</span>
+              <span *ngIf="isLoading" class="spinner">
+                <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
+              </span>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-  
+</div>
