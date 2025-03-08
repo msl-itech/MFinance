@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { MetaService } from '../../services/meta.service';
 
 @Component({
   selector: 'app-proteger-tresorerie',
   templateUrl: './proteger-tresorerie.component.html',
-  styleUrl: './proteger-tresorerie.component.css'
+  styleUrl: './proteger-tresorerie.component.css',
 })
 export class ProtegerTresorerieComponent implements OnInit {
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(private metaService: MetaService) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Protéger votre Trésorerie - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Stratégies pour protéger votre trésorerie contre les imprévus.' },
-      { name: 'keywords', content: 'protéger, trésorerie, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page Protéger Trésorerie
+    this.metaService.setProtegerTresoreriePageMeta();
   }
 }

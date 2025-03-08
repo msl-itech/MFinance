@@ -1,8 +1,6 @@
-import { Component, ElementRef, Renderer2, ViewChild, OnInit } from '@angular/core';
-import { RecommandationProfilComponent } from "../recommandation-profil/recommandation-profil.component";
-import { Subscription } from 'rxjs';
-import { fromEvent, throttleTime } from 'rxjs';
-import { Meta, Title } from '@angular/platform-browser';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { fromEvent, Subscription, throttleTime } from 'rxjs';
+import { MetaService } from '../services/meta.service';
 
 @Component({
   selector: 'app-absl',
@@ -10,7 +8,6 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrl: './absl.component.css',
 })
 export class AbslComponent implements OnInit {
-
   @ViewChild('serviceSection') serviceSection!: ElementRef;
   @ViewChild('serviceImage') serviceImage!: ElementRef;
 
@@ -20,15 +17,11 @@ export class AbslComponent implements OnInit {
   private imageHeight: number = 0;
   private maxTranslateY: number = 0;
 
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(private metaService: MetaService) {}
 
   ngOnInit() {
-    this.titleService.setTitle('ASBL - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Tout savoir sur les ASBL et comment MFinances peut vous aider.' },
-      { name: 'keywords', content: 'ASBL, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page ASBL
+    this.metaService.setAbslPageMeta();
   }
 
   scrollToSection(sectionId: string): void {
@@ -44,11 +37,12 @@ export class AbslComponent implements OnInit {
     // Réajuster les dimensions lors du redimensionnement de la fenêtre
     window.addEventListener('resize', this.calculateDimensions.bind(this));
 
-
     // Configurer l'observateur de défilement avec throttling pour des performances optimales
-    this.scrollSubscription = fromEvent(window, 'scroll').pipe(
-      throttleTime(10) // Ajustez la fréquence selon vos besoins
-    ).subscribe(() => this.onScroll());
+    this.scrollSubscription = fromEvent(window, 'scroll')
+      .pipe(
+        throttleTime(10) // Ajustez la fréquence selon vos besoins
+      )
+      .subscribe(() => this.onScroll());
   }
 
   ngOnDestroy() {
@@ -61,7 +55,8 @@ export class AbslComponent implements OnInit {
 
   // Méthode pour calculer les dimensions de la section et de l'image
   private calculateDimensions() {
-    const sectionRect = this.serviceSection.nativeElement.getBoundingClientRect();
+    const sectionRect =
+      this.serviceSection.nativeElement.getBoundingClientRect();
     this.sectionTop = window.pageYOffset + sectionRect.top;
     this.sectionHeight = this.serviceSection.nativeElement.offsetHeight;
 

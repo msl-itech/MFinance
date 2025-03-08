@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { MetaService } from '../services/meta.service';
 
 @Component({
   selector: 'app-profil-societe-moyen',
   templateUrl: './profil-societe-moyen.component.html',
-  styleUrl: './profil-societe-moyen.component.css'
+  styleUrl: './profil-societe-moyen.component.css',
 })
 export class ProfilSocieteMoyenComponent implements OnInit {
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(private metaService: MetaService) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Société de Moyen - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Découvrez les avantages d’une société de moyen avec MFinances.' },
-      { name: 'keywords', content: 'société de moyen, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page Société Moyen
+    this.metaService.setSocieteMoyenPageMeta();
   }
 
   scrollToSection(sectionId: string): void {

@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { MetaService } from '../../../app/services/meta.service';
 
 @Component({
   selector: 'app-declaration-impot',
   templateUrl: './declaration-impot.component.html',
-  styleUrl: './declaration-impot.component.css'
+  styleUrl: './declaration-impot.component.css',
 })
 export class DeclarationImpotComponent implements OnInit {
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(private metaService: MetaService) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Déclaration d\'Impôt - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Assistance pour la déclaration d\'impôt des particuliers et des entreprises.' },
-      { name: 'keywords', content: 'déclaration d\'impôt, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page Déclaration d'impôt
+    this.metaService.setDeclarationImpotPageMeta();
   }
 }

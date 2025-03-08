@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { MetaService } from '../services/meta.service';
 
 @Component({
   selector: 'app-professionel-sante',
   templateUrl: './professionel-sante.component.html',
-  styleUrl: './professionel-sante.component.css'
+  styleUrl: './professionel-sante.component.css',
 })
 export class ProfessionelSanteComponent implements OnInit {
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(private metaService: MetaService) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Professionnels de Santé - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Accompagnement comptable pour les professionnels de santé.' },
-      { name: 'keywords', content: 'professionnels de santé, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page Professionnel Santé
+    this.metaService.setProfessionnelSantePageMeta();
   }
 
   scrollToSection(sectionId: string): void {

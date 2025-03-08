@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { MetaService } from '../services/meta.service';
 
 @Component({
   selector: 'app-profil-promoteur-immobilier',
   templateUrl: './profil-promoteur-immobilier.component.html',
-  styleUrl: './profil-promoteur-immobilier.component.css'
+  styleUrl: './profil-promoteur-immobilier.component.css',
 })
 export class ProfilPromoteurImmobilierComponent implements OnInit {
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(private metaService: MetaService) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Promoteur Immobilier - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Accompagnement comptable pour les promoteurs immobiliers.' },
-      { name: 'keywords', content: 'promoteur immobilier, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page Promoteur Immobilier
+    this.metaService.setPromoteurImmobilierPageMeta();
   }
 
   scrollToSection(sectionId: string): void {

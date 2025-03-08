@@ -1,18 +1,26 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { MetaService } from '../../services/meta.service';
 
 @Component({
   selector: 'app-accompagnement',
   templateUrl: './accompagnement.component.html',
-  styleUrl: './accompagnement.component.css'
+  styleUrl: './accompagnement.component.css',
 })
-export class AccompagnementComponent {
+export class AccompagnementComponent implements OnInit, AfterViewInit {
   @ViewChild('container') container!: ElementRef;
-  
+
   mouseX: number = 0;
   mouseY: number = 0;
   bounds: DOMRect | null = null;
-  cardPositions: Map<number, { x: number, y: number, rotate: number }> = new Map();
+  cardPositions: Map<number, { x: number; y: number; rotate: number }> =
+    new Map();
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -23,50 +31,52 @@ export class AccompagnementComponent {
     {
       icon: 'fa-coins',
       title: 'Manque de liquidités',
-      description: 'Vous constatez des difficultés à maintenir une trésorerie suffisante pour couvrir vos besoins opérationnels.',
-      speed: 0.3
+      description:
+        'Vous constatez des difficultés à maintenir une trésorerie suffisante pour couvrir vos besoins opérationnels.',
+      speed: 0.3,
     },
     {
       icon: 'fa-money-bill-wave',
       title: 'Financement complexe',
-      description: 'Vous avez du mal à choisir les meilleures options de financement pour soutenir votre croissance.',
-      speed: 0.5
+      description:
+        'Vous avez du mal à choisir les meilleures options de financement pour soutenir votre croissance.',
+      speed: 0.5,
     },
     {
       icon: 'fa-boxes',
       title: 'Gestion de stock inefficace',
-      description: 'Votre stock immobilise une partie importante de vos ressources, impactant vos flux de trésorerie.',
-      speed: 0.4
+      description:
+        'Votre stock immobilise une partie importante de vos ressources, impactant vos flux de trésorerie.',
+      speed: 0.4,
     },
     {
       icon: 'fa-chess',
       title: 'Concurrence agressive',
-      description: "L'environnement concurrentiel exige une rapidité de réaction, mais vos ressources limitées freinent votre croissance.",
-      speed: 0.6
+      description:
+        "L'environnement concurrentiel exige une rapidité de réaction, mais vos ressources limitées freinent votre croissance.",
+      speed: 0.6,
     },
     {
       icon: 'fa-bullseye',
       title: 'Stratégie commerciale inefficace',
-      description: 'Vous souhaitez développer une approche qui fidélise vos clients actuels et en attire de nouveaux.',
-      speed: 0.45
+      description:
+        'Vous souhaitez développer une approche qui fidélise vos clients actuels et en attire de nouveaux.',
+      speed: 0.45,
     },
     {
       icon: 'fa-chart-bar',
       title: 'Difficulté à planifier',
-      description: 'Vous peinez à mettre en place un tableau de trésorerie dynamique et flexible.',
-      speed: 0.35
-    }
+      description:
+        'Vous peinez à mettre en place un tableau de trésorerie dynamique et flexible.',
+      speed: 0.35,
+    },
   ];
 
-  constructor(private meta: Meta, private titleService: Title) { }
+  constructor(private metaService: MetaService) {}
 
   ngOnInit(): void {
-    this.titleService.setTitle('Accompagnement en Trésorerie - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Nous vous accompagnons dans la gestion de votre trésorerie.' },
-      { name: 'keywords', content: 'accompagnement, trésorerie, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    this.metaService.setAccompagnementTresoreriePageMeta();
+
     this.defis.forEach((_, index) => {
       this.cardPositions.set(index, { x: 0, y: 0, rotate: 0 });
     });
@@ -129,7 +139,7 @@ export class AccompagnementComponent {
     if (!position) return {};
 
     return {
-      transform: `translate(${position.x}px, ${position.y}px) rotate(${position.rotate}deg)`
+      transform: `translate(${position.x}px, ${position.y}px) rotate(${position.rotate}deg)`,
     };
   }
 }

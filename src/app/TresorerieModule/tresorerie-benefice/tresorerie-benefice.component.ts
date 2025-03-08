@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { MetaService } from '../../services/meta.service';
 
 @Component({
   selector: 'app-tresorerie-benefice',
   templateUrl: './tresorerie-benefice.component.html',
-  styleUrl: './tresorerie-benefice.component.css'
+  styleUrl: './tresorerie-benefice.component.css',
 })
 export class TresorerieBeneficeComponent implements OnInit {
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(private metaService: MetaService) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Bénéfice de Trésorerie - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Optimisez la gestion de votre trésorerie pour maximiser vos bénéfices.' },
-      { name: 'keywords', content: 'trésorerie, bénéfice, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page Trésorerie Bénéfice
+    this.metaService.setTresorerieBeneficePageMeta();
   }
 }

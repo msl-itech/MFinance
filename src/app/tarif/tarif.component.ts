@@ -1,7 +1,7 @@
-import { Component, TemplateRef, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Meta } from '@angular/platform-browser';
+import { MetaService } from '../services/meta.service';
 
 @Component({
   selector: 'app-tarif',
@@ -15,7 +15,7 @@ export class TarifComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
     private modalService: NgbModal,
-    private meta: Meta
+    private metaService: MetaService
   ) {
     const url = 'https://www.youtube.com/embed/ghSPTixak4c';
     const url2 = 'https://www.youtube.com/embed/qc18dXxbibU';
@@ -24,14 +24,7 @@ export class TarifComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: 'Découvrez nos tarifs pour les services comptables.',
-      },
-      { name: 'keywords', content: 'tarifs, services comptables, MFinances' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' },
-    ]);
+    this.metaService.setTarifPageMeta();
   }
 
   scrollToVideo(elementId: string) {

@@ -1,28 +1,23 @@
-import { Component, ElementRef, HostListener, Renderer2, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { Component, OnInit, Renderer2 } from '@angular/core';
+import { MetaService } from '../services/meta.service';
 
 @Component({
   selector: 'app-profil-grande-entreprise',
   templateUrl: './profil-grande-entreprise.component.html',
-  styleUrl: './profil-grande-entreprise.component.css'
+  styleUrl: './profil-grande-entreprise.component.css',
 })
 export class ProfilGrandeEntrepriseComponent implements OnInit {
-
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
-  constructor(private renderer: Renderer2, private meta: Meta, private titleService: Title) {}
+  constructor(private renderer: Renderer2, private metaService: MetaService) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Grande Entreprise - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Solutions comptables pour les grandes entreprises.' },
-      { name: 'keywords', content: 'grande entreprise, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page Grande Entreprise
+    this.metaService.setGrandeEntreprisePageMeta();
   }
 
   onScroll(event: Event): void {
@@ -33,5 +28,4 @@ export class ProfilGrandeEntrepriseComponent implements OnInit {
       this.renderer.setStyle(image, 'transform', `translateY(${translateY}px)`);
     }
   }
-
 }
