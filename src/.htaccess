@@ -1,0 +1,42 @@
+# Rediriger les robots d'indexation vers les fichiers HTML statiques
+RewriteEngine On
+
+# Vérifier si l'agent utilisateur est un robot
+RewriteCond %{HTTP_USER_AGENT} (googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest) [NC]
+
+# Rediriger vers les fichiers HTML statiques pour les routes principales
+RewriteRule ^$ index.html [L]
+RewriteRule ^about$ about.html [L]
+RewriteRule ^contact$ contact.html [L]
+RewriteRule ^tarif$ tarif.html [L]
+RewriteRule ^profil-independant$ profil-independant.html [L]
+RewriteRule ^absl$ absl.html [L]
+RewriteRule ^societe-management-patrimoniale$ societe-management-patrimoniale.html [L]
+RewriteRule ^societe-moyen$ societe-moyen.html [L]
+RewriteRule ^societe-exploitation$ societe-exploitation.html [L]
+RewriteRule ^commercant-horeca$ commercant-horeca.html [L]
+RewriteRule ^professionel-sante$ professionel-sante.html [L]
+RewriteRule ^grande-entreprise$ grande-entreprise.html [L]
+RewriteRule ^promoteur-immobilier$ promoteur-immobilier.html [L]
+RewriteRule ^services$ services.html [L]
+RewriteRule ^services/comptabilite$ services-comptabilite.html [L]
+RewriteRule ^services/fiscalite$ services-fiscalite.html [L]
+RewriteRule ^services/creation-entreprise$ services-creation-entreprise.html [L]
+RewriteRule ^services/declaration-impot$ services-declaration-impot.html [L]
+RewriteRule ^vente$ vente.html [L]
+RewriteRule ^vente/passage-en-societe$ vente-passage-en-societe.html [L]
+RewriteRule ^vente/compte-courant$ vente-compte-courant.html [L]
+RewriteRule ^vente/salarie-independant$ vente-salarie-independant.html [L]
+RewriteRule ^tresorerie$ tresorerie.html [L]
+RewriteRule ^tresorerie/tresorerie-benefice$ tresorerie-tresorerie-benefice.html [L]
+RewriteRule ^tresorerie/investir-tresorerie$ tresorerie-investir-tresorerie.html [L]
+RewriteRule ^tresorerie/optimiser-stock$ tresorerie-optimiser-stock.html [L]
+RewriteRule ^tresorerie/alerte-tresorerie$ tresorerie-alerte-tresorerie.html [L]
+RewriteRule ^tresorerie/proteger-sa-tresorerie$ tresorerie-proteger-sa-tresorerie.html [L]
+RewriteRule ^tresorerie/anticiper-sa-tresorerie$ tresorerie-anticiper-sa-tresorerie.html [L]
+RewriteRule ^tresorerie/accompagnement$ tresorerie-accompagnement.html [L]
+
+# Pour toutes les autres requêtes, utiliser l'application Angular
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L] 
