@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TimelineIndependantComponent } from "../timeline-independant/timeline-independant.component";
-import { RecommandationProfilComponent } from "../recommandation-profil/recommandation-profil.component";
-import { Meta, Title } from '@angular/platform-browser';
+import { MetaService } from '../services/meta.service';
 
 @Component({
   selector: 'app-profil-independant',
@@ -9,15 +7,11 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrl: './profil-independant.component.css',
 })
 export class ProfilIndependantComponent implements OnInit {
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(private metaService: MetaService) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Indépendant - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Devenir indépendant en Belgique avec MFinances.' },
-      { name: 'keywords', content: 'indépendant, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page Indépendant
+    this.metaService.setIndependantPageMeta();
   }
 
   scrollToSection(sectionId: string): void {

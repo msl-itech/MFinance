@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { MetaService } from '../../services/meta.service';
 
 @Component({
   selector: 'app-anticiper-tresorerie',
   templateUrl: './anticiper-tresorerie.component.html',
-  styleUrl: './anticiper-tresorerie.component.css'
+  styleUrl: './anticiper-tresorerie.component.css',
 })
 export class AnticiperTresorerieComponent implements OnInit {
-  constructor(private meta: Meta, private titleService: Title) {}
+  constructor(private metaService: MetaService) {}
 
   ngOnInit() {
-    this.titleService.setTitle('Anticiper votre Trésorerie - MFinances');
-    this.meta.addTags([
-      { name: 'description', content: 'Anticipez vos besoins de trésorerie pour une meilleure gestion.' },
-      { name: 'keywords', content: 'anticiper, trésorerie, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page Anticiper Trésorerie
+    this.metaService.setAnticiperTresoreriePageMeta();
   }
 }

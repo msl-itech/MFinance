@@ -1,21 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Meta } from '@angular/platform-browser';
+import { MetaService } from '../services/meta.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrl: './contact.component.css',
 })
 export class ContactComponent implements OnInit {
-  constructor(private meta: Meta) {}
+  constructor(private metaService: MetaService) {}
 
   ngOnInit() {
-    this.meta.addTags([
-      { name: 'description', content: 'Contactez MFinances pour vos besoins comptables.' },
-      { name: 'keywords', content: 'contact, MFinances, expert comptable' },
-      { name: 'author', content: 'MIKA MUSUNGAYI' }
-    ]);
+    // Utilisation du service de meta-données pour définir les meta-tags de la page Contact
+    this.metaService.setContactPageMeta();
   }
 }
