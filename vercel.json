@@ -13,451 +13,691 @@
       "src": "^/$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/$",
       "dest": "/index.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/about$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/about$",
       "dest": "/about.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/contact$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/contact$",
       "dest": "/contact.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/tarif$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/tarif$",
       "dest": "/tarif.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/profil-independant$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/profil-independant$",
       "dest": "/profil-independant.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/absl$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/absl$",
       "dest": "/absl.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/societe-management-patrimoniale$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/societe-management-patrimoniale$",
       "dest": "/societe-management-patrimoniale.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/societe-moyen$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/societe-moyen$",
       "dest": "/societe-moyen.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/societe-exploitation$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/societe-exploitation$",
       "dest": "/societe-exploitation.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/commercant-horeca$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/commercant-horeca$",
       "dest": "/commercant-horeca.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/professionel-sante$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/professionel-sante$",
       "dest": "/professionel-sante.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/grande-entreprise$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/grande-entreprise$",
       "dest": "/grande-entreprise.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/promoteur-immobilier$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/promoteur-immobilier$",
       "dest": "/promoteur-immobilier.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/services$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/services$",
       "dest": "/services.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/services/comptabilite$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/services/comptabilite$",
       "dest": "/services-comptabilite.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/services/fiscalite$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/services/fiscalite$",
       "dest": "/services-fiscalite.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/services/creation-entreprise$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/services/creation-entreprise$",
       "dest": "/services-creation-entreprise.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/services/declaration-impot$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/services/declaration-impot$",
       "dest": "/services-declaration-impot.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/vente$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/vente$",
       "dest": "/vente.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/vente/passage-en-societe$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/vente/passage-en-societe$",
       "dest": "/vente-passage-en-societe.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/vente/compte-courant$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/vente/compte-courant$",
       "dest": "/vente-compte-courant.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/vente/salarie-independant$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/vente/salarie-independant$",
       "dest": "/vente-salarie-independant.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/tresorerie$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/tresorerie$",
       "dest": "/tresorerie.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/tresorerie-benefice$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/tresorerie-benefice$",
       "dest": "/tresorerie-tresorerie-benefice.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/investir-tresorerie$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/investir-tresorerie$",
       "dest": "/tresorerie-investir-tresorerie.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/optimiser-stock$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/optimiser-stock$",
       "dest": "/tresorerie-optimiser-stock.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/alerte-tresorerie$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/alerte-tresorerie$",
       "dest": "/tresorerie-alerte-tresorerie.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/proteger-sa-tresorerie$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/proteger-sa-tresorerie$",
       "dest": "/tresorerie-proteger-sa-tresorerie.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/anticiper-sa-tresorerie$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/anticiper-sa-tresorerie$",
       "dest": "/tresorerie-anticiper-sa-tresorerie.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/accompagnement$",
       "headers": { "x-is-bot": "1" },
       "continue": true,
-      "has": {
-        "user-agent": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|ubersuggest)"
+        }
+      ]
     },
     {
       "src": "^/tresorerie/accompagnement$",
       "dest": "/tresorerie-accompagnement.html",
-      "has": {
-        "x-is-bot": "1"
-      }
+      "has": [
+        {
+          "type": "header",
+          "key": "x-is-bot",
+          "value": "1"
+        }
+      ]
     },
     {
       "src": ".*",
