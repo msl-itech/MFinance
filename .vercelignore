@@ -1,0 +1,12 @@
+# .vercelignore
+node_modules
+.git
+.angular
+.github
+.vscode
+e2e
+coverage
+.editorconfig
+.gitignore
+README.md
+*.log 

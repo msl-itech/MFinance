@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/mfinances/server/main.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "dist/mfinances/browser/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "dist/mfinances/server/main.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/mfinances/server/main.js"
+    }
+  ],
+  "env": {
+    "ENABLE_FILE_SYSTEM_API": "1"
+  }
+}
