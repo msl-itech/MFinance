@@ -1,26 +1,17 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "dist/mfinances",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "headers": [
     {
-      "src": "dist/mfinances/server/main.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "dist/mfinances/browser/**",
-      "use": "@vercel/static"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "dist/mfinances/server/main.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "dist/mfinances/server/main.js"
-    }
-  ],
-  "env": {
-    "ENABLE_FILE_SYSTEM_API": "1"
-  }
+  ]
 }

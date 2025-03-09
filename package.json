@@ -8,8 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prerender": "node vercel-prerender.js",
-    "prebuild": "npm run prerender",
-    "vercel-build": "npm run build && npm run prerender"
+    "vercel-build": "ng build --configuration production && node vercel-prerender.js"
   },
   "private": true,
   "dependencies": {
