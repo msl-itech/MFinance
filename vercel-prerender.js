@@ -36,26 +36,99 @@ const routes = [
   "tresorerie/accompagnement",
 ];
 
-// Fonction pour créer les fichiers HTML avec les bonnes métadonnées
+// Fonction pour trouver le dossier de build Angular
+function findBuildFolder() {
+  console.log("=== VERCEL DEBUG ===");
+  console.log("Recherche du dossier de build...");
+
+  const distPath = path.join(__dirname, "dist");
+  if (!fs.existsSync(distPath)) {
+    console.log("Erreur: Le dossier dist n'existe pas!");
+    return null;
+  }
+
+  console.log("Le dossier dist existe.");
+  console.log("Contenu du dossier dist:");
+  const distContents = fs.readdirSync(distPath);
+  console.log(distContents);
+
+  // Vérifier les possibilités de structure
+  // Cas 1: dist/mfinances
+  const mfinancesPath = path.join(distPath, "mfinances");
+  if (fs.existsSync(mfinancesPath)) {
+    console.log("Structure: dist/mfinances existe!");
+    console.log("Contenu de dist/mfinances:");
+    console.log(fs.readdirSync(mfinancesPath));
+
+    const browserPath = path.join(mfinancesPath, "browser");
+    if (fs.existsSync(browserPath)) {
+      console.log("Structure: dist/mfinances/browser existe!");
+      console.log("Contenu de dist/mfinances/browser:");
+      console.log(fs.readdirSync(browserPath));
+      return browserPath;
+    }
+
+    return mfinancesPath;
+  }
+
+  // Cas 2: dist/browser
+  const browserPath = path.join(distPath, "browser");
+  if (fs.existsSync(browserPath)) {
+    console.log("Structure: dist/browser existe!");
+    console.log("Contenu de dist/browser:");
+    console.log(fs.readdirSync(browserPath));
+    return browserPath;
+  }
+
+  // Cas 3: dist contient directement le build
+  if (distContents.includes("index.html")) {
+    console.log("Structure: index.html directement dans dist!");
+    return distPath;
+  }
+
+  // Cas 4: dist/[nom-projet]
+  for (const dir of distContents) {
+    const fullPath = path.join(distPath, dir);
+    if (fs.statSync(fullPath).isDirectory()) {
+      const indexPath = path.join(fullPath, "index.html");
+      if (fs.existsSync(indexPath)) {
+        console.log(`Structure: dist/${dir} contient index.html!`);
+        return fullPath;
+      }
+    }
+  }
+
+  console.log("Aucune structure valide trouvée!");
+  return null;
+}
+
+// Fonction pour injecter les méta-tags
 function injectMetaTags() {
-  console.log("Injection des méta-tags dans index.html...");
-
   try {
-    // Vérifier si le dossier de build existe
-    const distPath = path.join(__dirname, "dist", "mfinances");
-    if (!fs.existsSync(distPath)) {
-      console.log(`Le dossier ${distPath} n'existe pas encore, rien à faire.`);
+    console.log("Démarrage du script d'injection des métadonnées...");
+
+    // Trouver le dossier de build
+    const buildFolder = findBuildFolder();
+    if (!buildFolder) {
+      console.log(
+        "Impossible de trouver le dossier de build. Arrêt du script."
+      );
       return;
     }
 
-    // Lire le contenu du index.html généré par Angular
-    const indexPath = path.join(distPath, "index.html");
+    console.log(`Dossier de build trouvé: ${buildFolder}`);
+
+    // Vérifier l'existence de index.html
+    const indexPath = path.join(buildFolder, "index.html");
     if (!fs.existsSync(indexPath)) {
-      console.log(`Le fichier ${indexPath} n'existe pas, rien à faire.`);
+      console.log(`Erreur: ${indexPath} n'existe pas!`);
       return;
     }
 
+    console.log(`Lecture de ${indexPath}...`);
     let htmlContent = fs.readFileSync(indexPath, "utf8");
+
+    console.log("Contenu HTML chargé, longueur:", htmlContent.length);
 
     // Vérifier si le script de métadonnées est déjà présent
     if (htmlContent.includes("function getMetaTagsForRoute")) {
@@ -65,16 +138,23 @@ function injectMetaTags() {
       return;
     }
 
+    console.log("Injection du script de métadonnées...");
+
     // Préparer le script à injecter
     const metaScript = `
     <script>
       (function() {
         // Obtenir l'URL actuelle
         var path = window.location.pathname.replace(/^\\//g, '');
+        console.log('Chemin détecté:', path);
         
         // Fonction pour obtenir les métadonnées pour une route
         function getMetaTagsForRoute(route) {
           var metaTags = {
+            '': {
+              title: "MFinances - Cabinet d'expertise comptable à Bruxelles",
+              description: "MFinances est un cabinet d'expertise comptable à Bruxelles offrant des services de comptabilité, fiscalité et conseil aux entreprises et indépendants."
+            },
             'accueil': {
               title: "MFinances - Cabinet d'expertise comptable à Bruxelles",
               description: "MFinances est un cabinet d'expertise comptable à Bruxelles offrant des services de comptabilité, fiscalité et conseil aux entreprises et indépendants."
@@ -165,10 +245,10 @@ function injectMetaTags() {
                   description: 'MFinances vous accompagne dans la création de votre entreprise à Bruxelles. Conseil, démarches administratives et choix de la forme juridique.'
                 };
               }
-            } else if (parent === 'tresorerie' || parent === 'vente') {
-              // Retourner les métadonnées génériques pour ces sections si nécessaire
-              return metaTags[parent] || defaultMeta;
             }
+            
+            // Retourner les métadonnées du parent si aucune correspondance spécifique
+            return metaTags[parent] || defaultMeta;
           }
           
           return metaTags[route] || defaultMeta;
@@ -182,26 +262,33 @@ function injectMetaTags() {
         
         // Obtenir les métadonnées pour la route actuelle
         var meta = getMetaTagsForRoute(path);
+        console.log('Métadonnées à appliquer:', meta);
         
         // Mettre à jour les balises meta
         document.title = meta.title;
+        console.log('Titre défini:', meta.title);
         
         var descTag = document.querySelector('meta[name="description"]');
         if (descTag) {
           descTag.setAttribute('content', meta.description);
+          console.log('Description définie:', meta.description);
+        } else {
+          console.log('Balise meta description non trouvée');
         }
       })();
     </script>
     `;
 
     // Injecter le script juste avant la fermeture de la balise head
-    htmlContent = htmlContent.replace("</head>", metaScript + "\n  </head>");
+    const newHtml = htmlContent.replace("</head>", metaScript + "\n  </head>");
 
-    // Écrire le fichier modifié
-    fs.writeFileSync(indexPath, htmlContent);
+    console.log("Écriture du fichier modifié...");
+    fs.writeFileSync(indexPath, newHtml);
     console.log(`Métadonnées injectées avec succès dans ${indexPath}`);
   } catch (error) {
     console.error("Erreur lors de l'injection des métadonnées:", error);
+    // Afficher la stack trace pour faciliter le débogage
+    console.error(error.stack);
   }
 }
 
