@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prerender": "node vercel-prerender.js",
+    "seo-prerender": "node vercel-seo-prerender.js",
+    "debug": "node vercel-debug.js",
+    "vercel-build": "ng build --configuration production --base-href / && node vercel-seo-prerender.js && node vercel-debug.js"
   },
   "private": true,
   "dependencies": {
