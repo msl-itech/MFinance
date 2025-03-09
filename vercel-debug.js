@@ -40,6 +40,7 @@ console.log("\nVérification des chemins Angular courants:");
 const possiblePaths = [
   path.join(__dirname, "dist"),
   path.join(__dirname, "dist", "mfinances"),
+  path.join(__dirname, "dist", "mfinances", "browser"),
   path.join(__dirname, "dist", "browser"),
 ];
 
@@ -57,3 +58,34 @@ possiblePaths.forEach((p) => {
     }
   }
 });
+
+// Vérification du contenu de index.html
+const buildFolder = path.join(__dirname, "dist", "mfinances", "browser");
+if (fs.existsSync(buildFolder)) {
+  const indexPath = path.join(buildFolder, "index.html");
+  if (fs.existsSync(indexPath)) {
+    console.log("\nVérification du contenu de index.html:");
+    const indexContent = fs.readFileSync(indexPath, "utf8");
+    const titleMatch = indexContent.match(/<title>(.*?)<\/title>/);
+    const descMatch = indexContent.match(
+      /<meta\s+name="description"\s+content="(.*?)"/
+    );
+
+    console.log(
+      "Titre dans index.html:",
+      titleMatch ? titleMatch[1] : "Non trouvé"
+    );
+    console.log(
+      "Description dans index.html:",
+      descMatch ? descMatch[1] : "Non trouvé"
+    );
+
+    // Vérification de la présence du script d'injection de métadonnées
+    console.log(
+      "Script de métadonnées présent:",
+      indexContent.includes("function getMetaTagsForRoute")
+        ? "Oui ✅"
+        : "Non ❌"
+    );
+  }
+}

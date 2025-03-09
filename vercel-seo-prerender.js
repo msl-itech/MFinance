@@ -1,7 +1,8 @@
+// vercel-seo-prerender.js - Script pour optimiser le SEO sur Vercel
 const fs = require("fs");
 const path = require("path");
 
-// Liste des routes à pré-rendre (plus complète)
+// Liste des routes à pré-rendre pour le SEO
 const routes = [
   "",
   "accueil",
@@ -35,138 +36,6 @@ const routes = [
   "tresorerie/anticiper-sa-tresorerie",
   "tresorerie/accompagnement",
 ];
-
-// Fonction pour trouver le dossier de build Angular
-function findBuildFolder() {
-  console.log("=== VERCEL DEBUG ===");
-  console.log("Recherche du dossier de build...");
-
-  const distPath = path.join(__dirname, "dist");
-  if (!fs.existsSync(distPath)) {
-    console.log("Erreur: Le dossier dist n'existe pas!");
-    return null;
-  }
-
-  console.log("Le dossier dist existe.");
-  console.log("Contenu du dossier dist:");
-  const distContents = fs.readdirSync(distPath);
-  console.log(distContents);
-
-  // Vérifier les possibilités de structure
-  // Cas 1: dist/mfinances
-  const mfinancesPath = path.join(distPath, "mfinances");
-  if (fs.existsSync(mfinancesPath)) {
-    console.log("Structure: dist/mfinances existe!");
-    console.log("Contenu de dist/mfinances:");
-    console.log(fs.readdirSync(mfinancesPath));
-
-    const browserPath = path.join(mfinancesPath, "browser");
-    if (fs.existsSync(browserPath)) {
-      console.log("Structure: dist/mfinances/browser existe!");
-      console.log("Contenu de dist/mfinances/browser:");
-      console.log(fs.readdirSync(browserPath));
-      return browserPath;
-    }
-
-    return mfinancesPath;
-  }
-
-  // Cas 2: dist/browser
-  const browserPath = path.join(distPath, "browser");
-  if (fs.existsSync(browserPath)) {
-    console.log("Structure: dist/browser existe!");
-    console.log("Contenu de dist/browser:");
-    console.log(fs.readdirSync(browserPath));
-    return browserPath;
-  }
-
-  // Cas 3: dist contient directement le build
-  if (distContents.includes("index.html")) {
-    console.log("Structure: index.html directement dans dist!");
-    return distPath;
-  }
-
-  // Cas 4: dist/[nom-projet]
-  for (const dir of distContents) {
-    const fullPath = path.join(distPath, dir);
-    if (fs.statSync(fullPath).isDirectory()) {
-      const indexPath = path.join(fullPath, "index.html");
-      if (fs.existsSync(indexPath)) {
-        console.log(`Structure: dist/${dir} contient index.html!`);
-        return fullPath;
-      }
-    }
-  }
-
-  console.log("Aucune structure valide trouvée!");
-  return null;
-}
-
-// Après avoir trouvé le dossier de build, nous allons nous assurer que les métadonnées sont correctement injectées
-function injectMetaTagsIntoStaticHtml(buildFolder, routes, htmlContent) {
-  console.log(
-    `Préparation de l'injection des métadonnées dans les fichiers HTML statiques...`
-  );
-
-  // Si le buildFolder n'existe pas, on ne peut rien faire
-  if (!fs.existsSync(buildFolder)) {
-    console.log(`Le dossier de build ${buildFolder} n'existe pas!`);
-    return;
-  }
-
-  // Créer des fichiers HTML statiques pour chaque route avec les bonnes métadonnées
-  for (const route of routes) {
-    try {
-      // Créer les dossiers nécessaires s'ils n'existent pas
-      const routePath = path.join(buildFolder, route);
-      if (route !== "") {
-        if (!fs.existsSync(routePath)) {
-          fs.mkdirSync(routePath, { recursive: true });
-        }
-      }
-
-      // Chemin vers le fichier HTML à créer
-      const htmlPath = path.join(routePath, "index.html");
-
-      // Récupérer les métadonnées pour cette route
-      let metaData;
-      if (route.includes("/")) {
-        const [parent, child] = route.split("/");
-        metaData = getMetaTagsForRoute(parent, child);
-      } else {
-        metaData = getMetaTagsForRoute(route);
-      }
-
-      // Remplacer les métadonnées dans le HTML
-      let routeHtml = htmlContent;
-
-      // Remplacer le titre
-      routeHtml = routeHtml.replace(
-        /<title>[^<]*<\/title>/,
-        `<title>${metaData.title}</title>`
-      );
-
-      // Remplacer la description
-      routeHtml = routeHtml.replace(
-        /<meta\s+name="description"\s+content="[^"]*"/,
-        `<meta name="description" content="${metaData.description}"`
-      );
-
-      // Écrire le fichier HTML avec les métadonnées correctes
-      fs.writeFileSync(htmlPath, routeHtml);
-      console.log(
-        `✅ Fichier HTML créé pour la route '${route}' avec les métadonnées personnalisées.`
-      );
-    } catch (error) {
-      console.error(
-        `❌ Erreur lors de la création du fichier HTML pour la route '${route}':`,
-        error
-      );
-    }
-  }
-
-  console.log("Génération des fichiers HTML statiques terminée.");
-}
 
 // Fonction pour obtenir les métadonnées pour une route
 function getMetaTagsForRoute(route, subRoute = null) {
@@ -362,10 +231,62 @@ function getMetaTagsForRoute(route, subRoute = null) {
   return metaTags[route] || metaTags[""];
 }
 
-// Modifions la fonction injectMetaTags pour utiliser notre nouvelle fonction d'injection
-function injectMetaTags() {
+// Fonction pour trouver le dossier de build Angular
+function findBuildFolder() {
+  console.log("Recherche du dossier de build...");
+
+  const distPath = path.join(__dirname, "dist");
+  if (!fs.existsSync(distPath)) {
+    console.log("Erreur: Le dossier dist n'existe pas!");
+    return null;
+  }
+
+  // Structure Angular 18+: dist/mfinances/browser
+  const mfinancesBrowserPath = path.join(distPath, "mfinances", "browser");
+  if (
+    fs.existsSync(mfinancesBrowserPath) &&
+    fs.existsSync(path.join(mfinancesBrowserPath, "index.html"))
+  ) {
+    console.log("Structure trouvée: dist/mfinances/browser");
+    return mfinancesBrowserPath;
+  }
+
+  // Vérifier les possibilités de structure alternatives
+  // Cas 1: dist/mfinances
+  const mfinancesPath = path.join(distPath, "mfinances");
+  if (
+    fs.existsSync(mfinancesPath) &&
+    fs.existsSync(path.join(mfinancesPath, "index.html"))
+  ) {
+    console.log("Structure trouvée: dist/mfinances");
+    return mfinancesPath;
+  }
+
+  // Cas 2: dist/browser
+  const browserPath = path.join(distPath, "browser");
+  if (
+    fs.existsSync(browserPath) &&
+    fs.existsSync(path.join(browserPath, "index.html"))
+  ) {
+    console.log("Structure trouvée: dist/browser");
+    return browserPath;
+  }
+
+  // Cas 3: dist contient directement le build
+  const indexPath = path.join(distPath, "index.html");
+  if (fs.existsSync(indexPath)) {
+    console.log("Structure trouvée: dist");
+    return distPath;
+  }
+
+  console.log("Aucune structure valide trouvée!");
+  return null;
+}
+
+// Fonction pour générer les fichiers HTML statiques pour chaque route
+function generateStaticHtmlFiles() {
   try {
-    console.log("Démarrage du script d'injection des métadonnées...");
+    console.log("=== GÉNÉRATION DE FICHIERS HTML STATIQUES POUR SEO ===");
 
     // Trouver le dossier de build
     const buildFolder = findBuildFolder();
@@ -379,23 +300,78 @@ function injectMetaTags() {
     console.log(`Dossier de build trouvé: ${buildFolder}`);
 
     // Vérifier l'existence de index.html
-    const indexPath = path.join(buildFolder, "index.html");
-    if (!fs.existsSync(indexPath)) {
-      console.log(`Erreur: ${indexPath} n'existe pas!`);
+    const sourceIndexPath = path.join(buildFolder, "index.html");
+    if (!fs.existsSync(sourceIndexPath)) {
+      console.log(`Erreur: ${sourceIndexPath} n'existe pas!`);
       return;
     }
 
-    console.log(`Lecture de ${indexPath}...`);
-    let htmlContent = fs.readFileSync(indexPath, "utf8");
+    console.log(`Lecture de ${sourceIndexPath}...`);
+    let baseHtmlContent = fs.readFileSync(sourceIndexPath, "utf8");
 
-    console.log("Contenu HTML chargé, longueur:", htmlContent.length);
+    // Générer un fichier HTML statique pour chaque route
+    for (const route of routes) {
+      try {
+        // Déterminer les métadonnées pour cette route
+        let metaData;
+        if (route.includes("/")) {
+          const [parent, child] = route.split("/");
+          metaData = getMetaTagsForRoute(parent, child);
+        } else {
+          metaData = getMetaTagsForRoute(route);
+        }
 
-    // Injecter les métadonnées dans les fichiers HTML statiques pour chaque route
-    injectMetaTagsIntoStaticHtml(buildFolder, routes, htmlContent);
+        // Modifier le contenu HTML avec les bonnes métadonnées
+        let routeHtml = baseHtmlContent;
+
+        // Remplacer le titre
+        routeHtml = routeHtml.replace(
+          /<title>[^<]*<\/title>/,
+          `<title>${metaData.title}</title>`
+        );
+
+        // Remplacer la description
+        routeHtml = routeHtml.replace(
+          /<meta\s+name="description"\s+content="[^"]*"/,
+          `<meta name="description" content="${metaData.description}"`
+        );
+
+        // Créer le dossier de destination si nécessaire
+        let targetDir;
+        if (route === "") {
+          targetDir = buildFolder;
+        } else {
+          targetDir = path.join(buildFolder, route);
+          if (!fs.existsSync(targetDir)) {
+            fs.mkdirSync(targetDir, { recursive: true });
+          }
+        }
+
+        // Écrire le fichier HTML avec les métadonnées personnalisées
+        const targetIndexPath = path.join(targetDir, "index.html");
+        fs.writeFileSync(targetIndexPath, routeHtml);
+
+        console.log(
+          `✅ Fichier HTML créé pour la route '${
+            route || "racine"
+          }' avec les métadonnées personnalisées.`
+        );
+      } catch (error) {
+        console.error(
+          `❌ Erreur lors de la création du fichier HTML pour la route '${route}':`,
+          error
+        );
+      }
+    }
+
+    console.log("Génération des fichiers HTML statiques terminée avec succès!");
   } catch (error) {
-    console.error("Erreur lors de l'injection des métadonnées:", error);
+    console.error(
+      "Erreur lors de la génération des fichiers HTML statiques:",
+      error
+    );
   }
 }
 
-// Exécuter l'injection
-injectMetaTags();
+// Exécuter la génération des fichiers HTML statiques
+generateStaticHtmlFiles();
