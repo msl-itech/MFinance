@@ -1,652 +1,743 @@
-<header class="header">
-  <div class="header-overlay">
-    <div class="container">
-      <h1 class="text-white">Nos tarifs</h1>
-      <p class="text-white">
-        Pour les entreprises non assujetties à la TVA, nous offrons une
-        réduction de 21% sur nos tarifs.<br />
-        Cette politique reflète notre engagement à fournir des solutions
-        financières adaptées à chaque structure.
-      </p>
-    </div>
-  </div>
-</header>
-<div class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-6">
-      <div class="image-wrapper">
-        <img
-          src="../../assets/img/webp/15.webp"
-          alt="Professionnelle de la comptabilité"
-        />
+<app-page-layout pageTitle="Tarifs - MFinances Expert Comptable">
+  <header class="header">
+    <div class="header-overlay">
+      <div class="container">
+        <h2 class="text-white">Nos tarifs</h2>
+        <p class="text-white">
+          Pour les entreprises non assujetties à la TVA, nous offrons une
+          réduction de 21% sur nos tarifs.<br />
+          Cette politique reflète notre engagement à fournir des solutions
+          financières adaptées à chaque structure.
+        </p>
       </div>
     </div>
-    <div class="col-6">
-      <div class="content-wrapper">
-        <span class="text-red">CE QUE NOUS VOUS PROPOSONS</span>
-        <h1>
-          Comptabilité Proactive, Croissance
-          <span class="font-red">Assurée</span>
-        </h1>
-
-        <p>
-          Comptabilité proactive, croissance assurée dans le monde dynamique des
-          affaires, la réussite d'une entreprise dépend souvent de sa capacité à
-          prendre des décisions éclairées et rapides.
-        </p>
-
-        <p>
-          Chez Mfinances, nous comprenons cette exigence et avons conçu nos
-          services pour être bien plus qu'un simple cabinet d'expertise
-          comptable.
-        </p>
-
-        <div class="features-box">
-          <h3>Situations Interminables et Prévisionnelles de Pointe</h3>
-          <p>
-            Au cœur de notre offre, Mfinances s'engage à fournir des situations
-            intermédiaires et prévisionnelles sur une base régulière. Cette
-            pratique vous permet de gérer votre entreprise de manière éclairée,
-            en prenant des décisions fondées sur des données actualisées et
-            précises.
-          </p>
+  </header>
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-6">
+        <div class="image-wrapper">
+          <img
+            src="../../assets/img/webp/15.webp"
+            alt="Professionnelle de la comptabilité"
+          />
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="bg-custom--primary py-5">
-  <div style="padding-top: 24px">
-    <h2 class="text-center text-white">
-      Nos Offres, accompagnées d'une expertise de pointe
-    </h2>
-  </div>
-  <div class="pricing-container">
-    <!-- Offre de Base -->
-    <div class="pricing-card">
-      <svg class="card-icon" viewBox="0 0 24 24">
-        <path
-          d="M20 6H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm0 10H4V8h16v8z"
-        />
-        <path d="M4 14h16v2H4z" />
-      </svg>
-      <h3 class="card-title">Offre de Base</h3>
-      <div class="price-container">
-        <span class="currency">€</span>
-        <span class="price">350</span>
-        <span class="period">/mois</span>
-      </div>
-      <div class="frequency">
-        États financiers fournis à une fréquence <strong>Semestrielle</strong>.
-      </div>
-      <ul class="features-list">
-        <li>Situation Actuelle</li>
-        <li>Anticipation Du Résultat</li>
-        <li>Estimation De L'impôt</li>
-        <li>Tarif HTVA</li>
-      </ul>
-      <button (click)="scrollToVideo('video-base')" class="video-btn">
-        VIDÉO EXPLICATIVE
-      </button>
-    </div>
-
-    <!-- Offre Premium -->
-    <div class="pricing-card">
-      <div class="popular-badge">POPULAIRE</div>
-      <svg class="card-icon" viewBox="0 0 24 24">
-        <path
-          d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h16V4H4zm2 2h12v2H6V6zm0 4h12v2H6v-2zm0 4h8v2H6v-2z"
-        />
-      </svg>
-      <h3 class="card-title">Offre Premium</h3>
-      <div class="price-container">
-        <span class="currency">€</span>
-        <span class="price">450</span>
-        <span class="period">/mois</span>
-      </div>
-      <div class="frequency">
-        États financiers fournis à une fréquence <strong>Trimestrielle</strong>.
-      </div>
-      <ul class="features-list">
-        <li>Tous L'offre De Base</li>
-        <li>Analyse Des Tendances</li>
-        <li>Plan Financier Annuel</li>
-        <li>Tarif HTVA</li>
-      </ul>
-      <button (click)="scrollToVideo('video-premium')" class="video-btn">
-        VIDÉO EXPLICATIVE
-      </button>
-    </div>
-
-    <!-- Offre Excellence -->
-    <div class="pricing-card">
-      <svg class="card-icon" viewBox="0 0 24 24">
-        <path
-          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-        />
-      </svg>
-      <h3 class="card-title">Offre Excellence</h3>
-      <div class="price-container">
-        <span class="currency">€</span>
-        <span class="price">650</span>
-        <span class="period">/mois</span>
-      </div>
-      <div class="frequency">
-        États financiers fournis à une fréquence <strong>Mensuelle</strong>.
-      </div>
-      <ul class="features-list">
-        <li>Tous L'offre Premium</li>
-        <li>Budget Et Analyse Des Écarts</li>
-        <li>Plan Financier Semestrielle</li>
-        <li>Tarif HTVA</li>
-      </ul>
-      <button (click)="scrollToVideo('video-excellence')" class="video-btn">
-        VIDÉO EXPLICATIVE
-      </button>
-    </div>
-
-    <!-- Au Tarif Horaire -->
-    <div class="pricing-card">
-      <svg class="card-icon" viewBox="0 0 24 24">
-        <path
-          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"
-        />
-      </svg>
-      <h3 class="card-title">Au Tarif Horaire</h3>
-      <div class="price-container">
-        <span class="currency">€</span>
-        <span class="price">150</span>
-        <span class="period">/heure</span>
-      </div>
-      <div class="frequency">À la demande</div>
-      <ul class="features-list">
-        <li>Tarif HTVA</li>
-      </ul>
-      <a href="/contact" class="contact-btn">CONTACTEZ-NOUS</a>
-    </div>
-  </div>
-</div>
-
-<div class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-6">
-      <div class="content-wrapper">
-        <h1>
-          Un engagement de temps et de <span class="font-red">précision</span>
-        </h1>
-
-        <p>
-          Pour produire ces analyses indispensables et respecter
-          systématiquement les dates convenues, notre équipe accorde une
-          attention particulière à chaque dossier. Cet investissement en temps
-          garantit non seulement la qualité et la régularité des informations
-          fournies, mais témoigne aussi de notre engagement à soutenir
-          activement votre entreprise dans sa trajectoire de croissance.
-        </p>
-
-        <p class="main-text">
-          <span class="highlight-text"
-            >Chez Mfinances, nous ne nous contentons pas de traiter des chiffres
-            :</span
-          >
-          nous veillons à ce qu'ils racontent l'histoire de votre entreprise,
-          vous aidant ainsi à bâtir un avenir financier solide et prospère.
-        </p>
-
-        <div class="features-box">
-          <h3>Assistance Administrative sur Mesure</h3>
-          <p>
-            En complément, Mfinances propose une assistance administrative
-            dédiée. Nous nous concentrons sur la complétude de vos documents
-            comptables, l'optimisation de vos processus financiers et la
-            sécurisation de vos déductions de charges. Cette assistance est
-            cruciale pour garantir l'intégrité de votre comptabilité et la
-            sérénité de votre gestion d'entreprise. Avec Mfinances, vous n'avez
-            pas seulement un comptable ; vous avez une équipe qui travaille
-            inlassablement pour assurer que chaque aspect de votre comptabilité
-            soit impeccable.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="image-wrapper">
-        <img
-          src="../../assets/img/webp/15.webp"
-          alt="Professionnelle de la comptabilité"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-<div class="bg-custom--primary">
-  <div class="py-5">
-    <div class="offer-section">
-      <div class="offer-container">
-        <!-- Section Vidéo -->
-        <div id="video-base" class="video-side">
-          <div class="video-wrapper">
-            <iframe
-              width="100%"
-              height="100%"
-              [src]="videoUrl"
-              title="L'essentiel de votre comptabilité"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-        </div>
-
-        <!-- Section Détails -->
-        <div class="details-side">
-          <div class="details-header">
-            <span class="text-red">DÉTAILS DU TARIF</span>
-            <h1 class="title">
-              Offre de Base :
-              <span class="price text-white">350 € HTVA / Mois</span>
-            </h1>
-          </div>
-
-          <p class="description">
-            L'offre de base de Mfinances est la solution parfaite pour les
-            petites entreprises, offrant une gestion comptable essentielle et un
-            soutien personnalisé. Elle inclut un accès direct à notre
-            expert-comptable, une analyse périodique de vos finances, ainsi que
-            des conseils pour optimiser votre situation fiscale. Parfaite pour
-            maintenir une bonne santé financière tout en se concentrant sur la
-            croissance de votre entreprise.
-          </p>
-
-          <button type="button" class="btn btn-red" (click)="open(content)">
-            Voir les détails de l'offre
-          </button>
-
-          <!-- Modal Template -->
-          <ng-template #content let-modal>
-            <div class="modal-header">
-              <button
-                type="button"
-                class="btn-close"
-                aria-label="Fermer"
-                (click)="modal.dismiss('Cross click')"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <h6 class="text-primary-custom">
-                Disponibilité pour Répondre à Vos Questions
-              </h6>
-              <ul>
-                <li>
-                  Accès direct à un expert-comptable pour des réponses claires
-                  et rapides.
-                </li>
-                <li>
-                  Conseils personnalisés adaptés à la situation spécifique de
-                  votre entreprise.
-                </li>
-              </ul>
-
-              <h6 class="text-primary-custom mt-3">
-                Montant des Dépenses Non Admises
-              </h6>
-              <ul>
-                <li>
-                  Liste des dépenses supportées par l'entreprise, enregistrées
-                  sur le plan comptable, mais non déductibles fiscalement.
-                </li>
-                <li>
-                  Optimisation de la nature des dépenses pour améliorer la
-                  déduction fiscale des frais professionnels.
-                </li>
-              </ul>
-
-              <h6 class="text-primary-custom mt-3">
-                Base Imposable de l'Entreprise
-              </h6>
-              <ul>
-                <li>Calcul précis et semestriel de la base imposable.</li>
-                <li>
-                  <strong>Impôt Actuel</strong>
-                  <ul>
-                    <li>Estimation fiable de l'impôt actuel dû.</li>
-                    <li>Stratégies pour optimiser la charge fiscale.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Base Estimée de l'Exercice</strong>
-                  <ul>
-                    <li>
-                      Prévision de la base imposable pour l'ensemble de
-                      l'exercice.
-                    </li>
-                    <li>
-                      Conseils pour une meilleure planification financière et
-                      fiscale.
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-
-              <h6 class="text-primary-custom mt-3">
-                Impôt Estimé de l'Exercice
-              </h6>
-              <ul>
-                <li>
-                  Projection de l'impôt pour l'exercice en cours à trajectoire
-                  inchangée.
-                </li>
-                <li>
-                  <strong
-                    >Situation du Compte Courant Administrateur (CCA)</strong
-                  >
-                  <ul>
-                    <li>
-                      Suivi et analyse du compte courant de l'administrateur.
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>NB</strong>
-                  <p>
-                    Le CCA est le poste comptable où est enregistré l'argent que
-                    doit l'administrateur à sa société ou inversement. Cet état
-                    permet à l'entrepreneur de connaître sa situation.
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                (click)="modal.close('Close click')"
-              >
-                Fermer
-              </button>
-            </div>
-          </ng-template>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- offer.component.html -->
-<div class="py-5">
-  <div class="offer-section2">
-    <div class="offer-container">
-      <!-- Section Détails -->
-      <div class="details-side">
-        <div class="details-header">
-          <span class="text-red">DÉTAILS DU TARIF</span>
+      <div class="col-6">
+        <div class="content-wrapper">
+          <span class="text-red">CE QUE NOUS VOUS PROPOSONS</span>
           <h1>
-            Offre Premium :
-            <span class="price"> 450 € HTVA / Mois</span>
+            Comptabilité Proactive, Croissance
+            <span class="font-red">Assurée</span>
           </h1>
-        </div>
 
-        <p class="description2">
-          L'offre premium de Mfinances est spécialement conçue pour les
-          dirigeants d'entreprises moyennes, cherchant à dépasser la simple
-          compréhension de leur situation financière pour une planification
-          proactive et stratégique. Ce service offre un accompagnement
-          approfondi, permettant aux dirigeants de se concentrer sur leur
-          activité principale tout en naviguant efficacement dans le monde des
-          affaires moderne.
-        </p>
-
-        <!-- Bouton pour ouvrir la modal -->
-        <button type="button" class="btn btn-red" (click)="open(content2)">
-          Voir les détails de l'offre
-        </button>
-
-        <!-- Modal Template -->
-        <ng-template #content2 let-modal>
-          <div class="modal-header">
-            <h5 class="modal-title" id="detailsModalLabel">
-              Détails de l'Offre
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              aria-label="Fermer"
-              (click)="modal.dismiss('Cross click')"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <ol>
-              <li><strong>La totalité du package de base</strong></li>
-              <li>
-                <strong>Analyse Comparative Saisonnière</strong>
-                <ul>
-                  <li>
-                    Examen détaillé des performances de votre entreprise à
-                    travers les trimestres, permettant de comparer et d'analyser
-                    l'évolution saisonnière.
-                  </li>
-                  <li>
-                    Comparaisons horizontales (trimestres de l'année en cours)
-                    et verticales (par exemple, 1er trimestre 2023 vs 1er
-                    trimestre 2022), offrant une perspective claire sur la
-                    croissance et les tendances.
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <strong>Planification Financière Avancée</strong>
-                <ul>
-                  <li>
-                    Élaboration d'un plan financier basé sur vos résultats
-                    précédents, vous fournissant une feuille de route claire
-                    pour l'avenir.
-                  </li>
-                  <li>
-                    Prévisions et objectifs financiers pour l'exercice en cours,
-                    ajustés annuellement en fonction des résultats et tendances
-                    observés.
-                  </li>
-                </ul>
-              </li>
-            </ol>
-
-            <h6 class="text-danger mt-3">
-              Avantages supplémentaires de notre package Premium par rapport à
-              l'offre de base
-            </h6>
-            <ul>
-              <li>
-                Une compréhension approfondie des cycles et des tendances de
-                votre entreprise, permettant une planification et une prise de
-                décision plus éclairées.
-              </li>
-              <li>
-                Une capacité à anticiper les besoins financiers et les
-                opportunités, vous positionnant idéalement pour la croissance et
-                l'adaptation.
-              </li>
-              <li>
-                Un accompagnement personnalisé qui va au-delà de la simple
-                comptabilité, offrant des conseils stratégiques pour maximiser
-                votre potentiel tout en vous permettant de vous concentrer sur
-                votre core business.
-              </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              (click)="modal.close('Close click')"
-            >
-              Fermer
-            </button>
-          </div>
-        </ng-template>
-
-        <!-- Fin de la Modal -->
-      </div>
-
-      <!-- Section Vidéo -->
-      <div id="video-premium" class="video-side">
-        <div class="video-wrapper">
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/iaec1s9QEXU"
-            title="L'essentiel de votre comptabilité"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          >
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="bg-custom--primary">
-  <div class="py-5">
-    <div class="offer-section">
-      <div class="offer-container">
-        <!-- Section Vidéo -->
-        <div id="video-excellence" class="video-side">
-          <div class="video-wrapper">
-            <iframe
-              width="100%"
-              height="100%"
-              [src]="videoUrl2"
-              title="L'essentiel de votre comptabilité"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-        </div>
-
-        <!-- Section Détails -->
-        <div class="details-side">
-          <div class="details-header">
-            <span class="text-red">DÉTAILS DU TARIF</span>
-            <h1 class="title">
-              Offre Excellence :
-              <span class="price text-white">650 € HTVA / Mois</span>
-            </h1>
-          </div>
-
-          <p class="description">
-            L'offre Excellence représente le summum de nos services comptables
-            et financiers, spécialement conçue pour les entreprises qui
-            recherchent la perfection en termes de précision, d'adaptabilité et
-            de prévision. En plus des services habituels, cette offre met un
-            accent particulier sur le contrôle de gestion, permettant une
-            analyse approfondie et continue des performances financières.
-            Comprendre l'origine des écarts entre le budget et les chiffres
-            réalisés est essentiel pour mieux anticiper l'avenir. Nous assurons
-            une optimisation constante des ressources et une anticipation
-            proactive des défis financiers.
+          <p>
+            Comptabilité proactive, croissance assurée dans le monde dynamique
+            des affaires, la réussite d'une entreprise dépend souvent de sa
+            capacité à prendre des décisions éclairées et rapides.
           </p>
 
-          <button type="button" class="btn btn-red" (click)="open(content3)">
-            Voir les détails de l'offre
-          </button>
+          <p>
+            Chez Mfinances, nous comprenons cette exigence et avons conçu nos
+            services pour être bien plus qu'un simple cabinet d'expertise
+          </p>
 
-          <!-- Modal Template -->
-          <ng-template #content3 let-modal>
-            <div class="modal-header">
-              <h5 class="modal-title" id="detailsModalLabel">
-                Détails de l'Offre
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                aria-label="Fermer"
-                (click)="modal.dismiss('Cross click')"
-              ></button>
+          <header class="header">
+            <div class="header-overlay">
+              <div class="container">
+                <h1 class="text-white">Nos tarifs</h1>
+                <p class="text-white">
+                  Pour les entreprises non assujetties à la TVA, nous offrons
+                  une réduction de 21% sur nos tarifs.<br />
+                  Cette politique reflète notre engagement à fournir des
+                  solutions financières adaptées à chaque structure.
+                </p>
+              </div>
             </div>
-            <div class="modal-body">
-              <ol>
-                <li>
-                  <strong
-                    >L'offre Premium est comprise mais réalisée sur une base
-                    mensuelle</strong
+          </header>
+          <div class="container py-5">
+            <div class="row align-items-center">
+              <div class="col-6">
+                <div class="image-wrapper">
+                  <img
+                    src="../../assets/img/webp/15.webp"
+                    alt="Professionnelle de la comptabilité"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="content-wrapper">
+                  <span class="text-red">CE QUE NOUS VOUS PROPOSONS</span>
+                  <h1>
+                    Comptabilité Proactive, Croissance
+                    <span class="font-red">Assurée</span>
+                  </h1>
+
+                  <p>
+                    Comptabilité proactive, croissance assurée dans le monde
+                    dynamique des affaires, la réussite d'une entreprise dépend
+                    souvent de sa capacité à prendre des décisions éclairées et
+                    rapides.
+                  </p>
+
+                  <p>
+                    Chez Mfinances, nous comprenons cette exigence et avons
+                    conçu nos services pour être bien plus qu'un simple cabinet
+                    d'expertise comptable.
+                  </p>
+
+                  <div class="features-box">
+                    <h3>
+                      Situations Interminables et Prévisionnelles de Pointe
+                    </h3>
+                    <p>
+                      Au cœur de notre offre, Mfinances s'engage à fournir des
+                      situations intermédiaires et prévisionnelles sur une base
+                      régulière. Cette pratique vous permet de gérer votre
+                      entreprise de manière éclairée, en prenant des décisions
+                      fondées sur des données actualisées et précises.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-custom--primary py-5">
+            <div style="padding-top: 24px">
+              <h2 class="text-center text-white">
+                Nos Offres, accompagnées d'une expertise de pointe
+              </h2>
+            </div>
+            <div class="pricing-container">
+              <!-- Offre de Base -->
+              <div class="pricing-card">
+                <svg class="card-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M20 6H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm0 10H4V8h16v8z"
+                  />
+                  <path d="M4 14h16v2H4z" />
+                </svg>
+                <h3 class="card-title">Offre de Base</h3>
+                <div class="price-container">
+                  <span class="currency">€</span>
+                  <span class="price">350</span>
+                  <span class="period">/mois</span>
+                </div>
+                <div class="frequency">
+                  États financiers fournis à une fréquence
+                  <strong>Semestrielle</strong>.
+                </div>
+                <ul class="features-list">
+                  <li>Situation Actuelle</li>
+                  <li>Anticipation Du Résultat</li>
+                  <li>Estimation De L'impôt</li>
+                  <li>Tarif HTVA</li>
+                </ul>
+                <button (click)="scrollToVideo('video-base')" class="video-btn">
+                  VIDÉO EXPLICATIVE
+                </button>
+              </div>
+
+              <!-- Offre Premium -->
+              <div class="pricing-card">
+                <div class="popular-badge">POPULAIRE</div>
+                <svg class="card-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h16V4H4zm2 2h12v2H6V6zm0 4h12v2H6v-2zm0 4h8v2H6v-2z"
+                  />
+                </svg>
+                <h3 class="card-title">Offre Premium</h3>
+                <div class="price-container">
+                  <span class="currency">€</span>
+                  <span class="price">450</span>
+                  <span class="period">/mois</span>
+                </div>
+                <div class="frequency">
+                  États financiers fournis à une fréquence
+                  <strong>Trimestrielle</strong>.
+                </div>
+                <ul class="features-list">
+                  <li>Tous L'offre De Base</li>
+                  <li>Analyse Des Tendances</li>
+                  <li>Plan Financier Annuel</li>
+                  <li>Tarif HTVA</li>
+                </ul>
+                <button
+                  (click)="scrollToVideo('video-premium')"
+                  class="video-btn"
+                >
+                  VIDÉO EXPLICATIVE
+                </button>
+              </div>
+
+              <!-- Offre Excellence -->
+              <div class="pricing-card">
+                <svg class="card-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  />
+                </svg>
+                <h3 class="card-title">Offre Excellence</h3>
+                <div class="price-container">
+                  <span class="currency">€</span>
+                  <span class="price">650</span>
+                  <span class="period">/mois</span>
+                </div>
+                <div class="frequency">
+                  États financiers fournis à une fréquence
+                  <strong>Mensuelle</strong>.
+                </div>
+                <ul class="features-list">
+                  <li>Tous L'offre Premium</li>
+                  <li>Budget Et Analyse Des Écarts</li>
+                  <li>Plan Financier Semestrielle</li>
+                  <li>Tarif HTVA</li>
+                </ul>
+                <button
+                  (click)="scrollToVideo('video-excellence')"
+                  class="video-btn"
+                >
+                  VIDÉO EXPLICATIVE
+                </button>
+              </div>
+
+              <!-- Au Tarif Horaire -->
+              <div class="pricing-card">
+                <svg class="card-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"
+                  />
+                </svg>
+                <h3 class="card-title">Au Tarif Horaire</h3>
+                <div class="price-container">
+                  <span class="currency">€</span>
+                  <span class="price">150</span>
+                  <span class="period">/heure</span>
+                </div>
+                <div class="frequency">À la demande</div>
+                <ul class="features-list">
+                  <li>Tarif HTVA</li>
+                </ul>
+                <a href="/contact" class="contact-btn">CONTACTEZ-NOUS</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="container py-5">
+            <div class="row align-items-center">
+              <div class="col-6">
+                <div class="content-wrapper">
+                  <h1>
+                    Un engagement de temps et de
+                    <span class="font-red">précision</span>
+                  </h1>
+
+                  <p>
+                    Pour produire ces analyses indispensables et respecter
+                    systématiquement les dates convenues, notre équipe accorde
+                    une attention particulière à chaque dossier. Cet
+                    investissement en temps garantit non seulement la qualité et
+                    la régularité des informations fournies, mais témoigne aussi
+                    de notre engagement à soutenir activement votre entreprise
+                    dans sa trajectoire de croissance.
+                  </p>
+
+                  <p class="main-text">
+                    <span class="highlight-text"
+                      >Chez Mfinances, nous ne nous contentons pas de traiter
+                      des chiffres :</span
+                    >
+                    nous veillons à ce qu'ils racontent l'histoire de votre
+                    entreprise, vous aidant ainsi à bâtir un avenir financier
+                    solide et prospère.
+                  </p>
+
+                  <div class="features-box">
+                    <h3>Assistance Administrative sur Mesure</h3>
+                    <p>
+                      En complément, Mfinances propose une assistance
+                      administrative dédiée. Nous nous concentrons sur la
+                      complétude de vos documents comptables, l'optimisation de
+                      vos processus financiers et la sécurisation de vos
+                      déductions de charges. Cette assistance est cruciale pour
+                      garantir l'intégrité de votre comptabilité et la sérénité
+                      de votre gestion d'entreprise. Avec Mfinances, vous n'avez
+                      pas seulement un comptable ; vous avez une équipe qui
+                      travaille inlassablement pour assurer que chaque aspect de
+                      votre comptabilité soit impeccable.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="image-wrapper">
+                  <img
+                    src="../../assets/img/webp/15.webp"
+                    alt="Professionnelle de la comptabilité"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-custom--primary">
+            <div class="py-5">
+              <div class="offer-section">
+                <div class="offer-container">
+                  <!-- Section Vidéo -->
+                  <div id="video-base" class="video-side">
+                    <div class="video-wrapper">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        [src]="videoUrl"
+                        title="L'essentiel de votre comptabilité"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      >
+                      </iframe>
+                    </div>
+                  </div>
+
+                  <!-- Section Détails -->
+                  <div class="details-side">
+                    <div class="details-header">
+                      <span class="text-red">DÉTAILS DU TARIF</span>
+                      <h1 class="title">
+                        Offre de Base :
+                        <span class="price text-white">350 € HTVA / Mois</span>
+                      </h1>
+                    </div>
+
+                    <p class="description">
+                      L'offre de base de Mfinances est la solution parfaite pour
+                      les petites entreprises, offrant une gestion comptable
+                      essentielle et un soutien personnalisé. Elle inclut un
+                      accès direct à notre expert-comptable, une analyse
+                      périodique de vos finances, ainsi que des conseils pour
+                      optimiser votre situation fiscale. Parfaite pour maintenir
+                      une bonne santé financière tout en se concentrant sur la
+                      croissance de votre entreprise.
+                    </p>
+
+                    <button
+                      type="button"
+                      class="btn btn-red"
+                      (click)="open(content)"
+                    >
+                      Voir les détails de l'offre
+                    </button>
+
+                    <!-- Modal Template -->
+                    <ng-template #content let-modal>
+                      <div class="modal-header">
+                        <button
+                          type="button"
+                          class="btn-close"
+                          aria-label="Fermer"
+                          (click)="modal.dismiss('Cross click')"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <h6 class="text-primary-custom">
+                          Disponibilité pour Répondre à Vos Questions
+                        </h6>
+                        <ul>
+                          <li>
+                            Accès direct à un expert-comptable pour des réponses
+                            claires et rapides.
+                          </li>
+                          <li>
+                            Conseils personnalisés adaptés à la situation
+                            spécifique de votre entreprise.
+                          </li>
+                        </ul>
+
+                        <h6 class="text-primary-custom mt-3">
+                          Montant des Dépenses Non Admises
+                        </h6>
+                        <ul>
+                          <li>
+                            Liste des dépenses supportées par l'entreprise,
+                            enregistrées sur le plan comptable, mais non
+                            déductibles fiscalement.
+                          </li>
+                          <li>
+                            Optimisation de la nature des dépenses pour
+                            améliorer la déduction fiscale des frais
+                            professionnels.
+                          </li>
+                        </ul>
+
+                        <h6 class="text-primary-custom mt-3">
+                          Base Imposable de l'Entreprise
+                        </h6>
+                        <ul>
+                          <li>
+                            Calcul précis et semestriel de la base imposable.
+                          </li>
+                          <li>
+                            <strong>Impôt Actuel</strong>
+                            <ul>
+                              <li>Estimation fiable de l'impôt actuel dû.</li>
+                              <li>
+                                Stratégies pour optimiser la charge fiscale.
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <strong>Base Estimée de l'Exercice</strong>
+                            <ul>
+                              <li>
+                                Prévision de la base imposable pour l'ensemble
+                                de l'exercice.
+                              </li>
+                              <li>
+                                Conseils pour une meilleure planification
+                                financière et fiscale.
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+
+                        <h6 class="text-primary-custom mt-3">
+                          Impôt Estimé de l'Exercice
+                        </h6>
+                        <ul>
+                          <li>
+                            Projection de l'impôt pour l'exercice en cours à
+                            trajectoire inchangée.
+                          </li>
+                          <li>
+                            <strong
+                              >Situation du Compte Courant Administrateur
+                              (CCA)</strong
+                            >
+                            <ul>
+                              <li>
+                                Suivi et analyse du compte courant de
+                                l'administrateur.
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <strong>NB</strong>
+                            <p>
+                              Le CCA est le poste comptable où est enregistré
+                              l'argent que doit l'administrateur à sa société ou
+                              inversement. Cet état permet à l'entrepreneur de
+                              connaître sa situation.
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          (click)="modal.close('Close click')"
+                        >
+                          Fermer
+                        </button>
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- offer.component.html -->
+          <div class="py-5">
+            <div class="offer-section2">
+              <div class="offer-container">
+                <!-- Section Détails -->
+                <div class="details-side">
+                  <div class="details-header">
+                    <span class="text-red">DÉTAILS DU TARIF</span>
+                    <h1>
+                      Offre Premium :
+                      <span class="price"> 450 € HTVA / Mois</span>
+                    </h1>
+                  </div>
+
+                  <p class="description2">
+                    L'offre premium de Mfinances est spécialement conçue pour
+                    les dirigeants d'entreprises moyennes, cherchant à dépasser
+                    la simple compréhension de leur situation financière pour
+                    une planification proactive et stratégique. Ce service offre
+                    un accompagnement approfondi, permettant aux dirigeants de
+                    se concentrer sur leur activité principale tout en naviguant
+                    efficacement dans le monde des affaires moderne.
+                  </p>
+
+                  <!-- Bouton pour ouvrir la modal -->
+                  <button
+                    type="button"
+                    class="btn btn-red"
+                    (click)="open(content2)"
                   >
-                </li>
-                <li>
-                  <strong>Planification Financière Flexible</strong>
-                  <ul>
-                    <li>
-                      Révisions et ajustements réguliers du plan financier pour
-                      s'assurer qu'il reste aligné avec vos objectifs d'affaires
-                      et les réalités du marché.
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Analyse Budgétaire Approfondie</strong>
-                  <ul>
-                    <li>
-                      Comparaison détaillée et régulière des prévisions avec les
-                      résultats réels, fournissant des insights précieux pour
-                      vous ajuster rapidement aux réalités du marché.
-                    </li>
-                    <li>
-                      Élaboration de rapports de Forcast
-                      <strong>mensuels</strong>, soulignant les écarts et
-                      offrant des recommandations pour les corriger et
-                      développer la faculté à anticiper les évolutions du
-                      marché.
-                    </li>
-                  </ul>
-                </li>
-              </ol>
+                    Voir les détails de l'offre
+                  </button>
 
-              <h6 class="text-danger mt-3">
-                Les avantages uniques de l'offre Excellence par rapport à
-                l'offre Premium comprennent :
-              </h6>
-              <ul>
-                <li>
-                  Des analyses financières et des rapports plus fréquents pour
-                  une vision toujours actualisée de la situation financière de
-                  votre entreprise.
-                </li>
-                <li>
-                  Une capacité d'adaptation sans précédent, permettant des
-                  ajustements rapides et efficaces en fonction des évolutions du
-                  marché et des opportunités d'affaires.
-                </li>
-                <li>
-                  Des insights stratégiques pour une prise de décision éclairée,
-                  soutenant une croissance et un développement d'entreprise
-                  robustes.
-                </li>
-              </ul>
+                  <!-- Modal Template -->
+                  <ng-template #content2 let-modal>
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="detailsModalLabel">
+                        Détails de l'Offre
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        aria-label="Fermer"
+                        (click)="modal.dismiss('Cross click')"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <ol>
+                        <li><strong>La totalité du package de base</strong></li>
+                        <li>
+                          <strong>Analyse Comparative Saisonnière</strong>
+                          <ul>
+                            <li>
+                              Examen détaillé des performances de votre
+                              entreprise à travers les trimestres, permettant de
+                              comparer et d'analyser l'évolution saisonnière.
+                            </li>
+                            <li>
+                              Comparaisons horizontales (trimestres de l'année
+                              en cours) et verticales (par exemple, 1er
+                              trimestre 2023 vs 1er trimestre 2022), offrant une
+                              perspective claire sur la croissance et les
+                              tendances.
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Planification Financière Avancée</strong>
+                          <ul>
+                            <li>
+                              Élaboration d'un plan financier basé sur vos
+                              résultats précédents, vous fournissant une feuille
+                              de route claire pour l'avenir.
+                            </li>
+                            <li>
+                              Prévisions et objectifs financiers pour l'exercice
+                              en cours, ajustés annuellement en fonction des
+                              résultats et tendances observés.
+                            </li>
+                          </ul>
+                        </li>
+                      </ol>
 
-              <p class="mt-3">
-                En choisissant l'offre <strong>Excellence</strong>, vous vous
-                assurez non seulement une gestion comptable de pointe, mais
-                aussi un partenariat stratégique qui anticipe et s'adapte aux
-                besoins uniques de votre entreprise.
-              </p>
+                      <h6 class="text-danger mt-3">
+                        Avantages supplémentaires de notre package Premium par
+                        rapport à l'offre de base
+                      </h6>
+                      <ul>
+                        <li>
+                          Une compréhension approfondie des cycles et des
+                          tendances de votre entreprise, permettant une
+                          planification et une prise de décision plus éclairées.
+                        </li>
+                        <li>
+                          Une capacité à anticiper les besoins financiers et les
+                          opportunités, vous positionnant idéalement pour la
+                          croissance et l'adaptation.
+                        </li>
+                        <li>
+                          Un accompagnement personnalisé qui va au-delà de la
+                          simple comptabilité, offrant des conseils stratégiques
+                          pour maximiser votre potentiel tout en vous permettant
+                          de vous concentrer sur votre core business.
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        (click)="modal.close('Close click')"
+                      >
+                        Fermer
+                      </button>
+                    </div>
+                  </ng-template>
+
+                  <!-- Fin de la Modal -->
+                </div>
+
+                <!-- Section Vidéo -->
+                <div id="video-premium" class="video-side">
+                  <div class="video-wrapper">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/iaec1s9QEXU"
+                      title="L'essentiel de votre comptabilité"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    >
+                    </iframe>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                (click)="modal.close('Close click')"
-              >
-                Fermer
-              </button>
+          </div>
+
+          <div class="bg-custom--primary">
+            <div class="py-5">
+              <div class="offer-section">
+                <div class="offer-container">
+                  <!-- Section Vidéo -->
+                  <div id="video-excellence" class="video-side">
+                    <div class="video-wrapper">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        [src]="videoUrl2"
+                        title="L'essentiel de votre comptabilité"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      >
+                      </iframe>
+                    </div>
+                  </div>
+
+                  <!-- Section Détails -->
+                  <div class="details-side">
+                    <div class="details-header">
+                      <span class="text-red">DÉTAILS DU TARIF</span>
+                      <h1 class="title">
+                        Offre Excellence :
+                        <span class="price text-white">650 € HTVA / Mois</span>
+                      </h1>
+                    </div>
+
+                    <p class="description">
+                      L'offre Excellence représente le summum de nos services
+                      comptables et financiers, spécialement conçue pour les
+                      entreprises qui recherchent la perfection en termes de
+                      précision, d'adaptabilité et de prévision. En plus des
+                      services habituels, cette offre met un accent particulier
+                      sur le contrôle de gestion, permettant une analyse
+                      approfondie et continue des performances financières.
+                      Comprendre l'origine des écarts entre le budget et les
+                      chiffres réalisés est essentiel pour mieux anticiper
+                      l'avenir. Nous assurons une optimisation constante des
+                      ressources et une anticipation proactive des défis
+                      financiers.
+                    </p>
+
+                    <button
+                      type="button"
+                      class="btn btn-red"
+                      (click)="open(content3)"
+                    >
+                      Voir les détails de l'offre
+                    </button>
+
+                    <!-- Modal Template -->
+                    <ng-template #content3 let-modal>
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="detailsModalLabel">
+                          Détails de l'Offre
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          aria-label="Fermer"
+                          (click)="modal.dismiss('Cross click')"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <ol>
+                          <li>
+                            <strong
+                              >L'offre Premium est comprise mais réalisée sur
+                              une base mensuelle</strong
+                            >
+                          </li>
+                          <li>
+                            <strong>Planification Financière Flexible</strong>
+                            <ul>
+                              <li>
+                                Révisions et ajustements réguliers du plan
+                                financier pour s'assurer qu'il reste aligné avec
+                                vos objectifs d'affaires et les réalités du
+                                marché.
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <strong>Analyse Budgétaire Approfondie</strong>
+                            <ul>
+                              <li>
+                                Comparaison détaillée et régulière des
+                                prévisions avec les résultats réels, fournissant
+                                des insights précieux pour vous ajuster
+                                rapidement aux réalités du marché.
+                              </li>
+                              <li>
+                                Élaboration de rapports de Forcast
+                                <strong>mensuels</strong>, soulignant les écarts
+                                et offrant des recommandations pour les corriger
+                                et développer la faculté à anticiper les
+                                évolutions du marché.
+                              </li>
+                            </ul>
+                          </li>
+                        </ol>
+
+                        <h6 class="text-danger mt-3">
+                          Les avantages uniques de l'offre Excellence par
+                          rapport à l'offre Premium comprennent :
+                        </h6>
+                        <ul>
+                          <li>
+                            Des analyses financières et des rapports plus
+                            fréquents pour une vision toujours actualisée de la
+                            situation financière de votre entreprise.
+                          </li>
+                          <li>
+                            Une capacité d'adaptation sans précédent, permettant
+                            des ajustements rapides et efficaces en fonction des
+                            évolutions du marché et des opportunités d'affaires.
+                          </li>
+                          <li>
+                            Des insights stratégiques pour une prise de décision
+                            éclairée, soutenant une croissance et un
+                            développement d'entreprise robustes.
+                          </li>
+                        </ul>
+
+                        <p class="mt-3">
+                          En choisissant l'offre <strong>Excellence</strong>,
+                          vous vous assurez non seulement une gestion comptable
+                          de pointe, mais aussi un partenariat stratégique qui
+                          anticipe et s'adapte aux besoins uniques de votre
+                          entreprise.
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          (click)="modal.close('Close click')"
+                        >
+                          Fermer
+                        </button>
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
+              </div>
             </div>
-          </ng-template>
+          </div>
+          <app-zone-contact></app-zone-contact>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<app-zone-contact></app-zone-contact>
+    </div></div
+></app-page-layout>

@@ -1,24 +1,25 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PassageSocieteComponent } from '../passage-societe/passage-societe.component';
+import { NgModule } from '@angular/core';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
-import { VenteRoutingModule } from './vente-routing.module';
-import { TimelineSocieteComponent } from '../timeline-societe/timeline-societe.component';
-import { PromoSocieteComponent } from '../promo-societe/promo-societe.component';
-import { TimelineGuerrePrixComponent } from '../timeline-guerre-prix/timeline-guerre-prix.component';
-import { GuerrePrixComponent } from '../guerre-prix/guerre-prix.component';
-import { SalarieIndependantComponent } from '../salarie-independant/salarie-independant.component';
 import { CompteCourantAdministrateurComponent } from '../compte-courant-administrateur/compte-courant-administrateur.component';
-import { TimelineStockComponent } from '../timeline-stock/timeline-stock.component';
-
-
+import { GuerrePrixComponent } from '../guerre-prix/guerre-prix.component';
+import { PassageSocieteComponent } from '../passage-societe/passage-societe.component';
+import { PromoSocieteComponent } from '../promo-societe/promo-societe.component';
+import { SalarieIndependantComponent } from '../salarie-independant/salarie-independant.component';
+import { TimelineGuerrePrixComponent } from '../timeline-guerre-prix/timeline-guerre-prix.component';
+import { TimelineSocieteComponent } from '../timeline-societe/timeline-societe.component';
+import { VenteRoutingModule } from './vente-routing.module';
 
 @NgModule({
-  declarations: [PassageSocieteComponent,TimelineSocieteComponent,PromoSocieteComponent,TimelineGuerrePrixComponent,GuerrePrixComponent,SalarieIndependantComponent,CompteCourantAdministrateurComponent],
-  imports: [
-    CommonModule,
-    ShardeModuleModule,
-    VenteRoutingModule
-  ]
+  declarations: [
+    PassageSocieteComponent,
+    TimelineSocieteComponent,
+    PromoSocieteComponent,
+    TimelineGuerrePrixComponent,
+    GuerrePrixComponent,
+    SalarieIndependantComponent,
+    CompteCourantAdministrateurComponent,
+  ],
+  imports: [CommonModule, ShardeModuleModule, VenteRoutingModule],
 })
-export class VenteModule { }
+export class VenteModule {}

@@ -1,428 +1,675 @@
 <style>
-    .section-title {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #25335b;
-    }
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #25335b;
+  }
 
-    .highlighted {
-        background-color: #FF3333;
-        color: white;
-        padding: 0.2rem 0.5rem;
-        border-radius: 0.25rem;
-    }
+  .highlighted {
+    background-color: #ff3333;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
 
-    .section-content h5 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        color: #25335b;
-    }
+  .section-content h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #25335b;
+  }
 
-    .flex-content {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 1rem;
-    }
+  .flex-content {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
 
-    .icon-red {
-        color: #FF3333;
-        font-size: 1.5rem;
-        margin-right: 1rem;
-    }
+  .icon-red {
+    color: #ff3333;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
 
-    .vertical-divider {
-        border-left: 2px solid #d1d1d1;
-        height: 100%;
-    }
+  .vertical-divider {
+    border-left: 2px solid #d1d1d1;
+    height: 100%;
+  }
 
-    .custom-card {
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 1.5rem;
-    }
+  .custom-card {
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 1.5rem;
+  }
 
-    .custom-card h5 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
+  .custom-card h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
 
-    .custom-card ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
+  .custom-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 
-    .custom-card ul li {
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-    }
+  .custom-card ul li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
 
-    .custom-card ul li i {
-        color: #FF3333;
-        margin-right: 0.5rem;
-        font-size: 1.2rem;
-    }
+  .custom-card ul li i {
+    color: #ff3333;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
 
-    .custom-card ul li span {
-        font-size: 1rem;
-        color: #555;
-    }
+  .custom-card ul li span {
+    font-size: 1rem;
+    color: #555;
+  }
 
-    .bg-custom--primary {
-        background-color: #25335b;
-    }
+  .bg-custom--primary {
+    background-color: #25335b;
+  }
 
-    .bg-custom--primary p,
-    .bg-custom--primary ul,
-    .bg-custom--primary h1,
-    .bg-custom--primary h2 {
-        color: white;
-    }
+  .bg-custom--primary p,
+  .bg-custom--primary ul,
+  .bg-custom--primary h1,
+  .bg-custom--primary h2 {
+    color: white;
+  }
 
-    .works-img {
-  overflow: hidden; /* Empêche le débordement de l'image */
-  position: relative; /* Permet les transformations absolues si nécessaire */
-}
+  .works-img {
+    overflow: hidden; /* Empêche le débordement de l'image */
+    position: relative; /* Permet les transformations absolues si nécessaire */
+  }
 
-/* Stylisation de l'image */
-.works-img img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.2s ease-out; /* Transition fluide lors des transformations */
-}
-.image-active {
-  transform: translateY(0); /* Position finale */
-}
+  /* Stylisation de l'image */
+  .works-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease-out; /* Transition fluide lors des transformations */
+  }
+  .image-active {
+    transform: translateY(0); /* Position finale */
+  }
 </style>
 <header class="header">
-    <div class="header-overlay">
-        <div class="container">
-            <h1>ASBL</h1>
-            <p class="text-white">Accueil &gt; ASBL</p>
-        </div>
+  <div class="header-overlay">
+    <div class="container">
+      <h1>ASBL</h1>
+      <p class="text-white">Accueil &gt; ASBL</p>
     </div>
+  </div>
 </header>
 
-<!-- Service single start -->
-<section class="service-single pt-120 pb-130">
-  <div class="container">
-      <div class="row">
-          <!-- Sidebar -->
-          <div class="col-lg-4">
-            <app-sidebar></app-sidebar>
-           </div>
-          <!-- Main Content -->
-          <div class="col-lg-8">
-              <div class="single-content">
-                  <h3>Tout savoir sur L’ASBL</h3>
-                  <h4>Accompagnement pour les ASBL : Donnez vie à votre mission sociale</h4>
-                  <p>
-                      Les Associations Sans But Lucratif (ASBL) en Belgique sont des structures incontournables 
-                      pour porter des projets sociaux, culturels, éducatifs ou environnementaux. 
-                      Si leur fonctionnement repose sur des valeurs d’entraide et d’engagement, 
-                      leur gestion implique également des défis administratifs, financiers et organisationnels.
-                  </p>
-                  <p>
-                      Chez MFINANCES, nous comprenons les réalités des ASBL belges et offrons un accompagnement 
-                      sur mesure pour simplifier votre gestion et maximiser l’impact de votre mission.
-                  </p>
-              
-                  <div class="button-container" >
-                    <div class="home2-btn mb-4">
-                      <button (click)="scrollToSection('targetSection')"  class="btn-red">Découvrez ce que vous gagnerez avec nous <i class="fa-solid fa-arrow-right"></i></button>
-                  </div>
-                  </div>
-                 
-                  
-                  <div class="single-img mt-35 mb-4 custom-single ">
-                      <img src="../../assets/img/webp/58.avif" alt="" class="rounded-4">
-                  </div>
-              </div>
-              <!-- Challenges Section -->
-              <h3>Les défis majeurs auxquels font face les ASBL</h3>
-              <div class="defis row align-items-center mt-10">
-                  <!-- Image -->
-                  <div class="col-md-4">
-                      <img src="../../assets/img/webp/asbl_mini.webp" alt="Défis ASBL" class="img-fluid" style="border-radius: 16;" >
-                  </div>
-                  <!-- Content -->
-                  <div class="col-md-8 mt-30">
-                      <ul class="single-content-list list-unstyled pl-25">
-                          <li>
-                              <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> 
-                              <strong>Respect des obligations légales :</strong>
-                              <br>
-                              La gestion administrative peut rapidement devenir chronophage, entre les assemblées générales, 
-                              la rédaction des rapports annuels et le dépôt des comptes auprès des autorités compétentes.
-                          </li>
-                          <li>
-                              <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> 
-                              <strong>Obtention et gestion des subsides :</strong>
-                              <br>
-                              Obtenir et gérer des subsides requiert une justification rigoureuse des coûts et le respect 
-                              des critères stricts imposés par les financeurs.
-                          </li>
-                          <li>
-                              <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> 
-                              <strong>Suivi des activités et des ressources :</strong>
-                              <br>
-                              Encadrer bénévoles et employés, répartir efficacement les frais entre projets et sécuriser 
-                              la trésorerie sont des défis majeurs pour garantir la viabilité à long terme.
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <!-- End Main Content -->
-      </div>
-  </div>
-</section>
-
-<section class="bg-custom--primary" #serviceSection>
-  <div class="works sec-padding">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-12 col-lg-6">
-                  <div class="how-in-work-sec">
-                      <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
-                          <h1>Nos services pour <br><span class="rectangle-red"> les ASBL</span></h1>
-                      </div>
-                      <div class="space20"></div>
-                      <div class="works-items">
-                          <!-- Service 1 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1000">
-                              <div class="me-3">
-                                  <div class="work-icon img-border">
-                                      <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Création et gestion administrative</h2>
-                                  <ul>
-                                      <li><strong>Rédaction et dépôt des statuts.</strong></li>
-                                      <li><strong>Assistance pour l’enregistrement au Moniteur belge.</strong></li>
-                                      <li><strong>Automatisation ou externalisation des tâches administratives (sur devis).</strong></li>
-                                      <li><strong>Suivi des obligations légales :</strong> Assemblées générales, rapports annuels, modifications statutaires.</li>
-                                  </ul>
-                              </div>
-                          </div>
-
-                          <!-- Service 2 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Gestion comptable et fiscale</h2>
-                                  <ul>
-                                      <li><strong>Comptabilité générale :</strong> Consultez nos tarifs comptables.</li>
-                                      <li><strong>Comptabilité analytique :</strong> Suivi des coûts par projet et répartition des frais généraux.</li>
-                                      <li><strong>Déclarations fiscales et TVA, si applicable.</strong></li>
-                                      <li><strong>Préparation et dépôt des comptes annuels</strong> auprès de la Banque Nationale de Belgique.</li>
-                                  </ul>
-                              </div>
-                          </div>
-
-                          <!-- Service 3 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Accompagnement en recherche de financements</h2>
-                                  <ul>
-                                      <li>Les subsides locaux en Belgique sont souvent attribués par projet, ce qui peut rendre leur gestion complexe.</li>
-                                      <li><strong>Élaboration de plans financiers détaillés</strong> pour chaque projet.</li>
-                                      <li><strong>Suivi des coûts grâce à la comptabilité analytique</strong> pour optimiser vos demandes de subsides.</li>
-                                      <li><strong>Consolidation des plans financiers dans un budget global</strong>, actualisé régulièrement pour garantir une trésorerie saine.</li>
-                                  </ul>
-                              </div>
-                          </div>
-
-                          <!-- Service 4 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/about-vision-icon-2.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Gestion des ressources humaines</h2>
-                                  <ul>
-                                      <li><strong>Gestion des bénévoles :</strong> Respect des obligations légales et suivi des indemnités.</li>
-                                      <li><strong>Surveillance budgétaire :</strong> Analyse et suivi des charges salariales, souvent un poste clé dans les frais généraux des ASBL.</li>
-                                      <li>Anticiper leur impact sur votre trésorerie.</li>
-                                  </ul>
-                              </div>
-                          </div>
-
-                          <!-- Service 5 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Service de direction financière (CFO)</h2>
-                                  <ul>
-                                      <li><strong>Analyse financière approfondie.</strong></li>
-                                      <li><strong>Élaboration et suivi de budgets annuels et de trésorerie.</strong></li>
-                                      <li><strong>Optimisation des ressources pour maximiser votre impact.</strong></li>
-                                      <li><strong>Tarif horaire :</strong> 135 € HTVA.</li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <!-- Image de droite -->
-              <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
-                <div class="works-img-gallery space-sm-50 img-border">
-                    <div class="row g-3">
-                        <div class="col-12 mb-3">
-                            <img src="../../assets/img/webp/56.avif" alt="Image principale des services ASBL" class="img-fluid w-100 main-image">
-                        </div>
-                        <div class="col-12">
-                            <img src="../../assets/img/webp/5.webp" alt="Image secondaire 1" class="img-fluid w-100 secondary-image">
-                        </div>
-                        <div class="col-12">
-                            <img src="../../assets/img/webp/4.webp" alt="Image secondaire 2" class="img-fluid w-100 secondary-image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-      </div>
-  </div>
-</section>
-<section>
-  <!--=====about-start=======-->
-  <div class="about sec-padding"  id="targetSection">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
-                  <div class="about-img img-border">
-                      <img src="../../assets/img/webp/8.webp" alt="">
-                  </div>
-              </div>
-              <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
-                  <div class="about-haddings">
-                      <div class="hadding hadding-p">
-                          <p class="text-red">
-                              <span class="text-red">Pourquoi collaborer avec nous ?</span>
-                          </p>
-                          <h3>En choisissant MFINANCES, vous bénéficiez de :</h3>
-                      </div>
-
-                      <div class="check-list-all" style="padding: 1px 0 !important">
-                          <div class="row">
-                              <div>
-                                  <div class="chek-list">
-                                      <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Conformité légale garantie :</strong> Respect des réglementations belges pour éviter les erreurs coûteuses.</p>
-                                  </div>
-                                  <div class="space20"></div>
-                                  <div class="chek-list">
-                                      <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Gain de temps :</strong> Vous vous concentrez sur vos actions, nous gérons l’administratif.</p>
-                                  </div>
-                                  <div class="space20"></div>
-                              </div>
-                              <div>
-                                  <div class="chek-list">
-                                      <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Optimisation des ressources :</strong> Chaque euro collecté est utilisé au mieux pour maximiser l’impact de vos projets.</p>
-                                  </div>
-                                  <div class="space20"></div>
-                                  <div class="chek-list">
-                                      <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Un service personnalisé :</strong> Adapté à la taille et aux ambitions de votre ASBL.</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="home2-btn mt-4">
-                          <a href="/contact">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <!--=====about-end=======-->
-</section>
-
-
-<section>
-
-  <div class="service-faq sec-padding">
+<app-page-layout pageTitle="ASBL - Services comptables pour associations">
+  <!-- Service single start -->
+  <section class="service-single pt-120 pb-130">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 m-auto text-center">
-          <div class="hadding">
-            <h1 class="text-white">Questions fréquentes sur les <br> <span class="rectangle-red"> ASBL en Belgique </span> </h1>
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <app-sidebar></app-sidebar>
+        </div>
+        <!-- Main Content -->
+        <div class="col-lg-8">
+          <div class="single-content">
+            <h3>Tout savoir sur L'ASBL</h3>
+            <h4>
+              Accompagnement pour les ASBL : Donnez vie à votre mission sociale
+            </h4>
+            <p>
+              Les Associations Sans But Lucratif (ASBL) en Belgique sont des
+              structures incontournables pour porter des projets sociaux,
+              culturels, éducatifs ou environnementaux. Si leur fonctionnement
+              repose sur des valeurs d'entraide et d'engagement, leur gestion
+              implique également des défis administratifs, financiers et
+              organisationnels.
+            </p>
+            <p>
+              Chez MFINANCES, nous comprenons les réalités des ASBL belges et
+              offrons un accompagnement sur mesure pour simplifier votre gestion
+              et maximiser l'impact de votre mission.
+            </p>
+
+            <div class="button-container">
+              <div class="home2-btn mb-4">
+                <button
+                  (click)="scrollToSection('targetSection')"
+                  class="btn-red"
+                >
+                  Découvrez ce que vous gagnerez avec nous
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="single-img mt-35 mb-4 custom-single">
+              <img
+                src="../../assets/img/webp/58.avif"
+                alt=""
+                class="rounded-4"
+              />
+            </div>
+          </div>
+          <!-- Challenges Section -->
+          <h3>Les défis majeurs auxquels font face les ASBL</h3>
+          <div class="defis row align-items-center mt-10">
+            <!-- Image -->
+            <div class="col-md-4">
+              <img
+                src="../../assets/img/webp/asbl_mini.webp"
+                alt="Défis ASBL"
+                class="img-fluid"
+                style="border-radius: 16"
+              />
+            </div>
+            <!-- Content -->
+            <div class="col-md-8 mt-30">
+              <ul class="single-content-list list-unstyled pl-25">
+                <li>
+                  <i
+                    class="fa fa-star"
+                    style="font-size: 14px; color: #ff3333; margin-right: 6px"
+                  ></i>
+                  <strong>Respect des obligations légales :</strong>
+                  <br />
+                  La gestion administrative peut rapidement devenir chronophage,
+                  entre les assemblées générales, la rédaction des rapports
+                  annuels et le dépôt des comptes auprès des autorités
+                  compétentes.
+                </li>
+                <li>
+                  <i
+                    class="fa fa-star"
+                    style="font-size: 14px; color: #ff3333; margin-right: 6px"
+                  ></i>
+                  <strong>Obtention et gestion des subsides :</strong>
+                  <br />
+                  Obtenir et gérer des subsides requiert une justification
+                  rigoureuse des coûts et le respect des critères stricts
+                  imposés par les financeurs.
+                </li>
+                <li>
+                  <i
+                    class="fa fa-star"
+                    style="font-size: 14px; color: #ff3333; margin-right: 6px"
+                  ></i>
+                  <strong>Suivi des activités et des ressources :</strong>
+                  <br />
+                  Encadrer bénévoles et employés, répartir efficacement les
+                  frais entre projets et sécuriser la trésorerie sont des défis
+                  majeurs pour garantir la viabilité à long terme.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- End Main Content -->
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-custom--primary" #serviceSection>
+    <div class="works sec-padding">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12 col-lg-6">
+            <div class="how-in-work-sec">
+              <div
+                class="hadding hadding-p"
+                data-aos="fade-right"
+                data-aos-duration="800"
+              >
+                <h1>
+                  Nos services pour <br /><span class="rectangle-red">
+                    les ASBL</span
+                  >
+                </h1>
+              </div>
+              <div class="space20"></div>
+              <div class="works-items">
+                <!-- Service 1 -->
+                <div
+                  class="work-item d-flex align-items-baseline"
+                  data-aos="fade-right"
+                  data-aos-duration="1000"
+                >
+                  <div class="me-3">
+                    <div class="work-icon img-border">
+                      <img
+                        src="../../assets/img/image/profil/works-icon-1.png"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                  <div class="hadding hadding-p">
+                    <h2>Création et gestion administrative</h2>
+                    <ul>
+                      <li><strong>Rédaction et dépôt des statuts.</strong></li>
+                      <li>
+                        <strong
+                          >Assistance pour l'enregistrement au Moniteur
+                          belge.</strong
+                        >
+                      </li>
+                      <li>
+                        <strong
+                          >Automatisation ou externalisation des tâches
+                          administratives (sur devis).</strong
+                        >
+                      </li>
+                      <li>
+                        <strong>Suivi des obligations légales :</strong>
+                        Assemblées générales, rapports annuels, modifications
+                        statutaires.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                  class="work-item d-flex align-items-baseline"
+                  data-aos="fade-right"
+                  data-aos-duration="1200"
+                >
+                  <div class="me-3">
+                    <div class="work-icon">
+                      <img
+                        src="../../assets/img/image/profil/works-icon-2.png"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                  <div class="hadding hadding-p">
+                    <h2>Gestion comptable et fiscale</h2>
+                    <ul>
+                      <li>
+                        <strong>Comptabilité générale :</strong> Consultez nos
+                        tarifs comptables.
+                      </li>
+                      <li>
+                        <strong>Comptabilité analytique :</strong> Suivi des
+                        coûts par projet et répartition des frais généraux.
+                      </li>
+                      <li>
+                        <strong
+                          >Déclarations fiscales et TVA, si applicable.</strong
+                        >
+                      </li>
+                      <li>
+                        <strong
+                          >Préparation et dépôt des comptes annuels</strong
+                        >
+                        auprès de la Banque Nationale de Belgique.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                  class="work-item d-flex align-items-baseline"
+                  data-aos="fade-right"
+                  data-aos-duration="1400"
+                >
+                  <div class="me-3">
+                    <div class="work-icon">
+                      <img
+                        src="../../assets/img/image/profil/works-icon-3.png"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                  <div class="hadding hadding-p">
+                    <h2>Accompagnement en recherche de financements</h2>
+                    <ul>
+                      <li>
+                        Les subsides locaux en Belgique sont souvent attribués
+                        par projet, ce qui peut rendre leur gestion complexe.
+                      </li>
+                      <li>
+                        <strong
+                          >Élaboration de plans financiers détaillés</strong
+                        >
+                        pour chaque projet.
+                      </li>
+                      <li>
+                        <strong
+                          >Suivi des coûts grâce à la comptabilité
+                          analytique</strong
+                        >
+                        pour optimiser vos demandes de subsides.
+                      </li>
+                      <li>
+                        <strong
+                          >Consolidation des plans financiers dans un budget
+                          global</strong
+                        >, actualisé régulièrement pour garantir une trésorerie
+                        saine.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div
+                  class="work-item d-flex align-items-baseline"
+                  data-aos="fade-right"
+                  data-aos-duration="1400"
+                >
+                  <div class="me-3">
+                    <div class="work-icon">
+                      <img
+                        src="../../assets/img/image/profil/about-vision-icon-2.png"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                  <div class="hadding hadding-p">
+                    <h2>Gestion des ressources humaines</h2>
+                    <ul>
+                      <li>
+                        <strong>Gestion des bénévoles :</strong> Respect des
+                        obligations légales et suivi des indemnités.
+                      </li>
+                      <li>
+                        <strong>Surveillance budgétaire :</strong> Analyse et
+                        suivi des charges salariales, souvent un poste clé dans
+                        les frais généraux des ASBL.
+                      </li>
+                      <li>Anticiper leur impact sur votre trésorerie.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div
+                  class="work-item d-flex align-items-baseline"
+                  data-aos="fade-right"
+                  data-aos-duration="1400"
+                >
+                  <div class="me-3">
+                    <div class="work-icon">
+                      <img
+                        src="../../assets/img/image/profil/works-icon-3.png"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                  <div class="hadding hadding-p">
+                    <h2>Service de direction financière (CFO)</h2>
+                    <ul>
+                      <li><strong>Analyse financière approfondie.</strong></li>
+                      <li>
+                        <strong
+                          >Élaboration et suivi de budgets annuels et de
+                          trésorerie.</strong
+                        >
+                      </li>
+                      <li>
+                        <strong
+                          >Optimisation des ressources pour maximiser votre
+                          impact.</strong
+                        >
+                      </li>
+                      <li><strong>Tarif horaire :</strong> 135 € HTVA.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image de droite -->
+          <div
+            class="col-md-12 col-lg-6"
+            data-aos="flip-right"
+            data-aos-duration="1000"
+          >
+            <div class="works-img-gallery space-sm-50 img-border">
+              <div class="row g-3">
+                <div class="col-12 mb-3">
+                  <img
+                    src="../../assets/img/webp/56.avif"
+                    alt="Image principale des services ASBL"
+                    class="img-fluid w-100 main-image"
+                  />
+                </div>
+                <div class="col-12">
+                  <img
+                    src="../../assets/img/webp/5.webp"
+                    alt="Image secondaire 1"
+                    class="img-fluid w-100 secondary-image"
+                  />
+                </div>
+                <div class="col-12">
+                  <img
+                    src="../../assets/img/webp/4.webp"
+                    alt="Image secondaire 2"
+                    class="img-fluid w-100 secondary-image"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="space40"></div>
-      <div class="row align-items-center">
-        <div class="col-md-6">
+    </div>
+  </section>
+  <section>
+    <!--=====about-start=======-->
+    <div class="about sec-padding" id="targetSection">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+            <div class="about-img img-border">
+              <img src="../../assets/img/webp/8.webp" alt="" />
+            </div>
+          </div>
+          <div
+            class="col-md-6 space-sm-30"
+            data-aos="fade-left"
+            data-aos-duration="800"
+          >
+            <div class="about-haddings">
+              <div class="hadding hadding-p">
+                <p class="text-red">
+                  <span class="text-red">Pourquoi collaborer avec nous ?</span>
+                </p>
+                <h3>En choisissant MFINANCES, vous bénéficiez de :</h3>
+              </div>
 
-          <div class="service-details-img img-border">
-            <img src="../../assets/img/webp/57.avif" alt="">
+              <div class="check-list-all" style="padding: 1px 0 !important">
+                <div class="row">
+                  <div>
+                    <div class="chek-list">
+                      <p>
+                        <img
+                          src="../../assets/img/icons/checkfill.png"
+                          alt=""
+                        />
+                        <strong>Conformité légale garantie :</strong> Respect
+                        des réglementations belges pour éviter les erreurs
+                        coûteuses.
+                      </p>
+                    </div>
+                    <div class="space20"></div>
+                    <div class="chek-list">
+                      <p>
+                        <img
+                          src="../../assets/img/icons/checkfill.png"
+                          alt=""
+                        />
+                        <strong>Gain de temps :</strong> Vous vous concentrez
+                        sur vos actions, nous gérons l'administratif.
+                      </p>
+                    </div>
+                    <div class="space20"></div>
+                  </div>
+                  <div>
+                    <div class="chek-list">
+                      <p>
+                        <img
+                          src="../../assets/img/icons/checkfill.png"
+                          alt=""
+                        />
+                        <strong>Optimisation des ressources :</strong> Chaque
+                        euro collecté est utilisé au mieux pour maximiser
+                        l'impact de vos projets.
+                      </p>
+                    </div>
+                    <div class="space20"></div>
+                    <div class="chek-list">
+                      <p>
+                        <img
+                          src="../../assets/img/icons/checkfill.png"
+                          alt=""
+                        />
+                        <strong>Un service personnalisé :</strong> Adapté à la
+                        taille et aux ambitions de votre ASBL.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="home2-btn mt-4">
+                <a href="/contact"
+                  >Contactez-nous <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="hadding hadding-p space-sm-30">
-            <h2 class="text-white">L’ASBL peut-elle exercer une activité commerciale ? </h2>
-            <p class="text-white">Oui, mais uniquement si cette activité sert à financer le but social de l’association. Les bénéfices doivent être réinvestis dans la mission et non redistribués.</p>
-          </div>
-          <div class="space20"></div>
-          
-  <div class="accordion" id="accordionExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header active-header" id="headingOne">
-                      <button class="accordion-button accordion-button-active" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        L’ASBL peut-elle exercer une activité commerciale ?
-                      </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        Oui, mais uniquement si cette activité sert à financer le but social de l’association. Les bénéfices doivent être réinvestis dans la mission et non redistribués.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Comment suivre efficacement les coûts par projet ?
-                      </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        Grâce à la comptabilité analytique, nous répartissons précisément les frais directs et généraux pour justifier vos demandes de subsides et optimiser vos ressources. 
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Pourquoi surveiller les charges salariales ?
-                      </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        Les salaires représentent souvent un poste majeur des frais généraux. Une surveillance régulière aide à anticiper leur impact sur votre trésorerie.
-                      </div>
-                    </div>
-                  </div>
+      </div>
+    </div>
+    <!--=====about-end=======-->
+  </section>
 
-                  <!-- <div class="accordion-item">
+  <section>
+    <div class="service-faq sec-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 m-auto text-center">
+            <div class="hadding">
+              <h1 class="text-white">
+                Questions fréquentes sur les <br />
+                <span class="rectangle-red"> ASBL en Belgique </span>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="space40"></div>
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="service-details-img img-border">
+              <img src="../../assets/img/webp/57.avif" alt="" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="hadding hadding-p space-sm-30">
+              <h2 class="text-white">
+                L’ASBL peut-elle exercer une activité commerciale ?
+              </h2>
+              <p class="text-white">
+                Oui, mais uniquement si cette activité sert à financer le but
+                social de l’association. Les bénéfices doivent être réinvestis
+                dans la mission et non redistribués.
+              </p>
+            </div>
+            <div class="space20"></div>
+
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header active-header" id="headingOne">
+                  <button
+                    class="accordion-button accordion-button-active"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    L’ASBL peut-elle exercer une activité commerciale ?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    Oui, mais uniquement si cette activité sert à financer le
+                    but social de l’association. Les bénéfices doivent être
+                    réinvestis dans la mission et non redistribués.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Comment suivre efficacement les coûts par projet ?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    Grâce à la comptabilité analytique, nous répartissons
+                    précisément les frais directs et généraux pour justifier vos
+                    demandes de subsides et optimiser vos ressources.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Pourquoi surveiller les charges salariales ?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    Les salaires représentent souvent un poste majeur des frais
+                    généraux. Une surveillance régulière aide à anticiper leur
+                    impact sur votre trésorerie.
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFour">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         Prêt à optimiser la gestion de votre ASBL en Belgique ? 
@@ -435,53 +682,57 @@
                       </div>
                     </div>
                   </div> -->
-                </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="container my-5">
-  <div class="rounded-4 bg-custom--primary text-white px-4">
-    <div class="row align-items-center">
-      <!-- Image visible uniquement à partir du md (desktop) -->
-      <div 
-        class="col-md-6 d-none d-md-flex justify-content-center align-items-end" 
-        data-aos="fade-left" 
-        data-aos-delay="200"
-      >
-        <img
-          src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
-          alt="Personne souriante"
-          class="img-fluid custom-image-size"
-          style="z-index: 2; position: relative;"
-        />
-      </div>
-
-      <!-- Texte et bouton, centrés sur mobile/tablette -->
-      <div 
-        class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >
-        <h2 class="fw-bold mb-4">
-           Prêt à optimiser la gestion de votre   <br>
-          <span class="bg-danger text-white px-2 py-1 rounded-2">ASBL en Belgique ?</span>.
-        </h2>
-        <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
-          Contactez-nous dès aujourd’hui pour une consultation gratuite ! Demander un devis personnalisé 
-        </p>
-        <a 
-          href="#" 
-          class="btn btn-danger btn-sm px-3 py-2" 
-          data-aos="zoom-in" 
-          data-aos-delay="800"
+  <section class="container my-5">
+    <div class="rounded-4 bg-custom--primary text-white px-4">
+      <div class="row align-items-center">
+        <!-- Image visible uniquement à partir du md (desktop) -->
+        <div
+          class="col-md-6 d-none d-md-flex justify-content-center align-items-end"
+          data-aos="fade-left"
+          data-aos-delay="200"
         >
-          Contactez-nous <i class="fas fa-arrow-right"></i>
-        </a>
+          <img
+            src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
+            alt="Personne souriante"
+            class="img-fluid custom-image-size"
+            style="z-index: 2; position: relative"
+          />
+        </div>
+
+        <!-- Texte et bouton, centrés sur mobile/tablette -->
+        <div
+          class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
+          data-aos="fade-right"
+          data-aos-delay="400"
+        >
+          <h2 class="fw-bold mb-4">
+            Prêt à optimiser la gestion de votre <br />
+            <span class="bg-danger text-white px-2 py-1 rounded-2"
+              >ASBL en Belgique ?</span
+            >.
+          </h2>
+          <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
+            Contactez-nous dès aujourd’hui pour une consultation gratuite !
+            Demander un devis personnalisé
+          </p>
+          <a
+            href="#"
+            class="btn btn-danger btn-sm px-3 py-2"
+            data-aos="zoom-in"
+            data-aos-delay="800"
+          >
+            Contactez-nous <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<app-recommandation-profil></app-recommandation-profil>
+  </section>
+  <app-recommandation-profil></app-recommandation-profil>
+</app-page-layout>

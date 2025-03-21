@@ -1,5 +1,5 @@
 <style>
-    .challenge-solution-container {
+  .challenge-solution-container {
     position: relative;
     padding: 2rem 0;
   }
@@ -9,614 +9,828 @@
     bottom: 0;
     left: 50%;
     width: 2px;
-    background: #FF3333;
+    background: #ff3333;
     margin-left: -1.5px;
     z-index: 1;
   }
 
-
   .custom-card {
-      border: 2px solid #e6e9f1; 
-      border-radius: 12px; 
-      background-color: #f8f9fb; 
-      padding: 20px; 
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%; 
+    border: 2px solid #e6e9f1;
+    border-radius: 12px;
+    background-color: #f8f9fb;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
   }
 
   .icon-wrapper {
-      min-width: 80px;
-      min-height: 80px;
-      background-color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    min-width: 80px;
+    min-height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
   .icon-wrapper img {
-      max-width: 100%;
-      height: auto;
+    max-width: 100%;
+    height: auto;
   }
 
   .custom-image-size {
-  width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
-  height: auto; /* Maintient le ratio d'aspect */
+    width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
+    height: auto; /* Maintient le ratio d'aspect */
   }
   .second-card {
-      position: relative;
+    position: relative;
   }
 
   @media (min-width: 992px) {
-      .second-card {
-          left: -64px;
-      }
+    .second-card {
+      left: -64px;
+    }
   }
 
   @media (max-width: 991px) {
-      .second-card {
-          left: 0;
-      }
+    .second-card {
+      left: 0;
+    }
   }
 
-  .color-red, i {
-      color: #FF3333;
+  .color-red,
+  i {
+    color: #ff3333;
   }
 
   .bg-custom--primary {
-      background-color: #25335b;;
+    background-color: #25335b;
   }
 
   .bg-custom--primary p,
   .bg-custom--primary ul,
   .bg-custom--primary h1,
   .bg-custom--primary h2 {
-      color: white;
+    color: white;
   }
 
   .rectangle-red {
-      background-color: #FF3333;
-      border-radius: 8px;
-      padding: 6px;
+    background-color: #ff3333;
+    border-radius: 8px;
+    padding: 6px;
   }
 
   .hadding h1 {
-      color: white;
-      font-size: 29px !important;
-      line-height: 48px;
-      padding-bottom: 18px;
+    color: white;
+    font-size: 29px !important;
+    line-height: 48px;
+    padding-bottom: 18px;
   }
 
   .highlighted {
-      background-color: #ff4136;
-      color: #fff;
-      padding: 0.2rem 0.5rem;
-      border-radius: 0.25rem;
+    background-color: #ff4136;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
   }
 
   .vertical-divider {
-      border-left: 1px solid #d1d1d1;
-      height: 100%;
+    border-left: 1px solid #d1d1d1;
+    height: 100%;
   }
 
   .icon-red {
-      color: #ff4136;
-      font-size: 1.5rem;
-      margin-right: 1rem; 
+    color: #ff4136;
+    font-size: 1.5rem;
+    margin-right: 1rem;
   }
 
   .section-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
   }
 
   .flex-content {
-      display: flex;
-      align-items: flex-start; 
-      margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
   }
 
   .section-content h5 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
   }
 
   .section-content ul {
-      list-style: none;
-      padding: 0;
+    list-style: none;
+    padding: 0;
   }
 
   .header {
-      background: url('../../assets/img/bg/bg_about.webp') no-repeat center center/cover;
-      min-height: 300px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    background: url("../../assets/img/bg/bg_about.webp") no-repeat center
+      center/cover;
+    min-height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .header-overlay {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
   }
 
   /* Media queries pour adapter sur plus petits écrans */
   @media (max-width: 767px) {
-      .hadding h1 {
-          font-size: 24px;
-          line-height: 36px;
-      }
+    .hadding h1 {
+      font-size: 24px;
+      line-height: 36px;
+    }
 
-      .custom-card {
-          padding: 15px;
-      }
+    .custom-card {
+      padding: 15px;
+    }
 
-      .icon-wrapper {
-          min-width: 60px;
-          min-height: 60px;
-      }
+    .icon-wrapper {
+      min-width: 60px;
+      min-height: 60px;
+    }
 
-      .works-items h2 {
-          font-size: 1.2rem;
-      }
+    .works-items h2 {
+      font-size: 1.2rem;
+    }
 
-      .section-title {
-          font-size: 1.5rem;
-      }
+    .section-title {
+      font-size: 1.5rem;
+    }
   }
 
   @media (max-width: 575px) {
-      .hadding h1 {
-          font-size: 20px;
-          line-height: 32px;
-      }
+    .hadding h1 {
+      font-size: 20px;
+      line-height: 32px;
+    }
   }
 </style>
 <header class="header">
-    <div class="header-overlay">
-        <div class="container">
-            <h1>Commerçants & HORECA</h1>
-            <p class="text-white">Accueil &gt; Commerçants & HORECA</p>
-        </div>
+  <div class="header-overlay">
+    <div class="container">
+      <h1>Commerçants & HORECA</h1>
+      <p class="text-white">Accueil &gt; Commerçants & HORECA</p>
     </div>
+  </div>
 </header>
 
 <!-- Service single start -->
-<section class="service-single pt-120 pb-130" style="padding: 64px;">
+<section class="service-single pt-120 pb-130" style="padding: 64px">
   <div class="container">
-      <div class="row">
-          <!-- Sidebar -->
-           <div class="col-lg-4">
-            <app-sidebar></app-sidebar>
-           </div>
-        
-          <!-- Main Content -->
-          <div class="col-lg-8">
-              <div class="single-content">
-                  <h2 class="display-5 fw-bold">
-                    Maîtrisez vos finances pour garantir la pérennité de
-                    <span class="bg-custom--primary text-white px-2 rounded"> votre activité </span>
-                  </h2>
-                  <div>
-                    <p>En tant que commerçant ou acteur du secteur HORECA (hôtellerie, restauration, cafés), vous jonglez quotidiennement avec de multiples responsabilités : assurer une expérience client de qualité, maîtriser vos coûts et gérer vos obligations comptables. Ces défis sont d’autant plus complexes que vos marges sont souvent réduites et que vos opérations impliquent de nombreuses variables.  </p>
-                    <p>Chez MFINANCES, nous comprenons vos besoins spécifiques et vous proposons un accompagnement personnalisé pour simplifier la gestion de vos finances, optimiser vos marges, digitaliser vos processus et garantir votre conformité légale. </p>
-                    <br>
-                </div>
-                <div class="button-container" >
-                    <div class="home2-btn mb-4">
-                      <button (click)="scrollToSection('targetSection')"  class="btn-red">Découvrez ce que vous gagnerez avec nous <i class="fa-solid fa-arrow-right"></i></button>
-                  </div>
-                  </div>
-                  <div class="single-img mt-35 mb-4 custom-single">
-                      <img src="../../assets/img/webp/30.webp" alt="" class="rounded-4">
-                  </div>
-              
-                  <div class="defis row align-items-center mt-10">
-                    <h1>Transition numérique : Digitalisez vos processus pour un service client fluide</h1>
-                    <!-- Image -->
-                    <div class="col-md-4">
-                        <img src="../../assets/img/webp/19.webp" alt="Défis ASBL" class="img-fluid" style="border-radius: 16px;">
-                    </div>
-                    <!-- Content -->
-                    <div class="col-md-8 mt-30">
-                        <p>À l’ère du numérique, offrir une expérience client omnicanale et fluide est un facteur clé de différenciation.</p>
-                        
-                        <strong>Stratégies omnicanales :</strong>
-                        <ul class="list-unstyled pl-25">
-                            <li>
-                                <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>
-                                Connectez vos points de contact physiques et numériques pour offrir une expérience cohérente et personnalisée.
-                            </li>
-                            <li>
-                                <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>
-                                Synchronisez vos stocks et vos prix sur tous vos canaux pour éviter les incohérences et améliorer la satisfaction client.
-                            </li>
-                        </ul>
-                
-                        <strong>Outils technologiques :</strong>
-                        <ul class="list-unstyled pl-25">
-                            <li>
-                                <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>
-                                Intégrez des systèmes ERP pour gérer vos stocks, vos commandes et vos données clients en temps réel.
-                            </li>
-                            <li>
-                                <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i>
-                                Utilisez des CRM pour renforcer la fidélité client grâce à des interactions personnalisées.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-              </div>
-          </div>
-          <!-- End Main Content -->
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <app-sidebar></app-sidebar>
       </div>
+
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <div class="single-content">
+          <h2 class="display-5 fw-bold">
+            Maîtrisez vos finances pour garantir la pérennité de
+            <span class="bg-custom--primary text-white px-2 rounded">
+              votre activité
+            </span>
+          </h2>
+          <div>
+            <p>
+              En tant que commerçant ou acteur du secteur HORECA (hôtellerie,
+              restauration, cafés), vous jonglez quotidiennement avec de
+              multiples responsabilités : assurer une expérience client de
+              qualité, maîtriser vos coûts et gérer vos obligations comptables.
+              Ces défis sont d'autant plus complexes que vos marges sont souvent
+              réduites et que vos opérations impliquent de nombreuses variables.
+            </p>
+            <p>
+              Chez MFINANCES, nous comprenons vos besoins spécifiques et vous
+              proposons un accompagnement personnalisé pour simplifier la
+              gestion de vos finances, optimiser vos marges, digitaliser vos
+              processus et garantir votre conformité légale.
+            </p>
+            <br />
+          </div>
+          <div class="button-container">
+            <div class="home2-btn mb-4">
+              <button
+                (click)="scrollToSection('targetSection')"
+                class="btn-red"
+              >
+                Découvrez ce que vous gagnerez avec nous
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="single-img mt-35 mb-4 custom-single">
+            <img src="../../assets/img/webp/30.webp" alt="" class="rounded-4" />
+          </div>
+
+          <div class="defis row align-items-center mt-10">
+            <h1>
+              Transition numérique : Digitalisez vos processus pour un service
+              client fluide
+            </h1>
+            <!-- Image -->
+            <div class="col-md-4">
+              <img
+                src="../../assets/img/webp/19.webp"
+                alt="Défis ASBL"
+                class="img-fluid"
+                style="border-radius: 16px"
+              />
+            </div>
+            <!-- Content -->
+            <div class="col-md-8 mt-30">
+              <p>
+                À l'ère du numérique, offrir une expérience client omnicanale et
+                fluide est un facteur clé de différenciation.
+              </p>
+
+              <strong>Stratégies omnicanales :</strong>
+              <ul class="list-unstyled pl-25">
+                <li>
+                  <i
+                    class="fa fa-star"
+                    style="font-size: 14px; color: #ff3333; margin-right: 6px"
+                  ></i>
+                  Connectez vos points de contact physiques et numériques pour
+                  offrir une expérience cohérente et personnalisée.
+                </li>
+                <li>
+                  <i
+                    class="fa fa-star"
+                    style="font-size: 14px; color: #ff3333; margin-right: 6px"
+                  ></i>
+                  Synchronisez vos stocks et vos prix sur tous vos canaux pour
+                  éviter les incohérences et améliorer la satisfaction client.
+                </li>
+              </ul>
+
+              <strong>Outils technologiques :</strong>
+              <ul class="list-unstyled pl-25">
+                <li>
+                  <i
+                    class="fa fa-star"
+                    style="font-size: 14px; color: #ff3333; margin-right: 6px"
+                  ></i>
+                  Intégrez des systèmes ERP pour gérer vos stocks, vos commandes
+                  et vos données clients en temps réel.
+                </li>
+                <li>
+                  <i
+                    class="fa fa-star"
+                    style="font-size: 14px; color: #ff3333; margin-right: 6px"
+                  ></i>
+                  Utilisez des CRM pour renforcer la fidélité client grâce à des
+                  interactions personnalisées.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Main Content -->
+    </div>
   </div>
 </section>
 <section class="bg-custom--primary">
   <div class="works sec-padding">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-12 col-lg-6">
-                  <div class="how-in-work-sec">
-                      <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
-                          <h1>Optimisation de la trésorerie : Gardez le contrôle sur <br><span class="rectangle-red">vos finances</span></h1>
-                          <p>Une gestion rigoureuse de la trésorerie vous permet de répondre aux imprévus et de financer vos projets de développement sans compromettre votre stabilité financière. </p>
-                      </div>
-                      <div class="space20"></div>
-                      <div class="works-items">
-                        
-                        <!-- Service 2 -->
-                        <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
-                            <div class="me-3">
-                                <div class="work-icon">
-                                    <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="hadding hadding-p">
-                                <h2>Prévisions et planification</h2>
-                                <ul>
-                                    <li>Élaborez des scénarios financiers pour anticiper vos besoins et éviter les pénuries de liquidités.</li>
-                                    <li>Analysez vos flux de trésorerie pour identifier les gaspillages et réduire les coûts superflus.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    
-                        <!-- Service 3 -->
-                        <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                            <div class="me-3">
-                                <div class="work-icon">
-                                    <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="hadding hadding-p">
-                                <h2>Solutions de financement adaptées</h2>
-                                <ul>
-                                    <li><strong>Prêts bancaires :</strong> Idéal pour financer des projets à long terme tout en préservant votre indépendance.</li>
-                                    <li><strong>Leasing :</strong> Une option flexible pour acquérir des équipements sans grever votre trésorerie.</li>
-                                    <li><strong>Franchise en capital :</strong> Payez uniquement les intérêts pendant une période initiale pour préserver vos liquidités.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 col-lg-6">
+          <div class="how-in-work-sec">
+            <div
+              class="hadding hadding-p"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            >
+              <h1>
+                Optimisation de la trésorerie : Gardez le contrôle sur
+                <br /><span class="rectangle-red">vos finances</span>
+              </h1>
+              <p>
+                Une gestion rigoureuse de la trésorerie vous permet de répondre
+                aux imprévus et de financer vos projets de développement sans
+                compromettre votre stabilité financière.
+              </p>
+            </div>
+            <div class="space20"></div>
+            <div class="works-items">
+              <!-- Service 2 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1200"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-2.png"
+                      alt=""
+                      class="img-fluid"
+                    />
                   </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Prévisions et planification</h2>
+                  <ul>
+                    <li>
+                      Élaborez des scénarios financiers pour anticiper vos
+                      besoins et éviter les pénuries de liquidités.
+                    </li>
+                    <li>
+                      Analysez vos flux de trésorerie pour identifier les
+                      gaspillages et réduire les coûts superflus.
+                    </li>
+                  </ul>
+                </div>
               </div>
 
-              <!-- Image de droite -->
-              <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
-                  <div class="works-img space-sm-50 img-border">
-                      <img src="../../assets/img/webp/horeca.webp" alt="" class="img-fluid">
+              <!-- Service 3 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1400"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-3.png"
+                      alt=""
+                      class="img-fluid"
+                    />
                   </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Solutions de financement adaptées</h2>
+                  <ul>
+                    <li>
+                      <strong>Prêts bancaires :</strong> Idéal pour financer des
+                      projets à long terme tout en préservant votre
+                      indépendance.
+                    </li>
+                    <li>
+                      <strong>Leasing :</strong> Une option flexible pour
+                      acquérir des équipements sans grever votre trésorerie.
+                    </li>
+                    <li>
+                      <strong>Franchise en capital :</strong> Payez uniquement
+                      les intérêts pendant une période initiale pour préserver
+                      vos liquidités.
+                    </li>
+                  </ul>
+                </div>
               </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Image de droite -->
+        <div
+          class="col-md-12 col-lg-6"
+          data-aos="flip-right"
+          data-aos-duration="1000"
+        >
+          <div class="works-img space-sm-50 img-border">
+            <img
+              src="../../assets/img/webp/horeca.webp"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 </section>
 
 <section>
   <!--=====about-start=======-->
   <div class="about sec-padding">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
-                  <div class="about-img img-border">
-                      <img src="../../assets/img/webp/15.webp" alt="">
-                  </div>
-              </div>
-              <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
-                  <div class="about-haddings">
-                      <div class="hadding hadding-p">
-                          <h3>Gestion des stocks : Libérez des liquidités et évitez les pertes </h3>
-                          <p>Un stock mal géré peut rapidement immobiliser des fonds et générer des pertes. Une gestion efficace vous permet de transformer vos stocks en liquidités tout en assurant la satisfaction client. </p>
-                      </div>
-                      <div class="check-list-all" style="padding: 1px 0 !important">
-                        <div class="row">
-                            <div>
-                                <div class="chek-list" style="display: block;">
-                                    <p>
-                                        <img src="../../assets/img/icons/checkfill.png" alt="">
-                                        <strong>Stratégies efficaces :</strong> 
-                                    </p>
-                                    <ul>
-                                        <li>Favorisez les produits à forte rotation et lancez des promotions pour écouler les invendus.</li>
-                                        <li>Utilisez des logiciels de gestion pour suivre vos stocks en temps réel et anticiper les besoins.</li>
-                                    </ul>
-                                </div>
-                                <div class="space20"></div>
-                                <div class="chek-list" style="display: block;">
-                                    <p>
-                                        <img src="../../assets/img/icons/checkfill.png" alt="">
-                                        <strong>Méthodes adaptées :</strong> 
-                                    </p>
-                                    <ul>
-                                        <li><strong>FIFO (First-In, First-Out) :</strong> Minimisez les pertes sur les produits périssables.</li>
-                                        <li><strong>JIT (Just-In-Time) :</strong> Réduisez les stocks inutiles en commandant uniquement en fonction des besoins immédiats.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                      <div class="home2-btn mt-4">
-                          <a href="/contact">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-              </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+          <div class="about-img img-border">
+            <img src="../../assets/img/webp/15.webp" alt="" />
           </div>
+        </div>
+        <div
+          class="col-md-6 space-sm-30"
+          data-aos="fade-left"
+          data-aos-duration="800"
+        >
+          <div class="about-haddings">
+            <div class="hadding hadding-p">
+              <h3>
+                Gestion des stocks : Libérez des liquidités et évitez les pertes
+              </h3>
+              <p>
+                Un stock mal géré peut rapidement immobiliser des fonds et
+                générer des pertes. Une gestion efficace vous permet de
+                transformer vos stocks en liquidités tout en assurant la
+                satisfaction client.
+              </p>
+            </div>
+            <div class="check-list-all" style="padding: 1px 0 !important">
+              <div class="row">
+                <div>
+                  <div class="chek-list" style="display: block">
+                    <p>
+                      <img src="../../assets/img/icons/checkfill.png" alt="" />
+                      <strong>Stratégies efficaces :</strong>
+                    </p>
+                    <ul>
+                      <li>
+                        Favorisez les produits à forte rotation et lancez des
+                        promotions pour écouler les invendus.
+                      </li>
+                      <li>
+                        Utilisez des logiciels de gestion pour suivre vos stocks
+                        en temps réel et anticiper les besoins.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="space20"></div>
+                  <div class="chek-list" style="display: block">
+                    <p>
+                      <img src="../../assets/img/icons/checkfill.png" alt="" />
+                      <strong>Méthodes adaptées :</strong>
+                    </p>
+                    <ul>
+                      <li>
+                        <strong>FIFO (First-In, First-Out) :</strong> Minimisez
+                        les pertes sur les produits périssables.
+                      </li>
+                      <li>
+                        <strong>JIT (Just-In-Time) :</strong> Réduisez les
+                        stocks inutiles en commandant uniquement en fonction des
+                        besoins immédiats.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="home2-btn mt-4">
+              <a href="/contact"
+                >Contactez-nous <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
   <!--=====about-end=======-->
 </section>
 
 <!-- <app-timeline-independant></app-timeline-independant> -->
 <section class="bg-custom--primary py-5">
-    <div class="container">
-        
-        <div class="row align-items-center">
-            <!-- Colonne gauche (texte) -->
-            <div class="col-8 col-md-6 mb-4" data-aos="fade-right">
-              <h2 class="display-5 fw-bold" style="font-size: 40px !important;">
-                Les défis spécifiques de  <br>
-                <span class="bg-danger text-white px-2 rounded"> votre secteur </span>
-              </h2>
-            </div>
-      
-            <!-- Colonne droite (cartes) -->
-            <div class="col-12 col-md-6 d-flex flex-column gap-4">
-              <!-- Carte 1 -->
-              <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
-                  <img src="../../assets/img/image/profil/Background+Border.png" alt="Icone Facturer" class="img-fluid" style="max-width: 50px;">
-                </div>
-                <div>
-                  <h5 class="fw-semibold mb-2">Expertise spécifique : </h5>
-                  <p class="mb-0 text-muted">Une expérience approfondie dans la gestion des structures collaboratives.  </p>
-                </div>
-              </div>
-      
-              <!-- Carte 2 -->
-              <div class="custom-card p-4 d-flex align-items-start second-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
-                  <img src="../../assets/img/image/profil/Background+Border2.png" alt="Icone Patrimoine" class="img-fluid" style="max-width: 50px;">
-                </div>
-                <div>
-                  <h5 class="fw-semibold mb-2">Solutions personnalisées :</h5>
-                  <p class="mb-0 text-muted">Des outils et services adaptés aux besoins de votre SCM. </p>
-                </div>
-              </div>
-      
-              <!-- Carte 3 -->
-              <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="600">
-                <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
-                  <img src="../../assets/img/image/profil/Background+Border3.png" alt="Icone Risques" class="img-fluid" style="max-width: 50px;">
-                </div>
-                <div>
-                  <h5 class="fw-semibold mb-2">Cash Collecting intégré :</h5>
-                  <p class="mb-0 text-muted">Une gestion transparente et impartiale des cotisations, pour simplifier les relations entre membres. </p>
-                </div>
-              </div>
-            </div>
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Colonne gauche (texte) -->
+      <div class="col-8 col-md-6 mb-4" data-aos="fade-right">
+        <h2 class="display-5 fw-bold" style="font-size: 40px !important">
+          Les défis spécifiques de <br />
+          <span class="bg-danger text-white px-2 rounded"> votre secteur </span>
+        </h2>
+      </div>
+
+      <!-- Colonne droite (cartes) -->
+      <div class="col-12 col-md-6 d-flex flex-column gap-4">
+        <!-- Carte 1 -->
+        <div
+          class="custom-card p-4 d-flex align-items-start"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div
+            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="../../assets/img/image/profil/Background+Border.png"
+              alt="Icone Facturer"
+              class="img-fluid"
+              style="max-width: 50px"
+            />
           </div>
-    </div>
-  </section>
-  
-<section class="py-5" id="targetSection">
-    <div class="container">
-        <div class="row">
-            <!-- Carte 1 -->
-             <div class="mt-3">
-                <div>
-                    <h2 class="text-center">Les solutions MFINANCES pour votre<br><span class="rectangle-red text-white">activité</span></h2>
-                </div>
-             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="box-after">
-                    <div class="service-box hadding hadding-p">
-                        <img src="../../assets/img/image/about-choose-icon-1.webp" alt="">
-                        <div class="space20"></div>
-                        <h2>Accompagnement comptable et fiscal personnalisé</h2>
-                        <p>
-                            Gestion complète de votre comptabilité et respect des obligations légales. 
-                            Calcul et optimisation de la TVA en fonction des prestations (vente à emporter, sur place, hébergement).
-                        </p>
-                        <div class="space20"></div>
-                        
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Carte 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="box-after">
-                    <div class="service-box hadding hadding-p">
-                        <img src="../../assets/img/image/about-choose-icon-2.webp" alt="">
-                        <div class="space20"></div>
-                        <h2>Analyse des coûts et des performances</h2>
-                        <p>
-                            Calcul détaillé des coûts alimentaires, des prix de revient et des marges pour chaque produit ou service.
-                            Identification des opportunités pour réduire vos coûts fixes et variables.
-                        </p>
-                        <div class="space20"></div>
-                       
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Carte 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="box-after">
-                    <div class="service-box hadding hadding-p">
-                        <img src="../../assets/img/image/about-choose-icon-3.webp" alt="">
-                        <div class="space20"></div>
-                        <h2>Outils digitaux pour une gestion simplifiée</h2>
-                        <p>
-                            Intégration de votre système de caisse avec un logiciel comptable pour un suivi en temps réel.
-                            Automatisation des rapports financiers pour une gestion simplifiée et sans erreurs.
-                        </p>
-                        <div class="space20"></div>
-                    </div>
-                </div>
-            </div>
+          <div>
+            <h5 class="fw-semibold mb-2">Expertise spécifique :</h5>
+            <p class="mb-0 text-muted">
+              Une expérience approfondie dans la gestion des structures
+              collaboratives.
+            </p>
+          </div>
         </div>
+
+        <!-- Carte 2 -->
+        <div
+          class="custom-card p-4 d-flex align-items-start second-card"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <div
+            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="../../assets/img/image/profil/Background+Border2.png"
+              alt="Icone Patrimoine"
+              class="img-fluid"
+              style="max-width: 50px"
+            />
+          </div>
+          <div>
+            <h5 class="fw-semibold mb-2">Solutions personnalisées :</h5>
+            <p class="mb-0 text-muted">
+              Des outils et services adaptés aux besoins de votre SCM.
+            </p>
+          </div>
+        </div>
+
+        <!-- Carte 3 -->
+        <div
+          class="custom-card p-4 d-flex align-items-start"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <div
+            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="../../assets/img/image/profil/Background+Border3.png"
+              alt="Icone Risques"
+              class="img-fluid"
+              style="max-width: 50px"
+            />
+          </div>
+          <div>
+            <h5 class="fw-semibold mb-2">Cash Collecting intégré :</h5>
+            <p class="mb-0 text-muted">
+              Une gestion transparente et impartiale des cotisations, pour
+              simplifier les relations entre membres.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
+<section class="py-5" id="targetSection">
+  <div class="container">
+    <div class="row">
+      <!-- Carte 1 -->
+      <div class="mt-3">
+        <div>
+          <h2 class="text-center">
+            Les solutions MFINANCES pour votre<br /><span
+              class="rectangle-red text-white"
+              >activité</span
+            >
+          </h2>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="box-after">
+          <div class="service-box hadding hadding-p">
+            <img src="../../assets/img/image/about-choose-icon-1.webp" alt="" />
+            <div class="space20"></div>
+            <h2>Accompagnement comptable et fiscal personnalisé</h2>
+            <p>
+              Gestion complète de votre comptabilité et respect des obligations
+              légales. Calcul et optimisation de la TVA en fonction des
+              prestations (vente à emporter, sur place, hébergement).
+            </p>
+            <div class="space20"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="box-after">
+          <div class="service-box hadding hadding-p">
+            <img src="../../assets/img/image/about-choose-icon-2.webp" alt="" />
+            <div class="space20"></div>
+            <h2>Analyse des coûts et des performances</h2>
+            <p>
+              Calcul détaillé des coûts alimentaires, des prix de revient et des
+              marges pour chaque produit ou service. Identification des
+              opportunités pour réduire vos coûts fixes et variables.
+            </p>
+            <div class="space20"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="box-after">
+          <div class="service-box hadding hadding-p">
+            <img src="../../assets/img/image/about-choose-icon-3.webp" alt="" />
+            <div class="space20"></div>
+            <h2>Outils digitaux pour une gestion simplifiée</h2>
+            <p>
+              Intégration de votre système de caisse avec un logiciel comptable
+              pour un suivi en temps réel. Automatisation des rapports
+              financiers pour une gestion simplifiée et sans erreurs.
+            </p>
+            <div class="space20"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="bg-custom--primary mt-5">
+  <div class="container py-5">
+    <h1 class="section-title">
+      Exemples Concrets : Résultats Tangibles avec MFINANCES
+    </h1>
 
-    <div class="container py-5">
-        <h1 class="section-title">Exemples Concrets : Résultats Tangibles avec MFINANCES</h1>
-
-        <div class="row g-4">
-            <!-- Cas Restaurant -->
-            <div class="col-md-6">
-                <div class="case-card">
-                    <h2 class="h4 text-danger">Un Restaurant HORECA</h2>
-                    <p class="problem text-dark"><strong>Problème :</strong> Stockage excessif entraînant des coûts élevés et des invendus fréquents.</p>
-                    <p class="solution text-dark"><strong>Solution :</strong>  Adoption d’une gestion en flux tendu pour ajuster les commandes aux besoins réels.</p>
-                    <p class="result text-dark"><strong>Résultat :</strong> Réduction de 30 % des coûts de stockage et amélioration significative de la trésorerie.</p>
-                </div>
-            </div>
-
-            <!-- Cas Magasin de Vêtements -->
-            <div class="col-md-6">
-                <div class="case-card">
-                    <h2 class="h4 text-danger">Un Magasin de Vêtements</h2>
-                    <p class="problem text-dark"><strong>Problème :</strong> Accumulation de stocks sur des produits à faible rotation.</p>
-                    <p class="solution text-dark"><strong>Solution :</strong> Analyse des ventes pour prioriser les articles populaires et lancement de promotions sur les stocks dormants.</p>
-                    <p class="result text-dark"><strong>Résultat :</strong> Augmentation de 15 % du taux de rotation des stocks et 20 % de liquidités disponibles supplémentaires.</p>
-                </div>
-            </div>
+    <div class="row g-4">
+      <!-- Cas Restaurant -->
+      <div class="col-md-6">
+        <div class="case-card">
+          <h2 class="h4 text-danger">Un Restaurant HORECA</h2>
+          <p class="problem text-dark">
+            <strong>Problème :</strong> Stockage excessif entraînant des coûts
+            élevés et des invendus fréquents.
+          </p>
+          <p class="solution text-dark">
+            <strong>Solution :</strong> Adoption d'une gestion en flux tendu
+            pour ajuster les commandes aux besoins réels.
+          </p>
+          <p class="result text-dark">
+            <strong>Résultat :</strong> Réduction de 30 % des coûts de stockage
+            et amélioration significative de la trésorerie.
+          </p>
         </div>
+      </div>
+
+      <!-- Cas Magasin de Vêtements -->
+      <div class="col-md-6">
+        <div class="case-card">
+          <h2 class="h4 text-danger">Un Magasin de Vêtements</h2>
+          <p class="problem text-dark">
+            <strong>Problème :</strong> Accumulation de stocks sur des produits
+            à faible rotation.
+          </p>
+          <p class="solution text-dark">
+            <strong>Solution :</strong> Analyse des ventes pour prioriser les
+            articles populaires et lancement de promotions sur les stocks
+            dormants.
+          </p>
+          <p class="result text-dark">
+            <strong>Résultat :</strong> Augmentation de 15 % du taux de rotation
+            des stocks et 20 % de liquidités disponibles supplémentaires.
+          </p>
+        </div>
+      </div>
     </div>
-
-
+  </div>
 </section>
 
 <section>
-    <!--=====about-start=======-->
-    <div class="about sec-padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
-                    <div class="about-haddings">
-                        <div class="hadding hadding-p">
-                            <h3>Pourquoi choisir MFINANCES pour votre activité ?</h3>
-                            <p>Des solutions sur mesure pour répondre aux défis spécifiques de votre secteur et accompagner votre croissance.</p>
-                        </div>
-                        <div class="check-list-all" style="padding: 1px 0 !important">
-                            <div class="row">
-                                <div>
-                                    <div class="chek-list" style="display: block;">
-                                        <p>
-                                            <img src="../../assets/img/icons/checkfill.png" alt="">
-                                            <strong>Une expertise sectorielle reconnue :</strong>
-                                        </p>
-                                        <ul>
-                                            <li>Des solutions adaptées aux réalités du secteur HORECA et du commerce en Belgique.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="space20"></div>
-                                    <div class="chek-list" style="display: block;">
-                                        <p>
-                                            <img src="../../assets/img/icons/checkfill.png" alt="">
-                                            <strong>Des outils et un accompagnement clé en main :</strong>
-                                        </p>
-                                        <ul>
-                                            <li>Mise en place de logiciels, tableaux de bord et systèmes de suivi adaptés à votre activité.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="space20"></div>
-                                    <div class="chek-list" style="display: block;">
-                                        <p>
-                                            <img src="../../assets/img/icons/checkfill.png" alt="">
-                                            <strong>Un partenaire de confiance pour votre réussite :</strong>
-                                        </p>
-                                        <ul>
-                                            <li>Un suivi proactif et des conseils sur mesure pour sécuriser vos marges et anticiper vos besoins financiers.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home2-btn mt-4">
-                            <a href="/contact">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
-                    <div class="about-img img-border">
-                        <img src="../../assets/img/webp/12.webp" alt="">
-                    </div>
-                </div>
+  <!--=====about-start=======-->
+  <div class="about sec-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <div
+          class="col-md-6 space-sm-30"
+          data-aos="fade-left"
+          data-aos-duration="800"
+        >
+          <div class="about-haddings">
+            <div class="hadding hadding-p">
+              <h3>Pourquoi choisir MFINANCES pour votre activité ?</h3>
+              <p>
+                Des solutions sur mesure pour répondre aux défis spécifiques de
+                votre secteur et accompagner votre croissance.
+              </p>
             </div>
+            <div class="check-list-all" style="padding: 1px 0 !important">
+              <div class="row">
+                <div>
+                  <div class="chek-list" style="display: block">
+                    <p>
+                      <img src="../../assets/img/icons/checkfill.png" alt="" />
+                      <strong>Une expertise sectorielle reconnue :</strong>
+                    </p>
+                    <ul>
+                      <li>
+                        Des solutions adaptées aux réalités du secteur HORECA et
+                        du commerce en Belgique.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="space20"></div>
+                  <div class="chek-list" style="display: block">
+                    <p>
+                      <img src="../../assets/img/icons/checkfill.png" alt="" />
+                      <strong
+                        >Des outils et un accompagnement clé en main :</strong
+                      >
+                    </p>
+                    <ul>
+                      <li>
+                        Mise en place de logiciels, tableaux de bord et systèmes
+                        de suivi adaptés à votre activité.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="space20"></div>
+                  <div class="chek-list" style="display: block">
+                    <p>
+                      <img src="../../assets/img/icons/checkfill.png" alt="" />
+                      <strong
+                        >Un partenaire de confiance pour votre réussite
+                        :</strong
+                      >
+                    </p>
+                    <ul>
+                      <li>
+                        Un suivi proactif et des conseils sur mesure pour
+                        sécuriser vos marges et anticiper vos besoins
+                        financiers.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home2-btn mt-4">
+              <a href="/contact"
+                >Contactez-nous <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
         </div>
+
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+          <div class="about-img img-border">
+            <img src="../../assets/img/webp/12.webp" alt="" />
+          </div>
+        </div>
+      </div>
     </div>
-    <!--=====about-end=======-->
-  </section>
+  </div>
+  <!--=====about-end=======-->
+</section>
 
 <section class="container my-5">
   <div class="rounded-4 bg-custom--primary text-white px-4">
     <div class="row align-items-center">
       <!-- Image visible uniquement à partir du md (desktop) -->
-      <div 
-        class="col-md-6 d-none d-md-flex justify-content-center align-items-end" 
-        data-aos="fade-left" 
+      <div
+        class="col-md-6 d-none d-md-flex justify-content-center align-items-end"
+        data-aos="fade-left"
         data-aos-delay="200"
       >
         <img
           src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
           alt="Personne souriante"
           class="img-fluid custom-image-size"
-          style="z-index: 2; position: relative;"
+          style="z-index: 2; position: relative"
         />
       </div>
 
       <!-- Texte et bouton, centrés sur mobile/tablette -->
-      <div 
+      <div
         class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
         data-aos="fade-right"
         data-aos-delay="400"
       >
         <h2 class="fw-bold mb-4">
-            Transformez vos  <br>
-          <span class="bg-danger text-white px-2 py-1 rounded-2">défis en opportunités</span>.
+          Transformez vos <br />
+          <span class="bg-danger text-white px-2 py-1 rounded-2"
+            >défis en opportunités</span
+          >.
         </h2>
         <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
-            Contactez-nous pour un diagnostic gratuit et découvrez comment MFINANCES peut vous aider à optimiser vos marges, digitaliser vos processus et libérer votre trésorerie.
+          Contactez-nous pour un diagnostic gratuit et découvrez comment
+          MFINANCES peut vous aider à optimiser vos marges, digitaliser vos
+          processus et libérer votre trésorerie.
         </p>
-        <a 
-          href="#" 
-          class="btn btn-danger btn-sm px-3 py-2" 
-          data-aos="zoom-in" 
+        <a
+          href="#"
+          class="btn btn-danger btn-sm px-3 py-2"
+          data-aos="zoom-in"
           data-aos-delay="800"
         >
           Contactez-nous <i class="fas fa-arrow-right"></i>
@@ -626,3 +840,9 @@
   </div>
 </section>
 <app-recommandation-profil></app-recommandation-profil>
+
+<app-page-layout
+  pageTitle="Commerçants et HORECA - Services comptables spécialisés"
+>
+  ```
+</app-page-layout>
