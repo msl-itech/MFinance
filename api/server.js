@@ -118,6 +118,9 @@ const handler = (req, res) => {
   const urlPath = url.split("?")[0].split("#")[0];
   let route = urlPath.replace(/^\//, ""); // Supprimer le slash initial
 
+  // Log pour le débogage
+  console.log(`Requête reçue pour la route: ${route}`);
+
   // Déterminer les parties de la route
   let subRoute = null;
   if (route.includes("/")) {
@@ -126,21 +129,30 @@ const handler = (req, res) => {
     subRoute = parts[1];
   }
 
-  // Déterminer le chemin vers le fichier HTML prérendu
-  let htmlPath;
-  if (route === "") {
-    htmlPath = path.join(DIST_FOLDER, "index.html");
-  } else {
-    htmlPath = path.join(DIST_FOLDER, route, "index.html");
+  // Vérifier si la requête est pour un fichier statique
+  if (urlPath.match(/\.(js|css|ico|png|jpg|svg|woff|woff2|ttf|eot)$/)) {
+    console.log(`Fichier statique demandé: ${urlPath}`);
+    const filePath = path.join(DIST_FOLDER, urlPath);
+
+    if (fs.existsSync(filePath)) {
+      return res.sendFile(filePath);
+    } else {
+      console.log(`Fichier statique non trouvé: ${filePath}`);
+      return res.status(404).send("Fichier non trouvé");
+    }
   }
 
-  // Vérifier si un fichier prérendu existe pour cette route
-  if (fs.existsSync(htmlPath)) {
-    // Si le fichier existe, le lire et l'envoyer avec les méta-tags mis à jour
-    fs.readFile(htmlPath, "utf8", (err, data) => {
+  // Pour les routes Angular, nous allons toujours servir l'index.html
+  // et laisser Angular Router gérer la navigation côté client
+  console.log(`Servir l'application SPA pour la route: ${route}`);
+
+  // Chercher index.html et l'envoyer avec les méta-tags mis à jour
+  const indexPath = path.join(DIST_FOLDER, "index.html");
+
+  if (fs.existsSync(indexPath)) {
+    fs.readFile(indexPath, "utf8", (err, data) => {
       if (err) {
-        console.error("Erreur lors de la lecture du fichier HTML:", err);
-        // En cas d'erreur, essayer avec un chemin alternatif
+        console.error("Erreur lors de la lecture du fichier index.html:", err);
         tryFallbackHtml(res);
         return;
       }
@@ -172,7 +184,7 @@ const handler = (req, res) => {
       res.send(html);
     });
   } else {
-    // Si aucun fichier prérendu n'existe, essayer le fallback
+    console.log(`index.html non trouvé dans ${DIST_FOLDER}, essai du fallback`);
     tryFallbackHtml(res);
   }
 
