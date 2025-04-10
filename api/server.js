@@ -14,7 +14,7 @@ app.use(compression());
 function findBuildFolder() {
   // Sur Vercel, le dossier de build est différent
   if (process.env.VERCEL) {
-    // En production sur Vercel
+    // En production sur Vercel, le répertoire est à la racine
     return path.resolve("./");
   }
 
@@ -26,14 +26,14 @@ function findBuildFolder() {
     return path.resolve("./");
   }
 
-  const mfinancesBrowserPath = path.join(distPath, "mfinances", "browser");
-  if (fs.existsSync(mfinancesBrowserPath)) {
-    return mfinancesBrowserPath;
-  }
-
   const mfinancesPath = path.join(distPath, "mfinances");
   if (fs.existsSync(mfinancesPath)) {
     return mfinancesPath;
+  }
+
+  const mfinancesBrowserPath = path.join(distPath, "mfinances", "browser");
+  if (fs.existsSync(mfinancesBrowserPath)) {
+    return mfinancesBrowserPath;
   }
 
   return path.resolve("./");

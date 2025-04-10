@@ -243,18 +243,7 @@ function findBuildFolder() {
     return null;
   }
 
-  // Structure Angular 18+: dist/mfinances/browser
-  const mfinancesBrowserPath = path.join(distPath, "mfinances", "browser");
-  if (
-    fs.existsSync(mfinancesBrowserPath) &&
-    fs.existsSync(path.join(mfinancesBrowserPath, "index.html"))
-  ) {
-    console.log("Structure trouvée: dist/mfinances/browser");
-    return mfinancesBrowserPath;
-  }
-
-  // Vérifier les possibilités de structure alternatives
-  // Cas 1: dist/mfinances
+  // Nouvelle structure: dist/mfinances
   const mfinancesPath = path.join(distPath, "mfinances");
   if (
     fs.existsSync(mfinancesPath) &&
@@ -262,6 +251,16 @@ function findBuildFolder() {
   ) {
     console.log("Structure trouvée: dist/mfinances");
     return mfinancesPath;
+  }
+
+  // Ancienne structure: dist/mfinances/browser
+  const mfinancesBrowserPath = path.join(distPath, "mfinances", "browser");
+  if (
+    fs.existsSync(mfinancesBrowserPath) &&
+    fs.existsSync(path.join(mfinancesBrowserPath, "index.html"))
+  ) {
+    console.log("Structure trouvée: dist/mfinances/browser");
+    return mfinancesBrowserPath;
   }
 
   // Cas 2: dist/browser
@@ -407,19 +406,18 @@ function findBuildFolder() {
     return null;
   }
 
-  // Structure Angular 18+: dist/mfinances/browser
-  const mfinancesBrowserPath = path.join(distPath, 'mfinances', 'browser');
-  if (fs.existsSync(mfinancesBrowserPath) && fs.existsSync(path.join(mfinancesBrowserPath, 'index.html'))) {
-    console.log('Structure trouvée: dist/mfinances/browser');
-    return mfinancesBrowserPath;
-  }
-
-  // Vérifier les possibilités de structure alternatives
-  // Cas 1: dist/mfinances
+  // Nouvelle structure: dist/mfinances
   const mfinancesPath = path.join(distPath, 'mfinances');
   if (fs.existsSync(mfinancesPath) && fs.existsSync(path.join(mfinancesPath, 'index.html'))) {
     console.log('Structure trouvée: dist/mfinances');
     return mfinancesPath;
+  }
+
+  // Ancienne structure: dist/mfinances/browser
+  const mfinancesBrowserPath = path.join(distPath, 'mfinances', 'browser');
+  if (fs.existsSync(mfinancesBrowserPath) && fs.existsSync(path.join(mfinancesBrowserPath, 'index.html'))) {
+    console.log('Structure trouvée: dist/mfinances/browser');
+    return mfinancesBrowserPath;
   }
 
   // Cas 2: dist/browser
