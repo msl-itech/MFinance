@@ -284,100 +284,140 @@ function findBuildFolder() {
   return null;
 }
 
-// Fonction pour générer les fichiers HTML statiques pour chaque route
+// Fonction pour générer les fichiers HTML statiques
 function generateStaticHtmlFiles() {
-  try {
-    console.log("=== GÉNÉRATION DE FICHIERS HTML STATIQUES POUR SEO ===");
+  console.log("Génération des fichiers HTML statiques...");
 
-    // Trouver le dossier de build
-    const buildFolder = findBuildFolder();
-    if (!buildFolder) {
-      console.log(
-        "Impossible de trouver le dossier de build. Arrêt du script."
+  // Trouver le dossier de build
+  const buildFolder = findBuildFolder();
+  if (!buildFolder) {
+    console.log(
+      "Impossible de trouver le dossier de build. Opération annulée."
+    );
+    return;
+  }
+
+  console.log(`Dossier de build trouvé: ${buildFolder}`);
+
+  // Fichier index.html source
+  const indexPath = path.join(buildFolder, "index.html");
+  if (!fs.existsSync(indexPath)) {
+    console.log(`Le fichier index.html n'existe pas dans ${buildFolder}`);
+    return;
+  }
+
+  let indexHtml = fs.readFileSync(indexPath, "utf8");
+  console.log(`Fichier index.html chargé (${indexHtml.length} caractères)`);
+
+  // Vérifier le contenu du fichier source
+  const hasAppRoot = indexHtml.includes("<app-root");
+  console.log(
+    `Le fichier index.html contient-il app-root? ${hasAppRoot ? "Oui" : "Non"}`
+  );
+
+  // Pour chaque route
+  routes.forEach((route) => {
+    console.log(`Traitement de la route: /${route}`);
+
+    let parts = route.split("/");
+    let mainRoute = parts[0];
+    let subRoute = parts.length > 1 ? parts[1] : null;
+
+    // Obtenir les métadonnées pour cette route
+    const metaData = getMetaTagsForRoute(mainRoute, subRoute);
+
+    // Ajuster le HTML pour l'optimisation SEO
+    let html = indexHtml;
+
+    // Remplacer le titre
+    if (metaData.title) {
+      html = html.replace(
+        /<title>[^<]*<\/title>/,
+        `<title>${metaData.title}</title>`
       );
-      return;
     }
 
-    console.log(`Dossier de build trouvé: ${buildFolder}`);
-
-    // Vérifier l'existence de index.html
-    const sourceIndexPath = path.join(buildFolder, "index.html");
-    if (!fs.existsSync(sourceIndexPath)) {
-      console.log(`Erreur: ${sourceIndexPath} n'existe pas!`);
-      return;
-    }
-
-    console.log(`Lecture de ${sourceIndexPath}...`);
-    let baseHtmlContent = fs.readFileSync(sourceIndexPath, "utf8");
-
-    // Générer un fichier HTML statique pour chaque route
-    for (const route of routes) {
-      try {
-        // Déterminer les métadonnées pour cette route
-        let metaData;
-        if (route.includes("/")) {
-          const [parent, child] = route.split("/");
-          metaData = getMetaTagsForRoute(parent, child);
-        } else {
-          metaData = getMetaTagsForRoute(route);
-        }
-
-        // Modifier le contenu HTML avec les bonnes métadonnées
-        let routeHtml = baseHtmlContent;
-
-        // Remplacer le titre
-        routeHtml = routeHtml.replace(
-          /<title>[^<]*<\/title>/,
-          `<title>${metaData.title}</title>`
-        );
-
-        // Remplacer la description
-        routeHtml = routeHtml.replace(
-          /<meta\s+name="description"\s+content="[^"]*"/,
+    // Remplacer la description
+    if (metaData.description) {
+      const descPattern = /<meta\s+name="description"\s+content="[^"]*"/;
+      if (html.match(descPattern)) {
+        html = html.replace(
+          descPattern,
           `<meta name="description" content="${metaData.description}"`
         );
-
-        // Ajouter les balises SSR
-        routeHtml = routeHtml.replace(
-          /<head>/,
-          `<head>\n    <meta name="render-mode" content="SSR" />`
-        );
-
-        // Créer le dossier de destination si nécessaire
-        let targetDir;
-        if (route === "") {
-          targetDir = buildFolder;
-        } else {
-          targetDir = path.join(buildFolder, route);
-          if (!fs.existsSync(targetDir)) {
-            fs.mkdirSync(targetDir, { recursive: true });
-          }
-        }
-
-        // Écrire le fichier HTML avec les métadonnées personnalisées
-        const targetIndexPath = path.join(targetDir, "index.html");
-        fs.writeFileSync(targetIndexPath, routeHtml);
-
-        console.log(
-          `✅ Fichier HTML créé pour la route '${
-            route || "racine"
-          }' avec les métadonnées personnalisées et SSR.`
-        );
-      } catch (error) {
-        console.error(
-          `❌ Erreur lors de la création du fichier HTML pour la route '${route}':`,
-          error
+      } else {
+        // Si la balise meta description n'existe pas, l'ajouter
+        html = html.replace(
+          /<\/head>/,
+          `  <meta name="description" content="${metaData.description}">\n</head>`
         );
       }
     }
 
-    console.log("Génération des fichiers HTML statiques terminée avec succès!");
-  } catch (error) {
-    console.error(
-      "Erreur lors de la génération des fichiers HTML statiques:",
-      error
+    // Ajouter les balises canoniques
+    const canonicalUrl = route
+      ? `https://www.mfinances.be/${route}`
+      : `https://www.mfinances.be/`;
+
+    html = html.replace(
+      /<\/head>/,
+      `  <link rel="canonical" href="${canonicalUrl}" />\n</head>`
     );
-  }
+
+    // Ajouter une div avec un attribut data-route pour faciliter le débogage
+    html = html.replace(/<app-root/, `<app-root data-route="${route}"`);
+
+    // Ajouter un script qui injecte une balise H1 si elle n'est pas prérendue
+    html = html.replace(
+      /<\/body>/,
+      `  <script>
+        (function() {
+          // Vérifier si la page contient déjà un H1
+          setTimeout(function() {
+            var h1Elements = document.querySelectorAll('h1');
+            if (!h1Elements || h1Elements.length === 0) {
+              console.warn('Aucune balise H1 trouvée, injection d\'une balise H1 pour SEO');
+              // Créer et injecter un H1 si aucun n'est trouvé
+              var h1 = document.createElement('h1');
+              h1.className = 'seo-h1';
+              h1.style.cssText = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;';
+              h1.textContent = ${JSON.stringify(
+                metaData.title ||
+                  "MFinances - Cabinet d'expertise comptable à Bruxelles"
+              )};
+              document.querySelector('app-root').prepend(h1);
+            }
+          }, 1000);
+        })();
+      </script>
+    </body>`
+    );
+
+    // Déterminer le chemin de sortie
+    let outputPath;
+    if (route === "") {
+      // Page d'accueil
+      outputPath = path.join(buildFolder, "index.html");
+      console.log(`Sauvegarde de la page d'accueil vers: ${outputPath}`);
+    } else {
+      // Autres pages
+      outputPath = path.join(buildFolder, route);
+
+      // Créer les dossiers intermédiaires si nécessaire
+      if (!fs.existsSync(outputPath)) {
+        fs.mkdirSync(outputPath, { recursive: true });
+      }
+
+      outputPath = path.join(outputPath, "index.html");
+      console.log(`Sauvegarde vers: ${outputPath}`);
+    }
+
+    // Écrire le fichier
+    fs.writeFileSync(outputPath, html);
+    console.log(`Route /${route} traitée avec succès`);
+  });
+
+  console.log("Génération des fichiers HTML statiques terminée!");
 }
 
 // Exécuter la génération des fichiers HTML statiques

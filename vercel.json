@@ -10,7 +10,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist/mfinances/browser",
-        "buildCommand": "npm install --legacy-peer-deps && npm run build"
+        "buildCommand": "npm run build"
       }
     }
   ],
@@ -23,7 +23,11 @@
       "dest": "/assets/$1"
     },
     {
-      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$)",
+      "src": "/media/(.*)",
+      "dest": "/media/$1"
+    },
+    {
+      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|xml|txt)$)",
       "dest": "/$1"
     },
     {
