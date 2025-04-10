@@ -233,6 +233,205 @@ function getMetaTagsForRoute(route, subRoute = null) {
   return metaTags[route] || metaTags[""];
 }
 
+// Fonction pour obtenir les mots-clés à mettre en gras pour chaque route
+function getKeywordsForRoute(route, subRoute = null) {
+  // Structure des mots-clés par route
+  const keywordsMap = {
+    "": [
+      "cabinet comptable bruxelles",
+      "expertise comptable",
+      "comptabilité",
+      "fiscalité",
+    ],
+    accueil: [
+      "cabinet comptable bruxelles",
+      "expertise comptable",
+      "comptabilité",
+      "fiscalité",
+    ],
+    about: [
+      "cabinet d'expertise comptable",
+      "comptable bruxelles",
+      "services comptables",
+    ],
+    contact: [
+      "contacter expert comptable",
+      "cabinet comptable bruxelles",
+      "expertise comptable",
+    ],
+    tarif: [
+      "tarifs comptable",
+      "prix expertise comptable",
+      "services comptables bruxelles",
+    ],
+    "profil-independant": [
+      "comptabilité indépendant",
+      "freelance belgique",
+      "services comptables indépendants",
+    ],
+    absl: [
+      "comptabilité ASBL",
+      "gestion comptable association",
+      "fiscalité ASBL",
+    ],
+    "societe-management-patrimoniale": [
+      "société management patrimonial",
+      "gestion patrimoine",
+      "optimisation fiscale",
+    ],
+    "societe-moyen": [
+      "PME comptabilité",
+      "gestion PME",
+      "services comptables PME",
+    ],
+    "societe-exploitation": [
+      "société d'exploitation",
+      "comptabilité entreprise",
+      "gestion comptable",
+    ],
+    "commercant-horeca": [
+      "comptabilité horeca",
+      "gestion restaurant",
+      "fiscalité commerce",
+    ],
+    "professionel-sante": [
+      "comptabilité professions libérales",
+      "médecin comptabilité",
+      "fiscalité santé",
+    ],
+    "grande-entreprise": [
+      "comptabilité grande entreprise",
+      "audit financier",
+      "expertise comptable",
+    ],
+    "promoteur-immobilier": [
+      "comptabilité immobilière",
+      "fiscalité immobilier",
+      "promoteur immobilier",
+    ],
+    services: ["services comptables", "expertise fiscale", "conseil financier"],
+    vente: [
+      "passage en société",
+      "société ou indépendant",
+      "vente entreprise",
+      "optimisation fiscale",
+    ],
+    tresorerie: [
+      "plan de trésorerie",
+      "gestion de trésorerie",
+      "prévisionnel financier",
+      "situation provisoire",
+    ],
+  };
+
+  // Mots-clés spécifiques pour les sous-routes
+  if (subRoute) {
+    if (route === "services") {
+      if (subRoute === "comptabilite") {
+        return [
+          "services comptables",
+          "tenue comptable",
+          "bilan comptable",
+          "comptabilité d'entreprise",
+        ];
+      } else if (subRoute === "fiscalite") {
+        return [
+          "conseil fiscal",
+          "optimisation fiscale",
+          "déclaration fiscale",
+          "planification fiscale",
+        ];
+      } else if (subRoute === "creation-entreprise") {
+        return [
+          "création d'entreprise",
+          "lancement société",
+          "statut juridique",
+          "accompagnement création",
+        ];
+      } else if (subRoute === "declaration-impot") {
+        return [
+          "déclaration impôts",
+          "déclaration fiscale",
+          "optimisation fiscale",
+          "conseil fiscal",
+        ];
+      }
+    } else if (route === "vente") {
+      if (subRoute === "passage-en-societe") {
+        return [
+          "passage en société",
+          "indépendant vers société",
+          "avantages société",
+          "création société",
+        ];
+      } else if (subRoute === "compte-courant") {
+        return [
+          "compte courant d'associé",
+          "gestion compte courant",
+          "fiscalité compte courant",
+        ];
+      } else if (subRoute === "salarie-independant") {
+        return [
+          "salaire freelance belgique",
+          "société ou indépendant",
+          "statut freelance",
+          "indépendant complémentaire",
+        ];
+      }
+    } else if (route === "tresorerie") {
+      if (subRoute === "tresorerie-benefice") {
+        return [
+          "gestion bénéfices",
+          "optimisation trésorerie",
+          "affectation résultat",
+          "dividendes",
+        ];
+      } else if (subRoute === "investir-tresorerie") {
+        return [
+          "investir trésorerie entreprise",
+          "placement trésorerie",
+          "optimisation financière",
+        ];
+      } else if (subRoute === "optimiser-stock") {
+        return [
+          "gestion de stock comptabilité",
+          "optimiser stock",
+          "gestion de stock d'une entreprise",
+        ];
+      } else if (subRoute === "alerte-tresorerie") {
+        return [
+          "alerte trésorerie",
+          "suivi trésorerie",
+          "prévention défaillance",
+        ];
+      } else if (subRoute === "proteger-sa-tresorerie") {
+        return [
+          "protéger trésorerie entreprise",
+          "sécurisation financière",
+          "gestion prudente",
+        ];
+      } else if (subRoute === "anticiper-sa-tresorerie") {
+        return [
+          "plan de trésorerie gratuit",
+          "plan de trésorerie glissant",
+          "prévisionnel",
+          "plan de trésorerie mensuel excel",
+        ];
+      } else if (subRoute === "accompagnement") {
+        return [
+          "accompagnement financier",
+          "conseil trésorerie",
+          "gestion financière",
+          "fidélisation clientèle",
+        ];
+      }
+    }
+  }
+
+  // Retourner les mots-clés spécifiques à la route ou un tableau vide
+  return keywordsMap[route] || [];
+}
+
 // Fonction pour trouver le dossier de build Angular
 function findBuildFolder() {
   console.log("Recherche du dossier de build...");
@@ -326,6 +525,12 @@ function generateStaticHtmlFiles() {
     // Obtenir les métadonnées pour cette route
     const metaData = getMetaTagsForRoute(mainRoute, subRoute);
 
+    // Obtenir les mots-clés pour cette route
+    const keywords = getKeywordsForRoute(mainRoute, subRoute);
+
+    // Générer la chaîne de mots-clés pour meta keywords
+    const keywordsString = keywords.join(", ");
+
     // Ajuster le HTML pour l'optimisation SEO
     let html = indexHtml;
 
@@ -354,6 +559,21 @@ function generateStaticHtmlFiles() {
       }
     }
 
+    // Ajouter ou mettre à jour la balise meta keywords
+    const keywordsPattern = /<meta\s+name="keywords"\s+content="[^"]*"/;
+    if (html.match(keywordsPattern)) {
+      html = html.replace(
+        keywordsPattern,
+        `<meta name="keywords" content="expertise comptable, comptabilité, fiscalité, ${keywordsString}"`
+      );
+    } else {
+      // Si la balise meta keywords n'existe pas, l'ajouter
+      html = html.replace(
+        /<\/head>/,
+        `  <meta name="keywords" content="expertise comptable, comptabilité, fiscalité, ${keywordsString}">\n</head>`
+      );
+    }
+
     // Ajouter les balises canoniques
     const canonicalUrl = route
       ? `https://www.mfinances.be/${route}`
@@ -370,44 +590,19 @@ function generateStaticHtmlFiles() {
     // Ajouter une balise H1 directement dans le HTML prérendu pour le SEO
     html = html.replace(
       /<app-root data-route="[^"]*">/,
-      `<app-root data-route="${route}">
-      <h1 style="font-size: 28px; margin-bottom: 20px; font-weight: bold; color: #333;">${
-        metaData.title ||
-        "MFinances - Cabinet d'expertise comptable à Bruxelles"
-      }</h1>`
+      `<app-root data-route="${route}">`
     );
 
-    // Ajouter un script qui injecte une balise H1 si elle n'est pas prérendue
+    // Ajouter une div avec les mots-clés en gras juste avant la fermeture du body
     html = html.replace(
       /<\/body>/,
-      `  <script>
-        (function() {
-          // Vérifier si la page contient déjà un H1
-          setTimeout(function() {
-            var h1Elements = document.querySelectorAll('h1');
-            if (!h1Elements || h1Elements.length === 0) {
-              console.warn('Aucune balise H1 trouvée, injection d\'une balise H1 pour SEO');
-              // Créer et injecter un H1 si aucun n'est trouvé
-              var h1 = document.createElement('h1');
-              h1.className = 'seo-h1';
-              h1.style.cssText = 'font-size: 28px; margin-bottom: 20px; font-weight: bold; color: #333;';
-              h1.textContent = ${JSON.stringify(
-                metaData.title ||
-                  "MFinances - Cabinet d'expertise comptable à Bruxelles"
-              )};
-              
-              // Insérer en haut du contenu principal si possible
-              var mainContent = document.querySelector('main') || document.querySelector('.content') || document.querySelector('.main-content');
-              if (mainContent) {
-                mainContent.prepend(h1);
-              } else {
-                // Fallback: insérer au début du app-root
-                document.querySelector('app-root').prepend(h1);
-              }
-            }
-          }, 2000); // Augmentation du délai pour s'assurer que l'application Angular a le temps de charger
-        })();
-      </script>
+      `  <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+        <h1 style="font-size: 0;">${
+          metaData.title ||
+          "MFinances - Cabinet d'expertise comptable à Bruxelles"
+        }</h1>
+        ${keywords.map((kw) => `<b>${kw}</b>`).join(" ")}
+      </div>
     </body>`
     );
 
