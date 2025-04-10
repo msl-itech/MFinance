@@ -367,6 +367,16 @@ function generateStaticHtmlFiles() {
     // Ajouter une div avec un attribut data-route pour faciliter le débogage
     html = html.replace(/<app-root/, `<app-root data-route="${route}"`);
 
+    // Ajouter une balise H1 directement dans le HTML prérendu pour le SEO
+    html = html.replace(
+      /<app-root data-route="[^"]*">/,
+      `<app-root data-route="${route}">
+      <h1 style="font-size: 28px; margin-bottom: 20px; font-weight: bold; color: #333;">${
+        metaData.title ||
+        "MFinances - Cabinet d'expertise comptable à Bruxelles"
+      }</h1>`
+    );
+
     // Ajouter un script qui injecte une balise H1 si elle n'est pas prérendue
     html = html.replace(
       /<\/body>/,
@@ -380,14 +390,22 @@ function generateStaticHtmlFiles() {
               // Créer et injecter un H1 si aucun n'est trouvé
               var h1 = document.createElement('h1');
               h1.className = 'seo-h1';
-              h1.style.cssText = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;';
+              h1.style.cssText = 'font-size: 28px; margin-bottom: 20px; font-weight: bold; color: #333;';
               h1.textContent = ${JSON.stringify(
                 metaData.title ||
                   "MFinances - Cabinet d'expertise comptable à Bruxelles"
               )};
-              document.querySelector('app-root').prepend(h1);
+              
+              // Insérer en haut du contenu principal si possible
+              var mainContent = document.querySelector('main') || document.querySelector('.content') || document.querySelector('.main-content');
+              if (mainContent) {
+                mainContent.prepend(h1);
+              } else {
+                // Fallback: insérer au début du app-root
+                document.querySelector('app-root').prepend(h1);
+              }
             }
-          }, 1000);
+          }, 2000); // Augmentation du délai pour s'assurer que l'application Angular a le temps de charger
         })();
       </script>
     </body>`
