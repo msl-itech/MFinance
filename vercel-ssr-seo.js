@@ -522,33 +522,33 @@ function generateStaticHtmlFiles() {
     let mainRoute = parts[0];
     let subRoute = parts.length > 1 ? parts[1] : null;
 
-    // Créer une redirection pour '/accueil' vers '/'
-    if (route === "accueil") {
-      console.log("Création d'une redirection de /accueil vers /");
+    //     // Créer une redirection pour '/accueil' vers '/'
+    //     if (route === "accueil") {
+    //       console.log("Création d'une redirection de /accueil vers /");
 
-      const redirectHtml = `<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Redirection</title>
-    <meta name="robots" content="noindex">
-    <link rel="canonical" href="https://www.mfinances.be/" />
-    <meta http-equiv="refresh" content="0;url=https://www.mfinances.be/" />
-  </head>
-  <body>
-    <p>Redirection vers <a href="https://www.mfinances.be/">la page d'accueil</a>...</p>
-  </body>
-</html>`;
+    //       const redirectHtml = `<!DOCTYPE html>
+    // <html>
+    //   <head>
+    //     <meta charset="utf-8">
+    //     <title>Redirection</title>
+    //     <meta name="robots" content="noindex">
+    //     <link rel="canonical" href="https://www.mfinances.be/" />
+    //     <meta http-equiv="refresh" content="0;url=https://www.mfinances.be/" />
+    //   </head>
+    //   <body>
+    //     <p>Redirection vers <a href="https://www.mfinances.be/">la page d'accueil</a>...</p>
+    //   </body>
+    // </html>`;
 
-      const redirectPath = path.join(buildFolder, route);
-      if (!fs.existsSync(redirectPath)) {
-        fs.mkdirSync(redirectPath, { recursive: true });
-      }
+    //       const redirectPath = path.join(buildFolder, route);
+    //       if (!fs.existsSync(redirectPath)) {
+    //         fs.mkdirSync(redirectPath, { recursive: true });
+    //       }
 
-      fs.writeFileSync(path.join(redirectPath, "index.html"), redirectHtml);
-      console.log(`Redirection créée pour la route /${route}`);
-      return; // Passer à la route suivante
-    }
+    //       fs.writeFileSync(path.join(redirectPath, "index.html"), redirectHtml);
+    //       console.log(`Redirection créée pour la route /${route}`);
+    //       return; // Passer à la route suivante
+    //     }
 
     // Obtenir les métadonnées pour cette route
     const metaData = getMetaTagsForRoute(mainRoute, subRoute);
