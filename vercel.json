@@ -4,15 +4,9 @@
   "outputDirectory": "dist/mfinances/browser",
   "installCommand": "node vercel-install.js",
   "framework": null,
-  "functions": {
-    "dist/mfinances/browser/server.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/server.js" }
+    { "src": "/(.*)", "dest": "/api/server.js" }
   ],
   "env": {
     "NODE_OPTIONS": "--legacy-peer-deps"

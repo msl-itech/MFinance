@@ -13,25 +13,20 @@ npx ng build --configuration production
 # Exécuter le script de prérendu
 node vercel-ssr-seo.js
 
-# Copier les fichiers nécessaires dans le répertoire de sortie
-cp server.js dist/mfinances/browser/
-cp package.json dist/mfinances/browser/
-cp vercel-alias.js dist/mfinances/browser/
+# S'assurer que le dossier api existe
+mkdir -p api
 
-# Créer un package.json minimal dans le répertoire de sortie
-cat > dist/mfinances/browser/package.json << 'EOL'
-{
-  "name": "mfinances-server",
-  "version": "1.0.0",
-  "main": "server.js",
-  "dependencies": {
-    "express": "^4.18.2",
-    "compression": "^1.8.0"
-  },
-  "engines": {
-    "node": "18.x"
-  }
-}
-EOL
+# Copier les dépendances nécessaires pour les fonctions serverless
+echo "Installation des dépendances pour la fonction serverless..."
+cp api/server.js dist/mfinances/browser/
+
+# S'assurer que le fichier server.js est présent dans le dossier api de production
+if [ ! -f "api/server.js" ]; then
+  echo "Erreur: api/server.js n'existe pas!"
+  exit 1
+fi
+
+# Nous n'avons plus besoin de créer un package.json minimal dans le répertoire de sortie
+# car le fichier api/package.json sera utilisé par Vercel
 
 echo "Build terminé avec succès!" 
