@@ -1,20 +1,18 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node",
-      "config": {
-        "installCommand": "npm install --legacy-peer-deps",
-        "buildCommand": "npm run build:ssr"
-      }
+  "buildCommand": "./vercel-build.sh",
+  "outputDirectory": "dist/mfinances/browser",
+  "installCommand": "node vercel-install.js",
+  "framework": null,
+  "functions": {
+    "dist/mfinances/browser/server.js": {
+      "memory": 1024,
+      "maxDuration": 10
     }
-  ],
+  },
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
-    }
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/server.js" }
   ],
   "env": {
     "NODE_OPTIONS": "--legacy-peer-deps"

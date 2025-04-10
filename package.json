@@ -10,7 +10,7 @@
     "prerender": "node vercel-prerender.js",
     "seo-prerender": "node vercel-seo-prerender.js",
     "debug": "node vercel-debug.js",
-    "vercel-build": "node vercel-alias.js && NODE_OPTIONS=--legacy-peer-deps npm run build:ssr",
+    "vercel-build": "./vercel-build.sh",
     "build:ssr": "ng build --configuration production && node vercel-ssr-seo.js",
     "serve:ssr": "node server.js",
     "dev:ssr": "node server.js"
