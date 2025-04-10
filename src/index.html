@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <title>MFinances</title>
+    <title>MFinances - Cabinet d'expertise comptable à Bruxelles</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
@@ -36,6 +36,25 @@
     <script>
       gtag("event", "conversion", {
         send_to: "AW-471631250/2vx1CJaC-OAYEJKL8uAB",
+      });
+    </script>
+    <script>
+      // Script de débogage pour détecter les problèmes de chargement
+      console.log("Document initial chargé");
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM entièrement chargé");
+      });
+      window.addEventListener("load", function () {
+        console.log("Toutes les ressources chargées");
+        // En cas de problème, signaler des erreurs potentielles de chargement
+        setTimeout(function () {
+          var appRoot = document.querySelector("app-root");
+          if (!appRoot || !appRoot.children.length) {
+            console.error(
+              "Problème potentiel: app-root est vide après chargement complet"
+            );
+          }
+        }, 3000);
       });
     </script>
   </head>

@@ -9,8 +9,8 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/mfinances",
-        "buildCommand": "npm install --legacy-peer-deps && npm run build && cp -r dist/mfinances/* public/ || true"
+        "distDir": "dist/mfinances/browser",
+        "buildCommand": "npm install --legacy-peer-deps && npm run build"
       }
     }
   ],
@@ -23,12 +23,15 @@
       "dest": "/assets/$1"
     },
     {
-      "src": "/(.*\\.(js|css|ico|png|jpg|svg|woff|woff2|ttf|eot)$)",
+      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$)",
       "dest": "/$1"
     },
     {
       "src": "/(.*)",
       "dest": "/api/server.js"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
