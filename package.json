@@ -4,16 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production && mkdir -p dist/mfinances/api && cp -r api/* dist/mfinances/api/ && node vercel-ssr-seo.js",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prerender": "node vercel-prerender.js",
     "seo-prerender": "node vercel-seo-prerender.js",
     "debug": "node vercel-debug.js",
-    "vercel-build": "./vercel-build.sh",
-    "build:ssr": "ng build --configuration production && node vercel-ssr-seo.js",
-    "serve:ssr": "node server.js",
-    "dev:ssr": "node server.js"
+    "serve:ssr": "node api/server-local.js",
+    "dev:ssr": "node api/server-local.js"
   },
   "private": true,
   "dependencies": {

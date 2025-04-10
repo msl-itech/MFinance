@@ -1,8 +1,2 @@
-// Point d'entrée alternatif pour Vercel
-// Importe et réexporte le serveur Express de server.js
-
-// Importer le serveur
-const app = require("./server");
-
-// Exporter pour Vercel
-module.exports = app;
+// Point d'entrée pour l'API Vercel
+module.exports = require("./server");

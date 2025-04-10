@@ -14,8 +14,8 @@ app.use(compression());
 function findBuildFolder() {
   // Sur Vercel, le dossier de build est différent
   if (process.env.VERCEL) {
-    // En production sur Vercel, le répertoire est à la racine
-    return path.resolve("./");
+    // En production sur Vercel
+    return path.join(process.cwd(), "dist", "mfinances");
   }
 
   // En local, on cherche le dossier de build comme avant
@@ -38,13 +38,6 @@ function findBuildFolder() {
 
   return path.resolve("./");
 }
-
-// Trouver le dossier de build
-const DIST_FOLDER = findBuildFolder();
-console.log(`Dossier de build: ${DIST_FOLDER}`);
-
-// Servir les fichiers statiques
-app.use(express.static(DIST_FOLDER));
 
 // Fonction pour obtenir les métadonnées pour une route
 function getMetaTagsForRoute(route, subRoute = null) {
@@ -82,10 +75,17 @@ function getMetaTagsForRoute(route, subRoute = null) {
   return metaTags[route] || metaTags[""];
 }
 
-// Gérer toutes les autres routes
-app.get("*", (req, res) => {
+// Handler pour les requêtes API de Vercel
+const handler = (req, res) => {
+  // Trouver le dossier de build
+  const DIST_FOLDER = findBuildFolder();
+  console.log(`Dossier de build: ${DIST_FOLDER}`);
+
+  // Configurer Express pour utiliser ce dossier comme statique
+  app.use(express.static(DIST_FOLDER));
+
   // Extraire la route de l'URL en toute sécurité
-  const url = req.originalUrl || req.url;
+  const url = req.url || "/";
   const urlPath = url.split("?")[0].split("#")[0];
   let route = urlPath.replace(/^\//, ""); // Supprimer le slash initial
 
@@ -137,22 +137,21 @@ app.get("*", (req, res) => {
       }
 
       // Envoyer le HTML modifié
+      res.setHeader("Content-Type", "text/html");
       res.send(html);
     });
   } else {
     // Si aucun fichier prérendu n'existe, servir le index.html par défaut
-    res.sendFile(path.join(DIST_FOLDER, "index.html"));
+    fs.readFile(path.join(DIST_FOLDER, "index.html"), "utf8", (err, data) => {
+      if (err) {
+        console.error("Erreur lors de la lecture du fichier index.html:", err);
+        return res.status(500).send("Erreur serveur");
+      }
+      res.setHeader("Content-Type", "text/html");
+      res.send(data);
+    });
   }
-});
+};
 
-// Configuration pour Vercel Serverless Function
-if (process.env.VERCEL) {
-  // Exporter l'application pour Vercel
-  module.exports = app;
-} else {
-  // En local, démarrer le serveur
-  const PORT = process.env.PORT || 4000;
-  app.listen(PORT, () => {
-    console.log(`Serveur démarré sur http://localhost:${PORT}`);
-  });
-}
+// Exporter le handler pour Vercel
+module.exports = handler;
