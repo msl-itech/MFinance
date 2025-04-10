@@ -11,7 +11,8 @@
     "seo-prerender": "node vercel-seo-prerender.js",
     "debug": "node vercel-debug.js",
     "serve:ssr": "node api/server-local.js",
-    "dev:ssr": "node api/server-local.js"
+    "dev:ssr": "node api/server-local.js",
+    "vercel-build": "npm run build"
   },
   "private": true,
   "dependencies": {
