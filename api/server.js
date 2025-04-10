@@ -14,8 +14,37 @@ app.use(compression());
 function findBuildFolder() {
   // Sur Vercel, le dossier de build est différent
   if (process.env.VERCEL) {
-    // En production sur Vercel
-    return path.join(process.cwd(), "dist", "mfinances");
+    // Essayer différents chemins possibles sur Vercel
+    const possiblePaths = [
+      path.resolve("/var/task/dist/mfinances"),
+      path.resolve("./dist/mfinances"),
+      path.resolve("./"),
+      path.resolve("./"),
+    ];
+
+    for (const p of possiblePaths) {
+      console.log(`Vérification du chemin: ${p}`);
+      if (fs.existsSync(p)) {
+        // Vérifier si le dossier contient des fichiers HTML ou statiques
+        try {
+          const files = fs.readdirSync(p);
+          console.log(`Contenu du dossier ${p}:`, files);
+
+          if (files.includes("index.html")) {
+            console.log(`index.html trouvé dans: ${p}`);
+            return p;
+          }
+        } catch (err) {
+          console.error(`Erreur lors de la lecture du dossier ${p}:`, err);
+        }
+      } else {
+        console.log(`Chemin non trouvé: ${p}`);
+      }
+    }
+
+    // Si aucun chemin ne fonctionne, revenir à la racine
+    console.log("Aucun chemin valide trouvé, utilisation de la racine");
+    return path.resolve("./");
   }
 
   // En local, on cherche le dossier de build comme avant
@@ -111,7 +140,9 @@ const handler = (req, res) => {
     fs.readFile(htmlPath, "utf8", (err, data) => {
       if (err) {
         console.error("Erreur lors de la lecture du fichier HTML:", err);
-        return res.status(500).send("Erreur serveur");
+        // En cas d'erreur, essayer avec un chemin alternatif
+        tryFallbackHtml(res);
+        return;
       }
 
       // Obtenir les métadonnées
@@ -141,15 +172,65 @@ const handler = (req, res) => {
       res.send(html);
     });
   } else {
-    // Si aucun fichier prérendu n'existe, servir le index.html par défaut
-    fs.readFile(path.join(DIST_FOLDER, "index.html"), "utf8", (err, data) => {
-      if (err) {
-        console.error("Erreur lors de la lecture du fichier index.html:", err);
-        return res.status(500).send("Erreur serveur");
+    // Si aucun fichier prérendu n'existe, essayer le fallback
+    tryFallbackHtml(res);
+  }
+
+  // Fonction pour essayer de servir un HTML de fallback
+  function tryFallbackHtml(res) {
+    // Liste des chemins possibles pour index.html
+    const possiblePaths = [
+      path.join(DIST_FOLDER, "index.html"),
+      path.join(process.cwd(), "dist/mfinances/index.html"),
+      path.join(process.cwd(), "dist/mfinances/browser/index.html"),
+      path.join(process.cwd(), "public/index.html"),
+      path.join(process.cwd(), "index.html"),
+    ];
+
+    // Essayer chaque chemin
+    for (const indexPath of possiblePaths) {
+      console.log(`Essai de fallback: ${indexPath}`);
+      if (fs.existsSync(indexPath)) {
+        fs.readFile(indexPath, "utf8", (err, data) => {
+          if (err) {
+            console.error(
+              `Erreur lors de la lecture du fallback ${indexPath}:`,
+              err
+            );
+            // Ne pas utiliser continue ici car nous sommes dans une callback
+            return;
+          }
+          console.log(`Fallback trouvé: ${indexPath}`);
+          res.setHeader("Content-Type", "text/html");
+          res.send(data);
+          return;
+        });
+        return;
       }
-      res.setHeader("Content-Type", "text/html");
-      res.send(data);
-    });
+    }
+
+    // Si aucun fallback ne fonctionne, retourner une réponse HTML simple
+    console.log(
+      "Aucun fallback trouvé, utilisation de la réponse HTML minimale"
+    );
+    res.setHeader("Content-Type", "text/html");
+    res.send(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>MFinances - Cabinet d'expertise comptable à Bruxelles</title>
+          <meta name="description" content="MFinances est un cabinet d'expertise comptable à Bruxelles offrant des services de comptabilité, fiscalité et conseil aux entreprises et indépendants.">
+        </head>
+        <body>
+          <h1>MFinances</h1>
+          <p>Chargement de l'application...</p>
+          <script>
+            // Rediriger vers la racine pour recharger l'application correctement
+            window.location.href = '/';
+          </script>
+        </body>
+      </html>
+    `);
   }
 };
 
