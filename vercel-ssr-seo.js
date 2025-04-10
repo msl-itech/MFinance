@@ -371,7 +371,7 @@ function generateStaticHtmlFiles() {
     html = html.replace(
       /<app-root data-route="[^"]*">/,
       `<app-root data-route="${route}">
-      <h1 style="font-size: 28px; margin-bottom: 20px; font-weight: bold; color: #333;">${
+      <h1 style="position:absolute; opacity:0; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">${
         metaData.title ||
         "MFinances - Cabinet d'expertise comptable à Bruxelles"
       }</h1>`
@@ -390,7 +390,7 @@ function generateStaticHtmlFiles() {
               // Créer et injecter un H1 si aucun n'est trouvé
               var h1 = document.createElement('h1');
               h1.className = 'seo-h1';
-              h1.style.cssText = 'font-size: 28px; margin-bottom: 20px; font-weight: bold; color: #333;';
+              h1.style.cssText = 'position:absolute; opacity:0; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;';
               h1.textContent = ${JSON.stringify(
                 metaData.title ||
                   "MFinances - Cabinet d'expertise comptable à Bruxelles"
