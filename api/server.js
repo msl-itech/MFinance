@@ -167,110 +167,243 @@ const handler = (req, res) => {
 
     console.log(`Traitement comme route SPA: ${route}`);
 
+    // Analyser le problème de la page blanche
+    function analyseIndexHtml(indexPath) {
+      if (fs.existsSync(indexPath)) {
+        try {
+          const content = fs.readFileSync(indexPath, "utf8");
+          console.log(
+            `Taille du fichier index.html: ${content.length} caractères`
+          );
+
+          // Vérifier les éléments essentiels
+          const hasHeadTag = content.includes("<head>");
+          const hasBodyTag = content.includes("<body>");
+          const hasScriptTag = content.includes("<script");
+          const hasBaseHref = content.includes('<base href="/');
+
+          console.log(`Analyse du fichier index.html:
+            - head tag: ${hasHeadTag ? "Oui" : "Non"}
+            - body tag: ${hasBodyTag ? "Oui" : "Non"}
+            - script tag: ${hasScriptTag ? "Oui" : "Non"}
+            - base href: ${hasBaseHref ? "Oui" : "Non"}`);
+
+          return content;
+        } catch (err) {
+          console.error(`Erreur lors de l'analyse de ${indexPath}:`, err);
+          return null;
+        }
+      }
+      return null;
+    }
+
     // Pour les routes Angular, nous allons toujours servir l'index.html
     const indexPath = path.join(DIST_FOLDER, "index.html");
     console.log(`Recherche de index.html à: ${indexPath}`);
 
-    if (fs.existsSync(indexPath)) {
-      console.log(`index.html trouvé, lecture du fichier`);
-      fs.readFile(indexPath, "utf8", (err, data) => {
-        if (err) {
-          console.error(`Erreur lors de la lecture de index.html:`, err);
-          return tryFallbackHtml(res);
+    // Analyser le contenu du index.html trouvé pour déboguer
+    const indexContent = analyseIndexHtml(indexPath);
+
+    if (indexContent) {
+      console.log(`index.html trouvé et analysé, traitement...`);
+      try {
+        // Obtenir les métadonnées
+        const metaData = getMetaTagsForRoute(route, subRoute);
+        console.log(`Métadonnées pour la route ${route}:`, metaData);
+
+        // Mettre à jour le HTML avec les bonnes métadonnées
+        let html = indexContent;
+
+        // Remplacer le titre si nécessaire
+        if (metaData.title) {
+          const originalTitle = html.match(/<title>([^<]*)<\/title>/);
+          if (originalTitle) {
+            console.log(
+              `Remplacement du titre: "${originalTitle[1]}" -> "${metaData.title}"`
+            );
+          }
+          html = html.replace(
+            /<title>[^<]*<\/title>/,
+            `<title>${metaData.title}</title>`
+          );
         }
 
-        try {
-          // Obtenir les métadonnées
-          const metaData = getMetaTagsForRoute(route, subRoute);
-          console.log(`Métadonnées pour la route ${route}:`, metaData);
-
-          // Mettre à jour le HTML avec les bonnes métadonnées
-          let html = data;
-
-          // Remplacer le titre si nécessaire
-          if (metaData.title) {
-            const originalTitle = html.match(/<title>([^<]*)<\/title>/);
-            if (originalTitle) {
-              console.log(
-                `Remplacement du titre: "${originalTitle[1]}" -> "${metaData.title}"`
-              );
-            }
-            html = html.replace(
-              /<title>[^<]*<\/title>/,
-              `<title>${metaData.title}</title>`
-            );
-          }
-
-          // Remplacer la description si nécessaire
-          if (metaData.description) {
-            const descPattern = /<meta\s+name="description"\s+content="[^"]*"/;
-            const originalDesc = html.match(descPattern);
-            if (originalDesc) {
-              console.log(`Remplacement de la description`);
-            } else {
-              console.log(`Ajout de la balise description manquante`);
-              // Si la balise meta description n'existe pas, l'ajouter
-              const headEnd = html.indexOf("</head>");
-              if (headEnd !== -1) {
-                html =
-                  html.slice(0, headEnd) +
-                  `\n  <meta name="description" content="${metaData.description}">` +
-                  html.slice(headEnd);
-              }
-            }
-            html = html.replace(
-              descPattern,
-              `<meta name="description" content="${metaData.description}"`
-            );
-          }
-
-          // Assurer que le base href est correct
-          if (!html.includes('<base href="/"')) {
-            console.log(`Base href manquant ou incorrect, ajout/correction`);
-            const headStart = html.indexOf("<head>") + 6;
-            if (headStart > 6) {
+        // Remplacer la description si nécessaire
+        if (metaData.description) {
+          const descPattern = /<meta\s+name="description"\s+content="[^"]*"/;
+          const originalDesc = html.match(descPattern);
+          if (originalDesc) {
+            console.log(`Remplacement de la description`);
+          } else {
+            console.log(`Ajout de la balise description manquante`);
+            // Si la balise meta description n'existe pas, l'ajouter
+            const headEnd = html.indexOf("</head>");
+            if (headEnd !== -1) {
               html =
-                html.slice(0, headStart) +
-                '\n  <base href="/">' +
-                html.slice(headStart);
+                html.slice(0, headEnd) +
+                `\n  <meta name="description" content="${metaData.description}">` +
+                html.slice(headEnd);
             }
           }
-
-          console.log(`Envoi du HTML modifié (${html.length} caractères)`);
-          res.setHeader("Content-Type", "text/html");
-          res.send(html);
-        } catch (innerErr) {
-          console.error("Erreur lors du traitement du HTML:", innerErr);
-          // En cas d'erreur dans le traitement, envoyer le HTML original
-          res.setHeader("Content-Type", "text/html");
-          res.send(data);
+          html = html.replace(
+            descPattern,
+            `<meta name="description" content="${metaData.description}"`
+          );
         }
-      });
+
+        // Assurer que le base href est correct
+        if (!html.includes('<base href="/"')) {
+          console.log(`Base href manquant ou incorrect, ajout/correction`);
+          const headStart = html.indexOf("<head>") + 6;
+          if (headStart > 6) {
+            html =
+              html.slice(0, headStart) +
+              '\n  <base href="/">' +
+              html.slice(headStart);
+          }
+        }
+
+        // Ajouter un script pour déboguer le chargement
+        const bodyEnd = html.indexOf("</body>");
+        if (bodyEnd !== -1) {
+          html =
+            html.slice(0, bodyEnd) +
+            `\n  <script>
+              console.log("Document chargé: " + document.readyState);
+              document.addEventListener('DOMContentLoaded', function() {
+                console.log("DOM entièrement chargé");
+              });
+              window.addEventListener('load', function() {
+                console.log("Toutes les ressources chargées");
+                // En cas de problème, forcer le rafraîchissement après 5 secondes si la page semble blanche
+                setTimeout(function() {
+                  if (!document.body.children.length || 
+                      window.getComputedStyle(document.body).backgroundColor === "rgb(255, 255, 255)") {
+                    console.log("Détection de page potentiellement blanche, rafraîchissement...");
+                    window.location.reload();
+                  }
+                }, 5000);
+              });
+            </script>` +
+            html.slice(bodyEnd);
+        }
+
+        console.log(`Envoi du HTML modifié (${html.length} caractères)`);
+        res.setHeader("Content-Type", "text/html");
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        res.setHeader("Pragma", "no-cache");
+        res.setHeader("Expires", "0");
+        res.send(html);
+      } catch (innerErr) {
+        console.error("Erreur lors du traitement du HTML:", innerErr);
+        // En cas d'erreur dans le traitement, envoyer une version simplifiée du HTML
+        sendSimpleHtml(res, route);
+      }
     } else {
       console.log(
-        `index.html non trouvé dans ${DIST_FOLDER}, essai du fallback`
+        `index.html non trouvé ou invalide dans ${DIST_FOLDER}, essai du fallback`
       );
       tryFallbackHtml(res);
     }
   } catch (err) {
     console.error("Erreur critique dans le handler:", err);
-    res.status(500).send(`
+    sendSimpleHtml(res, "error", err.message || "Erreur inconnue");
+  }
+
+  // Fonction pour envoyer une page HTML simple
+  function sendSimpleHtml(res, route, errorMsg = null) {
+    const title =
+      route === "error"
+        ? "MFinances - Erreur"
+        : "MFinances - Cabinet d'expertise comptable à Bruxelles";
+
+    console.log(`Envoi d'une page HTML simple pour la route: ${route}`);
+
+    res.setHeader("Content-Type", "text/html");
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.send(`
       <!DOCTYPE html>
-      <html>
+      <html lang="fr">
         <head>
-          <title>MFinances - Erreur</title>
+          <title>${title}</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="description" content="MFinances est un cabinet d'expertise comptable à Bruxelles offrant des services de comptabilité, fiscalité et conseil aux entreprises et indépendants.">
+          <base href="/">
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 20px;
+              line-height: 1.6;
+              color: #333;
+            }
+            .container {
+              max-width: 800px;
+              margin: 0 auto;
+              text-align: center;
+              padding: 40px 20px;
+            }
+            h1 {
+              color: #2c3e50;
+              margin-bottom: 20px;
+            }
+            p {
+              margin-bottom: 20px;
+            }
+            a {
+              color: #3498db;
+              text-decoration: none;
+            }
+            a:hover {
+              text-decoration: underline;
+            }
+            .btn {
+              display: inline-block;
+              background-color: #3498db;
+              color: white;
+              padding: 10px 20px;
+              border-radius: 4px;
+              text-decoration: none;
+              margin-top: 20px;
+              font-weight: bold;
+            }
+            .btn:hover {
+              background-color: #2980b9;
+              text-decoration: none;
+            }
+            .error {
+              color: #e74c3c;
+              font-size: 0.9em;
+              margin-top: 20px;
+            }
+          </style>
         </head>
         <body>
-          <h1>Une erreur est survenue</h1>
-          <p>Merci de réessayer plus tard.</p>
-          <a href="/">Retourner à l'accueil</a>
+          <div class="container">
+            <h1>MFinances</h1>
+            ${
+              route === "error"
+                ? `<p>Une erreur est survenue lors du chargement de la page.</p>`
+                : `<p>Bienvenue chez MFinances, votre cabinet d'expertise comptable à Bruxelles.</p>`
+            }
+            <p>Nous vous accompagnons dans la gestion comptable et fiscale de votre entreprise.</p>
+            <a href="/" class="btn">Accéder au site</a>
+            ${
+              errorMsg
+                ? `<p class="error">Détails techniques: ${errorMsg}</p>`
+                : ""
+            }
+          </div>
           <script>
-            // Log de l'erreur dans la console
-            console.error("Erreur serveur:", ${JSON.stringify(
-              err.message || "Erreur inconnue"
-            )});
-            // Redirection automatique après 5 secondes
-            setTimeout(() => window.location.href = '/', 5000);
+            console.log("Page de secours chargée");
+            document.addEventListener('DOMContentLoaded', function() {
+              console.log("DOM chargé dans la page de secours");
+              // Essayer de charger la page principale après 2 secondes
+              setTimeout(function() {
+                window.location.href = '/';
+              }, 2000);
+            });
           </script>
         </body>
       </html>
@@ -293,27 +426,25 @@ const handler = (req, res) => {
 
     console.log(`Chemins de fallback à essayer:`, possiblePaths);
 
-    // Essayer chaque chemin
+    // Pour chaque chemin, analyser le contenu
     for (const indexPath of possiblePaths) {
       console.log(`Essai de fallback: ${indexPath}`);
       if (fs.existsSync(indexPath)) {
         console.log(`Fallback trouvé: ${indexPath}`);
-        fs.readFile(indexPath, "utf8", (err, data) => {
-          if (err) {
-            console.error(
-              `Erreur lors de la lecture du fallback ${indexPath}:`,
-              err
-            );
-            // Ne pas utiliser continue ici car nous sommes dans une callback
-            return;
-          }
+        const content = analyseIndexHtml(indexPath);
+
+        if (!content) {
+          console.log(`Contenu invalide pour le fallback: ${indexPath}`);
+          continue;
+        }
+
+        // Appliquer les corrections nécessaires et l'envoyer
+        try {
+          let html = content;
 
           // Assurer que le base href est correct
-          let html = data;
           if (!html.includes('<base href="/"')) {
-            console.log(
-              `Base href manquant ou incorrect dans le fallback, ajout/correction`
-            );
+            console.log(`Base href manquant dans le fallback, ajout`);
             const headStart = html.indexOf("<head>") + 6;
             if (headStart > 6) {
               html =
@@ -323,41 +454,52 @@ const handler = (req, res) => {
             }
           }
 
+          // Vérifier si les scripts Angular essentiels sont présents
+          if (
+            !html.includes("runtime") ||
+            !html.includes("polyfills") ||
+            !html.includes("main")
+          ) {
+            console.log(
+              `Scripts Angular manquants dans le fichier HTML de fallback`
+            );
+            // Si les scripts essentiels sont manquants, envoyez une page simple à la place
+            sendSimpleHtml(res, "fallback-invalid");
+            return;
+          }
+
+          // Ajouter un script de débogage
+          const bodyEnd = html.indexOf("</body>");
+          if (bodyEnd !== -1) {
+            html =
+              html.slice(0, bodyEnd) +
+              `\n  <script>
+                console.log("Fallback chargé depuis: ${indexPath}");
+                document.addEventListener('DOMContentLoaded', function() {
+                  console.log("DOM chargé dans le fallback");
+                });
+              </script>` +
+              html.slice(bodyEnd);
+          }
+
           console.log(`Envoi du HTML de fallback (${html.length} caractères)`);
           res.setHeader("Content-Type", "text/html");
+          res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
           res.send(html);
           return;
-        });
-        return;
+        } catch (err) {
+          console.error(
+            `Erreur lors du traitement du fallback ${indexPath}:`,
+            err
+          );
+          continue;
+        }
       }
     }
 
     // Si aucun fallback ne fonctionne, retourner une réponse HTML simple
-    console.log(
-      "Aucun fallback trouvé, utilisation de la réponse HTML minimale"
-    );
-    res.setHeader("Content-Type", "text/html");
-    res.send(`
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <title>MFinances - Cabinet d'expertise comptable à Bruxelles</title>
-          <meta name="description" content="MFinances est un cabinet d'expertise comptable à Bruxelles offrant des services de comptabilité, fiscalité et conseil aux entreprises et indépendants.">
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <base href="/">
-        </head>
-        <body>
-          <h1>MFinances</h1>
-          <p>Chargement de l'application...</p>
-          <p><a href="/">Retourner à l'accueil</a></p>
-          <script>
-            // Rediriger vers la racine après 2 secondes
-            setTimeout(() => window.location.href = '/', 2000);
-          </script>
-        </body>
-      </html>
-    `);
+    console.log("Aucun fallback valide trouvé, envoi d'une page HTML simple");
+    sendSimpleHtml(res, "no-fallback");
   }
 };
 
