@@ -1,39 +1,39 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { AccompagnementComponent } from './TresorerieModule/accompagnement/accompagnement.component';
+import { AlerteTresorerieComponent } from './TresorerieModule/alerte-tresorerie/alerte-tresorerie.component';
+import { AboutComponent } from './about/about.component';
+import { AbslComponent } from './absl/absl.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { AboutComponent } from './about/about.component';
-import { HeaderAboutComponent } from './header-about/header-about.component';
-import { AbslComponent } from './absl/absl.component';
-import { ProfilIndependantComponent } from './profil-independant/profil-independant.component';
-import { ProfilSocieteManagementPatrimonialeComponent } from './profil-societe-management-patrimoniale/profil-societe-management-patrimoniale.component';
-import { TimelinePatrimonialeComponent } from './timeline-patrimoniale/timeline-patrimoniale.component';
-import { RecommandationProfilComponent } from './recommandation-profil/recommandation-profil.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { TimelineIndependantComponent } from './timeline-independant/timeline-independant.component';
-import { ProfilSocieteMoyenComponent } from './profil-societe-moyen/profil-societe-moyen.component';
-import { ProfilSocieteExploitationComponent } from './profil-societe-exploitation/profil-societe-exploitation.component';
 import { ContactComponent } from './contact/contact.component';
-import { ProfilCommercantHorecaComponent } from './profil-commercant-horeca/profil-commercant-horeca.component';
-import { ProfessionelSanteComponent } from './professionel-sante/professionel-sante.component';
-import { ProfilGrandeEntrepriseComponent } from './profil-grande-entreprise/profil-grande-entreprise.component';
-import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilier/profil-promoteur-immobilier.component';
-import { TestScrollComponent } from './test-scroll/test-scroll.component';
-import { ShardeModuleModule } from './sharde-module/sharde-module.module';
-import { TarifComponent } from './tarif/tarif.component';
-import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
-import { AlerteTresorerieComponent } from './TresorerieModule/alerte-tresorerie/alerte-tresorerie.component';
-import { AccompagnementComponent } from './TresorerieModule/accompagnement/accompagnement.component';
 import { FooterComponent } from './footer/footer.component';
-import { FormCodePromoComponent } from './form-code-promo/form-code-promo.component';
+import { HeaderAboutComponent } from './header-about/header-about.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ProfessionelSanteComponent } from './professionel-sante/professionel-sante.component';
+import { ProfilCommercantHorecaComponent } from './profil-commercant-horeca/profil-commercant-horeca.component';
+import { ProfilGrandeEntrepriseComponent } from './profil-grande-entreprise/profil-grande-entreprise.component';
+import { ProfilIndependantComponent } from './profil-independant/profil-independant.component';
+import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilier/profil-promoteur-immobilier.component';
+import { ProfilSocieteExploitationComponent } from './profil-societe-exploitation/profil-societe-exploitation.component';
+import { ProfilSocieteManagementPatrimonialeComponent } from './profil-societe-management-patrimoniale/profil-societe-management-patrimoniale.component';
+import { ProfilSocieteMoyenComponent } from './profil-societe-moyen/profil-societe-moyen.component';
 import { PromoBannerComponent } from './promo-banner/promo-banner.component';
-import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecommandationProfilComponent } from './recommandation-profil/recommandation-profil.component';
+import { ShardeModuleModule } from './sharde-module/sharde-module.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { TarifComponent } from './tarif/tarif.component';
+import { TestScrollComponent } from './test-scroll/test-scroll.component';
+import { TimelineIndependantComponent } from './timeline-independant/timeline-independant.component';
+import { TimelinePatrimonialeComponent } from './timeline-patrimoniale/timeline-patrimoniale.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +62,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AccompagnementComponent,
     FooterComponent,
     PromoBannerComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,10 +75,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       timeOut: 3000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
-      progressBar: true
-    })
+      progressBar: true,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
