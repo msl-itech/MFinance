@@ -128,6 +128,12 @@ function getMetaTagsForRoute(route, subRoute = null) {
       description:
         "MFinances vous accompagne dans la gestion de trésorerie de votre entreprise à Bruxelles. Optimisation, prévision et conseil personnalisé.",
     },
+    404: {
+      title: "Page non trouvée - MFinances",
+      description:
+        "La page que vous recherchez n'existe pas ou a été déplacée. Retournez à l'accueil ou contactez-nous.",
+      noindex: true,
+    },
   };
 
   // Cas spécifiques pour les sous-routes
