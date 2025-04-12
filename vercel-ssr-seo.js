@@ -37,6 +37,7 @@ const routes = [
   "tresorerie/proteger-sa-tresorerie",
   "tresorerie/anticiper-sa-tresorerie",
   "tresorerie/accompagnement",
+  "support",
 ];
 
 // Fonction pour obtenir les métadonnées pour une route (reprise du vercel-seo-prerender.js)
@@ -127,6 +128,11 @@ function getMetaTagsForRoute(route, subRoute = null) {
       title: "Gestion de trésorerie - MFinances",
       description:
         "MFinances vous accompagne dans la gestion de trésorerie de votre entreprise à Bruxelles. Optimisation, prévision et conseil personnalisé.",
+    },
+    support: {
+      title: "Support Technique - Assistance à distance | MFinances",
+      description:
+        "Obtenez une assistance technique à distance avec notre équipe de support MFinances. Installation simple d'AnyDesk et résolution rapide de vos problèmes informatiques.",
     },
     404: {
       title: "Page non trouvée - MFinances",
@@ -327,6 +333,14 @@ function getKeywordsForRoute(route, subRoute = null) {
       "gestion de trésorerie",
       "prévisionnel financier",
       "situation provisoire",
+    ],
+    support: [
+      "support technique",
+      "assistance à distance",
+      "AnyDesk",
+      "dépannage informatique",
+      "aide comptabilité en ligne",
+      "assistance comptable",
     ],
   };
 
