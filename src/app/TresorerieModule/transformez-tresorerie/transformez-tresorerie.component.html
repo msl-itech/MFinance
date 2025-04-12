@@ -1,0 +1,222 @@
+<header class="header">
+  <div class="header-overlay">
+    <div class="container">
+      <h1 class="text-white">
+        Transformez votre trésorerie<br />
+        Du stress à la sérénité financière
+      </h1>
+      <p class="text-white mt-3">
+        Des solutions expertes pour optimiser, sécuriser et développer la
+        trésorerie de votre entreprise même en période d'incertitude
+      </p>
+    </div>
+  </div>
+</header>
+
+<div class="video-promotion-section">
+  <div class="content-container">
+    <!-- Video Side -->
+    <div class="video-side">
+      <div class="video-tag">
+        <i class="fas fa-play-circle"></i>
+        REGARDEZ LA VIDÉO SUR CETTE PAGE
+      </div>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/-myPEHrSucw"
+          title="Tresorerie benefice"
+          allowfullscreen
+          class="border-0"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Text Side -->
+    <div class="text-side">
+      <h2 class="title">
+        Maîtrisez l'élément vital<span class="highlight">
+          <br />de votre entreprise
+        </span>
+      </h2>
+
+      <div class="content-text">
+        <p class="intro">
+          La <span class="text-accent">trésorerie</span> est bien plus qu'un
+          simple indicateur financier – c'est l'oxygène qui maintient votre
+          entreprise en vie et lui permet de prospérer.
+        </p>
+
+        <p class="benefits">
+          Notre approche multidimensionnelle vous guide à travers toutes les
+          facettes de la gestion de trésorerie : de la compréhension
+          fondamentale de son fonctionnement à la mise en place de stratégies
+          avancées pour la protéger et l'optimiser.
+        </p>
+        <p class="benefits">
+          En maîtrisant ces aspects essentiels, vous transformerez une source de
+          stress en un puissant levier de croissance.
+        </p>
+
+        <a
+          (click)="scrollToSection('modules-section')"
+          class="cta-button"
+          id="explore-button"
+        >
+          Explorer nos solutions
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="business-section">
+  <div class="container2">
+    <!-- Contenu textuel -->
+    <div class="content-side">
+      <h2 class="title">Pourquoi la trésorerie<br />est-elle si cruciale ?</h2>
+
+      <div class="content">
+        <p>
+          <span class="highlight">
+            Une entreprise rentable peut faire faillite si sa trésorerie est mal
+            gérée.
+          </span>
+          <span class="highlight">
+            À l'inverse, une gestion efficace de vos liquidités peut vous
+            propulser au-delà de vos concurrents.
+          </span>
+        </p>
+
+        <p>
+          La trésorerie n'est pas seulement un indicateur financier – c'est un
+          outil stratégique qui vous permet de saisir les opportunités, de
+          résister aux crises et d'investir dans votre croissance sans
+          compromettre votre stabilité.
+        </p>
+
+        <a
+          (click)="scrollToSection('modules-section')"
+          class="cta-button"
+          id="discover-button"
+        >
+          Découvrir nos modules
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Image side -->
+    <div class="image-side">
+      <img
+        src="../../../assets/img/webp/treasur.webp"
+        alt="Gestion de trésorerie"
+        class="feature-image"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="business-section inverted-section">
+  <div class="container2">
+    <div class="image-side">
+      <img
+        src="../../../assets/img/webp/fiscalite_entreprise_3_mfinances.webp"
+        alt="Stratégies financières"
+        class="feature-image"
+      />
+    </div>
+
+    <!-- Contenu textuel -->
+    <div class="content-side">
+      <h2 class="title">Notre approche globale de la trésorerie</h2>
+
+      <div class="content">
+        <p>
+          Chez MFinances, nous abordons la trésorerie comme un système complet
+          avec ses entrées, ses sorties et ses cycles. Notre approche se base
+          sur trois piliers fondamentaux :
+        </p>
+
+        <!-- Remplacer la structure des cartes par une liste à puces simple -->
+        <ul class="simple-pillars-list">
+          <li>
+            <h3 class="pillar-title">Comprendre</h3>
+            <p class="pillar-description">
+              Acquérir une vision claire des mécanismes de votre trésorerie
+            </p>
+          </li>
+
+          <li>
+            <h3 class="pillar-title">Protéger</h3>
+            <p class="pillar-description">
+              Sécuriser vos liquidités contre les risques et les imprévus
+            </p>
+          </li>
+
+          <li>
+            <h3 class="pillar-title">Optimiser</h3>
+            <p class="pillar-description">
+              Transformer votre trésorerie en levier de croissance
+            </p>
+          </li>
+        </ul>
+
+        <p>
+          Cette méthodologie éprouvée a déjà aidé des centaines d'entreprises à
+          transformer leur situation financière et à atteindre une croissance
+          durable.
+        </p>
+        <a
+          (click)="scrollToSection('modules-section')"
+          class="cta-button"
+          id="approach-button"
+        >
+          Découvrez comment
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modules-section" class="modules-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Nos modules d'optimisation de trésorerie</h2>
+      <p>
+        Sélectionnez la solution adaptée aux besoins spécifiques de votre
+        entreprise
+      </p>
+    </div>
+
+    <div class="modules-grid">
+      <div
+        *ngFor="let module of tresorerieModules"
+        class="module-card"
+        [ngClass]="{ 'featured-module': module.highlight }"
+      >
+        <span *ngIf="module.highlight" class="module-badge">{{
+          module.highlight
+        }}</span>
+        <div
+          class="module-icon"
+          [ngStyle]="{ 'background-color': module.color + '15' }"
+        >
+          <i
+            class="fas {{ module.icon }}"
+            [ngStyle]="{ color: module.color }"
+          ></i>
+        </div>
+        <h3>{{ module.title }}</h3>
+        <p>{{ module.description }}</p>
+        <a [routerLink]="module.route" class="module-button">
+          En savoir plus
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-form-code-promo id="targetSection"></app-form-code-promo>

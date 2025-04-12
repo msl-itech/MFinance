@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AbslComponent } from './absl/absl.component';
+import { BoosteEntrepriseComponent } from './booste-entreprise/booste-entreprise.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfessionelSanteComponent } from './professionel-sante/professionel-sante.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'tarif', component: TarifComponent },
   { path: 'absl', component: AbslComponent },
   { path: 'profil-independant', component: ProfilIndependantComponent },
+  { path: 'booste-entreprise', component: BoosteEntrepriseComponent },
   {
     path: 'societe-management-patrimoniale',
     component: ProfilSocieteManagementPatrimonialeComponent,
