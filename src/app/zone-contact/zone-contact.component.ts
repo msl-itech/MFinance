@@ -46,8 +46,8 @@ export class ZoneContactComponent implements OnInit {
 
   // Préfixes téléphoniques disponibles
   phoneCountries = [
-    { code: 'BE', label: 'Belgique (+32)', prefix: '+32' },
-    { code: 'FR', label: 'France (+33)', prefix: '+33' },
+    { code: 'BE', label: '(+32)', prefix: '+32' },
+    { code: 'FR', label: '(+33)', prefix: '+33' },
   ];
 
   selectedPhoneCountry: string = 'BE'; // Par défaut: Belgique

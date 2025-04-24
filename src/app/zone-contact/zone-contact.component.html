@@ -42,11 +42,15 @@
               </div>
               <div class="form-group col-md-6">
                 <div class="input-group">
-                  <div class="input-group-prepend">
+                  <div class="input-group-prepend" style="width: 40%">
                     <select
                       class="form-control"
                       name="selectedPhoneCountry"
                       [(ngModel)]="selectedPhoneCountry"
+                      style="
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                      "
                     >
                       <option
                         *ngFor="let country of phoneCountries"
@@ -57,12 +61,13 @@
                     </select>
                   </div>
                   <input
-                    type="text"
+                    type="tel"
                     class="form-control"
-                    placeholder="Numéro"
+                    placeholder="Numéro de téléphone"
                     name="phone"
                     [(ngModel)]="phone"
                     required
+                    style="width: 60%"
                   />
                 </div>
               </div>
