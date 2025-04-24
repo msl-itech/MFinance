@@ -41,14 +41,30 @@
                 />
               </div>
               <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Téléphone"
-                  name="phone"
-                  [(ngModel)]="phone"
-                  required
-                />
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <select
+                      class="form-control"
+                      name="selectedPhoneCountry"
+                      [(ngModel)]="selectedPhoneCountry"
+                    >
+                      <option
+                        *ngFor="let country of phoneCountries"
+                        [value]="country.code"
+                      >
+                        {{ country.label }}
+                      </option>
+                    </select>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Numéro"
+                    name="phone"
+                    [(ngModel)]="phone"
+                    required
+                  />
+                </div>
               </div>
             </div>
 
@@ -136,6 +152,12 @@
                 name="description"
                 [(ngModel)]="description"
               ></textarea>
+            </div>
+
+            <!-- reCAPTCHA -->
+            <div class="form-group2 mb-3">
+              <div id="recaptcha-container"></div>
+              <!-- Le reCAPTCHA sera chargé dynamiquement par JavaScript -->
             </div>
 
             <!-- Bouton de soumission -->
