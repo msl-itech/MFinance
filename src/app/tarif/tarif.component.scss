@@ -1,0 +1,68 @@
+.pricing-section {
+  background-color: #f8f9fa;
+
+  .pricing-table {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      font-size: 1.1em;
+      border: none;
+    }
+
+    td {
+      padding: 20px;
+      vertical-align: middle;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    .formule-name {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: var(--primary-color);
+    }
+
+    .price {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 5px 0;
+        position: relative;
+        padding-left: 25px;
+
+        &:before {
+          content: "✓";
+          position: absolute;
+          left: 0;
+          color: #28a745;
+        }
+      }
+    }
+
+    .premium-row {
+      background-color: rgba(var(--primary-rgb), 0.05);
+    }
+
+    .excellence-row {
+      background-color: rgba(var(--primary-rgb), 0.1);
+    }
+  }
+}
+
+.table-responsive {
+  border-radius: 10px;
+  overflow: hidden;
+}
