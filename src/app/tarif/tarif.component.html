@@ -264,6 +264,114 @@
     transition: padding-left 0.3s ease;
     color: #1a2c51;
   }
+
+  /* Styles responsive améliorés pour le tableau des prix */
+  @media (max-width: 768px) {
+    .pricing-table {
+      display: block;
+      border: none;
+      background: none;
+      box-shadow: none;
+    }
+
+    .pricing-table thead {
+      display: none;
+    }
+
+    .pricing-table tbody {
+      display: block;
+      width: 100%;
+    }
+
+    .pricing-table tr {
+      display: block;
+      width: 100%;
+      margin-bottom: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(26, 44, 81, 0.1);
+    }
+
+    .pricing-table td {
+      display: block;
+      text-align: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(26, 44, 81, 0.05);
+    }
+
+    .pricing-table td:first-child {
+      background: #1a2c51;
+      color: white;
+      border-radius: 10px 10px 0 0;
+      padding: 1.5rem;
+    }
+
+    .pricing-table td:first-child .formule-title {
+      color: white !important;
+    }
+
+    .pricing-table td:first-child .formule-subtitle {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .pricing-table .price-cell {
+      background: rgba(26, 44, 81, 0.02);
+      padding: 2rem 1.5rem;
+    }
+
+    .pricing-table .features-list {
+      text-align: left;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .pricing-table .features-list li {
+      border-bottom: 1px solid rgba(26, 44, 81, 0.05);
+      padding: 1rem 0 1rem 2rem;
+      margin: 0;
+    }
+
+    .pricing-table .features-list li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-table .features-list li i {
+      left: 0;
+      top: 1.2rem;
+    }
+
+    .popular-tag {
+      display: inline-block;
+      margin-top: 10px;
+      animation: none;
+      transform: none;
+    }
+
+    .table-responsive {
+      padding: 0;
+      margin: 0;
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pricing-table tr {
+      margin: 0 0 2rem 0;
+    }
+
+    .pricing-table td {
+      padding: 1.2rem;
+    }
+
+    .pricing-table .price {
+      font-size: 1.6em;
+    }
+
+    .pricing-table .features-list li {
+      font-size: 0.9em;
+    }
+  }
 </style>
 
 <header class="header">
@@ -399,7 +507,7 @@
 
 <section class="pricing-section py-5">
   <div class="container">
-    <h2 class="text-center mb-5">
+    <h2 class="text-center">
       <i class="fas fa-tags"></i> Nos formules détaillées
     </h2>
 
