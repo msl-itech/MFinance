@@ -1,217 +1,238 @@
 <style>
- .custom-card {
-  border: 2px solid #e6e9f1;
-  border-radius: 12px;
-  background-color: #f8f9fb;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
-}
+  .custom-card {
+    border: 2px solid #e6e9f1;
+    border-radius: 12px;
+    background-color: #f8f9fb;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    transition: transform 0.1s ease, box-shadow 0.1s ease,
+      border-color 0.1s ease;
+  }
 
-.custom-card:hover {
-  transform: translateY(-10px); /* Légère élévation */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre plus grande */
-  border-color: #c3c9d9; /* Changement de couleur de bordure */
-}
-
+  .custom-card:hover {
+    transform: translateY(-10px); /* Légère élévation */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre plus grande */
+    border-color: #c3c9d9; /* Changement de couleur de bordure */
+  }
 
   .icon-wrapper {
-      min-width: 80px;
-      min-height: 80px;
-      background-color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    min-width: 80px;
+    min-height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
   .icon-wrapper img {
-      max-width: 100%;
-      height: auto;
+    max-width: 100%;
+    height: auto;
   }
 
   .custom-image-size {
-  width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
-  height: auto; /* Maintient le ratio d'aspect */
+    width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
+    height: auto; /* Maintient le ratio d'aspect */
   }
   .second-card {
-      position: relative;
+    position: relative;
   }
 
   @media (min-width: 992px) {
-      .second-card {
-          left: -64px;
-      }
+    .second-card {
+      left: -64px;
+    }
   }
 
   @media (max-width: 991px) {
-      .second-card {
-          left: 0;
-      }
+    .second-card {
+      left: 0;
+    }
   }
 
-  .color-red, i {
-      color: #FF3333;
+  .color-red,
+  i {
+    color: #ff3333;
   }
 
   .bg-custom--primary {
-      background-color: #25335b;;
+    background-color: #25335b;
   }
 
   .bg-custom--primary p,
   .bg-custom--primary ul,
   .bg-custom--primary h1,
   .bg-custom--primary h2 {
-      color: white;
+    color: white;
   }
 
   .rectangle-red {
-      background-color: #FF3333;
-      border-radius: 8px;
-      padding: 6px;
+    background-color: #ff3333;
+    border-radius: 8px;
+    padding: 6px;
   }
 
   .hadding h1 {
-      color: white;
-      font-size: 29px !important;
-      line-height: 48px;
-      padding-bottom: 18px;
+    color: white;
+    font-size: 29px !important;
+    line-height: 48px;
+    padding-bottom: 18px;
   }
 
   .highlighted {
-      background-color: #ff4136;
-      color: #fff;
-      padding: 0.2rem 0.5rem;
-      border-radius: 0.25rem;
+    background-color: #ff4136;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
   }
 
   .vertical-divider {
-      border-left: 1px solid #d1d1d1;
-      height: 100%;
+    border-left: 1px solid #d1d1d1;
+    height: 100%;
   }
 
   .icon-red {
-      color: #ff4136;
-      font-size: 1.5rem;
-      margin-right: 1rem; 
+    color: #ff4136;
+    font-size: 1.5rem;
+    margin-right: 1rem;
   }
 
   .section-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
   }
 
   .flex-content {
-      display: flex;
-      align-items: flex-start; 
-      margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
   }
 
   .section-content h5 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
   }
 
   .section-content ul {
-      list-style: none;
-      padding: 0;
+    list-style: none;
+    padding: 0;
   }
 
   .header {
-      background: url('../../assets/img/bg/bg_about.webp') no-repeat center center/cover;
-      min-height: 300px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    background: url("../../assets/img/bg/bg_about.webp") no-repeat center
+      center/cover;
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .header-overlay {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
   }
 
   /* Media queries pour adapter sur plus petits écrans */
   @media (max-width: 767px) {
-      .hadding h1 {
-          font-size: 24px;
-          line-height: 36px;
-      }
+    .hadding h1 {
+      font-size: 24px;
+      line-height: 36px;
+    }
 
-      .custom-card {
-          padding: 15px;
-      }
+    .custom-card {
+      padding: 15px;
+    }
 
-      .icon-wrapper {
-          min-width: 60px;
-          min-height: 60px;
-      }
+    .icon-wrapper {
+      min-width: 60px;
+      min-height: 60px;
+    }
 
-      .works-items h2 {
-          font-size: 1.2rem;
-      }
+    .works-items h2 {
+      font-size: 1.2rem;
+    }
 
-      .section-title {
-          font-size: 1.5rem;
-      }
+    .section-title {
+      font-size: 1.5rem;
+    }
   }
 
   @media (max-width: 575px) {
-      .hadding h1 {
-          font-size: 20px;
-          line-height: 32px;
-      }
+    .hadding h1 {
+      font-size: 20px;
+      line-height: 32px;
+    }
   }
-
-  
-  
 </style>
 <header class="header">
-    <div class="header-overlay">
-        <div class="container">
-            <h1>Indépendants et Starter</h1>
-            <p class="text-white">Accueil &gt; Indépendants et Starter</p>
-        </div>
+  <div class="header-overlay">
+    <div class="container">
+      <h1>Indépendants et Starter</h1>
+      <p class="text-white">Accueil &gt; Indépendants et Starter</p>
     </div>
+  </div>
 </header>
 
 <!-- Service single start -->
-<section class="service-single pt-120 pb-130" style="padding: 64px;">
+<section class="service-single pt-120 pb-130" style="padding: 64px">
   <div class="container">
-      <div class="row">
-          <!-- Sidebar -->
-           <div class="col-lg-4">
-            <app-sidebar></app-sidebar>
-           </div>
-        
-          <!-- Main Content -->
-          <div class="col-lg-8">
-              <div class="single-content">
-                  <h2 class="display-5 fw-bold">
-                    Devenir indépendant en Belgique: Lancez votre projet<br> 
-                    <span class="bg-custom--primary text-white px-2 rounded"> avec succès</span>
-                  </h2>
-                  <div>
-                    <p>Devenir indépendant, c’est bien plus qu’un simple changement de statut. C’est une aventure passionnante, un saut vers la liberté professionnelle et une occasion unique de concrétiser vos idées.</p>
-                    <p>Que vous soyez en début de carrière ou en pleine réorientation, le statut d’indépendant vous permet de bâtir un projet sur mesure, parfaitement adapté à vos aspirations.</p>
-                    <p>Cependant, chaque aventure présente des défis : démarches administratives, gestion financière, périodes de creux… Fort de plus de 20 ans d’expérience, MFINANCES accompagne les entrepreneurs dans la gestion de ces obstacles grâce à des méthodes éprouvées et un savoir-faire unique.</p>     
-                </div>
-                <div class="button-container" >
-                    <div class="home2-btn mb-4">
-                      <button (click)="scrollToSection('targetSection')"  class="btn-red">Découvrez ce que vous gagnerez avec nous <i class="fa-solid fa-arrow-right"></i></button>
-                  </div>
-                  </div>
-                  <div class="single-img mt-35 mb-4 custom-single">
-                      <img src="../../assets/img/webp/28.webp" alt="" class="rounded-4">
-                  </div>
-                  <!-- <div class="row align-items-center mt-10">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <app-sidebar></app-sidebar>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <div class="single-content">
+          <h2 class="display-5 fw-bold">
+            Devenir indépendant en Belgique: Lancez votre projet<br />
+            <span class="bg-custom--primary text-white px-2 rounded">
+              avec succès</span
+            >
+          </h2>
+          <div>
+            <p>
+              Devenir indépendant, c’est bien plus qu’un simple changement de
+              statut. C’est une aventure passionnante, un saut vers la liberté
+              professionnelle et une occasion unique de concrétiser vos idées.
+            </p>
+            <p>
+              Que vous soyez en début de carrière ou en pleine réorientation, le
+              statut d’indépendant vous permet de bâtir un projet sur mesure,
+              parfaitement adapté à vos aspirations.
+            </p>
+            <p>
+              Cependant, chaque aventure présente des défis : démarches
+              administratives, gestion financière, périodes de creux… Fort de
+              plus de 20 ans d’expérience, MFINANCES accompagne les
+              entrepreneurs dans la gestion de ces obstacles grâce à des
+              méthodes éprouvées et un savoir-faire unique.
+            </p>
+          </div>
+          <div class="button-container">
+            <div class="home2-btn mb-4">
+              <button
+                (click)="scrollToSection('targetSection')"
+                class="btn-red"
+              >
+                Découvrez ce que vous gagnerez avec nous
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="single-img mt-35 mb-4 custom-single">
+            <img src="../../assets/img/webp/28.webp" alt="" class="rounded-4" />
+          </div>
+          <!-- <div class="row align-items-center mt-10">
                     <div class="col-lg-4 mt-30">
                       <img src="../../assets/img/image/profil/success-follows.webp" class="img-fluid rounded" alt="">
                     </div>
@@ -233,191 +254,318 @@
                       </div>
                     </div>
                   </div> -->
-                  <div class="defis row align-items-center mt-10">
-                    <h1>Les défis des indépendants : un statut exigeant </h1>
-                    <p>Si devenir indépendant offre une liberté unique, il comporte également des défis majeurs : </p>
-                    <!-- Image -->
-                    <div class="col-md-4">
-                        <img src="../../assets/img/webp/independant_mini.webp" alt="Défis ASBL" class="img-fluid" style="border-radius: 16px;" >
-                    </div>
-                    <!-- Content -->
-                    <div class="col-md-8 mt-30">
-                      <ul class="list-unstyled pl-25">
-                          <li>
-                              <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> 
-                              <strong>Un investissement personnel important :</strong>
-                              <br>
-                              Les semaines de travail peuvent dépasser <strong>35 heures</strong>, surtout lors des phases de démarrage ou de croissance. L'absence de congés payés nécessite une planification rigoureuse.
-                          </li>
-                          <li>
-                              <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> 
-                              <strong>Des risques financiers à gérer :</strong>
-                              <br>
-                              Une dépendance excessive à quelques clients peut fragiliser votre trésorerie. Les retards de paiement ou les périodes de faible activité exigent une gestion proactive et une épargne de sécurité.
-                          </li>
-                          <li>
-                              <i class="fa fa-star" style="font-size: 14px; color: #FF3333; margin-right: 6px;"></i> 
-                              <strong>Une protection sociale limitée :</strong>
-                              <br>
-                              Contrairement à un salarié, un indépendant ne bénéficie ni de congés payés ni de couverture chômage. Des solutions alternatives, telles que des assurances spécifiques ou une épargne personnelle, sont essentielles.
-                          </li>
-                      </ul>
-                  </div>
-                  
-                  
-                </div>
-              </div>
+          <div class="defis row align-items-center mt-10">
+            <h1>Les défis des indépendants : un statut exigeant</h1>
+            <p>
+              Si devenir indépendant offre une liberté unique, il comporte
+              également des défis majeurs :
+            </p>
+            <!-- Image -->
+            <div class="col-md-4">
+              <img
+                src="../../assets/img/webp/independant_mini.webp"
+                alt="Défis ASBL"
+                class="img-fluid"
+                style="border-radius: 16px"
+              />
+            </div>
+            <!-- Content -->
+            <div class="col-md-8 mt-30">
+              <ul class="list-unstyled pl-25">
+                <li>
+                  <i
+                    class="fa fa-star"
+                    style="font-size: 14px; color: #ff3333; margin-right: 6px"
+                  ></i>
+                  <strong>Un investissement personnel important :</strong>
+                  <br />
+                  Les semaines de travail peuvent dépasser
+                  <strong>35 heures</strong>, surtout lors des phases de
+                  démarrage ou de croissance. L'absence de congés payés
+                  nécessite une planification rigoureuse.
+                </li>
+                <li>
+                  <i
+                    class="fa fa-star"
+                    style="font-size: 14px; color: #ff3333; margin-right: 6px"
+                  ></i>
+                  <strong>Des risques financiers à gérer :</strong>
+                  <br />
+                  Une dépendance excessive à quelques clients peut fragiliser
+                  votre trésorerie. Les retards de paiement ou les périodes de
+                  faible activité exigent une gestion proactive et une épargne
+                  de sécurité.
+                </li>
+                <li>
+                  <i
+                    class="fa fa-star"
+                    style="font-size: 14px; color: #ff3333; margin-right: 6px"
+                  ></i>
+                  <strong>Une protection sociale limitée :</strong>
+                  <br />
+                  Contrairement à un salarié, un indépendant ne bénéficie ni de
+                  congés payés ni de couverture chômage. Des solutions
+                  alternatives, telles que des assurances spécifiques ou une
+                  épargne personnelle, sont essentielles.
+                </li>
+              </ul>
+            </div>
           </div>
-          <!-- End Main Content -->
+        </div>
       </div>
+      <!-- End Main Content -->
+    </div>
   </div>
 </section>
 <section class="bg-custom--primary">
   <div class="works sec-padding">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-12 col-lg-6">
-                  <div class="how-in-work-sec">
-                      <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
-                          <h1>Pourquoi choisir le <br><span class="rectangle-red"> statut d’indépendant ?</span></h1>
-                      </div>
-                      <div class="space20"></div>
-                      <div class="works-items">
-                          <!-- Service 1 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1000">
-                              <div class="me-3">
-                                  <div class="work-icon img-border">
-                                      <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Liberté professionnelle</h2>
-                                  <ul>
-                                      <li>Définissez vos projets, vos horaires et vos priorités. </li>
-                                      <li>Une autonomie qui vous permet de concilier travail et vie personnelle selon vos besoins. </li>
-                                  </ul>
-                              </div>
-                          </div>
-
-                          <!-- Service 2 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Développement personnel et professionnel : </h2>
-                                  <ul>
-                                      <li>Transformez vos passions en une activité rentable et épanouissante. </li>
-                                      <li>Relevez des défis motivants et développez des compétences essentielles en gestion, vente et leadership. </li>
-                                  </ul>
-                              </div>
-                          </div>
-
-                          <!-- Service 3 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Opportunités financières et aides disponibles : </h2>
-                                  <ul>
-                                      <li>Vos revenus dépendent de vos efforts et des performances de votre activité.</li>
-                                      <li>Profitez des aides telles que Tremplin-Indépendants, des subsides régionaux et des microcrédits pour soutenir votre projet.</li>
-                                  </ul>
-                              </div>
-                          </div>
-
-                          <!-- Service 4 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/about-vision-icon-2.webp" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Flexibilité dans les choix juridiques :  </h2>
-                                  <ul>
-                                      <li>Commencez en tant qu’indépendant principal ou complémentaire, selon vos besoins </li>
-                                      <li>Faites évoluer votre activité vers une société (SRL, SA) pour accompagner sa croissance. </li>
-                                  </ul>
-                              </div>
-                          </div>
-
-                          <!-- Service 5 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Un réseau professionnel en constante évolution : </h2>
-                                  <ul>
-                                      <li>Collaborez avec des clients, fournisseurs et partenaires pour élargir vos opportunités et renforcer votre position sur le marché. </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 col-lg-6">
+          <div class="how-in-work-sec">
+            <div
+              class="hadding hadding-p"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            >
+              <h1>
+                Pourquoi choisir le <br /><span class="rectangle-red">
+                  statut d’indépendant ?</span
+                >
+              </h1>
+            </div>
+            <div class="space20"></div>
+            <div class="works-items">
+              <!-- Service 1 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+              >
+                <div class="me-3">
+                  <div class="work-icon img-border">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-1.png"
+                      alt=""
+                      class="img-fluid"
+                    />
                   </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Liberté professionnelle</h2>
+                  <ul>
+                    <li>
+                      Définissez vos projets, vos horaires et vos priorités.
+                    </li>
+                    <li>
+                      Une autonomie qui vous permet de concilier travail et vie
+                      personnelle selon vos besoins.
+                    </li>
+                  </ul>
+                </div>
               </div>
 
-              <!-- Image de droite -->
-              <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
-                  <div class="works-img space-sm-50 img-border">
-                      <img src="../../assets/img/webp/9.webp" alt="" class="img-fluid">
+              <!-- Service 2 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1200"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-2.png"
+                      alt=""
+                      class="img-fluid"
+                    />
                   </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Développement personnel et professionnel :</h2>
+                  <ul>
+                    <li>
+                      Transformez vos passions en une activité rentable et
+                      épanouissante.
+                    </li>
+                    <li>
+                      Relevez des défis motivants et développez des compétences
+                      essentielles en gestion, vente et leadership.
+                    </li>
+                  </ul>
+                </div>
               </div>
+
+              <!-- Service 3 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1400"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-3.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Opportunités financières et aides disponibles :</h2>
+                  <ul>
+                    <li>
+                      Vos revenus dépendent de vos efforts et des performances
+                      de votre activité.
+                    </li>
+                    <li>
+                      Profitez des aides telles que Tremplin-Indépendants, des
+                      subsides régionaux et des microcrédits pour soutenir votre
+                      projet.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Service 4 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1400"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/about-vision-icon-2.webp"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Flexibilité dans les choix juridiques :</h2>
+                  <ul>
+                    <li>
+                      Commencez en tant qu’indépendant principal ou
+                      complémentaire, selon vos besoins
+                    </li>
+                    <li>
+                      Faites évoluer votre activité vers une société (SRL, SA)
+                      pour accompagner sa croissance.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Service 5 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1400"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-3.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Un réseau professionnel en constante évolution :</h2>
+                  <ul>
+                    <li>
+                      Collaborez avec des clients, fournisseurs et partenaires
+                      pour élargir vos opportunités et renforcer votre position
+                      sur le marché.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Image de droite -->
+        <div
+          class="col-md-12 col-lg-6"
+          data-aos="flip-right"
+          data-aos-duration="1000"
+        >
+          <div class="works-img space-sm-50 img-border">
+            <img src="../../assets/img/webp/9.webp" alt="" class="img-fluid" />
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 </section>
 
 <section>
   <!--=====about-start=======-->
   <div class="about sec-padding" id="targetSection">
-      <div class="container">
-          <div class="row align-items-center">
-              <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
-                  <div class="about-img img-border">
-                      <img src="../../assets/img/webp/3.webp" alt="">
-                  </div>
-              </div>
-              <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
-                  <div class="about-haddings">
-                      <div class="hadding hadding-p">
-                          <h3>Comment MFINANCES vous aide à relever ces défis ?</h3>
-                          <p>Avec MFINANCES, ces obstacles se transforment en opportunités : </p>
-                      </div>
-                      <div class="check-list-all" style="padding: 1px 0 !important">
-                          <div class="row">
-                              <div>
-                                  <div class="chek-list">
-                                      <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Une planification proactive :</strong> Nous structurons votre activité pour anticiper les risques financiers et personnels.</p>
-                                  </div>
-                                  <div class="space20"></div>
-                                  <div class="chek-list">
-                                      <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Des solutions sur mesure : </strong> Diversifiez vos revenus, optimisez votre trésorerie, et choisissez les meilleures protections sociales.</p>
-                                  </div>
-                                  <div class="space20"></div>
-                              </div>
-                              <div>
-                                  <div class="chek-list">
-                                      <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Un suivi continu :</strong> Avec notre accompagnement régulier, vous pouvez vous concentrer sur la croissance de votre activité en toute sérénité.</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="home2-btn mt-4">
-                          <a href="/contact">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
-                      </div>
-                  </div>
-              </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+          <div class="about-img img-border">
+            <img src="../../assets/img/webp/3.webp" alt="" />
           </div>
+        </div>
+        <div
+          class="col-md-6 space-sm-30"
+          data-aos="fade-left"
+          data-aos-duration="800"
+        >
+          <div class="about-haddings">
+            <div class="hadding hadding-p">
+              <h3>Comment MFINANCES vous aide à relever ces défis ?</h3>
+              <p>
+                Avec MFINANCES, ces obstacles se transforment en opportunités :
+              </p>
+            </div>
+            <div class="check-list-all" style="padding: 1px 0 !important">
+              <div class="row">
+                <div>
+                  <div class="chek-list">
+                    <p>
+                      <img src="../../assets/img/icons/checkfill.png" alt="" />
+                      <strong>Une planification proactive :</strong> Nous
+                      structurons votre activité pour anticiper les risques
+                      financiers et personnels.
+                    </p>
+                  </div>
+                  <div class="space20"></div>
+                  <div class="chek-list">
+                    <p>
+                      <img src="../../assets/img/icons/checkfill.png" alt="" />
+                      <strong>Des solutions sur mesure : </strong> Diversifiez
+                      vos revenus, optimisez votre trésorerie, et choisissez les
+                      meilleures protections sociales.
+                    </p>
+                  </div>
+                  <div class="space20"></div>
+                </div>
+                <div>
+                  <div class="chek-list">
+                    <p>
+                      <img src="../../assets/img/icons/checkfill.png" alt="" />
+                      <strong>Un suivi continu :</strong> Avec notre
+                      accompagnement régulier, vous pouvez vous concentrer sur
+                      la croissance de votre activité en toute sérénité.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home2-btn mt-4">
+              <a href="/contact"
+                >Contactez-nous <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
   <!--=====about-end=======-->
 </section>
@@ -429,8 +577,8 @@
     <div class="row align-items-center">
       <!-- Colonne gauche (texte) -->
       <div class="col-8 col-md-6 mb-4" data-aos="fade-right">
-        <h2 class="display-5 fw-bold" style="font-size: 40px !important;">
-          Nos Points <br>
+        <h2 class="display-5 fw-bold" style="font-size: 40px !important">
+          Nos Points <br />
           <span class="bg-danger text-white px-2 rounded"> Distinctif ? </span>
         </h2>
       </div>
@@ -438,44 +586,100 @@
       <!-- Colonne droite (cartes) -->
       <div class="col-12 col-md-6 d-flex flex-column gap-4">
         <!-- Carte 1 -->
-        <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
-            <img src="../../assets/img/image/profil/Background+Border.png" alt="Icone Facturer" class="img-fluid" style="max-width: 50px;">
+        <div
+          class="custom-card p-4 d-flex align-items-start"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div
+            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="../../assets/img/image/profil/Background+Border.png"
+              alt="Icone Facturer"
+              class="img-fluid"
+              style="max-width: 50px"
+            />
           </div>
           <div>
             <h5 class="fw-semibold mb-2">20 ans d’expertise éprouvée</h5>
-            <p class="mb-0 text-muted">Nos bonnes pratiques garantissent un démarrage solide et une gestion efficace. </p>
+            <p class="mb-0 text-muted">
+              Nos bonnes pratiques garantissent un démarrage solide et une
+              gestion efficace.
+            </p>
           </div>
         </div>
 
         <!-- Carte 2 -->
-        <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="400">
-          <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
-            <img src="../../assets/img/image/profil/Background+Border2.png" alt="Icone Patrimoine" class="img-fluid" style="max-width: 50px;">
+        <div
+          class="custom-card p-4 d-flex align-items-start"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <div
+            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="../../assets/img/image/profil/Background+Border2.png"
+              alt="Icone Patrimoine"
+              class="img-fluid"
+              style="max-width: 50px"
+            />
           </div>
           <div>
             <h5 class="fw-semibold mb-2">Accompagnement sur mesure</h5>
-            <p class="mb-0 text-muted">Nos solutions sont adaptées à vos besoins spécifiques, que vous soyez débutant ou en pleine croissance.</p>
+            <p class="mb-0 text-muted">
+              Nos solutions sont adaptées à vos besoins spécifiques, que vous
+              soyez débutant ou en pleine croissance.
+            </p>
           </div>
         </div>
 
         <!-- Carte 3 -->
-        <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="600">
-          <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
-            <img src="../../assets/img/image/profil/Background+Border3.png" alt="Icone Risques" class="img-fluid" style="max-width: 50px;">
+        <div
+          class="custom-card p-4 d-flex align-items-start"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <div
+            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="../../assets/img/image/profil/Background+Border3.png"
+              alt="Icone Risques"
+              class="img-fluid"
+              style="max-width: 50px"
+            />
           </div>
           <div>
             <h5 class="fw-semibold mb-2">Gain de temps et d’efficacité</h5>
-            <p class="mb-0 text-muted">Déléguez les démarches complexes pour vous concentrer sur l’essentiel. </p>
+            <p class="mb-0 text-muted">
+              Déléguez les démarches complexes pour vous concentrer sur
+              l’essentiel.
+            </p>
           </div>
         </div>
-        <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="600">
-          <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
-            <img src="../../assets/img/image/profil/Background+Border3.png" alt="Icone Risques" class="img-fluid" style="max-width: 50px;">
+        <div
+          class="custom-card p-4 d-flex align-items-start"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <div
+            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="../../assets/img/image/profil/Background+Border3.png"
+              alt="Icone Risques"
+              class="img-fluid"
+              style="max-width: 50px"
+            />
           </div>
           <div>
             <h5 class="fw-semibold mb-2">Optimisation des résultats</h5>
-            <p class="mb-0 text-muted">Maximisez vos revenus et sécurisez votre avenir avec des stratégies sur mesure. </p>
+            <p class="mb-0 text-muted">
+              Maximisez vos revenus et sécurisez votre avenir avec des
+              stratégies sur mesure.
+            </p>
           </div>
         </div>
       </div>
@@ -484,239 +688,421 @@
 </section>
 
 <section>
-
   <div class="service-faq sec-padding">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 m-auto text-center">
-                <div class="hadding">
-                    <h1 class="text-white">Foire Aux Questions (FAQ) pour <br> <span class="rectangle-red">Devenir Indépendant en Belgique</span></h1>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-md-6 m-auto text-center">
+          <div class="hadding">
+            <h1 class="text-white">
+              Foire Aux Questions (FAQ) pour <br />
+              <span class="rectangle-red">Devenir Indépendant en Belgique</span>
+            </h1>
+          </div>
         </div>
-        <div class="space40"></div>
-        <div class="row align-items-center">
-            <!-- <div class="col-md-6">
+      </div>
+      <div class="space40"></div>
+      <div class="row align-items-center">
+        <!-- <div class="col-md-6">
                 <div class="service-details-img img-border">
                     <img src="../../assets/img/image/service-faq.webp" alt="">
                 </div>
             </div> -->
-            <div >
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Quels sont les principaux avantages de devenir indépendant ?
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Devenir indépendant vous permet de :
-                                <ul>
-                                    <li>Être votre propre patron et gérer vos horaires.</li>
-                                    <li>Transformer vos passions en métier.</li>
-                                    <li>Accéder à des aides financières pour les starters (comme Tremplin-Indépendants ou les primes régionales).</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Quels défis dois-je anticiper avant de me lancer ?
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Les principaux défis incluent :
-                                <ul>
-                                    <li>Une charge de travail importante, souvent au-delà des 35 heures hebdomadaires.</li>
-                                    <li>Des revenus variables, parfois imprévisibles.</li>
-                                    <li>L'absence de congés payés ou de chômage en cas d'arrêt d'activité.</li>
-                                </ul>
-                                Chez MFINANCES, nous vous aidons à structurer votre projet et à anticiper ces défis avec des stratégies adaptées.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Quelles sont les étapes administratives pour devenir indépendant ?
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Les étapes clés sont :
-                                <ul>
-                                    <li>Préparer un business plan et un plan financier.</li>
-                                    <li>Ouvrir un compte bancaire professionnel.</li>
-                                    <li>S’enregistrer à la Banque-Carrefour des Entreprises (BCE).</li>
-                                    <li>Activer un numéro de TVA, si nécessaire.</li>
-                                    <li>S'affilier à une caisse d'assurances sociales pour travailleurs indépendants.</li>
-                                </ul>
-                                Nous proposons un accompagnement personnalisé pour faciliter toutes ces démarches.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Comment choisir entre le statut d’indépendant et celui de société ?
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Le choix dépend de votre situation :
-                                <ul>
-                                    <li>Une entreprise individuelle est idéale pour un démarrage rapide et flexible.</li>
-                                    <li>Une société (SRL, SA) est préférable pour limiter votre responsabilité financière et gérer une croissance importante.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFive">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                Quelles sont les obligations fiscales et comptables d’un indépendant ?
-                            </button>
-                        </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Les obligations incluent :
-                                <ul>
-                                    <li>Déclarer vos revenus auprès du SPF Finances.</li>
-                                    <li>Tenir une comptabilité simplifiée ou en partie double, selon votre chiffre d'affaires.</li>
-                                    <li>Effectuer des déclarations TVA, si vous y êtes assujetti.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingSix">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                Existe-t-il des aides financières pour les indépendants ?
-                            </button>
-                        </h2>
-                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Oui, notamment :
-                                <ul>
-                                    <li>Tremplin-Indépendants pour réduire les cotisations sociales.</li>
-                                    <li>Subsides régionaux pour le lancement d’activité.</li>
-                                    <li>Microcrédits pour financer vos premiers investissements.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingSeven">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                Comment gérer les périodes de creux dans mon activité ?
-                            </button>
-                        </h2>
-                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Voici quelques solutions :
-                                <ul>
-                                    <li>Constituer une épargne de sécurité pour couvrir vos besoins.</li>
-                                    <li>Diversifier vos revenus pour limiter la dépendance à un seul client.</li>
-                                    <li>Fidéliser vos clients existants pour assurer des revenus récurrents.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingEight">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                Quel est le coût des démarches administratives pour devenir indépendant ?
-                            </button>
-                        </h2>
-                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Le coût d'inscription à la BCE est d'environ 105,50 euros, avec un supplément pour chaque unité d’établissement. Certaines démarches supplémentaires (comme l’affiliation à un secrétariat social) peuvent également engendrer des frais.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingNine">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                                Quelles assurances dois-je prévoir en tant qu’indépendant ?
-                            </button>
-                        </h2>
-                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Certaines assurances sont obligatoires :
-                                <ul>
-                                    <li>Assurance responsabilité civile professionnelle.</li>
-                                    <li>Assurance accidents du travail (si vous engagez du personnel).</li>
-                                </ul>
-                                D'autres sont recommandées :
-                                <ul>
-                                    <li>Assurance maladie et invalidité.</li>
-                                    <li>Assurance revenu garanti.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTen">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                                Pourquoi choisir MFINANCES pour m’accompagner ?
-                            </button>
-                        </h2>
-                        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Avec plus de 20 ans d’expérience, nous vous aidons à :
-                                <ul>
-                                    <li>Structurer votre activité pour éviter les erreurs coûteuses.</li>
-                                    <li>Maximiser vos revenus grâce à des stratégies éprouvées.</li>
-                                    <li>Vous concentrer sur le développement de votre activité en déléguant les démarches administratives complexes.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+        <div>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Quels sont les principaux avantages de devenir indépendant ?
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Devenir indépendant vous permet de :
+                  <ul>
+                    <li>Être votre propre patron et gérer vos horaires.</li>
+                    <li>Transformer vos passions en métier.</li>
+                    <li>
+                      Accéder à des aides financières pour les starters (comme
+                      Tremplin-Indépendants ou les primes régionales).
+                    </li>
+                  </ul>
                 </div>
+              </div>
             </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Quels défis dois-je anticiper avant de me lancer ?
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Les principaux défis incluent :
+                  <ul>
+                    <li>
+                      Une charge de travail importante, souvent au-delà des 35
+                      heures hebdomadaires.
+                    </li>
+                    <li>Des revenus variables, parfois imprévisibles.</li>
+                    <li>
+                      L'absence de congés payés ou de chômage en cas d'arrêt
+                      d'activité.
+                    </li>
+                  </ul>
+                  Chez MFINANCES, nous vous aidons à structurer votre projet et
+                  à anticiper ces défis avec des stratégies adaptées.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Quelles sont les étapes administratives pour devenir
+                  indépendant ?
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Les étapes clés sont :
+                  <ul>
+                    <li>Préparer un business plan et un plan financier.</li>
+                    <li>Ouvrir un compte bancaire professionnel.</li>
+                    <li>
+                      S’enregistrer à la Banque-Carrefour des Entreprises (BCE).
+                    </li>
+                    <li>Activer un numéro de TVA, si nécessaire.</li>
+                    <li>
+                      S'affilier à une caisse d'assurances sociales pour
+                      travailleurs indépendants.
+                    </li>
+                  </ul>
+                  Nous proposons un accompagnement personnalisé pour faciliter
+                  toutes ces démarches.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  Comment choisir entre le statut d’indépendant et celui de
+                  société ?
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Le choix dépend de votre situation :
+                  <ul>
+                    <li>
+                      Une entreprise individuelle est idéale pour un démarrage
+                      rapide et flexible.
+                    </li>
+                    <li>
+                      Une société (SRL, SA) est préférable pour limiter votre
+                      responsabilité financière et gérer une croissance
+                      importante.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  Quelles sont les obligations fiscales et comptables d’un
+                  indépendant ?
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Les obligations incluent :
+                  <ul>
+                    <li>Déclarer vos revenus auprès du SPF Finances.</li>
+                    <li>
+                      Tenir une comptabilité simplifiée ou en partie double,
+                      selon votre chiffre d'affaires.
+                    </li>
+                    <li>
+                      Effectuer des déclarations TVA, si vous y êtes assujetti.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSix">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix"
+                  aria-expanded="false"
+                  aria-controls="collapseSix"
+                >
+                  Existe-t-il des aides financières pour les indépendants ?
+                </button>
+              </h2>
+              <div
+                id="collapseSix"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingSix"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Oui, notamment :
+                  <ul>
+                    <li>
+                      Tremplin-Indépendants pour réduire les cotisations
+                      sociales.
+                    </li>
+                    <li>Subsides régionaux pour le lancement d’activité.</li>
+                    <li>
+                      Microcrédits pour financer vos premiers investissements.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSeven">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeven"
+                  aria-expanded="false"
+                  aria-controls="collapseSeven"
+                >
+                  Comment gérer les périodes de creux dans mon activité ?
+                </button>
+              </h2>
+              <div
+                id="collapseSeven"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingSeven"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Voici quelques solutions :
+                  <ul>
+                    <li>
+                      Constituer une épargne de sécurité pour couvrir vos
+                      besoins.
+                    </li>
+                    <li>
+                      Diversifier vos revenus pour limiter la dépendance à un
+                      seul client.
+                    </li>
+                    <li>
+                      Fidéliser vos clients existants pour assurer des revenus
+                      récurrents.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingEight">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseEight"
+                  aria-expanded="false"
+                  aria-controls="collapseEight"
+                >
+                  Quel est le coût des démarches administratives pour devenir
+                  indépendant ?
+                </button>
+              </h2>
+              <div
+                id="collapseEight"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingEight"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Le coût d'inscription à la BCE est d'environ 105,50 euros,
+                  avec un supplément pour chaque unité d’établissement.
+                  Certaines démarches supplémentaires (comme l’affiliation à un
+                  secrétariat social) peuvent également engendrer des frais.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingNine">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseNine"
+                  aria-expanded="false"
+                  aria-controls="collapseNine"
+                >
+                  Quelles assurances dois-je prévoir en tant qu’indépendant ?
+                </button>
+              </h2>
+              <div
+                id="collapseNine"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingNine"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Certaines assurances sont obligatoires :
+                  <ul>
+                    <li>Assurance responsabilité civile professionnelle.</li>
+                    <li>
+                      Assurance accidents du travail (si vous engagez du
+                      personnel).
+                    </li>
+                  </ul>
+                  D'autres sont recommandées :
+                  <ul>
+                    <li>Assurance maladie et invalidité.</li>
+                    <li>Assurance revenu garanti.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTen">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTen"
+                  aria-expanded="false"
+                  aria-controls="collapseTen"
+                >
+                  Pourquoi choisir MFINANCES pour m’accompagner ?
+                </button>
+              </h2>
+              <div
+                id="collapseTen"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTen"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Avec plus de 20 ans d’expérience, nous vous aidons à :
+                  <ul>
+                    <li>
+                      Structurer votre activité pour éviter les erreurs
+                      coûteuses.
+                    </li>
+                    <li>
+                      Maximiser vos revenus grâce à des stratégies éprouvées.
+                    </li>
+                    <li>
+                      Vous concentrer sur le développement de votre activité en
+                      déléguant les démarches administratives complexes.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
-
+  </div>
 </section>
 <section class="container my-5">
   <div class="rounded-4 bg-custom--primary text-white px-4">
     <div class="row align-items-center">
       <!-- Image visible uniquement à partir du md (desktop) -->
-      <div 
-        class="col-md-6 d-none d-md-flex justify-content-center align-items-end" 
-        data-aos="fade-left" 
+      <div
+        class="col-md-6 d-none d-md-flex justify-content-center align-items-end"
+        data-aos="fade-left"
         data-aos-delay="200"
       >
         <img
           src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
           alt="Personne souriante"
           class="img-fluid custom-image-size"
-          style="z-index: 2; position: relative;"
+          style="z-index: 2; position: relative"
         />
       </div>
 
       <!-- Texte et bouton, centrés sur mobile/tablette -->
-      <div 
+      <div
         class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
         data-aos="fade-right"
         data-aos-delay="400"
       >
         <h2 class="fw-bold mb-4">
-          Vous avez une<br>
-          <span class="bg-danger text-white px-2 py-1 rounded-2">question spécifique ?</span>.
+          Vous avez une<br />
+          <span class="bg-danger text-white px-2 py-1 rounded-2"
+            >question spécifique ?</span
+          >.
         </h2>
         <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
           Contactez MFINANCES dès aujourd’hui pour une consultation gratuite.
         </p>
-        <a 
-          href="#" 
-          class="btn btn-danger btn-sm px-3 py-2" 
-          data-aos="zoom-in" 
+        <a
+          href="#"
+          class="btn btn-danger btn-sm px-3 py-2"
+          data-aos="zoom-in"
           data-aos-delay="800"
         >
           Contactez-nous <i class="fas fa-arrow-right"></i>

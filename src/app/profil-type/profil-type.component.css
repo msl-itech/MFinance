@@ -28,7 +28,7 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 4px 5px 1px rgba(0, 72, 101, 1);
-  background: #EDF1F5;
+  background: #edf1f5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,7 +78,7 @@
 }
 
 .nav-btn {
-  border: 2px solid #25335b;; /* Bordure circulaire */
+  border: 2px solid #25335b; /* Bordure circulaire */
   background: none; /* Pas de fond */
   border-radius: 50%; /* Forme circulaire */
   width: 50px;
@@ -91,7 +91,7 @@
 }
 
 .nav-btn i {
-  color: #25335b;; /* Couleur de l'icône */
+  color: #25335b; /* Couleur de l'icône */
   font-size: 20px;
 }
 
@@ -106,7 +106,12 @@
 }
 
 .nav-btn:disabled i {
-  color: rgba(37, 51, 91, 0.5); /* Couleur atténuée pour les icônes désactivées */
+  color: rgba(
+    37,
+    51,
+    91,
+    0.5
+  ); /* Couleur atténuée pour les icônes désactivées */
 }
 
 .text-red {
@@ -117,13 +122,13 @@
 /* Carte en bleu */
 .card-blue {
   box-shadow: 4px 5px 1px rgba(0, 72, 101, 1);
-  background-color: #EDF1F5;
+  background-color: #edf1f5;
 }
 
 /* Carte en rouge */
 .card-red {
   box-shadow: 4px 5px 1px rgba(255, 0, 0, 1);
-  background-color: #EDF1F5;
+  background-color: #edf1f5;
 }
 
 /* Responsive Design */
@@ -151,7 +156,7 @@
   .card {
     min-width: 200px;
     max-width: 200px;
-    min-height: 300px;
+    min-height: 400px;
   }
 
   .card-content h3 {
@@ -280,7 +285,3 @@
     color: #cccccc;
   }
 }
-
-
-
-

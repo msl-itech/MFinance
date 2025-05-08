@@ -1,5 +1,5 @@
 <style>
-    .challenge-solution-container {
+  .challenge-solution-container {
     position: relative;
     padding: 2rem 0;
   }
@@ -9,578 +9,860 @@
     bottom: 0;
     left: 50%;
     width: 2px;
-    background: #FF3333;
+    background: #ff3333;
     margin-left: -1.5px;
     z-index: 1;
   }
 
-
   .custom-card {
-      border: 2px solid #e6e9f1; 
-      border-radius: 12px; 
-      background-color: #f8f9fb; 
-      padding: 20px; 
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%; 
+    border: 2px solid #e6e9f1;
+    border-radius: 12px;
+    background-color: #f8f9fb;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
   }
 
   .icon-wrapper {
-      min-width: 80px;
-      min-height: 80px;
-      background-color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    min-width: 80px;
+    min-height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
   .icon-wrapper img {
-      max-width: 100%;
-      height: auto;
+    max-width: 100%;
+    height: auto;
   }
 
   .custom-image-size {
-  width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
-  height: auto; /* Maintient le ratio d'aspect */
+    width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
+    height: auto; /* Maintient le ratio d'aspect */
   }
   .second-card {
-      position: relative;
+    position: relative;
   }
 
   @media (min-width: 992px) {
-      .second-card {
-          left: -64px;
-      }
+    .second-card {
+      left: -64px;
+    }
   }
 
   @media (max-width: 991px) {
-      .second-card {
-          left: 0;
-      }
+    .second-card {
+      left: 0;
+    }
   }
 
-  .color-red, i {
-      color: #FF3333;
+  .color-red,
+  i {
+    color: #ff3333;
   }
 
   .bg-custom--primary {
-      background-color: #25335b;
+    background-color: #25335b;
   }
 
   .bg-custom--primary p,
   .bg-custom--primary ul,
   .bg-custom--primary h1,
   .bg-custom--primary h2 {
-      color: white;
+    color: white;
   }
 
   .rectangle-red {
-      background-color: #FF3333;
-      border-radius: 8px;
-      padding: 6px;
+    background-color: #ff3333;
+    border-radius: 8px;
+    padding: 6px;
   }
 
   .hadding h1 {
-      color: white;
-      font-size: 29px !important;
-      line-height: 48px;
-      padding-bottom: 18px;
+    color: white;
+    font-size: 29px !important;
+    line-height: 48px;
+    padding-bottom: 18px;
   }
 
   .highlighted {
-      background-color: #ff4136;
-      color: #fff;
-      padding: 0.2rem 0.5rem;
-      border-radius: 0.25rem;
+    background-color: #ff4136;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
   }
 
   .vertical-divider {
-      border-left: 1px solid #d1d1d1;
-      height: 100%;
+    border-left: 1px solid #d1d1d1;
+    height: 100%;
   }
 
   .icon-red {
-      color: #ff4136;
-      font-size: 1.5rem;
-      margin-right: 1rem; 
+    color: #ff4136;
+    font-size: 1.5rem;
+    margin-right: 1rem;
   }
 
   .section-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
   }
 
   .flex-content {
-      display: flex;
-      align-items: flex-start; 
-      margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
   }
 
   .section-content h5 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
   }
 
   .section-content ul {
-      list-style: none;
-      padding: 0;
+    list-style: none;
+    padding: 0;
   }
 
   .header {
-      background: url('../../assets/img/bg/bg_about.webp') no-repeat center center/cover;
-      min-height: 300px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    background: url("../../assets/img/bg/bg_about.webp") no-repeat center
+      center/cover;
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .header-overlay {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
   }
 
   /* Media queries pour adapter sur plus petits écrans */
   @media (max-width: 767px) {
-      .hadding h1 {
-          font-size: 24px;
-          line-height: 36px;
-      }
+    .hadding h1 {
+      font-size: 24px;
+      line-height: 36px;
+    }
 
-      .custom-card {
-          padding: 15px;
-      }
+    .custom-card {
+      padding: 15px;
+    }
 
-      .icon-wrapper {
-          min-width: 60px;
-          min-height: 60px;
-      }
+    .icon-wrapper {
+      min-width: 60px;
+      min-height: 60px;
+    }
 
-      .works-items h2 {
-          font-size: 1.2rem;
-      }
+    .works-items h2 {
+      font-size: 1.2rem;
+    }
 
-      .section-title {
-          font-size: 1.5rem;
-      }
+    .section-title {
+      font-size: 1.5rem;
+    }
   }
 
   @media (max-width: 575px) {
-      .hadding h1 {
-          font-size: 20px;
-          line-height: 32px;
-      }
+    .hadding h1 {
+      font-size: 20px;
+      line-height: 32px;
+    }
   }
 </style>
 <header class="header">
-    <div class="header-overlay">
-        <div class="container">
-            <h1>Professionnels de la santé</h1>
-            <p class="text-white">Accueil &gt; Professionnels de la santé</p>
-        </div>
+  <div class="header-overlay">
+    <div class="container">
+      <h1>Professionnels de la santé</h1>
+      <p class="text-white">Accueil &gt; Professionnels de la santé</p>
     </div>
+  </div>
 </header>
 
 <!-- Service single start -->
-<section class="service-single pt-120 pb-130" style="padding: 64px;">
+<section class="service-single pt-120 pb-130" style="padding: 64px">
   <div class="container">
-      <div class="row">
-          <!-- Sidebar -->
-           <div class="col-lg-4">
-            <app-sidebar></app-sidebar>
-           </div>
-        
-          <!-- Main Content -->
-          <div class="col-lg-8">
-              <div class="single-content">
-                  <h2 class="display-5 fw-bold">
-                    Des solutions adaptées à vos
-                    <span class="bg-custom--primary text-white px-2 rounded"> défis spécifiques </span>
-                  </h2>
-                  <div>
-                    <p>Médecins, dentistes, vétérinaires ou kinésithérapeutes, votre quotidien oscille entre la prise en charge des patients et la gestion de vos obligations comptables et fiscales. Que vous soyez indépendant, gestionnaire d’un centre médical, membre d’une association ou en situation hybride, MFINANCES est là pour vous accompagner avec des solutions sur mesure.  </p>
-                    <br>
-                </div>
-                <div class="button-container" >
-                    <div class="home2-btn mb-4">
-                      <button (click)="scrollToSection('targetSection')"  class="btn-red">Découvrez ce que vous gagnerez avec nous <i class="fa-solid fa-arrow-right"></i></button>
-                  </div>
-                  </div>
-                  <div class="single-img mt-35 mb-4 custom-single">
-                      <img src="../../assets/img/webp/29.webp" alt="" class="rounded-4">
-                  </div>
-              </div>
-          </div>
-          <!-- End Main Content -->
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <app-sidebar></app-sidebar>
       </div>
+
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <div class="single-content">
+          <h2 class="display-5 fw-bold">
+            Des solutions adaptées à vos
+            <span class="bg-custom--primary text-white px-2 rounded">
+              défis spécifiques
+            </span>
+          </h2>
+          <div>
+            <p>
+              Médecins, dentistes, vétérinaires ou kinésithérapeutes, votre
+              quotidien oscille entre la prise en charge des patients et la
+              gestion de vos obligations comptables et fiscales. Que vous soyez
+              indépendant, gestionnaire d’un centre médical, membre d’une
+              association ou en situation hybride, MFINANCES est là pour vous
+              accompagner avec des solutions sur mesure.
+            </p>
+            <br />
+          </div>
+          <div class="button-container">
+            <div class="home2-btn mb-4">
+              <button
+                (click)="scrollToSection('targetSection')"
+                class="btn-red"
+              >
+                Découvrez ce que vous gagnerez avec nous
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="single-img mt-35 mb-4 custom-single">
+            <img src="../../assets/img/webp/29.webp" alt="" class="rounded-4" />
+          </div>
+        </div>
+      </div>
+      <!-- End Main Content -->
+    </div>
   </div>
 </section>
 <section class="bg-custom--primary">
-    <div class="works sec-padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-12 col-lg-6">
-                    <div class="how-in-work-sec">
-                        <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
-                            <h1>Centres médicaux et professionnels de santé : <br><span class="rectangle-red">Optimisez votre organisation</span></h1>
-                            <p>Des solutions adaptées à chaque structure pour maximiser vos revenus, mutualiser vos frais et simplifier la gestion comptable.</p>
-                        </div>
-                        <div class="space20"></div>
-                        <div class="works-items">
-                          
-                          <!-- Service 1 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Centres médicaux</h2>
-                                  <ul>
-                                      <li>Organisez vos finances collectives avec une tenue comptable transparente.</li>
-                                      <li>Optimisez la fiscalité collective et individuelle grâce à des déductions stratégiques.</li>
-                                      <li>Facilitez les décisions stratégiques pour le développement du centre.</li>
-                                  </ul>
-                              </div>
-                          </div>
-                      
-                          <!-- Service 2 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Associations médicales</h2>
-                                  <ul>
-                                      <li>Réduisez les coûts grâce à la mutualisation des charges (loyers, abonnements, etc.).</li>
-                                      <li>Assurez une répartition équitable et transparente des charges communes.</li>
-                                      <li>Préservez l'indépendance de chaque médecin pour ses revenus et décisions professionnelles.</li>
-                                  </ul>
-                              </div>
-                          </div>
-  
-                          <!-- Service 3 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1600">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Professionnels indépendants</h2>
-                                  <ul>
-                                      <li>Facturez vos prestations avec des management fees déductibles.</li>
-                                      <li>Optimisez votre patrimoine en réinvestissant dans des projets stratégiques.</li>
-                                      <li>Réduisez vos charges fiscales tout en restant en conformité légale.</li>
-                                  </ul>
-                              </div>
-                          </div>
-  
-                          <!-- Service 4 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1800">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                    <i class="fa fa-cogs" aria-hidden="true"></i>
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Combinaison : Activité mixte</h2>
-                                  <ul>
-                                      <li>Combinez les avantages des modèles société d’exploitation et société de management patrimoniale.</li>
-                                      <li>Optimisez la gestion fiscale globale pour chaque source de revenus.</li>
-                                      <li>Simplifiez la gestion comptable avec des outils adaptés et centralisés.</li>
-                                  </ul>
-                              </div>
-                          </div>
-                      
-                      </div>
-                    </div>
-                </div>
-  
-                <!-- Image de droite -->
-                <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
-                    <div class="works-img space-sm-50 img-border">
-                        <img src="../../assets/img/webp/42.webp" alt="" class="img-fluid">
-                    </div>
-                </div>
+  <div class="works sec-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12 col-lg-6">
+          <div class="how-in-work-sec">
+            <div
+              class="hadding hadding-p"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            >
+              <h1>
+                Centres médicaux et professionnels de santé : <br /><span
+                  class="rectangle-red"
+                  >Optimisez votre organisation</span
+                >
+              </h1>
+              <p>
+                Des solutions adaptées à chaque structure pour maximiser vos
+                revenus, mutualiser vos frais et simplifier la gestion
+                comptable.
+              </p>
             </div>
-        </div>
-    </div>
-  </section>
-  
+            <div class="space20"></div>
+            <div class="works-items">
+              <!-- Service 1 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1200"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-1.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Centres médicaux</h2>
+                  <ul>
+                    <li>
+                      Organisez vos finances collectives avec une tenue
+                      comptable transparente.
+                    </li>
+                    <li>
+                      Optimisez la fiscalité collective et individuelle grâce à
+                      des déductions stratégiques.
+                    </li>
+                    <li>
+                      Facilitez les décisions stratégiques pour le développement
+                      du centre.
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-  <section>
-    <div class="home2-about sec-padding">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-12 col-lg-6" data-aos="flip-left" data-aos-duration="800">
-              <div class="home2-about-img img-border">
-                <img src="../../assets/img/webp/31.webp" alt="">
-                <div class="home2-about-text">
-                 <div class="home2-about-after">
-                    <p>Résultat : Une rentabilité accrue et une sécurité financière renforcée pour anticiper sa retraite et transmettre son patrimoine.</p>
-                 </div>
+              <!-- Service 2 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1400"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-2.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Associations médicales</h2>
+                  <ul>
+                    <li>
+                      Réduisez les coûts grâce à la mutualisation des charges
+                      (loyers, abonnements, etc.).
+                    </li>
+                    <li>
+                      Assurez une répartition équitable et transparente des
+                      charges communes.
+                    </li>
+                    <li>
+                      Préservez l'indépendance de chaque médecin pour ses
+                      revenus et décisions professionnelles.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Service 3 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1600"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-3.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Professionnels indépendants</h2>
+                  <ul>
+                    <li>
+                      Facturez vos prestations avec des management fees
+                      déductibles.
+                    </li>
+                    <li>
+                      Optimisez votre patrimoine en réinvestissant dans des
+                      projets stratégiques.
+                    </li>
+                    <li>
+                      Réduisez vos charges fiscales tout en restant en
+                      conformité légale.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Service 4 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1800"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Combinaison : Activité mixte</h2>
+                  <ul>
+                    <li>
+                      Combinez les avantages des modèles société d’exploitation
+                      et société de management patrimoniale.
+                    </li>
+                    <li>
+                      Optimisez la gestion fiscale globale pour chaque source de
+                      revenus.
+                    </li>
+                    <li>
+                      Simplifiez la gestion comptable avec des outils adaptés et
+                      centralisés.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div class="col-md-12 col-lg-6" data-aos="fade-left" data-aos-duration="800">
-              <div class="home2-hadding home2-hadding-p home2-about hadding-span home2-padding-after">
-                <h2>Exemple concret : Maximisez vos avantages fiscaux et patrimoniaux</h2>
-                <p>Un médecin généraliste, avec un revenu annuel de 120 000 €, a sollicité MFINANCES pour optimiser sa gestion fiscale et patrimoniale. Nos experts ont proposé une restructuration complète :</p>
+          </div>
+        </div>
+
+        <!-- Image de droite -->
+        <div
+          class="col-md-12 col-lg-6"
+          data-aos="flip-right"
+          data-aos-duration="1000"
+        >
+          <div class="works-img space-sm-50 img-border">
+            <img src="../../assets/img/webp/42.webp" alt="" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="home2-about sec-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <div
+          class="col-md-12 col-lg-6"
+          data-aos="flip-left"
+          data-aos-duration="800"
+        >
+          <div class="home2-about-img img-border">
+            <img src="../../assets/img/webp/31.webp" alt="" />
+            <div class="home2-about-text">
+              <div class="home2-about-after">
+                <p>
+                  Résultat : Une rentabilité accrue et une sécurité financière
+                  renforcée pour anticiper sa retraite et transmettre son
+                  patrimoine.
+                </p>
               </div>
-              <div class="space30"></div>
-              <div class="home2-about-list">
-                <ul class="li-custom">
-                  <li>
-                    <img src="assets/img/icons/chek-cercle.svg" alt="">Passage en société avec une stratégie de développement immobilier.
-                  </li>
-                  <li>
-                    <img src="assets/img/icons/chek-cercle.svg" alt="">Réduction des impôts annuels de 60 %, soit 36 000 € économisés.
-                  </li>
-                  <li>
-                    <img src="assets/img/icons/chek-cercle.svg" alt="">Constitution d’un patrimoine immobilier valorisé à 500 000 € sur 10 ans.
-                  </li>
-                </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-12 col-lg-6"
+          data-aos="fade-left"
+          data-aos-duration="800"
+        >
+          <div
+            class="home2-hadding home2-hadding-p home2-about hadding-span home2-padding-after"
+          >
+            <h2>
+              Exemple concret : Maximisez vos avantages fiscaux et patrimoniaux
+            </h2>
+            <p>
+              Un médecin généraliste, avec un revenu annuel de 120 000 €, a
+              sollicité MFINANCES pour optimiser sa gestion fiscale et
+              patrimoniale. Nos experts ont proposé une restructuration complète
+              :
+            </p>
+          </div>
+          <div class="space30"></div>
+          <div class="home2-about-list">
+            <ul class="li-custom">
+              <li>
+                <img src="assets/img/icons/chek-cercle.svg" alt="" />Passage en
+                société avec une stratégie de développement immobilier.
+              </li>
+              <li>
+                <img src="assets/img/icons/chek-cercle.svg" alt="" />Réduction
+                des impôts annuels de 60 %, soit 36 000 € économisés.
+              </li>
+              <li>
+                <img
+                  src="assets/img/icons/chek-cercle.svg"
+                  alt=""
+                />Constitution d’un patrimoine immobilier valorisé à 500 000 €
+                sur 10 ans.
+              </li>
+            </ul>
+          </div>
+          <div class="space10"></div>
+          <div class="home2-btn">
+            <a href="about.html"
+              >Contactez-Nous<i class="fa fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="about sec-padding">
+  <div class="container">
+    <div class="row align-items-center">
+      <div
+        class="col-md-6 space-sm-30"
+        data-aos="fade-left"
+        data-aos-duration="800"
+      >
+        <div class="about-haddings">
+          <div class="home2-hadding hadding-p">
+            <h2>
+              TVA et professions médicales : Comprendre l’assujettissement mixte
+            </h2>
+          </div>
+          <div class="check-list-all" style="padding: 1px 0 !important">
+            <div class="row">
+              <div>
+                <div class="chek-list">
+                  <p>
+                    <img src="../../assets/img/icons/checkfill.png" alt="" />
+                    <strong>Optimisez vos déductions :</strong> Déduisez la TVA
+                    sur les frais spécifiques liés à vos prestations taxables.
+                  </p>
+                </div>
+                <div class="space20"></div>
+                <div class="chek-list">
+                  <p>
+                    <img src="../../assets/img/icons/checkfill.png" alt="" />
+                    <strong>Appliquez un prorata général :</strong> Gérez
+                    efficacement la TVA sur les frais généraux, en tenant compte
+                    du ratio entre vos revenus soumis et non soumis à TVA.
+                  </p>
+                </div>
               </div>
-              <div class="space10"></div>
-              <div class="home2-btn">
-                <a href="about.html">Contactez-Nous<i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <p>
+            Une gestion rigoureuse est essentielle pour éviter les erreurs et
+            maximiser vos avantages fiscaux. Contactez un expert MFINANCES dès
+            aujourd’hui pour clarifier vos obligations et optimiser votre
+            gestion TVA.
+          </p>
+          <div class="home2-btn mt-4">
+            <a href="/contact"
+              >Contactez-nous <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+        <div class="about-img img-border">
+          <img src="../../assets/img/webp/32.webp" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="bg-custom--primary" id="targetSection">
+  <div class="works sec-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Image de droite -->
+        <div
+          class="col-md-12 col-lg-6"
+          data-aos="flip-right"
+          data-aos-duration="1000"
+        >
+          <div class="works-img space-sm-50 img-border">
+            <img src="../../assets/img/webp/1.webp" alt="" class="img-fluid" />
+          </div>
+        </div>
+
+        <div class="col-md-12 col-lg-6">
+          <div class="how-in-work-sec">
+            <div
+              class="hadding hadding-p"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            >
+              <h1>
+                Les services de MFINANCES pour les professionnels de la santé :
+                <br /><span class="rectangle-red"
+                  >Un accompagnement complet et sur mesure</span
+                >
+              </h1>
+            </div>
+            <div class="space20"></div>
+            <div class="works-items">
+              <!-- Service 1 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1200"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-1.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Développer et structurer votre activité médicale</h2>
+                  <ul>
+                    <li>
+                      Passage en société : Optimisez vos revenus et votre
+                      fiscalité grâce à des structures adaptées et bien conçues.
+                    </li>
+                    <li>
+                      Investissements stratégiques : Planifiez vos acquisitions,
+                      comme du matériel médical ou des locaux, pour maximiser
+                      leur rentabilité et réduire votre charge fiscale.
+                    </li>
+                    <li>
+                      Gestion immobilière proactive : Transformez vos dépenses
+                      en un patrimoine immobilier solide pour assurer votre
+                      sécurité financière à long terme et préparer une
+                      transmission optimale.
+                    </li>
+                    <li>
+                      Optimisation des ressources professionnelles : Profitez
+                      d’avantages fiscaux tels que le choix optimal entre
+                      indemnités kilométriques ou véhicule de société.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Service 2 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1400"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-2.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>
+                    Préparer l’avenir : Sécurisez votre patrimoine et votre
+                    succession
+                  </h2>
+                  <ul>
+                    <li>
+                      Transmission ou cession de patientèle : Maximisez la
+                      valeur de votre activité grâce à une stratégie de cession
+                      bien structurée.
+                    </li>
+                    <li>
+                      Préparation de la retraite : Identifiez et mettez en œuvre
+                      des dispositifs d’épargne et d’investissement qui
+                      sécurisent vos revenus futurs.
+                    </li>
+                    <li>
+                      Optimisation fiscale en fin de carrière : Réduisez vos
+                      charges fiscales grâce à des stratégies adaptées à votre
+                      situation personnelle et professionnelle.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Service 3 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1600"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <img
+                      src="../../assets/img/image/profil/works-icon-3.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Créer votre entreprise dans le secteur médical</h2>
+                  <ul>
+                    <li>
+                      Choix du statut juridique : Adaptez votre structure à vos
+                      ambitions, qu’il s’agisse d’exercer seul ou en groupe.
+                    </li>
+                    <li>
+                      Planification stratégique : Élaboration d’un plan
+                      financier à plusieurs années pour définir des objectifs
+                      clairs et garantir une croissance durable.
+                    </li>
+                    <li>
+                      Support administratif complet : Simplifiez vos démarches
+                      légales et assurez la conformité de votre entreprise dès
+                      sa création.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Service 4 -->
+              <div
+                class="work-item d-flex align-items-baseline"
+                data-aos="fade-right"
+                data-aos-duration="1800"
+              >
+                <div class="me-3">
+                  <div class="work-icon">
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="hadding hadding-p">
+                  <h2>Simplifier la gestion de votre activité</h2>
+                  <ul>
+                    <li>
+                      Gestion comptable complète : Comptes annuels, déclarations
+                      fiscales, gestion des notes de frais, factures clients et
+                      fournisseurs.
+                    </li>
+                    <li>
+                      Suivi des indicateurs clés : Analyse de votre rentabilité,
+                      de vos flux de trésorerie et de vos performances
+                      financières pour une maîtrise totale de votre activité.
+                    </li>
+                    <li>
+                      Conseils quotidiens : Résolution rapide de vos
+                      problématiques administratives et financières grâce à nos
+                      experts dédiés.
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-</section>
-
-<div class="about sec-padding">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
-                <div class="about-haddings">
-                    <div class="home2-hadding hadding-p">
-                        <h2>TVA et professions médicales : Comprendre l’assujettissement mixte</h2>
-                    </div>
-                    <div class="check-list-all" style="padding: 1px 0 !important">
-                        <div class="row">
-                            <div>
-                                <div class="chek-list">
-                                    <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Optimisez vos déductions :</strong> Déduisez la TVA sur les frais spécifiques liés à vos prestations taxables.</p>
-                                </div>
-                                <div class="space20"></div>
-                                <div class="chek-list">
-                                    <p><img src="../../assets/img/icons/checkfill.png" alt=""> <strong>Appliquez un prorata général :</strong> Gérez efficacement la TVA sur les frais généraux, en tenant compte du ratio entre vos revenus soumis et non soumis à TVA.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p>Une gestion rigoureuse est essentielle pour éviter les erreurs et maximiser vos avantages fiscaux. Contactez un expert MFINANCES dès aujourd’hui pour clarifier vos obligations et optimiser votre gestion TVA.</p>
-                    <div class="home2-btn mt-4">
-                        <a href="/contact">Contactez-nous <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
-                <div class="about-img img-border">
-                    <img src="../../assets/img/webp/32.webp" alt="">
-                </div>
-            </div>
-        </div>
     </div>
-</div>
-
-<section class="bg-custom--primary" id="targetSection">
-    <div class="works sec-padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Image de droite -->
-                <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
-                    <div class="works-img space-sm-50 img-border">
-                        <img src="../../assets/img/webp/1.webp" alt="" class="img-fluid">
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-lg-6">
-                    <div class="how-in-work-sec">
-                        <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
-                            <h1>Les services de MFINANCES pour les professionnels de la santé : <br><span class="rectangle-red">Un accompagnement complet et sur mesure</span></h1>
-                        </div>
-                        <div class="space20"></div>
-                        <div class="works-items">
-                          
-                          <!-- Service 1 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Développer et structurer votre activité médicale</h2>
-                                  <ul>
-                                      <li>Passage en société : Optimisez vos revenus et votre fiscalité grâce à des structures adaptées et bien conçues.</li>
-                                      <li>Investissements stratégiques : Planifiez vos acquisitions, comme du matériel médical ou des locaux, pour maximiser leur rentabilité et réduire votre charge fiscale.</li>
-                                      <li>Gestion immobilière proactive : Transformez vos dépenses en un patrimoine immobilier solide pour assurer votre sécurité financière à long terme et préparer une transmission optimale.</li>
-                                      <li>Optimisation des ressources professionnelles : Profitez d’avantages fiscaux tels que le choix optimal entre indemnités kilométriques ou véhicule de société.</li>
-                                  </ul>
-                              </div>
-                          </div>
-                      
-                          <!-- Service 2 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Préparer l’avenir : Sécurisez votre patrimoine et votre succession</h2>
-                                  <ul>
-                                      <li>Transmission ou cession de patientèle : Maximisez la valeur de votre activité grâce à une stratégie de cession bien structurée.</li>
-                                      <li>Préparation de la retraite : Identifiez et mettez en œuvre des dispositifs d’épargne et d’investissement qui sécurisent vos revenus futurs.</li>
-                                      <li>Optimisation fiscale en fin de carrière : Réduisez vos charges fiscales grâce à des stratégies adaptées à votre situation personnelle et professionnelle.</li>
-                                  </ul>
-                              </div>
-                          </div>
-  
-                          <!-- Service 3 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1600">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid">
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Créer votre entreprise dans le secteur médical</h2>
-                                  <ul>
-                                      <li>Choix du statut juridique : Adaptez votre structure à vos ambitions, qu’il s’agisse d’exercer seul ou en groupe.</li>
-                                      <li>Planification stratégique : Élaboration d’un plan financier à plusieurs années pour définir des objectifs clairs et garantir une croissance durable.</li>
-                                      <li>Support administratif complet : Simplifiez vos démarches légales et assurez la conformité de votre entreprise dès sa création.</li>
-                                  </ul>
-                              </div>
-                          </div>
-  
-                          <!-- Service 4 -->
-                          <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1800">
-                              <div class="me-3">
-                                  <div class="work-icon">
-                                      <i class="fa fa-cogs" aria-hidden="true"></i>
-                                  </div>
-                              </div>
-                              <div class="hadding hadding-p">
-                                  <h2>Simplifier la gestion de votre activité</h2>
-                                  <ul>
-                                      <li>Gestion comptable complète : Comptes annuels, déclarations fiscales, gestion des notes de frais, factures clients et fournisseurs.</li>
-                                      <li>Suivi des indicateurs clés : Analyse de votre rentabilité, de vos flux de trésorerie et de vos performances financières pour une maîtrise totale de votre activité.</li>
-                                      <li>Conseils quotidiens : Résolution rapide de vos problématiques administratives et financières grâce à nos experts dédiés.</li>
-                                  </ul>
-                              </div>
-                          </div>
-                      
-                      </div>
-                    </div>
-                </div>
-  
-                
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
-
 
 <!-- <app-timeline-independant></app-timeline-independant> -->
 <section class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Colonne gauche (texte) -->
-            <div class="col-8 col-md-6 mb-4" data-aos="fade-right">
-                <h2 class="display-5 fw-bold" style="font-size: 40px !important;">
-                    Pourquoi choisir <br>
-                    <span class="bg-danger text-white px-2 rounded">MFINANCES</span> pour vous accompagner ?
-                </h2>
-            </div>
-      
-            <!-- Colonne droite (cartes) -->
-            <div class="col-12 col-md-6 d-flex flex-column gap-4">
-                <!-- Carte 1 -->
-                <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
-                        <img src="../../assets/img/image/profil/Background+Border.png" alt="Icone Expertise" class="img-fluid" style="max-width: 50px;">
-                    </div>
-                    <div>
-                        <h5 class="fw-semibold mb-2">Une expertise ciblée :</h5>
-                        <p class="mb-0 text-muted">Nos spécialistes maîtrisent les spécificités du secteur médical et paramédical.</p>
-                    </div>
-                </div>
-      
-                <!-- Carte 2 -->
-                <div class="custom-card p-4 d-flex align-items-start second-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
-                        <img src="../../assets/img/image/profil/Background+Border2.png" alt="Icone Accompagnement" class="img-fluid" style="max-width: 50px;">
-                    </div>
-                    <div>
-                        <h5 class="fw-semibold mb-2">Un accompagnement global :</h5>
-                        <p class="mb-0 text-muted">De la création de votre structure à la transmission de votre activité, nous sommes à vos côtés à chaque étape.</p>
-                    </div>
-                </div>
-      
-                <!-- Carte 3 -->
-                <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="600">
-                    <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
-                        <img src="../../assets/img/image/profil/Background+Border3.png" alt="Icone Solutions" class="img-fluid" style="max-width: 50px;">
-                    </div>
-                    <div>
-                        <h5 class="fw-semibold mb-2">Des solutions personnalisées :</h5>
-                        <p class="mb-0 text-muted">Adaptées à vos besoins, pour optimiser vos finances et faciliter votre quotidien.</p>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Colonne gauche (texte) -->
+      <div class="col-8 col-md-6 mb-4" data-aos="fade-right">
+        <h2 class="display-5 fw-bold" style="font-size: 40px !important">
+          Pourquoi choisir <br />
+          <span class="bg-danger text-white px-2 rounded">MFINANCES</span> pour
+          vous accompagner ?
+        </h2>
+      </div>
+
+      <!-- Colonne droite (cartes) -->
+      <div class="col-12 col-md-6 d-flex flex-column gap-4">
+        <!-- Carte 1 -->
+        <div
+          class="custom-card p-4 d-flex align-items-start"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div
+            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="../../assets/img/image/profil/Background+Border.png"
+              alt="Icone Expertise"
+              class="img-fluid"
+              style="max-width: 50px"
+            />
+          </div>
+          <div>
+            <h5 class="fw-semibold mb-2">Une expertise ciblée :</h5>
+            <p class="mb-0 text-muted">
+              Nos spécialistes maîtrisent les spécificités du secteur médical et
+              paramédical.
+            </p>
+          </div>
         </div>
+
+        <!-- Carte 2 -->
+        <div
+          class="custom-card p-4 d-flex align-items-start second-card"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <div
+            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="../../assets/img/image/profil/Background+Border2.png"
+              alt="Icone Accompagnement"
+              class="img-fluid"
+              style="max-width: 50px"
+            />
+          </div>
+          <div>
+            <h5 class="fw-semibold mb-2">Un accompagnement global :</h5>
+            <p class="mb-0 text-muted">
+              De la création de votre structure à la transmission de votre
+              activité, nous sommes à vos côtés à chaque étape.
+            </p>
+          </div>
+        </div>
+
+        <!-- Carte 3 -->
+        <div
+          class="custom-card p-4 d-flex align-items-start"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <div
+            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="../../assets/img/image/profil/Background+Border3.png"
+              alt="Icone Solutions"
+              class="img-fluid"
+              style="max-width: 50px"
+            />
+          </div>
+          <div>
+            <h5 class="fw-semibold mb-2">Des solutions personnalisées :</h5>
+            <p class="mb-0 text-muted">
+              Adaptées à vos besoins, pour optimiser vos finances et faciliter
+              votre quotidien.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <section class="container my-5">
   <div class="rounded-4 bg-custom--primary text-white px-4">
     <div class="row align-items-center">
       <!-- Image visible uniquement à partir du md (desktop) -->
-      <div 
-        class="col-md-6 d-none d-md-flex justify-content-center align-items-end" 
-        data-aos="fade-left" 
+      <div
+        class="col-md-6 d-none d-md-flex justify-content-center align-items-end"
+        data-aos="fade-left"
         data-aos-delay="200"
       >
         <img
           src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
           alt="Personne souriante"
           class="img-fluid custom-image-size"
-          style="z-index: 2; position: relative;"
+          style="z-index: 2; position: relative"
         />
       </div>
 
       <!-- Texte et bouton, centrés sur mobile/tablette -->
-      <div 
+      <div
         class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
         data-aos="fade-right"
         data-aos-delay="400"
       >
         <h2 class="fw-bold mb-4">
-            Confiez votre activité à<br>
-          <span class="bg-danger text-white px-2 py-1 rounded-2">des experts</span>.
+          Confiez votre activité à<br />
+          <span class="bg-danger text-white px-2 py-1 rounded-2"
+            >des experts</span
+          >.
         </h2>
         <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
-            Prenez rendez-vous dès aujourd’hui avec un conseiller MFINANCES pour bénéficier d’une analyse personnalisée et d’un accompagnement complet. Transformez vos défis financiers en opportunités de croissance. 
+          Prenez rendez-vous dès aujourd’hui avec un conseiller MFINANCES pour
+          bénéficier d’une analyse personnalisée et d’un accompagnement complet.
+          Transformez vos défis financiers en opportunités de croissance.
         </p>
-        <a 
-          href="#" 
-          class="btn btn-danger btn-sm px-3 py-2" 
-          data-aos="zoom-in" 
+        <a
+          href="#"
+          class="btn btn-danger btn-sm px-3 py-2"
+          data-aos="zoom-in"
           data-aos-delay="800"
         >
           Contactez-nous <i class="fas fa-arrow-right"></i>
