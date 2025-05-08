@@ -1,275 +1,1491 @@
-<!-- Section d'en-tête -->
-<div class="header-section">
-  <h1>🚀 Boostez votre entreprise avec Mfinances</h1>
-  <p>
-    Chez Mfinances, nous savons qu'une entreprise performante ne laisse pas sa
-    croissance au hasard. Piloter une activité, c'est anticiper les défis,
-    optimiser ses choix et agir au bon moment.
-  </p>
-  <p>
-    👉 "Boostez votre entreprise" est votre espace dédié pour découvrir des
-    conseils concrets, pratiques et immédiatement actionnables, pensés pour
-    améliorer :
-  </p>
-  <ul>
-    <li>La gestion quotidienne de votre entreprise,</li>
-    <li>Votre rentabilité,</li>
-    <li>Votre solidité financière,</li>
-    <li>Et surtout, votre sérénité entrepreneuriale.</li>
-  </ul>
-</div>
+<!-- Header inspiré du passage-en-societe -->
+<header class="header">
+  <div class="header-overlay">
+    <div class="container">
+      <h1>Boostez votre entreprise</h1>
+      <p class="text-white">Accueil &gt; Boostez votre entreprise</p>
+    </div>
+  </div>
+</header>
 
-<!-- Layout principal avec menu latéral et contenu -->
-<div class="main-layout">
-  <!-- Menu latéral (gauche) -->
-  <div class="sidebar">
-    <h3>✨ Nos grandes thématiques</h3>
-    <ul class="menu-items">
-      <li>
-        <a
-          href="#salarie-independant"
-          (click)="scrollToSection('salarie-independant', $event)"
-          >1. Salarié ou Indépendant</a
-        >
-      </li>
-      <li>
-        <a
-          href="#passage-societe"
-          (click)="scrollToSection('passage-societe', $event)"
-          >2. Le passage en société</a
-        >
-      </li>
-      <li>
-        <a
-          href="#compte-courant"
-          (click)="scrollToSection('compte-courant', $event)"
-          >3. Compte courant administrateur</a
-        >
-      </li>
-      <li>
-        <a href="#tresorerie" (click)="scrollToSection('tresorerie', $event)"
-          >4. Trésorerie : Stress en Succès</a
-        >
-      </li>
-    </ul>
+<!-- Section principale avec sidebar -->
+<section class="service-single pt-120 pb-130">
+  <div class="container">
+    <div class="row">
+      <!-- Sidebar personnalisée -->
+      <div class="col-lg-4">
+        <div class="sidebar-widget">
+          <div class="widget">
+            <h2>Nos services</h2>
+            <ul class="widget-category list-unstyled d-flex flex-column gap-2">
+              <li>
+                <a href="/salarie-independant" hrefActive="active">
+                  Salarié ou indépendant
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="/passage-societe" hrefActive="active">
+                  Passage en société
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+              </li>
+              <li>
+                <a href="/compte-courant-administrateur" hrefActive="active">
+                  Compte courant administrateur
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="widget contact-widget">
+            <h2>Contact</h2>
+            <div class="contact-info d-flex gap-3 flex-column">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 20 Rue de la Magnanerie,
+                1180 Uccle
+              </p>
+              <p><i class="fas fa-phone-alt"></i> +32 2 883 86 86</p>
+              <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@mfinances.be"> info&#64;mfinances.be</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <div class="main-content">
+          <h3 class="main-title">Boostez votre entreprise avec Mfinances</h3>
+
+          <p class="main-description">
+            Chez Mfinances, nous savons qu'une entreprise performante ne laisse
+            pas sa croissance au hasard. Piloter une activité, c'est anticiper
+            les défis, optimiser ses choix et agir au bon moment.
+          </p>
+
+          <div class="features-card mt-3">
+            <p class="features-intro">
+              "Boostez votre entreprise" est votre espace dédié pour découvrir
+              des conseils concrets, pratiques et immédiatement actionnables,
+              pensés pour améliorer :
+            </p>
+
+            <div class="features-list">
+              <div class="feature-item">
+                <i class="fas fa-check text-danger"></i>
+                <span>La gestion quotidienne de votre entreprise</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check text-danger"></i>
+                <span>Votre rentabilité</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check text-danger"></i>
+                <span>Votre solidité financière</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check text-danger"></i>
+                <span>Et surtout, votre sérénité entrepreneuriale</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-container">
+            <button
+              (click)="scrollToSection('serviceSection')"
+              class="btn-action"
+            >
+              Découvrez nos conseils d'experts
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <style>
+          .main-content {
+            padding: 2rem 0;
+          }
+
+          .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+          }
+
+          .main-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 2rem;
+          }
+
+          .features-card {
+            background-color: rgba(255, 99, 99, 0.03);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+          }
+
+          .features-intro {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+          }
+
+          .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            transition: transform 0.2s ease;
+          }
+
+          .feature-item:hover {
+            transform: translateX(5px);
+          }
+
+          .feature-item i {
+            font-size: 1.2rem;
+            color: #ff4b4b;
+          }
+
+          .feature-item span {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+          }
+
+          .action-container {
+            text-align: right;
+            margin: 2.5rem 0;
+          }
+
+          .btn-action {
+            background: #ff4b4b;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 75, 75, 0.2);
+          }
+
+          .btn-action:hover {
+            background: #ff3131;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
+          }
+
+          .main-image {
+            margin-top: 2rem;
+          }
+
+          .main-image img {
+            width: 100%;
+            border-radius: 16px;
+          }
+
+          @media (max-width: 768px) {
+            .main-title {
+              font-size: 2rem;
+            }
+
+            .features-card {
+              padding: 1.5rem;
+            }
+
+            .feature-item {
+              padding: 0.8rem;
+            }
+          }
+        </style>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Trésorerie -->
+<section class="tresorerie-section py-5">
+  <div class="container">
+    <div class="tresorerie-card">
+      <!-- En-tête rouge -->
+      <div class="tresorerie-header">
+        <div class="header-icon">
+          <i class="fas fa-coins"></i>
+        </div>
+        <h2>Trésorerie : Transformez votre stress en succès</h2>
+      </div>
+
+      <!-- Corps de la carte -->
+      <div class="tresorerie-body">
+        <div class="row">
+          <!-- Colonne de gauche -->
+          <div class="col-md-7">
+            <p class="main-description">
+              Une trésorerie bien gérée est votre meilleure arme stratégique
+              pour transformer le stress en opportunités de croissance.
+            </p>
+
+            <div class="features-list">
+              <!-- Feature 1 -->
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="feature-content">
+                  <h3>Sécurisez vos opérations</h3>
+                  <p>Honorez vos engagements en toute sérénité</p>
+                </div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="feature-content">
+                  <h3>Anticipez vos besoins</h3>
+                  <p>Prévoyez pour mieux décider</p>
+                </div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="feature-content">
+                  <h3>Prenez le contrôle</h3>
+                  <p>Ne subissez plus, agissez</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne de droite -->
+          <div class="col-md-5">
+            <div class="offer-section">
+              <div class="offer-badge">
+                <i class="fas fa-rocket"></i>
+                Offre Excellence
+              </div>
+
+              <div class="offer-features">
+                <div class="offer-feature">
+                  <i class="fas fa-check"></i>
+                  <span>Tableau de trésorerie prévisionnel</span>
+                </div>
+                <div class="offer-feature">
+                  <i class="fas fa-check"></i>
+                  <span>Contrôle budgétaire trimestriel</span>
+                </div>
+                <div class="offer-feature">
+                  <i class="fas fa-check"></i>
+                  <span>Accompagnement personnalisé</span>
+                </div>
+              </div>
+
+              <div class="offer-alert">
+                <i class="fas fa-bell"></i>
+                <p>
+                  L'anticipation est essentielle pour passer de la survie à la
+                  réussite.
+                </p>
+              </div>
+
+              <a href="/contact" class="btn-discover">
+                Découvrez l'Offre Excellence
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Contenu principal (droite) -->
-  <div class="content-area">
-    <!-- Thématique 1: Salarié ou Indépendant -->
-    <section id="salarie-independant" class="theme-section">
-      <div class="theme-card">
-        <h2>🧩 1. Salarié ou Indépendant : Quel statut choisir ?</h2>
-        <p>
-          Démêlez les avantages et contraintes de chaque statut pour choisir la
-          voie qui correspond vraiment à vos ambitions.
-        </p>
-        <a [routerLink]="['/vente/salarie-independant']" class="read-more"
-          >➡️ Lire l'article complet →</a
+  <style>
+    .tresorerie-section {
+      background-color: #1a2544;
+    }
+
+    .tresorerie-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .tresorerie-header {
+      background: #ff4b4b;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-icon {
+      background: rgba(255, 255, 255, 0.2);
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-icon i {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .tresorerie-header h2 {
+      color: white;
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .tresorerie-body {
+      padding: 2rem;
+    }
+
+    .main-description {
+      font-size: 1.1rem;
+      color: #4a5568;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .feature-icon {
+      background: #ff4b4b;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .feature-icon i {
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .feature-content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.3rem 0;
+      color: #1a2544;
+    }
+
+    .feature-content p {
+      margin: 0;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .offer-section {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 15px;
+      height: 100%;
+    }
+
+    .offer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #ff4b4b;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .offer-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .offer-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: white;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+    }
+
+    .offer-feature i {
+      color: #10b981;
+    }
+
+    .offer-alert {
+      background: #fff3cd;
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .offer-alert i {
+      color: #fbbf24;
+    }
+
+    .offer-alert p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #92400e;
+    }
+
+    .btn-discover {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background: #ff4b4b;
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-discover:hover {
+      background: #ff3131;
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .tresorerie-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .header-icon {
+        margin: 0 auto;
+      }
+
+      .tresorerie-body {
+        padding: 1.5rem;
+      }
+
+      .offer-section {
+        margin-top: 2rem;
+      }
+    }
+  </style>
+</section>
+
+<!-- Section des articles de trésorerie -->
+<section class="py-5 articles-tresorerie">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mb-5">
+        <div class="section-title d-flex align-items-center">
+          <div class="title-icon">
+            <i class="fas fa-book-open text-danger"></i>
+          </div>
+          <h3 class="ms-3 mb-0">Nos articles trésorerie</h3>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="article-card mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="article-card-inner">
+            <div class="article-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="article-content">
+              <h4>
+                Pourquoi votre trésorerie est plus importante que vos bénéfices
+              </h4>
+              <div class="article-meta">
+                <span><i class="fas fa-clock me-2"></i>5 min de lecture</span>
+                <span><i class="fas fa-tag me-2"></i>Gestion</span>
+              </div>
+            </div>
+            <div class="article-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="article-card-inner">
+            <div class="article-icon">
+              <i class="fas fa-coins"></i>
+            </div>
+            <div class="article-content">
+              <h4>Investir sans mettre en danger sa trésorerie</h4>
+              <div class="article-meta">
+                <span><i class="fas fa-clock me-2"></i>7 min de lecture</span>
+                <span><i class="fas fa-tag me-2"></i>Investissement</span>
+              </div>
+            </div>
+            <div class="article-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="article-card mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="article-card-inner">
+            <div class="article-icon">
+              <i class="fas fa-boxes"></i>
+            </div>
+            <div class="article-content">
+              <h4>Optimiser la gestion des stocks pour une trésorerie saine</h4>
+              <div class="article-meta">
+                <span><i class="fas fa-clock me-2"></i>6 min de lecture</span>
+                <span><i class="fas fa-tag me-2"></i>Optimisation</span>
+              </div>
+            </div>
+            <div class="article-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="article-card-inner">
+            <div class="article-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="article-content">
+              <h4>L'anticipation, votre meilleure arme financière</h4>
+              <div class="article-meta">
+                <span><i class="fas fa-clock me-2"></i>4 min de lecture</span>
+                <span><i class="fas fa-tag me-2"></i>Stratégie</span>
+              </div>
+            </div>
+            <div class="article-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .articles-tresorerie {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .section-title {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .title-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(45deg, #ff4b4b 0%, #ff6b6b 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(255, 75, 75, 0.2);
+    }
+
+    .article-card {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .article-card-inner {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .article-card:hover .article-card-inner {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-color: #ff4b4b;
+    }
+
+    .article-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #ff4b4b 0%, #ff6b6b 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .article-content {
+      flex-grow: 1;
+    }
+
+    .article-content h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #2d3436;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #636e72;
+    }
+
+    .article-arrow {
+      color: #ff4b4b;
+      font-size: 1.2rem;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .article-card:hover .article-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 768px) {
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .article-card-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .article-arrow {
+        display: none;
+      }
+    }
+  </style>
+</section>
+
+<!-- Section des thématiques principales -->
+<section class="themes-section py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">
+      Nos grandes thématiques pour booster votre réussite
+    </h2>
+
+    <div class="row g-4">
+      <!-- Carte 1 -->
+      <div class="col-lg-4">
+        <div class="theme-card">
+          <div class="card-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="card-number">01</div>
+          <h3>Salarié ou Indépendant</h3>
+          <div class="card-subtitle">Quel statut choisir ?</div>
+          <p>
+            Démêlez les avantages et contraintes de chaque statut pour choisir
+            la voie qui correspond vraiment à vos ambitions.
+          </p>
+          <a href="/salarie-independant" class="card-link">
+            Lire l'article complet
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte 2 -->
+      <div class="col-lg-4">
+        <div class="theme-card">
+          <div class="card-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="card-number">02</div>
+          <h3>Créer votre entreprise</h3>
+          <div class="card-subtitle">Le passage en société</div>
+          <p>
+            Transformez votre activité d'indépendant en société pour booster
+            votre rentabilité et protéger votre patrimoine personnel.
+          </p>
+          <a href="/passage-societe" class="card-link">
+            Lire l'article complet
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte 3 -->
+      <div class="col-lg-4">
+        <div class="theme-card">
+          <div class="card-icon">
+            <i class="fas fa-wallet"></i>
+          </div>
+          <div class="card-number">03</div>
+          <h3>Compte courant administrateur</h3>
+          <div class="card-subtitle">Évitez les erreurs coûteuses</div>
+          <p>
+            Découvrez comment une mauvaise gestion de votre compte courant
+            administrateur peut fragiliser votre trésorerie, et comment mettre
+            en place des pratiques saines.
+          </p>
+          <a href="/compte-courant" class="card-link">
+            Lire l'article complet
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .themes-section {
+      background-color: #fff;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a2544;
+    }
+
+    .theme-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-icon {
+      background: #ff4b4b;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-icon i {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .card-number {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.03);
+      line-height: 1;
+    }
+
+    .theme-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a2544;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-subtitle {
+      color: #ff4b4b;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .theme-card p {
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #ff4b4b;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .card-link:hover {
+      color: #ff3131;
+      gap: 0.8rem;
+    }
+
+    @media (max-width: 991px) {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .theme-card {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</section>
+
+<!-- Section "Nos conseils pour booster votre entreprise" -->
+<section class="bg-custom--primary py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="conseil-header mb-5">
+          <div class="section-title-wrapper">
+            <div class="title-icon-large">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h2 class="text-white display-5 mb-3">
+              Nos conseils pour
+              <span class="highlight-text">booster votre entreprise</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="conseil-items">
+          <!-- Conseil 1 -->
+          <div class="conseil-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="conseil-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="conseil-content">
+              <h3>Le passage en société</h3>
+              <ul class="conseil-list">
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <strong>Évaluation de la pertinence</strong>
+                    <p>
+                      Analyse du seuil de rentabilité pour votre situation
+                      spécifique
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <strong>Protection du patrimoine</strong>
+                    <p>
+                      Séparation claire entre vos biens personnels et
+                      professionnels
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <strong>Optimisation fiscale</strong>
+                    <p>Stratégie de rémunération optimisée</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Conseil 2 -->
+          <div class="conseil-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="conseil-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="conseil-content">
+              <h3>Salarié ou indépendant</h3>
+              <ul class="conseil-list">
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <strong>Comparaison objective</strong>
+                    <p>
+                      Avantages fiscaux, protection sociale, perspectives
+                      financières
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <strong>Analyse personnalisée</strong>
+                    <p>
+                      Évaluation de votre situation et aspirations
+                      professionnelles
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <div>
+                    <strong>Simulation détaillée</strong>
+                    <p>Quantification de l'impact de chaque choix</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="conseil-image-wrapper">
+          <img
+            src="/assets/img/webp/3.webp"
+            alt="Conseils entreprise"
+            class="img-fluid rounded-4 shadow-lg"
+          />
+          <div class="image-overlay"></div>
+          <div class="floating-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h4>Expertise reconnue</h4>
+            <p>Plus de 500 entreprises accompagnées avec succès</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .conseil-header {
+      position: relative;
+    }
+
+    .section-title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .title-icon-large {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(45deg, #ff4b4b, #ff6b6b);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      box-shadow: 0 10px 20px rgba(255, 75, 75, 0.3);
+    }
+
+    .highlight-text {
+      background: linear-gradient(45deg, #ff4b4b, #ff6b6b);
+      padding: 0.5rem 1.5rem;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
+    }
+
+    .conseil-card {
+      background: rgba(37, 51, 91, 0.95);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .conseil-card:hover {
+      transform: translateY(-5px);
+      background: rgba(37, 51, 91, 0.98);
+      border-color: rgba(255, 75, 75, 0.5);
+    }
+
+    .conseil-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #ff4b4b, #ff6b6b);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
+    }
+
+    .conseil-content h3 {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .conseil-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .conseil-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      color: white;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .conseil-list li:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(5px);
+    }
+
+    .conseil-list li i {
+      color: #ff6b6b;
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
+      filter: drop-shadow(0 2px 4px rgba(255, 75, 75, 0.2));
+    }
+
+    .conseil-list li strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #ff6b6b;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .conseil-list li p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .conseil-image-wrapper {
+      position: relative;
+      padding: 2rem;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255, 75, 75, 0.2), transparent);
+      border-radius: 16px;
+    }
+
+    .floating-card {
+      position: absolute;
+      bottom: 4rem;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      max-width: 300px;
+      backdrop-filter: blur(10px);
+    }
+
+    .floating-card .card-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(45deg, #ff4b4b, #ff6b6b);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px rgba(255, 75, 75, 0.2);
+    }
+
+    .floating-card h4 {
+      margin: 0 0 0.5rem 0;
+      color: #25335b;
+      font-weight: 600;
+    }
+
+    .floating-card p {
+      margin: 0;
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 991px) {
+      .conseil-image-wrapper {
+        margin-top: 3rem;
+      }
+
+      .floating-card {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-title-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .title-icon-large {
+        margin: 0 auto;
+      }
+
+      .conseil-card {
+        padding: 1.5rem;
+      }
+
+      .conseil-icon {
+        margin: 0 auto 1.5rem auto;
+      }
+
+      .conseil-content {
+        text-align: center;
+      }
+
+      .conseil-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</section>
+
+<section>
+  <!--=====about-start=======-->
+  <div class="about sec-padding" id="targetSection">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+          <div class="about-img img-border">
+            <img
+              src="../../../assets/img/vente/image_page_financement2_mfinance.webp"
+              alt="Pourquoi nous faire confiance"
+            />
+          </div>
+        </div>
+        <div
+          class="col-md-6 space-sm-30"
+          data-aos="fade-left"
+          data-aos-duration="800"
         >
-      </div>
-    </section>
+          <div class="about-haddings">
+            <div class="hadding hadding-p">
+              <p class="text-red">
+                <span class="text-red">Pourquoi nous faire confiance ?</span>
+              </p>
+              <h3>En choisissant MFINANCES, vous bénéficiez de :</h3>
+            </div>
 
-    <!-- Thématique 2: Passage en société -->
-    <section id="passage-societe" class="theme-section">
-      <div class="theme-card">
-        <h2>🧩 2. Créer votre entreprise : Le passage en société</h2>
-        <p>
-          Transformez votre activité d'indépendant en société pour booster votre
-          rentabilité et protéger votre patrimoine personnel.
-        </p>
-        <a [routerLink]="['/vente/passage-en-societe']" class="read-more"
-          >➡️ Lire l'article complet →</a
-        >
-      </div>
-    </section>
-
-    <!-- Thématique 3: Compte courant administrateur -->
-    <section id="compte-courant" class="theme-section">
-      <div class="theme-card">
-        <h2>
-          🧩 3. Compte courant administrateur : Évitez les erreurs coûteuses
-        </h2>
-        <p>
-          Découvrez comment une mauvaise gestion de votre compte courant
-          administrateur peut fragiliser votre trésorerie, et comment mettre en
-          place des pratiques saines.
-        </p>
-        <a [routerLink]="['/vente/compte-courant']" class="read-more"
-          >➡️ Lire l'article complet →</a
-        >
-      </div>
-    </section>
-
-    <!-- Thématique 4: Trésorerie (mise en avant) -->
-    <section id="tresorerie" class="theme-section featured">
-      <div class="theme-card">
-        <h2 class="featured-title">
-          💸 4. Trésorerie : Transformez votre stress en succès
-        </h2>
-        <p>
-          Chez Mfinances, nous savons qu'une trésorerie mal maîtrisée est
-          souvent la cause première de stress — et parfois d'échec — pour les
-          entrepreneurs. Et pourtant, une trésorerie bien gérée est votre
-          meilleure arme stratégique.
-        </p>
-        <p>
-          👉 "Trésorerie : Transformez votre stress en succès" est votre série
-          phare dédiée à la gestion optimale de vos flux financiers. Vous y
-          trouverez :
-        </p>
-        <ul>
-          <li>Des conseils concrets pour sécuriser votre trésorerie,</li>
-          <li>Des stratégies pour anticiper vos besoins financiers,</li>
-          <li>
-            Des outils pour transformer vos défis en opportunités de croissance.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Section: Pourquoi avoir une vision claire -->
-    <section class="info-section">
-      <div class="info-card">
-        <h3>
-          🔍 Pourquoi avoir une vision claire de votre trésorerie future est
-          vital
-        </h3>
-        <p>
-          Même une entreprise déficitaire peut continuer à se développer tant
-          que sa trésorerie lui permet d'honorer ses engagements (salaires,
-          charges, fournisseurs). Disposer d'une visibilité précise sur votre
-          trésorerie future, c'est :
-        </p>
-        <ul>
-          <li>Sécuriser vos opérations,</li>
-          <li>Saisir les opportunités de croissance,</li>
-          <li>
-            Prendre vos décisions stratégiques de manière sereine et éclairée.
-          </li>
-        </ul>
-        <p class="alert">
-          🔔 L'anticipation de vos flux financiers est essentielle pour passer
-          de la survie à la réussite.
-        </p>
-      </div>
-    </section>
-
-    <!-- Section: Offre Excellence -->
-    <section class="offer-section">
-      <div class="offer-card">
-        <h3>🚀 Pilotez votre trésorerie avec Excellence</h3>
-        <p>Avec notre Offre Excellence, vous bénéficiez :</p>
-        <ul>
-          <li>
-            D'un tableau de trésorerie prévisionnel dynamique mis à jour en
-            temps réel,
-          </li>
-          <li>D'un contrôle budgétaire trimestriel,</li>
-          <li>
-            Et d'un accompagnement personnalisé pour anticiper vos décisions
-            stratégiques.
-          </li>
-        </ul>
-        <p class="tagline">
-          🎯 Ne subissez plus votre trésorerie. Prenez le contrôle dès
-          aujourd'hui.
-        </p>
-        <a [routerLink]="['/tarif']" class="cta-button"
-          >➡️ Découvrez l'Offre Excellence →</a
-        >
-      </div>
-    </section>
-
-    <!-- Section: Articles trésorerie -->
-    <section class="articles-section">
-      <h3>📚 Découvrez nos articles trésorerie :</h3>
-      <div class="articles-grid">
-        <div class="article-item">
-          <h4>
-            Pourquoi votre trésorerie est plus importante que vos bénéfices
-          </h4>
-          <a href="#" class="article-link">Lire l'article →</a>
-        </div>
-        <div class="article-item">
-          <h4>Investir sans mettre en danger sa trésorerie</h4>
-          <a href="#" class="article-link">Lire l'article →</a>
-        </div>
-        <div class="article-item">
-          <h4>Optimiser la gestion des stocks pour une trésorerie saine</h4>
-          <a href="#" class="article-link">Lire l'article →</a>
-        </div>
-        <div class="article-item">
-          <h4>SOS Trésorerie : Garder le cap face à la concurrence déloyale</h4>
-          <a href="#" class="article-link">Lire l'article →</a>
-        </div>
-        <div class="article-item">
-          <h4>
-            Fidélisation et différenciation : des piliers pour votre trésorerie
-          </h4>
-          <a href="#" class="article-link">Lire l'article →</a>
-        </div>
-        <div class="article-item">
-          <h4>L'anticipation, votre meilleure arme financière</h4>
-          <a href="#" class="article-link">Lire l'article →</a>
-        </div>
-        <div class="article-item">
-          <h4>
-            Gagnez en sécurité financière : Transformez vos défis en
-            opportunités
-          </h4>
-          <a href="#" class="article-link">Lire l'article →</a>
+            <div class="check-list-all" style="padding: 1px 0 !important">
+              <div class="row">
+                <div>
+                  <div class="chek-list">
+                    <p>
+                      <img
+                        src="../../../assets/img/icons/checkfill.png"
+                        alt=""
+                      />
+                      <strong>Expertise proactive :</strong> Nous détectons les
+                      opportunités et risques avant qu'ils n'impactent votre
+                      activité.
+                    </p>
+                  </div>
+                  <div class="space20"></div>
+                  <div class="chek-list">
+                    <p>
+                      <img
+                        src="../../../assets/img/icons/checkfill.png"
+                        alt=""
+                      />
+                      <strong>Pédagogie claire :</strong> Chaque conseil est
+                      simple, directement applicable et adapté à votre réalité.
+                    </p>
+                  </div>
+                  <div class="space20"></div>
+                </div>
+                <div>
+                  <div class="chek-list">
+                    <p>
+                      <img
+                        src="../../../assets/img/icons/checkfill.png"
+                        alt=""
+                      />
+                      <strong>Accompagnement personnalisé :</strong> Nous
+                      transformons nos conseils en résultats concrets pour votre
+                      entreprise.
+                    </p>
+                  </div>
+                  <div class="space20"></div>
+                  <div class="chek-list">
+                    <p>
+                      <img
+                        src="../../../assets/img/icons/checkfill.png"
+                        alt=""
+                      />
+                      <strong>Vision globale :</strong> Notre approche intègre
+                      tous les aspects de votre entreprise pour une stratégie
+                      cohérente.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home2-btn mt-4">
+              <a href="/contact"
+                >Contactez-nous <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Section: Pourquoi faire confiance -->
-    <section class="trust-section">
-      <div class="trust-card">
-        <h3>💡 Pourquoi faire confiance à Mfinances ?</h3>
-        <div class="trust-points">
-          <div class="trust-point">
-            <h4>Expertise proactive</h4>
-            <p>
-              Nous détectons les opportunités et risques avant qu'ils
-              n'impactent votre activité.
+    </div>
+  </div>
+  <!--=====about-end=======-->
+</section>
+<!-- 
+<section>
+  <div class="service-faq sec-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-auto text-center">
+          <div class="hadding">
+            <h1 class="text-white">
+              Questions fréquentes sur <br />
+              <span class="rectangle-red"> <b>le boost d'entreprise</b> </span>
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="space40"></div>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="service-details-img img-border">
+            <img
+              src="../../../assets/img/vente/faq_boost.webp"
+              alt="Questions fréquentes"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="hadding hadding-p space-sm-30">
+            <h2 class="text-white">
+              À partir de quand est-il intéressant de passer en société ?
+            </h2>
+            <p class="text-white">
+              Le passage en société devient généralement intéressant à partir
+              d'un bénéfice annuel de 41 000 €. C'est à ce niveau que les
+              économies d'impôts commencent à compenser les coûts administratifs
+              supplémentaires.
             </p>
           </div>
-          <div class="trust-point">
-            <h4>Pédagogie claire</h4>
-            <p>
-              Chaque conseil est simple, directement applicable et adapté à
-              votre réalité.
-            </p>
-          </div>
-          <div class="trust-point">
-            <h4>Accompagnement personnalisé</h4>
-            <p>
-              Nous transformons nos conseils en résultats concrets pour votre
-              entreprise.
-            </p>
+          <div class="space20"></div>
+
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header active-header" id="headingOne">
+                <button
+                  class="accordion-button accordion-button-active"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  À partir de quand est-il intéressant de passer en société ?
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Le passage en société devient généralement intéressant à
+                  partir d'un bénéfice annuel de 41 000 €. C'est à ce niveau que
+                  les économies d'impôts commencent à compenser les coûts
+                  administratifs supplémentaires.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Pourquoi la trésorerie est-elle plus importante que les
+                  bénéfices ?
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Une entreprise peut être bénéficiaire sur le papier mais
+                  manquer de liquidités pour fonctionner. La trésorerie permet
+                  de payer vos fournisseurs, vos salariés et vos charges à court
+                  terme, tandis que les bénéfices représentent une performance
+                  comptable qui ne reflète pas toujours la santé financière
+                  réelle.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Comment gérer efficacement mon compte courant d'administrateur
+                  ?
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  Pour une gestion efficace, documentez chaque mouvement, évitez
+                  les soldes débiteurs prolongés, établissez une convention
+                  écrite avec votre société et réalisez des opérations
+                  transparentes. Un suivi régulier et rigoureux vous évitera des
+                  problèmes fiscaux et financiers.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section> -->
 
-    <!-- Section: Call to Action -->
-    <section class="cta-section">
-      <div class="cta-card">
-        <h2>📈 Passez à l'action</h2>
-        <p>
+<section class="container my-5">
+  <div class="rounded-4 bg-custom--primary text-white px-4 py-4">
+    <div class="row align-items-center">
+      <!-- Image visible uniquement à partir du md (desktop) -->
+      <div
+        class="col-md-6 d-none d-md-flex justify-content-center align-items-end"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+        <img
+          src="../../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
+          alt="Personne souriante"
+          class="img-fluid custom-image-size"
+          style="z-index: 2; position: relative"
+        />
+      </div>
+
+      <!-- Texte et bouton, centrés sur mobile/tablette -->
+      <div
+        class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
+        data-aos="fade-right"
+        data-aos-delay="400"
+      >
+        <h2 class="fw-bold mb-4 text-white">Passez à l'action</h2>
+        <p class="mb-4 text-white" data-aos="fade-up" data-aos-delay="600">
           Chaque grande réussite commence par une première bonne décision.
           Explorez nos thématiques, inspirez-vous, et contactez-nous pour un
           accompagnement personnalisé.
         </p>
-        <p>
+        <p class="mb-4 text-white">
           Chez Mfinances, nous sommes à vos côtés pour que vous ne subissiez pas
-          votre avenir financier : 👉 Vous le construisez.
+          votre avenir financier : Vous le construisez.
         </p>
-        <a [routerLink]="['/contact']" class="primary-cta"
-          >➡️ Je demande mon premier rendez-vous gratuit →</a
+        <a
+          href="/contact"
+          class="btn btn-danger btn-sm px-3 py-2"
+          data-aos="zoom-in"
+          data-aos-delay="800"
         >
+          Je demande mon premier rendez-vous gratuit
+          <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
-    </section>
+    </div>
   </div>
-</div>
+</section>
