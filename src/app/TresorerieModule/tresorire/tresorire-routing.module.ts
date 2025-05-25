@@ -7,8 +7,10 @@ import { AlerteTresorerieComponent } from '../alerte-tresorerie/alerte-tresoreri
 import { ProtegerTresorerieComponent } from '../proteger-tresorerie/proteger-tresorerie.component';
 import { AnticiperTresorerieComponent } from '../anticiper-tresorerie/anticiper-tresorerie.component';
 import { AccompagnementComponent } from '../accompagnement/accompagnement.component';
+import { TresoreriePageComponent } from '../tresorerie-page/tresorerie-page.component';
 
 const routes: Routes = [
+  { path: '', component: TresoreriePageComponent },
   { path: 'tresorerie-benefice', component: TresorerieBeneficeComponent },
   { path: 'investir-tresorerie', component: InvestirTresorerieComponent },
   { path: 'optimiser-stock', component: StockTresorerieComponent },
