@@ -28,7 +28,7 @@ export class TarifComponent implements OnInit {
     private metaService: MetaService
   ) {
     const url = 'https://www.youtube.com/embed/ghSPTixak4c';
-    const url2 = 'https://www.youtube.com/embed/qc18dXxbibU';
+    const url2 = 'https://www.youtube.com/embed/XJrFJicX7S0';
     this.videoUrl2 = this.sanitizer.bypassSecurityTrustResourceUrl(url2);
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }

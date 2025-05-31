@@ -1259,7 +1259,37 @@
 
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="target-card">
-          <h3>Offre Excellence</h3>
+          <h3>
+            Offre
+            <span
+              class="excellence-hover"
+              style="color: white !important"
+              (mouseenter)="showExcellenceTooltip = true"
+              (mouseleave)="showExcellenceTooltip = false"
+            >
+              Excellence<i class="fas fa-video excellence-icon"></i>
+              <div class="excellence-tooltip" *ngIf="showExcellenceTooltip">
+                <div class="tooltip-header">
+                  <h4>Découvrez l'Excellence en action</h4>
+                  <button class="expand-btn" (click)="openExcellenceModal()">
+                    <i class="fas fa-expand"></i>
+                  </button>
+                </div>
+                <div class="tooltip-video">
+                  <iframe
+                    width="100%"
+                    height="200"
+                    src="https://www.youtube.com/embed/XJrFJicX7S0"
+                    title="Excellence MFinances"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+              </div>
+            </span>
+          </h3>
           <div class="target-body">
             <h4>Pour qui ?</h4>
             <p>
@@ -1855,7 +1885,8 @@
           style="color: white"
           (mouseenter)="showExcellenceTooltip2 = true"
           (mouseleave)="showExcellenceTooltip2 = false"
-          >Excellence<i class="fas fa-video excellence-icon"></i>
+        >
+          Excellence<i class="fas fa-video excellence-icon"></i>
           <div class="excellence-tooltip" *ngIf="showExcellenceTooltip2">
             <div class="tooltip-header">
               <h4>Découvrez l'Excellence en action</h4>
@@ -1874,8 +1905,9 @@
                 allowfullscreen
               >
               </iframe>
-            </div></div
-        ></span>
+            </div>
+          </div>
+        </span>
       </div>
       <div style="color: white">
         Pilotez votre entreprise avec un temps d'avance
