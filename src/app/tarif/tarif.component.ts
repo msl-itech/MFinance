@@ -12,6 +12,16 @@ export class TarifComponent implements OnInit {
   isAccordionOpen = false;
   videoUrl: SafeResourceUrl;
   videoUrl2: SafeResourceUrl;
+
+  // Propriétés pour le tooltip et modal Excellence
+  showExcellenceTooltip = false;
+  showExcellenceTooltip2 = false;
+  showExcellenceModal = false;
+
+  // Propriétés pour le tooltip et modal Premium
+  showPremiumTooltip = false;
+  showPremiumModal = false;
+
   constructor(
     private sanitizer: DomSanitizer,
     private modalService: NgbModal,
@@ -32,6 +42,26 @@ export class TarifComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
+  }
+
+  // Méthodes pour gérer le tooltip et modal Excellence
+  openExcellenceModal() {
+    this.showExcellenceTooltip = false;
+    this.showExcellenceModal = true;
+  }
+
+  closeExcellenceModal() {
+    this.showExcellenceModal = false;
+  }
+
+  // Méthodes pour gérer le tooltip et modal Premium
+  openPremiumModal() {
+    this.showPremiumTooltip = false;
+    this.showPremiumModal = true;
+  }
+
+  closePremiumModal() {
+    this.showPremiumModal = false;
   }
 
   isAccordionOpenSituation = false;
