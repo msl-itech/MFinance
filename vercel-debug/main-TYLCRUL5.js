@@ -9675,7 +9675,7 @@ var Rt = class a {
       [1, "fab", "fa-facebook-f"],
       [
         "href",
-        "https://www.linkedin.com/company/mfinancessrl/",
+        "https://www.linkedin.com/in/mfinances-cabinet-expertise-comptable-l-bruxelles-4b0b9798/",
         1,
         "social-link",
         "linkedin",
@@ -13615,7 +13615,7 @@ var Ut = class a {
       [1, "fab", "fa-facebook"],
       [
         "href",
-        "https://www.linkedin.com/company/mfinancessrl/",
+        "https://www.linkedin.com/in/mfinances-cabinet-expertise-comptable-l-bruxelles-4b0b9798/",
         1,
         "text-white",
       ],
@@ -13957,7 +13957,7 @@ var $t = class a {
       [1, "fab", "fa-facebook-f"],
       [
         "href",
-        "https://www.linkedin.com/company/mfinancessrl/",
+        "https://www.linkedin.com/in/mfinances-cabinet-expertise-comptable-l-bruxelles-4b0b9798/",
         "aria-label",
         "LinkedIn",
       ],
