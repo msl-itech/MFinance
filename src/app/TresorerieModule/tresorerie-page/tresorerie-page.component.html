@@ -105,13 +105,13 @@
       <div class="col-lg-8">
         <div class="main-content">
           <h3 class="main-title">
-            💸 Trésorerie : Transformez votre stress en succès
+            Trésorerie : Transformez votre stress en succès
           </h3>
 
           <p class="main-description intro-text">
             Chez Mfinances, nous savons qu'une trésorerie mal maîtrisée est
-            l'une des principales causes de stress — et parfois d'échec — pour
-            les entrepreneurs.
+            l'une des principales causes de stress et parfois d'échec pour les
+            entrepreneurs.
           </p>
           <div class="banner-image-container mb-5">
             <img
@@ -149,7 +149,7 @@
 
                   <div class="action-container mt-4">
                     <button
-                      (click)="scrollToSection('serviceSection')"
+                      (click)="scrollToSection('tresorerie-section')"
                       class="btn-action"
                     >
                       Découvrez nos conseils d'experts
@@ -269,12 +269,12 @@
 </section>
 
 <!-- Section Trésorerie -->
-<section class="tresorerie-section py-5">
+<section class="tresorerie-section py-5" id="tresorerie-section">
   <div class="container">
     <!-- En-tête de section -->
     <div class="section-header text-center mb-5">
       <span class="section-badge">Notre Vision</span>
-      <h2 class="section-title">La Trésorerie, Votre Atout Stratégique</h2>
+      <h2 class="section-title">La trésorerie, votre atout stratégique</h2>
       <p class="section-subtitle">
         Transformez votre approche financière pour une croissance maîtrisée
       </p>
@@ -286,7 +286,7 @@
       <div class="col-lg-6">
         <div class="content-block">
           <div class="key-point mb-4">
-            <h3>L'importance de la trésorerie</h3>
+            <h3>Importance</h3>
             <p class="lead">
               Dans la gestion d'une entreprise, la trésorerie est plus
               importante que les bénéfices pour assurer la continuité
@@ -295,7 +295,6 @@
           </div>
 
           <div class="highlight-box mb-4">
-            <div class="highlight-icon">👉</div>
             <p>
               Même une entreprise déficitaire peut continuer d'exister, tant que
               sa trésorerie reste suffisante pour faire face à ses obligations.
@@ -344,11 +343,16 @@
         <div class="offer-block">
           <div class="offer-content">
             <div class="offer-header">
-              <span class="offer-badge">
+              <span
+                class="offer-badge"
+                [routerLink]="['/tarif']"
+                [fragment]="'excellence'"
+                style="cursor: pointer"
+              >
                 <i class="fas fa-star"></i>
                 Programme Excellence
               </span>
-              <h3>Optimisez votre trésorerie</h3>
+              <h3>Optimisation</h3>
               <p>
                 Un accompagnement sur mesure pour transformer vos défis en
                 opportunités
@@ -378,7 +382,11 @@
               </p>
             </div>
 
-            <a href="/contact" class="btn-primary">
+            <a
+              [routerLink]="['/tarif']"
+              [fragment]="'excellence'"
+              class="btn-primary"
+            >
               Découvrir le Programme Excellence
               <i class="fas fa-arrow-right"></i>
             </a>
@@ -632,7 +640,7 @@
           <div class="title-icon">
             <i class="fas fa-book-open text-danger"></i>
           </div>
-          <h3 class="ms-3 mb-0 text-dark">Nos articles trésorerie</h3>
+          <h3 class="ms-3 mb-0 text-dark">Nos articles</h3>
         </div>
       </div>
 

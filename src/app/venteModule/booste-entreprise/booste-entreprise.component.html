@@ -115,7 +115,7 @@
 
                   <div class="action-container mt-4">
                     <button
-                      (click)="scrollToSection('serviceSection')"
+                      (click)="scrollToSection('conseilsSection')"
                       class="btn-action"
                     >
                       Découvrez nos conseils d'experts
@@ -350,11 +350,15 @@
           <!-- Colonne de droite -->
           <div class="col-md-5">
             <div class="offer-section">
-              <div class="offer-badge">
+              <div
+                class="offer-badge"
+                [routerLink]="['/tarif']"
+                [fragment]="'excellence'"
+                style="cursor: pointer"
+              >
                 <i class="fas fa-rocket"></i>
                 Offre Excellence
               </div>
-
               <div class="offer-features">
                 <div class="offer-feature">
                   <i class="fas fa-check"></i>
@@ -377,8 +381,11 @@
                   réussite.
                 </p>
               </div>
-
-              <a href="/contact" class="btn-discover">
+              <a
+                [routerLink]="['/tarif']"
+                [fragment]="'excellence'"
+                class="btn-discover"
+              >
                 Découvrez l'Offre Excellence
                 <i class="fas fa-arrow-right"></i>
               </a>
@@ -1089,7 +1096,7 @@
 </section>
 
 <!-- Section "Nos conseils pour booster votre entreprise" -->
-<section class="bg-custom--primary py-5">
+<section class="bg-custom--primary py-5" id="conseilsSection">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6" data-aos="fade-right">
