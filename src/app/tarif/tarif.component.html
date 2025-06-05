@@ -26,8 +26,145 @@
 
   /* Cards et sections */
   .target-card {
-    border-top: 3px solid #1a2c51;
-    box-shadow: 0 4px 15px rgba(26, 44, 81, 0.1);
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .target-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #ff4b4b, #ff6b6b);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .card-icon.premium,
+  .card-icon.excellence {
+    background: linear-gradient(45deg, #ff4b4b, #ff6b6b);
+  }
+
+  .price-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 75, 75, 0.1);
+    color: #ff4b4b;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .price-badge.premium,
+  .price-badge.excellence {
+    background: rgba(255, 75, 75, 0.1);
+    color: #ff4b4b;
+  }
+
+  .target-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1a2544;
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 1.5rem 0;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .features-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: #4b5563;
+  }
+
+  .features-list li i {
+    color: #10b981;
+    font-size: 1.1rem;
+  }
+
+  .btn-tarif {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff4b4b, #ff6b6b);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: auto;
+    transition: all 0.3s ease;
+  }
+
+  .btn-tarif.premium,
+  .btn-tarif.excellence {
+    background: linear-gradient(45deg, #ff4b4b, #ff6b6b);
+  }
+
+  .btn-tarif:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: white;
+  }
+
+  .premium-card {
+    border: 2px solid #ff4b4b;
+    box-shadow: 0 10px 25px rgba(255, 75, 75, 0.1);
+  }
+
+  .excellence-card {
+    border: 2px solid #ff4b4b;
+    box-shadow: 0 10px 25px rgba(255, 75, 75, 0.1);
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4b4b;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(255, 75, 75, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .target-card {
+      margin-bottom: 2rem;
+    }
   }
 
   .target-card.highlight {
@@ -1177,7 +1314,7 @@
               </li>
             </ul>
             <p class="highlight-text">
-              Chez Mfinances, vous agissez — vous ne subissez plus.
+              Chez Mfinances, vous reprenez le contrôle — fini de subir.
             </p>
           </div>
         </div>
@@ -1189,12 +1326,16 @@
 <section class="target-section py-5 bg-custom--primary">
   <div class="container">
     <h2 class="text-center mb-5">
-      <i class="fas fa-bullseye"></i> Quel forfait est fait pour vous ?
+      <i class="fas fa-bullseye"></i> Quel forfait vous convient le mieux ?
     </h2>
 
     <div class="row justify-content-center">
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="target-card">
+          <div class="card-icon">
+            <i class="fas fa-rocket-launch"></i>
+          </div>
+          <div class="price-badge">À partir de 350€/mois</div>
           <h3>Offre Base</h3>
           <div class="target-body">
             <h4>Pour qui ?</h4>
@@ -1202,15 +1343,26 @@
               Indépendants et petites entreprises souhaitant un suivi essentiel
               sans stress
             </p>
+            <div class="divider"></div>
             <h4>Objectif principal</h4>
             <p>Vue semestrielle claire pour prévenir les risques</p>
+            <ul class="features-list">
+              <li><i class="fas fa-check"></i> Suivi comptable régulier</li>
+              <li><i class="fas fa-check"></i> Alertes préventives</li>
+              <li><i class="fas fa-check"></i> Rapport semestriel</li>
+            </ul>
           </div>
+          <a href="/contact" class="btn-tarif">Commencer</a>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="target-card highlight">
+        <div class="target-card highlight premium-card">
+          <div class="card-icon premium">
+            <i class="fas fa-crown"></i>
+          </div>
           <div class="popular-badge">POPULAIRE</div>
+          <div class="price-badge premium">À partir de 450€/mois</div>
           <h3>
             Offre
             <span
@@ -1221,8 +1373,7 @@
             >
               Premium
               <i class="fas fa-video premium-icon"></i>
-
-              <!-- Tooltip vidéo -->
+              <!-- Tooltip vidéo existant -->
               <div class="premium-tooltip" *ngIf="showPremiumTooltip">
                 <div class="tooltip-header">
                   <h4>Découvrez l'offre Premium</h4>
@@ -1251,14 +1402,30 @@
               PME en croissance qui veulent aligner performance réelle et budget
               prévisionnel
             </p>
+            <div class="divider"></div>
             <h4>Objectif principal</h4>
             <p>Suivi budgétaire trimestriel et ajustements proactifs</p>
+            <ul class="features-list">
+              <li><i class="fas fa-check"></i> Tout de l'offre Base</li>
+              <li>
+                <i class="fas fa-check"></i> Analyse trimestrielle approfondie
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Conseils stratégiques personnalisés
+              </li>
+              <li><i class="fas fa-check"></i> Support prioritaire</li>
+            </ul>
           </div>
+          <a href="/contact" class="btn-tarif premium">Démarrer maintenant</a>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="target-card">
+        <div class="target-card excellence-card">
+          <div class="card-icon excellence">
+            <i class="fas fa-diamond"></i>
+          </div>
+          <div class="price-badge excellence">À partir de 650€/mois</div>
           <h3>
             Offre
             <span
@@ -1268,6 +1435,7 @@
               (mouseleave)="showExcellenceTooltip = false"
             >
               Excellence<i class="fas fa-video excellence-icon"></i>
+              <!-- Tooltip vidéo existant -->
               <div class="excellence-tooltip" *ngIf="showExcellenceTooltip">
                 <div class="tooltip-header">
                   <h4>Découvrez l'Excellence en action</h4>
@@ -1296,12 +1464,27 @@
               Entreprises dynamiques nécessitant une gouvernance financière
               avancée
             </p>
+            <div class="divider"></div>
             <h4>Objectif principal</h4>
             <p>
               Anticipation de la trésorerie, pilotage proactif, sécurité
               maximale
             </p>
+            <ul class="features-list">
+              <li><i class="fas fa-check"></i> Tout de l'offre Premium</li>
+              <li>
+                <i class="fas fa-check"></i> Accompagnement stratégique illimité
+              </li>
+              <li><i class="fas fa-check"></i> Tableau de bord personnalisé</li>
+              <li>
+                <i class="fas fa-check"></i> Accès direct à votre expert dédié
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Réunions mensuelles de pilotage
+              </li>
+            </ul>
           </div>
+          <a href="/contact" class="btn-tarif excellence">Contactez-nous</a>
         </div>
       </div>
     </div>
@@ -1986,8 +2169,8 @@
           <h3><i class="fas fa-times-circle text-danger"></i> Entreprise A</h3>
           <p class="case-subtitle">(sans suivi de trésorerie dynamique)</p>
           <p>
-            découvre en octobre qu'elle manquera de fonds pour payer ses charges
-            sociales en décembre.
+            Elle constate, en octobre, qu'elle ne pourra pas faire face à ses
+            charges sociales prévues en décembre.
           </p>
           <div class="case-result">
             <strong>Résultat :</strong> stress, crédit coûteux en urgence, perte
@@ -2001,9 +2184,9 @@
           <h3><i class="fas fa-check-circle text-success"></i> Entreprise B</h3>
           <p class="case-subtitle">(cliente Mfinances en Offre Excellence)</p>
           <p>
-            sait dès juillet que sa trésorerie sera tendue fin d'année. Elle
-            ajuste son activité, négocie avec ses partenaires, et sécurise ses
-            liquidités.
+            Dès le mois de juillet, elle anticipe une tension de trésorerie en
+            fin d'année. Elle ajuste alors son activité, négocie avec ses
+            partenaires et sécurise sa liquidité.
           </p>
           <div class="case-result">
             <strong>Résultat :</strong> aucune mauvaise surprise, maîtrise
