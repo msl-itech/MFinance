@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MetaService } from '../services/meta.service';
 
@@ -25,7 +26,8 @@ export class TarifComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
     private modalService: NgbModal,
-    private metaService: MetaService
+    private metaService: MetaService,
+    private route: ActivatedRoute
   ) {
     const url = 'https://www.youtube.com/embed/ghSPTixak4c';
     const url2 = 'https://www.youtube.com/embed/XJrFJicX7S0';
@@ -35,6 +37,18 @@ export class TarifComponent implements OnInit {
 
   ngOnInit() {
     this.metaService.setTarifPageMeta();
+
+    // Gérer le fragment pour le défilement
+    this.route.fragment.subscribe((fragment) => {
+      if (fragment) {
+        setTimeout(() => {
+          const element = document.getElementById(fragment);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 500);
+      }
+    });
   }
 
   scrollToVideo(elementId: string) {

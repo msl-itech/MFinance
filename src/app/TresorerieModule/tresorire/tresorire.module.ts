@@ -13,10 +13,10 @@ import { BlockSurveillanceComponent } from '../block-surveillance/block-surveill
 import { BlockNegligerTresorerieComponent } from '../block-negliger-tresorerie/block-negliger-tresorerie.component';
 import { AnticiperTresorerieComponent } from '../anticiper-tresorerie/anticiper-tresorerie.component';
 import { TimelineStockComponent } from '../../venteModule/timeline-stock/timeline-stock.component';
-
+import { TresoreriePageComponent } from '../tresorerie-page/tresorerie-page.component';
 
 @NgModule({
-  declarations: [TresorerieBeneficeComponent,TimelineTresorieComponent,InvestirTresorerieComponent,StockTresorerieComponent,ProtegerTresorerieComponent,BlockFidelisationComponent,BlockSurveillanceComponent,BlockNegligerTresorerieComponent,AnticiperTresorerieComponent,TimelineStockComponent],
+  declarations: [TresoreriePageComponent,TresorerieBeneficeComponent,TimelineTresorieComponent,InvestirTresorerieComponent,StockTresorerieComponent,ProtegerTresorerieComponent,BlockFidelisationComponent,BlockSurveillanceComponent,BlockNegligerTresorerieComponent,AnticiperTresorerieComponent,TimelineStockComponent],
   imports: [
     CommonModule,
     TresorireRoutingModule,
