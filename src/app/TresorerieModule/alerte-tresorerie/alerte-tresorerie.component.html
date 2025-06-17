@@ -308,718 +308,710 @@
 </div>
 
 <!-- Section du formulaire -->
-<section id="contactSection" class="contact-section">
-  <app-contact-form-layout
-    [config]="formConfig"
-    [currentStep]="currentStep"
-    [totalSteps]="totalSteps"
-    [formSubmitted]="formSubmitted"
-    [isStepValid]="isStepValid()"
-    [isFormValid]="isFormValid()"
-    (nextStep)="onNextStep()"
-    (previousStep)="onPreviousStep()"
-    (submit)="onSubmit()"
-    (reset)="onReset()"
-  >
-    <div slot="form-content">
-      <!-- Étape 1: Perdu des clients récemment -->
-      <div *ngIf="currentStep === 1" class="step-content">
-        <h3 class="step-title mb-4">
-          1. Avez-vous perdu des clients récemment à cause d'un concurrent ?
-        </h3>
-        <p class="step-description mb-4">
-          Une première question simple pour évaluer l'impact.
-        </p>
+<app-contact-form-layout
+  [config]="formConfig"
+  [currentStep]="currentStep"
+  [totalSteps]="totalSteps"
+  [formSubmitted]="formSubmitted"
+  [isStepValid]="isStepValid()"
+  [isFormValid]="isFormValid()"
+  (nextStep)="onNextStep()"
+  (previousStep)="onPreviousStep()"
+  (submit)="onSubmit()"
+  (reset)="onReset()"
+>
+  <div slot="form-content">
+    <!-- Étape 1: Perdu des clients récemment -->
+    <div *ngIf="currentStep === 1" class="step-content">
+      <h3 class="step-title mb-4">
+        1. Avez-vous perdu des clients récemment à cause d'un concurrent ?
+      </h3>
+      <p class="step-description mb-4">
+        Une première question simple pour évaluer l'impact.
+      </p>
 
-        <div class="form-group">
-          <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.perdu_clients === 'oui-clairement'"
-            >
-              <input
-                type="radio"
-                name="perdu_clients"
-                value="oui-clairement"
-                [(ngModel)]="formData.perdu_clients"
-                (change)="onPerduClientsChange('oui-clairement')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-exclamation-triangle text-danger mb-2"></i>
-                <h6 class="mb-1">Oui, clairement</h6>
-                <small class="text-muted"
-                  >Impact visible sur le chiffre d'affaires</small
-                >
-              </div>
-            </label>
+      <div class="form-group">
+        <div class="custom-radio-group">
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.perdu_clients === 'oui-clairement'"
+          >
+            <input
+              type="radio"
+              name="perdu_clients"
+              value="oui-clairement"
+              [(ngModel)]="formData.perdu_clients"
+              (change)="onPerduClientsChange('oui-clairement')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-exclamation-triangle text-danger mb-2"></i>
+              <h6 class="mb-1">Oui, clairement</h6>
+              <small class="text-muted"
+                >Impact visible sur le chiffre d'affaires</small
+              >
+            </div>
+          </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.perdu_clients === 'un-peu-resiste'"
-            >
-              <input
-                type="radio"
-                name="perdu_clients"
-                value="un-peu-resiste"
-                [(ngModel)]="formData.perdu_clients"
-                (change)="onPerduClientsChange('un-peu-resiste')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-shield-alt text-warning mb-2"></i>
-                <h6 class="mb-1">Un peu, mais je résiste</h6>
-                <small class="text-muted"
-                  >Situation sous contrôle mais vigilance requise</small
-                >
-              </div>
-            </label>
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.perdu_clients === 'un-peu-resiste'"
+          >
+            <input
+              type="radio"
+              name="perdu_clients"
+              value="un-peu-resiste"
+              [(ngModel)]="formData.perdu_clients"
+              (change)="onPerduClientsChange('un-peu-resiste')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-shield-alt text-warning mb-2"></i>
+              <h6 class="mb-1">Un peu, mais je résiste</h6>
+              <small class="text-muted"
+                >Situation sous contrôle mais vigilance requise</small
+              >
+            </div>
+          </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.perdu_clients === 'non-connaissance'"
-            >
-              <input
-                type="radio"
-                name="perdu_clients"
-                value="non-connaissance"
-                [(ngModel)]="formData.perdu_clients"
-                (change)="onPerduClientsChange('non-connaissance')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-check-circle text-success mb-2"></i>
-                <h6 class="mb-1">Non, pas à ma connaissance</h6>
-                <small class="text-muted">Position stable sur le marché</small>
-              </div>
-            </label>
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.perdu_clients === 'non-connaissance'"
+          >
+            <input
+              type="radio"
+              name="perdu_clients"
+              value="non-connaissance"
+              [(ngModel)]="formData.perdu_clients"
+              (change)="onPerduClientsChange('non-connaissance')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-check-circle text-success mb-2"></i>
+              <h6 class="mb-1">Non, pas à ma connaissance</h6>
+              <small class="text-muted">Position stable sur le marché</small>
+            </div>
+          </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.perdu_clients === 'ne-sais-pas'"
-            >
-              <input
-                type="radio"
-                name="perdu_clients"
-                value="ne-sais-pas"
-                [(ngModel)]="formData.perdu_clients"
-                (change)="onPerduClientsChange('ne-sais-pas')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-question-circle text-secondary mb-2"></i>
-                <h6 class="mb-1">Je ne sais pas</h6>
-                <small class="text-muted"
-                  >Besoin d'analyse de la situation concurrentielle</small
-                >
-              </div>
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.perdu_clients === 'ne-sais-pas'"
+          >
+            <input
+              type="radio"
+              name="perdu_clients"
+              value="ne-sais-pas"
+              [(ngModel)]="formData.perdu_clients"
+              (change)="onPerduClientsChange('ne-sais-pas')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-question-circle text-secondary mb-2"></i>
+              <h6 class="mb-1">Je ne sais pas</h6>
+              <small class="text-muted"
+                >Besoin d'analyse de la situation concurrentielle</small
+              >
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 2: Première réaction face à la concurrence -->
+    <div *ngIf="currentStep === 2" class="step-content">
+      <h3 class="step-title mb-4">
+        2. Quelle a été votre première réaction face à cette concurrence ?
+      </h3>
+      <p class="step-description mb-4">
+        Pour comprendre la stratégie (ou le réflexe) adoptée.
+      </p>
+
+      <div class="form-group">
+        <div class="custom-radio-group">
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.reaction_concurrence === 'baisse-prix'"
+          >
+            <input
+              type="radio"
+              name="reaction_concurrence"
+              value="baisse-prix"
+              [(ngModel)]="formData.reaction_concurrence"
+              (change)="onReactionChange('baisse-prix')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-arrow-down text-danger mb-2"></i>
+              <h6 class="mb-1">J'ai baissé mes prix</h6>
+              <small class="text-muted"
+                >Réaction défensive sur les tarifs</small
+              >
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="
+              formData.reaction_concurrence === 'reduit-depenses'
+            "
+          >
+            <input
+              type="radio"
+              name="reaction_concurrence"
+              value="reduit-depenses"
+              [(ngModel)]="formData.reaction_concurrence"
+              (change)="onReactionChange('reduit-depenses')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-cut text-warning mb-2"></i>
+              <h6 class="mb-1">J'ai réduit mes dépenses</h6>
+              <small class="text-muted">Optimisation des coûts internes</small>
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.reaction_concurrence === 'attendu-voir'"
+          >
+            <input
+              type="radio"
+              name="reaction_concurrence"
+              value="attendu-voir"
+              [(ngModel)]="formData.reaction_concurrence"
+              (change)="onReactionChange('attendu-voir')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-clock text-info mb-2"></i>
+              <h6 class="mb-1">J'ai attendu de voir</h6>
+              <small class="text-muted"
+                >Approche d'observation et d'attente</small
+              >
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="
+              formData.reaction_concurrence === 'ameliore-communication'
+            "
+          >
+            <input
+              type="radio"
+              name="reaction_concurrence"
+              value="ameliore-communication"
+              [(ngModel)]="formData.reaction_concurrence"
+              (change)="onReactionChange('ameliore-communication')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-bullhorn text-success mb-2"></i>
+              <h6 class="mb-1">J'ai amélioré ma communication</h6>
+              <small class="text-muted"
+                >Stratégie proactive de différenciation</small
+              >
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.reaction_concurrence === 'autre'"
+          >
+            <input
+              type="radio"
+              name="reaction_concurrence"
+              value="autre"
+              [(ngModel)]="formData.reaction_concurrence"
+              (change)="onReactionChange('autre')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-ellipsis-h text-primary mb-2"></i>
+              <h6 class="mb-1">Autre</h6>
+              <small class="text-muted">Ma stratégie est différente</small>
+            </div>
+          </label>
+        </div>
+
+        <div
+          class="mt-3 animate__animated animate__fadeInDown"
+          *ngIf="showAutreReaction"
+        >
+          <div class="custom-input-group">
+            <label for="reaction_autre" class="form-label">
+              <i class="fas fa-edit me-2"></i>Précisez votre réaction
             </label>
+            <input
+              type="text"
+              class="form-control custom-input"
+              id="reaction_autre"
+              name="reaction_autre"
+              [(ngModel)]="formData.reaction_autre"
+              placeholder="Décrivez votre stratégie..."
+              maxlength="200"
+            />
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Étape 2: Première réaction face à la concurrence -->
-      <div *ngIf="currentStep === 2" class="step-content">
-        <h3 class="step-title mb-4">
-          2. Quelle a été votre première réaction face à cette concurrence ?
-        </h3>
-        <p class="step-description mb-4">
-          Pour comprendre la stratégie (ou le réflexe) adoptée.
-        </p>
+    <!-- Étape 3: Coordonnées -->
+    <div *ngIf="currentStep === 3" class="step-content">
+      <h3 class="step-title mb-4">
+        3. Vos coordonnées pour recevoir votre analyse
+      </h3>
+      <p class="step-description mb-4">
+        <i class="fas fa-lightbulb text-warning me-2"></i>
+        Encore deux petites minutes ! Remplissez vos coordonnées pour recevoir
+        un mini-diagnostic gratuit sur la résilience de votre trésorerie et vos
+        marges.
+      </p>
 
-        <div class="form-group">
-          <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.reaction_concurrence === 'baisse-prix'"
-            >
-              <input
-                type="radio"
-                name="reaction_concurrence"
-                value="baisse-prix"
-                [(ngModel)]="formData.reaction_concurrence"
-                (change)="onReactionChange('baisse-prix')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-arrow-down text-danger mb-2"></i>
-                <h6 class="mb-1">J'ai baissé mes prix</h6>
-                <small class="text-muted"
-                  >Réaction défensive sur les tarifs</small
-                >
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="
-                formData.reaction_concurrence === 'reduit-depenses'
-              "
-            >
-              <input
-                type="radio"
-                name="reaction_concurrence"
-                value="reduit-depenses"
-                [(ngModel)]="formData.reaction_concurrence"
-                (change)="onReactionChange('reduit-depenses')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-cut text-warning mb-2"></i>
-                <h6 class="mb-1">J'ai réduit mes dépenses</h6>
-                <small class="text-muted"
-                  >Optimisation des coûts internes</small
-                >
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="
-                formData.reaction_concurrence === 'attendu-voir'
-              "
-            >
-              <input
-                type="radio"
-                name="reaction_concurrence"
-                value="attendu-voir"
-                [(ngModel)]="formData.reaction_concurrence"
-                (change)="onReactionChange('attendu-voir')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-clock text-info mb-2"></i>
-                <h6 class="mb-1">J'ai attendu de voir</h6>
-                <small class="text-muted"
-                  >Approche d'observation et d'attente</small
-                >
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="
-                formData.reaction_concurrence === 'ameliore-communication'
-              "
-            >
-              <input
-                type="radio"
-                name="reaction_concurrence"
-                value="ameliore-communication"
-                [(ngModel)]="formData.reaction_concurrence"
-                (change)="onReactionChange('ameliore-communication')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-bullhorn text-success mb-2"></i>
-                <h6 class="mb-1">J'ai amélioré ma communication</h6>
-                <small class="text-muted"
-                  >Stratégie proactive de différenciation</small
-                >
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.reaction_concurrence === 'autre'"
-            >
-              <input
-                type="radio"
-                name="reaction_concurrence"
-                value="autre"
-                [(ngModel)]="formData.reaction_concurrence"
-                (change)="onReactionChange('autre')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-ellipsis-h text-primary mb-2"></i>
-                <h6 class="mb-1">Autre</h6>
-                <small class="text-muted">Ma stratégie est différente</small>
-              </div>
-            </label>
-          </div>
-
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreReaction"
-          >
+      <div class="form-group">
+        <div class="row g-3">
+          <div class="col-12">
             <div class="custom-input-group">
-              <label for="reaction_autre" class="form-label">
-                <i class="fas fa-edit me-2"></i>Précisez votre réaction
+              <label for="nom" class="form-label">
+                <i class="fas fa-user me-2"></i>Nom complet
               </label>
               <input
                 type="text"
                 class="form-control custom-input"
-                id="reaction_autre"
-                name="reaction_autre"
-                [(ngModel)]="formData.reaction_autre"
-                placeholder="Décrivez votre stratégie..."
-                maxlength="200"
+                id="nom"
+                name="nom"
+                [(ngModel)]="formData.nom"
+                placeholder="Votre nom et prénom"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="custom-input-group">
+              <label for="email" class="form-label">
+                <i class="fas fa-envelope me-2"></i>Email
+                <span class="badge bg-success ms-2">✅ obligatoire</span>
+              </label>
+              <input
+                type="email"
+                class="form-control custom-input"
+                id="email"
+                name="email"
+                [(ngModel)]="formData.email"
+                placeholder="votre@email.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="custom-input-group">
+              <label for="telephone" class="form-label">
+                <i class="fas fa-phone me-2"></i>Téléphone
+                <span class="badge bg-success ms-2">✅ obligatoire</span>
+              </label>
+              <input
+                type="tel"
+                class="form-control custom-input"
+                id="telephone"
+                name="telephone"
+                [(ngModel)]="formData.telephone"
+                placeholder="+32 XXX XX XX XX"
+                required
               />
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Étape 3: Coordonnées -->
-      <div *ngIf="currentStep === 3" class="step-content">
-        <h3 class="step-title mb-4">
-          3. Vos coordonnées pour recevoir votre analyse
-        </h3>
-        <p class="step-description mb-4">
-          <i class="fas fa-lightbulb text-warning me-2"></i>
-          Encore deux petites minutes ! Remplissez vos coordonnées pour recevoir
-          un mini-diagnostic gratuit sur la résilience de votre trésorerie et
-          vos marges.
-        </p>
-
-        <div class="form-group">
-          <div class="row g-3">
-            <div class="col-12">
-              <div class="custom-input-group">
-                <label for="nom" class="form-label">
-                  <i class="fas fa-user me-2"></i>Nom complet
-                </label>
-                <input
-                  type="text"
-                  class="form-control custom-input"
-                  id="nom"
-                  name="nom"
-                  [(ngModel)]="formData.nom"
-                  placeholder="Votre nom et prénom"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="col-12">
-              <div class="custom-input-group">
-                <label for="email" class="form-label">
-                  <i class="fas fa-envelope me-2"></i>Email
-                  <span class="badge bg-success ms-2">✅ obligatoire</span>
-                </label>
-                <input
-                  type="email"
-                  class="form-control custom-input"
-                  id="email"
-                  name="email"
-                  [(ngModel)]="formData.email"
-                  placeholder="votre@email.com"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="col-12">
-              <div class="custom-input-group">
-                <label for="telephone" class="form-label">
-                  <i class="fas fa-phone me-2"></i>Téléphone
-                  <span class="badge bg-success ms-2">✅ obligatoire</span>
-                </label>
-                <input
-                  type="tel"
-                  class="form-control custom-input"
-                  id="telephone"
-                  name="telephone"
-                  [(ngModel)]="formData.telephone"
-                  placeholder="+32 XXX XX XX XX"
-                  required
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="alert alert-success mt-4">
-            <div class="d-flex align-items-center">
-              <i class="fas fa-phone-alt fa-2x text-success me-3"></i>
-              <div>
-                <h6 class="mb-1">
-                  📞 Un conseiller MFINANCES vous contactera sous 72h,
-                  gratuitement et sans engagement.
-                </h6>
-              </div>
+        <div class="alert alert-success mt-4">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-phone-alt fa-2x text-success me-3"></i>
+            <div>
+              <h6 class="mb-1">
+                📞 Un conseiller MFINANCES vous contactera sous 72h,
+                gratuitement et sans engagement.
+              </h6>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Étape 4: Chiffre d'affaires -->
-      <div *ngIf="currentStep === 4" class="step-content">
-        <h3 class="step-title mb-4">
-          4. Quel est votre chiffre d'affaires annuel moyen ?
-        </h3>
+    <!-- Étape 4: Chiffre d'affaires -->
+    <div *ngIf="currentStep === 4" class="step-content">
+      <h3 class="step-title mb-4">
+        4. Quel est votre chiffre d'affaires annuel moyen ?
+      </h3>
 
-        <div class="form-group">
+      <div class="form-group">
+        <div class="custom-radio-group">
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.chiffre_affaires === 'moins-100k'"
+          >
+            <input
+              type="radio"
+              name="chiffre_affaires"
+              value="moins-100k"
+              [(ngModel)]="formData.chiffre_affaires"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-seedling text-success mb-2"></i>
+              <h6 class="mb-1">Moins de 100K €/an</h6>
+              <small class="text-muted"
+                >Jeune entreprise ou activité réduite</small
+              >
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.chiffre_affaires === '100k-200k'"
+          >
+            <input
+              type="radio"
+              name="chiffre_affaires"
+              value="100k-200k"
+              [(ngModel)]="formData.chiffre_affaires"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-chart-line text-primary mb-2"></i>
+              <h6 class="mb-1">100K à 200K €/an</h6>
+              <small class="text-muted">Entreprise en développement</small>
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.chiffre_affaires === '200k-500k'"
+          >
+            <input
+              type="radio"
+              name="chiffre_affaires"
+              value="200k-500k"
+              [(ngModel)]="formData.chiffre_affaires"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-trending-up text-warning mb-2"></i>
+              <h6 class="mb-1">200K à 500K €/an</h6>
+              <small class="text-muted">PME établie</small>
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.chiffre_affaires === 'plus-500k'"
+          >
+            <input
+              type="radio"
+              name="chiffre_affaires"
+              value="plus-500k"
+              [(ngModel)]="formData.chiffre_affaires"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-building text-info mb-2"></i>
+              <h6 class="mb-1">Plus de 500K €/an</h6>
+              <small class="text-muted">Grande entreprise</small>
+            </div>
+          </label>
+        </div>
+
+        <div class="alert alert-warning mt-4">
+          <div class="d-flex align-items-center">
+            <i class="fas fa-check-circle fa-2x text-warning me-3"></i>
+            <div>
+              <h6 class="mb-1">
+                ✅ Super ! Dernière étape pour mieux cibler vos besoins.
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 5: Type d'activité -->
+    <div *ngIf="currentStep === 5" class="step-content">
+      <h3 class="step-title mb-4">5. Quel est votre type d'activité ?</h3>
+
+      <div class="form-group">
+        <div class="custom-radio-group">
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.type_activite === 'horeca'"
+          >
+            <input
+              type="radio"
+              name="type_activite"
+              value="horeca"
+              [(ngModel)]="formData.type_activite"
+              (change)="onActiviteChange('horeca')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-utensils text-primary mb-2"></i>
+              <h6 class="mb-1">Horeca</h6>
+              <small class="text-muted">Hôtels, restaurants, cafés</small>
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.type_activite === 'commerce-detail'"
+          >
+            <input
+              type="radio"
+              name="type_activite"
+              value="commerce-detail"
+              [(ngModel)]="formData.type_activite"
+              (change)="onActiviteChange('commerce-detail')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-store text-success mb-2"></i>
+              <h6 class="mb-1">Commerce de détail</h6>
+              <small class="text-muted">Magasins, boutiques</small>
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.type_activite === 'commerce-gros'"
+          >
+            <input
+              type="radio"
+              name="type_activite"
+              value="commerce-gros"
+              [(ngModel)]="formData.type_activite"
+              (change)="onActiviteChange('commerce-gros')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-warehouse text-warning mb-2"></i>
+              <h6 class="mb-1">Commerce de gros</h6>
+              <small class="text-muted">Distribution, grossiste</small>
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.type_activite === 'sante'"
+          >
+            <input
+              type="radio"
+              name="type_activite"
+              value="sante"
+              [(ngModel)]="formData.type_activite"
+              (change)="onActiviteChange('sante')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-heartbeat text-danger mb-2"></i>
+              <h6 class="mb-1">Santé</h6>
+              <small class="text-muted"
+                >Professions médicales et paramédicales</small
+              >
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.type_activite === 'service-prestation'"
+          >
+            <input
+              type="radio"
+              name="type_activite"
+              value="service-prestation"
+              [(ngModel)]="formData.type_activite"
+              (change)="onActiviteChange('service-prestation')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-brain text-info mb-2"></i>
+              <h6 class="mb-1">Service / prestation intellectuelle</h6>
+              <small class="text-muted">Conseil, formation, expertise</small>
+            </div>
+          </label>
+
+          <label
+            class="custom-radio-option"
+            [class.selected]="formData.type_activite === 'autre'"
+          >
+            <input
+              type="radio"
+              name="type_activite"
+              value="autre"
+              [(ngModel)]="formData.type_activite"
+              (change)="onActiviteChange('autre')"
+              required
+            />
+            <span class="radio-checkmark"></span>
+            <div class="radio-content">
+              <i class="fas fa-ellipsis-h text-secondary mb-2"></i>
+              <h6 class="mb-1">Autre</h6>
+              <small class="text-muted">Mon activité est différente</small>
+            </div>
+          </label>
+        </div>
+
+        <!-- Champ conditionnel pour "Autre" -->
+        <div
+          class="mt-3 animate__animated animate__fadeInDown"
+          *ngIf="showAutreActivite"
+        >
+          <div class="custom-input-group">
+            <label for="activite_autre" class="form-label">
+              <i class="fas fa-edit me-2"></i>Précisez votre type d'activité
+            </label>
+            <input
+              type="text"
+              class="form-control custom-input"
+              id="activite_autre"
+              name="activite_autre"
+              [(ngModel)]="formData.activite_autre"
+              placeholder="Décrivez votre activité..."
+              maxlength="200"
+            />
+          </div>
+        </div>
+
+        <!-- Question conditionnelle: Types de marchandises -->
+        <div
+          class="mt-4 animate__animated animate__fadeInDown"
+          *ngIf="showTypesMarchandises"
+        >
+          <h4 class="step-subtitle mb-3">
+            Quel type de marchandises vendez-vous principalement ?
+          </h4>
+
           <div class="custom-radio-group">
             <label
               class="custom-radio-option"
-              [class.selected]="formData.chiffre_affaires === 'moins-100k'"
+              [class.selected]="formData.types_marchandises === 'alimentaires'"
             >
               <input
                 type="radio"
-                name="chiffre_affaires"
-                value="moins-100k"
-                [(ngModel)]="formData.chiffre_affaires"
+                name="types_marchandises"
+                value="alimentaires"
+                [(ngModel)]="formData.types_marchandises"
                 required
               />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
-                <i class="fas fa-seedling text-success mb-2"></i>
-                <h6 class="mb-1">Moins de 100K €/an</h6>
+                <i class="fas fa-apple-alt text-success mb-2"></i>
+                <h6 class="mb-1">Produits alimentaires</h6>
+                <small class="text-muted">Frais, secs, boissons, etc.</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.types_marchandises === 'maison-decoration'
+              "
+            >
+              <input
+                type="radio"
+                name="types_marchandises"
+                value="maison-decoration"
+                [(ngModel)]="formData.types_marchandises"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-home text-primary mb-2"></i>
+                <h6 class="mb-1">Articles de maison et décoration</h6>
+                <small class="text-muted">Mobilier, vaisselle, déco...</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.types_marchandises === 'vetements-accessoires'
+              "
+            >
+              <input
+                type="radio"
+                name="types_marchandises"
+                value="vetements-accessoires"
+                [(ngModel)]="formData.types_marchandises"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-tshirt text-info mb-2"></i>
+                <h6 class="mb-1">Vêtements et accessoires</h6>
+                <small class="text-muted">Textile, mode, chaussures...</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.types_marchandises === 'equipements-technique'
+              "
+            >
+              <input
+                type="radio"
+                name="types_marchandises"
+                value="equipements-technique"
+                [(ngModel)]="formData.types_marchandises"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-tools text-warning mb-2"></i>
+                <h6 class="mb-1">Équipements et matériel technique</h6>
                 <small class="text-muted"
-                  >Jeune entreprise ou activité réduite</small
+                  >Électronique, machines, outils...</small
                 >
               </div>
             </label>
 
             <label
               class="custom-radio-option"
-              [class.selected]="formData.chiffre_affaires === '100k-200k'"
+              [class.selected]="formData.types_marchandises === 'autre'"
             >
               <input
                 type="radio"
-                name="chiffre_affaires"
-                value="100k-200k"
-                [(ngModel)]="formData.chiffre_affaires"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-chart-line text-primary mb-2"></i>
-                <h6 class="mb-1">100K à 200K €/an</h6>
-                <small class="text-muted">Entreprise en développement</small>
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.chiffre_affaires === '200k-500k'"
-            >
-              <input
-                type="radio"
-                name="chiffre_affaires"
-                value="200k-500k"
-                [(ngModel)]="formData.chiffre_affaires"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-trending-up text-warning mb-2"></i>
-                <h6 class="mb-1">200K à 500K €/an</h6>
-                <small class="text-muted">PME établie</small>
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.chiffre_affaires === 'plus-500k'"
-            >
-              <input
-                type="radio"
-                name="chiffre_affaires"
-                value="plus-500k"
-                [(ngModel)]="formData.chiffre_affaires"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-building text-info mb-2"></i>
-                <h6 class="mb-1">Plus de 500K €/an</h6>
-                <small class="text-muted">Grande entreprise</small>
-              </div>
-            </label>
-          </div>
-
-          <div class="alert alert-warning mt-4">
-            <div class="d-flex align-items-center">
-              <i class="fas fa-check-circle fa-2x text-warning me-3"></i>
-              <div>
-                <h6 class="mb-1">
-                  ✅ Super ! Dernière étape pour mieux cibler vos besoins.
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Étape 5: Type d'activité -->
-      <div *ngIf="currentStep === 5" class="step-content">
-        <h3 class="step-title mb-4">5. Quel est votre type d'activité ?</h3>
-
-        <div class="form-group">
-          <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'horeca'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="horeca"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('horeca')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-utensils text-primary mb-2"></i>
-                <h6 class="mb-1">Horeca</h6>
-                <small class="text-muted">Hôtels, restaurants, cafés</small>
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'commerce-detail'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="commerce-detail"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('commerce-detail')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-store text-success mb-2"></i>
-                <h6 class="mb-1">Commerce de détail</h6>
-                <small class="text-muted">Magasins, boutiques</small>
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'commerce-gros'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="commerce-gros"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('commerce-gros')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-warehouse text-warning mb-2"></i>
-                <h6 class="mb-1">Commerce de gros</h6>
-                <small class="text-muted">Distribution, grossiste</small>
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'sante'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="sante"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('sante')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-heartbeat text-danger mb-2"></i>
-                <h6 class="mb-1">Santé</h6>
-                <small class="text-muted"
-                  >Professions médicales et paramédicales</small
-                >
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'service-prestation'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="service-prestation"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('service-prestation')"
-                required
-              />
-              <span class="radio-checkmark"></span>
-              <div class="radio-content">
-                <i class="fas fa-brain text-info mb-2"></i>
-                <h6 class="mb-1">Service / prestation intellectuelle</h6>
-                <small class="text-muted">Conseil, formation, expertise</small>
-              </div>
-            </label>
-
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'autre'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
+                name="types_marchandises"
                 value="autre"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('autre')"
+                [(ngModel)]="formData.types_marchandises"
                 required
               />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-ellipsis-h text-secondary mb-2"></i>
                 <h6 class="mb-1">Autre</h6>
-                <small class="text-muted">Mon activité est différente</small>
+                <small class="text-muted">Autre type de marchandises</small>
               </div>
             </label>
-          </div>
-
-          <!-- Champ conditionnel pour "Autre" -->
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreActivite"
-          >
-            <div class="custom-input-group">
-              <label for="activite_autre" class="form-label">
-                <i class="fas fa-edit me-2"></i>Précisez votre type d'activité
-              </label>
-              <input
-                type="text"
-                class="form-control custom-input"
-                id="activite_autre"
-                name="activite_autre"
-                [(ngModel)]="formData.activite_autre"
-                placeholder="Décrivez votre activité..."
-                maxlength="200"
-              />
-            </div>
-          </div>
-
-          <!-- Question conditionnelle: Types de marchandises -->
-          <div
-            class="mt-4 animate__animated animate__fadeInDown"
-            *ngIf="showTypesMarchandises"
-          >
-            <h4 class="step-subtitle mb-3">
-              Quel type de marchandises vendez-vous principalement ?
-            </h4>
-
-            <div class="custom-radio-group">
-              <label
-                class="custom-radio-option"
-                [class.selected]="
-                  formData.types_marchandises === 'alimentaires'
-                "
-              >
-                <input
-                  type="radio"
-                  name="types_marchandises"
-                  value="alimentaires"
-                  [(ngModel)]="formData.types_marchandises"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-apple-alt text-success mb-2"></i>
-                  <h6 class="mb-1">Produits alimentaires</h6>
-                  <small class="text-muted">Frais, secs, boissons, etc.</small>
-                </div>
-              </label>
-
-              <label
-                class="custom-radio-option"
-                [class.selected]="
-                  formData.types_marchandises === 'maison-decoration'
-                "
-              >
-                <input
-                  type="radio"
-                  name="types_marchandises"
-                  value="maison-decoration"
-                  [(ngModel)]="formData.types_marchandises"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-home text-primary mb-2"></i>
-                  <h6 class="mb-1">Articles de maison et décoration</h6>
-                  <small class="text-muted">Mobilier, vaisselle, déco...</small>
-                </div>
-              </label>
-
-              <label
-                class="custom-radio-option"
-                [class.selected]="
-                  formData.types_marchandises === 'vetements-accessoires'
-                "
-              >
-                <input
-                  type="radio"
-                  name="types_marchandises"
-                  value="vetements-accessoires"
-                  [(ngModel)]="formData.types_marchandises"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-tshirt text-info mb-2"></i>
-                  <h6 class="mb-1">Vêtements et accessoires</h6>
-                  <small class="text-muted">Textile, mode, chaussures...</small>
-                </div>
-              </label>
-
-              <label
-                class="custom-radio-option"
-                [class.selected]="
-                  formData.types_marchandises === 'equipements-technique'
-                "
-              >
-                <input
-                  type="radio"
-                  name="types_marchandises"
-                  value="equipements-technique"
-                  [(ngModel)]="formData.types_marchandises"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-tools text-warning mb-2"></i>
-                  <h6 class="mb-1">Équipements et matériel technique</h6>
-                  <small class="text-muted"
-                    >Électronique, machines, outils...</small
-                  >
-                </div>
-              </label>
-
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.types_marchandises === 'autre'"
-              >
-                <input
-                  type="radio"
-                  name="types_marchandises"
-                  value="autre"
-                  [(ngModel)]="formData.types_marchandises"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-ellipsis-h text-secondary mb-2"></i>
-                  <h6 class="mb-1">Autre</h6>
-                  <small class="text-muted">Autre type de marchandises</small>
-                </div>
-              </label>
-            </div>
           </div>
         </div>
       </div>
     </div>
-  </app-contact-form-layout>
-</section>
+  </div>
+</app-contact-form-layout>

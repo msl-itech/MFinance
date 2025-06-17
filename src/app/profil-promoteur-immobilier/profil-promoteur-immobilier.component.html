@@ -220,7 +220,7 @@
             <br />
           </div>
           <div class="button-container">
-            <div class="home2-btn mb-4">
+            <div class="home2-btn mb-4" style="margin-left: 8px">
               <button
                 (click)="scrollToSection('targetSection')"
                 class="btn-red"
@@ -229,7 +229,7 @@
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
-            <div class="home2-btn mb-4">
+            <div class="home2-btn mb-4" style="margin-left: 8px">
               <button
                 (click)="scrollToSection('contactSection')"
                 class="btn-outline-red"
@@ -799,7 +799,7 @@
           personnalisé.
         </p>
         <a
-          href="#"
+          href="/contact"
           class="btn btn-danger btn-sm px-3 py-2"
           data-aos="zoom-in"
           data-aos-delay="800"
@@ -813,231 +813,480 @@
 
 <!-- Section formulaire de contact -->
 <section id="contactSection" class="contact-section">
-  <app-contact-form-layout [config]="formConfig">
-    <!-- Étape 1: Type de projet immobilier -->
-    <div class="step" data-step="1">
-      <h3 class="step-title">1. Type de projet immobilier</h3>
-      <p class="step-description">
-        Quel est le type principal de vos projets ?
-      </p>
+  <app-contact-form-layout
+    [config]="formConfig"
+    [currentStep]="currentStep"
+    [totalSteps]="totalSteps"
+    [formSubmitted]="formSubmitted"
+    [isStepValid]="isStepValid"
+    [isFormValid]="isFormValid"
+    (nextStep)="onNextStep()"
+    (previousStep)="onPreviousStep()"
+    (submit)="onSubmit()"
+    (reset)="onReset()"
+  >
+    <div slot="form-content">
+      <!-- Étape 1: Type de projet immobilier -->
+      <div *ngIf="currentStep === 1" class="step-content">
+        <h3 class="step-title">1. Type de projet immobilier</h3>
+        <p class="step-description">
+          Quel est le type principal de vos projets ?
+        </p>
 
-      <div class="form-group">
-        <div class="radio-group">
-          <label class="radio-option">
-            <input
-              type="radio"
-              name="type_projet"
-              value="construction-neuve"
-              required
-            />
-            <span class="radio-custom"></span>
-            Construction neuve
-          </label>
-          <label class="radio-option">
-            <input
-              type="radio"
-              name="type_projet"
-              value="renovation"
-              required
-            />
-            <span class="radio-custom"></span>
-            Rénovation
-          </label>
-          <label class="radio-option">
-            <input
-              type="radio"
-              name="type_projet"
-              value="lotissement"
-              required
-            />
-            <span class="radio-custom"></span>
-            Lotissement
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="type_projet" value="autre" required />
-            <span class="radio-custom"></span>
-            Autre
-          </label>
-        </div>
-        <div class="input-group mt-3" id="autre-projet" style="display: none">
-          <input
-            type="text"
-            class="form-control"
-            name="type_projet_autre"
-            placeholder="Précisez votre type de projet..."
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- Étape 2: Revenus annuels -->
-    <div class="step" data-step="2">
-      <h3 class="step-title">2. Revenus annuels estimés</h3>
-      <p class="step-description">
-        Quel est votre chiffre d'affaires annuel moyen ?
-      </p>
-
-      <div class="form-group">
-        <div class="radio-group">
-          <label class="radio-option">
-            <input type="radio" name="revenus" value="moins-500k" required />
-            <span class="radio-custom"></span>
-            Moins de 500K € / an
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="revenus" value="500k-1m" required />
-            <span class="radio-custom"></span>
-            500K - 1M € / an
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="revenus" value="1m-5m" required />
-            <span class="radio-custom"></span>
-            1M - 5M € / an
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="revenus" value="plus-5m" required />
-            <span class="radio-custom"></span>
-            Plus de 5M € / an
-          </label>
-        </div>
-      </div>
-    </div>
-
-    <!-- Étape 3: Coordonnées -->
-    <div class="step" data-step="3">
-      <h3 class="step-title">3. Vos coordonnées (étape essentielle)</h3>
-      <p class="step-description">
-        Pour être recontacté(e) par un conseiller et recevoir votre diagnostic,
-        merci de compléter vos coordonnées :
-      </p>
-
-      <div class="form-group">
-        <div class="row">
-          <div class="col-12 mb-3">
-            <label for="nom" class="form-label">Nom</label>
-            <input
-              type="text"
-              class="form-control"
-              id="nom"
-              name="nom"
-              required
-            />
-          </div>
-          <div class="col-12 mb-3">
-            <label for="email" class="form-label"
-              >Email <span class="text-success">✅ obligatoire</span></label
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.type_projet === 'construction-neuve'"
             >
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              required
-            />
-          </div>
-          <div class="col-12 mb-3">
-            <label for="telephone" class="form-label"
-              >Téléphone <span class="text-success">✅ obligatoire</span></label
+              <input
+                type="radio"
+                name="type_projet"
+                value="construction-neuve"
+                [(ngModel)]="formData.type_projet"
+                (change)="onTypeProjetChange('construction-neuve')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-building text-danger mb-2"></i>
+                <h6 class="mb-1">Construction neuve</h6>
+                <small class="text-muted"
+                  >Projets de construction nouvelle</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.type_projet === 'renovation'"
             >
-            <input
-              type="tel"
-              class="form-control"
-              id="telephone"
-              name="telephone"
-              required
-            />
+              <input
+                type="radio"
+                name="type_projet"
+                value="renovation"
+                [(ngModel)]="formData.type_projet"
+                (change)="onTypeProjetChange('renovation')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-tools text-danger mb-2"></i>
+                <h6 class="mb-1">Rénovation</h6>
+                <small class="text-muted">Rénovation et réhabilitation</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.type_projet === 'lotissement'"
+            >
+              <input
+                type="radio"
+                name="type_projet"
+                value="lotissement"
+                [(ngModel)]="formData.type_projet"
+                (change)="onTypeProjetChange('lotissement')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-map-marked-alt text-danger mb-2"></i>
+                <h6 class="mb-1">Lotissement</h6>
+                <small class="text-muted"
+                  >Division et aménagement de terrains</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.type_projet === 'autre'"
+            >
+              <input
+                type="radio"
+                name="type_projet"
+                value="autre"
+                [(ngModel)]="formData.type_projet"
+                (change)="onTypeProjetChange('autre')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-ellipsis-h text-danger mb-2"></i>
+                <h6 class="mb-1">Autre type de projet</h6>
+                <small class="text-muted">Précisez votre activité</small>
+              </div>
+            </label>
           </div>
-        </div>
-        <div class="alert alert-info mt-3">
-          <i class="fas fa-phone me-2"></i>
-          <strong
-            >Un conseiller vous appellera sous 72h pour un échange
-            gratuit.</strong
+
+          <div
+            class="mt-3 animate__animated animate__fadeInDown"
+            *ngIf="showAutreProjet"
           >
-          À l'issue de cet échange, vous recevrez votre mini-diagnostic
-          personnalisé par email.
+            <div class="custom-input-group">
+              <label for="type_projet_autre" class="form-label">
+                <i class="fas fa-edit me-2"></i>Précisez votre type de projet
+              </label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="type_projet_autre"
+                name="type_projet_autre"
+                [(ngModel)]="formData.type_projet_autre"
+                placeholder="Décrivez votre type de projet immobilier..."
+                maxlength="200"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Étape 4: Tenue de la comptabilité -->
-    <div class="step" data-step="4">
-      <h3 class="step-title">4. Tenue de la comptabilité</h3>
-      <p class="step-description">
-        Comment gérez-vous actuellement votre comptabilité ?
-      </p>
+      <!-- Étape 2: Revenus annuels -->
+      <div *ngIf="currentStep === 2" class="step-content">
+        <h3 class="step-title">2. Revenus annuels estimés</h3>
+        <p class="step-description">
+          Quel est votre chiffre d'affaires annuel moyen ?
+        </p>
 
-      <div class="form-group">
-        <div class="radio-group">
-          <label class="radio-option">
-            <input type="radio" name="comptabilite" value="interne" required />
-            <span class="radio-custom"></span>
-            En interne (par un membre de l'entreprise)
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="comptabilite" value="externe" required />
-            <span class="radio-custom"></span>
-            Par un comptable externe
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="comptabilite" value="aucun" required />
-            <span class="radio-custom"></span>
-            Nous n'avons pas de système structuré et automatisé
-          </label>
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.revenus === 'moins-500k'"
+            >
+              <input
+                type="radio"
+                name="revenus"
+                value="moins-500k"
+                [(ngModel)]="formData.revenus"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-seedling text-danger mb-2"></i>
+                <h6 class="mb-1">Moins de 500K € / an</h6>
+                <small class="text-muted">Promoteur débutant</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.revenus === '500k-1m'"
+            >
+              <input
+                type="radio"
+                name="revenus"
+                value="500k-1m"
+                [(ngModel)]="formData.revenus"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-chart-line text-danger mb-2"></i>
+                <h6 class="mb-1">500K - 1M € / an</h6>
+                <small class="text-muted">Promoteur en développement</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.revenus === '1m-5m'"
+            >
+              <input
+                type="radio"
+                name="revenus"
+                value="1m-5m"
+                [(ngModel)]="formData.revenus"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-building text-danger mb-2"></i>
+                <h6 class="mb-1">1M - 5M € / an</h6>
+                <small class="text-muted">Promoteur établi</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.revenus === 'plus-5m'"
+            >
+              <input
+                type="radio"
+                name="revenus"
+                value="plus-5m"
+                [(ngModel)]="formData.revenus"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-crown text-success mb-2"></i>
+                <h6 class="mb-1">Plus de 5M € / an</h6>
+                <small class="text-muted">Grand promoteur</small>
+              </div>
+            </label>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Étape 5: Besoins spécifiques -->
-    <div class="step" data-step="5">
-      <h3 class="step-title">5. Vos besoins spécifiques</h3>
-      <p class="step-description">
-        Quels sont vos besoins actuels ? (plusieurs réponses possibles)
-      </p>
+      <!-- Étape 3: Coordonnées -->
+      <div *ngIf="currentStep === 3" class="step-content">
+        <h3 class="step-title">3. Vos coordonnées (étape essentielle)</h3>
+        <p class="step-description">
+          Pour être recontacté(e) par un conseiller et recevoir votre
+          diagnostic, merci de compléter vos coordonnées :
+        </p>
 
-      <div class="form-group">
-        <div class="checkbox-group">
-          <label class="checkbox-option">
-            <input type="checkbox" name="besoins" value="comptabilite" />
-            <span class="checkbox-custom"></span>
-            Tenue de la comptabilité
-          </label>
-          <label class="checkbox-option">
-            <input
-              type="checkbox"
-              name="besoins"
-              value="declarations-fiscales"
-            />
-            <span class="checkbox-custom"></span>
-            Déclarations fiscales
-          </label>
-          <label class="checkbox-option">
-            <input type="checkbox" name="besoins" value="conseil-gestion" />
-            <span class="checkbox-custom"></span>
-            Conseil en gestion financière
-          </label>
-          <label class="checkbox-option">
-            <input
-              type="checkbox"
-              name="besoins"
-              value="optimisation-fiscale"
-            />
-            <span class="checkbox-custom"></span>
-            Optimisation fiscale
-          </label>
-          <label class="checkbox-option">
-            <input type="checkbox" name="besoins" value="autre" />
-            <span class="checkbox-custom"></span>
-            Autre
-          </label>
+        <div class="form-group">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="nom" class="form-label">
+                  <i class="fas fa-user me-2"></i>Nom complet
+                </label>
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  id="nom"
+                  name="nom"
+                  [(ngModel)]="formData.nom"
+                  placeholder="Votre nom et prénom"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="email" class="form-label">
+                  <i class="fas fa-envelope me-2"></i>Email
+                  <span class="badge bg-success ms-2">✅ obligatoire</span>
+                </label>
+                <input
+                  type="email"
+                  class="form-control custom-input"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="formData.email"
+                  placeholder="votre@email.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="telephone" class="form-label">
+                  <i class="fas fa-phone me-2"></i>Téléphone
+                  <span class="badge bg-success ms-2">✅ obligatoire</span>
+                </label>
+                <input
+                  type="tel"
+                  class="form-control custom-input"
+                  id="telephone"
+                  name="telephone"
+                  [(ngModel)]="formData.telephone"
+                  placeholder="+32 XXX XX XX XX"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-info mt-4">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
+              <div>
+                <h6 class="mb-1">📞 Rendez-vous garanti sous 72h</h6>
+                <small
+                  >Un conseiller vous appellera pour un échange gratuit et
+                  personnalisé. Vous recevrez ensuite votre mini-diagnostic par
+                  email.</small
+                >
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="input-group mt-3" id="autre-besoin" style="display: none">
-          <input
-            type="text"
-            class="form-control"
-            name="besoins_autre"
-            placeholder="Précisez vos autres besoins..."
-          />
+      </div>
+
+      <!-- Étape 4: Tenue de la comptabilité -->
+      <div *ngIf="currentStep === 4" class="step-content">
+        <h3 class="step-title">4. Tenue de la comptabilité</h3>
+        <p class="step-description">
+          Comment gérez-vous actuellement votre comptabilité ?
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.comptabilite === 'interne'"
+            >
+              <input
+                type="radio"
+                name="comptabilite"
+                value="interne"
+                [(ngModel)]="formData.comptabilite"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-users text-danger mb-2"></i>
+                <h6 class="mb-1">En interne</h6>
+                <small class="text-muted">Par un membre de l'entreprise</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.comptabilite === 'externe'"
+            >
+              <input
+                type="radio"
+                name="comptabilite"
+                value="externe"
+                [(ngModel)]="formData.comptabilite"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-user-tie text-danger mb-2"></i>
+                <h6 class="mb-1">Par un comptable externe</h6>
+                <small class="text-muted">Professionnel externe</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.comptabilite === 'aucun'"
+            >
+              <input
+                type="radio"
+                name="comptabilite"
+                value="aucun"
+                [(ngModel)]="formData.comptabilite"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-question-circle text-danger mb-2"></i>
+                <h6 class="mb-1">Système non structuré</h6>
+                <small class="text-muted">Besoin d'automatisation</small>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 5: Besoins spécifiques -->
+      <div *ngIf="currentStep === 5" class="step-content">
+        <h3 class="step-title">5. Vos besoins spécifiques</h3>
+        <p class="step-description">
+          Quels sont vos besoins actuels ? (plusieurs réponses possibles)
+        </p>
+
+        <div class="form-group">
+          <div class="custom-checkbox-group">
+            <label class="custom-checkbox-option">
+              <input
+                type="checkbox"
+                name="besoins"
+                value="comptabilite"
+                (change)="onBesoinChange('comptabilite', $event)"
+              />
+              <span class="checkbox-checkmark"></span>
+              <div class="checkbox-content">
+                <i class="fas fa-calculator text-danger mb-2"></i>
+                <h6 class="mb-1">Tenue de la comptabilité</h6>
+                <small class="text-muted"
+                  >Gestion quotidienne des comptes</small
+                >
+              </div>
+            </label>
+
+            <label class="custom-checkbox-option">
+              <input
+                type="checkbox"
+                name="besoins"
+                value="declarations-fiscales"
+                (change)="onBesoinChange('declarations-fiscales', $event)"
+              />
+              <span class="checkbox-checkmark"></span>
+              <div class="checkbox-content">
+                <i class="fas fa-file-alt text-danger mb-2"></i>
+                <h6 class="mb-1">Déclarations fiscales</h6>
+                <small class="text-muted">TVA et obligations fiscales</small>
+              </div>
+            </label>
+
+            <label class="custom-checkbox-option">
+              <input
+                type="checkbox"
+                name="besoins"
+                value="conseil-gestion"
+                (change)="onBesoinChange('conseil-gestion', $event)"
+              />
+              <span class="checkbox-checkmark"></span>
+              <div class="checkbox-content">
+                <i class="fas fa-chart-line text-danger mb-2"></i>
+                <h6 class="mb-1">Conseil en gestion financière</h6>
+                <small class="text-muted">Optimisation de la rentabilité</small>
+              </div>
+            </label>
+
+            <label class="custom-checkbox-option">
+              <input
+                type="checkbox"
+                name="besoins"
+                value="optimisation-fiscale"
+                (change)="onBesoinChange('optimisation-fiscale', $event)"
+              />
+              <span class="checkbox-checkmark"></span>
+              <div class="checkbox-content">
+                <i class="fas fa-percentage text-danger mb-2"></i>
+                <h6 class="mb-1">Optimisation fiscale</h6>
+                <small class="text-muted">Stratégies TVA et fiscales</small>
+              </div>
+            </label>
+
+            <label class="custom-checkbox-option">
+              <input
+                type="checkbox"
+                name="besoins"
+                value="autre"
+                (change)="onBesoinChange('autre', $event)"
+              />
+              <span class="checkbox-checkmark"></span>
+              <div class="checkbox-content">
+                <i class="fas fa-plus text-danger mb-2"></i>
+                <h6 class="mb-1">Autre besoin</h6>
+                <small class="text-muted"
+                  >Précisez vos besoins spécifiques</small
+                >
+              </div>
+            </label>
+          </div>
+
+          <div
+            class="mt-3 animate__animated animate__fadeInDown"
+            *ngIf="showAutreBesoin"
+          >
+            <div class="custom-input-group">
+              <label for="besoins_autre" class="form-label">
+                <i class="fas fa-edit me-2"></i>Précisez vos autres besoins
+              </label>
+              <textarea
+                class="form-control custom-input"
+                id="besoins_autre"
+                name="besoins_autre"
+                [(ngModel)]="formData.besoins_autre"
+                placeholder="Décrivez vos besoins spécifiques..."
+                rows="3"
+                maxlength="300"
+              ></textarea>
+            </div>
+          </div>
         </div>
       </div>
     </div>
