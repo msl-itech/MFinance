@@ -212,7 +212,7 @@
               restauration, cafés), vous jonglez quotidiennement avec de
               multiples responsabilités : assurer une expérience client de
               qualité, maîtriser vos coûts et gérer vos obligations comptables.
-              Ces défis sont d’autant plus complexes que vos marges sont souvent
+              Ces défis sont d'autant plus complexes que vos marges sont souvent
               réduites et que vos opérations impliquent de nombreuses variables.
             </p>
             <p>
@@ -230,6 +230,15 @@
                 class="btn-red"
               >
                 Découvrez ce que vous gagnerez avec nous
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="home2-btn mb-4">
+              <button
+                (click)="scrollToSection('contactSection')"
+                class="btn-outline-red"
+              >
+                🧭 Évaluez votre établissement (2 min)
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
@@ -255,7 +264,7 @@
             <!-- Content -->
             <div class="col-md-8 mt-30">
               <p>
-                À l’ère du numérique, offrir une expérience client omnicanale et
+                À l'ère du numérique, offrir une expérience client omnicanale et
                 fluide est un facteur clé de différenciation.
               </p>
 
@@ -673,7 +682,7 @@
             élevés et des invendus fréquents.
           </p>
           <p class="solution text-dark">
-            <strong>Solution :</strong> Adoption d’une gestion en flux tendu
+            <strong>Solution :</strong> Adoption d'une gestion en flux tendu
             pour ajuster les commandes aux besoins réels.
           </p>
           <p class="result text-dark">
@@ -839,4 +848,314 @@
     </div>
   </div>
 </section>
+
+<!-- Section formulaire de contact -->
+<section id="contactSection" class="contact-section">
+  <app-contact-form-layout [config]="formConfig">
+    <!-- Étape 1: Type d'établissement -->
+    <div class="step" data-step="1">
+      <h3 class="step-title">1. Type d'établissement</h3>
+      <p class="step-description">
+        Quel est le type principal de votre activité ?
+      </p>
+
+      <div class="form-group">
+        <div class="radio-group">
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="type_etablissement"
+              value="horeca"
+              required
+            />
+            <span class="radio-custom"></span>
+            Horeca (restaurant, café, bar, hôtel…)
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="type_etablissement"
+              value="commerce-detail"
+              required
+            />
+            <span class="radio-custom"></span>
+            Commerce de détail
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="type_etablissement"
+              value="commerce-gros"
+              required
+            />
+            <span class="radio-custom"></span>
+            Commerce de gros
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="type_etablissement"
+              value="autre"
+              required
+            />
+            <span class="radio-custom"></span>
+            Autre
+          </label>
+        </div>
+        <div
+          class="input-group mt-3"
+          id="autre-etablissement"
+          style="display: none"
+        >
+          <input
+            type="text"
+            class="form-control"
+            name="type_etablissement_autre"
+            placeholder="Précisez votre type d'établissement..."
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Question conditionnelle: Type de marchandises -->
+    <div
+      class="step"
+      data-step="1b"
+      id="question-marchandises"
+      style="display: none"
+    >
+      <h3 class="step-title">➕ Type de marchandises</h3>
+      <p class="step-description">
+        Quel type de marchandises vendez-vous principalement ?
+      </p>
+
+      <div class="form-group">
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="type_marchandises" value="alimentaires" />
+            <span class="radio-custom"></span>
+            Produits alimentaires (frais, secs, boissons, etc.)
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="type_marchandises"
+              value="maison-decoration"
+            />
+            <span class="radio-custom"></span>
+            Articles de maison et décoration (mobilier, vaisselle, déco…)
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="type_marchandises"
+              value="vetements-accessoires"
+            />
+            <span class="radio-custom"></span>
+            Vêtements et accessoires (textile, mode, chaussures…)
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="type_marchandises"
+              value="equipements-technique"
+            />
+            <span class="radio-custom"></span>
+            Équipements et matériel technique (électronique, machines, outils…)
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="type_marchandises"
+              value="autre-marchandises"
+            />
+            <span class="radio-custom"></span>
+            Autre
+          </label>
+        </div>
+        <div
+          class="input-group mt-3"
+          id="autre-marchandises"
+          style="display: none"
+        >
+          <input
+            type="text"
+            class="form-control"
+            name="type_marchandises_autre"
+            placeholder="Précisez votre type de marchandises..."
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 2: Revenus annuels -->
+    <div class="step" data-step="2">
+      <h3 class="step-title">2. Revenus annuels estimés</h3>
+      <p class="step-description">
+        Quel est votre chiffre d'affaires annuel moyen ?
+      </p>
+
+      <div class="form-group">
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="revenus" value="moins-100k" required />
+            <span class="radio-custom"></span>
+            Moins de 100K € / an
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="revenus" value="100k-500k" required />
+            <span class="radio-custom"></span>
+            100K - 500K € / an
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="revenus" value="500k-1m" required />
+            <span class="radio-custom"></span>
+            500K - 1M € / an
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="revenus" value="plus-1m" required />
+            <span class="radio-custom"></span>
+            Plus de 1M € / an
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 3: Coordonnées -->
+    <div class="step" data-step="3">
+      <h3 class="step-title">3. Vos coordonnées (étape essentielle)</h3>
+      <p class="step-description">
+        Pour être recontacté(e) par un conseiller et recevoir votre diagnostic,
+        merci de compléter vos coordonnées :
+      </p>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-12 mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nom"
+              name="nom"
+              required
+            />
+          </div>
+          <div class="col-12 mb-3">
+            <label for="email" class="form-label"
+              >Email <span class="text-success">✅ obligatoire</span></label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="col-12 mb-3">
+            <label for="telephone" class="form-label"
+              >Téléphone <span class="text-success">✅ obligatoire</span></label
+            >
+            <input
+              type="tel"
+              class="form-control"
+              id="telephone"
+              name="telephone"
+              required
+            />
+          </div>
+        </div>
+        <div class="alert alert-info mt-3">
+          <i class="fas fa-phone me-2"></i>
+          <strong
+            >Un conseiller vous appellera sous 72h pour un échange
+            gratuit.</strong
+          >
+          À l'issue de cet échange, vous recevrez votre mini-diagnostic
+          personnalisé par email.
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 4: Tenue de la comptabilité -->
+    <div class="step" data-step="4">
+      <h3 class="step-title">4. Tenue de la comptabilité</h3>
+      <p class="step-description">
+        Comment gérez-vous actuellement votre comptabilité ?
+      </p>
+
+      <div class="form-group">
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="comptabilite" value="interne" required />
+            <span class="radio-custom"></span>
+            En interne (par un membre de l'établissement)
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="comptabilite" value="externe" required />
+            <span class="radio-custom"></span>
+            Par un comptable externe
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="comptabilite" value="aucun" required />
+            <span class="radio-custom"></span>
+            Nous n'avons pas de système structuré et automatisé
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 5: Besoins spécifiques -->
+    <div class="step" data-step="5">
+      <h3 class="step-title">5. Vos besoins spécifiques</h3>
+      <p class="step-description">
+        Quels sont vos besoins actuels ? (plusieurs réponses possibles)
+      </p>
+
+      <div class="form-group">
+        <div class="checkbox-group">
+          <label class="checkbox-option">
+            <input type="checkbox" name="besoins" value="comptabilite" />
+            <span class="checkbox-custom"></span>
+            Tenue de la comptabilité
+          </label>
+          <label class="checkbox-option">
+            <input
+              type="checkbox"
+              name="besoins"
+              value="declarations-fiscales"
+            />
+            <span class="checkbox-custom"></span>
+            Déclarations fiscales
+          </label>
+          <label class="checkbox-option">
+            <input type="checkbox" name="besoins" value="conseil-gestion" />
+            <span class="checkbox-custom"></span>
+            Conseil en gestion financière
+          </label>
+          <label class="checkbox-option">
+            <input type="checkbox" name="besoins" value="optimisation-statut" />
+            <span class="checkbox-custom"></span>
+            Optimisation du statut social et fiscal
+          </label>
+          <label class="checkbox-option">
+            <input type="checkbox" name="besoins" value="autre" />
+            <span class="checkbox-custom"></span>
+            Autre
+          </label>
+        </div>
+        <div class="input-group mt-3" id="autre-besoin" style="display: none">
+          <input
+            type="text"
+            class="form-control"
+            name="besoins_autre"
+            placeholder="Précisez vos autres besoins..."
+          />
+        </div>
+      </div>
+    </div>
+  </app-contact-form-layout>
+</section>
+
 <app-recommandation-profil></app-recommandation-profil>

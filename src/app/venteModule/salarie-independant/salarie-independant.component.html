@@ -45,6 +45,16 @@
           revenus, ce choix influencera profondément votre vie quotidienne,
           votre trajectoire de carrière, et votre équilibre personnel. 
         </p>
+
+        <div class="mt-4">
+          <button
+            (click)="scrollToSection('contactSection')"
+            class="btn btn-danger btn-lg px-4 py-2"
+          >
+            🧭 Clarifiez vos objectifs (2 min)
+            <i class="fa-solid fa-arrow-right ms-2"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -731,4 +741,510 @@
   </div>
 </section>
 
-<app-zone-contact></app-zone-contact>
+<!-- Section formulaire de contact -->
+<section id="contactSection" class="contact-section">
+  <app-contact-form-layout
+    [config]="formConfig"
+    [currentStep]="currentStep"
+    [totalSteps]="totalSteps"
+    [formSubmitted]="formSubmitted"
+    [isStepValid]="isStepValid"
+    [isFormValid]="isFormValid"
+    (nextStep)="onNextStep()"
+    (previousStep)="onPreviousStep()"
+    (submit)="onSubmit()"
+    (reset)="onReset()"
+  >
+    <div slot="form-content">
+      <!-- Étape 1: Votre profil actuel -->
+      <div *ngIf="currentStep === 1" class="step-content">
+        <h3 class="step-title mb-4">1. Votre profil actuel</h3>
+        <p class="step-description mb-4">
+          Quelle situation vous décrit le mieux ?
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.profil === 'salarie-interroge'"
+            >
+              <input
+                type="radio"
+                name="profil"
+                value="salarie-interroge"
+                [(ngModel)]="formData.profil"
+                (change)="onProfilChange('salarie-interroge')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-user-tie text-primary mb-2"></i>
+                <h6 class="mb-1">Salarié curieux</h6>
+                <small class="text-muted"
+                  >Je m'interroge sur les avantages du statut
+                  d'indépendant</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.profil === 'pense-lancer-freine'"
+            >
+              <input
+                type="radio"
+                name="profil"
+                value="pense-lancer-freine"
+                [(ngModel)]="formData.profil"
+                (change)="onProfilChange('pense-lancer-freine')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-balance-scale text-warning mb-2"></i>
+                <h6 class="mb-1">Hésitant</h6>
+                <small class="text-muted"
+                  >Je pense à me lancer, mais la sécurité m'inquiète</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.profil === 'decide-accompagnement'"
+            >
+              <input
+                type="radio"
+                name="profil"
+                value="decide-accompagnement"
+                [(ngModel)]="formData.profil"
+                (change)="onProfilChange('decide-accompagnement')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-rocket text-success mb-2"></i>
+                <h6 class="mb-1">Décidé</h6>
+                <small class="text-muted"
+                  >J'ai décidé de franchir le pas, j'ai besoin
+                  d'accompagnement</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.profil === 'autre'"
+            >
+              <input
+                type="radio"
+                name="profil"
+                value="autre"
+                [(ngModel)]="formData.profil"
+                (change)="onProfilChange('autre')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-ellipsis-h text-info mb-2"></i>
+                <h6 class="mb-1">Autre situation</h6>
+                <small class="text-muted">Ma situation est différente</small>
+              </div>
+            </label>
+          </div>
+
+          <div
+            class="mt-3 animate__animated animate__fadeInDown"
+            *ngIf="showAutreProfil"
+          >
+            <div class="custom-input-group">
+              <label for="profil_autre" class="form-label">
+                <i class="fas fa-edit me-2"></i>Précisez votre situation
+              </label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="profil_autre"
+                name="profil_autre"
+                [(ngModel)]="formData.profil_autre"
+                placeholder="Décrivez votre situation actuelle..."
+                maxlength="200"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 2: Votre motivation principale -->
+      <div *ngIf="currentStep === 2" class="step-content">
+        <h3 class="step-title mb-4">2. Votre motivation principale</h3>
+        <p class="step-description mb-4">
+          Pourquoi souhaitez-vous devenir indépendant ?
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.motivation === 'liberte-autonomie'"
+            >
+              <input
+                type="radio"
+                name="motivation"
+                value="liberte-autonomie"
+                [(ngModel)]="formData.motivation"
+                (change)="onMotivationChange('liberte-autonomie')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-bird text-primary mb-2"></i>
+                <h6 class="mb-1">Liberté & Autonomie</h6>
+                <small class="text-muted"
+                  >Gagner en liberté et autonomie dans mon travail</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.motivation === 'ameliorer-revenus'"
+            >
+              <input
+                type="radio"
+                name="motivation"
+                value="ameliorer-revenus"
+                [(ngModel)]="formData.motivation"
+                (change)="onMotivationChange('ameliorer-revenus')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-chart-line text-success mb-2"></i>
+                <h6 class="mb-1">Améliorer mes revenus</h6>
+                <small class="text-muted"
+                  >Augmenter mon potentiel de gains</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.motivation === 'projet-personnel'"
+            >
+              <input
+                type="radio"
+                name="motivation"
+                value="projet-personnel"
+                [(ngModel)]="formData.motivation"
+                (change)="onMotivationChange('projet-personnel')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-lightbulb text-warning mb-2"></i>
+                <h6 class="mb-1">Projet personnel</h6>
+                <small class="text-muted"
+                  >Réaliser un projet qui me tient à cœur</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.motivation === 'autre'"
+            >
+              <input
+                type="radio"
+                name="motivation"
+                value="autre"
+                [(ngModel)]="formData.motivation"
+                (change)="onMotivationChange('autre')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-question text-info mb-2"></i>
+                <h6 class="mb-1">Autre raison</h6>
+                <small class="text-muted">Ma motivation est différente</small>
+              </div>
+            </label>
+          </div>
+
+          <div
+            class="mt-3 animate__animated animate__fadeInDown"
+            *ngIf="showAutreMotivation"
+          >
+            <div class="custom-input-group">
+              <label for="motivation_autre" class="form-label">
+                <i class="fas fa-edit me-2"></i>Précisez votre motivation
+              </label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="motivation_autre"
+                name="motivation_autre"
+                [(ngModel)]="formData.motivation_autre"
+                placeholder="Décrivez votre motivation principale..."
+                maxlength="200"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 3: Coordonnées -->
+      <div *ngIf="currentStep === 3" class="step-content">
+        <h3 class="step-title mb-4">3. Vos coordonnées</h3>
+        <p class="step-description mb-4">
+          <i class="fas fa-phone text-danger me-2"></i>
+          Pour être recontacté(e) par un conseiller et recevoir votre diagnostic
+        </p>
+
+        <div class="form-group">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="nom" class="form-label">
+                  <i class="fas fa-user me-2"></i>Nom complet
+                </label>
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  id="nom"
+                  name="nom"
+                  [(ngModel)]="formData.nom"
+                  placeholder="Votre nom et prénom"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="email" class="form-label">
+                  <i class="fas fa-envelope me-2"></i>Email
+                  <span class="badge bg-success ms-2">✅ obligatoire</span>
+                </label>
+                <input
+                  type="email"
+                  class="form-control custom-input"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="formData.email"
+                  placeholder="votre@email.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="telephone" class="form-label">
+                  <i class="fas fa-phone me-2"></i>Téléphone
+                  <span class="badge bg-success ms-2">✅ obligatoire</span>
+                </label>
+                <input
+                  type="tel"
+                  class="form-control custom-input"
+                  id="telephone"
+                  name="telephone"
+                  [(ngModel)]="formData.telephone"
+                  placeholder="+32 XXX XX XX XX"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-info mt-4">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
+              <div>
+                <h6 class="mb-1">📞 Rendez-vous garanti sous 72h</h6>
+                <small
+                  >Un conseiller vous appellera pour un échange gratuit et
+                  personnalisé. Vous recevrez ensuite votre mini-diagnostic par
+                  email.</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 4: Connaissance du statut d'indépendant -->
+      <div *ngIf="currentStep === 4" class="step-content">
+        <h3 class="step-title mb-4">4. Votre niveau de connaissance</h3>
+        <p class="step-description mb-4">
+          À quel point vous sentez-vous informé sur le statut d'indépendant ?
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.connaissance === 'bien-informe'"
+            >
+              <input
+                type="radio"
+                name="connaissance"
+                value="bien-informe"
+                [(ngModel)]="formData.connaissance"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-graduation-cap text-success mb-2"></i>
+                <h6 class="mb-1">Bien informé(e)</h6>
+                <small class="text-muted"
+                  >Je connais bien les aspects légaux et fiscaux</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.connaissance === 'quelques-notions'"
+            >
+              <input
+                type="radio"
+                name="connaissance"
+                value="quelques-notions"
+                [(ngModel)]="formData.connaissance"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-book text-warning mb-2"></i>
+                <h6 class="mb-1">Quelques notions</h6>
+                <small class="text-muted"
+                  >J'ai des bases mais j'aimerais en savoir plus</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.connaissance === 'decouvre-totalement'"
+            >
+              <input
+                type="radio"
+                name="connaissance"
+                value="decouvre-totalement"
+                [(ngModel)]="formData.connaissance"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-seedling text-info mb-2"></i>
+                <h6 class="mb-1">Je découvre totalement</h6>
+                <small class="text-muted"
+                  >C'est nouveau pour moi, j'ai besoin de guidance</small
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 5: Vos besoins prioritaires -->
+      <div *ngIf="currentStep === 5" class="step-content">
+        <h3 class="step-title mb-4">5. Vos besoins prioritaires</h3>
+        <p class="step-description mb-4">
+          Sur quels sujets aimeriez-vous être accompagné ?
+          <small class="text-muted">(plusieurs réponses possibles)</small>
+        </p>
+
+        <div class="form-group">
+          <div class="custom-checkbox-group">
+            <label class="custom-checkbox-option">
+              <input
+                type="checkbox"
+                name="besoins"
+                value="demarches-administratives"
+                (change)="onBesoinChange('demarches-administratives', $event)"
+              />
+              <span class="checkbox-checkmark"></span>
+              <div class="checkbox-content">
+                <i class="fas fa-file-alt text-primary mb-2"></i>
+                <h6 class="mb-1">Démarches administratives</h6>
+                <small class="text-muted"
+                  >Comprendre les formalités de création</small
+                >
+              </div>
+            </label>
+
+            <label class="custom-checkbox-option">
+              <input
+                type="checkbox"
+                name="besoins"
+                value="conseils-fiscaux"
+                (change)="onBesoinChange('conseils-fiscaux', $event)"
+              />
+              <span class="checkbox-checkmark"></span>
+              <div class="checkbox-content">
+                <i class="fas fa-calculator text-success mb-2"></i>
+                <h6 class="mb-1">Conseils fiscaux</h6>
+                <small class="text-muted"
+                  >Optimisation fiscale et obligations</small
+                >
+              </div>
+            </label>
+
+            <label class="custom-checkbox-option">
+              <input
+                type="checkbox"
+                name="besoins"
+                value="creer-activite"
+                (change)="onBesoinChange('creer-activite', $event)"
+              />
+              <span class="checkbox-checkmark"></span>
+              <div class="checkbox-content">
+                <i class="fas fa-tools text-warning mb-2"></i>
+                <h6 class="mb-1">Création d'activité</h6>
+                <small class="text-muted">Être guidé dans le lancement</small>
+              </div>
+            </label>
+
+            <label class="custom-checkbox-option">
+              <input
+                type="checkbox"
+                name="besoins"
+                value="autre"
+                (change)="onBesoinChange('autre', $event)"
+              />
+              <span class="checkbox-checkmark"></span>
+              <div class="checkbox-content">
+                <i class="fas fa-plus text-info mb-2"></i>
+                <h6 class="mb-1">Autre besoin</h6>
+                <small class="text-muted">Un besoin spécifique</small>
+              </div>
+            </label>
+          </div>
+
+          <div
+            class="mt-3 animate__animated animate__fadeInDown"
+            *ngIf="showAutreBesoin"
+          >
+            <div class="custom-input-group">
+              <label for="besoins_autre" class="form-label">
+                <i class="fas fa-edit me-2"></i>Précisez vos autres besoins
+              </label>
+              <textarea
+                class="form-control custom-input"
+                id="besoins_autre"
+                name="besoins_autre"
+                [(ngModel)]="formData.besoins_autre"
+                placeholder="Décrivez vos besoins spécifiques..."
+                rows="3"
+                maxlength="300"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-contact-form-layout>
+</section>

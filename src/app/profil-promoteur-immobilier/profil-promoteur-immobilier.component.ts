@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaService } from '../services/meta.service';
+import { PROMOTEUR_IMMOBILIER_FORM_CONFIG } from '../shared/contact-form-layout/contact-form-configs';
 
 @Component({
   selector: 'app-profil-promoteur-immobilier',
@@ -7,6 +8,8 @@ import { MetaService } from '../services/meta.service';
   styleUrl: './profil-promoteur-immobilier.component.css',
 })
 export class ProfilPromoteurImmobilierComponent implements OnInit {
+  formConfig = PROMOTEUR_IMMOBILIER_FORM_CONFIG;
+
   constructor(private metaService: MetaService) {}
 
   ngOnInit() {

@@ -1,0 +1,302 @@
+<style>
+  /* Styles pour le formulaire interactif */
+  .form-check-card {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+  }
+
+  .option-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #e9ecef !important;
+  }
+
+  .option-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-color: #ff3333 !important;
+  }
+
+  .form-check-input:checked + .option-card {
+    border-color: #ff3333 !important;
+    background-color: rgba(255, 51, 51, 0.05);
+    transform: scale(1.02);
+  }
+
+  .form-check-input:checked + .option-card .card-body {
+    color: #ff3333;
+  }
+
+  .step-content {
+    min-height: 400px;
+    animation-duration: 0.5s;
+  }
+
+  .progress-bar {
+    transition: width 0.6s ease;
+  }
+
+  .animate__fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .form-control:focus {
+    border-color: #ff3333;
+    box-shadow: 0 0 0 0.2rem rgba(255, 51, 51, 0.25);
+  }
+
+  .btn-danger {
+    background-color: #ff3333;
+    border-color: #ff3333;
+  }
+
+  .btn-danger:hover {
+    background-color: #e62e2e;
+    border-color: #e62e2e;
+  }
+
+  .card {
+    border: none;
+  }
+
+  .card-header.bg-custom--primary {
+    background-color: #25335b !important;
+  }
+
+  .text-primary {
+    color: #25335b !important;
+  }
+
+  /* Animation pour les cartes d'options */
+  .option-card:active {
+    transform: scale(0.98);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .step-content {
+      min-height: 350px;
+    }
+
+    .col-md-6 .option-card {
+      margin-bottom: 1rem;
+    }
+  }
+
+  /* Styles pour les alertes */
+  .alert-info {
+    background-color: rgba(13, 110, 253, 0.1);
+    border-color: rgba(13, 110, 253, 0.2);
+    color: #0c63e4;
+  }
+
+  /* Animation pour le message de succès */
+  .animate__animated.animate__fadeIn {
+    animation-fill-mode: both;
+  }
+
+  /* Styles pour la section contact */
+  .contact-section {
+    background: linear-gradient(rgba(37, 51, 91, 0.9), rgba(37, 51, 91, 0.9)),
+      url("../../../assets/img/webp/57.avif") no-repeat center center;
+    background-size: cover;
+    padding: 80px 0;
+    color: white;
+    position: relative;
+  }
+
+  .contact-overlay {
+    position: relative;
+    z-index: 2;
+  }
+
+  .contact-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: white;
+  }
+
+  .contact-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .contact-button .btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .contact-button .btn-red {
+    background-color: #ff3333;
+    color: white;
+    border: none;
+  }
+
+  .contact-button .btn-outline {
+    border: 2px solid white;
+    color: white;
+    margin-left: 15px;
+  }
+
+  .contact-button .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Ajustements pour le formulaire dans le contexte contact */
+  .contact-section .card {
+    background: rgba(255, 255, 255, 0.98);
+    border: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .contact-section .card-body {
+    padding: 2rem;
+  }
+
+  .contact-section .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .contact-section .step-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .bg-custom--primary {
+    background-color: #25335b;
+  }
+
+  @media (min-width: 992px) {
+    .contact-text {
+      padding-right: 3rem;
+    }
+
+    .form-container {
+      padding-left: 2rem;
+    }
+  }
+</style>
+
+<section class="contact-section">
+  <div class="container contact-overlay">
+    <div class="row align-items-center">
+      <!-- Texte à gauche -->
+      <div class="col-lg-5 contact-text">
+        <p class="text-uppercase font-weight-bold">{{ config.eyebrow }}</p>
+        <h1 [innerHTML]="config.title"></h1>
+        <p [innerHTML]="config.description"></p>
+        <div class="contact-button mt-4">
+          <a href="tel:+3228838686" class="btn btn-red">{{
+            config.phoneButton
+          }}</a>
+          <a href="/contact" class="btn btn-outline">{{
+            config.contactButton
+          }}</a>
+        </div>
+      </div>
+
+      <!-- Formulaire à droite -->
+      <div class="col-lg-7 form-container">
+        <div class="card shadow-lg border-0">
+          <div
+            class="card-header bg-custom--primary text-white text-center py-4"
+          >
+            <h3 class="mb-3 fw-bold" [innerHTML]="config.formTitle"></h3>
+            <p class="mb-0 lead" [innerHTML]="config.formDescription"></p>
+            <div class="mt-3">
+              <span class="badge bg-danger fs-6">{{ config.badge }}</span>
+            </div>
+          </div>
+
+          <div class="card-body p-4" *ngIf="!formSubmitted">
+            <!-- Progress Bar -->
+            <div class="progress mb-4" style="height: 8px">
+              <div
+                class="progress-bar bg-danger"
+                [style.width.%]="progressPercentage"
+              ></div>
+            </div>
+            <div class="text-center mb-4">
+              <small class="text-muted"
+                >Étape {{ currentStep }} sur {{ totalSteps }}</small
+              >
+            </div>
+
+            <!-- Contenu du formulaire injecté -->
+            <ng-content select="[slot=form-content]"></ng-content>
+
+            <!-- Navigation -->
+            <div class="d-flex justify-content-between mt-5">
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                *ngIf="currentStep > 1"
+                (click)="onPreviousStep()"
+              >
+                <i class="fas fa-arrow-left me-2"></i>Précédent
+              </button>
+
+              <div class="ms-auto">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  *ngIf="currentStep < totalSteps"
+                  (click)="onNextStep()"
+                  [disabled]="!isStepValid"
+                >
+                  Suivant<i class="fas fa-arrow-right ms-2"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-success btn-lg"
+                  *ngIf="currentStep === totalSteps"
+                  [disabled]="!isFormValid"
+                  (click)="onSubmit()"
+                >
+                  <i class="fas fa-paper-plane me-2"></i
+                  >{{ config.submitButton }}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message de confirmation -->
+          <div class="card-body text-center p-5" *ngIf="formSubmitted">
+            <div class="animate__animated animate__fadeIn">
+              <i class="fas fa-check-circle fa-4x text-success mb-4"></i>
+              <h4 class="text-success mb-3">{{ config.successTitle }}</h4>
+              <p class="lead mb-4" [innerHTML]="config.successMessage"></p>
+              <div
+                class="alert alert-info"
+                [innerHTML]="config.successNote"
+              ></div>
+              <button class="btn btn-outline-primary" (click)="onReset()">
+                {{ config.resetButton }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

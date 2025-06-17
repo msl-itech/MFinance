@@ -613,10 +613,10 @@ business-section {
 
 .step-content {
   margin-left: 2rem;
-  background: white;
+  /* background: white; */
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); */
   flex-grow: 1;
 }
 
