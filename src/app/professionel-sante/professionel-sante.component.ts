@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaService } from '../services/meta.service';
+import { PROFESSIONNEL_SANTE_FORM_CONFIG } from '../shared/contact-form-layout/contact-form-configs';
 
 @Component({
   selector: 'app-professionel-sante',
@@ -7,6 +8,8 @@ import { MetaService } from '../services/meta.service';
   styleUrl: './professionel-sante.component.css',
 })
 export class ProfessionelSanteComponent implements OnInit {
+  formConfig = PROFESSIONNEL_SANTE_FORM_CONFIG;
+
   constructor(private metaService: MetaService) {}
 
   ngOnInit() {

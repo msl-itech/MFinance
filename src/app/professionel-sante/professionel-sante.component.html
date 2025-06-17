@@ -227,6 +227,15 @@
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
+            <div class="home2-btn mb-4">
+              <button
+                (click)="scrollToSection('contactSection')"
+                class="btn-outline-red"
+              >
+                🧭 Évaluez votre activité (2 min)
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
           </div>
           <div class="single-img mt-35 mb-4 custom-single">
             <img src="../../assets/img/webp/29.webp" alt="" class="rounded-4" />
@@ -871,4 +880,256 @@
     </div>
   </div>
 </section>
+
+<!-- Section formulaire de contact -->
+<section id="contactSection" class="contact-section">
+  <app-contact-form-layout [config]="formConfig">
+    <!-- Étape 1: Profession -->
+    <div class="step" data-step="1">
+      <h3 class="step-title">1. Profession</h3>
+      <p class="step-description">Quelle est votre profession ?</p>
+
+      <div class="form-group">
+        <div class="radio-group">
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="profession"
+              value="medecin-generaliste"
+              required
+            />
+            <span class="radio-custom"></span>
+            Médecin généraliste
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="profession"
+              value="medecin-specialiste"
+              required
+            />
+            <span class="radio-custom"></span>
+            Médecin spécialiste
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="profession" value="dentiste" required />
+            <span class="radio-custom"></span>
+            Dentiste
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="profession"
+              value="kinesitherapeute"
+              required
+            />
+            <span class="radio-custom"></span>
+            Kinésithérapeute
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="profession" value="infirmier" required />
+            <span class="radio-custom"></span>
+            Infirmier(ère)
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="profession" value="autre" required />
+            <span class="radio-custom"></span>
+            Autre
+          </label>
+        </div>
+        <div
+          class="input-group mt-3"
+          id="autre-profession"
+          style="display: none"
+        >
+          <input
+            type="text"
+            class="form-control"
+            name="profession_autre"
+            placeholder="Précisez votre profession..."
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 2: Revenus annuels -->
+    <div class="step" data-step="2">
+      <h3 class="step-title">2. Revenus annuels estimés</h3>
+      <p class="step-description">
+        Quel est votre chiffre d'affaires annuel moyen ?
+      </p>
+
+      <div class="form-group">
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="revenus" value="moins-50k" required />
+            <span class="radio-custom"></span>
+            Moins de 50K € / an
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="revenus" value="50k-100k" required />
+            <span class="radio-custom"></span>
+            50K - 100K € / an
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="revenus" value="100k-200k" required />
+            <span class="radio-custom"></span>
+            100K - 200K € / an
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="revenus" value="plus-200k" required />
+            <span class="radio-custom"></span>
+            Plus de 200K € / an
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 3: Coordonnées -->
+    <div class="step" data-step="3">
+      <h3 class="step-title">3. Vos coordonnées (étape essentielle)</h3>
+      <p class="step-description">
+        Pour être recontacté(e) par un conseiller et recevoir votre diagnostic,
+        merci de compléter vos coordonnées :
+      </p>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-12 mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nom"
+              name="nom"
+              required
+            />
+          </div>
+          <div class="col-12 mb-3">
+            <label for="email" class="form-label"
+              >Email <span class="text-success">✅ obligatoire</span></label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="col-12 mb-3">
+            <label for="telephone" class="form-label"
+              >Téléphone <span class="text-success">✅ obligatoire</span></label
+            >
+            <input
+              type="tel"
+              class="form-control"
+              id="telephone"
+              name="telephone"
+              required
+            />
+          </div>
+        </div>
+        <div class="alert alert-info mt-3">
+          <i class="fas fa-phone me-2"></i>
+          <strong
+            >Un conseiller vous appellera sous 72h pour un échange
+            gratuit.</strong
+          >
+          À l'issue de cet échange, vous recevrez votre mini-diagnostic
+          personnalisé par email.
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 4: Tenue de la comptabilité -->
+    <div class="step" data-step="4">
+      <h3 class="step-title">4. Tenue de la comptabilité</h3>
+      <p class="step-description">
+        Comment gérez-vous actuellement votre comptabilité ?
+      </p>
+
+      <div class="form-group">
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="comptabilite" value="moi-meme" required />
+            <span class="radio-custom"></span>
+            Je la gère moi-même
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="comptabilite"
+              value="comptable-externe"
+              required
+            />
+            <span class="radio-custom"></span>
+            Je fais appel à un comptable externe
+          </label>
+          <label class="radio-option">
+            <input
+              type="radio"
+              name="comptabilite"
+              value="pas-de-systeme"
+              required
+            />
+            <span class="radio-custom"></span>
+            Je n'ai pas encore mis en place de système structuré
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 5: Besoins spécifiques -->
+    <div class="step" data-step="5">
+      <h3 class="step-title">5. Vos besoins spécifiques</h3>
+      <p class="step-description">
+        Quels sont vos besoins actuels ? (plusieurs réponses possibles)
+      </p>
+
+      <div class="form-group">
+        <div class="checkbox-group">
+          <label class="checkbox-option">
+            <input type="checkbox" name="besoins" value="comptabilite" />
+            <span class="checkbox-custom"></span>
+            Tenue de la comptabilité
+          </label>
+          <label class="checkbox-option">
+            <input
+              type="checkbox"
+              name="besoins"
+              value="declarations-fiscales"
+            />
+            <span class="checkbox-custom"></span>
+            Déclarations fiscales
+          </label>
+          <label class="checkbox-option">
+            <input type="checkbox" name="besoins" value="conseil-gestion" />
+            <span class="checkbox-custom"></span>
+            Conseil en gestion financière
+          </label>
+          <label class="checkbox-option">
+            <input type="checkbox" name="besoins" value="optimisation-statut" />
+            <span class="checkbox-custom"></span>
+            Optimisation du statut social et fiscal
+          </label>
+          <label class="checkbox-option">
+            <input type="checkbox" name="besoins" value="autre" />
+            <span class="checkbox-custom"></span>
+            Autre
+          </label>
+        </div>
+        <div class="input-group mt-3" id="autre-besoin" style="display: none">
+          <input
+            type="text"
+            class="form-control"
+            name="besoins_autre"
+            placeholder="Précisez vos autres besoins..."
+          />
+        </div>
+      </div>
+    </div>
+  </app-contact-form-layout>
+</section>
+
 <app-recommandation-profil></app-recommandation-profil>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { MetaService } from '../services/meta.service';
+import { GRANDE_ENTREPRISE_FORM_CONFIG } from '../shared/contact-form-layout/contact-form-configs';
 
 @Component({
   selector: 'app-profil-grande-entreprise',
@@ -7,6 +8,8 @@ import { MetaService } from '../services/meta.service';
   styleUrl: './profil-grande-entreprise.component.css',
 })
 export class ProfilGrandeEntrepriseComponent implements OnInit {
+  formConfig = GRANDE_ENTREPRISE_FORM_CONFIG;
+
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {

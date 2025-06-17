@@ -246,8 +246,8 @@
 
         <a
           class="cta-button"
-          href="https://calendly.com/mfinances/rdv-client-en-teleconference"
-          target="_blank"
+          (click)="scrollToSection('contactSection')"
+          style="cursor: pointer"
         >
           Parler à notre expert
           <i class="fas fa-arrow-right"></i>
@@ -643,6 +643,562 @@
       </div>
     </div>
   </div>
+</section>
+
+<section id="contactSection" class="contact-section">
+  <app-contact-form-layout
+    [config]="formConfig"
+    [currentStep]="currentStep"
+    [totalSteps]="totalSteps"
+    [formSubmitted]="formSubmitted"
+    [isStepValid]="isStepValid()"
+    [isFormValid]="isFormValid()"
+    (nextStep)="onNextStep()"
+    (previousStep)="onPreviousStep()"
+    (submit)="onSubmit()"
+    (reset)="onReset()"
+  >
+    <div slot="form-content">
+      <!-- Étape 1: Comment vous payez-vous ? -->
+      <div *ngIf="currentStep === 1" class="step-content">
+        <h3 class="step-title mb-4">1. Comment vous payez-vous ?</h3>
+        <p class="step-description mb-4">
+          Choisissez l'option qui décrit le mieux votre fonctionnement actuel :
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.paiement === 'salaire-mensuel-suffisant'
+              "
+            >
+              <input
+                type="radio"
+                name="paiement"
+                value="salaire-mensuel-suffisant"
+                [(ngModel)]="formData.paiement"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-calendar-check text-success mb-2"></i>
+                <h6 class="mb-1">Salaire mensuel suffisant</h6>
+                <small class="text-muted"
+                  >Je touche un salaire mensuel officiel qui couvre mes dépenses
+                  personnelles</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.paiement === 'salaire-avec-complement'"
+            >
+              <input
+                type="radio"
+                name="paiement"
+                value="salaire-avec-complement"
+                [(ngModel)]="formData.paiement"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-plus-circle text-warning mb-2"></i>
+                <h6 class="mb-1">Salaire avec complément</h6>
+                <small class="text-muted"
+                  >J'ai un salaire déclaré, mais je dois souvent compléter avec
+                  de l'argent de la société</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.paiement === 'sans-salaire-fixe'"
+            >
+              <input
+                type="radio"
+                name="paiement"
+                value="sans-salaire-fixe"
+                [(ngModel)]="formData.paiement"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-hand-paper text-danger mb-2"></i>
+                <h6 class="mb-1">Sans salaire fixe</h6>
+                <small class="text-muted"
+                  >Je ne me verse pas de salaire fixe, je prends de l'argent
+                  quand j'en ai besoin</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.paiement === 'gestion-incertaine'"
+            >
+              <input
+                type="radio"
+                name="paiement"
+                value="gestion-incertaine"
+                [(ngModel)]="formData.paiement"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-question-circle text-info mb-2"></i>
+                <h6 class="mb-1">Gestion incertaine</h6>
+                <small class="text-muted"
+                  >Je ne suis pas sûr de la façon dont mes revenus sont
+                  gérés</small
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 2: Et votre compte courant, vous y voyez clair ? -->
+      <div *ngIf="currentStep === 2" class="step-content">
+        <h3 class="step-title mb-4">
+          2. Et votre compte courant, vous y voyez clair ?
+        </h3>
+        <p class="step-description mb-4">Cochez ce qui vous parle :</p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.compte_courant === 'sais-exactement'"
+            >
+              <input
+                type="radio"
+                name="compte_courant"
+                value="sais-exactement"
+                [(ngModel)]="formData.compte_courant"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-eye text-success mb-2"></i>
+                <h6 class="mb-1">Je maîtrise totalement</h6>
+                <small class="text-muted"
+                  >Je sais exactement combien je dois ou ce que ma société me
+                  doit</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.compte_courant === 'existe-mais-incompris'
+              "
+            >
+              <input
+                type="radio"
+                name="compte_courant"
+                value="existe-mais-incompris"
+                [(ngModel)]="formData.compte_courant"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-low-vision text-warning mb-2"></i>
+                <h6 class="mb-1">J'en ai conscience</h6>
+                <small class="text-muted"
+                  >Je sais qu'il existe, mais je ne comprends pas trop son
+                  utilité</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.compte_courant === 'comptable-silencieux'
+              "
+            >
+              <input
+                type="radio"
+                name="compte_courant"
+                value="comptable-silencieux"
+                [(ngModel)]="formData.compte_courant"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-user-slash text-secondary mb-2"></i>
+                <h6 class="mb-1">Silence radio</h6>
+                <small class="text-muted"
+                  >Mon comptable n'en parle jamais</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.compte_courant === 'montants-incompris'
+              "
+            >
+              <input
+                type="radio"
+                name="compte_courant"
+                value="montants-incompris"
+                [(ngModel)]="formData.compte_courant"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-search text-danger mb-2"></i>
+                <h6 class="mb-1">Montants mystérieux</h6>
+                <small class="text-muted"
+                  >Je vois des montants que je ne comprends pas</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.compte_courant === 'jamais-questionne'"
+            >
+              <input
+                type="radio"
+                name="compte_courant"
+                value="jamais-questionne"
+                [(ngModel)]="formData.compte_courant"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-question text-info mb-2"></i>
+                <h6 class="mb-1">Terra incognita</h6>
+                <small class="text-muted"
+                  >Je ne me suis jamais posé la question</small
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 3: Coordonnées -->
+      <div *ngIf="currentStep === 3" class="step-content">
+        <h3 class="step-title mb-4">3. Vos coordonnées</h3>
+        <p class="step-description mb-4">
+          <i class="fas fa-phone text-danger me-2"></i>
+          Pour recevoir votre analyse personnalisée, merci de compléter vos
+          coordonnées
+        </p>
+
+        <div class="form-group">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="nom" class="form-label">
+                  <i class="fas fa-user me-2"></i>Nom complet
+                </label>
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  id="nom"
+                  name="nom"
+                  [(ngModel)]="formData.nom"
+                  placeholder="Votre nom et prénom"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="email" class="form-label">
+                  <i class="fas fa-envelope me-2"></i>Email
+                  <span class="badge bg-success ms-2">✅ obligatoire</span>
+                </label>
+                <input
+                  type="email"
+                  class="form-control custom-input"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="formData.email"
+                  placeholder="votre@email.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="telephone" class="form-label">
+                  <i class="fas fa-phone me-2"></i>Téléphone
+                  <span class="badge bg-success ms-2">✅ obligatoire</span>
+                </label>
+                <input
+                  type="tel"
+                  class="form-control custom-input"
+                  id="telephone"
+                  name="telephone"
+                  [(ngModel)]="formData.telephone"
+                  placeholder="+32 XXX XX XX XX"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-info mt-4">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
+              <div>
+                <h6 class="mb-1">
+                  📞 Un conseiller Mfinances vous appelle sous 72h
+                </h6>
+                <small>L'appel est gratuit et confidentiel.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 4: Stratégie de remboursement -->
+      <div *ngIf="currentStep === 4" class="step-content">
+        <h3 class="step-title mb-4">
+          4. Stratégie de remboursement du compte courant
+        </h3>
+        <p class="step-description mb-4">
+          Avez-vous défini une stratégie claire pour rembourser les montants que
+          vous devez à votre société ?
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.strategie_remboursement === 'plan-precis'
+              "
+            >
+              <input
+                type="radio"
+                name="strategie_remboursement"
+                value="plan-precis"
+                [(ngModel)]="formData.strategie_remboursement"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-clipboard-check text-success mb-2"></i>
+                <h6 class="mb-1">Plan structuré</h6>
+                <small class="text-muted"
+                  >Oui, j'ai un plan précis et suivi</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.strategie_remboursement === 'coup-par-coup'
+              "
+            >
+              <input
+                type="radio"
+                name="strategie_remboursement"
+                value="coup-par-coup"
+                [(ngModel)]="formData.strategie_remboursement"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-dice text-warning mb-2"></i>
+                <h6 class="mb-1">Au feeling</h6>
+                <small class="text-muted"
+                  >Je rembourse au coup par coup, sans stratégie formelle</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.strategie_remboursement === 'ne-sais-pas'
+              "
+            >
+              <input
+                type="radio"
+                name="strategie_remboursement"
+                value="ne-sais-pas"
+                [(ngModel)]="formData.strategie_remboursement"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-question-circle text-danger mb-2"></i>
+                <h6 class="mb-1">Dans le flou</h6>
+                <small class="text-muted"
+                  >Non, je ne sais pas comment m'y prendre</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.strategie_remboursement === 'pas-concerne'
+              "
+            >
+              <input
+                type="radio"
+                name="strategie_remboursement"
+                value="pas-concerne"
+                [(ngModel)]="formData.strategie_remboursement"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-check-circle text-info mb-2"></i>
+                <h6 class="mb-1">Situation saine</h6>
+                <small class="text-muted"
+                  >Je ne suis pas concerné (je ne dois rien à ma société)</small
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 5: Votre besoin principal -->
+      <div *ngIf="currentStep === 5" class="step-content">
+        <h3 class="step-title mb-4">5. Votre besoin principal</h3>
+        <p class="step-description mb-4">
+          Que souhaitez-vous clarifier ou améliorer aujourd'hui ?
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.besoin_principal === 'comprendre-compte-courant'
+              "
+            >
+              <input
+                type="radio"
+                name="besoin_principal"
+                value="comprendre-compte-courant"
+                [(ngModel)]="formData.besoin_principal"
+                (change)="onBesoinChange('comprendre-compte-courant')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-search text-primary mb-2"></i>
+                <h6 class="mb-1">Comprendre mon compte courant</h6>
+                <small class="text-muted"
+                  >Comprendre ce que mon compte courant reflète
+                  réellement</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.besoin_principal === 'identifier-erreurs'
+              "
+            >
+              <input
+                type="radio"
+                name="besoin_principal"
+                value="identifier-erreurs"
+                [(ngModel)]="formData.besoin_principal"
+                (change)="onBesoinChange('identifier-erreurs')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-bug text-warning mb-2"></i>
+                <h6 class="mb-1">Détecter les failles</h6>
+                <small class="text-muted"
+                  >Identifier les erreurs ou failles dans ma trésorerie</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.besoin_principal === 'plan-redressement'
+              "
+            >
+              <input
+                type="radio"
+                name="besoin_principal"
+                value="plan-redressement"
+                [(ngModel)]="formData.besoin_principal"
+                (change)="onBesoinChange('plan-redressement')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-chart-line text-success mb-2"></i>
+                <h6 class="mb-1">Plan d'action</h6>
+                <small class="text-muted"
+                  >Mettre en place un plan concret de redressement ou de
+                  remboursement</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.besoin_principal === 'autre'"
+            >
+              <input
+                type="radio"
+                name="besoin_principal"
+                value="autre"
+                [(ngModel)]="formData.besoin_principal"
+                (change)="onBesoinChange('autre')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-plus text-info mb-2"></i>
+                <h6 class="mb-1">Autre besoin</h6>
+                <small class="text-muted">Un besoin spécifique</small>
+              </div>
+            </label>
+          </div>
+
+          <div
+            class="mt-3 animate__animated animate__fadeInDown"
+            *ngIf="showAutreBesoin"
+          >
+            <div class="custom-input-group">
+              <label for="besoin_autre" class="form-label">
+                <i class="fas fa-edit me-2"></i>Précisez votre besoin
+              </label>
+              <textarea
+                class="form-control custom-input"
+                id="besoin_autre"
+                name="besoin_autre"
+                [(ngModel)]="formData.besoin_autre"
+                placeholder="Décrivez votre besoin spécifique..."
+                rows="3"
+                maxlength="300"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-contact-form-layout>
 </section>
 
 <app-form-code-promo></app-form-code-promo>

@@ -96,6 +96,198 @@
   .image-active {
     transform: translateY(0); /* Position finale */
   }
+
+  /* Styles pour le formulaire interactif */
+  .form-check-card {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+  }
+
+  .option-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #e9ecef !important;
+  }
+
+  .option-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-color: #ff3333 !important;
+  }
+
+  .form-check-input:checked + .option-card {
+    border-color: #ff3333 !important;
+    background-color: rgba(255, 51, 51, 0.05);
+    transform: scale(1.02);
+  }
+
+  .form-check-input:checked + .option-card .card-body {
+    color: #ff3333;
+  }
+
+  .step-content {
+    min-height: 400px;
+    animation-duration: 0.5s;
+  }
+
+  .progress-bar {
+    transition: width 0.6s ease;
+  }
+
+  .animate__fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .form-control:focus {
+    border-color: #ff3333;
+    box-shadow: 0 0 0 0.2rem rgba(255, 51, 51, 0.25);
+  }
+
+  .btn-danger {
+    background-color: #ff3333;
+    border-color: #ff3333;
+  }
+
+  .btn-danger:hover {
+    background-color: #e62e2e;
+    border-color: #e62e2e;
+  }
+
+  .card {
+    border: none;
+  }
+
+  .card-header.bg-custom--primary {
+    background-color: #25335b !important;
+  }
+
+  .text-primary {
+    color: #25335b !important;
+  }
+
+  /* Animation pour les cartes d'options */
+  .option-card:active {
+    transform: scale(0.98);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .step-content {
+      min-height: 350px;
+    }
+
+    .col-md-6 .option-card {
+      margin-bottom: 1rem;
+    }
+  }
+
+  /* Styles pour les alertes */
+  .alert-info {
+    background-color: rgba(13, 110, 253, 0.1);
+    border-color: rgba(13, 110, 253, 0.2);
+    color: #0c63e4;
+  }
+
+  /* Animation pour le message de succès */
+  .animate__animated.animate__fadeIn {
+    animation-fill-mode: both;
+  }
+
+  /* Nouveaux styles pour la section contact */
+  .contact-section {
+    background: linear-gradient(rgba(37, 51, 91, 0.9), rgba(37, 51, 91, 0.9)),
+      url("../../assets/img/webp/57.avif") no-repeat center center;
+    background-size: cover;
+    padding: 80px 0;
+    color: white;
+    position: relative;
+  }
+
+  .contact-overlay {
+    position: relative;
+    z-index: 2;
+  }
+
+  .contact-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: white;
+  }
+
+  .contact-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .contact-button .btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .contact-button .btn-red {
+    background-color: #ff3333;
+    color: white;
+    border: none;
+  }
+
+  .contact-button .btn-outline {
+    border: 2px solid white;
+    color: white;
+    margin-left: 15px;
+  }
+
+  .contact-button .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Ajustements pour le formulaire dans le contexte contact */
+  .contact-section .card {
+    background: rgba(255, 255, 255, 0.98);
+    border: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .contact-section .card-body {
+    padding: 2rem;
+  }
+
+  .contact-section .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .contact-section .step-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 992px) {
+    .contact-text {
+      padding-right: 3rem;
+    }
+
+    .form-container {
+      padding-left: 2rem;
+    }
+  }
 </style>
 <header class="header">
   <div class="header-overlay">
@@ -117,7 +309,7 @@
       <!-- Main Content -->
       <div class="col-lg-8">
         <div class="single-content">
-          <h3>Tout savoir sur L’ASBL</h3>
+          <h3>Tout savoir sur L'ASBL</h3>
           <h4>
             Accompagnement pour les ASBL : Donnez vie à votre mission sociale
           </h4>
@@ -125,24 +317,31 @@
             Les Associations Sans But Lucratif (ASBL) en Belgique sont des
             structures incontournables pour porter des projets sociaux,
             culturels, éducatifs ou environnementaux. Si leur fonctionnement
-            repose sur des valeurs d’entraide et d’engagement, leur gestion
+            repose sur des valeurs d'entraide et d'engagement, leur gestion
             implique également des défis administratifs, financiers et
             organisationnels.
           </p>
           <p>
             Chez MFINANCES, nous comprenons les réalités des ASBL belges et
             offrons un accompagnement sur mesure pour simplifier votre gestion
-            et maximiser l’impact de votre mission.
+            et maximiser l'impact de votre mission.
           </p>
 
           <div class="button-container">
             <div class="home2-btn mb-4">
               <button
                 (click)="scrollToSection('targetSection')"
-                class="btn-red"
+                class="btn-red me-3"
               >
                 Découvrez ce que vous gagnerez avec nous
                 <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <button
+                (click)="scrollToSection('formulaire-evaluation')"
+                class="btn btn-outline-danger"
+              >
+                🧭 Évaluez votre ASBL (2 min)
+                <i class="fa-solid fa-arrow-down"></i>
               </button>
             </div>
           </div>
@@ -249,7 +448,7 @@
                     <li><strong>Rédaction et dépôt des statuts.</strong></li>
                     <li>
                       <strong
-                        >Assistance pour l’enregistrement au Moniteur
+                        >Assistance pour l'enregistrement au Moniteur
                         belge.</strong
                       >
                     </li>
@@ -496,7 +695,7 @@
                     <p>
                       <img src="../../assets/img/icons/checkfill.png" alt="" />
                       <strong>Gain de temps :</strong> Vous vous concentrez sur
-                      vos actions, nous gérons l’administratif.
+                      vos actions, nous gérons l'administratif.
                     </p>
                   </div>
                   <div class="space20"></div>
@@ -506,7 +705,7 @@
                     <p>
                       <img src="../../assets/img/icons/checkfill.png" alt="" />
                       <strong>Optimisation des ressources :</strong> Chaque euro
-                      collecté est utilisé au mieux pour maximiser l’impact de
+                      collecté est utilisé au mieux pour maximiser l'impact de
                       vos projets.
                     </p>
                   </div>
@@ -557,11 +756,11 @@
         <div class="col-md-6">
           <div class="hadding hadding-p space-sm-30">
             <h2 class="text-white">
-              L’ASBL peut-elle exercer une activité commerciale ?
+              L'ASBL peut-elle exercer une activité commerciale ?
             </h2>
             <p class="text-white">
               Oui, mais uniquement si cette activité sert à financer le but
-              social de l’association. Les bénéfices doivent être réinvestis
+              social de l'association. Les bénéfices doivent être réinvestis
               dans la mission et non redistribués.
             </p>
           </div>
@@ -578,7 +777,7 @@
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  L’ASBL peut-elle exercer une activité commerciale ?
+                  L'ASBL peut-elle exercer une activité commerciale ?
                 </button>
               </h2>
               <div
@@ -589,7 +788,7 @@
               >
                 <div class="accordion-body">
                   Oui, mais uniquement si cette activité sert à financer le but
-                  social de l’association. Les bénéfices doivent être réinvestis
+                  social de l'association. Les bénéfices doivent être réinvestis
                   dans la mission et non redistribués.
                 </div>
               </div>
@@ -655,7 +854,7 @@
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-                        📞 Contactez-nous dès aujourd’hui pour une consultation gratuite ! Demander un devis personnalisé 
+                        📞 Contactez-nous dès aujourd'hui pour une consultation gratuite ! Demander un devis personnalisé 
                         
                       </div>
                     </div>
@@ -697,19 +896,306 @@
           >.
         </h2>
         <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
-          Contactez-nous dès aujourd’hui pour une consultation gratuite !
+          Contactez-nous dès aujourd'hui pour une consultation gratuite !
           Demander un devis personnalisé
         </p>
         <a
-          href="#"
-          class="btn btn-danger btn-sm px-3 py-2"
+          href="/contact"
+          class="btn btn-danger btn-sm px-3 py-2 me-3"
           data-aos="zoom-in"
           data-aos-delay="800"
         >
           Contactez-nous <i class="fas fa-arrow-right"></i>
         </a>
+        <button
+          (click)="scrollToSection('formulaire-evaluation')"
+          class="btn btn-outline-light btn-sm px-3 py-2"
+          data-aos="zoom-in"
+          data-aos-delay="900"
+        >
+          🧭 Évaluation gratuite <i class="fas fa-arrow-down"></i>
+        </button>
       </div>
     </div>
   </div>
 </section>
+<app-contact-form-layout
+  [config]="formConfig"
+  [currentStep]="currentStep"
+  [totalSteps]="totalSteps"
+  [formSubmitted]="formSubmitted"
+  [isStepValid]="isCurrentStepValid()"
+  [isFormValid]="asblForm.valid"
+  (nextStep)="nextStep()"
+  (previousStep)="previousStep()"
+  (submit)="onSubmit()"
+  (reset)="resetForm()"
+>
+  <div slot="form-content" [formGroup]="asblForm">
+    <!-- Étape 1: Type d'ASBL -->
+    <div
+      *ngIf="currentStep === 1"
+      class="step-content animate__animated animate__fadeIn"
+    >
+      <h5 class="mb-4 text-center fw-bold text-primary">1. Type d'ASBL</h5>
+      <p class="text-center mb-4">
+        Quel est le domaine principal de votre ASBL ?
+      </p>
+
+      <div class="row g-3">
+        <div class="col-md-6" *ngFor="let type of asblTypes">
+          <label class="form-check-card">
+            <input
+              type="radio"
+              formControlName="typeAsbl"
+              [value]="type.value"
+              class="form-check-input d-none"
+            />
+            <div class="card h-100 border-2 option-card">
+              <div class="card-body text-center py-3">
+                <i [class]="type.icon" class="fa-2x text-danger mb-2"></i>
+                <h6 class="card-title mb-0">
+                  {{ type.label }}
+                </h6>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <!-- Option "Autre" -->
+        <div class="col-12" *ngIf="asblForm.get('typeAsbl')?.value === 'autre'">
+          <div class="mt-3">
+            <label class="form-label">Précisez :</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="autreType"
+              placeholder="Votre domaine..."
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 2: Revenus annuels -->
+    <div
+      *ngIf="currentStep === 2"
+      class="step-content animate__animated animate__fadeIn"
+    >
+      <h5 class="mb-4 text-center fw-bold text-primary">2. Revenus annuels</h5>
+      <p class="text-center mb-4">
+        Quel est le budget annuel moyen de votre ASBL ?
+      </p>
+
+      <div class="row g-3">
+        <div class="col-md-6" *ngFor="let budget of budgetRanges">
+          <label class="form-check-card">
+            <input
+              type="radio"
+              formControlName="budgetAnnuel"
+              [value]="budget.value"
+              class="form-check-input d-none"
+            />
+            <div class="card h-100 border-2 option-card">
+              <div class="card-body text-center py-3">
+                <i class="fas fa-euro-sign fa-2x text-success mb-2"></i>
+                <h6 class="card-title mb-0">
+                  {{ budget.label }}
+                </h6>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 3: Coordonnées -->
+    <div
+      *ngIf="currentStep === 3"
+      class="step-content animate__animated animate__fadeIn"
+    >
+      <h5 class="mb-4 text-center fw-bold text-primary">3. Vos coordonnées</h5>
+      <p class="text-center mb-4">
+        Pour être recontacté(e) par un conseiller et recevoir votre diagnostic :
+      </p>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label"
+            >Nom <span class="text-danger">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="nom"
+            placeholder="Votre nom"
+          />
+          <div
+            *ngIf="asblForm.get('nom')?.invalid && asblForm.get('nom')?.touched"
+            class="text-danger small mt-1"
+          >
+            Le nom est requis
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label"
+            >Prénom <span class="text-danger">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="prenom"
+            placeholder="Votre prénom"
+          />
+          <div
+            *ngIf="
+              asblForm.get('prenom')?.invalid && asblForm.get('prenom')?.touched
+            "
+            class="text-danger small mt-1"
+          >
+            Le prénom est requis
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label"
+            >Email <span class="text-danger">*</span></label
+          >
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            placeholder="votre@email.com"
+          />
+          <div
+            *ngIf="
+              asblForm.get('email')?.invalid && asblForm.get('email')?.touched
+            "
+            class="text-danger small mt-1"
+          >
+            <span *ngIf="asblForm.get('email')?.errors?.['required']"
+              >L'email est requis</span
+            >
+            <span *ngIf="asblForm.get('email')?.errors?.['email']"
+              >Format d'email invalide</span
+            >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label"
+            >Téléphone <span class="text-danger">*</span></label
+          >
+          <input
+            type="tel"
+            class="form-control"
+            formControlName="telephone"
+            placeholder="+32 4XX XX XX XX"
+          />
+          <div
+            *ngIf="
+              asblForm.get('telephone')?.invalid &&
+              asblForm.get('telephone')?.touched
+            "
+            class="text-danger small mt-1"
+          >
+            Le téléphone est requis
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-info mt-4">
+        <i class="fas fa-phone text-primary me-2"></i>
+        <strong>Un conseiller vous appellera sous 72h</strong>
+        pour un échange gratuit. À l'issue de cet échange, vous recevrez votre
+        mini-diagnostic personnalisé par courriel.
+      </div>
+    </div>
+
+    <!-- Étape 4: Comptabilité -->
+    <div
+      *ngIf="currentStep === 4"
+      class="step-content animate__animated animate__fadeIn"
+    >
+      <h5 class="mb-4 text-center fw-bold text-primary">
+        4. Tenue de la comptabilité
+      </h5>
+      <p class="text-center mb-4">
+        Comment gérez-vous actuellement votre comptabilité ?
+      </p>
+
+      <div class="row g-3">
+        <div class="col-12" *ngFor="let option of comptabiliteOptions">
+          <label class="form-check-card">
+            <input
+              type="radio"
+              formControlName="comptabilite"
+              [value]="option.value"
+              class="form-check-input d-none"
+            />
+            <div class="card border-2 option-card">
+              <div class="card-body py-3">
+                <div class="d-flex align-items-center">
+                  <i [class]="option.icon" class="fa-2x text-primary me-3"></i>
+                  <div>
+                    <h6 class="card-title mb-0">
+                      {{ option.label }}
+                    </h6>
+                    <small class="text-muted">{{ option.description }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Étape 5: Priorités -->
+    <div
+      *ngIf="currentStep === 5"
+      class="step-content animate__animated animate__fadeIn"
+    >
+      <h5 class="mb-4 text-center fw-bold text-primary">
+        5. Vos priorités actuelles
+      </h5>
+      <p class="text-center mb-4">
+        Quels sont vos besoins les plus urgents ? (Plusieurs choix possibles)
+      </p>
+
+      <div class="row g-3">
+        <div class="col-md-6" *ngFor="let priorite of priorites">
+          <label class="form-check-card">
+            <input
+              type="checkbox"
+              [formControlName]="'priorite_' + priorite.value"
+              class="form-check-input d-none"
+            />
+            <div class="card h-100 border-2 option-card">
+              <div class="card-body text-center py-3">
+                <i [class]="priorite.icon" class="fa-2x text-warning mb-2"></i>
+                <h6 class="card-title mb-0">
+                  {{ priorite.label }}
+                </h6>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <!-- Option "Autre" -->
+        <div class="col-12" *ngIf="asblForm.get('priorite_autre')?.value">
+          <div class="mt-3">
+            <label class="form-label">Précisez vos autres besoins :</label>
+            <textarea
+              class="form-control"
+              formControlName="autrePriorite"
+              rows="3"
+              placeholder="Décrivez vos besoins spécifiques..."
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-contact-form-layout>
+<!-- Formulaire interactif ASBL -->
+
 <app-recommandation-profil></app-recommandation-profil>

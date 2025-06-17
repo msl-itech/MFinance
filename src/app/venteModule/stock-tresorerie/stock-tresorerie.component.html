@@ -36,9 +36,9 @@
 
       <div class="content-text">
         <p class="intro">
-          Le stock, du point de vue de la gestion de la trésorerie, c’est bien
-          plus qu’une simple réserve de produits. C’est de l’argent immobilisé.
-          Lorsqu’il n’est pas optimisé, il devient une charge qui freine la
+          Le stock, du point de vue de la gestion de la trésorerie, c'est bien
+          plus qu'une simple réserve de produits. C'est de l'argent immobilisé.
+          Lorsqu'il n'est pas optimisé, il devient une charge qui freine la
           croissance.
         </p>
         <p>
@@ -59,7 +59,7 @@
           </span>
           <span data-aos="fade-right" data-aos-duration="1000">
             <i class="fas fa-check-circle text-danger"></i> Réduire les coûts
-            inutiles liés à un surstockage ou une mauvaise gestion.
+            d'entreposage ou une mauvaise gestion.
           </span>
           <span data-aos="fade-right" data-aos-duration="1000">
             <i class="fas fa-check-circle text-danger"></i> Rendre votre
@@ -78,13 +78,13 @@
     <!-- Text Side -->
     <div class="text-side">
       <h2 class="title">
-        Le Défi du Stock :<span class="highlight"> Quand Trop, c’est Trop</span>
+        Le Défi du Stock :<span class="highlight"> Quand Trop, c'est Trop</span>
       </h2>
 
       <div class="content-text">
         <p class="intro">
           Dans la vidéo storytelling, Marianne, entrepreneure passionnée, pense
-          qu’un stock important est une preuve de préparation. Mais elle se
+          qu'un stock important est une preuve de préparation. Mais elle se
           heurte à plusieurs problèmes :
         </p>
         <div
@@ -97,7 +97,7 @@
           </span>
           <span data-aos="fade-right" data-aos-duration="800">
             <i class="fas fa-check-circle text-danger"></i> Les coûts
-            d’entreposage explosent.
+            d'entreposage explosent.
           </span>
           <span data-aos="fade-right" data-aos-duration="800">
             <i class="fas fa-check-circle text-danger"></i>Certains articles
@@ -124,4 +124,751 @@
     </div>
   </div>
 </div>
-<app-zone-contact></app-zone-contact>
+
+<!-- Pop-up de promotion du formulaire -->
+<div *ngIf="showPopup" class="popup-overlay" (click)="closePopup()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <button class="popup-close" (click)="closePopup()">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <div class="popup-header">
+      <i class="fas fa-boxes popup-icon"></i>
+      <h3>📦 Diagnostic Stock Express</h3>
+      <p>
+        Trop de stock ? Pas assez de cash ? Vérifiez l'équilibre en 3 minutes.
+      </p>
+    </div>
+
+    <div class="popup-body">
+      <div class="popup-benefits">
+        <div class="benefit-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Analyse personnalisée gratuite</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-clock"></i>
+          <span>Seulement 3 minutes</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-phone"></i>
+          <span>Appel expert sous 72h</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-footer">
+      <button class="popup-btn-primary" (click)="openFormFromPopup()">
+        Commencer mon diagnostic
+        <i class="fas fa-arrow-right"></i>
+      </button>
+      <button class="popup-btn-secondary" (click)="closePopup()">
+        Plus tard
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Section du formulaire -->
+<section id="contactSection" class="contact-section">
+  <app-contact-form-layout
+    [config]="formConfig"
+    [currentStep]="currentStep"
+    [totalSteps]="totalSteps"
+    [formSubmitted]="formSubmitted"
+    [isStepValid]="isStepValid()"
+    [isFormValid]="isFormValid()"
+    (nextStep)="onNextStep()"
+    (previousStep)="onPreviousStep()"
+    (submit)="onSubmit()"
+    (reset)="onReset()"
+  >
+    <div slot="form-content">
+      <!-- Étape 1: Gérez-vous un stock physique dans votre activité ? -->
+      <div *ngIf="currentStep === 1" class="step-content">
+        <h3 class="step-title mb-4">
+          1. Gérez-vous un stock physique dans votre activité ?
+        </h3>
+        <p class="step-description mb-4">
+          On évalue d'abord si le stock est un enjeu clé.
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.gere_stock === 'oui-important'"
+            >
+              <input
+                type="radio"
+                name="gere_stock"
+                value="oui-important"
+                [(ngModel)]="formData.gere_stock"
+                (change)="onGereStockChange('oui-important')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-warehouse text-danger mb-2"></i>
+                <h6 class="mb-1">Oui, nous avons un stock important</h6>
+                <small class="text-muted"
+                  >Stock conséquent avec enjeux de gestion</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.gere_stock === 'oui-limite'"
+            >
+              <input
+                type="radio"
+                name="gere_stock"
+                value="oui-limite"
+                [(ngModel)]="formData.gere_stock"
+                (change)="onGereStockChange('oui-limite')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-boxes text-warning mb-2"></i>
+                <h6 class="mb-1">Oui, mais il est limité</h6>
+                <small class="text-muted"
+                  >Stock réduit ou rotation rapide</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.gere_stock === 'non'"
+            >
+              <input
+                type="radio"
+                name="gere_stock"
+                value="non"
+                [(ngModel)]="formData.gere_stock"
+                (change)="onGereStockChange('non')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-times-circle text-secondary mb-2"></i>
+                <h6 class="mb-1">Non, pas de stock concerné</h6>
+                <small class="text-muted"
+                  >Activité de services ou sans stock physique</small
+                >
+              </div>
+            </label>
+          </div>
+
+          <!-- Message pour les activités sans stock -->
+          <div
+            class="mt-4 animate__animated animate__fadeInDown"
+            *ngIf="formData.gere_stock === 'non'"
+          >
+            <div class="alert alert-info">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-info-circle fa-2x text-info me-3"></i>
+                <div>
+                  <h6 class="mb-1">Activité sans stock physique</h6>
+                  <small
+                    >Nous pouvons tout de même vous aider à optimiser votre
+                    trésorerie ! Continuez le formulaire.</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 2: Quel est votre principal défi lié à votre stock ? (uniquement si stock présent) -->
+      <div
+        *ngIf="currentStep === 2 && formData.gere_stock !== 'non'"
+        class="step-content"
+      >
+        <h3 class="step-title mb-4">
+          2. Quel est votre principal défi lié à votre stock ?
+        </h3>
+        <p class="step-description mb-4">
+          Identifie le point de douleur principal.
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.defi_principal === 'produits-invendus'"
+            >
+              <input
+                type="radio"
+                name="defi_principal"
+                value="produits-invendus"
+                [(ngModel)]="formData.defi_principal"
+                (change)="onDefiChange('produits-invendus')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-exclamation-triangle text-danger mb-2"></i>
+                <h6 class="mb-1">Trop de produits invendus ou dormants</h6>
+                <small class="text-muted"
+                  >Stock qui ne tourne pas, immobilise les liquidités</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.defi_principal === 'frais-stockage'"
+            >
+              <input
+                type="radio"
+                name="defi_principal"
+                value="frais-stockage"
+                [(ngModel)]="formData.defi_principal"
+                (change)="onDefiChange('frais-stockage')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-home text-warning mb-2"></i>
+                <h6 class="mb-1">
+                  Manque de place ou frais de stockage élevés
+                </h6>
+                <small class="text-muted"
+                  >Coûts d'entreposage qui grèvent la rentabilité</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="
+                formData.defi_principal === 'mauvaise-visibilite'
+              "
+            >
+              <input
+                type="radio"
+                name="defi_principal"
+                value="mauvaise-visibilite"
+                [(ngModel)]="formData.defi_principal"
+                (change)="onDefiChange('mauvaise-visibilite')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-eye-slash text-info mb-2"></i>
+                <h6 class="mb-1">
+                  Mauvaise visibilité sur les besoins ou la rotation
+                </h6>
+                <small class="text-muted"
+                  >Difficile de prévoir les commandes et rotations</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.defi_principal === 'aucun-systeme'"
+            >
+              <input
+                type="radio"
+                name="defi_principal"
+                value="aucun-systeme"
+                [(ngModel)]="formData.defi_principal"
+                (change)="onDefiChange('aucun-systeme')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-cogs text-secondary mb-2"></i>
+                <h6 class="mb-1">Aucun système automatisé de suivi</h6>
+                <small class="text-muted"
+                  >Gestion manuelle, pas d'outils de suivi</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.defi_principal === 'autre'"
+            >
+              <input
+                type="radio"
+                name="defi_principal"
+                value="autre"
+                [(ngModel)]="formData.defi_principal"
+                (change)="onDefiChange('autre')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-ellipsis-h text-primary mb-2"></i>
+                <h6 class="mb-1">Autre</h6>
+                <small class="text-muted">Mon défi est différent</small>
+              </div>
+            </label>
+          </div>
+
+          <div
+            class="mt-3 animate__animated animate__fadeInDown"
+            *ngIf="showAutreDefi"
+          >
+            <div class="custom-input-group">
+              <label for="defi_autre" class="form-label">
+                <i class="fas fa-edit me-2"></i>Précisez votre défi principal
+              </label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="defi_autre"
+                name="defi_autre"
+                [(ngModel)]="formData.defi_autre"
+                placeholder="Décrivez votre défi principal..."
+                maxlength="200"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 3: Coordonnées -->
+      <div *ngIf="currentStep === 3" class="step-content">
+        <h3 class="step-title mb-4">
+          3. Vos coordonnées pour recevoir votre analyse gratuite
+        </h3>
+        <p class="step-description mb-4">
+          <i class="fas fa-lightbulb text-warning me-2"></i>
+          Encore deux petites minutes ! Remplissez vos coordonnées pour recevoir
+          un mini-diagnostic personnalisé, 100 % gratuit et confidentiel.
+        </p>
+
+        <div class="form-group">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="nom" class="form-label">
+                  <i class="fas fa-user me-2"></i>Nom complet
+                </label>
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  id="nom"
+                  name="nom"
+                  [(ngModel)]="formData.nom"
+                  placeholder="Votre nom et prénom"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="email" class="form-label">
+                  <i class="fas fa-envelope me-2"></i>Email
+                  <span class="badge bg-success ms-2">✅ obligatoire</span>
+                </label>
+                <input
+                  type="email"
+                  class="form-control custom-input"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="formData.email"
+                  placeholder="votre@email.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="custom-input-group">
+                <label for="telephone" class="form-label">
+                  <i class="fas fa-phone me-2"></i>Téléphone
+                  <span class="badge bg-success ms-2">✅ obligatoire</span>
+                </label>
+                <input
+                  type="tel"
+                  class="form-control custom-input"
+                  id="telephone"
+                  name="telephone"
+                  [(ngModel)]="formData.telephone"
+                  placeholder="+32 XXX XX XX XX"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-success mt-4">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-phone-alt fa-2x text-success me-3"></i>
+              <div>
+                <h6 class="mb-1">
+                  📞 Un expert MFINANCES vous rappellera sous 72h pour un
+                  échange sans engagement.
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 4: Chiffre d'affaires -->
+      <div *ngIf="currentStep === 4" class="step-content">
+        <h3 class="step-title mb-4">
+          4. Quel est votre chiffre d'affaires annuel moyen ?
+        </h3>
+        <p class="step-description mb-4">
+          Cela nous aide à calibrer les recommandations.
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.chiffre_affaires === 'moins-100k'"
+            >
+              <input
+                type="radio"
+                name="chiffre_affaires"
+                value="moins-100k"
+                [(ngModel)]="formData.chiffre_affaires"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-seedling text-success mb-2"></i>
+                <h6 class="mb-1">Moins de 100K €/an</h6>
+                <small class="text-muted"
+                  >Jeune entreprise ou activité réduite</small
+                >
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.chiffre_affaires === '100k-200k'"
+            >
+              <input
+                type="radio"
+                name="chiffre_affaires"
+                value="100k-200k"
+                [(ngModel)]="formData.chiffre_affaires"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-chart-line text-primary mb-2"></i>
+                <h6 class="mb-1">100K à 200K €/an</h6>
+                <small class="text-muted">Entreprise en développement</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.chiffre_affaires === '200k-500k'"
+            >
+              <input
+                type="radio"
+                name="chiffre_affaires"
+                value="200k-500k"
+                [(ngModel)]="formData.chiffre_affaires"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-trending-up text-warning mb-2"></i>
+                <h6 class="mb-1">200K à 500K €/an</h6>
+                <small class="text-muted">PME établie</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.chiffre_affaires === 'plus-500k'"
+            >
+              <input
+                type="radio"
+                name="chiffre_affaires"
+                value="plus-500k"
+                [(ngModel)]="formData.chiffre_affaires"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-building text-info mb-2"></i>
+                <h6 class="mb-1">Plus de 500K €/an</h6>
+                <small class="text-muted">Grande entreprise</small>
+              </div>
+            </label>
+          </div>
+
+          <div class="alert alert-warning mt-4">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-check-circle fa-2x text-warning me-3"></i>
+              <div>
+                <h6 class="mb-1">
+                  ✅ Merci ! Plus qu'un petit effort pour personnaliser à fond
+                  votre analyse.
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 5: Secteur d'activité -->
+      <div *ngIf="currentStep === 5" class="step-content">
+        <h3 class="step-title mb-4">
+          5. Quel est votre secteur d'activité principal ?
+        </h3>
+        <p class="step-description mb-4">
+          Cela nous permet de vous proposer des pistes adaptées.
+        </p>
+
+        <div class="form-group">
+          <div class="custom-radio-group">
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.secteur_activite === 'commerce-detail'"
+            >
+              <input
+                type="radio"
+                name="secteur_activite"
+                value="commerce-detail"
+                [(ngModel)]="formData.secteur_activite"
+                (change)="onSecteurChange('commerce-detail')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-store text-primary mb-2"></i>
+                <h6 class="mb-1">Commerce de détail</h6>
+                <small class="text-muted">Magasin, boutique...</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.secteur_activite === 'commerce-gros'"
+            >
+              <input
+                type="radio"
+                name="secteur_activite"
+                value="commerce-gros"
+                [(ngModel)]="formData.secteur_activite"
+                (change)="onSecteurChange('commerce-gros')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-warehouse text-success mb-2"></i>
+                <h6 class="mb-1">Commerce de gros</h6>
+                <small class="text-muted">Distribution, grossiste...</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.secteur_activite === 'ecommerce'"
+            >
+              <input
+                type="radio"
+                name="secteur_activite"
+                value="ecommerce"
+                [(ngModel)]="formData.secteur_activite"
+                (change)="onSecteurChange('ecommerce')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-laptop text-info mb-2"></i>
+                <h6 class="mb-1">E-commerce</h6>
+                <small class="text-muted">Vente en ligne...</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.secteur_activite === 'production'"
+            >
+              <input
+                type="radio"
+                name="secteur_activite"
+                value="production"
+                [(ngModel)]="formData.secteur_activite"
+                (change)="onSecteurChange('production')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-industry text-warning mb-2"></i>
+                <h6 class="mb-1">Production artisanale ou industrielle</h6>
+                <small class="text-muted">Fabrication, transformation...</small>
+              </div>
+            </label>
+
+            <label
+              class="custom-radio-option"
+              [class.selected]="formData.secteur_activite === 'autre'"
+            >
+              <input
+                type="radio"
+                name="secteur_activite"
+                value="autre"
+                [(ngModel)]="formData.secteur_activite"
+                (change)="onSecteurChange('autre')"
+                required
+              />
+              <span class="radio-checkmark"></span>
+              <div class="radio-content">
+                <i class="fas fa-ellipsis-h text-secondary mb-2"></i>
+                <h6 class="mb-1">Autre</h6>
+                <small class="text-muted">Mon secteur est différent</small>
+              </div>
+            </label>
+          </div>
+
+          <!-- Champ conditionnel pour "Autre" -->
+          <div
+            class="mt-3 animate__animated animate__fadeInDown"
+            *ngIf="showAutreSecteur"
+          >
+            <div class="custom-input-group">
+              <label for="secteur_autre" class="form-label">
+                <i class="fas fa-edit me-2"></i>Précisez votre secteur
+                d'activité
+              </label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                id="secteur_autre"
+                name="secteur_autre"
+                [(ngModel)]="formData.secteur_autre"
+                placeholder="Décrivez votre secteur d'activité..."
+                maxlength="200"
+              />
+            </div>
+          </div>
+
+          <!-- Étape 5 bis: Types de produits (conditionnelle) -->
+          <div
+            class="mt-4 animate__animated animate__fadeInDown"
+            *ngIf="showTypesProduits"
+          >
+            <h4 class="step-subtitle mb-3">
+              Quels types de produits gérez-vous principalement ?
+            </h4>
+
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.types_produits === 'alimentaires'"
+              >
+                <input
+                  type="radio"
+                  name="types_produits"
+                  value="alimentaires"
+                  [(ngModel)]="formData.types_produits"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-apple-alt text-success mb-2"></i>
+                  <h6 class="mb-1">Produits alimentaires</h6>
+                  <small class="text-muted">Frais, secs, boissons...</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.types_produits === 'maison-decoration'
+                "
+              >
+                <input
+                  type="radio"
+                  name="types_produits"
+                  value="maison-decoration"
+                  [(ngModel)]="formData.types_produits"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-home text-primary mb-2"></i>
+                  <h6 class="mb-1">Articles de maison et décoration</h6>
+                  <small class="text-muted">Mobilier, vaisselle, déco...</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.types_produits === 'vetements-accessoires'
+                "
+              >
+                <input
+                  type="radio"
+                  name="types_produits"
+                  value="vetements-accessoires"
+                  [(ngModel)]="formData.types_produits"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-tshirt text-info mb-2"></i>
+                  <h6 class="mb-1">Vêtements et accessoires</h6>
+                  <small class="text-muted">Textile, mode, chaussures...</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.types_produits === 'equipements-techniques'
+                "
+              >
+                <input
+                  type="radio"
+                  name="types_produits"
+                  value="equipements-techniques"
+                  [(ngModel)]="formData.types_produits"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-tools text-warning mb-2"></i>
+                  <h6 class="mb-1">Équipements techniques ou électroniques</h6>
+                  <small class="text-muted"
+                    >Machines, outils, électronique...</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.types_produits === 'autre'"
+              >
+                <input
+                  type="radio"
+                  name="types_produits"
+                  value="autre"
+                  [(ngModel)]="formData.types_produits"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-ellipsis-h text-secondary mb-2"></i>
+                  <h6 class="mb-1">Autre</h6>
+                  <small class="text-muted">Autre type de produits</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-contact-form-layout>
+</section>

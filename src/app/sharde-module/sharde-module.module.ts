@@ -1,23 +1,24 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ServicesComponent } from '../services/services.component';
-import { ZoneContactComponent } from '../zone-contact/zone-contact.component';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormCodePromoComponent } from '../form-code-promo/form-code-promo.component';
-import { FormsModule } from '@angular/forms';
+import { ServicesComponent } from '../services/services.component';
+import { ContactFormLayoutComponent } from '../shared/contact-form-layout/contact-form-layout.component';
+import { ZoneContactComponent } from '../zone-contact/zone-contact.component';
+
 @NgModule({
   declarations: [
     ServicesComponent,
     ZoneContactComponent,
-    FormCodePromoComponent
+    FormCodePromoComponent,
+    ContactFormLayoutComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-  ],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [
     ServicesComponent,
     ZoneContactComponent,
-    FormCodePromoComponent
-  ]
+    FormCodePromoComponent,
+    ContactFormLayoutComponent,
+  ],
 })
-export class ShardeModuleModule { }
+export class ShardeModuleModule {}

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { BoosteEntrepriseComponent } from '../booste-entreprise/booste-entreprise.component';
 import { CompteCourantAdministrateurComponent } from '../compte-courant-administrateur/compte-courant-administrateur.component';
@@ -22,6 +23,6 @@ import { VenteRoutingModule } from './vente-routing.module';
     CompteCourantAdministrateurComponent,
     BoosteEntrepriseComponent,
   ],
-  imports: [CommonModule, ShardeModuleModule, VenteRoutingModule],
+  imports: [CommonModule, FormsModule, ShardeModuleModule, VenteRoutingModule],
 })
 export class VenteModule {}
