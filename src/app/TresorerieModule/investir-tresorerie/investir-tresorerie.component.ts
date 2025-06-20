@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
+import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
 @Component({
@@ -16,6 +18,7 @@ export class InvestirTresorerieComponent implements OnInit, OnDestroy {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
   showAutreFrein = false;
   showAutreActivite = false;
   showMarchandises = false;
@@ -59,7 +62,11 @@ export class InvestirTresorerieComponent implements OnInit, OnDestroy {
     resetButton: 'Faire une nouvelle demande',
   };
 
-  constructor(private metaService: MetaService) {}
+  constructor(
+    private metaService: MetaService,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Investir Trésorerie
@@ -79,7 +86,7 @@ export class InvestirTresorerieComponent implements OnInit, OnDestroy {
   startPopupTimer() {
     this.popupTimer = setTimeout(() => {
       this.showPopup = true;
-    }, 30000); // 30 secondes
+    }, 10000); // 20 secondes
   }
 
   closePopup() {
@@ -184,11 +191,101 @@ export class InvestirTresorerieComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    if (this.isFormValid()) {
-      console.log('Form submitted:', this.formData);
-      this.formSubmitted = true;
-      // Ici vous pouvez ajouter la logique d'envoi des données
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Diagnostic Investissement & Trésorerie</h3>`,
+      `<p><strong>Souhaite investir:</strong> ${this.getSouhaiteInvestirLabel()}</p>`,
+      `<p><strong>Frein principal:</strong> ${this.getFreinLabel()}</p>`,
+      this.formData.frein_autre
+        ? `<p><strong>Précision frein:</strong> ${this.formData.frein_autre}</p>`
+        : '',
+      `<p><strong>Chiffre d'affaires:</strong> ${this.formData.chiffre_affaires}</p>`,
+      `<p><strong>Type d'activité:</strong> ${this.getActiviteLabel()}</p>`,
+      this.formData.activite_autre
+        ? `<p><strong>Précision activité:</strong> ${this.formData.activite_autre}</p>`
+        : '',
+      this.formData.type_marchandises
+        ? `<p><strong>Type de marchandises:</strong> ${this.formData.type_marchandises}</p>`
+        : '',
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'investir_tresorerie',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getSouhaiteInvestirLabel(): string {
+    const options = {
+      'oui-pret': 'Oui, je suis prêt',
+      'oui-hesitations': "Oui, mais j'ai des hésitations",
+      'non-info': "Non, je m'informe juste",
+    };
+    return (
+      options[this.formData.souhaite_investir as keyof typeof options] ||
+      this.formData.souhaite_investir
+    );
+  }
+
+  private getFreinLabel(): string {
+    const freins = {
+      'manque-liquidites': 'Manque de liquidités',
+      'peur-endettement': "Peur de l'endettement",
+      'incertitude-rentabilite': 'Incertitude sur la rentabilité',
+      'complexite-financement': 'Complexité du financement',
+      autre: 'Autre',
+    };
+    return (
+      freins[this.formData.frein_principal as keyof typeof freins] ||
+      this.formData.frein_principal
+    );
+  }
+
+  private getActiviteLabel(): string {
+    const activites = {
+      independant: 'Indépendant',
+      'commerce-detail': 'Commerce de détail',
+      'commerce-gros': 'Commerce de gros',
+      services: 'Prestations de services',
+      production: 'Production',
+      autre: 'Autre',
+    };
+    return (
+      activites[this.formData.type_activite as keyof typeof activites] ||
+      this.formData.type_activite
+    );
   }
 
   onReset() {

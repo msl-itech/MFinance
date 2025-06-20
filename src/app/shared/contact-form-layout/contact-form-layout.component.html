@@ -270,11 +270,16 @@
                   type="button"
                   class="btn btn-success btn-lg"
                   *ngIf="currentStep === totalSteps"
-                  [disabled]="!isFormValid"
+                  [disabled]="!isFormValid || isLoading"
                   (click)="onSubmit()"
                 >
-                  <i class="fas fa-paper-plane me-2"></i
-                  >{{ config.submitButton }}
+                  <i
+                    class="fas me-2"
+                    [class.fa-spinner]="isLoading"
+                    [class.fa-spin]="isLoading"
+                    [class.fa-paper-plane]="!isLoading"
+                  ></i>
+                  {{ isLoading ? "Envoi en cours..." : config.submitButton }}
                 </button>
               </div>
             </div>

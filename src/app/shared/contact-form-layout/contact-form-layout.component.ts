@@ -33,6 +33,7 @@ export class ContactFormLayoutComponent {
   @Input() formSubmitted: boolean = false;
   @Input() isStepValid: boolean = false;
   @Input() isFormValid: boolean = false;
+  @Input() isLoading: boolean = false;
 
   @Output() nextStep = new EventEmitter<void>();
   @Output() previousStep = new EventEmitter<void>();

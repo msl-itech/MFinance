@@ -642,7 +642,7 @@
 
     <div class="popup-header">
       <i class="fas fa-chart-line popup-icon"></i>
-      <h3>💸 Diagnostic Investissement Express</h3>
+      <h3>Diagnostic Investissement Express</h3>
       <p>
         Découvrez en 3 minutes si votre investissement va booster… ou ruiner
         votre trésorerie !
@@ -687,6 +687,7 @@
     [formSubmitted]="formSubmitted"
     [isStepValid]="isStepValid()"
     [isFormValid]="isFormValid()"
+    [isLoading]="isLoading"
     (nextStep)="onNextStep()"
     (previousStep)="onPreviousStep()"
     (submit)="onSubmit()"

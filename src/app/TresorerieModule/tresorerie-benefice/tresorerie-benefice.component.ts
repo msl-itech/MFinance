@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
+import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
 @Component({
@@ -11,7 +13,7 @@ export class TresorerieBeneficeComponent implements OnInit {
   // Configuration du formulaire
   formConfig: ContactFormConfig = {
     // Texte à gauche
-    eyebrow: '💰 Bilan Express',
+    eyebrow: ' Bilan Express',
     title: 'Bilan Trésorerie Express – en 4 questions',
     description:
       "Pour bien démarrer, identifions ensemble le principal frein à votre trésorerie aujourd'hui. Ces informations nous permettent de vous fournir un retour réellement personnalisé.",
@@ -37,6 +39,7 @@ export class TresorerieBeneficeComponent implements OnInit {
   currentStep = 1;
   totalSteps = 4;
   formSubmitted = false;
+  isLoading = false;
 
   // État du pop-up
   showPopup = false;
@@ -56,7 +59,11 @@ export class TresorerieBeneficeComponent implements OnInit {
   // Flags pour les champs "autre"
   showAutreSituation = false;
 
-  constructor(private metaService: MetaService) {}
+  constructor(
+    private metaService: MetaService,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Trésorerie Bénéfice
@@ -67,7 +74,7 @@ export class TresorerieBeneficeComponent implements OnInit {
       if (!this.popupClosed) {
         this.showPopup = true;
       }
-    }, 15000);
+    }, 10000);
   }
 
   scrollToSection(sectionId: string): void {
@@ -102,11 +109,52 @@ export class TresorerieBeneficeComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.isFormValid()) {
-      this.formSubmitted = true;
-      console.log('Données du formulaire:', this.formData);
-      // Ici vous pouvez ajouter l'envoi des données à votre service
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Bilan Trésorerie Express</h3>`,
+      `<p><strong>Situation actuelle:</strong> ${this.getSituationLabel()}</p>`,
+      this.formData.situation_autre
+        ? `<p><strong>Précision situation:</strong> ${this.formData.situation_autre}</p>`
+        : '',
+      `<p><strong>Chiffre d'affaires:</strong> ${this.formData.chiffre_affaires}</p>`,
+      `<p><strong>Pratiques de gestion:</strong> ${this.getPratiquesLabel()}</p>`,
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'tresorerie_benefice',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
   }
 
   onReset(): void {
@@ -159,5 +207,32 @@ export class TresorerieBeneficeComponent implements OnInit {
     if (value !== 'autre') {
       this.formData.situation_autre = '';
     }
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getSituationLabel(): string {
+    const situations = {
+      'bonne-tresorerie': 'Bonne trésorerie mais manque de visibilité',
+      'tensions-regulieres': 'Tensions régulières',
+      'difficultes-majeures': 'Difficultés majeures',
+      autre: 'Autre',
+    };
+    return (
+      situations[this.formData.situation_actuelle as keyof typeof situations] ||
+      this.formData.situation_actuelle
+    );
+  }
+
+  private getPratiquesLabel(): string {
+    const pratiques = {
+      'suivi-quotidien': 'Suivi quotidien',
+      'suivi-hebdomadaire': 'Suivi hebdomadaire',
+      'suivi-mensuel': 'Suivi mensuel',
+      'pas-de-suivi': 'Pas de suivi régulier',
+    };
+    return (
+      pratiques[this.formData.pratiques_gestion as keyof typeof pratiques] ||
+      this.formData.pratiques_gestion
+    );
   }
 }

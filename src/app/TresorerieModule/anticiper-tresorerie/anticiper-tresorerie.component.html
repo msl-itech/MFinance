@@ -690,7 +690,7 @@
     <div class="popup-header">
       <i class="fas fa-chart-line popup-icon"></i>
       <h3>
-        📊 Découvrez si vous anticipez assez pour éviter une crise de trésorerie
+        Découvrez si vous anticipez assez pour éviter une crise de trésorerie
       </h3>
       <p>
         En 5 étapes simples, évaluez votre capacité à anticiper vos besoins
@@ -736,6 +736,7 @@
     [formSubmitted]="formSubmitted"
     [isStepValid]="isStepValid()"
     [isFormValid]="isFormValid()"
+    [isLoading]="isLoading"
     (nextStep)="onNextStep()"
     (previousStep)="onPreviousStep()"
     (submit)="onSubmit()"

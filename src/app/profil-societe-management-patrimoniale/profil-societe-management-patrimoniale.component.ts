@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../services/meta.service';
+import { OdooService } from '../services/odoo.service';
 import { MANAGEMENT_PATRIMONIAL_FORM_CONFIG } from '../shared/contact-form-layout/contact-form-configs';
 
 @Component({
@@ -13,6 +15,7 @@ export class ProfilSocieteManagementPatrimonialeComponent implements OnInit {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
   formConfig = MANAGEMENT_PATRIMONIAL_FORM_CONFIG;
 
   // Options pour le type de société
@@ -111,7 +114,12 @@ export class ProfilSocieteManagementPatrimonialeComponent implements OnInit {
     },
   ];
 
-  constructor(private metaService: MetaService, private fb: FormBuilder) {
+  constructor(
+    private metaService: MetaService,
+    private fb: FormBuilder,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {
     this.initForm();
   }
 
@@ -190,11 +198,94 @@ export class ProfilSocieteManagementPatrimonialeComponent implements OnInit {
 
   // Soumission du formulaire
   onSubmit(): void {
-    if (this.managementForm.valid) {
-      console.log('Formulaire soumis:', this.managementForm.value);
-      this.formSubmitted = true;
-      // Ici, vous pouvez ajouter la logique pour envoyer les données au serveur
+    if (!this.managementForm.valid) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const formData = this.managementForm.value;
+    const descriptionParts = [
+      `<h3>Demande d'accompagnement - Société de Management Patrimoniale</h3>`,
+      `<p><strong>Type de société:</strong> ${this.getTypeLabel(
+        formData.typeSociete
+      )}</p>`,
+      formData.autreType
+        ? `<p><strong>Précision:</strong> ${formData.autreType}</p>`
+        : '',
+      `<p><strong>Chiffre d'affaires:</strong> ${this.getRevenuLabel(
+        formData.chiffreAffaires
+      )}</p>`,
+      `<p><strong>Gestion comptabilité:</strong> ${this.getComptabiliteLabel(
+        formData.comptabilite
+      )}</p>`,
+      `<p><strong>Besoins prioritaires:</strong></p>`,
+      `<ul>${this.getSelectedBesoins(formData)
+        .map((b) => `<li>${b}</li>`)
+        .join('')}</ul>`,
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: `${formData.prenom} ${formData.nom}`,
+      phone: formData.telephone,
+      email_from: formData.email,
+      description: fullDescription,
+      lead_type: 'profil_societe_management_patrimoniale',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getTypeLabel(value: string): string {
+    const type = this.societeTypes.find((t) => t.value === value);
+    return type ? type.label : value;
+  }
+
+  private getRevenuLabel(value: string): string {
+    const revenu = this.revenuRanges.find((r) => r.value === value);
+    return revenu ? revenu.label : value;
+  }
+
+  private getComptabiliteLabel(value: string): string {
+    const comptabilite = this.comptabiliteOptions.find(
+      (c) => c.value === value
+    );
+    return comptabilite ? comptabilite.label : value;
+  }
+
+  private getSelectedBesoins(formData: any): string[] {
+    const besoins = [];
+    if (formData.besoin_comptabilite) besoins.push('Tenue de la comptabilité');
+    if (formData.besoin_fiscal) besoins.push('Déclarations fiscales');
+    if (formData.besoin_gestion_patrimoniale)
+      besoins.push('Conseil en gestion patrimoniale');
+    if (formData.besoin_optimisation) besoins.push('Optimisation fiscale');
+    if (formData.besoin_autre) {
+      besoins.push(formData.autreBesoin || 'Autre');
+    }
+    return besoins;
   }
 
   // Réinitialisation du formulaire

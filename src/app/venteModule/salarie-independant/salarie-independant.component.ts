@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
+import { OdooService } from '../../services/odoo.service';
 import { SALARIE_INDEPENDANT_FORM_CONFIG } from '../../shared/contact-form-layout/contact-form-configs';
 
 @Component({
@@ -12,6 +14,7 @@ export class SalarieIndependantComponent implements OnInit {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
 
   // Variables pour les inputs conditionnels
   showAutreProfil = false;
@@ -32,7 +35,11 @@ export class SalarieIndependantComponent implements OnInit {
     besoins_autre: '',
   };
 
-  constructor(private metaService: MetaService) {}
+  constructor(
+    private metaService: MetaService,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Salarié Indépendant
@@ -93,10 +100,116 @@ export class SalarieIndependantComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.isFormValid) {
-      this.formSubmitted = true;
-      console.log('Données du formulaire:', this.formData);
+    if (!this.isFormValid) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Transition Salarié vers Indépendant</h3>`,
+      `<p><strong>Profil actuel:</strong> ${this.getProfilLabel()}</p>`,
+      this.formData.profil_autre
+        ? `<p><strong>Précision profil:</strong> ${this.formData.profil_autre}</p>`
+        : '',
+      `<p><strong>Motivation principale:</strong> ${this.getMotivationLabel()}</p>`,
+      this.formData.motivation_autre
+        ? `<p><strong>Précision motivation:</strong> ${this.formData.motivation_autre}</p>`
+        : '',
+      `<p><strong>Niveau de connaissance:</strong> ${this.getConnaissanceLabel()}</p>`,
+      `<p><strong>Besoins prioritaires:</strong></p>`,
+      `<ul>${this.getSelectedBesoins()
+        .map((b) => `<li>${b}</li>`)
+        .join('')}</ul>`,
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'salarie_independant',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getProfilLabel(): string {
+    const profils = {
+      employe: 'Employé',
+      cadre: 'Cadre',
+      fonctionnaire: 'Fonctionnaire',
+      liberal: 'Professionnel libéral',
+      autre: 'Autre',
+    };
+    return (
+      profils[this.formData.profil as keyof typeof profils] ||
+      this.formData.profil
+    );
+  }
+
+  private getMotivationLabel(): string {
+    const motivations = {
+      liberte: 'Plus de liberté',
+      revenus: 'Augmenter mes revenus',
+      passion: 'Suivre ma passion',
+      opportunite: 'Saisir une opportunité',
+      autre: 'Autre',
+    };
+    return (
+      motivations[this.formData.motivation as keyof typeof motivations] ||
+      this.formData.motivation
+    );
+  }
+
+  private getConnaissanceLabel(): string {
+    const niveaux = {
+      aucune: 'Aucune connaissance',
+      notions: 'Quelques notions',
+      bonne: 'Bonne connaissance',
+      experte: 'Connaissance experte',
+    };
+    return (
+      niveaux[this.formData.connaissance as keyof typeof niveaux] ||
+      this.formData.connaissance
+    );
+  }
+
+  private getSelectedBesoins(): string[] {
+    const besoinsLabels = {
+      statut: 'Choisir le bon statut',
+      demarches: 'Comprendre les démarches',
+      fiscalite: 'Maîtriser la fiscalité',
+      comptabilite: 'Organiser la comptabilité',
+      'protection-sociale': 'Protection sociale',
+      autre: this.formData.besoins_autre || 'Autre',
+    };
+
+    return this.formData.besoins.map(
+      (besoin) => besoinsLabels[besoin as keyof typeof besoinsLabels] || besoin
+    );
   }
 
   onReset(): void {

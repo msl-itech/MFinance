@@ -1,7 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { fromEvent, Subscription, throttleTime } from 'rxjs';
 import { MetaService } from '../services/meta.service';
+import { OdooService } from '../services/odoo.service';
 import { ASBL_FORM_CONFIG } from '../shared/contact-form-layout/contact-form-configs';
 
 @Component({
@@ -24,6 +26,7 @@ export class AbslComponent implements OnInit {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
   formConfig = ASBL_FORM_CONFIG;
 
   // Données pour les options du formulaire
@@ -88,7 +91,12 @@ export class AbslComponent implements OnInit {
     { value: 'autre', label: 'Autre', icon: 'fas fa-plus' },
   ];
 
-  constructor(private metaService: MetaService, private fb: FormBuilder) {}
+  constructor(
+    private metaService: MetaService,
+    private fb: FormBuilder,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page ASBL
@@ -178,29 +186,104 @@ export class AbslComponent implements OnInit {
 
   // Soumission du formulaire
   onSubmit() {
-    if (this.asblForm.valid) {
-      const formData = this.asblForm.value;
-
-      // Ici vous pouvez traiter les données du formulaire
-      console.log('Données du formulaire:', formData);
-
-      // Simuler l'envoi des données
-      this.submitFormData(formData);
-
-      // Afficher le message de confirmation
-      this.formSubmitted = true;
+    if (!this.asblForm.valid) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const formData = this.asblForm.value;
+    const descriptionParts = [
+      `<h3>Demande d'accompagnement ASBL</h3>`,
+      `<p><strong>Type d'ASBL:</strong> ${this.getTypeAsblLabel(
+        formData.typeAsbl
+      )}</p>`,
+      formData.autreType
+        ? `<p><strong>Précision:</strong> ${formData.autreType}</p>`
+        : '',
+      `<p><strong>Budget annuel:</strong> ${this.getBudgetLabel(
+        formData.budgetAnnuel
+      )}</p>`,
+      `<p><strong>Gestion comptabilité:</strong> ${this.getComptabiliteLabel(
+        formData.comptabilite
+      )}</p>`,
+      `<p><strong>Priorités sélectionnées:</strong></p>`,
+      `<ul>${this.getSelectedPriorities(formData)
+        .map((p) => `<li>${p}</li>`)
+        .join('')}</ul>`,
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: `${formData.prenom} ${formData.nom}`,
+      phone: formData.telephone,
+      email_from: formData.email,
+      description: fullDescription,
+      lead_type: 'asbl', // Pour identifier le type de lead
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
   }
 
-  // Méthode pour traiter l'envoi des données
-  private submitFormData(data: any) {
-    // Ici vous pouvez ajouter la logique pour envoyer les données à votre backend
-    // Par exemple : this.httpService.submitAsblForm(data).subscribe(...)
+  // Méthodes utilitaires pour les labels
+  private getTypeAsblLabel(value: string): string {
+    const type = this.asblTypes.find((t) => t.value === value);
+    return type ? type.label : value;
+  }
 
-    // Pour l'instant, on simule juste l'envoi
-    setTimeout(() => {
-      console.log('Formulaire envoyé avec succès!');
-    }, 1000);
+  private getBudgetLabel(value: string): string {
+    const budget = this.budgetRanges.find((b) => b.value === value);
+    return budget ? budget.label : value;
+  }
+
+  private getComptabiliteLabel(value: string): string {
+    const comptabilite = this.comptabiliteOptions.find(
+      (c) => c.value === value
+    );
+    return comptabilite ? comptabilite.label : value;
+  }
+
+  private getSelectedPriorities(formData: any): string[] {
+    const priorities = [];
+    if (formData.priorite_organisation)
+      priorities.push('Organisation administrative');
+    if (formData.priorite_comptabilite)
+      priorities.push('Tenue de la comptabilité');
+    if (formData.priorite_conseil)
+      priorities.push('Conseil en gestion financière');
+    if (formData.priorite_formation)
+      priorities.push('Formation pour les membres');
+    if (formData.priorite_autre) {
+      priorities.push(formData.autrePriorite || 'Autre');
+    }
+    return priorities;
+  }
+
+  // Méthode pour traiter l'envoi des données (maintenant obsolète mais gardée pour compatibilité)
+  private submitFormData(data: any) {
+    // Cette méthode n'est plus utilisée directement,
+    // la logique a été déplacée dans onSubmit()
+    console.log('Méthode obsolète - utilisez onSubmit() à la place');
   }
 
   // Réinitialiser le formulaire
