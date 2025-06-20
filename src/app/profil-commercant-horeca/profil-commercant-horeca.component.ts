@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../services/meta.service';
+import { OdooService } from '../services/odoo.service';
 import { COMMERCANT_HORECA_FORM_CONFIG } from '../shared/contact-form-layout/contact-form-configs';
 
 @Component({
@@ -14,6 +16,7 @@ export class ProfilCommercantHorecaComponent implements OnInit {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
 
   // Données du formulaire
   formData = {
@@ -36,7 +39,11 @@ export class ProfilCommercantHorecaComponent implements OnInit {
   showAutreMarchandises = false;
   showAutreBesoin = false;
 
-  constructor(private metaService: MetaService) {}
+  constructor(
+    private metaService: MetaService,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Commerçant Horeca
@@ -150,11 +157,109 @@ export class ProfilCommercantHorecaComponent implements OnInit {
 
   // Soumission du formulaire
   onSubmit(): void {
-    if (this.isFormValid) {
-      this.formSubmitted = true;
-      console.log('Données du formulaire Commerçant HORECA:', this.formData);
-      // Ici, vous pouvez ajouter la logique d'envoi des données
+    if (!this.isFormValid) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Demande d'accompagnement - Commerçant HORECA</h3>`,
+      `<p><strong>Type d'établissement:</strong> ${this.getTypeEtablissementLabel()}</p>`,
+      this.formData.type_etablissement_autre
+        ? `<p><strong>Précision établissement:</strong> ${this.formData.type_etablissement_autre}</p>`
+        : '',
+      this.formData.type_marchandises
+        ? `<p><strong>Type de marchandises:</strong> ${this.getTypeMarchandisesLabel()}</p>`
+        : '',
+      this.formData.type_marchandises_autre
+        ? `<p><strong>Précision marchandises:</strong> ${this.formData.type_marchandises_autre}</p>`
+        : '',
+      `<p><strong>Revenus annuels:</strong> ${this.formData.revenus}</p>`,
+      `<p><strong>Gestion comptabilité:</strong> ${this.formData.comptabilite}</p>`,
+      this.formData.besoins.length > 0
+        ? `<p><strong>Besoins prioritaires:</strong></p>`
+        : '',
+      this.formData.besoins.length > 0
+        ? `<ul>${this.getSelectedBesoins()
+            .map((b) => `<li>${b}</li>`)
+            .join('')}</ul>`
+        : '',
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'profil_commercant_horeca',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getTypeEtablissementLabel(): string {
+    const types = {
+      restaurant: 'Restaurant',
+      'bar-cafe': 'Bar/Café',
+      hotel: 'Hôtel',
+      'commerce-detail': 'Commerce de détail',
+      'commerce-gros': 'Commerce de gros',
+      autre: 'Autre',
+    };
+    return (
+      types[this.formData.type_etablissement as keyof typeof types] ||
+      this.formData.type_etablissement
+    );
+  }
+
+  private getTypeMarchandisesLabel(): string {
+    const types = {
+      alimentaire: 'Alimentaire',
+      textile: 'Textile',
+      electronique: 'Électronique',
+      'autre-marchandises': 'Autre',
+    };
+    return (
+      types[this.formData.type_marchandises as keyof typeof types] ||
+      this.formData.type_marchandises
+    );
+  }
+
+  private getSelectedBesoins(): string[] {
+    const besoinsLabels = {
+      comptabilite: 'Tenue de la comptabilité',
+      fiscal: 'Déclarations fiscales',
+      gestion: 'Conseil en gestion',
+      optimisation: 'Optimisation fiscale',
+      autre: this.formData.besoins_autre || 'Autre',
+    };
+
+    return this.formData.besoins.map(
+      (besoin) => besoinsLabels[besoin as keyof typeof besoinsLabels] || besoin
+    );
   }
 
   onReset(): void {

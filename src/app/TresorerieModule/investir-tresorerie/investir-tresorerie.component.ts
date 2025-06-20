@@ -79,7 +79,7 @@ export class InvestirTresorerieComponent implements OnInit, OnDestroy {
   startPopupTimer() {
     this.popupTimer = setTimeout(() => {
       this.showPopup = true;
-    }, 30000); // 30 secondes
+    }, 10000); // 20 secondes
   }
 
   closePopup() {

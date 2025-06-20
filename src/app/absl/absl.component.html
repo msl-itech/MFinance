@@ -907,14 +907,14 @@
         >
           Contactez-nous <i class="fas fa-arrow-right"></i>
         </a>
-        <button
+        <!-- <button
           (click)="scrollToSection('formulaire-evaluation')"
           class="btn btn-outline-light btn-sm px-3 py-2"
           data-aos="zoom-in"
           data-aos-delay="900"
         >
           🧭 Évaluation gratuite <i class="fas fa-arrow-down"></i>
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
@@ -926,6 +926,7 @@
   [formSubmitted]="formSubmitted"
   [isStepValid]="isCurrentStepValid()"
   [isFormValid]="asblForm.valid"
+  [isLoading]="isLoading"
   (nextStep)="nextStep()"
   (previousStep)="previousStep()"
   (submit)="onSubmit()"

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../services/meta.service';
+import { OdooService } from '../services/odoo.service';
 import { SOCIETE_MOYEN_FORM_CONFIG } from '../shared/contact-form-layout/contact-form-configs';
 
 @Component({
@@ -12,6 +14,7 @@ export class ProfilSocieteMoyenComponent implements OnInit {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
 
   // Variables pour les inputs conditionnels
   showAutreSecteur = false;
@@ -30,7 +33,11 @@ export class ProfilSocieteMoyenComponent implements OnInit {
     besoins_autre: '',
   };
 
-  constructor(private metaService: MetaService) {}
+  constructor(
+    private metaService: MetaService,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Société Moyen
@@ -83,10 +90,56 @@ export class ProfilSocieteMoyenComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.isFormValid) {
-      this.formSubmitted = true;
-      console.log('Données du formulaire:', this.formData);
+    if (!this.isFormValid) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Demande d'accompagnement - Société de Taille Moyenne</h3>`,
+      `<p><strong>Secteur d'activité:</strong> ${this.getSecteurLabel()}</p>`,
+      this.formData.secteur_autre
+        ? `<p><strong>Précision:</strong> ${this.formData.secteur_autre}</p>`
+        : '',
+      `<p><strong>Revenus annuels:</strong> ${this.formData.revenus}</p>`,
+      `<p><strong>Gestion comptabilité:</strong> ${this.formData.comptabilite}</p>`,
+      `<p><strong>Besoins prioritaires:</strong></p>`,
+      `<ul>${this.getSelectedBesoins()
+        .map((b) => `<li>${b}</li>`)
+        .join('')}</ul>`,
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'profil_societe_moyen',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
   }
 
   onReset(): void {
@@ -138,5 +191,34 @@ export class ProfilSocieteMoyenComponent implements OnInit {
 
   get isFormValid(): boolean {
     return this.currentStep === this.totalSteps && this.isStepValid;
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getSecteurLabel(): string {
+    const secteurs = {
+      commerce: 'Commerce',
+      services: 'Services',
+      industrie: 'Industrie',
+      technologie: 'Technologie',
+      autre: 'Autre',
+    };
+    return (
+      secteurs[this.formData.secteur as keyof typeof secteurs] ||
+      this.formData.secteur
+    );
+  }
+
+  private getSelectedBesoins(): string[] {
+    const besoinsLabels = {
+      comptabilite: 'Tenue de la comptabilité',
+      fiscal: 'Déclarations fiscales',
+      gestion: 'Conseil en gestion financière',
+      optimisation: 'Optimisation fiscale',
+      autre: this.formData.besoins_autre || 'Autre',
+    };
+
+    return this.formData.besoins.map(
+      (besoin) => besoinsLabels[besoin as keyof typeof besoinsLabels] || besoin
+    );
   }
 }

@@ -1,157 +1,255 @@
-<div class="contact-section">
-  <div class="container contact-overlay">
-    <div class="row align-items-center">
-      <!-- Texte à gauche -->
-      <div class="col-md-8 contact-text">
-        <p class="text-uppercase font-weight-bold">Nos contacts</p>
-        <h1>
-          Prêt à optimiser vos <br />
-          finances ?
-        </h1>
-        <p>
-          Contactez-nous dès aujourd'hui pour une consultation personnalisée.<br />
-          Nous sommes impatients de participer à votre succès financier.
-        </p>
-        <p>Votre avenir économique commence maintenant.</p>
-        <div class="contact-button mt-4">
-          <a href="/contact" class="btn btn-red">Contactez-nous</a>
-          <a href="tel:+3228838686" class="btn btn-outline">+32 2 886 05 50</a>
+<app-contact-form-layout
+  [config]="config"
+  [currentStep]="currentStep"
+  [totalSteps]="totalSteps"
+  [formSubmitted]="formSubmitted"
+  [isStepValid]="isStepValid"
+  [isFormValid]="isFormValid"
+  (nextStep)="onNextStep()"
+  (previousStep)="onPreviousStep()"
+  (submit)="onSubmit()"
+  (reset)="onReset()"
+>
+  <div
+    slot="form-content"
+    class="step-content animate__animated animate__fadeIn"
+  >
+    <!-- ÉTAPE 1: Situation actuelle -->
+    <div *ngIf="currentStep === 1">
+      <h4 class="step-title">
+        <i class="fas fa-user-circle text-success me-2"></i>1. Quelle est votre
+        situation actuelle ?
+      </h4>
+      <p class="step-description">
+        Choisissez l'option qui décrit le mieux votre contexte :
+      </p>
+
+      <div class="custom-radio-group">
+        <label
+          *ngFor="let option of situationOptions"
+          class="custom-radio-option"
+          [class.selected]="formData.situation === option.value"
+        >
+          <input
+            type="radio"
+            [value]="option.value"
+            (change)="onSituationChange(option.value)"
+            [checked]="formData.situation === option.value"
+          />
+          <div class="radio-checkmark"></div>
+          <div class="radio-content">
+            <div
+              style="font-size: 1.5rem; margin-bottom: 0.5rem"
+              [innerHTML]="option.icon"
+            ></div>
+            <h6>{{ option.title }}</h6>
+            <small>{{ option.description }}</small>
+          </div>
+        </label>
+      </div>
+
+      <!-- Champ "Autre" conditionnel -->
+      <div
+        class="custom-input-group mt-3"
+        *ngIf="formData.situation === 'autre'"
+      >
+        <label class="form-label">
+          <i class="fas fa-edit"></i>
+          Précisez votre situation :
+        </label>
+        <input
+          type="text"
+          class="form-control custom-input"
+          placeholder="Décrivez brièvement votre situation..."
+          [(ngModel)]="formData.situationAutre"
+        />
+      </div>
+    </div>
+
+    <!-- ÉTAPE 2: Informations de contact -->
+    <div *ngIf="currentStep === 2">
+      <h4 class="step-title">
+        <i class="fas fa-envelope text-success me-2"></i>2. Comment pouvons-nous
+        vous contacter ?
+      </h4>
+      <p class="step-description">
+        Merci de compléter ces informations pour qu'un conseiller puisse vous
+        joindre rapidement :
+      </p>
+
+      <div class="row g-3">
+        <div class="col-12">
+          <div class="custom-input-group">
+            <label class="form-label">
+              <i class="fas fa-user"></i>
+              Nom *
+            </label>
+            <input
+              type="text"
+              class="form-control custom-input"
+              placeholder="Votre nom et prénom"
+              [(ngModel)]="formData.nom"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="custom-input-group">
+            <label class="form-label">
+              <i class="fas fa-envelope"></i>
+              Email * <span class="badge bg-danger">obligatoire</span>
+            </label>
+            <input
+              type="email"
+              class="form-control custom-input"
+              placeholder="votre.email@exemple.com"
+              [(ngModel)]="formData.email"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="custom-input-group">
+            <label class="form-label">
+              <i class="fas fa-phone"></i>
+              Téléphone *
+              <span class="badge bg-danger">obligatoire</span>
+            </label>
+            <input
+              type="tel"
+              class="form-control custom-input"
+              placeholder="+32 X XX XX XX XX"
+              [(ngModel)]="formData.telephone"
+              required
+            />
+          </div>
         </div>
       </div>
 
-      <!-- Formulaire à droite -->
-      <div class="col-md-4 ml-auto mt-5">
-        <div class="contact-form">
-          <h2>Formulaire de contact</h2>
-          <p class="mb-4">
-            Remplissez le formulaire, et notre expert-comptable vous répondra
-            rapidement.
-          </p>
-          <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-            <!-- Première ligne -->
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Nom & Prénom"
-                  name="contact_name"
-                  [(ngModel)]="contact_name"
-                  required
-                />
-              </div>
-              <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Téléphone"
-                  name="phone"
-                  [(ngModel)]="phone"
-                  required
-                />
-              </div>
-            </div>
+      <div class="alert alert-info mt-4">
+        <i class="fas fa-phone me-2"></i>
+        Un conseiller MFINANCES vous appellera sous 72h. L'échange est gratuit,
+        confidentiel et sans engagement.
+      </div>
+    </div>
 
-            <!-- Deuxième ligne -->
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Email"
-                  name="email_from"
-                  [(ngModel)]="email_from"
-                  required
-                />
-              </div>
-              <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Secteur d'activité"
-                  name="industry"
-                  [(ngModel)]="industry"
-                  required
-                />
-              </div>
-            </div>
+    <!-- ÉTAPE 3: Moment de contact -->
+    <div *ngIf="currentStep === 3">
+      <h4 class="step-title">
+        <i class="fas fa-clock text-success me-2"></i>3. À quel moment
+        préférez-vous être contacté ?
+      </h4>
+      <p class="step-description">
+        Choisissez les créneaux qui vous conviennent le mieux :
+      </p>
 
-            <!-- Troisième ligne -->
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="N° de TVA / BCE"
-                  name="vat_number"
-                  [(ngModel)]="vat_number"
-                />
-              </div>
-              <div class="form-group col-md-6">
-                <select
-                  class="form-control"
-                  name="service_type"
-                  [(ngModel)]="service_type"
-                  required
-                >
-                  <option value="">
-                    -- De quel service avez-vous besoin ? --
-                  </option>
-                  <option
-                    *ngFor="let option of serviceOptions"
-                    [value]="option.value"
-                  >
-                    {{ option.label }}
-                  </option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Quatrième ligne -->
-            <div class="form-group2 mb-3">
-              <select
-                class="form-control"
-                name="best_time"
-                [(ngModel)]="best_time"
-                required
+      <div class="row g-3">
+        <div class="col-12">
+          <label class="form-label">
+            <i class="fas fa-clock"></i>
+            Créneaux horaires préférés :
+          </label>
+          <div class="mt-2">
+            <div class="form-check mb-2" *ngFor="let creneau of creneauOptions">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                [id]="'creneau-' + creneau.value"
+                [checked]="formData.creneauHoraire.includes(creneau.value)"
+                (change)="
+                  onCreneauChange(creneau.value, $any($event.target).checked)
+                "
+              />
+              <label
+                class="form-check-label"
+                [for]="'creneau-' + creneau.value"
               >
-                <option value="">
-                  -- Meilleur moment pour être contacté --
-                </option>
-                <option
-                  *ngFor="let option of timeOptions"
-                  [value]="option.value"
-                >
-                  {{ option.label }}
-                </option>
-              </select>
+                {{ creneau.label }}
+              </label>
             </div>
+          </div>
+        </div>
 
-            <!-- Cinquième ligne -->
-            <div class="form-group2 mb-3">
-              <textarea
-                class="form-control"
-                rows="4"
-                placeholder="Décrivez votre besoin en détail"
-                name="description"
-                [(ngModel)]="description"
-              ></textarea>
-            </div>
-
-            <!-- Bouton de soumission -->
-            <button
-              type="submit"
-              class="btn btn-primary-custom"
-              [disabled]="isLoading || !contactForm.valid"
-            >
-              <span *ngIf="!isLoading">Envoyer</span>
-              <span *ngIf="isLoading" class="spinner">
-                <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
-              </span>
-            </button>
-          </form>
+        <div class="col-12">
+          <div class="custom-input-group">
+            <label class="form-label">
+              <i class="fas fa-calendar"></i>
+              Avez-vous un jour préféré ?
+            </label>
+            <input
+              type="text"
+              class="form-control custom-input"
+              placeholder="Ex: Lundi, Mardi matin, Vendredi après-midi..."
+              [(ngModel)]="formData.jourPrefere"
+            />
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- ÉTAPE 4: Sujets prioritaires -->
+    <div *ngIf="currentStep === 4">
+      <h4 class="step-title">
+        <i class="fas fa-star text-success me-2"></i>4. Quels sont les deux
+        sujets les plus urgents ou importants pour vous aujourd'hui ?
+      </h4>
+      <p class="step-description">
+        Cochez maximum 2 options pour qu'on cible au mieux notre accompagnement
+        :
+      </p>
+
+      <div
+        class="alert alert-warning mb-4"
+        *ngIf="formData.sujetsImportants.length >= 2"
+      >
+        <i class="fas fa-info-circle me-2"></i>
+        Vous avez sélectionné le maximum de 2 sujets. Désélectionnez-en un pour
+        en choisir un autre.
+      </div>
+
+      <div *ngFor="let category of sujetsOptions" class="mb-4">
+        <h6 class="text-primary mb-3">{{ category.category }}</h6>
+        <div class="row g-2">
+          <div class="col-12" *ngFor="let item of category.items">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                [id]="'sujet-' + item.value"
+                [checked]="formData.sujetsImportants.includes(item.value)"
+                [disabled]="
+                  !formData.sujetsImportants.includes(item.value) &&
+                  formData.sujetsImportants.length >= 2
+                "
+                (change)="
+                  onSujetChange(item.value, $any($event.target).checked)
+                "
+              />
+              <label class="form-check-label" [for]="'sujet-' + item.value">
+                {{ item.label }}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="alert alert-success"
+        *ngIf="formData.sujetsImportants.length > 0"
+      >
+        <i class="fas fa-check me-2"></i>
+        <strong
+          >Sujets sélectionnés ({{ formData.sujetsImportants.length }}/2)
+          :</strong
+        >
+        <ul class="mb-0 mt-2">
+          <li *ngFor="let sujet of formData.sujetsImportants">
+            {{ getSujetLabelPublic(sujet) }}
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
+</app-contact-form-layout>

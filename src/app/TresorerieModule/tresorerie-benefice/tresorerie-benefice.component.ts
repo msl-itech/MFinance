@@ -11,7 +11,7 @@ export class TresorerieBeneficeComponent implements OnInit {
   // Configuration du formulaire
   formConfig: ContactFormConfig = {
     // Texte à gauche
-    eyebrow: '💰 Bilan Express',
+    eyebrow: ' Bilan Express',
     title: 'Bilan Trésorerie Express – en 4 questions',
     description:
       "Pour bien démarrer, identifions ensemble le principal frein à votre trésorerie aujourd'hui. Ces informations nous permettent de vous fournir un retour réellement personnalisé.",
@@ -67,7 +67,7 @@ export class TresorerieBeneficeComponent implements OnInit {
       if (!this.popupClosed) {
         this.showPopup = true;
       }
-    }, 15000);
+    }, 10000);
   }
 
   scrollToSection(sectionId: string): void {

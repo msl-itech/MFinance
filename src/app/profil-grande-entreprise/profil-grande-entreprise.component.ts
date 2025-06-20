@@ -1,5 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../services/meta.service';
+import { OdooService } from '../services/odoo.service';
 import { GRANDE_ENTREPRISE_FORM_CONFIG } from '../shared/contact-form-layout/contact-form-configs';
 
 @Component({
@@ -14,6 +16,7 @@ export class ProfilGrandeEntrepriseComponent implements OnInit {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
 
   // Données du formulaire
   formData = {
@@ -32,7 +35,12 @@ export class ProfilGrandeEntrepriseComponent implements OnInit {
   showAutreSecteur = false;
   showAutreBesoin = false;
 
-  constructor(private renderer: Renderer2, private metaService: MetaService) {}
+  constructor(
+    private renderer: Renderer2,
+    private metaService: MetaService,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Grande Entreprise
@@ -138,11 +146,87 @@ export class ProfilGrandeEntrepriseComponent implements OnInit {
 
   // Soumission du formulaire
   onSubmit(): void {
-    if (this.isFormValid) {
-      this.formSubmitted = true;
-      console.log('Données du formulaire Grande Entreprise:', this.formData);
-      // Ici vous pouvez ajouter la logique d'envoi des données
+    if (!this.isFormValid) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Demande d'accompagnement - Grande Entreprise</h3>`,
+      `<p><strong>Secteur d'activité:</strong> ${this.getSecteurLabel()}</p>`,
+      this.formData.secteur_autre
+        ? `<p><strong>Précision:</strong> ${this.formData.secteur_autre}</p>`
+        : '',
+      `<p><strong>Revenus annuels:</strong> ${this.formData.revenus}</p>`,
+      `<p><strong>Gestion comptabilité:</strong> ${this.formData.comptabilite}</p>`,
+      `<p><strong>Besoins prioritaires:</strong></p>`,
+      `<ul>${this.getSelectedBesoins()
+        .map((b) => `<li>${b}</li>`)
+        .join('')}</ul>`,
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'profil_grande_entreprise',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getSecteurLabel(): string {
+    const secteurs = {
+      industrie: 'Industrie',
+      services: 'Services',
+      commerce: 'Commerce',
+      technologie: 'Technologie',
+      finance: 'Finance',
+      autre: 'Autre',
+    };
+    return (
+      secteurs[this.formData.secteur as keyof typeof secteurs] ||
+      this.formData.secteur
+    );
+  }
+
+  private getSelectedBesoins(): string[] {
+    const besoinsLabels = {
+      comptabilite: 'Tenue de la comptabilité',
+      fiscal: 'Déclarations fiscales',
+      gestion: 'Conseil en gestion financière',
+      optimisation: 'Optimisation fiscale',
+      restructuration: 'Restructuration',
+      autre: this.formData.besoins_autre || 'Autre',
+    };
+
+    return this.formData.besoins.map(
+      (besoin) => besoinsLabels[besoin as keyof typeof besoinsLabels] || besoin
+    );
   }
 
   onReset(): void {

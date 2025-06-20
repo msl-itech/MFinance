@@ -75,7 +75,7 @@ export class StockTresorerieComponent implements OnInit, OnDestroy {
   startPopupTimer() {
     this.popupTimer = setTimeout(() => {
       this.showPopup = true;
-    }, 30000); // 30 secondes
+    }, 10000); // 30 secondes
   }
 
   closePopup() {

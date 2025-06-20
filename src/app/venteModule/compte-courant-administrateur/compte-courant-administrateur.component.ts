@@ -14,7 +14,7 @@ export class CompteCourantAdministrateurComponent implements OnInit {
     eyebrow: '🧭 Introduction engageante',
     title: 'Êtes-vous maître de votre compte courant administrateur ?',
     description:
-      'Votre compte courant administrateur cache-t-il une bombe à retardement ? En 2 minutes, faites le point sur vos pratiques financières. Un expert Mfinances vous contactera sous 72h pour une analyse gratuite et confidentielle. 🕵️‍♂️ Ensemble, faisons la lumière sur ce que vos chiffres ne disent pas encore…',
+      'Votre compte courant administrateur cache-t-il une bombe à retardement ? En 2 minutes, faites le point sur vos pratiques financières. Un expert Mfinances vous contactera sous 72h pour une analyse gratuite et confidentielle. Ensemble, faisons la lumière sur ce que vos chiffres ne disent pas encore…',
     phoneButton: 'Appelez maintenant',
     contactButton: 'Nous contacter',
 
