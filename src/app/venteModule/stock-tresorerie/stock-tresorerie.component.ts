@@ -1,4 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
 @Component({
@@ -15,6 +17,7 @@ export class StockTresorerieComponent implements OnInit, OnDestroy {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
   showAutreDefi = false;
   showAutreSecteur = false;
   showTypesProduits = false;
@@ -58,7 +61,10 @@ export class StockTresorerieComponent implements OnInit, OnDestroy {
     resetButton: 'Faire une nouvelle demande',
   };
 
-  constructor() {}
+  constructor(
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Démarrer le timer pour le popup
@@ -209,11 +215,98 @@ export class StockTresorerieComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    if (this.isFormValid()) {
-      console.log('Form submitted:', this.formData);
-      this.formSubmitted = true;
-      // Ici vous pouvez ajouter la logique d'envoi des données
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Diagnostic Stock & Trésorerie</h3>`,
+      `<p><strong>Gère du stock:</strong> ${this.getGereStockLabel()}</p>`,
+      this.formData.gere_stock === 'oui'
+        ? `<p><strong>Défi principal:</strong> ${this.getDefiLabel()}</p>`
+        : '',
+      this.formData.defi_autre
+        ? `<p><strong>Précision défi:</strong> ${this.formData.defi_autre}</p>`
+        : '',
+      `<p><strong>Chiffre d'affaires:</strong> ${this.formData.chiffre_affaires}</p>`,
+      this.formData.gere_stock === 'oui'
+        ? `<p><strong>Secteur d'activité:</strong> ${this.getSecteurLabel()}</p>`
+        : '',
+      this.formData.secteur_autre
+        ? `<p><strong>Précision secteur:</strong> ${this.formData.secteur_autre}</p>`
+        : '',
+      this.formData.types_produits
+        ? `<p><strong>Types de produits:</strong> ${this.formData.types_produits}</p>`
+        : '',
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'stock_tresorerie',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getGereStockLabel(): string {
+    return this.formData.gere_stock === 'oui' ? 'Oui' : 'Non';
+  }
+
+  private getDefiLabel(): string {
+    const defis = {
+      'trop-stock': 'Trop de stock',
+      'stock-inadapte': 'Stock inadapté',
+      'rotation-lente': 'Rotation trop lente',
+      'liquidites-bloquees': 'Liquidités bloquées',
+      'previsions-difficiles': 'Prévisions difficiles',
+      autre: 'Autre',
+    };
+    return (
+      defis[this.formData.defi_principal as keyof typeof defis] ||
+      this.formData.defi_principal
+    );
+  }
+
+  private getSecteurLabel(): string {
+    const secteurs = {
+      'commerce-detail': 'Commerce de détail',
+      'commerce-gros': 'Commerce de gros',
+      ecommerce: 'E-commerce',
+      production: 'Production',
+      distribution: 'Distribution',
+      autre: 'Autre',
+    };
+    return (
+      secteurs[this.formData.secteur_activite as keyof typeof secteurs] ||
+      this.formData.secteur_activite
+    );
   }
 
   onReset() {

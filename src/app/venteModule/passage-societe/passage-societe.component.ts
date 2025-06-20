@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
+import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
 @Component({
@@ -37,6 +39,7 @@ export class PassageSocieteComponent implements OnInit {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
 
   // Données du formulaire
   formData = {
@@ -57,7 +60,11 @@ export class PassageSocieteComponent implements OnInit {
   showAutreMotivation = false;
   showAutreBesoin = false;
 
-  constructor(private metaService: MetaService) {}
+  constructor(
+    private metaService: MetaService,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Passage en Société
@@ -85,11 +92,59 @@ export class PassageSocieteComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.isFormValid()) {
-      this.formSubmitted = true;
-      console.log('Données du formulaire:', this.formData);
-      // Ici vous pouvez ajouter l'envoi des données à votre service
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Diagnostic Passage en Société</h3>`,
+      `<p><strong>Situation actuelle:</strong> ${this.getSituationLabel()}</p>`,
+      this.formData.situation_autre
+        ? `<p><strong>Précision situation:</strong> ${this.formData.situation_autre}</p>`
+        : '',
+      `<p><strong>Motivation principale:</strong> ${this.getMotivationLabel()}</p>`,
+      this.formData.motivation_autre
+        ? `<p><strong>Précision motivation:</strong> ${this.formData.motivation_autre}</p>`
+        : '',
+      `<p><strong>Niveau de connaissance:</strong> ${this.getConnaissanceLabel()}</p>`,
+      `<p><strong>Besoins prioritaires:</strong></p>`,
+      `<ul>${this.getSelectedBesoins()
+        .map((b) => `<li>${b}</li>`)
+        .join('')}</ul>`,
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'passage_societe',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
   }
 
   onReset(): void {
@@ -179,5 +234,60 @@ export class PassageSocieteComponent implements OnInit {
     if (!this.showAutreBesoin) {
       this.formData.besoins_autre = '';
     }
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getSituationLabel(): string {
+    const situations = {
+      independant: 'Indépendant en personne physique',
+      salarie: 'Salarié avec un projet',
+      entreprise: 'Entreprise existante',
+      autre: 'Autre',
+    };
+    return (
+      situations[this.formData.situation as keyof typeof situations] ||
+      this.formData.situation
+    );
+  }
+
+  private getMotivationLabel(): string {
+    const motivations = {
+      fiscalite: 'Optimisation fiscale',
+      credibilite: 'Crédibilité professionnelle',
+      protection: 'Protection du patrimoine',
+      croissance: "Croissance de l'activité",
+      autre: 'Autre',
+    };
+    return (
+      motivations[this.formData.motivation as keyof typeof motivations] ||
+      this.formData.motivation
+    );
+  }
+
+  private getConnaissanceLabel(): string {
+    const niveaux = {
+      aucune: 'Aucune connaissance',
+      notions: 'Quelques notions',
+      bonne: 'Bonne connaissance',
+      experte: 'Connaissance experte',
+    };
+    return (
+      niveaux[this.formData.connaissance as keyof typeof niveaux] ||
+      this.formData.connaissance
+    );
+  }
+
+  private getSelectedBesoins(): string[] {
+    const besoinsLabels = {
+      'choisir-forme': 'Choisir la forme juridique',
+      'comprendre-fiscalite': 'Comprendre la fiscalité',
+      'organiser-comptabilite': 'Organiser la comptabilité',
+      'planifier-transition': 'Planifier la transition',
+      autre: this.formData.besoins_autre || 'Autre',
+    };
+
+    return this.formData.besoins.map(
+      (besoin) => besoinsLabels[besoin as keyof typeof besoinsLabels] || besoin
+    );
   }
 }

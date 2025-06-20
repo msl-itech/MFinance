@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
+import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
 @Component({
@@ -16,6 +18,7 @@ export class AlerteTresorerieComponent implements OnInit, OnDestroy {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
   showAutreReaction = false;
   showAutreActivite = false;
   showTypesMarchandises = false;
@@ -59,7 +62,11 @@ export class AlerteTresorerieComponent implements OnInit, OnDestroy {
     resetButton: 'Faire une nouvelle demande',
   };
 
-  constructor(private metaService: MetaService) {}
+  constructor(
+    private metaService: MetaService,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Alerte Trésorerie
@@ -187,11 +194,100 @@ export class AlerteTresorerieComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    if (this.isFormValid()) {
-      console.log('Form submitted:', this.formData);
-      this.formSubmitted = true;
-      // Ici vous pouvez ajouter la logique d'envoi des données
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Test Résistance Concurrentielle</h3>`,
+      `<p><strong>A déjà perdu des clients:</strong> ${this.getPerduClientsLabel()}</p>`,
+      `<p><strong>Réaction face à la concurrence:</strong> ${this.getReactionLabel()}</p>`,
+      this.formData.reaction_autre
+        ? `<p><strong>Précision réaction:</strong> ${this.formData.reaction_autre}</p>`
+        : '',
+      `<p><strong>Chiffre d'affaires:</strong> ${this.formData.chiffre_affaires}</p>`,
+      `<p><strong>Type d'activité:</strong> ${this.getActiviteLabel()}</p>`,
+      this.formData.activite_autre
+        ? `<p><strong>Précision activité:</strong> ${this.formData.activite_autre}</p>`
+        : '',
+      this.formData.types_marchandises
+        ? `<p><strong>Types de marchandises:</strong> ${this.formData.types_marchandises}</p>`
+        : '',
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'alerte_tresorerie',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getPerduClientsLabel(): string {
+    const options = {
+      oui: 'Oui',
+      non: 'Non',
+      'pas-encore': 'Pas encore, mais je crains que ça arrive',
+    };
+    return (
+      options[this.formData.perdu_clients as keyof typeof options] ||
+      this.formData.perdu_clients
+    );
+  }
+
+  private getReactionLabel(): string {
+    const reactions = {
+      'baisser-prix': 'Baisser mes prix',
+      'ameliorer-service': 'Améliorer mon service',
+      'investir-marketing': 'Investir en marketing',
+      'diversifier-offre': 'Diversifier mon offre',
+      autre: 'Autre',
+    };
+    return (
+      reactions[this.formData.reaction_concurrence as keyof typeof reactions] ||
+      this.formData.reaction_concurrence
+    );
+  }
+
+  private getActiviteLabel(): string {
+    const activites = {
+      independant: 'Indépendant',
+      'commerce-detail': 'Commerce de détail',
+      'commerce-gros': 'Commerce de gros',
+      services: 'Prestations de services',
+      autre: 'Autre',
+    };
+    return (
+      activites[this.formData.type_activite as keyof typeof activites] ||
+      this.formData.type_activite
+    );
   }
 
   onReset() {

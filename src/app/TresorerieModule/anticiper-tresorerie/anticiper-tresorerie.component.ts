@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
+import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
 @Component({
@@ -16,6 +18,7 @@ export class AnticiperTresorerieComponent implements OnInit, OnDestroy {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
   showAutreDefi = false;
   showAutreActivite = false;
   showOutilGestion = false;
@@ -59,7 +62,11 @@ export class AnticiperTresorerieComponent implements OnInit, OnDestroy {
     resetButton: 'Faire une nouvelle demande',
   };
 
-  constructor(private metaService: MetaService) {}
+  constructor(
+    private metaService: MetaService,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Anticiper Trésorerie
@@ -185,11 +192,100 @@ export class AnticiperTresorerieComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    if (this.isFormValid()) {
-      console.log('Form submitted:', this.formData);
-      this.formSubmitted = true;
-      // Ici vous pouvez ajouter la logique d'envoi des données
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Diagnostic Anticipation Trésorerie</h3>`,
+      `<p><strong>Utilise un tableau de trésorerie:</strong> ${this.getTableauTresorerieLabel()}</p>`,
+      `<p><strong>Défi principal:</strong> ${this.getDefiLabel()}</p>`,
+      this.formData.defi_autre
+        ? `<p><strong>Précision défi:</strong> ${this.formData.defi_autre}</p>`
+        : '',
+      `<p><strong>Chiffre d'affaires:</strong> ${this.formData.chiffre_affaires}</p>`,
+      `<p><strong>Type d'activité:</strong> ${this.getActiviteLabel()}</p>`,
+      this.formData.activite_autre
+        ? `<p><strong>Précision activité:</strong> ${this.formData.activite_autre}</p>`
+        : '',
+      this.formData.outil_gestion
+        ? `<p><strong>Outil de gestion:</strong> ${this.formData.outil_gestion}</p>`
+        : '',
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'anticiper_tresorerie',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getTableauTresorerieLabel(): string {
+    const options = {
+      oui: "Oui, je l'utilise régulièrement",
+      occasionnellement: 'Occasionnellement',
+      non: 'Non, pas encore',
+    };
+    return (
+      options[this.formData.tableau_tresorerie as keyof typeof options] ||
+      this.formData.tableau_tresorerie
+    );
+  }
+
+  private getDefiLabel(): string {
+    const defis = {
+      'previsions-difficiles': 'Prévisions difficiles',
+      'manque-temps': 'Manque de temps',
+      'outils-inadaptes': 'Outils inadaptés',
+      'comprehension-complexe': 'Compréhension complexe',
+      autre: 'Autre',
+    };
+    return (
+      defis[this.formData.defi_principal as keyof typeof defis] ||
+      this.formData.defi_principal
+    );
+  }
+
+  private getActiviteLabel(): string {
+    const activites = {
+      independant: 'Indépendant',
+      'pme-salaries': 'PME avec salariés',
+      commerciale: 'Activité commerciale',
+      services: 'Prestations de services',
+      autre: 'Autre',
+    };
+    return (
+      activites[this.formData.type_activite as keyof typeof activites] ||
+      this.formData.type_activite
+    );
   }
 
   onReset() {

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
+import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
 @Component({
@@ -36,6 +38,7 @@ export class CompteCourantAdministrateurComponent implements OnInit {
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
+  isLoading = false;
 
   // Données du formulaire
   formData = {
@@ -52,7 +55,11 @@ export class CompteCourantAdministrateurComponent implements OnInit {
   // Flags pour les champs "autre"
   showAutreBesoin = false;
 
-  constructor(private metaService: MetaService) {}
+  constructor(
+    private metaService: MetaService,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Compte Courant Administrateur
@@ -80,11 +87,53 @@ export class CompteCourantAdministrateurComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.isFormValid()) {
-      this.formSubmitted = true;
-      console.log('Données du formulaire:', this.formData);
-      // Ici vous pouvez ajouter l'envoi des données à votre service
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    this.isLoading = true;
+
+    // Assemblage de la description complète
+    const descriptionParts = [
+      `<h3>Diagnostic Compte Courant Administrateur</h3>`,
+      `<p><strong>Mode de paiement habituel:</strong> ${this.getPaiementLabel()}</p>`,
+      `<p><strong>Solde compte courant:</strong> ${this.getCompteCourantLabel()}</p>`,
+      `<p><strong>Stratégie de remboursement:</strong> ${this.getStrategieLabel()}</p>`,
+      `<p><strong>Besoin principal:</strong> ${this.getBesoinLabel()}</p>`,
+      this.formData.besoin_autre
+        ? `<p><strong>Précision besoin:</strong> ${this.formData.besoin_autre}</p>`
+        : '',
+    ];
+
+    const fullDescription = descriptionParts.filter((p) => p).join('\n');
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: fullDescription,
+      lead_type: 'compte_courant_administrateur',
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.formSubmitted = true;
+        this.toastr.success(
+          'Votre demande a été envoyée avec succès!',
+          'Succès'
+        );
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error(
+          "Une erreur est survenue lors de l'envoi de la demande.",
+          'Erreur'
+        );
+        console.error('Erreur lors de la création du lead:', error);
+      },
+    });
   }
 
   onReset(): void {
@@ -140,5 +189,56 @@ export class CompteCourantAdministrateurComponent implements OnInit {
     if (value !== 'autre') {
       this.formData.besoin_autre = '';
     }
+  }
+
+  // Méthodes utilitaires pour les labels
+  private getPaiementLabel(): string {
+    const paiements = {
+      personnel: 'Avec mes fonds personnels',
+      societe: 'Avec les fonds de la société',
+      mixte: 'Avec un mélange des deux',
+    };
+    return (
+      paiements[this.formData.paiement as keyof typeof paiements] ||
+      this.formData.paiement
+    );
+  }
+
+  private getCompteCourantLabel(): string {
+    const etats = {
+      positif: "Positif (la société me doit de l'argent)",
+      negatif: "Négatif (je dois de l'argent à la société)",
+      equilibre: "À l'équilibre",
+    };
+    return (
+      etats[this.formData.compte_courant as keyof typeof etats] ||
+      this.formData.compte_courant
+    );
+  }
+
+  private getStrategieLabel(): string {
+    const strategies = {
+      'remboursement-rapide': 'Remboursement rapide',
+      'optimisation-fiscale': 'Optimisation fiscale',
+      'pas-de-strategie': 'Pas de stratégie définie',
+    };
+    return (
+      strategies[
+        this.formData.strategie_remboursement as keyof typeof strategies
+      ] || this.formData.strategie_remboursement
+    );
+  }
+
+  private getBesoinLabel(): string {
+    const besoins = {
+      'comprendre-risques': 'Comprendre les risques',
+      'optimiser-fiscalement': 'Optimiser fiscalement',
+      'securiser-operations': 'Sécuriser les opérations',
+      autre: 'Autre',
+    };
+    return (
+      besoins[this.formData.besoin_principal as keyof typeof besoins] ||
+      this.formData.besoin_principal
+    );
   }
 }
