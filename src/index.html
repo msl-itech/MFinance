@@ -44,12 +44,30 @@
       crossorigin="anonymous"
     />
 
-    <!-- Préchargement de l'image critique LCP -->
+    <!-- Préchargement de l'image critique LCP avec formats optimisés -->
     <link
       rel="preload"
       href="assets/img/bg/Group_header.webp"
       as="image"
       fetchpriority="high"
+      imagesrcset="assets/img/bg/Group_header_s.webp 480w, assets/img/bg/Group_header_m.webp 768w, assets/img/bg/Group_header_l.webp 1200w"
+      imagesizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 1200px"
+    />
+
+    <!-- Préchargement du format AVIF si disponible -->
+    <link
+      rel="preload"
+      href="assets/img/bg/Group_header_l.avif"
+      as="image"
+      fetchpriority="high"
+      media="(min-width: 769px)"
+    />
+    <link
+      rel="preload"
+      href="assets/img/bg/Group_header_m.avif"
+      as="image"
+      fetchpriority="high"
+      media="(max-width: 768px)"
     />
 
     <!-- Chargement de jQuery avant les autres scripts pour éviter les erreurs -->
