@@ -6,7 +6,23 @@ import { ResponsiveImageService } from '../services/responsive-image.service';
   standalone: true,
 })
 export class ImageOptimizerDirective implements OnInit {
-  @Input() appOptimizeImage: boolean = true;
+  private _appOptimizeImage: boolean = true;
+
+  @Input()
+  set appOptimizeImage(value: boolean | string | '') {
+    if (value === '' || value === 'true' || value === true) {
+      this._appOptimizeImage = true;
+    } else if (value === 'false' || value === false) {
+      this._appOptimizeImage = false;
+    } else {
+      this._appOptimizeImage = true; // valeur par défaut
+    }
+  }
+
+  get appOptimizeImage(): boolean {
+    return this._appOptimizeImage;
+  }
+
   @Input() priority: boolean = false;
 
   constructor(
