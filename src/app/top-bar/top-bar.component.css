@@ -11,10 +11,10 @@
   transition: color 0.3s ease;
 }
 .top-bar a:hover {
-  color: #F34947;
+  color: #f34947;
 }
-i{
-  color: #F34947;
+i {
+  color: #f34947;
   margin-right: 5px;
 }
 .top-bar .social-icons i {
@@ -23,7 +23,8 @@ i{
 .top-bar .contact-info {
   font-size: 14px;
 }
-.social-section, .contact-section {
+.social-section,
+.contact-section {
   display: flex;
   align-items: center;
 }
@@ -47,7 +48,8 @@ i{
     text-align: center;
     padding: 8px 0;
   }
-  .social-section, .contact-section {
+  .social-section,
+  .contact-section {
     flex-direction: column;
     gap: 5px;
   }
@@ -66,7 +68,7 @@ i{
   }
 }
 @media (max-width: 480px) {
-.top-bar{
-  display: none;
-}
+  .top-bar {
+    display: none;
+  }
 }

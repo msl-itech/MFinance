@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import * as AOS from 'aos';
 import { Observable, of } from 'rxjs';
-import { delay, filter } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 import { MetaService } from './services/meta.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
       duration: 1200, // Durée de l'animation en millisecondes
       once: true, // L'animation se déclenche une seule fois
     });
-    this.isLoaded$ = of(true).pipe(delay(100));
+    this.isLoaded$ = of(true);
 
     // Écouter les changements de route pour mettre à jour les meta-données
     this.router.events
