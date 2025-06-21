@@ -46,12 +46,16 @@ export class ImageOptimizerDirective implements OnInit {
     const img = this.el.nativeElement;
     const originalSrc = img.src;
 
-    // Si c'est une image prioritaire, configure le chargement eager
-    if (this.priority) {
-      this.renderer.setAttribute(img, 'loading', 'eager');
-    } else {
-      this.renderer.setAttribute(img, 'loading', 'lazy');
+    // Respecte l'attribut loading existant ou configure selon la priorité
+    const existingLoading = img.getAttribute('loading');
+    if (!existingLoading) {
+      if (this.priority) {
+        this.renderer.setAttribute(img, 'loading', 'eager');
+      } else {
+        this.renderer.setAttribute(img, 'loading', 'lazy');
+      }
     }
+    // Si loading="eager" est déjà défini, on le respecte
 
     // Vérifier si des versions optimisées existent
     const optimizedSrc = this.imageService.getOptimalImageSrc(originalSrc);
