@@ -15,7 +15,13 @@
       </div>
       <div class="image-section">
         <img
-          src="assets/img/bg/Group_header.webp"
+          src="assets/img/bg/Group_header_m.webp"
+          srcset="
+            assets/img/bg/Group_header_s.webp  480w,
+            assets/img/bg/Group_header_m.webp  768w,
+            assets/img/bg/Group_header_l.webp 1200w
+          "
+          sizes="(max-width: 767px) 100vw, (max-width: 1199px) 60vw, 50vw"
           alt="Expert comptable professionnel"
           class="expert-image"
           loading="eager"
@@ -23,8 +29,6 @@
           width="800"
           height="600"
           decoding="sync"
-          appOptimizeImage
-          [priority]="true"
         />
       </div>
     </div>
