@@ -31,7 +31,16 @@ export class ImageOptimizerDirective implements OnInit {
     private imageService: ResponsiveImageService
   ) {}
 
-  ngOnInit() {
+  private async checkImageExists(url: string): Promise<boolean> {
+    try {
+      const response = await fetch(url, { method: 'HEAD' });
+      return response.ok;
+    } catch {
+      return false;
+    }
+  }
+
+  async ngOnInit() {
     if (!this.appOptimizeImage) return;
 
     const img = this.el.nativeElement;
@@ -44,7 +53,17 @@ export class ImageOptimizerDirective implements OnInit {
       this.renderer.setAttribute(img, 'loading', 'lazy');
     }
 
-    // Génère les srcset optimisés
+    // Vérifier si des versions optimisées existent
+    const optimizedSrc = this.imageService.getOptimalImageSrc(originalSrc);
+    const hasOptimizedVersions = await this.checkImageExists(optimizedSrc);
+
+    if (!hasOptimizedVersions) {
+      // Si pas de versions optimisées, utiliser juste l'image originale
+      this.renderer.setAttribute(img, 'src', originalSrc);
+      return;
+    }
+
+    // Génère les srcset optimisés seulement si les images existent
     const webpSrcSet = this.imageService.generateSrcSet(originalSrc, 'webp');
     const sizes = this.imageService.generateSizes();
 
@@ -77,18 +96,13 @@ export class ImageOptimizerDirective implements OnInit {
     }
 
     // Met à jour la src avec la version optimisée
-    const optimizedSrc = this.imageService.getOptimalImageSrc(originalSrc);
     this.renderer.setAttribute(img, 'src', optimizedSrc);
     this.renderer.setAttribute(img, 'srcset', webpSrcSet);
     this.renderer.setAttribute(img, 'sizes', sizes);
 
-    // Ajoute un gestionnaire d'erreur pour fallback
+    // Ajoute un gestionnaire d'erreur pour fallback silencieux
     this.renderer.listen(img, 'error', () => {
-      console.warn(`Fallback vers image originale: ${originalSrc}`);
       this.renderer.setAttribute(img, 'src', originalSrc);
     });
-
-    // Log pour debug
-    console.log(`Image optimisée: ${originalSrc} -> ${optimizedSrc}`);
   }
 }
