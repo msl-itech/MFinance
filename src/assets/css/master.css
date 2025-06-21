@@ -6451,6 +6451,46 @@ app-root,
   min-height: 100vh;
 }
 
+/* Optimisations critiques pour l'image LCP */
+.expert-image,
+img[src*="Group_header"] {
+  contain: layout;
+  will-change: auto;
+  transform: translateZ(0);
+  /* Optimisation GPU pour le rendu */
+  backface-visibility: hidden;
+  /* Préparation de l'espace pour éviter les reflows */
+  aspect-ratio: 4/3;
+  background-color: #f8f9ff;
+}
+
+/* Optimisation spécifique du header d'accueil */
+app-header-accueil {
+  contain: layout;
+  will-change: auto;
+}
+
+/* Optimisation des sections critiques */
+section {
+  contain: layout;
+  will-change: auto;
+}
+
+/* Optimisation des cartes */
+.card {
+  contain: layout;
+  will-change: auto;
+  transform: translateZ(0);
+}
+
+/* Optimisation du contenu textuel critique */
+.main-heading,
+.company-tag,
+.description {
+  contain: layout;
+  will-change: auto;
+}
+
 /* Stabilisation des éléments de chargement */
 .loading,
 .spinner,
