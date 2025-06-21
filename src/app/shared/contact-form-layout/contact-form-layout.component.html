@@ -136,10 +136,22 @@
     color: rgba(255, 255, 255, 0.9);
   }
 
+  .contact-button {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+  }
+
   .contact-button .btn {
     padding: 12px 30px;
     font-weight: 600;
     transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    min-width: 150px;
   }
 
   .contact-button .btn-red {
@@ -151,7 +163,12 @@
   .contact-button .btn-outline {
     border: 2px solid white;
     color: white;
-    margin-left: 15px;
+    background: transparent;
+  }
+
+  .contact-button .btn-outline:hover {
+    background: white;
+    color: #25335b;
   }
 
   .contact-button .btn:hover {
@@ -183,6 +200,45 @@
 
   .bg-custom--primary {
     background-color: #25335b;
+  }
+
+  /* Styles responsive */
+  @media (max-width: 767px) {
+    .contact-text h1 {
+      font-size: 2rem;
+    }
+
+    .contact-text p {
+      font-size: 1rem;
+    }
+
+    .contact-button {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+
+    .contact-button .btn {
+      width: 100%;
+      min-width: auto;
+      padding: 15px 20px;
+      font-size: 1rem;
+    }
+
+    .contact-section {
+      padding: 60px 0;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .contact-text h1 {
+      font-size: 1.75rem;
+    }
+
+    .contact-button .btn {
+      padding: 12px 15px;
+      font-size: 0.9rem;
+    }
   }
 
   @media (min-width: 992px) {

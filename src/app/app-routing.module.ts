@@ -12,6 +12,7 @@ import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilie
 import { ProfilSocieteExploitationComponent } from './profil-societe-exploitation/profil-societe-exploitation.component';
 import { ProfilSocieteManagementPatrimonialeComponent } from './profil-societe-management-patrimoniale/profil-societe-management-patrimoniale.component';
 import { ProfilSocieteMoyenComponent } from './profil-societe-moyen/profil-societe-moyen.component';
+import { SupportComponent } from './support/support.component';
 import { TarifComponent } from './tarif/tarif.component';
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
         (m) => m.ModuleAccueilModule
       ),
   },
+  { path: 'support', component: SupportComponent },
   { path: 'about', component: AboutComponent },
   { path: 'tarif', component: TarifComponent },
   { path: 'absl', component: AbslComponent },

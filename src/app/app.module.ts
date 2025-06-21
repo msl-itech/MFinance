@@ -27,7 +27,9 @@ import { ProfilSocieteMoyenComponent } from './profil-societe-moyen/profil-socie
 import { PromoBannerComponent } from './promo-banner/promo-banner.component';
 import { RecommandationProfilComponent } from './recommandation-profil/recommandation-profil.component';
 import { ShardeModuleModule } from './sharde-module/sharde-module.module';
+import { ImageOptimizerDirective } from './shared/image-optimizer.directive';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SupportComponent } from './support/support.component';
 import { TarifComponent } from './tarif/tarif.component';
 import { TestScrollComponent } from './test-scroll/test-scroll.component';
 import { TimelineIndependantComponent } from './timeline-independant/timeline-independant.component';
@@ -63,6 +65,7 @@ import { EconomieAnalysieComponent } from './venteModule/economie-analysie/econo
     FooterComponent,
     PromoBannerComponent,
     NotFoundComponent,
+    SupportComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ import { EconomieAnalysieComponent } from './venteModule/economie-analysie/econo
     ReactiveFormsModule,
     HttpClientModule,
     ShardeModuleModule,
+    ImageOptimizerDirective,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 3000,
