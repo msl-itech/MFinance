@@ -57,7 +57,7 @@ html {
 }
 
 body {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: "Archivo Black", sans-serif;
   overflow-x: hidden;
 }
 
@@ -67,7 +67,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: "Archivo Black", sans-serif;
 }
 
 * {
@@ -496,11 +496,10 @@ ul.theme-mega-menu li.mega-menu {
 
 .main-menu-ex li ul li ul {
   background: #ffffff;
-  left:100% !important;
+  left: 100% !important;
   right: 100%;
-  top: 10% !important;     
+  top: 10% !important;
 }
-
 
 .main-menu-ex li li {
   display: block;
@@ -534,12 +533,12 @@ ul.theme-mega-menu li.mega-menu {
 }
 .main-menu-ex li li a:hover::after {
   transform: rotateX(0deg);
-  background-color: #FF3333;
+  background-color: #ff3333;
   border-radius: 4px;
   color: white;
 }
 .main-menu-ex li li a .main-menu-ex li li a:hover {
-  background-color: #FF3333;
+  background-color: #ff3333;
   transform: rotateX(0deg);
   color: white;
   border-radius: 4px;
@@ -623,12 +622,11 @@ ul.theme-mega-menu li.mega-menu {
 }
 .main-menu-ex.home2-menu li li a:hover::after {
   transform: rotateX(0deg);
-  background-color: #FF3333;
+  background-color: #ff3333;
   border-radius: 4px;
 }
 
 /*========+ MOBAILE-MENU +=========*/
-
 
 /*========+ MOBAILE-MENU +=========*/
 
@@ -795,7 +793,7 @@ ul.theme-mega-menu li.mega-menu {
   margin-right: 8px;
 }
 .home1-button a {
-  background-color: #FF3333;
+  background-color: #ff3333;
   color: #0e1124;
 }
 .header-btn-2 a {
@@ -1063,7 +1061,7 @@ ul.theme-mega-menu li.mega-menu {
 }
 
 .testimonial-slider .owl-nav button:hover svg {
-  background-color: #FF3333;
+  background-color: #ff3333;
   color: #fff;
 }
 
@@ -1230,7 +1228,7 @@ ul.theme-mega-menu li.mega-menu {
   position: absolute;
   width: 70%;
   height: 100%;
- 
+
   left: 0;
   background-color: #25335b;
   z-index: -1;
@@ -1241,10 +1239,10 @@ ul.theme-mega-menu li.mega-menu {
   position: absolute;
   width: 70%;
   height: 100%;
- 
+
   left: 0;
   color: #fff;
-  background-color: #F34947;
+  background-color: #f34947;
   z-index: -1;
   border-radius: 4px;
 }
@@ -1320,7 +1318,7 @@ ul.theme-mega-menu li.mega-menu {
   border-radius: 4px;
 }
 .fact-icon {
-  background-color: #FF3333;
+  background-color: #ff3333;
   height: 70px;
   width: 70px;
   margin: 0 auto;
@@ -1465,16 +1463,15 @@ ul.theme-mega-menu li.mega-menu {
   transition: all.4s;
 }
 .work-item:hover {
-  background-color: #FF3333;
+  background-color: #ff3333;
   border-radius: 4px;
-
 }
-.work-item:hover .hadding p,.work-item:hover .hadding h2  {
+.work-item:hover .hadding p,
+.work-item:hover .hadding h2 {
   color: white;
-
 }
 .work-item:hover .work-icon {
-  background-color: #25335b;;
+  background-color: #25335b;
 }
 .work-item::after {
   content: "";
@@ -1483,7 +1480,7 @@ ul.theme-mega-menu li.mega-menu {
   width: 100%;
   top: 6px;
   left: 6px;
-  background-color: #FF3333;
+  background-color: #ff3333;
   border-radius: 5px;
   visibility: hidden;
   opacity: 0;
@@ -1495,7 +1492,7 @@ ul.theme-mega-menu li.mega-menu {
   opacity: 1;
 }
 .work-icon {
-  background: #FF3333;
+  background: #ff3333;
   width: 70px;
   height: 70px;
   text-align: center;
@@ -1513,7 +1510,7 @@ ul.theme-mega-menu li.mega-menu {
     transition: all.4s;
   }
   .work-icon {
-    background: #FF3333;
+    background: #ff3333;
     width: 70px;
     height: 70px;
     text-align: center;
@@ -1626,7 +1623,7 @@ body {
   border: 1px solid rgba(16, 0, 43, 0.15);
 }
 .price-btn {
-  background-color: #FF3333;
+  background-color: #ff3333;
   border-radius: 4px;
   z-index: 2;
   transition: all.4s;
@@ -1668,7 +1665,7 @@ body {
   margin-top: 40px;
 }
 .price-box:hover {
-  background-color: #FF3333;
+  background-color: #ff3333;
 }
 .price-box:hover .price-btn {
   background-color: #fff;
@@ -1841,7 +1838,7 @@ body {
   background-color: #f3f3f3;
 }
 .contact-form-btn button {
-  background-color: #FF3333;
+  background-color: #ff3333;
 }
 .contact-from-input textarea:focus {
   outline: none;
@@ -2102,7 +2099,7 @@ body {
   color: #fff;
   padding: 16px;
   display: inline-block;
-  background-color: #FF3333;
+  background-color: #ff3333;
   line-height: 16px;
   border-radius: 4px;
   transition: all.4s;
@@ -2116,7 +2113,7 @@ body {
   background-color: #fff;
   padding: 3px 4px;
   border-radius: 50%;
-  color: #FF3333;
+  color: #ff3333;
   transform: rotate(-45deg);
   margin-bottom: -2px;
   margin-left: 4px;
@@ -2128,7 +2125,7 @@ body {
   color: #fff;
   padding: 16px;
   display: inline-block;
-  background-color: #FF3333;
+  background-color: #ff3333;
   line-height: 16px;
   border-radius: 4px;
   border: none;
@@ -2143,7 +2140,7 @@ body {
   background-color: #fff;
   padding: 3px 4px;
   border-radius: 50%;
-  color: #FF3333;
+  color: #ff3333;
   transform: rotate(-45deg);
   margin-bottom: -2px;
   margin-left: 4px;
@@ -2190,7 +2187,7 @@ body {
 }
 
 .footer-shere.home2-footer-shere ul li:hover {
-  background-color: #FF3333;
+  background-color: #ff3333;
 }
 @media screen and (max-width: 768px) {
   .home2-padding-after span.after::after {
@@ -2233,7 +2230,7 @@ body {
   position: absolute;
   width: 2%;
   height: 100%;
-  background: #FF3333;
+  background: #ff3333;
   top: 0;
   border-radius: 4px;
   left: 0;
@@ -2361,7 +2358,7 @@ body {
   position: absolute;
   width: 100%;
   height: 4px;
-  background: #FF3333;
+  background: #ff3333;
   border-radius: 0px 0px 5px 5px;
   bottom: 0;
   left: 0;
@@ -2377,7 +2374,7 @@ body {
   position: absolute;
   width: 100%;
   height: 4px;
-  background: #FF3333;
+  background: #ff3333;
   border-radius: 4px;
   bottom: 0;
   left: 0;
@@ -2508,7 +2505,7 @@ body {
   position: absolute;
   width: 100%;
   height: 4px;
-  background: #FF3333;
+  background: #ff3333;
   border-radius: 4px;
   bottom: 0;
   left: 0;
@@ -2604,7 +2601,7 @@ body {
 /*======== home2-pricing-start ==========*/
 
 .toggle-inner.home2-toggle-inner {
-  background: #FF3333;
+  background: #ff3333;
 }
 .home2-pricing-box {
   padding: 32px 24px;
@@ -2647,7 +2644,7 @@ body {
   margin-top: 40px;
 }
 .home2-pricing-box:hover {
-  background-color: #FF3333;
+  background-color: #ff3333;
 }
 
 .home2-pricing-box:hover .home2-hadding-p p {
@@ -2663,16 +2660,16 @@ body {
 
 .home2-pricing-box:hover .home2-btn.home2-btn-testimonial a {
   background: #fff;
-  color: #FF3333;
+  color: #ff3333;
 }
 
 .home2-pricing-box:hover .home2-btn.home2-btn-testimonial a {
   background: #fff;
-  color: #FF3333;
+  color: #ff3333;
 }
 
 .home2-pricing-box:hover .home2-btn.home2-btn-testimonial a svg {
-  background: #FF3333;
+  background: #ff3333;
   color: #fff;
 }
 
@@ -2781,7 +2778,7 @@ body {
   transition: all.4s;
 }
 .team-shere ul li a:hover {
-  color: #FF3333;
+  color: #ff3333;
 }
 
 .team-shere {
@@ -2856,7 +2853,7 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #FF3333;
+  background-color: #ff3333;
   border-radius: 50%;
   z-index: -2;
   opacity: 0.2;
@@ -3143,7 +3140,7 @@ span.play-iocn svg {
 }
 .preview-counter:hover {
   box-shadow: none;
-  background-color: #FF3333;
+  background-color: #ff3333;
 }
 
 .support {
@@ -3314,7 +3311,7 @@ span.play-iocn svg {
   transition: all.4s;
 }
 .preview-icon-box:hover .preview-icon {
-  background-color: #FF3333;
+  background-color: #ff3333;
 }
 
 /*======== preview-icons-end==========*/
@@ -4407,7 +4404,7 @@ span.play-iocn svg {
 }
 
 .about-choose-box:hover {
-  background-color: #EDF1F5;
+  background-color: #edf1f5;
 }
 .hadding.about-page-hadding.hadding-p {
   padding-right: 100px;
@@ -4512,7 +4509,7 @@ span.play-iocn svg {
   transform: rotate(-90deg);
 }
 .service-details-list ul li:hover {
-  background-color: #FF3333;
+  background-color: #ff3333;
 }
 
 .contact-details {
@@ -4632,12 +4629,12 @@ a.page-link {
   transition: all.4s;
 }
 a.page-link:hover {
-  background-color: #FF3333;
+  background-color: #ff3333;
   color: #fff;
 }
 
 a.page-link.page-active {
-  background-color: #FF3333;
+  background-color: #ff3333;
   color: #fff;
 }
 /*============================
@@ -4738,7 +4735,7 @@ a.page-link.page-active {
 }
 
 .details-tag ul li a:hover {
-  background-color: #FF3333;
+  background-color: #ff3333;
 }
 
 .blog-details-share-all {
@@ -4927,7 +4924,7 @@ ul.theme-mega-menu {
   width: 0;
   top: 0;
   height: 100%;
-  background: #FF3333;
+  background: #ff3333;
   border-radius: 0px 4px 4px 0px;
   opacity: 0;
   visibility: hidden;
@@ -5348,7 +5345,7 @@ button.accordion-button {
   transition: all.4s;
 }
 .shop-box-hover-icons ul li:hover {
-  background-color: #FF3333;
+  background-color: #ff3333;
 }
 .shop-box-hover-icons ul li:hover img {
   filter: brightness(0);
@@ -5799,11 +5796,11 @@ tr.table-data td a {
 }
 
 .cart-input-btn button {
-  background-color: #FF3333;
+  background-color: #ff3333;
   border-radius: 4px;
 }
 .cart-input-btn2 button {
-  background-color: #FF3333;
+  background-color: #ff3333;
   border-radius: 4px;
 }
 
@@ -5965,7 +5962,7 @@ li.li {
 }
 
 .number.shop-details {
-  background: #FF33335e;
+  background: #ff33335e;
   padding: 12px;
   width: 140px;
   border-radius: 4px;
@@ -6054,7 +6051,7 @@ span.minus.minus2:hover {
   color: #212529;
 }
 li.active-size {
-  background-color: #FF3333;
+  background-color: #ff3333;
 }
 
 p.color-selactor {
@@ -6182,3 +6179,283 @@ p.color-selactor2-5 {
 /*============================
 ++++SHOP-DETAILS-END+++++
 =============================*/
+
+/* Optimisations CLS globales pour réduire les décalages de mise en page */
+
+/* Stabilisation des images */
+img {
+  contain: layout;
+  will-change: auto;
+}
+
+/* Images avec dimensions spécifiées - pas de CLS */
+img[width][height] {
+  aspect-ratio: attr(width integer) / attr(height integer);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optimisation des polices - éviter les décalages */
+* {
+  font-display: swap;
+}
+
+/* Stabilisation des conteneurs flexbox */
+.d-flex,
+.flex,
+[class*="flex"] {
+  contain: layout;
+}
+
+/* Optimisation des conteneurs de grille Bootstrap */
+.row {
+  contain: layout;
+}
+
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col-sm,
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-md,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-lg,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-xl,
+.col-xl-1,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12 {
+  contain: layout;
+  min-height: 1px; /* Évite l'effondrement */
+}
+
+/* Optimisation des éléments avec animations */
+[data-aos] {
+  will-change: transform, opacity;
+  contain: layout;
+}
+
+/* Stabilisation des sections principales */
+.sec-padding,
+.section {
+  contain: layout;
+  min-height: 50px;
+}
+
+/* Optimisation spécifique pour les éléments qui causent du CLS */
+.home2-about,
+.home2-hadding,
+.home2-about-list,
+.home2-btn {
+  contain: layout;
+  will-change: auto;
+}
+
+/* Stabilisation des cartes et conteneurs */
+.card,
+.card-body {
+  contain: layout;
+  min-height: 1px;
+}
+
+/* Optimisation des boutons pour éviter les décalages */
+.btn,
+.btn-red,
+button {
+  contain: layout;
+  will-change: transform, background-color;
+  min-height: 40px;
+}
+
+/* Stabilisation des listes */
+ul,
+ol {
+  contain: layout;
+  min-height: 1px;
+}
+
+/* Optimisation des éléments de navigation */
+.navbar,
+.nav,
+.nav-link {
+  contain: none;
+  will-change: auto;
+}
+
+/* Correction spécifique pour la nav-bar */
+.sticky-header,
+.header-area-home1,
+.header-elements,
+.main-menu-ex,
+.mobile-header {
+  contain: none !important;
+  will-change: auto;
+}
+
+/* Stabilisation des modales et overlays */
+.modal,
+.modal-dialog,
+.modal-content {
+  contain: layout;
+}
+
+/* Optimisation des éléments de formulaire */
+.form-control,
+.form-group,
+input,
+textarea,
+select {
+  contain: layout;
+  min-height: 38px;
+}
+
+/* Réduction des reflows pour les éléments cachés/visibles */
+.d-none {
+  contain: strict;
+}
+
+.invisible {
+  contain: layout;
+}
+
+/* Optimisation des transitions pour éviter les décalages */
+* {
+  transition-property: transform, opacity, color, background-color, border-color;
+}
+
+/* Éviter les décalages lors du hover */
+*:hover {
+  will-change: auto;
+}
+
+/* Optimisation des éléments de contenu critique */
+.container,
+.container-fluid {
+  contain: layout;
+  min-height: 1px;
+}
+
+/* Stabilisation des éléments de texte */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  contain: layout;
+  min-height: 1em;
+}
+
+p {
+  contain: layout;
+  min-height: 1.2em;
+}
+
+/* Optimisation des éléments d'icônes Font Awesome */
+.fa,
+.fas,
+.far,
+.fab,
+[class*="fa-"] {
+  contain: layout;
+  will-change: auto;
+  /* Réserver l'espace pour éviter les décalages */
+  min-width: 1em;
+  min-height: 1em;
+  display: inline-block;
+}
+
+/* Optimisation spécifique pour les images de fond */
+[style*="background-image"] {
+  contain: layout;
+  will-change: auto;
+}
+
+/* Stabilisation des éléments de grille personnalisés */
+.grid,
+.grid-item {
+  contain: layout;
+}
+
+/* Optimisation des éléments de carousel/slider */
+.carousel,
+.carousel-item,
+.owl-carousel,
+.owl-item {
+  contain: layout;
+  will-change: transform;
+}
+
+/* Réduction du CLS pour les éléments dynamiques */
+[ng-if],
+[ng-for] {
+  contain: layout;
+}
+
+/* Optimisation des éléments Angular */
+app-root,
+[ng-component] {
+  contain: layout;
+  min-height: 100vh;
+}
+
+/* Stabilisation des éléments de chargement */
+.loading,
+.spinner,
+.loader {
+  contain: layout;
+  min-height: 40px;
+  min-width: 40px;
+}

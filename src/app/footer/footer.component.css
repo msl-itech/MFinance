@@ -3,6 +3,11 @@
   color: #333;
   padding: 4rem 0 0 0;
   contain: layout style;
+  /* Optimisations CLS critiques */
+  min-height: 450px;
+  will-change: auto;
+  position: relative;
+  transform: translateZ(0);
 }
 
 .footer-content {
@@ -12,6 +17,10 @@
   margin: 0 auto;
   gap: 3rem;
   min-height: 300px;
+  /* Optimisations CLS */
+  contain: layout;
+  will-change: auto;
+  padding: 0 2rem;
 }
 
 .contact-section {
@@ -23,6 +32,10 @@
   transition: transform 0.3s ease;
   will-change: transform;
   contain: layout;
+  /* Optimisations CLS critiques */
+  flex: 0 0 320px;
+  min-height: 280px;
+  transform: translateZ(0);
 }
 
 .contact-section:hover {

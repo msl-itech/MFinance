@@ -4,6 +4,9 @@
   top: 0;
   z-index: 1000;
   background: white;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Desktop Navigation */
