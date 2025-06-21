@@ -69,7 +69,9 @@ export class ImageOptimizerDirective implements OnInit {
 
     // Génère les srcset optimisés seulement si les images existent
     const webpSrcSet = this.imageService.generateSrcSet(originalSrc, 'webp');
-    const sizes = this.imageService.generateSizes();
+    const sizes = this.priority
+      ? this.imageService.generateLCPSizes()
+      : this.imageService.generateSizes();
 
     // Crée un élément picture pour le fallback des formats
     const picture = this.renderer.createElement('picture');

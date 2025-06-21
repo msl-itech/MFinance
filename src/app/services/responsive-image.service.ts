@@ -82,6 +82,13 @@ export class ResponsiveImageService {
   }
 
   /**
+   * Génère les sizes optimisés pour l'image LCP
+   */
+  generateLCPSizes(): string {
+    return '(max-width: 767px) 100vw, (max-width: 1199px) 60vw, 50vw';
+  }
+
+  /**
    * Configuration des images critiques pour différentes tailles
    */
   getCriticalImageConfig() {
