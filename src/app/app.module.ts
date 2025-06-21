@@ -34,6 +34,7 @@ import { TimelineIndependantComponent } from './timeline-independant/timeline-in
 import { TimelinePatrimonialeComponent } from './timeline-patrimoniale/timeline-patrimoniale.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
+import { SupportComponent } from './support/support.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +64,7 @@ import { EconomieAnalysieComponent } from './venteModule/economie-analysie/econo
     FooterComponent,
     PromoBannerComponent,
     NotFoundComponent,
+    SupportComponent,
   ],
   imports: [
     BrowserModule,
