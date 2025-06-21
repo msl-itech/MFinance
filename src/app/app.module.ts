@@ -28,13 +28,13 @@ import { PromoBannerComponent } from './promo-banner/promo-banner.component';
 import { RecommandationProfilComponent } from './recommandation-profil/recommandation-profil.component';
 import { ShardeModuleModule } from './sharde-module/sharde-module.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SupportComponent } from './support/support.component';
 import { TarifComponent } from './tarif/tarif.component';
 import { TestScrollComponent } from './test-scroll/test-scroll.component';
 import { TimelineIndependantComponent } from './timeline-independant/timeline-independant.component';
 import { TimelinePatrimonialeComponent } from './timeline-patrimoniale/timeline-patrimoniale.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
-import { SupportComponent } from './support/support.component';
 @NgModule({
   declarations: [
     AppComponent,

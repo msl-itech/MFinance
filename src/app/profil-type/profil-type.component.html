@@ -10,14 +10,19 @@
     </div>
   </div>
   <div class="slider-wrapper">
-    <div class="slider" [style.transform]="getTransform()" role="region" aria-label="Secteurs d'activité">
+    <div
+      class="slider"
+      [style.transform]="getTransform()"
+      role="region"
+      aria-label="Secteurs d'activité"
+    >
       <div
         class="card"
         *ngFor="let item of items; let i = index"
         [ngClass]="i % 2 === 0 ? 'card-blue' : 'card-red'"
         [routerLink]="item.route"
       >
-        <img [src]="item.image" alt="image">
+        <img [src]="item.image" alt="image" appOptimizeImage />
         <div class="card-content">
           <h3>{{ item.title }}</h3>
           <p>{{ item.description }}</p>
