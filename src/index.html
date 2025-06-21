@@ -44,88 +44,24 @@
       crossorigin="anonymous"
     />
 
-    <!-- Préchargement optimisé de l'image LCP critique -->
-    <!-- Mobile AVIF (priorité absolue) -->
-    <link
-      rel="preload"
-      href="assets/img/bg/Group_header_s.avif"
-      as="image"
-      fetchpriority="high"
-      media="(max-width: 767px)"
-      type="image/avif"
-    />
-    <!-- Tablette AVIF -->
-    <link
-      rel="preload"
-      href="assets/img/bg/Group_header_m.avif"
-      as="image"
-      fetchpriority="high"
-      media="(min-width: 768px) and (max-width: 1199px)"
-      type="image/avif"
-    />
-    <!-- Desktop AVIF -->
-    <link
-      rel="preload"
-      href="assets/img/bg/Group_header_l.avif"
-      as="image"
-      fetchpriority="high"
-      media="(min-width: 1200px)"
-      type="image/avif"
-    />
-
-    <!-- Fallback WebP pour navigateurs sans support AVIF -->
-    <link
-      rel="preload"
-      href="assets/img/bg/Group_header_s.webp"
-      as="image"
-      fetchpriority="high"
-      media="(max-width: 767px)"
-      type="image/webp"
-    />
+    <!-- Préchargement simplifié de l'image LCP critique -->
+    <!-- Préchargement prioritaire WebP (plus compatible) -->
     <link
       rel="preload"
       href="assets/img/bg/Group_header_m.webp"
       as="image"
       fetchpriority="high"
-      media="(min-width: 768px) and (max-width: 1199px)"
-      type="image/webp"
-    />
-    <link
-      rel="preload"
-      href="assets/img/bg/Group_header_l.webp"
-      as="image"
-      fetchpriority="high"
-      media="(min-width: 1200px)"
-      type="image/webp"
     />
 
-    <!-- CSS Critique pour l'image LCP - évite les décalages -->
+    <!-- CSS Critique minimal pour l'image LCP -->
     <style>
-      /* CSS critique pour l'image LCP */
+      /* CSS critique minimal pour éviter CLS */
       .expert-image {
         aspect-ratio: 4/3;
-        min-height: 400px;
-        background-color: #f8f9ff;
-        contain: layout;
-        will-change: auto;
-        transform: translateZ(0);
-        backface-visibility: hidden;
-        object-fit: cover;
         width: 100%;
-        max-width: 100%;
-        height: 100%;
-      }
-
-      /* Optimisation du conteneur de l'image LCP */
-      .image-section {
-        contain: layout;
-        will-change: auto;
-      }
-
-      /* Stabilisation du header d'accueil */
-      app-header-accueil {
-        contain: layout;
-        display: block;
+        height: auto;
+        object-fit: cover;
+        background-color: #f8f9ff;
       }
     </style>
 
