@@ -276,13 +276,13 @@ const handler = (req, res) => {
               window.addEventListener('load', function() {
                 console.log("Toutes les ressources chargées");
                 // En cas de problème, forcer le rafraîchissement après 5 secondes si la page semble blanche
-                setTimeout(function() {
-                  if (!document.body.children.length || 
-                      window.getComputedStyle(document.body).backgroundColor === "rgb(255, 255, 255)") {
-                    console.log("Détection de page potentiellement blanche, rafraîchissement...");
-                    window.location.reload();
-                  }
-                }, 5000);
+                // setTimeout(function() {
+                //   if (!document.body.children.length || 
+                //       window.getComputedStyle(document.body).backgroundColor === "rgb(255, 255, 255)") {
+                //     console.log("Détection de page potentiellement blanche, rafraîchissement...");
+                //     window.location.reload();
+                //   }
+                // }, 5000);
               });
             </script>` +
             html.slice(bodyEnd);
