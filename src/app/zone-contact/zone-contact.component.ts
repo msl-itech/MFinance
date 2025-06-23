@@ -94,7 +94,7 @@ export class ZoneContactComponent {
     },
     {
       value: 'societe_active',
-      icon: '<i class="fas fa-check-circle text-success"></i>',
+      icon: '<i class="fas fa-check-circle"></i>',
       title: 'Société active',
       description: "J'ai déjà une société active",
     },
