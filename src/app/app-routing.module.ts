@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AbslComponent } from './absl/absl.component';
+import { AvisGoogleComponent } from './avis-google/avis-google.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfessionelSanteComponent } from './professionel-sante/professionel-sante.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'tarif', component: TarifComponent },
   { path: 'absl', component: AbslComponent },
+  { path: 'avis-google', component: AvisGoogleComponent },
   { path: 'profil-independant', component: ProfilIndependantComponent },
   {
     path: 'societe-management-patrimoniale',
