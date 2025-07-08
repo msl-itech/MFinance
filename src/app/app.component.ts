@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import * as AOS from 'aos';
 import { Observable, of } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { filter, map, startWith } from 'rxjs/operators';
 import { MetaService } from './services/meta.service';
 
 @Component({
@@ -13,6 +13,7 @@ import { MetaService } from './services/meta.service';
 export class AppComponent implements OnInit {
   title = 'MFinances';
   isLoaded$!: Observable<boolean>;
+  showHeaderFooter$!: Observable<boolean>;
 
   constructor(private router: Router, private metaService: MetaService) {}
 
@@ -22,6 +23,16 @@ export class AppComponent implements OnInit {
       once: true, // L'animation se déclenche une seule fois
     });
     this.isLoaded$ = of(true);
+
+    // Observer les changements de route pour déterminer si on doit afficher header/footer
+    this.showHeaderFooter$ = this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => {
+        // Cacher header/footer sur la page avis-google
+        return !event.url.includes('/avis-google');
+      }),
+      startWith(!this.router.url.includes('/avis-google')) // Valeur initiale basée sur l'URL actuelle
+    );
 
     // Écouter les changements de route pour mettre à jour les meta-données
     this.router.events
@@ -132,13 +143,16 @@ export class AppComponent implements OnInit {
       case 'tresorerie/accompagnement':
         this.metaService.setAccompagnementTresoreriePageMeta();
         break;
-      default:
-        // Meta-description par défaut si aucune route spécifique n'est trouvée
+      case 'avis-google':
         this.metaService.updateMetaTags(
-          "MFinances - Cabinet d'expertise comptable à Bruxelles",
-          "MFinances est un cabinet d'expertise comptable à Bruxelles offrant des services de comptabilité, fiscalité et conseil aux entreprises et indépendants.",
-          "expertise comptable, comptabilité, fiscalité, audit, gestion d'entreprise, Bruxelles"
+          'Votre avis compte pour nous ! ❤️ - MFinances',
+          'Aidez-nous à améliorer nos services en partageant votre expérience avec MFinances. Votre avis nous aide à mieux vous servir.',
+          'avis client, Google My Business, MFinances, feedback, témoignage'
         );
+        break;
+      default:
+        // Meta-tags par défaut si aucune route spécifique n'est trouvée
+        this.metaService.setHomePageMeta();
         break;
     }
   }

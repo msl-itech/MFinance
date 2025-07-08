@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { AbslComponent } from './absl/absl.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AvisGoogleComponent } from './avis-google/avis-google.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderAboutComponent } from './header-about/header-about.component';
@@ -36,6 +37,7 @@ import { TimelineIndependantComponent } from './timeline-independant/timeline-in
 import { TimelinePatrimonialeComponent } from './timeline-patrimoniale/timeline-patrimoniale.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +46,7 @@ import { EconomieAnalysieComponent } from './venteModule/economie-analysie/econo
     AboutComponent,
     HeaderAboutComponent,
     AbslComponent,
+    AvisGoogleComponent,
     ProfilIndependantComponent,
     ProfilSocieteManagementPatrimonialeComponent,
     TimelinePatrimonialeComponent,

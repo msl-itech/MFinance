@@ -1,5 +1,11 @@
 <ng-container *ngIf="isLoaded$ | async">
+  <ng-container *ngIf="showHeaderFooter$ | async">
     <app-nav-bar></app-nav-bar>
-    <router-outlet></router-outlet>
+  </ng-container>
+
+  <router-outlet></router-outlet>
+
+  <ng-container *ngIf="showHeaderFooter$ | async">
     <app-footer></app-footer>
   </ng-container>
+</ng-container>

@@ -1,0 +1,503 @@
+/* Page principale */
+.avis-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Décorations de fond statiques */
+.avis-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+      circle at 20% 80%,
+      rgba(37, 51, 91, 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(243, 73, 71, 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(37, 51, 91, 0.04) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.avis-page::after {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(
+    45deg,
+    rgba(243, 73, 71, 0.03),
+    rgba(37, 51, 91, 0.03)
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Formes géométriques décoratives statiques */
+.container::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(243, 73, 71, 0.04), transparent);
+  border-radius: 30px;
+  transform: rotate(45deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(225deg, rgba(37, 51, 91, 0.04), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Container */
+.container {
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Carte principale */
+.avis-card {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(37, 51, 91, 0.08),
+    0 10px 30px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  transform: translateY(0) scale(1);
+}
+
+.avis-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(37, 51, 91, 0.12),
+    0 15px 40px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.avis-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #f34947 0%,
+    #ff6b6b 25%,
+    #f34947 50%,
+    #e03131 75%,
+    #f34947 100%
+  );
+}
+
+/* Header de la carte */
+.card-header {
+  background: linear-gradient(
+    135deg,
+    #25335b 0%,
+    #2a3b6c 25%,
+    #3a4a7b 50%,
+    #25335b 100%
+  );
+  padding: 32px 28px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.12) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.card-header::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -15%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    rgba(243, 73, 71, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.brand h2 {
+  font-size: 1.9rem;
+  font-weight: 900;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.8px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.brand p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.95;
+  position: relative;
+  z-index: 2;
+  font-weight: 400;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenu de la carte */
+.card-content {
+  padding: 40px 32px 36px;
+  text-align: center;
+  position: relative;
+}
+
+.card-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(243, 73, 71, 0.2),
+    transparent
+  );
+}
+
+/* Titre principal */
+.main-title {
+  font-size: 1.85rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #25335b 0%, #3a4a6b 50%, #25335b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 22px 0;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  text-shadow: 0 2px 15px rgba(37, 51, 91, 0.1);
+}
+
+/* Description */
+.description {
+  font-size: 1.05rem;
+  color: #6c757d;
+  line-height: 1.65;
+  margin: 0 0 32px 0;
+  font-weight: 450;
+  opacity: 0.9;
+}
+
+/* Cercle de confiance */
+.trust-circle {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 28px 0;
+  position: relative;
+}
+
+.trust-circle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 145px;
+  height: 145px;
+  border: 2px solid rgba(243, 73, 71, 0.08);
+  border-radius: 50%;
+}
+
+.handshake-icon {
+  width: 115px;
+  height: 115px;
+  background: linear-gradient(
+    135deg,
+    #f34947 0%,
+    #ff5252 25%,
+    #e53935 50%,
+    #f34947 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  box-shadow: 0 20px 50px rgba(243, 73, 71, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.handshake-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 60px rgba(243, 73, 71, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.handshake-icon::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f34947, #ff3333);
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(15px);
+}
+
+/* Pointeur */
+.pointer {
+  font-size: 2.2rem;
+  margin: 0 0 28px 0;
+  animation: bounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Bouton principal */
+.btn-avis-modern {
+  background: linear-gradient(
+    135deg,
+    #f34947 0%,
+    #ff5252 25%,
+    #e53935 50%,
+    #f34947 100%
+  );
+  color: white;
+  border: none;
+  padding: 20px 44px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 40px rgba(243, 73, 71, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  margin: 0 0 28px 0;
+  letter-spacing: 0.4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-avis-modern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-avis-modern:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(243, 73, 71, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.6px;
+}
+
+.btn-avis-modern:hover::before {
+  left: 100%;
+}
+
+.btn-avis-modern:active {
+  transform: translateY(-1px) scale(1.01);
+  transition: all 0.1s ease;
+}
+
+/* Badge de remerciement */
+.thank-badge {
+  background: linear-gradient(
+    135deg,
+    #25335b 0%,
+    #2a3b6c 25%,
+    #3a4a7b 50%,
+    #25335b 100%
+  );
+  color: white;
+  padding: 14px 28px;
+  border-radius: 35px;
+  font-weight: 650;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 12px 30px rgba(37, 51, 91, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
+}
+
+.thank-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(37, 51, 91, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.thank-badge i {
+  color: #f34947;
+  font-size: 1.1rem;
+  animation: heartBeat 2s ease-in-out infinite;
+  filter: drop-shadow(0 1px 3px rgba(243, 73, 71, 0.3));
+}
+
+@keyframes heartBeat {
+  0%,
+  50%,
+  100% {
+    transform: scale(1);
+  }
+  25%,
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .avis-page {
+    padding: 20px 15px;
+  }
+
+  .card-content {
+    padding: 32px 24px;
+  }
+
+  .main-title {
+    font-size: 1.6rem;
+  }
+
+  .brand h2 {
+    font-size: 1.7rem;
+  }
+
+  .handshake-icon {
+    width: 105px;
+    height: 105px;
+    font-size: 2.7rem;
+  }
+
+  .btn-avis-modern {
+    padding: 18px 36px;
+    font-size: 1.05rem;
+  }
+
+  .thank-badge {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .avis-card {
+    border-radius: 24px;
+  }
+
+  .card-header {
+    padding: 28px 20px;
+  }
+
+  .card-content {
+    padding: 28px 18px;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .handshake-icon {
+    width: 95px;
+    height: 95px;
+    font-size: 2.4rem;
+  }
+}
