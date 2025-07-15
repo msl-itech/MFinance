@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+.service-single {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
 .read-more-btn {
   display: inline-block;
   font-size: 0.9em;
@@ -518,6 +522,11 @@ button.cta-button {
 
   .step-description {
     font-size: 1rem;
+  }
+  .custom-image-size {
+    display: none;
+    width: 90%;
+    max-width: 300px;
   }
 }
 
