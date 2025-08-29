@@ -1,0 +1,107 @@
+<div class="service-mobile">
+  <!-- Hero / Accroche principale -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Nos services comptables</h1>
+      <p class="subtitle">
+        Un accompagnement clair, fiable et personnalisé à chaque étape.
+      </p>
+      <button class="btn-primary" (click)="openContactModal()">
+        <span class="icon">📞</span>
+        <span>Je souhaite être rappelé(e)</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 1 — Pourquoi nous choisir ? -->
+  <section class="why">
+    <h2>Pourquoi faire confiance à MFINANCES ?</h2>
+    <p class="lead">
+      Notre cabinet vous aide à éviter les erreurs qui coûtent cher et vous
+      accompagne pour sécuriser vos démarches fiscales et comptables.
+    </p>
+    <ul class="bullets">
+      <li>✅ Réponses simples et concrètes</li>
+      <li>✅ Démarches expliquées sans jargon</li>
+      <li>✅ Experts locaux certifiés</li>
+    </ul>
+  </section>
+
+  <!-- Section 2 — Une équipe pour votre sérénité -->
+  <section class="team">
+    <h2>Une équipe réactive, proche de vous</h2>
+    <p>
+      Nous corrigeons les oublis et vous évitons les pertes de déductibilité.
+    </p>
+    <p>Chaque situation est suivie avec attention.</p>
+    <div class="team-visual">
+      <img src="assets/img/public/team.jpg" alt="Équipe MFINANCES" />
+    </div>
+  </section>
+
+  <!-- Section 3 — Nos services -->
+  <section class="services">
+    <h2>Nos services</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>📊 Comptabilité</h3>
+        <p>Une lecture claire des chiffres pour piloter votre entreprise.</p>
+        <a routerLink="/services/comptabilite" class="link">→ Voir plus</a>
+      </article>
+      <article class="card">
+        <h3>🏗️ Création d’entreprise</h3>
+        <p>Plan financier sur-mesure et compréhensible.</p>
+        <a routerLink="/services/creation-entreprise" class="link"
+          >→ Voir plus</a
+        >
+      </article>
+      <article class="card">
+        <h3>⚖️ Fiscalité des entreprises</h3>
+        <p>Déclarations fiscales prises en charge (TVA, ISOC...).</p>
+        <a routerLink="/services/fiscalite" class="link">→ Voir plus</a>
+      </article>
+      <article class="card">
+        <h3>📈 Gestion d’entreprise</h3>
+        <p>Suivi d’activité et conseils pour anticiper.</p>
+        <a routerLink="/tresorerie" class="link">→ Voir plus</a>
+      </article>
+      <article class="card">
+        <h3>🧾 Déclaration d’impôt</h3>
+        <p>Pour les particuliers : simple, rapide, efficace.</p>
+        <a routerLink="/services/declaration-impot" class="link">→ Voir plus</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section 4 — Contact rapide -->
+  <section class="quick-contact">
+    <h2>Besoin d’une réponse aujourd’hui ?</h2>
+    <p>Notre équipe est disponible pour répondre à vos questions.</p>
+    <a class="btn-call" href="tel:+3228860550">
+      <span class="icon">📞</span>
+      <span>+32 2 886 05 50</span>
+    </a>
+  </section>
+
+  <!-- Modal de contact -->
+  <div
+    class="contact-modal"
+    *ngIf="showContactModal"
+    (click)="closeContactModal()"
+  >
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h3>Demande de rappel</h3>
+        <button class="close-btn" (click)="closeContactModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Laissez-nous vos coordonnées via la page Contact.</p>
+        <a routerLink="/contact" class="btn-primary">
+          <span class="icon">📝</span>
+          <span>Aller au formulaire</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

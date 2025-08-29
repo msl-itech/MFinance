@@ -1,0 +1,369 @@
+<div class="tarif-mobile-container">
+  <!-- Hero Section / Accroche principale -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Nos Formules d'Accompagnement</h1>
+      <p class="hero-subtitle">
+        Choisissez la formule qui vous correspond, en toute clarté.
+      </p>
+
+      <button class="cta-primary" (click)="openContactModal()">
+        <span class="cta-icon">🔴</span>
+        <span class="cta-text">Je souhaite être rappelé(e)</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section : Nos formules détaillées -->
+  <section class="formulas-section" id="formulas">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-icon">🏷️</span>
+        Nos formules détaillées
+      </h2>
+    </div>
+
+    <div class="formulas-container">
+      <!-- Formule Base -->
+      <div class="formula-card base-card">
+        <div class="card-header">
+          <div class="formula-badge base">Base</div>
+          <div class="formula-price">
+            350€<span class="price-period">/mois HTVA</span>
+          </div>
+          <p class="formula-tagline">Pour démarrer sereinement</p>
+        </div>
+
+        <div class="card-content">
+          <h3 class="advantages-title">Avantages inclus :</h3>
+          <ul class="advantages-list">
+            <li>
+              <span class="check-icon">✅</span> Situation intermédiaire
+              semestrielle
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Analyse du résultat fiscal
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Suivi administratif régulier
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Accès à un expert-comptable
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Conseils fiscaux personnalisés
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Estimation continue des
+              liquidités
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Anticipation des besoins de
+              financement
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-footer">
+          <button class="select-btn base" (click)="goToContact()">
+            Choisir cette formule
+          </button>
+        </div>
+      </div>
+
+      <!-- Formule Premium (Recommandée) -->
+      <div class="formula-card premium-card recommended">
+        <div class="recommended-badge">
+          <span class="badge-icon">⭐</span>
+          <span class="badge-text">Recommandée</span>
+        </div>
+
+        <div class="card-header">
+          <div class="formula-badge premium">Premium</div>
+          <div class="formula-price">
+            450€<span class="price-period">/mois HTVA</span>
+          </div>
+          <p class="formula-tagline">Pour une croissance maîtrisée</p>
+        </div>
+
+        <div class="card-content">
+          <h3 class="advantages-title">Avantages inclus :</h3>
+          <ul class="advantages-list">
+            <li>
+              <span class="check-icon">✅</span> Tous les services de Base
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Objectifs budgétaires définis
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Suivi intermédiaire trimestriel
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-footer">
+          <button class="select-btn premium" (click)="goToContact()">
+            Choisir cette formule
+          </button>
+        </div>
+      </div>
+
+      <!-- Formule Excellence -->
+      <div class="formula-card excellence-card">
+        <div class="card-header">
+          <div class="formula-badge excellence">Excellence</div>
+          <div class="formula-price">
+            650€<span class="price-period">/mois HTVA</span>
+          </div>
+          <p class="formula-tagline">Pour une performance optimale</p>
+        </div>
+
+        <div class="card-content">
+          <h3 class="advantages-title">Avantages inclus :</h3>
+          <ul class="advantages-list">
+            <li>
+              <span class="check-icon">✅</span> Tous les services de Premium
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Suivi intermédiaire mensuel
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Projection régulière de la
+              trésorerie
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-footer">
+          <button class="select-btn excellence" (click)="goToContact()">
+            Choisir cette formule
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section : Zoom sur l'Offre Excellence -->
+  <section class="excellence-zoom-section" id="excellence-zoom">
+    <div class="section-header">
+      <h2 class="section-title">Zoom sur l'Offre Excellence</h2>
+      <p class="section-subtitle">
+        Pilotez votre entreprise avec un temps d'avance
+      </p>
+    </div>
+
+    <div class="excellence-content">
+      <!-- Vidéo intégrée -->
+      <div class="video-container">
+        <div class="video-title">
+          <span class="video-icon">🎬</span>
+          Dominez votre trésorerie – Offre Excellence
+        </div>
+
+        <div class="video-wrapper" (click)="toggleExcellenceVideo()">
+          <div class="video-thumbnail" *ngIf="!showExcellenceVideo">
+            <img
+              src="https://img.youtube.com/vi/XJrFJicX7S0/maxresdefault.jpg"
+              alt="Vidéo Excellence"
+            />
+            <!-- <div class="play-button">
+              <span class="play-icon">▶️</span>
+            </div> -->
+          </div>
+
+          <iframe
+            *ngIf="showExcellenceVideo"
+            [src]="excellenceVideoUrl"
+            frameborder="0"
+            allowfullscreen
+            class="video-iframe"
+          >
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Paragraphe explicatif -->
+      <div class="explanation-content">
+        <p class="main-explanation">
+          L'Offre Excellence est pensée pour les dirigeants qui veulent piloter
+          leur entreprise comme un capitaine.
+        </p>
+
+        <ul class="features-list">
+          <li><span class="bullet">•</span> Situation mensuelle</li>
+          <li>
+            <span class="bullet">•</span> Analyse budgétaire trimestrielle
+          </li>
+          <li><span class="bullet">•</span> Tableau prévisionnel dynamique</li>
+        </ul>
+
+        <!-- Bloc "Grâce à cet outil" -->
+        <div class="benefits-block">
+          <h3 class="benefits-title">Grâce à cet outil :</h3>
+          <ul class="benefits-list">
+            <li>
+              <span class="check-icon">✅</span> Visualisation à 1, 3 ou 6 mois
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Anticipation des tensions
+            </li>
+            <li>
+              <span class="check-icon">✅</span> Décisions stratégiques sur des
+              données actualisées
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section : Comprendre nos formules en vidéo -->
+  <section class="video-explanation-section" id="video-explanation">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-icon">📽️</span>
+        Comprendre nos formules en vidéo
+      </h2>
+      <div class="title-separator">
+        <span class="separator-line"></span>
+        <span class="star-icon">⭐</span>
+        <span class="separator-line"></span>
+      </div>
+    </div>
+
+    <div class="main-video-container">
+      <div class="video-cta">
+        <span class="cta-badge">Présentation vidéo</span>
+      </div>
+
+      <div class="main-video-wrapper" (click)="toggleMainVideo()">
+        <div class="video-thumbnail" *ngIf="!showMainVideo">
+          <img
+            src="https://img.youtube.com/vi/gAF_Jw6_T7Q/maxresdefault.jpg"
+            alt="Présentation des formules"
+          />
+          <!-- <div class="play-button large">
+            <span class="play-icon">▶️</span>
+          </div> -->
+        </div>
+
+        <iframe
+          *ngIf="showMainVideo"
+          [src]="mainVideoUrl"
+          frameborder="0"
+          allowfullscreen
+          class="video-iframe"
+        >
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section : Imaginez... (comparatif) -->
+  <section class="comparison-section" id="comparison">
+    <div class="section-header">
+      <h2 class="section-title">Imaginez…</h2>
+    </div>
+
+    <div class="comparison-container">
+      <!-- Entreprise A (sans trésorerie dynamique) -->
+      <div class="comparison-card negative">
+        <div class="card-icon negative">
+          <span class="icon">🔴</span>
+        </div>
+        <h3 class="card-title">Entreprise A</h3>
+        <p class="card-subtitle">(sans trésorerie dynamique)</p>
+
+        <div class="scenario-content">
+          <p class="scenario-text">
+            Découvre trop tard un manque de liquidité en octobre pour faire face
+            aux charges sociales de décembre.
+          </p>
+
+          <div class="result-box negative">
+            <strong class="result-label">Résultat :</strong>
+            <span class="result-text"
+              >stress, prêt coûteux, perte de crédibilité</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Entreprise B (cliente MFinances) -->
+      <div class="comparison-card positive">
+        <div class="card-icon positive">
+          <span class="icon">✅</span>
+        </div>
+        <h3 class="card-title">Entreprise B</h3>
+        <p class="card-subtitle">(cliente MFinances)</p>
+
+        <div class="scenario-content">
+          <p class="scenario-text">
+            Anticipe dès juillet une tension en fin d'année et prend les mesures
+            nécessaires.
+          </p>
+
+          <div class="result-box positive">
+            <strong class="result-label">Résultat :</strong>
+            <span class="result-text"
+              >action rapide, négociation, maîtrise totale</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="conclusion">
+      <p class="conclusion-text">
+        <span class="arrow-icon">➡️</span>
+        Avec MFinances, vous devenez l'acteur de votre succès, pas la victime
+        des imprévus.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="final-cta-section">
+    <div class="final-cta-content">
+      <h2 class="cta-title">Prêt à reprendre le contrôle ?</h2>
+      <p class="cta-subtitle">
+        Discutons de vos besoins et trouvons la formule parfaite
+      </p>
+
+      <button class="cta-final" (click)="openContactModal()">
+        <span class="cta-icon">📞</span>
+        <span class="cta-text">Demander un rappel gratuit</span>
+      </button>
+    </div>
+  </section>
+</div>
+
+<!-- Modal de contact -->
+<div
+  class="contact-modal"
+  *ngIf="showContactModal"
+  (click)="closeContactModal()"
+>
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>Demande de rappel</h3>
+      <button class="close-btn" (click)="closeContactModal()">
+        <span class="close-icon">✕</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <p>Nous vous recontactons rapidement pour discuter de vos besoins.</p>
+
+      <button class="contact-btn" (click)="goToContact()">
+        <span class="btn-icon">📧</span>
+        <span class="btn-text">Accéder au formulaire de contact</span>
+      </button>
+    </div>
+  </div>
+</div>
+<app-zone-contact></app-zone-contact>

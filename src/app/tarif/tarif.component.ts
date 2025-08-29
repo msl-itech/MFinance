@@ -1,7 +1,9 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, Inject, OnInit, TemplateRef } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
+import { DeviceService } from '../core/device.service';
 import { MetaService } from '../services/meta.service';
 
 @Component({
@@ -13,6 +15,9 @@ export class TarifComponent implements OnInit {
   isAccordionOpen = false;
   videoUrl: SafeResourceUrl;
   videoUrl2: SafeResourceUrl;
+
+  // Observable pour la détection mobile/desktop
+  shouldUseMobileVersion$!: Observable<boolean>;
 
   // Propriétés pour le tooltip et modal Excellence
   showExcellenceTooltip = false;
@@ -27,7 +32,8 @@ export class TarifComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private modalService: NgbModal,
     private metaService: MetaService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    @Inject(DeviceService) public deviceService: DeviceService
   ) {
     const url = 'https://www.youtube.com/embed/ghSPTixak4c';
     const url2 = 'https://www.youtube.com/embed/XJrFJicX7S0';
@@ -37,6 +43,9 @@ export class TarifComponent implements OnInit {
 
   ngOnInit() {
     this.metaService.setTarifPageMeta();
+
+    // Initialiser l'observable pour la détection mobile/desktop
+    this.shouldUseMobileVersion$ = this.deviceService.shouldUseMobileVersion$;
 
     // Gérer le fragment pour le défilement
     this.route.fragment.subscribe((fragment) => {

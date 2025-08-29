@@ -1,0 +1,31 @@
+.mobile-app,
+.desktop-app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.device-toggle {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.device-toggle button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.device-toggle button:hover {
+  background: #0056b3;
+}

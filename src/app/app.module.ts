@@ -1,3 +1,4 @@
+import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,8 +14,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AvisGoogleComponent } from './avis-google/avis-google.component';
 import { ContactComponent } from './contact/contact.component';
+import { TarifMobileComponent } from './features-mobile/tarif-mobile/tarif-mobile.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderAboutComponent } from './header-about/header-about.component';
+import { DesktopLayoutComponent } from './layouts/desktop-layout/desktop-layout.component';
+import { MobileLayoutComponent } from './layouts/mobile-layout/mobile-layout.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfessionelSanteComponent } from './professionel-sante/professionel-sante.component';
@@ -79,6 +83,10 @@ import { EconomieAnalysieComponent } from './venteModule/economie-analysie/econo
     ShardeModuleModule,
     ImageOptimizerDirective,
     BrowserAnimationsModule,
+    LayoutModule,
+    DesktopLayoutComponent,
+    MobileLayoutComponent,
+    TarifMobileComponent,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',

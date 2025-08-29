@@ -1,0 +1,214 @@
+/* Mobile-first styles for Service Mobile page */
+.service-mobile {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1a2544;
+}
+
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a2c51, #2d5a87);
+  opacity: 0.95;
+  filter: saturate(1.05);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+}
+
+.hero .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1.5rem 0;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #f34947, #ff6b6b);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(243, 73, 71, 0.3);
+}
+
+.btn-primary .icon {
+  font-size: 1.1rem;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+/* Why */
+.why {
+  padding: 2rem 1.2rem;
+  background: #fff;
+}
+.why h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+.why .lead {
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+.why .bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.why .bullets li {
+  margin: 0.4rem 0;
+}
+
+/* Team */
+.team {
+  padding: 2rem 1.2rem;
+  background: #f8f9fa;
+}
+.team h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+.team p {
+  color: #4b5563;
+  margin: 0.4rem 0;
+}
+.team-visual {
+  margin-top: 1rem;
+  text-align: center;
+}
+.team-visual img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Services */
+.services {
+  padding: 2rem 1.2rem;
+  background: #fff;
+}
+.services h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.cards {
+  display: grid;
+  gap: 1rem;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+.card p {
+  margin: 0 0 0.75rem 0;
+  color: #4b5563;
+}
+.card .link {
+  color: #1a2c51;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Quick Contact */
+.quick-contact {
+  padding: 2rem 1.2rem;
+  background: #f8f9fa;
+  text-align: center;
+}
+.quick-contact h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+.quick-contact p {
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+.btn-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #f34947, #ff6b6b);
+  color: #fff;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 8px 25px rgba(243, 73, 71, 0.25);
+}
+
+/* Modal */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 380px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(135deg, #1a2c51, #2d5a87);
+  color: #fff;
+}
+.modal-body {
+  padding: 1.4rem;
+  text-align: center;
+}
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* Fixed CTA (optional) */
+@media (min-width: 480px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+}

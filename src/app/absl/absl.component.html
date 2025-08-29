@@ -151,80 +151,245 @@
     min-height: 250px;
   }
 
+  /* Améliorations UX Mobile selon audit */
+
+  /* 1. Header réduit sur mobile */
+  .header {
+    position: relative;
+    background: linear-gradient(rgba(37, 51, 91, 0.9), rgba(37, 51, 91, 0.9)),
+      url("../../assets/img/webp/57.avif") no-repeat center center;
+    background-size: cover;
+    padding: 60px 0 40px;
+    color: white;
+  }
+
+  .header-overlay {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Bouton d'accès rapide mobile */
+  .quick-access-mobile {
+    display: none;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    margin-top: -10px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .quick-access-btn {
+    background: linear-gradient(135deg, #ff4d4d, #ff3333);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .quick-access-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.4);
+  }
+
+  /* 2. Introduction simplifiée mobile */
+  .intro-mobile {
+    display: none;
+  }
+
+  .intro-toggle {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .intro-expanded {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  /* 3. Boutons CTA flottants mobile */
+  .mobile-cta-floating {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+  }
+
+  .floating-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .floating-btn {
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .floating-btn-primary {
+    background: linear-gradient(135deg, #ff4d4d, #ff3333);
+    color: white;
+  }
+
+  .floating-btn-secondary {
+    background: transparent;
+    color: #ff4d4d;
+    border: 2px solid #ff4d4d;
+  }
+
+  /* 4. Défis avec emojis et ordre amélioré */
+  .defis-mobile {
+    display: none;
+  }
+
+  .defi-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #ff4d4d;
+  }
+
+  .defi-emoji {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+
+  .defi-content {
+    flex: 1;
+  }
+
+  .defi-title {
+    font-weight: 600;
+    color: #25335b;
+    margin-bottom: 0.5rem;
+  }
+
+  .defi-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* 5. Contact ASBL spécifique */
+  .contact-asbl-cta {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9ff, #fff);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .contact-asbl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #25335b, #3d4a73);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .contact-asbl-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 51, 91, 0.3);
+  }
+
+  .maps-link {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
   @media (max-width: 768px) {
-    .custom-image-size {
-      width: 60%;
-      max-width: 200px;
+    /* 1. Header réduit */
+    .header {
+      padding: 40px 0 20px;
     }
 
-    .cta-final-section {
-      min-height: 200px;
+    .header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
     }
 
-    .cta-final-section .row {
-      min-height: 150px;
-    }
-  }
-
-  .animate__fadeIn {
-    animation-name: fadeIn;
-    animation-duration: 0.5s;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .form-control:focus {
-    border-color: #ff3333;
-    box-shadow: 0 0 0 0.2rem rgba(255, 51, 51, 0.25);
-  }
-
-  .btn-danger {
-    background-color: #ff3333;
-    border-color: #ff3333;
-  }
-
-  .btn-danger:hover {
-    background-color: #e62e2e;
-    border-color: #e62e2e;
-  }
-
-  .card {
-    border: none;
-  }
-
-  .card-header.bg-custom--primary {
-    background-color: #25335b !important;
-  }
-
-  .text-primary {
-    color: #25335b !important;
-  }
-
-  /* Animation pour les cartes d'options */
-  .option-card:active {
-    transform: scale(0.98);
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .step-content {
-      min-height: 350px;
+    .quick-access-mobile {
+      display: block;
     }
 
-    .col-md-6 .option-card {
-      margin-bottom: 1rem;
+    /* 2. Introduction mobile simplifiée */
+    .intro-desktop {
+      display: none;
     }
 
-    /* Améliorations pour le responsive mobile */
+    .intro-mobile {
+      display: block;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #f8f9ff, #fff);
+      border-radius: 15px;
+      margin-bottom: 2rem;
+    }
+
+    /* 3. CTA flottants */
+    .mobile-cta-floating {
+      display: block;
+    }
+
+    .button-container .home2-btn {
+      display: none; /* Masquer les boutons fixes sur mobile */
+    }
+
+    /* 4. Défis version mobile */
+    .defis.row {
+      display: none; /* Masquer version desktop */
+    }
+
+    .defis-mobile {
+      display: block;
+      margin: 2rem 0;
+    }
+
+    /* 5. Sidebar masquée sur mobile - remplacée par le carrousel en bas */
+    .col-lg-4 {
+      display: none;
+    }
+
+    .col-lg-8 {
+      width: 100%;
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+
+    /* Styles généraux mobile */
     .section-title {
       font-size: 1.5rem;
     }
@@ -243,80 +408,70 @@
       margin-right: 0 !important;
     }
 
-    .works-img-gallery .row {
-      margin: 0;
+    .single-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    .works-img-gallery .col-12 {
-      padding: 0.5rem;
+    .single-content h4 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
     }
 
-    .defis .col-md-4 {
-      text-align: center;
-      margin-bottom: 2rem;
+    .single-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
-    .defis .col-md-8 {
-      padding-left: 0;
+    .step-content {
+      min-height: 350px;
     }
 
-    .single-content-list li {
-      margin-bottom: 1.5rem;
-      padding: 0 1rem;
+    .col-md-6 .option-card {
+      margin-bottom: 1rem;
     }
 
-    .work-item {
+    .custom-image-size {
+      width: 60%;
+      max-width: 200px;
+    }
+
+    .cta-final-section {
+      min-height: 200px;
+    }
+
+    .cta-final-section .row {
+      min-height: 150px;
+    }
+  }
+
+  /* Très petits écrans */
+  @media (max-width: 480px) {
+    .floating-buttons {
       flex-direction: column;
+      width: 100%;
+    }
+
+    .floating-btn {
+      width: 100%;
       text-align: center;
-      margin-bottom: 2rem;
+      padding: 1rem;
     }
 
-    .work-item .me-3 {
-      margin-right: 0 !important;
-      margin-bottom: 1rem;
+    .mobile-cta-floating {
+      left: 10px;
+      right: 10px;
+      transform: none;
+      width: calc(100% - 20px);
     }
 
-    .accordion-button {
-      font-size: 0.9rem;
-      padding: 0.75rem;
+    .defi-item {
+      padding: 0.8rem;
     }
 
-    .form-check-card .card-body {
-      padding: 1rem 0.5rem;
-    }
-
-    .option-card .card-title {
-      font-size: 0.9rem;
-    }
-
-    .custom-card {
-      margin-bottom: 1rem;
-      padding: 15px;
-    }
-
-    .home2-btn {
-      margin-left: 0 !important;
-    }
-
-    /* Améliorations spécifiques pour la section FAQ */
-    .service-faq .row {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .service-faq .col-md-6 {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-
-    .accordion-button {
-      padding: 0.5rem 0.75rem;
-      font-size: 0.85rem;
-    }
-
-    .accordion-body {
-      padding: 0.75rem;
-      font-size: 0.85rem;
+    .defi-emoji {
+      font-size: 1.3rem;
     }
   }
 
@@ -612,6 +767,7 @@
     }
   }
 </style>
+
 <header class="header">
   <div class="header-overlay">
     <div class="container">
@@ -620,6 +776,13 @@
     </div>
   </div>
 </header>
+
+<!-- Bouton d'accès rapide mobile -->
+<div class="quick-access-mobile">
+  <a href="#targetSection" class="quick-access-btn">
+    ⚡ Accéder directement à l'info
+  </a>
+</div>
 
 <!-- Service single start -->
 <section class="service-single pt-120 pb-130">
@@ -636,19 +799,44 @@
           <h4>
             Accompagnement pour les ASBL : Donnez vie à votre mission sociale
           </h4>
-          <p>
-            Les Associations Sans But Lucratif (ASBL) en Belgique sont des
-            structures incontournables pour porter des projets sociaux,
-            culturels, éducatifs ou environnementaux. Si leur fonctionnement
-            repose sur des valeurs d'entraide et d'engagement, leur gestion
-            implique également des défis administratifs, financiers et
-            organisationnels.
-          </p>
-          <p>
-            Chez MFINANCES, nous comprenons les réalités des ASBL belges et
-            offrons un accompagnement sur mesure pour simplifier votre gestion
-            et maximiser l'impact de votre mission.
-          </p>
+
+          <!-- Version desktop -->
+          <div class="intro-desktop">
+            <p>
+              Les Associations Sans But Lucratif (ASBL) en Belgique sont des
+              structures incontournables pour porter des projets sociaux,
+              culturels, éducatifs ou environnementaux. Si leur fonctionnement
+              repose sur des valeurs d'entraide et d'engagement, leur gestion
+              implique également des défis administratifs, financiers et
+              organisationnels.
+            </p>
+            <p>
+              Chez MFINANCES, nous comprenons les réalités des ASBL belges et
+              offrons un accompagnement sur mesure pour simplifier votre gestion
+              et maximiser l'impact de votre mission.
+            </p>
+          </div>
+
+          <!-- Version mobile simplifiée -->
+          <div class="intro-mobile">
+            <p>
+              <strong>Enjeux administratifs</strong> complexes pour votre ASBL ?
+              Chez MFINANCES, nous offrons un
+              <strong>accompagnement sur mesure</strong> pour une
+              <strong>gestion simplifiée</strong> de votre association.
+            </p>
+            <a class="intro-toggle" onclick="toggleIntroExpanded()"
+              >+ En savoir plus</a
+            >
+            <div id="introExpanded" class="intro-expanded">
+              <p>
+                Les ASBL belges portent des projets sociaux, culturels,
+                éducatifs ou environnementaux essentiels. Mais leur gestion
+                implique des défis administratifs, financiers et
+                organisationnels que nous maîtrisons parfaitement.
+              </p>
+            </div>
+          </div>
 
           <div class="button-container">
             <div class="home2-btn mb-4">
@@ -673,7 +861,8 @@
             <img src="../../assets/img/webp/58.avif" alt="" class="rounded-4" />
           </div>
         </div>
-        <!-- Challenges Section -->
+
+        <!-- Challenges Section Desktop -->
         <h3>Les défis majeurs auxquels font face les ASBL</h3>
         <div class="defis row align-items-center mt-10">
           <!-- Image -->
@@ -724,11 +913,98 @@
             </ul>
           </div>
         </div>
+
+        <!-- Version mobile des défis avec emojis -->
+        <div class="defis-mobile">
+          <h3 style="text-align: center; margin-bottom: 2rem">
+            Les défis majeurs de votre ASBL
+          </h3>
+
+          <div class="defi-item">
+            <div class="defi-emoji">📑</div>
+            <div class="defi-content">
+              <div class="defi-title">Respect des obligations légales</div>
+              <div class="defi-description">
+                Assemblées générales, rapports annuels, dépôt des comptes : la
+                gestion administrative chronophage.
+              </div>
+            </div>
+          </div>
+
+          <div class="defi-item">
+            <div class="defi-emoji">💰</div>
+            <div class="defi-content">
+              <div class="defi-title">Subsides : gestion rigoureuse</div>
+              <div class="defi-description">
+                Justification précise des coûts et respect des critères stricts
+                imposés par les financeurs.
+              </div>
+            </div>
+          </div>
+
+          <div class="defi-item">
+            <div class="defi-emoji">👥</div>
+            <div class="defi-content">
+              <div class="defi-title">Gestion des bénévoles & ressources</div>
+              <div class="defi-description">
+                Encadrement, répartition des frais entre projets et sécurisation
+                de la trésorerie.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact ASBL spécifique -->
+        <div class="contact-asbl-cta">
+          <a href="/contact" class="contact-asbl-btn">
+            📆 Prendre un rendez-vous ASBL
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <br />
+          <a
+            href="https://maps.google.com/?q=20+Rue+de+la+Magnanerie,+1180+Uccle"
+            target="_blank"
+            class="maps-link"
+          >
+            📍 Voir sur Google Maps
+          </a>
+        </div>
       </div>
       <!-- End Main Content -->
     </div>
   </div>
 </section>
+
+<!-- CTA flottants mobile -->
+<div class="mobile-cta-floating">
+  <div class="floating-buttons">
+    <a href="#targetSection" class="floating-btn floating-btn-primary">
+      💰 Nos services
+    </a>
+    <a
+      href="#formulaire-evaluation"
+      class="floating-btn floating-btn-secondary"
+    >
+      🧭 Évaluation
+    </a>
+  </div>
+</div>
+
+<!-- Fonction JavaScript pour le toggle -->
+<script>
+  function toggleIntroExpanded() {
+    const expanded = document.getElementById("introExpanded");
+    const toggle = document.querySelector(".intro-toggle");
+
+    if (expanded.style.display === "none" || expanded.style.display === "") {
+      expanded.style.display = "block";
+      toggle.textContent = "- Réduire";
+    } else {
+      expanded.style.display = "none";
+      toggle.textContent = "+ En savoir plus";
+    }
+  }
+</script>
 
 <section class="bg-custom--primary" #serviceSection>
   <div class="works sec-padding">
@@ -979,6 +1255,7 @@
     </div>
   </div>
 </section>
+
 <section>
   <!--=====about-start=======-->
   <div class="about sec-padding" id="targetSection">
