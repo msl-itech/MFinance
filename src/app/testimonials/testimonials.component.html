@@ -7,9 +7,9 @@
 
     <div class="testimonials-wrapper" *ngIf="!loading && !error">
       <div class="testimonials-container">
-        <div class="testimonial-card" 
+        <div class="testimonial-card"
              *ngFor="let testimonial of visibleTestimonials"
-             [class]="'testimonial-' + testimonial.testimonial_type">
+             [ngClass]="['testimonial-' + testimonial.testimonial_type]">
           
           <!-- Type badge -->
           <div class="type-badge">

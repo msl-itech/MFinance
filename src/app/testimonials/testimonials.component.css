@@ -63,33 +63,73 @@
 
 /* ============ CARTES DE BASE ============ */
 .testimonial-card {
-  background: #ffffff;
+  /* Accent variables customized per type */
+  --accent: #25335b;
+  --accent-2: #7b93ff;
+  --accent-soft: rgba(37, 51, 91, 0.08);
+  --bg: #ffffff;
+
+  background: linear-gradient(var(--bg), var(--bg)) padding-box;
   border-radius: 20px;
   padding: 0;
-  box-shadow: 
+  box-shadow:
     0 10px 30px rgba(37, 51, 91, 0.1),
     0 4px 15px rgba(37, 51, 91, 0.05);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.2, 1), box-shadow 0.4s ease;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(37, 51, 91, 0.1);
+  border: 2px solid transparent;
 }
 
+/* Animated gradient border using mask */
 .testimonial-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: #25335b;
+  inset: 0;
+  border-radius: 22px;
+  padding: 2px; /* border width */
+  background: conic-gradient(from 180deg, var(--accent), var(--accent-2), #ffcc70, var(--accent));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spinBorder 12s linear infinite;
+  pointer-events: none;
 }
 
+/* Soft moving glow background */
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  width: 160%;
+  height: 160%;
+  left: -30%;
+  top: -40%;
+  background:
+    radial-gradient(500px 300px at 20% 25%, var(--accent-soft), transparent 60%),
+    radial-gradient(400px 260px at 80% 30%, rgba(255, 60, 60, 0.06), transparent 60%);
+  filter: blur(0.5px);
+  z-index: 0;
+  transform: translateZ(0);
+  pointer-events: none;
+  animation: floatGlow 14s ease-in-out infinite alternate;
+}
+
+@keyframes spinBorder {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatGlow {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+  100% { transform: translate(2%, 3%) scale(1.02); opacity: 1; }
+}
+
+.testimonials-container { perspective: 1200px; }
+
 .testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 
-    0 20px 40px rgba(37, 51, 91, 0.15),
-    0 8px 25px rgba(37, 51, 91, 0.1);
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  box-shadow:
+    0 28px 60px rgba(37, 51, 91, 0.18),
+    0 10px 30px rgba(37, 51, 91, 0.12);
 }
 
 /* ============ BADGES DE TYPE ============ */
@@ -100,30 +140,56 @@
   z-index: 10;
 }
 
+/* Accent palette per testimonial type */
+.testimonial-text {
+  --accent: #6c5ce7;
+  --accent-2: #a18cff;
+  --accent-soft: rgba(108, 92, 231, 0.12);
+}
+
+.testimonial-audio {
+  --accent: #ff3c3c;
+  --accent-2: #f7b267;
+  --accent-soft: rgba(255, 60, 60, 0.12);
+}
+
+.testimonial-video {
+  --accent: #00b894;
+  --accent-2: #00d1b2;
+  --accent-soft: rgba(0, 184, 148, 0.12);
+}
+
 .type-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 15px rgba(37, 51, 91, 0.15);
+  font-size: 1.3rem;
   color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 6px 18px rgba(37, 51, 91, 0.18);
 }
 
-.testimonial-text .type-icon {
-  background: #25335b;
+/* Ribbon tail for flair */
+.type-badge::before {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  width: 16px;
+  height: 30px;
+  transform: translateY(-50%) skewX(-15deg);
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  border-radius: 2px;
+  filter: saturate(1.1);
+  opacity: 0.9;
 }
 
-.testimonial-audio .type-icon {
-  background: #ff3c3c;
-  animation: pulse 2s infinite;
-}
-
-.testimonial-video .type-icon {
-  background: #25335b;
-}
+.testimonial-text .type-badge .type-icon { animation: none; }
+.testimonial-audio .type-badge .type-icon { animation: pulse 2.2s infinite; }
+.testimonial-video .type-badge .type-icon { animation: none; }
 
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(255, 60, 60, 0.7); }
@@ -224,7 +290,7 @@
   padding: 25px;
   background: #f8f9fa;
   border-radius: 15px;
-  border-left: 5px solid #25335b;
+  border-left: 5px solid var(--accent);
 }
 
 .quote-icon {
@@ -232,7 +298,7 @@
   top: -15px;
   left: 20px;
   font-size: 4rem;
-  color: #25335b;
+  color: var(--accent);
   font-family: Georgia, serif;
   opacity: 0.2;
 }
@@ -245,6 +311,18 @@
   font-style: italic;
   position: relative;
   z-index: 1;
+}
+
+/* Speech-bubble tail */
+.text-content::after {
+  content: '';
+  position: absolute;
+  left: 38px;
+  bottom: -12px;
+  width: 0; height: 0;
+  border: 12px solid transparent;
+  border-top-color: #f8f9fa;
+  filter: drop-shadow(0 -2px 0 rgba(37, 51, 91, 0.06));
 }
 
 /* ============ CONTENU AUDIO ============ */
@@ -357,7 +435,7 @@
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  color: #25335b;
+  color: var(--accent);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -366,7 +444,7 @@
 .play-button:hover {
   transform: scale(1.1);
   background: white;
-  color: #ff3c3c;
+  color: var(--accent-2);
 }
 
 /* ============ DESCRIPTIONS MÉDIA ============ */
