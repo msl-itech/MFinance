@@ -33,8 +33,8 @@ export const MOBILE_ROUTES: Routes = [
       { path: 'support', component: SupportComponent },
       { path: 'about', component: AboutComponent },
       { path: 'tarif', component: TarifMobileComponent },
-      { path: 'absl', component: AbslComponent },
       { path: 'avis-google', component: AvisGoogleComponent },
+      { path: 'absl', component: AbslComponent },
       { path: 'profil-independant', component: ProfilIndependantComponent },
       {
         path: 'societe-management-patrimoniale',
@@ -47,12 +47,13 @@ export const MOBILE_ROUTES: Routes = [
       },
       { path: 'commercant-horeca', component: ProfilCommercantHorecaComponent },
       { path: 'professionel-sante', component: ProfessionelSanteComponent },
-      { path: 'contact', component: ContactComponent },
+
       { path: 'grande-entreprise', component: ProfilGrandeEntrepriseComponent },
       {
         path: 'promoteur-immobilier',
         component: ProfilPromoteurImmobilierComponent,
       },
+      { path: 'contact', component: ContactComponent },
       {
         path: 'services',
         loadChildren: () =>
