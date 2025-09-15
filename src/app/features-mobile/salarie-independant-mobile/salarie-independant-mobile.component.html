@@ -1,0 +1,357 @@
+<div class="salarie-independant-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Salarié ou Indépendant ?</h1>
+      <p class="hero-subtitle">
+        Passez le cap sereinement avec les conseils de Mfinances.
+      </p>
+      <p class="hero-question">Quel statut est fait pour vous ?</p>
+
+      <button class="cta-primary" (click)="playVideo()">
+        <i class="fas fa-play cta-icon"></i>
+        <span class="cta-text">Regarder la vidéo explicative</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Comparatif des Statuts -->
+  <section class="comparison-section" id="comparison">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-balance-scale title-icon"></i>
+        Comparatif des Statuts
+      </h2>
+    </div>
+
+    <div class="status-cards">
+      <!-- Statut Salarié -->
+      <div class="status-card employee-card">
+        <div class="status-header">
+          <div class="status-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3 class="status-title">Statut Salarié</h3>
+        </div>
+
+        <div class="status-content">
+          <div class="status-feature">
+            <p class="feature-text">Contrat de travail = sécurité & avantages sociaux</p>
+          </div>
+          <div class="status-feature">
+            <p class="feature-text">Salaire fixe chaque mois</p>
+          </div>
+          <div class="status-feature">
+            <p class="feature-text">Horaires définis et hiérarchie claire</p>
+          </div>
+
+          <div class="example-box">
+            <div class="example-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="example-content">
+              <span class="example-label">Exemple :</span>
+              <p class="example-text">
+                <strong>3.000 €</strong> / mois garantis, protections sociales incluses
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statut Indépendant -->
+      <div class="status-card freelance-card">
+        <div class="status-header">
+          <div class="status-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3 class="status-title">Statut Indépendant</h3>
+        </div>
+
+        <div class="status-content">
+          <div class="status-feature">
+            <p class="feature-text">Liberté totale : clients, horaires, tarifs</p>
+          </div>
+          <div class="status-feature">
+            <p class="feature-text">Plus de responsabilités (cotisations, fiscalité)</p>
+          </div>
+          <div class="status-feature">
+            <p class="feature-text">Nécessite un accompagnement professionnel</p>
+          </div>
+
+          <div class="example-box">
+            <div class="example-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="example-content">
+              <span class="example-label">Exemple :</span>
+              <p class="example-text">
+                Facturation de <strong>5.000 €</strong> pour un projet d'un mois<br>
+                <i class="fas fa-arrow-right arrow-icon"></i> Mais gestion des frais et impôts à prévoir
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contrat de travail vs Contrat de prestation -->
+  <section class="contract-section" id="contract">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-file-contract title-icon"></i>
+        Contrat de travail vs Contrat de prestation
+      </h2>
+    </div>
+
+    <div class="contract-comparison">
+      <div class="contract-item">
+        <div class="contract-header employee">
+          <h3 class="contract-title">Salarié</h3>
+        </div>
+        <div class="contract-content">
+          <div class="contract-point">
+            <i class="fas fa-minus contract-icon"></i>
+            <span>Moins de flexibilité</span>
+          </div>
+          <div class="contract-point">
+            <i class="fas fa-plus contract-icon positive"></i>
+            <span>Avantages : congés, stabilité</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contract-item">
+        <div class="contract-header freelance">
+          <h3 class="contract-title">Indépendant</h3>
+        </div>
+        <div class="contract-content">
+          <div class="contract-point">
+            <i class="fas fa-plus contract-icon positive"></i>
+            <span>Contrats sur-mesure</span>
+          </div>
+          <div class="contract-point">
+            <i class="fas fa-plus contract-icon positive"></i>
+            <span>Liberté de choix des missions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pouvoir d'achat & Frais déductibles -->
+  <section class="purchasing-power-section" id="purchasing-power">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-euro-sign title-icon"></i>
+        Pouvoir d'achat & Frais déductibles
+      </h2>
+    </div>
+
+    <div class="power-comparison">
+      <div class="power-item">
+        <div class="power-header employee">
+          <h3 class="power-title">Salarié</h3>
+        </div>
+        <div class="power-content">
+          <div class="power-point">
+            <i class="fas fa-times power-icon negative"></i>
+            <span>Déductions fiscales limitées</span>
+          </div>
+          <div class="power-point">
+            <i class="fas fa-info power-icon neutral"></i>
+            <span>Forfait légal souvent choisi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="power-item">
+        <div class="power-header freelance">
+          <h3 class="power-title">Indépendant</h3>
+        </div>
+        <div class="power-content">
+          <div class="power-point">
+            <i class="fas fa-check power-icon positive"></i>
+            <span>Déduction possible de nombreux frais réels</span>
+          </div>
+          <div class="power-point">
+            <i class="fas fa-chart-line power-icon positive"></i>
+            <span>Optimisation du pouvoir d'achat (bureau à domicile, véhicule pro...)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pension & Retraite -->
+  <section class="pension-section" id="pension">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-user-clock title-icon"></i>
+        Pension & Retraite
+      </h2>
+    </div>
+
+    <div class="pension-comparison">
+      <div class="pension-item">
+        <div class="pension-header employee">
+          <h3 class="pension-title">Salarié</h3>
+        </div>
+        <div class="pension-content">
+          <div class="pension-point">
+            <i class="fas fa-plus pension-icon positive"></i>
+            <span>Pension légale plus élevée</span>
+          </div>
+          <div class="pension-point">
+            <i class="fas fa-chart-line pension-icon neutral"></i>
+            <span>Revenu stable mais parfois insuffisant</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pension-item">
+        <div class="pension-header freelance">
+          <h3 class="pension-title">Indépendant</h3>
+        </div>
+        <div class="pension-content">
+          <div class="pension-point">
+            <i class="fas fa-minus pension-icon negative"></i>
+            <span>Pension légale plus basse</span>
+          </div>
+          <div class="pension-point">
+            <i class="fas fa-piggy-bank pension-icon positive"></i>
+            <span>Plus de liberté d'épargner et d'investir</span>
+          </div>
+          <div class="pension-point">
+            <i class="fas fa-trophy pension-icon positive"></i>
+            <span>Potentiel long terme supérieur avec bonne gestion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Comment choisir -->
+  <section class="choice-section" id="choice">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-question-circle title-icon"></i>
+        Comment choisir ?
+      </h2>
+      <p class="section-subtitle">Cela dépend de vos priorités :</p>
+    </div>
+
+    <div class="priorities">
+      <div class="priority-card">
+        <div class="priority-header">
+          <span class="priority-question">Vous recherchez :</span>
+        </div>
+
+        <div class="priority-options">
+          <div class="priority-option stability">
+            <div class="option-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="option-content">
+              <span class="option-label">Stabilité ?</span>
+              <span class="option-arrow">→</span>
+              <span class="option-result">Salarié</span>
+            </div>
+          </div>
+
+          <div class="priority-option freedom">
+            <div class="option-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="option-content">
+              <span class="option-label">Liberté ?</span>
+              <span class="option-arrow">→</span>
+              <span class="option-result">Indépendant</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="expert-help">
+          <p class="expert-text">Nos experts vous accompagnent dans ce choix.</p>
+          <button class="expert-cta" (click)="contactExpert()">
+            <span>Parlez à un expert</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-search title-icon"></i>
+        FAQ (extraits pour mobile)
+      </h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let faq of faqItems; index as i">
+        <button 
+          class="faq-question" 
+          [class.active]="activeFaq === i"
+          (click)="toggleFaq(i)"
+        >
+          <span>{{ faq.question }}</span>
+          <i class="fas fa-chevron-down faq-arrow" [class.rotated]="activeFaq === i"></i>
+        </button>
+        <div class="faq-answer" [class.show]="activeFaq === i">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-footer">
+      <button class="full-faq-btn" (click)="goToFullFaq()">
+        <span>Lire toute la FAQ</span>
+        <i class="fas fa-external-link-alt"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Contact Express -->
+  <section class="contact-express-section" id="contact">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-phone title-icon"></i>
+        Contact Express
+      </h2>
+      <div class="contact-intro">
+        <p class="contact-question">Une question ? Un projet ?</p>
+        <p class="contact-promise">
+          <i class="fas fa-gift promise-icon"></i>
+          Rappel sous 72h – gratuit & confidentiel.
+        </p>
+      </div>
+    </div>
+
+    <div class="contact-options">
+      <div class="contact-phone">
+        <a href="tel:+3228860550" class="phone-link">
+          <i class="fas fa-phone"></i>
+          <span>+32 2 886 05 50</span>
+        </a>
+      </div>
+
+      <div class="contact-actions">
+        <button class="contact-btn primary" (click)="requestCallback()">
+          <span>Être rappelé</span>
+        </button>
+        <button class="contact-btn secondary" (click)="sendRequest()">
+          <span>Envoyer ma demande</span>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<app-zone-contact></app-zone-contact>

@@ -14,7 +14,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
           <div class="mobile-logo">
             <a routerLink="/accueil">
               <img
-                src="assets/img/logo/Logo-mfinances.png"
+                src="assets/img/logo/logoMfinances.png"
                 alt="MFinances"
                 class="logo-img"
               />

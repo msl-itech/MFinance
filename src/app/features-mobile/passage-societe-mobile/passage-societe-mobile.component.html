@@ -1,0 +1,903 @@
+<div class="passage-societe-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>BIENVENUE À MFINANCES</span>
+      </div>
+      <h1 class="hero-title">Le passage en société</h1>
+      <p class="hero-subtitle">
+        Déverrouiller le potentiel de votre entreprise : Le grand saut de l'individuel à la société.
+      </p>
+      
+      <button class="cta-video" (click)="toggleVideo()">
+        <i class="fas fa-play-circle cta-icon"></i>
+        <span class="cta-text">Regardez la vidéo</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Navigation mobile entre profils -->
+  <!-- <app-mobile-profile-navigation 
+    [currentProfile]="currentProfile">
+  </app-mobile-profile-navigation> -->
+
+  <!-- Video Modal -->
+  <div class="video-modal" *ngIf="showVideo" (click)="toggleVideo()">
+    <div class="video-modal-content" (click)="$event.stopPropagation()">
+      <button class="close-video" (click)="toggleVideo()">
+        <i class="fas fa-times"></i>
+      </button>
+      <iframe
+        src="https://www.youtube.com/embed/XyN5eZRnO8A"
+        title="Pourquoi passer en société ?"
+        allowfullscreen
+        class="video-frame"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Section 1 - Déverrouiller le potentiel -->
+  <section class="potential-section" id="potential">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-unlock-alt title-icon"></i>
+        Déverrouiller le potentiel
+      </h2>
+      <div class="section-subtitle">
+        <span class="highlight-text">Le grand saut de l'individuel à la société</span>
+      </div>
+    </div>
+
+    <div class="potential-content">
+      <div class="lightbulb-section">
+        <div class="lightbulb-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <p class="key-insight">
+          L'art de l'économie d'impôt commence à <span class="amount">41 000 €</span> de base imposable.
+        </p>
+        <p class="transformation-text">
+          Devenez une société et regardez votre argent travailler pour vous.
+        </p>
+      </div>
+
+      <div class="benefits-list">
+        <h3 class="benefits-title">En créant une société, vous :</h3>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-chart-line-down"></i>
+          </div>
+          <span class="benefit-text">Réduisez votre charge fiscale</span>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <span class="benefit-text">Faites fructifier votre capital</span>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <span class="benefit-text">Atteignez plus vite vos objectifs financiers</span>
+        </div>
+      </div>
+
+      <button class="cta-primary" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Prenez rendez-vous</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 2 - Pourquoi envisager la transformation -->
+  <section class="transformation-section" id="transformation">
+    <div class="section-content">
+      <div class="transformation-image">
+        <img src="../../../assets/img/vente/img_passage_en_societe1.webp" alt="Entrepreneur au travail" class="img-fluid" />
+      </div>
+      
+      <div class="transformation-text">
+        <h2 class="section-title">
+          <i class="fas fa-exchange-alt title-icon"></i>
+          Pourquoi envisager la transformation
+        </h2>
+        
+        <div class="text-content">
+          <p class="intro-text">
+            Opter pour la transformation d'une entreprise individuelle en société n'est pas une décision anodine.
+          </p>
+          
+          <p class="strategic-text">
+            C'est une <span class="highlight">évolution stratégique</span> qui :
+          </p>
+          
+          <div class="strategy-benefits">
+            <div class="strategy-item">
+              <i class="fas fa-shield-alt"></i>
+              <span>Renforce votre structure juridique</span>
+            </div>
+            
+            <div class="strategy-item">
+              <i class="fas fa-cogs"></i>
+              <span>Optimise la gestion de vos actifs</span>
+            </div>
+            
+            <div class="strategy-item">
+              <i class="fas fa-rocket"></i>
+              <span>Ouvre des opportunités de croissance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 - Stratégies d'optimisation fiscale -->
+  <section class="optimization-section" id="optimization">
+    <div class="section-content">
+      <div class="optimization-text">
+        <h2 class="section-title">
+          <i class="fas fa-chart-pie title-icon"></i>
+          Stratégies d'optimisation fiscale
+        </h2>
+        
+        <div class="optimization-benefits">
+          <div class="optimization-item">
+            <div class="optimization-icon">
+              <i class="fas fa-coins"></i>
+            </div>
+            <div class="optimization-content">
+              <h4>Rémunérations alternatives</h4>
+              <p>Des rémunérations alternatives plus avantageuses</p>
+            </div>
+          </div>
+
+          <div class="optimization-item">
+            <div class="optimization-icon">
+              <i class="fas fa-piggy-bank"></i>
+            </div>
+            <div class="optimization-content">
+              <h4>Niches fiscales</h4>
+              <p>L'utilisation des niches fiscales</p>
+            </div>
+          </div>
+
+          <div class="optimization-item">
+            <div class="optimization-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <div class="optimization-content">
+              <h4>Planification intelligente</h4>
+              <p>Une meilleure planification de votre pouvoir d'achat</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="cta-expert" (click)="contactExpert()">
+          <i class="fas fa-user-tie"></i>
+          <span>Parler à notre expert</span>
+        </button>
+      </div>
+
+      <div class="optimization-image">
+        <img src="../../../assets/img/vente/avantage_passage_en_societe_mfin.webp" alt="Avantages société" class="img-fluid" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 - Les avantages du passage en société -->
+  <section class="advantages-section" id="advantages">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-trophy title-icon"></i>
+        Les avantages du passage en société
+      </h2>
+    </div>
+
+    <div class="advantages-grid">
+      <div class="advantage-card">
+        <div class="advantage-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="advantage-title">Protection du patrimoine</h3>
+        <p class="advantage-description">
+          Sépare vos biens personnels et professionnels 🛡️
+        </p>
+      </div>
+
+      <div class="advantage-card">
+        <div class="advantage-icon">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <h3 class="advantage-title">Analyse économique</h3>
+        <p class="advantage-description">
+          Pesez les frais initiaux vs les avantages fiscaux.
+        </p>
+      </div>
+
+      <div class="advantage-card highlight-card">
+        <div class="advantage-icon">
+          <i class="fas fa-percentage"></i>
+        </div>
+        <h3 class="advantage-title">Avantages fiscaux</h3>
+        <div class="tax-comparison">
+          <div class="tax-item society">
+            <span class="tax-label">Société</span>
+            <span class="tax-rate">20-25%</span>
+          </div>
+          <div class="tax-item individual">
+            <span class="tax-label">Indépendant</span>
+            <span class="tax-rate">jusqu'à 50%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="advantage-card success-card">
+        <div class="advantage-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3 class="advantage-title">Point de rentabilité</h3>
+        <div class="profitability-example">
+          <p class="example-text">Exemple :</p>
+          <div class="calculation">
+            <span class="cost">3 500 € de frais</span>
+            <i class="fas fa-arrow-right"></i>
+            <span class="saving">8 000 € d'économie</span>
+          </div>
+          <div class="result">✅ Rentable</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 - Notre accompagnement en 4 étapes -->
+  <section class="accompaniment-section" id="accompaniment">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-route title-icon"></i>
+        Notre accompagnement en 4 étapes
+      </h2>
+      <div class="price-highlight">
+        <span class="price-label">Offrez-vous une analyse personnalisée :</span>
+        <span class="price-amount">1 200 €</span>
+      </div>
+    </div>
+
+    <div class="steps-container">
+      <div class="step-card" *ngFor="let step of steps; let i = index">
+        <div class="step-number">{{ i + 1 }}</div>
+        <div class="step-image" [style.background-image]="'url(' + step.image + ')'"></div>
+        <div class="step-content">
+          <h3 class="step-title">{{ step.title }}</h3>
+          <p class="step-description">{{ step.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Mobile Section -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-question-circle title-icon"></i>
+        FAQ - Passage en société
+      </h2>
+    </div>
+
+    <div class="faq-container">
+      <!-- FAQ visibles (3 premiers) -->
+      <div class="faq-item" *ngFor="let faq of visibleFaqs; let i = index">
+        <button
+          class="faq-question"
+          [class.active]="activeFaq === i"
+          (click)="toggleFaq(i)"
+        >
+          <span>{{ faq.question }}</span>
+          <i
+            class="fas fa-chevron-down faq-arrow"
+            [class.rotated]="activeFaq === i"
+          ></i>
+        </button>
+        <div class="faq-answer" [class.show]="activeFaq === i">
+          <div class="faq-answer-content">
+            <i class="fas fa-lightbulb answer-icon"></i>
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton voir plus -->
+      <div class="faq-show-more" *ngIf="!showAllFaqs && faqs.length > 3">
+        <button class="show-more-btn" (click)="toggleAllFaqs()">
+          <i class="fas fa-plus-circle"></i>
+          <span>Voir plus de questions ({{ faqs.length - 3 }} autres)</span>
+        </button>
+      </div>
+
+      <!-- FAQ supplémentaires -->
+      <div class="faq-item" *ngFor="let faq of hiddenFaqs; let i = index" [@fadeInUp]>
+        <button
+          class="faq-question"
+          [class.active]="activeFaq === i + 3"
+          (click)="toggleFaq(i + 3)"
+        >
+          <span>{{ faq.question }}</span>
+          <i
+            class="fas fa-chevron-down faq-arrow"
+            [class.rotated]="activeFaq === i + 3"
+          ></i>
+        </button>
+        <div class="faq-answer" [class.show]="activeFaq === i + 3">
+          <div class="faq-answer-content">
+            <i class="fas fa-lightbulb answer-icon"></i>
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton voir moins -->
+      <div class="faq-show-less" *ngIf="showAllFaqs">
+        <button class="show-less-btn" (click)="toggleAllFaqs()">
+          <i class="fas fa-minus-circle"></i>
+          <span>Voir moins</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-contact-form-layout
+      [config]="formConfig"
+      [currentStep]="currentStep"
+      [totalSteps]="totalSteps"
+      [formSubmitted]="formSubmitted"
+      [isStepValid]="isStepValid"
+      [isFormValid]="isFormValid"
+      [isLoading]="isLoading"
+      (nextStep)="onNextStep()"
+      (previousStep)="onPreviousStep()"
+      (submit)="onSubmit()"
+      (reset)="onReset()"
+    >
+      <div slot="form-content">
+        <!-- Étape 1: Votre situation actuelle -->
+        <div *ngIf="currentStep === 1" class="step-content">
+          <h3 class="step-title mb-4">
+            1. Quelle est votre situation actuelle ?
+          </h3>
+          <p class="step-description mb-4">
+            Sélectionnez l'option qui vous correspond le mieux.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.situation === 'independant-nom-propre'"
+              >
+                <input
+                  type="radio"
+                  name="situation"
+                  value="independant-nom-propre"
+                  [(ngModel)]="formData.situation"
+                  (change)="onSituationChange('independant-nom-propre')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-user-tie text-danger mb-2"></i>
+                  <h6 class="mb-1">Indépendant en nom propre</h6>
+                  <small class="text-muted"
+                    >Je suis déjà indépendant en nom propre (personne
+                    physique)</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.situation === 'lancement-activite'"
+              >
+                <input
+                  type="radio"
+                  name="situation"
+                  value="lancement-activite"
+                  [(ngModel)]="formData.situation"
+                  (change)="onSituationChange('lancement-activite')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-rocket text-danger mb-2"></i>
+                  <h6 class="mb-1">En phase de lancement</h6>
+                  <small class="text-muted"
+                    >Je suis en train de lancer mon activité</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.situation === 'autre'"
+              >
+                <input
+                  type="radio"
+                  name="situation"
+                  value="autre"
+                  [(ngModel)]="formData.situation"
+                  (change)="onSituationChange('autre')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-ellipsis-h text-danger mb-2"></i>
+                  <h6 class="mb-1">Autre situation</h6>
+                  <small class="text-muted">Ma situation est différente</small>
+                </div>
+              </label>
+            </div>
+
+            <div
+              class="mt-3 animate__animated animate__fadeInDown"
+              *ngIf="showAutreSituation"
+            >
+              <div class="custom-input-group">
+                <label for="situation_autre" class="form-label">
+                  <i class="fas fa-edit me-2"></i>Précisez votre situation
+                </label>
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  id="situation_autre"
+                  name="situation_autre"
+                  [(ngModel)]="formData.situation_autre"
+                  placeholder="Décrivez votre situation actuelle..."
+                  maxlength="200"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2: Motivation pour passer en société -->
+        <div *ngIf="currentStep === 2" class="step-content">
+          <h3 class="step-title mb-4">
+            2. Pourquoi souhaitez-vous passer en société ?
+          </h3>
+          <p class="step-description mb-4">
+            Quelle est votre motivation principale ?
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.motivation === 'reduire-pression-fiscale'
+                "
+              >
+                <input
+                  type="radio"
+                  name="motivation"
+                  value="reduire-pression-fiscale"
+                  [(ngModel)]="formData.motivation"
+                  (change)="onMotivationChange('reduire-pression-fiscale')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-chart-line text-danger mb-2"></i>
+                  <h6 class="mb-1">Réduire ma pression fiscale</h6>
+                  <small class="text-muted">Optimiser ma situation fiscale</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.motivation === 'proteger-biens-personnels'
+                "
+              >
+                <input
+                  type="radio"
+                  name="motivation"
+                  value="proteger-biens-personnels"
+                  [(ngModel)]="formData.motivation"
+                  (change)="onMotivationChange('proteger-biens-personnels')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-shield-alt text-danger mb-2"></i>
+                  <h6 class="mb-1">Protéger mes biens personnels</h6>
+                  <small class="text-muted"
+                    >Séparer patrimoine personnel et professionnel</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.motivation === 'accompagner-croissance'
+                "
+              >
+                <input
+                  type="radio"
+                  name="motivation"
+                  value="accompagner-croissance"
+                  [(ngModel)]="formData.motivation"
+                  (change)="onMotivationChange('accompagner-croissance')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-trending-up text-danger mb-2"></i>
+                  <h6 class="mb-1">Accompagner la croissance</h6>
+                  <small class="text-muted"
+                    >Structurer mon activité en expansion</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.motivation === 'conseils-comptable'"
+              >
+                <input
+                  type="radio"
+                  name="motivation"
+                  value="conseils-comptable"
+                  [(ngModel)]="formData.motivation"
+                  (change)="onMotivationChange('conseils-comptable')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-user-graduate text-danger mb-2"></i>
+                  <h6 class="mb-1">Conseils de mon comptable</h6>
+                  <small class="text-muted"
+                    >Suivre les recommandations de mon expert</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.motivation === 'autre'"
+              >
+                <input
+                  type="radio"
+                  name="motivation"
+                  value="autre"
+                  [(ngModel)]="formData.motivation"
+                  (change)="onMotivationChange('autre')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-question text-danger mb-2"></i>
+                  <h6 class="mb-1">Autre raison</h6>
+                  <small class="text-muted">Ma motivation est différente</small>
+                </div>
+              </label>
+            </div>
+
+            <div
+              class="mt-3 animate__animated animate__fadeInDown"
+              *ngIf="showAutreMotivation"
+            >
+              <div class="custom-input-group">
+                <label for="motivation_autre" class="form-label">
+                  <i class="fas fa-edit me-2"></i>Précisez votre motivation
+                </label>
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  id="motivation_autre"
+                  name="motivation_autre"
+                  [(ngModel)]="formData.motivation_autre"
+                  placeholder="Décrivez votre motivation principale..."
+                  maxlength="200"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div *ngIf="currentStep === 3" class="step-content">
+          <h3 class="step-title mb-4">
+            3. Vos coordonnées pour recevoir votre diagnostic
+          </h3>
+          <p class="step-description mb-4">
+            <i class="fas fa-phone text-danger me-2"></i>
+            Merci de compléter ces informations pour que l'un de nos conseillers
+            puisse vous rappeler
+          </p>
+
+          <div class="form-group">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="nom" class="form-label">
+                    <i class="fas fa-user me-2"></i>Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="nom"
+                    name="nom"
+                    [(ngModel)]="formData.nom"
+                    placeholder="Votre nom et prénom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>Email
+                    <span class="badge bg-success ms-2">✅ obligatoire</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="telephone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>Téléphone
+                    <span class="badge bg-success ms-2">✅ obligatoire</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control custom-input"
+                    id="telephone"
+                    name="telephone"
+                    [(ngModel)]="formData.telephone"
+                    placeholder="+32 XXX XX XX XX"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
+                <div>
+                  <h6 class="mb-1">📞 Nous vous appelons sous 72h</h6>
+                  <small
+                    >L'appel est gratuit, confidentiel, et sans engagement.</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 4: Connaissance du fonctionnement d'une société -->
+        <div *ngIf="currentStep === 4" class="step-content">
+          <h3 class="step-title mb-4">
+            4. Connaissez-vous bien le fonctionnement d'une société ?
+          </h3>
+          <p class="step-description mb-4">
+            Évaluez votre niveau de connaissance actuel.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.connaissance === 'maitrise-regles'"
+              >
+                <input
+                  type="radio"
+                  name="connaissance"
+                  value="maitrise-regles"
+                  [(ngModel)]="formData.connaissance"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-graduation-cap text-danger mb-2"></i>
+                  <h6 class="mb-1">Je maîtrise</h6>
+                  <small class="text-muted"
+                    >Oui, je maîtrise les règles et implications</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.connaissance === 'quelques-bases'"
+              >
+                <input
+                  type="radio"
+                  name="connaissance"
+                  value="quelques-bases"
+                  [(ngModel)]="formData.connaissance"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-book text-danger mb-2"></i>
+                  <h6 class="mb-1">Quelques bases</h6>
+                  <small class="text-muted"
+                    >J'ai quelques bases mais j'aimerais en savoir plus</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.connaissance === 'pars-de-zero'"
+              >
+                <input
+                  type="radio"
+                  name="connaissance"
+                  value="pars-de-zero"
+                  [(ngModel)]="formData.connaissance"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-seedling text-danger mb-2"></i>
+                  <h6 class="mb-1">Je pars de zéro</h6>
+                  <small class="text-muted"
+                    >Non, je pars de zéro et j'ai besoin de guidance</small
+                  >
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 5: Besoins prioritaires -->
+        <div *ngIf="currentStep === 5" class="step-content">
+          <h3 class="step-title mb-4">
+            5. De quoi avez-vous le plus besoin aujourd'hui ?
+          </h3>
+          <p class="step-description mb-4">
+            Sélectionnez vos besoins prioritaires.
+            <small class="text-muted">(plusieurs réponses possibles)</small>
+          </p>
+
+          <div class="form-group">
+            <div class="custom-checkbox-group">
+              <label class="custom-checkbox-option">
+                <input
+                  type="checkbox"
+                  name="besoins"
+                  value="comprendre-etapes-creation"
+                  (change)="onBesoinChange('comprendre-etapes-creation', $event)"
+                />
+                <span class="checkbox-checkmark"></span>
+                <div class="checkbox-content">
+                  <i class="fas fa-list-ol text-danger mb-2"></i>
+                  <h6 class="mb-1">Comprendre les étapes</h6>
+                  <small class="text-muted"
+                    >Comprendre les étapes pour créer une société</small
+                  >
+                </div>
+              </label>
+
+              <label class="custom-checkbox-option">
+                <input
+                  type="checkbox"
+                  name="besoins"
+                  value="savoir-bon-moment"
+                  (change)="onBesoinChange('savoir-bon-moment', $event)"
+                />
+                <span class="checkbox-checkmark"></span>
+                <div class="checkbox-content">
+                  <i class="fas fa-clock text-danger mb-2"></i>
+                  <h6 class="mb-1">Timing optimal</h6>
+                  <small class="text-muted"
+                    >Savoir si c'est le bon moment pour moi</small
+                  >
+                </div>
+              </label>
+
+              <label class="custom-checkbox-option">
+                <input
+                  type="checkbox"
+                  name="besoins"
+                  value="avis-fiscal-objectif"
+                  (change)="onBesoinChange('avis-fiscal-objectif', $event)"
+                />
+                <span class="checkbox-checkmark"></span>
+                <div class="checkbox-content">
+                  <i class="fas fa-calculator text-danger mb-2"></i>
+                  <h6 class="mb-1">Avis fiscal objectif</h6>
+                  <small class="text-muted"
+                    >Obtenir un avis fiscal objectif</small
+                  >
+                </div>
+              </label>
+
+              <label class="custom-checkbox-option">
+                <input
+                  type="checkbox"
+                  name="besoins"
+                  value="guidage-pas-a-pas"
+                  (change)="onBesoinChange('guidage-pas-a-pas', $event)"
+                />
+                <span class="checkbox-checkmark"></span>
+                <div class="checkbox-content">
+                  <i class="fas fa-route text-danger mb-2"></i>
+                  <h6 class="mb-1">Accompagnement complet</h6>
+                  <small class="text-muted"
+                    >Être guidé pas à pas dans la création</small
+                  >
+                </div>
+              </label>
+
+              <label class="custom-checkbox-option">
+                <input
+                  type="checkbox"
+                  name="besoins"
+                  value="autre"
+                  (change)="onBesoinChange('autre', $event)"
+                />
+                <span class="checkbox-checkmark"></span>
+                <div class="checkbox-content">
+                  <i class="fas fa-plus text-danger mb-2"></i>
+                  <h6 class="mb-1">Autre besoin</h6>
+                  <small class="text-muted">Un besoin spécifique</small>
+                </div>
+              </label>
+            </div>
+
+            <div
+              class="mt-3 animate__animated animate__fadeInDown"
+              *ngIf="showAutreBesoin"
+            >
+              <div class="custom-input-group">
+                <label for="besoins_autre" class="form-label">
+                  <i class="fas fa-edit me-2"></i>Précisez vos autres besoins
+                </label>
+                <textarea
+                  class="form-control custom-input"
+                  id="besoins_autre"
+                  name="besoins_autre"
+                  [(ngModel)]="formData.besoins_autre"
+                  placeholder="Décrivez vos besoins spécifiques..."
+                  rows="3"
+                  maxlength="300"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-contact-form-layout>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-calendar-alt"></i>
+      <span>Prendre rendez-vous</span>
+    </button>
+  </div>
+</div>

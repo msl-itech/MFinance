@@ -1,0 +1,68 @@
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
+
+@Component({
+  selector: 'app-salarie-independant-mobile',
+  standalone: true,
+  imports: [CommonModule, ShardeModuleModule],
+  templateUrl: './salarie-independant-mobile.component.html',
+  styleUrls: ['./salarie-independant-mobile.component.scss']
+})
+export class SalarieIndependantMobileComponent implements OnInit {
+  activeFaq: number | null = null;
+
+  faqItems = [
+    {
+      question: "Quel statut choisir selon mon secteur d'activité ?",
+      answer: "Cela dépend de votre secteur, vos revenus et vos priorités (sécurité vs liberté). Nos experts vous conseillent gratuitement."
+    },
+    {
+      question: "Comment optimiser mes impôts en tant qu'indépendant ?",
+      answer: "Les indépendants peuvent déduire de nombreux frais réels : bureau à domicile, véhicule professionnel, matériel, formations..."
+    },
+    {
+      question: "La transition salarié → indépendant est-elle risquée ?",
+      answer: "Avec un bon accompagnement comptable et une préparation financière, la transition peut se faire sereinement."
+    },
+    {
+      question: "Puis-je cumuler salariat et statut indépendant ?",
+      answer: "Oui, c'est possible sous certaines conditions. Nous vous aidons à respecter la réglementation."
+    }
+  ];
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
+  playVideo(): void {
+    // Logique pour lancer la vidéo explicative
+    console.log('Lecture de la vidéo explicative');
+  }
+
+  toggleFaq(index: number): void {
+    this.activeFaq = this.activeFaq === index ? null : index;
+  }
+
+  contactExpert(): void {
+    // Navigation vers la page de contact ou ouverture d'un modal
+    this.router.navigate(['/contact']);
+  }
+
+  goToFullFaq(): void {
+    // Navigation vers la page FAQ complète
+    console.log('Redirection vers la FAQ complète');
+  }
+
+  requestCallback(): void {
+    // Logique pour demander un rappel
+    console.log('Demande de rappel');
+  }
+
+  sendRequest(): void {
+    // Logique pour envoyer une demande
+    console.log('Envoi de la demande');
+  }
+}

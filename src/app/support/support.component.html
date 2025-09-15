@@ -1,4 +1,8 @@
-<div class="support-header">
+<!-- Version mobile -->
+<app-support-mobile *ngIf="shouldUseMobileVersion"></app-support-mobile>
+
+<!-- Version desktop -->
+<div class="support-header" *ngIf="!shouldUseMobileVersion">
   <div class="container">
     <div class="row">
       <div class="mt-5 col-md-12 text-center">
@@ -420,4 +424,4 @@
   </div>
 </div>
 
-<app-zone-contact></app-zone-contact>
+<app-zone-contact *ngIf="!shouldUseMobileVersion"></app-zone-contact>

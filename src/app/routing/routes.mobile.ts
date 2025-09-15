@@ -3,6 +3,7 @@ import { AboutComponent } from '../about/about.component';
 import { AbslComponent } from '../absl/absl.component';
 import { AvisGoogleComponent } from '../avis-google/avis-google.component';
 import { ContactComponent } from '../contact/contact.component';
+import { ProfilPromoteurImmobilierMobileComponent } from '../features-mobile/profil-promoteur-immobilier-mobile/profil-promoteur-immobilier-mobile.component';
 import { ServiceMobileComponent } from '../features-mobile/service-mobile/service-mobile.component';
 import { TarifMobileComponent } from '../features-mobile/tarif-mobile/tarif-mobile.component';
 import { MobileLayoutComponent } from '../layouts/mobile-layout/mobile-layout.component';
@@ -51,7 +52,7 @@ export const MOBILE_ROUTES: Routes = [
       { path: 'grande-entreprise', component: ProfilGrandeEntrepriseComponent },
       {
         path: 'promoteur-immobilier',
-        component: ProfilPromoteurImmobilierComponent,
+        component: ProfilPromoteurImmobilierMobileComponent,
       },
       { path: 'contact', component: ContactComponent },
       {

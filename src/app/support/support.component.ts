@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { DeviceService } from '../core/device.service';
 
 @Component({
   selector: 'app-support',
@@ -7,7 +8,15 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrl: './support.component.css',
 })
 export class SupportComponent implements OnInit {
-  constructor(private titleService: Title, private metaService: Meta) {}
+  shouldUseMobileVersion: boolean;
+
+  constructor(
+    private titleService: Title, 
+    private metaService: Meta,
+    private deviceService: DeviceService
+  ) {
+    this.shouldUseMobileVersion = this.deviceService.shouldUseMobileVersion();
+  }
 
   ngOnInit(): void {
     // Mise à jour du titre de la page

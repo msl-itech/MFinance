@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
 import { OdooService } from '../../services/odoo.service';
+import { DeviceService } from '../../core/device.service';
 import { SALARIE_INDEPENDANT_FORM_CONFIG } from '../../shared/contact-form-layout/contact-form-configs';
 
 @Component({
@@ -15,6 +16,7 @@ export class SalarieIndependantComponent implements OnInit {
   totalSteps = 5;
   formSubmitted = false;
   isLoading = false;
+  shouldUseMobileVersion: boolean;
 
   // Variables pour les inputs conditionnels
   showAutreProfil = false;
@@ -38,8 +40,11 @@ export class SalarieIndependantComponent implements OnInit {
   constructor(
     private metaService: MetaService,
     private odooService: OdooService,
-    private toastr: ToastrService
-  ) {}
+    private toastr: ToastrService,
+    private deviceService: DeviceService
+  ) {
+    this.shouldUseMobileVersion = this.deviceService.shouldUseMobileVersion();
+  }
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Salarié Indépendant

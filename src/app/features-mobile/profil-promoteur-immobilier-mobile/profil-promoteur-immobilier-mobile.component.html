@@ -1,0 +1,411 @@
+<div class="promoteur-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Anticipez, gérez et innovez pour maximiser votre rentabilité</h1>
+      <p class="hero-subtitle">
+        La promotion immobilière est une activité complexe qui exige une gestion rigoureuse des finances, de la fiscalité, et des flux de trésorerie.
+        Chez MFINANCES, nous proposons des solutions sur mesure…
+      </p>
+
+      <div class="cta-buttons">
+        <button class="cta-primary" (click)="scrollToSection('solutions')">
+          <i class="fas fa-rocket cta-icon"></i>
+          <span class="cta-text">Découvrez ce que vous gagnerez avec nous</span>
+        </button>
+        
+        <button class="cta-secondary" (click)="scrollToSection('contactSection')">
+          <i class="fas fa-calculator cta-icon"></i>
+          <span class="cta-text">Évaluez vos projets (2 min)</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation mobile entre profils -->
+  <app-mobile-profile-navigation 
+    [currentProfile]="currentProfile">
+  </app-mobile-profile-navigation>
+
+  <!-- Section 1 - Les défis des promoteurs immobiliers -->
+  <section class="defis-section" id="defis">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-exclamation-triangle title-icon"></i>
+        Les défis des promoteurs immobiliers
+      </h2>
+    </div>
+
+    <div class="defis-content">
+      <div class="defis-image">
+        <img src="../../assets/img/webp/22.webp" alt="Défis promoteurs immobiliers" class="img-fluid" />
+      </div>
+      
+      <div class="defis-text">
+        <p class="intro-text">
+          En tant qu'acteurs clés du développement immobilier, les promoteurs doivent relever plusieurs défis spécifiques :
+        </p>
+        
+        <div class="defis-list">
+          <div class="defi-item">
+            <div class="defi-icon">
+              <i class="fas fa-euro-sign"></i>
+            </div>
+            <div class="defi-content">
+              <h4>Budgets conséquents et marges serrées</h4>
+              <p>nécessitant une planification financière précise.</p>
+            </div>
+          </div>
+
+          <div class="defi-item">
+            <div class="defi-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <div class="defi-content">
+              <h4>Règles TVA complexes</h4>
+              <p>qui varient selon la finalité des immeubles (revente, location, rénovation).</p>
+            </div>
+          </div>
+
+          <div class="defi-item">
+            <div class="defi-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="defi-content">
+              <h4>Analyse détaillée des coûts par projet</h4>
+              <p>essentielle pour optimiser la rentabilité.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 - Besoins spécifiques des promoteurs -->
+  <section class="besoins-section" id="besoins">
+    <div class="section-header">
+      <h2 class="section-title-white">
+        <i class="fas fa-bullseye title-icon"></i>
+        Besoins spécifiques des promoteurs immobiliers
+      </h2>
+    </div>
+
+    <div class="besoins-cards">
+      <div class="besoin-card">
+        <div class="card-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="card-title">Planification financière et prévisions</h3>
+        <div class="card-content">
+          <p>• Budgets détaillés pour prévoir les coûts</p>
+          <p>• Analyse des besoins en financement</p>
+          <p>• Projection des flux de trésorerie</p>
+        </div>
+      </div>
+
+      <div class="besoin-card">
+        <div class="card-icon">
+          <i class="fas fa-file-invoice-dollar"></i>
+        </div>
+        <h3 class="card-title">Suivi rigoureux des coûts & reporting</h3>
+        <div class="card-content">
+          <p>• Gestion des postes budgétaires</p>
+          <p>• Reporting financier transparent</p>
+          <p>• Digitalisation des processus</p>
+        </div>
+      </div>
+
+      <div class="besoin-card">
+        <div class="card-icon">
+          <i class="fas fa-percentage"></i>
+        </div>
+        <h3 class="card-title">TVA : opportunité et complexité</h3>
+        <div class="card-content">
+          <p>• Immeuble neuf : TVA 21% déductible</p>
+          <p>• Régime d'autoliquidation</p>
+          <p>• Calcul du prorata de déductibilité</p>
+        </div>
+      </div>
+
+      <div class="besoin-card">
+        <div class="card-icon">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <h3 class="card-title">Comptabilité analytique pour la rentabilité</h3>
+        <div class="card-content">
+          <p>• Structure des coûts par projet</p>
+          <p>• Identification des postes coûteux</p>
+          <p>• Prise de décisions éclairées</p>
+        </div>
+      </div>
+
+      <div class="besoin-card">
+        <div class="card-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3 class="card-title">Collaboration stratégique</h3>
+        <div class="card-content">
+          <p>• Compréhension des objectifs</p>
+          <p>• Leviers de rentabilité</p>
+          <p>• Conseils stratégiques personnalisés</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 - Comment MFINANCES transforme vos projets -->
+  <section class="solutions-section" id="solutions">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-magic title-icon"></i>
+        Comment MFINANCES transforme vos projets ?
+      </h2>
+    </div>
+
+    <div class="solutions-cards">
+      <div class="solution-card">
+        <div class="solution-number">01</div>
+        <div class="solution-icon">
+          <i class="fas fa-calculator"></i>
+        </div>
+        <h3 class="solution-title">Gestion comptable et analytique dédiée</h3>
+        <div class="solution-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Comptabilité analytique par projet pour une traçabilité optimale</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Suivi précis des marges à chaque phase</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Bilans intermédiaires pour ajuster les stratégies</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-number">02</div>
+        <div class="solution-icon">
+          <i class="fas fa-percentage"></i>
+        </div>
+        <h3 class="solution-title">Optimisation fiscale et TVA</h3>
+        <div class="solution-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Récupération de la TVA sur les travaux et acquisitions</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Calcul précis du prorata pour optimiser les déductions</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Stratégies fiscales adaptées pour réduire les charges</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-number">03</div>
+        <div class="solution-icon">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <h3 class="solution-title">Outils digitaux & reporting avancé</h3>
+        <div class="solution-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Tableaux de bord personnalisés en temps réel</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Automatisation des rapports comptables</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Prévisions financières pour anticiper les besoins</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 - Exemple concret de projet -->
+  <section class="exemple-section" id="exemple">
+    <div class="section-header">
+      <h2 class="section-title-white">
+        <i class="fas fa-building title-icon"></i>
+        Exemple concret de projet
+      </h2>
+    </div>
+
+    <div class="exemple-content">
+      <div class="exemple-image">
+        <img src="../../assets/img/webp/34.webp" alt="Projet immobilier exemple" class="img-fluid" />
+      </div>
+
+      <!-- Contexte -->
+      <div class="exemple-block">
+        <div class="block-header" (click)="toggleAccordion('contexte')">
+          <h3 class="block-title">
+            <i class="fas fa-info-circle"></i>
+            Contexte
+          </h3>
+          <i class="fas fa-chevron-down accordion-arrow" [class.rotated]="activeAccordion === 'contexte'"></i>
+        </div>
+        <div class="block-content" [class.show]="activeAccordion === 'contexte'">
+          <ul class="context-list">
+            <li>Un promoteur immobilier gérait plusieurs projets résidentiels avec des ventes concentrées en fin de projet</li>
+            <li>Gestion complexe des coûts par unité, impactant les marges globales</li>
+            <li>Nécessité de lisser les flux financiers pour éviter des tensions de trésorerie</li>
+            <li>Annualité de l'impôt rendant certaines ventes défavorables fiscalement</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Solutions -->
+      <div class="exemple-block">
+        <div class="block-header" (click)="toggleAccordion('solutions')">
+          <h3 class="block-title">
+            <i class="fas fa-lightbulb"></i>
+            Solutions apportées par MFINANCES
+          </h3>
+          <i class="fas fa-chevron-down accordion-arrow" [class.rotated]="activeAccordion === 'solutions'"></i>
+        </div>
+        <div class="block-content" [class.show]="activeAccordion === 'solutions'">
+          <div class="solution-item">
+            <i class="fas fa-chart-pie solution-icon"></i>
+            <div>
+              <h4>Comptabilité analytique détaillée</h4>
+              <p>Ventilation des coûts par projet et par unité pour mieux évaluer la rentabilité.</p>
+            </div>
+          </div>
+          <div class="solution-item">
+            <i class="fas fa-calculator solution-icon"></i>
+            <div>
+              <h4>Suivi budgétaire rigoureux</h4>
+              <p>Analyse des scénarios de vente et des implications fiscales pour optimiser la trésorerie.</p>
+            </div>
+          </div>
+          <div class="solution-item">
+            <i class="fas fa-calendar-alt solution-icon"></i>
+            <div>
+              <h4>Stratégie d'ajustement des ventes</h4>
+              <p>Report stratégique de la vente de certaines unités pour réduire l'impact fiscal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Résultats -->
+      <div class="exemple-block">
+        <div class="block-header" (click)="toggleAccordion('resultats')">
+          <h3 class="block-title">
+            <i class="fas fa-trophy"></i>
+            Résultats
+          </h3>
+          <i class="fas fa-chevron-down accordion-arrow" [class.rotated]="activeAccordion === 'resultats'"></i>
+        </div>
+        <div class="block-content" [class.show]="activeAccordion === 'resultats'">
+          <div class="result-item">
+            <div class="result-metric">+12% à +20%</div>
+            <p>Rentabilité globale accrue selon les projets</p>
+          </div>
+          <div class="result-item">
+            <div class="result-metric">100%</div>
+            <p>Trésorerie renforcée permettant d'initier un nouveau projet sans financement externe</p>
+          </div>
+          <div class="result-item">
+            <div class="result-metric">Optimisée</div>
+            <p>Gestion fiscale réduisant les charges liées à l'annualité de l'impôt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 - Pourquoi choisir MFINANCES -->
+  <section class="avantages-section" id="avantages">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-star title-icon"></i>
+        Pourquoi choisir MFINANCES ?
+      </h2>
+    </div>
+
+    <div class="avantages-cards">
+      <div class="avantage-card">
+        <div class="avantage-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <h3 class="avantage-title">Expertise sectorielle</h3>
+        <div class="avantage-content">
+          <p>Maîtrise approfondie des spécificités fiscales, comptables et financières des promoteurs immobiliers</p>
+          <p>Solutions sur mesure pour répondre aux besoins de chaque projet</p>
+        </div>
+      </div>
+
+      <div class="avantage-card">
+        <div class="avantage-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h3 class="avantage-title">Outils & stratégies</h3>
+        <div class="avantage-content">
+          <p>Automatisation et digitalisation pour un pilotage efficace en temps réel</p>
+          <p>Conseils stratégiques pour maximiser la rentabilité à chaque étape</p>
+        </div>
+      </div>
+
+      <div class="avantage-card">
+        <div class="avantage-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="avantage-title">Suivi durable</h3>
+        <div class="avantage-content">
+          <p>Prévisions financières claires pour lisser les revenus et anticiper les besoins</p>
+          <p>Analyses détaillées pour ajuster rapidement vos stratégies</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6 - Appel à l'action principal -->
+  <section class="cta-principal-section" id="cta-principal">
+    <div class="cta-content">
+      <h2 class="cta-title">Pilotez vos projets immobiliers avec MFINANCES</h2>
+      <p class="cta-subtitle">Contactez-nous dès aujourd'hui pour un diagnostic fiscal et financier personnalisé.</p>
+      <button class="cta-btn-principal" (click)="contactSupport()">
+        <i class="fas fa-phone"></i>
+        <span>Contactez-nous</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section CTA rouge optimisation -->
+  <section class="cta-optimisation">
+    <div class="cta-optimisation-content">
+      <div class="cta-icon">
+        <i class="fas fa-bullseye"></i>
+      </div>
+      <h3 class="cta-optimisation-title">Optimisez la gestion financière de vos projets immobiliers</h3>
+      <a href="tel:+3228860550" class="phone-link">
+        <i class="fas fa-phone"></i>
+        <span>+32 2 886 05 50</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="contactSupport()">
+      <i class="fas fa-phone"></i>
+      <span>Contacter un conseiller</span>
+    </button>
+  </div>
+</div>
+
+<app-zone-contact></app-zone-contact>

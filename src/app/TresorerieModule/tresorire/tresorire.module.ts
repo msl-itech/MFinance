@@ -14,6 +14,9 @@ import { ProtegerTresorerieComponent } from '../proteger-tresorerie/proteger-tre
 import { TimelineTresorieComponent } from '../timeline-tresorie/timeline-tresorie.component';
 import { TresorerieBeneficeComponent } from '../tresorerie-benefice/tresorerie-benefice.component';
 import { TresoreriePageComponent } from '../tresorerie-page/tresorerie-page.component';
+import { TresorerieMobileComponent } from '../../features-mobile/tresorerie-mobile/tresorerie-mobile.component';
+import { ProtegerTresorerieMobileComponent } from '../../features-mobile/proteger-tresorerie-mobile/proteger-tresorerie-mobile.component';
+import { StockTresorerieMobileComponent } from '../../features-mobile/stock-tresorerie-mobile/stock-tresorerie-mobile.component';
 import { TresorireRoutingModule } from './tresorire-routing.module';
 
 @NgModule({
@@ -35,6 +38,9 @@ import { TresorireRoutingModule } from './tresorire-routing.module';
     TresorireRoutingModule,
     ShardeModuleModule,
     FormsModule,
+    TresorerieMobileComponent,
+    ProtegerTresorerieMobileComponent,
+    StockTresorerieMobileComponent,
   ],
 })
 export class TresorireModule {}

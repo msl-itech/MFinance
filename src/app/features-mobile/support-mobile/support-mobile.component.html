@@ -1,0 +1,331 @@
+<div class="support-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Support Technique</h1>
+      <p class="hero-subtitle">
+        Notre équipe est à votre disposition pour vous accompagner à distance.
+      </p>
+
+      <button class="cta-primary" (click)="contactSupport()">
+        <i class="fas fa-phone cta-icon"></i>
+        <span class="cta-text">Besoin d'aide immédiate ? Contactez-nous</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Comment fonctionne notre assistance -->
+  <section class="process-section" id="process">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-tools title-icon"></i>
+        Comment fonctionne notre assistance ?
+      </h2>
+      <p class="section-subtitle">
+        4 étapes simples pour résoudre vos problèmes à distance.
+      </p>
+    </div>
+
+    <div class="process-steps">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">Contactez-nous</h3>
+          <div class="contact-info">
+            <p class="contact-item">
+              <i class="fas fa-phone contact-icon"></i>
+              <a href="tel:+3228860550">+32 2 886 05 50</a>
+            </p>
+            <p class="contact-item">
+              <i class="fas fa-envelope contact-icon"></i>
+              <a href="mailto:support@mfinances.be">support&#64;mfinances.be</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-icon">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">Rendez-vous</h3>
+          <p class="step-text">Fixez un créneau rapide à distance.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-icon">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">Installation AnyDesk</h3>
+          <p class="step-text">Installez le logiciel (guide ci-dessous).</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <div class="step-icon">
+          <i class="fas fa-hands-helping"></i>
+        </div>
+        <div class="step-content">
+          <h3 class="step-title">Assistance</h3>
+          <p class="step-text">Connexion sécurisée & résolution en direct.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Installation AnyDesk Windows -->
+  <section class="installation-section windows-section" id="windows">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-bolt title-icon"></i>
+        Installez AnyDesk en quelques minutes
+      </h2>
+      <p class="section-subtitle">
+        Suivez nos tutoriels vidéo pour une configuration rapide.
+      </p>
+    </div>
+
+    <div class="tutorial-card windows-card">
+      <div class="os-badge windows-badge">
+        <i class="fab fa-windows"></i>
+        <span>Windows</span>
+      </div>
+
+      <div class="video-container" *ngIf="showWindowsVideo">
+        <iframe
+          width="100%"
+          height="200"
+          src="https://www.youtube.com/embed/vrY-sanchqU"
+          title="Installer ANYDESK sur WINDOWS"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+
+      <div
+        class="video-placeholder"
+        *ngIf="!showWindowsVideo"
+        (click)="toggleWindowsVideo()"
+      >
+        <div class="play-button">
+          <i class="fas fa-play"></i>
+        </div>
+        <img
+          src="https://img.youtube.com/vi/vrY-sanchqU/maxresdefault.jpg"
+          alt="Video Windows"
+        />
+      </div>
+
+      <div class="tutorial-info">
+        <div class="video-stats">
+          <span class="duration">
+            <i class="fas fa-clock"></i>
+            3:45 min
+          </span>
+          <span class="subtitles">
+            <i class="fas fa-closed-captioning"></i>
+            Sous-titré
+          </span>
+        </div>
+
+        <div class="checklist">
+          <div class="check-item">
+            <i class="fas fa-check check-icon"></i>
+            <span>Téléchargement</span>
+          </div>
+          <div class="check-item">
+            <i class="fas fa-check check-icon"></i>
+            <span>Installation rapide</span>
+          </div>
+          <div class="check-item">
+            <i class="fas fa-check check-icon"></i>
+            <span>Configuration de base</span>
+          </div>
+          <div class="check-item">
+            <i class="fas fa-check check-icon"></i>
+            <span>Partager votre ID</span>
+          </div>
+        </div>
+
+        <a
+          href="https://get.anydesk.com/dzQb9eHl/AnyDesk_Custom_Client.exe"
+          class="download-btn windows-btn"
+          target="_blank"
+        >
+          <i class="fas fa-download"></i>
+          <span>Télécharger AnyDesk pour Windows</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Installation AnyDesk Mac -->
+  <section class="installation-section mac-section" id="mac">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fab fa-apple title-icon"></i>
+        Version Mac également disponible
+      </h2>
+    </div>
+
+    <div class="tutorial-card mac-card">
+      <div class="os-badge mac-badge">
+        <i class="fab fa-apple"></i>
+        <span>Mac OS</span>
+      </div>
+
+      <div class="video-container" *ngIf="showMacVideo">
+        <iframe
+          width="100%"
+          height="200"
+          src="https://www.youtube.com/embed/u4vOWjvjWwo"
+          title="Installation ANYDESK sur MAC OS"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+
+      <div
+        class="video-placeholder"
+        *ngIf="!showMacVideo"
+        (click)="toggleMacVideo()"
+      >
+        <div class="play-button">
+          <i class="fas fa-play"></i>
+        </div>
+        <img
+          src="https://img.youtube.com/vi/u4vOWjvjWwo/maxresdefault.jpg"
+          alt="Video Mac"
+        />
+      </div>
+
+      <div class="tutorial-info">
+        <div class="video-stats">
+          <span class="duration">
+            <i class="fas fa-clock"></i>
+            4:12 min
+          </span>
+          <span class="subtitles">
+            <i class="fas fa-closed-captioning"></i>
+            Sous-titré
+          </span>
+        </div>
+
+        <div class="checklist">
+          <div class="check-item">
+            <i class="fas fa-check check-icon"></i>
+            <span>Téléchargement .dmg</span>
+          </div>
+          <div class="check-item">
+            <i class="fas fa-check check-icon"></i>
+            <span>Installation Applications</span>
+          </div>
+          <div class="check-item">
+            <i class="fas fa-check check-icon"></i>
+            <span>Sécurité & autorisations</span>
+          </div>
+        </div>
+
+        <a
+          href="https://get.anydesk.com/U2eK2Jqz/AnyDesk_Custom_Client.dmg"
+          class="download-btn mac-btn"
+          target="_blank"
+        >
+          <i class="fas fa-download"></i>
+          <span>Télécharger AnyDesk pour Mac</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-question-circle title-icon"></i>
+        FAQ – Support Technique
+      </h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let faq of faqs; index as i">
+        <button
+          class="faq-question"
+          [class.active]="activeFaq === i"
+          (click)="toggleFaq(i)"
+        >
+          <span>{{ faq.question }}</span>
+          <i
+            class="fas fa-chevron-down faq-arrow"
+            [class.rotated]="activeFaq === i"
+          ></i>
+        </button>
+        <div class="faq-answer" [class.show]="activeFaq === i">
+          <div class="faq-answer-content">
+            <i class="fas fa-lightbulb answer-icon"></i>
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Contact immédiat -->
+  <section class="contact-section" id="contact">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-phone title-icon"></i>
+        Besoin d'aide immédiate ?
+      </h2>
+      <p class="section-subtitle">
+        Notre support est disponible du lundi au vendredi de 9h à 18h.
+      </p>
+    </div>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <h3 class="contact-title">Par téléphone</h3>
+        <a href="tel:+3228860550" class="contact-link">+32 2 886 05 50</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3 class="contact-title">Par email</h3>
+        <a href="mailto:support@mfinances.be" class="contact-link"
+          >support&#64;mfinances.be</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="contactSupport()">
+      <i class="fas fa-headset"></i>
+      <span>Contacter le support</span>
+    </button>
+  </div>
+</div>
+
+<app-zone-contact></app-zone-contact>

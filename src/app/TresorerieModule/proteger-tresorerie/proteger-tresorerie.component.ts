@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
 import { OdooService } from '../../services/odoo.service';
+import { DeviceService } from '../../core/device.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
 @Component({
@@ -10,6 +11,9 @@ import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form
   styleUrl: './proteger-tresorerie.component.css',
 })
 export class ProtegerTresorerieComponent implements OnInit, OnDestroy {
+  // Device detection
+  shouldUseMobileVersion: boolean;
+
   // Popup properties
   showPopup = false;
   popupTimer: any;
@@ -64,8 +68,11 @@ export class ProtegerTresorerieComponent implements OnInit, OnDestroy {
   constructor(
     private metaService: MetaService,
     private odooService: OdooService,
-    private toastr: ToastrService
-  ) {}
+    private toastr: ToastrService,
+    private deviceService: DeviceService
+  ) {
+    this.shouldUseMobileVersion = this.deviceService.shouldUseMobileVersion();
+  }
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Protéger Trésorerie

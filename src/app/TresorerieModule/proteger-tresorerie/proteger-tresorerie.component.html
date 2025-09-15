@@ -1,3 +1,8 @@
+<!-- Version mobile -->
+<app-proteger-tresorerie-mobile *ngIf="shouldUseMobileVersion"></app-proteger-tresorerie-mobile>
+
+<!-- Version desktop -->
+<div *ngIf="!shouldUseMobileVersion">
 <header class="header">
   <div class="header-overlay">
     <div class="container">
@@ -1243,3 +1248,6 @@
     </div>
   </app-contact-form-layout>
 </section>
+
+<!-- Fin du contenu desktop -->
+</div>

@@ -1,0 +1,189 @@
+<div class="tresorerie-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Trésorerie : Transformez votre stress en succès</h1>
+      <p class="hero-subtitle">
+        Une trésorerie bien gérée sécurise vos opérations, réduit le stress et prépare votre croissance.
+      </p>
+
+      <button class="cta-primary" (click)="openContactModal()">
+        <i class="fas fa-circle cta-icon"></i>
+        <span class="cta-text">Demandez votre diagnostic gratuit</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 1 - Notre Vision -->
+  <section class="vision-section" id="vision">
+    <div class="section-header">
+      <h2 class="section-title">La trésorerie, votre atout stratégique</h2>
+    </div>
+
+    <div class="vision-content">
+      <p class="vision-text">
+        La trésorerie prime sur les bénéfices pour assurer la continuité.
+      </p>
+      
+      <div class="vision-subtitle">Une visibilité claire =</div>
+      
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <i class="fas fa-shield-alt benefit-icon"></i>
+          <span class="benefit-text">Sécuriser vos opérations</span>
+        </div>
+        
+        <div class="benefit-item">
+          <i class="fas fa-chart-line benefit-icon"></i>
+          <span class="benefit-text">Saisir les opportunités</span>
+        </div>
+        
+        <div class="benefit-item">
+          <i class="fas fa-bullseye benefit-icon"></i>
+          <span class="benefit-text">Décider stratégiquement</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 - Programme Excellence -->
+  <section class="excellence-section" id="excellence">
+    <div class="section-header">
+      <h2 class="section-title">Optimisation sur mesure</h2>
+    </div>
+
+    <div class="excellence-content">
+      <div class="excellence-features">
+        <div class="feature-item">
+          <i class="fas fa-table feature-icon"></i>
+          <span class="feature-text">Tableau prévisionnel personnalisé</span>
+        </div>
+        
+        <div class="feature-item">
+          <i class="fas fa-calendar-check feature-icon"></i>
+          <span class="feature-text">Contrôle budgétaire trimestriel</span>
+        </div>
+        
+        <div class="feature-item">
+          <i class="fas fa-handshake feature-icon"></i>
+          <span class="feature-text">Accompagnement stratégique continu</span>
+        </div>
+      </div>
+
+      <button class="cta-secondary" (click)="goToTarif()">
+        <i class="fas fa-circle cta-icon"></i>
+        <span class="cta-text">Découvrir le Programme Excellence</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 3 - Nos articles -->
+  <section class="articles-section" id="articles">
+    <div class="section-header">
+      <h2 class="section-title">Nos articles</h2>
+    </div>
+
+    <div class="articles-list">
+      <div class="article-item" *ngFor="let article of articles; index as i">
+        <div class="article-number">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="article-content">
+          <h3 class="article-title">{{ article.title }}</h3>
+          <div class="article-meta">
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              {{ article.readingTime }} min
+            </span>
+          </div>
+        </div>
+        <i class="fas fa-chevron-right article-arrow"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 - Pourquoi la trésorerie est cruciale -->
+  <section class="importance-section" id="importance">
+    <div class="section-header">
+      <h2 class="section-title">Pourquoi la trésorerie est cruciale</h2>
+    </div>
+
+    <div class="importance-content">
+      <p class="importance-text">
+        Une entreprise rentable peut tomber si les liquidités manquent. La trésorerie est un outil stratégique : investir, résister aux crises, rester stable.
+      </p>
+
+      <button class="cta-primary" (click)="openContactModal()">
+        <i class="fas fa-circle cta-icon"></i>
+        <span class="cta-text">Diagnostic gratuit</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 5 - Formulaire rapide -->
+  <section class="form-section" id="form">
+    <div class="section-header">
+      <h2 class="section-title">Prêt à optimiser vos finances ?</h2>
+      <p class="section-subtitle">
+        En 2 minutes, décrivez votre situation → rappel sous 72 h, gratuit et confidentiel.
+      </p>
+    </div>
+
+    <div class="form-content">
+      <div class="form-step">
+        <div class="step-header">
+          <span class="step-number">Étape 1 sur 4</span>
+          <h3 class="step-title">Quelle est votre situation actuelle ?</h3>
+        </div>
+
+        <div class="options-grid">
+          <button 
+            class="option-button" 
+            *ngFor="let option of situationOptions"
+            [class.selected]="selectedSituation === option"
+            (click)="selectSituation(option)"
+          >
+            {{ option }}
+          </button>
+        </div>
+
+        <button 
+          class="next-button" 
+          [disabled]="!selectedSituation"
+          (click)="goToContact()"
+        >
+          Continuer
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Modal de contact -->
+<div
+  class="contact-modal"
+  *ngIf="showContactModal"
+  (click)="closeContactModal()"
+>
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>Demande de diagnostic</h3>
+      <button class="close-btn" (click)="closeContactModal()">
+        <i class="fas fa-times close-icon"></i>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <p>Nous vous recontactons rapidement pour votre diagnostic gratuit.</p>
+
+      <button class="contact-btn" (click)="goToContact()">
+        <i class="fas fa-envelope btn-icon"></i>
+        <span class="btn-text">Accéder au formulaire de contact</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-zone-contact></app-zone-contact>

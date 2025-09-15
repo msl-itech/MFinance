@@ -14,7 +14,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AvisGoogleComponent } from './avis-google/avis-google.component';
 import { ContactComponent } from './contact/contact.component';
+import { PassageSocieteMobileComponent } from './features-mobile/passage-societe-mobile/passage-societe-mobile.component';
+import { ProfilPromoteurImmobilierMobileComponent } from './features-mobile/profil-promoteur-immobilier-mobile/profil-promoteur-immobilier-mobile.component';
+import { StockTresorerieMobileComponent } from './features-mobile/stock-tresorerie-mobile/stock-tresorerie-mobile.component';
 import { TarifMobileComponent } from './features-mobile/tarif-mobile/tarif-mobile.component';
+import { SupportMobileComponent } from './features-mobile/support-mobile/support-mobile.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderAboutComponent } from './header-about/header-about.component';
 import { DesktopLayoutComponent } from './layouts/desktop-layout/desktop-layout.component';
@@ -87,6 +91,10 @@ import { EconomieAnalysieComponent } from './venteModule/economie-analysie/econo
     DesktopLayoutComponent,
     MobileLayoutComponent,
     TarifMobileComponent,
+    SupportMobileComponent,
+    PassageSocieteMobileComponent,
+    ProfilPromoteurImmobilierMobileComponent,
+    StockTresorerieMobileComponent,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',
