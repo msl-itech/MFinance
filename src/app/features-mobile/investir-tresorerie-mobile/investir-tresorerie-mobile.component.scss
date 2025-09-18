@@ -1,0 +1,847 @@
+// Variables
+$primary-red: #ff3333;
+$dark-blue: #25335b;
+$light-gray: #f8f9fb;
+$success-green: #28a745;
+$warning-orange: #ffc107;
+$text-muted: #6c757d;
+$border-gray: #e6e9f1;
+
+.investir-tresorerie-mobile-container {
+  width: 100%;
+  overflow-x: hidden;
+
+  // Section Hero
+  .hero-section {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 2rem 1rem;
+    background: linear-gradient(
+      135deg,
+      $dark-blue 0%,
+      darken($dark-blue, 15%) 100%
+    );
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("../../../assets/img/bg/bg_about.webp") no-repeat center
+        center/cover;
+      z-index: 1;
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($dark-blue, 0.9);
+        z-index: 2;
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      max-width: 100%;
+
+      .hero-badge {
+        display: inline-block;
+        background-color: $primary-red;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+
+        @media (max-width: 480px) {
+          font-size: 1.8rem;
+        }
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+
+        @media (max-width: 480px) {
+          font-size: 1rem;
+        }
+      }
+
+      .cta-video {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        background: $primary-red;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 0 auto;
+        max-width: 300px;
+
+        &:hover {
+          background: darken($primary-red, 10%);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba($primary-red, 0.4);
+        }
+
+        .cta-icon {
+          font-size: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+          padding: 0.875rem 1.5rem;
+          font-size: 0.9rem;
+          max-width: 280px;
+        }
+      }
+    }
+  }
+
+  // Video Modal
+  .video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    .video-modal-content {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 16/9;
+
+      .close-video {
+        position: absolute;
+        top: -3rem;
+        right: 0;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 10;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $primary-red;
+        }
+      }
+
+      .video-frame {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  // Section Vidéo
+  .video-section {
+    padding: 4rem 1rem;
+    background-color: white;
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: $dark-blue;
+        margin-bottom: 2rem;
+
+        .title-icon {
+          color: $primary-red;
+          margin-right: 0.75rem;
+          font-size: 1.8rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      .video-content {
+        .video-frame-section {
+          width: 100%;
+          max-width: 600px;
+          aspect-ratio: 16/9;
+          border-radius: 12px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+  }
+
+  // Section Trésorerie
+  .tresorerie-section {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, $light-gray 0%, white 100%);
+
+    .section-content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      .tresorerie-text {
+        text-align: center;
+
+        .section-title {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: $dark-blue;
+          margin-bottom: 2rem;
+
+          .title-icon {
+            color: $primary-red;
+            margin-right: 0.75rem;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        .intro-text {
+          font-size: 1.1rem;
+          color: $text-muted;
+          margin-bottom: 2rem;
+          line-height: 1.6;
+        }
+
+        .benefits-list {
+          .benefit-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid $border-gray;
+            transition: all 0.3s ease;
+
+            &:hover {
+              transform: translateX(10px);
+              box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            }
+
+            .benefit-icon {
+              width: 40px;
+              height: 40px;
+              background-color: $success-green;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              margin-right: 1rem;
+              flex-shrink: 0;
+
+              i {
+                font-size: 1rem;
+              }
+            }
+
+            .benefit-text {
+              font-size: 1rem;
+              font-weight: 600;
+              color: $dark-blue;
+              line-height: 1.4;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Section Marianne
+  .marianne-section {
+    padding: 4rem 1rem;
+    background-color: $dark-blue;
+    color: white;
+
+    .section-content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      .marianne-text {
+        text-align: center;
+
+        .section-title {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: white;
+          margin-bottom: 2rem;
+
+          .title-icon {
+            color: $warning-orange;
+            margin-right: 0.75rem;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        .marianne-story {
+          font-size: 1.1rem;
+          margin-bottom: 2rem;
+          line-height: 1.6;
+          opacity: 0.9;
+        }
+
+        .lesson-highlight {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          background: rgba(255, 255, 255, 0.1);
+          padding: 1.5rem;
+          border-radius: 12px;
+          backdrop-filter: blur(10px);
+
+          .lesson-icon {
+            font-size: 2rem;
+            color: $warning-orange;
+          }
+
+          .lesson-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  // Section Solutions
+  .solutions-section {
+    padding: 4rem 1rem;
+    background-color: white;
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: $dark-blue;
+
+        .title-icon {
+          color: $primary-red;
+          margin-right: 0.75rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .solutions-grid {
+      display: grid;
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+
+      .solution-card {
+        background-color: $light-gray;
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        border: 2px solid $border-gray;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        &.highlight-card {
+          background: linear-gradient(
+            135deg,
+            $success-green 0%,
+            darken($success-green, 10%) 100%
+          );
+          color: white;
+          border-color: $success-green;
+        }
+
+        .solution-number {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+
+        .solution-content {
+          .solution-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+
+            @media (max-width: 480px) {
+              font-size: 1.1rem;
+            }
+          }
+
+          .solution-description {
+            margin: 0;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+
+  // FAQ Section
+  .faq-section {
+    padding: 4rem 1rem;
+    background-color: $dark-blue;
+    color: white;
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+
+        .title-icon {
+          color: $primary-red;
+          margin-right: 0.75rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+
+      .faq-item {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .faq-question {
+          width: 100%;
+          background: none;
+          border: none;
+          color: white;
+          padding: 1.5rem;
+          text-align: left;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.1rem;
+          font-weight: 600;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.1);
+          }
+
+          &.active {
+            background: rgba($primary-red, 0.2);
+          }
+
+          .faq-arrow {
+            color: $primary-red;
+            transition: transform 0.3s ease;
+
+            &.rotated {
+              transform: rotate(180deg);
+            }
+          }
+
+          @media (max-width: 480px) {
+            font-size: 1rem;
+            padding: 1.25rem;
+          }
+        }
+
+        .faq-answer {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+
+          &.show {
+            max-height: 500px;
+          }
+
+          .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+
+            .answer-icon {
+              color: $primary-red;
+              margin-top: 0.2rem;
+              flex-shrink: 0;
+            }
+
+            p {
+              margin: 0;
+              line-height: 1.6;
+              opacity: 0.9;
+            }
+          }
+        }
+      }
+
+      .faq-show-more,
+      .faq-show-less {
+        text-align: center;
+        margin: 2rem 0;
+
+        .show-more-btn,
+        .show-less-btn {
+          background: rgba($primary-red, 0.2);
+          color: white;
+          border: 2px solid $primary-red;
+          padding: 1rem 2rem;
+          border-radius: 25px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin: 0 auto;
+
+          &:hover {
+            background-color: $primary-red;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+
+  // Section Help
+  .help-section {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, $light-gray 0%, white 100%);
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: $dark-blue;
+
+        .title-icon {
+          color: $primary-red;
+          margin-right: 0.75rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .help-list {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+
+      .help-item {
+        display: flex;
+        align-items: center;
+        padding: 1.25rem;
+        background-color: white;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border: 1px solid $border-gray;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateX(10px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .help-icon {
+          width: 50px;
+          height: 50px;
+          background-color: $primary-red;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          margin-right: 1rem;
+          flex-shrink: 0;
+
+          i {
+            font-size: 1.2rem;
+          }
+        }
+
+        .help-text {
+          font-size: 1rem;
+          font-weight: 600;
+          color: $dark-blue;
+          line-height: 1.4;
+        }
+      }
+    }
+
+    .cta-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background-color: $primary-red;
+      color: white;
+      border: none;
+      padding: 1.25rem 2rem;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0 auto;
+      max-width: 300px;
+      width: 100%;
+
+      &:hover {
+        background-color: darken($primary-red, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba($primary-red, 0.4);
+      }
+
+      @media (max-width: 480px) {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // Section Diagnostic
+  .diagnostic-section {
+    padding: 4rem 1rem;
+    background-color: $dark-blue;
+    color: white;
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 1rem;
+
+        .title-icon {
+          color: $primary-red;
+          margin-right: 0.75rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 1.6rem;
+        }
+      }
+
+      .diagnostic-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+      }
+
+      .diagnostic-details {
+        font-size: 1rem;
+        opacity: 0.8;
+        font-style: italic;
+      }
+    }
+
+    .cta-diagnostic {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background-color: $primary-red;
+      color: white;
+      border: none;
+      padding: 1.5rem 2.5rem;
+      border-radius: 25px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0 auto;
+      max-width: 350px;
+      width: 100%;
+
+      &:hover {
+        background-color: darken($primary-red, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba($primary-red, 0.5);
+      }
+
+      @media (max-width: 480px) {
+        padding: 1.25rem 2rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // Contact Section (styles hérités)
+  .contact-section {
+    padding: 4rem 1rem;
+    background-color: $light-gray;
+  }
+
+  // CTA fixe
+  .fixed-cta {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    .cta-fixed {
+      background-color: $primary-red;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba($primary-red, 0.4);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      &:hover {
+        background-color: darken($primary-red, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba($primary-red, 0.5);
+      }
+
+      @media (max-width: 480px) {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+  .investir-tresorerie-mobile-container {
+    .hero-section {
+      min-height: 85vh;
+      padding: 1.5rem 0.75rem;
+    }
+
+    .video-section,
+    .tresorerie-section,
+    .marianne-section,
+    .solutions-section,
+    .faq-section,
+    .help-section,
+    .diagnostic-section {
+      padding: 3rem 1rem;
+    }
+
+    .solutions-grid {
+      gap: 1.5rem;
+
+      .solution-card {
+        padding: 1.5rem;
+      }
+    }
+
+    .fixed-cta {
+      bottom: 15px;
+      left: 1rem;
+      right: 1rem;
+      transform: none;
+
+      .cta-fixed {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .investir-tresorerie-mobile-container {
+    .help-section .help-list .help-item {
+      padding: 1rem;
+
+      .help-icon {
+        width: 40px;
+        height: 40px;
+
+        i {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .diagnostic-section .section-header {
+      .diagnostic-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .diagnostic-details {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

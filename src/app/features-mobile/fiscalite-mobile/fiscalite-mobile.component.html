@@ -1,0 +1,473 @@
+<div class="fiscalite-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>OPTIMISATION FISCALE</span>
+      </div>
+      <h1 class="hero-title">Moins d'impôts, plus de sérénité</h1>
+      <p class="hero-subtitle">
+        Optimisez la fiscalité de votre entreprise grâce à notre accompagnement
+        sur-mesure.
+      </p>
+
+      <button class="cta-primary" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-phone cta-icon"></i>
+        <span class="cta-text">Je souhaite être rappelé(e)</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 1 — Vos enjeux, nos solutions -->
+  <section class="enjeux-section" id="enjeux">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-bullseye title-icon"></i>
+        Section 1 — Vos enjeux, nos solutions
+      </h2>
+    </div>
+
+    <div class="enjeux-content">
+      <div class="enjeux-grid">
+        <div class="enjeu-card">
+          <div class="enjeu-icon">
+            <i class="fas fa-percentage"></i>
+          </div>
+          <div class="enjeu-content">
+            <h4>Marge fiscale</h4>
+            <p>
+              Nous vous aidons à récupérer la TVA sur les travaux et à réduire
+              vos charges.
+            </p>
+          </div>
+        </div>
+
+        <div class="enjeu-card">
+          <div class="enjeu-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div class="enjeu-content">
+            <h4>Conformité assurée</h4>
+            <p>
+              Déclarations fiscales sans erreur, dans les délais. Moins de
+              risques, plus de sérénité.
+            </p>
+          </div>
+        </div>
+
+        <div class="enjeu-card">
+          <div class="enjeu-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="enjeu-content">
+            <h4>Pilotage en temps réel</h4>
+            <p>
+              Accédez à des outils pour suivre votre situation fiscale en un
+              clin d'œil.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button class="cta-secondary" (click)="scrollToSection('analyse')">
+        <i class="fas fa-arrow-right"></i>
+        <span>👉 Comment ça fonctionne ?</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 2 — Analyse personnalisée -->
+  <section class="analyse-section" id="analyse">
+    <div class="section-content">
+      <div class="analyse-text">
+        <h2 class="section-title">
+          <i class="fas fa-search title-icon"></i>
+          Section 2 — Analyse personnalisée
+        </h2>
+
+        <h3 class="analyse-subtitle">
+          Un regard stratégique sur vos obligations
+        </h3>
+
+        <div class="analyse-description">
+          <p>Nous identifions les leviers fiscaux adaptés à votre activité :</p>
+
+          <div class="leviers-list">
+            <div class="levier-item">
+              <i class="fas fa-check-circle"></i>
+              <span
+                ><strong>TVA :</strong> calculs précis et récupérations
+                maximisées</span
+              >
+            </div>
+
+            <div class="levier-item">
+              <i class="fas fa-check-circle"></i>
+              <span
+                ><strong>ISOC :</strong> optimisation selon vos résultats</span
+              >
+            </div>
+
+            <div class="levier-item">
+              <i class="fas fa-check-circle"></i>
+              <span
+                ><strong>Méthodes fiscales :</strong> option à l'achèvement,
+                prorata, etc.</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="exemple-reel">
+          <div class="exemple-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <div class="exemple-content">
+            <span class="exemple-label">Exemple réel :</span>
+            <span class="exemple-text"
+              >récupération de +8 500€ de TVA sur un chantier</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="analyse-image">
+        <img
+          src="../../../assets/img/vente/img_passage_en_societe1.webp"
+          alt="Analyse fiscale"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 — Vos avantages concrets -->
+  <section class="avantages-section" id="avantages">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-trophy title-icon"></i>
+        Section 3 — Vos avantages concrets
+      </h2>
+    </div>
+
+    <div class="avantages-grid">
+      <div class="avantage-card">
+        <div class="avantage-icon">
+          <i class="fas fa-plus-circle"></i>
+        </div>
+        <h4>+ de déductions</h4>
+      </div>
+
+      <div class="avantage-card">
+        <div class="avantage-icon">
+          <i class="fas fa-minus-circle"></i>
+        </div>
+        <h4>– de charges fiscales</h4>
+      </div>
+
+      <div class="avantage-card">
+        <div class="avantage-icon">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <h4>+ de lisibilité pour décider</h4>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-folder"></i>
+        </div>
+        <h4>Déclarations TVA & ISOC</h4>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-chart-pie"></i>
+        </div>
+        <h4>Analyse fiscale par projet</h4>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h4>Optimisations sur mesure</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 — Consultation gratuite -->
+  <section class="consultation-section" id="consultation">
+    <div class="consultation-cta">
+      <div class="cta-content">
+        <div class="cta-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="cta-text">
+          <h3>Section 4 — Consultation gratuite</h3>
+          <p>
+            🕒 En 2 minutes, décrivez votre situation. On vous rappelle sous
+            72h.
+          </p>
+        </div>
+      </div>
+
+      <button class="cta-contact" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Formulaire gratuit</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-contact-form-layout
+      [config]="formConfig"
+      [currentStep]="currentStep"
+      [totalSteps]="totalSteps"
+      [formSubmitted]="formSubmitted"
+      [isStepValid]="isStepValid"
+      [isFormValid]="isFormValid"
+      [isLoading]="isLoading"
+      (nextStep)="onNextStep()"
+      (previousStep)="onPreviousStep()"
+      (submit)="onSubmit()"
+      (reset)="onReset()"
+    >
+      <div slot="form-content">
+        <!-- Étape 1: Type d'entreprise -->
+        <div *ngIf="currentStep === 1" class="step-content">
+          <h3 class="step-title mb-4">1. Quel est votre type d'entreprise ?</h3>
+          <p class="step-description mb-4">
+            Sélectionnez le statut qui correspond à votre entreprise.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.typeEntreprise === 'independant'"
+              >
+                <input
+                  type="radio"
+                  name="typeEntreprise"
+                  value="independant"
+                  [(ngModel)]="formData.typeEntreprise"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-user text-danger mb-2"></i>
+                  <h6 class="mb-1">Indépendant</h6>
+                  <small class="text-muted">Entreprise individuelle</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.typeEntreprise === 'societe'"
+              >
+                <input
+                  type="radio"
+                  name="typeEntreprise"
+                  value="societe"
+                  [(ngModel)]="formData.typeEntreprise"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-building text-danger mb-2"></i>
+                  <h6 class="mb-1">Société</h6>
+                  <small class="text-muted">SPRL, SA, SNC, etc.</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2: Secteur d'activité -->
+        <div *ngIf="currentStep === 2" class="step-content">
+          <h3 class="step-title mb-4">2. Dans quel secteur exercez-vous ?</h3>
+          <p class="step-description mb-4">
+            Votre secteur d'activité nous aide à personnaliser nos conseils.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.secteur === 'construction'"
+              >
+                <input
+                  type="radio"
+                  name="secteur"
+                  value="construction"
+                  [(ngModel)]="formData.secteur"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-hard-hat text-danger mb-2"></i>
+                  <h6 class="mb-1">Construction</h6>
+                  <small class="text-muted">Bâtiment, travaux publics</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.secteur === 'commerce'"
+              >
+                <input
+                  type="radio"
+                  name="secteur"
+                  value="commerce"
+                  [(ngModel)]="formData.secteur"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-store text-danger mb-2"></i>
+                  <h6 class="mb-1">Commerce</h6>
+                  <small class="text-muted">Vente, distribution</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.secteur === 'services'"
+              >
+                <input
+                  type="radio"
+                  name="secteur"
+                  value="services"
+                  [(ngModel)]="formData.secteur"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-cogs text-danger mb-2"></i>
+                  <h6 class="mb-1">Services</h6>
+                  <small class="text-muted"
+                    >Consulting, services aux entreprises</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.secteur === 'autre'"
+              >
+                <input
+                  type="radio"
+                  name="secteur"
+                  value="autre"
+                  [(ngModel)]="formData.secteur"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-ellipsis-h text-danger mb-2"></i>
+                  <h6 class="mb-1">Autre secteur</h6>
+                  <small class="text-muted">Secteur spécifique</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div *ngIf="currentStep === 3" class="step-content">
+          <h3 class="step-title mb-4">
+            3. Vos coordonnées pour le diagnostic gratuit
+          </h3>
+          <p class="step-description mb-4">
+            <i class="fas fa-phone text-danger me-2"></i>
+            Nous vous contactons sous 72h pour votre diagnostic personnalisé
+          </p>
+
+          <div class="form-group">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="nom" class="form-label">
+                    <i class="fas fa-user me-2"></i>Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="nom"
+                    name="nom"
+                    [(ngModel)]="formData.nom"
+                    placeholder="Votre nom et prénom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>Email
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="telephone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>Téléphone
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control custom-input"
+                    id="telephone"
+                    name="telephone"
+                    [(ngModel)]="formData.telephone"
+                    placeholder="+32 XXX XX XX XX"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
+                <div>
+                  <h6 class="mb-1">Diagnostic gratuit sous 72h</h6>
+                  <small
+                    >Analyse personnalisée, confidentielle et sans
+                    engagement.</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-contact-form-layout>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-calculator"></i>
+      <span>Diagnostic gratuit</span>
+    </button>
+  </div>
+</div>

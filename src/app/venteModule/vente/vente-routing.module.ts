@@ -1,6 +1,7 @@
 import { NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DeviceService } from '../../core/device.service';
+import { CompteCourantAdministrateurMobileComponent } from '../../features-mobile/compte-courant-administrateur-mobile/compte-courant-administrateur-mobile.component';
 import { PassageSocieteMobileComponent } from '../../features-mobile/passage-societe-mobile/passage-societe-mobile.component';
 import { BoosteEntrepriseComponent } from '../booste-entreprise/booste-entreprise.component';
 import { CompteCourantAdministrateurComponent } from '../compte-courant-administrateur/compte-courant-administrateur.component';
@@ -29,7 +30,27 @@ const routes: Routes = [
     ],
     component: PassageSocieteMobileComponent,
   },
-  { path: 'compte-courant', component: CompteCourantAdministrateurComponent },
+  {
+    path: 'compte-courant',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return !deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: CompteCourantAdministrateurComponent,
+  },
+  {
+    path: 'compte-courant',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: CompteCourantAdministrateurMobileComponent,
+  },
+
   { path: 'salarie-independant', component: SalarieIndependantComponent },
 ];
 

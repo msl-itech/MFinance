@@ -14,12 +14,16 @@ $border-gray: #e6e9f1;
   // Section Hero
   .hero-section {
     position: relative;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     color: white;
     padding: 2rem 1rem;
-    background: linear-gradient(135deg, $dark-blue 0%, darken($dark-blue, 15%) 100%);
+    background: linear-gradient(
+      135deg,
+      $dark-blue 0%,
+      darken($dark-blue, 15%) 100%
+    );
 
     .hero-background {
       position: absolute;
@@ -27,7 +31,8 @@ $border-gray: #e6e9f1;
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('../../../assets/img/bg/bg_about.webp') no-repeat center center/cover;
+      background: url("../../../assets/img/bg/bg_about.webp") no-repeat center
+        center/cover;
       z-index: 1;
 
       .hero-overlay {
@@ -198,7 +203,7 @@ $border-gray: #e6e9f1;
           color: $primary-red;
           font-weight: 600;
           line-height: 1.4;
-          
+
           @media (max-width: 480px) {
             font-size: 1.1rem;
           }
@@ -221,7 +226,11 @@ $border-gray: #e6e9f1;
         .lightbulb-icon {
           width: 80px;
           height: 80px;
-          background: linear-gradient(135deg, $warning-orange, darken($warning-orange, 10%));
+          background: linear-gradient(
+            135deg,
+            $warning-orange,
+            darken($warning-orange, 10%)
+          );
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -594,7 +603,11 @@ $border-gray: #e6e9f1;
         }
 
         &.highlight-card {
-          background: linear-gradient(135deg, $primary-red 0%, darken($primary-red, 10%) 100%);
+          background: linear-gradient(
+            135deg,
+            $primary-red 0%,
+            darken($primary-red, 10%) 100%
+          );
           color: white;
           border-color: $primary-red;
 
@@ -608,7 +621,11 @@ $border-gray: #e6e9f1;
         }
 
         &.success-card {
-          background: linear-gradient(135deg, $success-green 0%, darken($success-green, 10%) 100%);
+          background: linear-gradient(
+            135deg,
+            $success-green 0%,
+            darken($success-green, 10%) 100%
+          );
           color: white;
           border-color: $success-green;
 
@@ -960,11 +977,13 @@ $border-gray: #e6e9f1;
         }
       }
 
-      .faq-show-more, .faq-show-less {
+      .faq-show-more,
+      .faq-show-less {
         text-align: center;
         margin: 2rem 0;
 
-        .show-more-btn, .show-less-btn {
+        .show-more-btn,
+        .show-less-btn {
           background: rgba($primary-red, 0.2);
           color: white;
           border: 2px solid $primary-red;
@@ -1081,7 +1100,11 @@ $border-gray: #e6e9f1;
       }
     }
 
-    .optimization-section .section-content .optimization-text .optimization-benefits .optimization-item {
+    .optimization-section
+      .section-content
+      .optimization-text
+      .optimization-benefits
+      .optimization-item {
       padding: 1.25rem;
 
       .optimization-icon {

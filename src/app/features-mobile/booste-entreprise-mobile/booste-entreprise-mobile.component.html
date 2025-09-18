@@ -1,0 +1,681 @@
+<div class="booste-entreprise-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>BOOSTEZ VOTRE ENTREPRISE</span>
+      </div>
+      <h1 class="hero-title">Boostez votre entreprise dès aujourd'hui</h1>
+      <p class="hero-subtitle">
+        📈 Des conseils clairs. Des résultats concrets.
+      </p>
+
+      <button class="cta-primary" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-phone cta-icon"></i>
+        <span class="cta-text">Je souhaite être rappelé(e)</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi booster -->
+  <section class="pourquoi-section" id="pourquoi">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-rocket title-icon"></i>
+        Pourquoi booster votre entreprise ?
+      </h2>
+    </div>
+
+    <div class="pourquoi-content">
+      <div class="pourquoi-text">
+        <p class="intro-text">Chez Mfinances, nous savons qu'une entreprise performante ne laisse pas sa croissance au hasard.</p>
+        
+        <div class="points-list">
+          <div class="point-item">
+            <div class="point-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <span>📌 Anticipez les défis</span>
+          </div>
+          
+          <div class="point-item">
+            <div class="point-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <span>📌 Faites les bons choix au bon moment</span>
+          </div>
+          
+          <div class="point-item">
+            <div class="point-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <span>📌 Avancez avec sérénité</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Leviers de réussite -->
+  <section class="leviers-section" id="leviers">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-chart-line title-icon"></i>
+        Vos leviers de réussite
+      </h2>
+    </div>
+
+    <div class="leviers-content">
+      <p class="leviers-intro">Voici ce que nous vous aidons à améliorer :</p>
+      
+      <div class="leviers-grid">
+        <div class="levier-card">
+          <div class="levier-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <h3>✅ Gestion quotidienne</h3>
+        </div>
+
+        <div class="levier-card">
+          <div class="levier-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>✅ Rentabilité</h3>
+        </div>
+
+        <div class="levier-card">
+          <div class="levier-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>✅ Solidité financière</h3>
+        </div>
+
+        <div class="levier-card">
+          <div class="levier-icon">
+            <i class="fas fa-smile"></i>
+          </div>
+          <h3>✅ Sérénité entrepreneuriale</h3>
+        </div>
+      </div>
+
+      <button class="cta-conseils" (click)="scrollToSection('conseils')">
+        🟦 Découvrez nos conseils d'experts
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Trésorerie -->
+  <section class="tresorerie-section" id="tresorerie">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-coins title-icon"></i>
+        💡 Trésorerie : Transformez votre stress en succès
+      </h2>
+    </div>
+
+    <div class="tresorerie-content">
+      <p class="tresorerie-intro">Une trésorerie maîtrisée, c'est :</p>
+      
+      <div class="tresorerie-benefits">
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <div class="benefit-text">
+            <h3>🔐 Sécurisez vos opérations</h3>
+            <p>Payez vos charges et salaires à temps</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="benefit-text">
+            <h3>📅 Anticipez vos besoins</h3>
+            <p>Prévoyez les creux de trésorerie</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-crosshairs"></i>
+          </div>
+          <div class="benefit-text">
+            <h3>🎯 Prenez le contrôle</h3>
+            <p>Fini les imprévus qui paralysent</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="cta-excellence" (click)="scrollToSection('excellence')">
+        🟩 Découvrez l'Offre Excellence
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Offre Excellence -->
+  <section class="excellence-section" id="excellence">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-star title-icon"></i>
+        ⭐ Offre Excellence
+      </h2>
+    </div>
+
+    <div class="excellence-content">
+      <div class="excellence-features">
+        <div class="feature-item">
+          <i class="fas fa-table"></i>
+          <span>🧾 Tableau de trésorerie prévisionnel</span>
+        </div>
+
+        <div class="feature-item">
+          <i class="fas fa-chart-pie"></i>
+          <span>📊 Contrôle budgétaire trimestriel</span>
+        </div>
+
+        <div class="feature-item">
+          <i class="fas fa-user-tie"></i>
+          <span>👨‍💼 Accompagnement personnalisé</span>
+        </div>
+      </div>
+
+      <button class="cta-excellence-detail" (click)="scrollToSection('contactSection')">
+        🟩 En savoir plus
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Articles pratiques -->
+  <section class="articles-section" id="articles">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-book-open title-icon"></i>
+        📚 Nos articles pratiques
+      </h2>
+    </div>
+
+    <div class="articles-content">
+      <div class="articles-carousel">
+        <div class="article-card" *ngFor="let article of articles; let i = index">
+          <div class="article-number">{{ i + 1 }}️⃣</div>
+          <div class="article-info">
+            <h3>{{ article.title }}</h3>
+            <div class="article-meta">
+              <span>🕒 {{ article.duration }}</span>
+              <span>{{ article.icon }} {{ article.category }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="cta-articles" (click)="scrollToSection('contactSection')">
+        🟦 Voir tous les articles
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Grandes thématiques -->
+  <section class="thematiques-section" id="thematiques">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-sitemap title-icon"></i>
+        📊 Nos grandes thématiques
+      </h2>
+    </div>
+
+    <div class="thematiques-content">
+      <div class="thematique-item">
+        <div class="thematique-number">01.</div>
+        <div class="thematique-info">
+          <h3>Salarié ou Indépendant</h3>
+          <p>Quel statut choisir ? Avantages, contraintes, impact fiscal.</p>
+          <a href="/salarie-independant" class="thematique-link">
+            ➡️ Lire l'article complet
+          </a>
+        </div>
+      </div>
+
+      <div class="thematique-item">
+        <div class="thematique-number">02.</div>
+        <div class="thematique-info">
+          <h3>Passage en société</h3>
+          <p>Comment structurer votre activité pour plus de rentabilité et de sécurité ?</p>
+          <a href="/passage-societe" class="thematique-link">
+            ➡️ Lire l'article complet
+          </a>
+        </div>
+      </div>
+
+      <div class="thematique-item">
+        <div class="thematique-number">03.</div>
+        <div class="thematique-info">
+          <h3>Compte courant administrateur</h3>
+          <p>Évitez les erreurs coûteuses. Apprenez à bien le gérer.</p>
+          <a href="/compte-courant-administrateur" class="thematique-link">
+            ➡️ Lire l'article complet
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Conseils pratiques -->
+  <section class="conseils-section" id="conseils">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-brain title-icon"></i>
+        🧠 Nos conseils pratiques
+      </h2>
+    </div>
+
+    <div class="conseils-content">
+      <div class="conseil-block">
+        <div class="conseil-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="conseil-info">
+          <h3>👨‍💼 Passage en société</h3>
+          <ul class="conseil-list">
+            <li>Évaluation de la pertinence</li>
+            <li>Protection du patrimoine</li>
+            <li>Stratégie fiscale</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="conseil-block">
+        <div class="conseil-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <div class="conseil-info">
+          <h3>👤 Salarié ou indépendant</h3>
+          <ul class="conseil-list">
+            <li>Comparatif clair</li>
+            <li>Analyse personnalisée</li>
+            <li>Simulation chiffrée</li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="cta-conseil-adapte" (click)="scrollToSection('contactSection')">
+        🟦 Recevoir un conseil adapté
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi Mfinances -->
+  <section class="pourquoi-mfinances-section" id="pourquoi-mfinances">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-comments title-icon"></i>
+        💬 Pourquoi choisir Mfinances ?
+      </h2>
+    </div>
+
+    <div class="pourquoi-mfinances-content">
+      <p class="intro-text">En nous choisissant, vous bénéficiez de :</p>
+      
+      <div class="avantages-list">
+        <div class="avantage-item">
+          <div class="avantage-icon">
+            <i class="fas fa-lightning-bolt"></i>
+          </div>
+          <div class="avantage-text">
+            <h3>📍 Expertise proactive</h3>
+            <p>On agit avant que les problèmes n'arrivent.</p>
+          </div>
+        </div>
+
+        <div class="avantage-item">
+          <div class="avantage-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="avantage-text">
+            <h3>📍 Pédagogie claire</h3>
+            <p>Des conseils simples et concrets.</p>
+          </div>
+        </div>
+
+        <div class="avantage-item">
+          <div class="avantage-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="avantage-text">
+            <h3>📍 Accompagnement personnalisé</h3>
+            <p>Vos résultats sont notre priorité.</p>
+          </div>
+        </div>
+
+        <div class="avantage-item">
+          <div class="avantage-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <div class="avantage-text">
+            <h3>📍 Vision globale</h3>
+            <p>On pense à tout pour une stratégie cohérente.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="cta-contact" (click)="scrollToSection('contactSection')">
+        🟥 Contactez-nous
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Passez à l'action -->
+  <section class="action-section" id="action">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-rocket title-icon"></i>
+        🚀 Passez à l'action
+      </h2>
+    </div>
+
+    <div class="action-content">
+      <div class="action-text">
+        <p class="action-intro">Chaque grande réussite commence par une bonne décision.</p>
+        
+        <div class="action-steps">
+          <div class="action-step">
+            <span>🌱 Explorez nos conseils</span>
+          </div>
+          <div class="action-step">
+            <span>💡 Inspirez-vous</span>
+          </div>
+          <div class="action-step">
+            <span>📞 Contactez-nous</span>
+          </div>
+        </div>
+
+        <p class="action-conclusion">Mfinances vous aide à construire votre avenir financier.</p>
+      </div>
+
+      <button class="cta-rendez-vous" (click)="scrollToSection('contactSection')">
+        🟥 Je demande mon premier rendez-vous gratuit
+      </button>
+    </div>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-contact-form-layout
+      [config]="formConfig"
+      [currentStep]="currentStep"
+      [totalSteps]="totalSteps"
+      [formSubmitted]="formSubmitted"
+      [isStepValid]="isStepValid"
+      [isFormValid]="isFormValid"
+      [isLoading]="isLoading"
+      (nextStep)="onNextStep()"
+      (previousStep)="onPreviousStep()"
+      (submit)="onSubmit()"
+      (reset)="onReset()"
+    >
+      <div slot="form-content">
+        <!-- Étape 1: Quel est votre principal objectif ? -->
+        <div *ngIf="currentStep === 1" class="step-content">
+          <h3 class="step-title mb-4">1. Quel est votre principal objectif ?</h3>
+          <p class="step-description mb-4">
+            Sélectionnez l'objectif qui correspond le mieux à vos priorités actuelles :
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.objectif === 'croissance-rapide'"
+              >
+                <input
+                  type="radio"
+                  name="objectif"
+                  value="croissance-rapide"
+                  [(ngModel)]="formData.objectif"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-chart-line text-danger mb-2"></i>
+                  <h6 class="mb-1">Accélérer ma croissance</h6>
+                  <small class="text-muted">Je veux développer mon activité plus rapidement</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.objectif === 'stabilite-financiere'"
+              >
+                <input
+                  type="radio"
+                  name="objectif"
+                  value="stabilite-financiere"
+                  [(ngModel)]="formData.objectif"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-shield-alt text-danger mb-2"></i>
+                  <h6 class="mb-1">Stabiliser ma situation</h6>
+                  <small class="text-muted">Je veux sécuriser ma trésorerie et mes finances</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.objectif === 'optimisation-fiscale'"
+              >
+                <input
+                  type="radio"
+                  name="objectif"
+                  value="optimisation-fiscale"
+                  [(ngModel)]="formData.objectif"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-percentage text-danger mb-2"></i>
+                  <h6 class="mb-1">Optimiser ma fiscalité</h6>
+                  <small class="text-muted">Je veux réduire mes impôts légalement</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.objectif === 'conseil-strategique'"
+              >
+                <input
+                  type="radio"
+                  name="objectif"
+                  value="conseil-strategique"
+                  [(ngModel)]="formData.objectif"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-lightbulb text-danger mb-2"></i>
+                  <h6 class="mb-1">Avoir des conseils stratégiques</h6>
+                  <small class="text-muted">Je veux être accompagné dans mes décisions importantes</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2: Dans quel délai souhaitez-vous voir des résultats ? -->
+        <div *ngIf="currentStep === 2" class="step-content">
+          <h3 class="step-title mb-4">2. Dans quel délai souhaitez-vous voir des résultats ?</h3>
+          <p class="step-description mb-4">Choisissez l'horizon temporel qui vous convient :</p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.delai === 'immediat'"
+              >
+                <input
+                  type="radio"
+                  name="delai"
+                  value="immediat"
+                  [(ngModel)]="formData.delai"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-bolt text-danger mb-2"></i>
+                  <h6 class="mb-1">Immédiatement</h6>
+                  <small class="text-muted">J'ai une urgence ou un besoin pressant</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.delai === 'court-terme'"
+              >
+                <input
+                  type="radio"
+                  name="delai"
+                  value="court-terme"
+                  [(ngModel)]="formData.delai"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-calendar-week text-danger mb-2"></i>
+                  <h6 class="mb-1">1 à 3 mois</h6>
+                  <small class="text-muted">Je veux des améliorations rapides</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.delai === 'moyen-terme'"
+              >
+                <input
+                  type="radio"
+                  name="delai"
+                  value="moyen-terme"
+                  [(ngModel)]="formData.delai"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-calendar-alt text-danger mb-2"></i>
+                  <h6 class="mb-1">6 mois à 1 an</h6>
+                  <small class="text-muted">Je construis une stratégie à moyen terme</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.delai === 'long-terme'"
+              >
+                <input
+                  type="radio"
+                  name="delai"
+                  value="long-terme"
+                  [(ngModel)]="formData.delai"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-chess text-danger mb-2"></i>
+                  <h6 class="mb-1">1 an et plus</h6>
+                  <small class="text-muted">Je planifie sur le long terme</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div *ngIf="currentStep === 3" class="step-content">
+          <h3 class="step-title mb-4">3. Vos coordonnées</h3>
+          <p class="step-description mb-4">
+            <i class="fas fa-phone text-danger me-2"></i>
+            Pour recevoir votre plan d'action personnalisé, merci de compléter vos coordonnées
+          </p>
+
+          <div class="form-group">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="nom" class="form-label">
+                    <i class="fas fa-user me-2"></i>Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="nom"
+                    name="nom"
+                    [(ngModel)]="formData.nom"
+                    placeholder="Votre nom et prénom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>Email
+                    <span class="badge bg-success ms-2">✅ obligatoire</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="telephone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>Téléphone
+                    <span class="badge bg-success ms-2">✅ obligatoire</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control custom-input"
+                    id="telephone"
+                    name="telephone"
+                    [(ngModel)]="formData.telephone"
+                    placeholder="+32 XXX XX XX XX"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
+                <div>
+                  <h6 class="mb-1">📞 Un expert Mfinances vous appelle sous 72h</h6>
+                  <small>Premier rendez-vous gratuit et confidentiel.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-contact-form-layout>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-rocket"></i>
+      <span>Booster mon entreprise</span>
+    </button>
+  </div>
+</div>

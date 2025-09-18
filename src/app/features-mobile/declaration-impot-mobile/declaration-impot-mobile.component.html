@@ -1,0 +1,416 @@
+<div class="declaration-impot-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>DÉCLARATION D'IMPÔT</span>
+      </div>
+      <h1 class="hero-title">Déclaration d'impôt</h1>
+      <p class="hero-subtitle">
+        Mfinances, cabinet d'expertise comptable à Bruxelles, vous aide à bénéficier d'un accompagnement proactif.
+      </p>
+
+      <button class="cta-primary" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-user-tie cta-icon"></i>
+        <span class="cta-text">Contactez un expert</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 3 — Contexte client -->
+  <section class="context-section" id="context">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-users title-icon"></i>
+        3. Contexte client
+      </h2>
+    </div>
+
+    <div class="context-content">
+      <div class="context-label">
+        <span class="assistance-label">Assistance fiscale pour les particuliers</span>
+      </div>
+      
+      <h2 class="context-main-title">Déclaration d'impôt des personnes physiques</h2>
+      
+      <div class="context-description">
+        <p>
+          Sophie, entrepreneure, et Julien, investisseur, cherchent à optimiser leur déclaration. 
+          La solution automatisée (Tax-on-Web) n'a pas suffi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 — Solution MFinances -->
+  <section class="solution-section" id="solution">
+    <div class="solution-card">
+      <div class="solution-content">
+        <div class="solution-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="solution-text">
+          <p>
+            Ce cabinet leur propose une assistance personnalisée dès la délivrance de la procuration.
+          </p>
+        </div>
+      </div>
+      
+      <button class="cta-contact-blue" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-envelope"></i>
+        <span>Contactez-nous</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 5 — Tarifs -->
+  <section class="tarifs-section" id="tarifs">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-euro-sign title-icon"></i>
+        Nos Tarifs
+      </h2>
+    </div>
+
+    <div class="tarifs-grid">
+      <div class="tarif-card">
+        <div class="tarif-period">Jusqu'au 30 juin</div>
+        <div class="tarif-price">90,75 € <span class="tarif-currency">TVAC</span></div>
+      </div>
+
+      <div class="tarif-card">
+        <div class="tarif-period">Juillet – Septembre</div>
+        <div class="tarif-price">151,25 € <span class="tarif-currency">TVAC</span></div>
+      </div>
+
+      <div class="tarif-card">
+        <div class="tarif-period">En octobre</div>
+        <div class="tarif-price">181,50 € <span class="tarif-currency">TVAC</span></div>
+      </div>
+    </div>
+
+    <div class="tarifs-info">
+      <div class="info-card">
+        <p>Plus vous anticipez, plus vous économisez !</p>
+      </div>
+      
+      <button class="cta-rdv" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Prenez rendez-vous maintenant</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 6 — Processus simplifié -->
+  <section class="processus-section" id="processus">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-clipboard-list title-icon"></i>
+        Processus simplifié
+      </h2>
+    </div>
+
+    <div class="processus-content">
+      <div class="etape-card">
+        <div class="etape-header">
+          <div class="etape-number">1</div>
+          <h3>Collecte des infos</h3>
+        </div>
+        <div class="etape-content">
+          <p>Mfinances vous envoie une checklist simplifiée.</p>
+          <button class="cta-secondary" (click)="scrollToSection('contactSection')">
+            <i class="fas fa-envelope"></i>
+            <span>Contactez-nous</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="etape-card">
+        <div class="etape-header">
+          <div class="etape-number">2</div>
+          <h3>Calcul & Soumission</h3>
+        </div>
+        <div class="etape-content">
+          <p>Simulation, validation, puis saisie via Tax-on-Web.</p>
+          <button class="cta-primary" (click)="scrollToSection('contactSection')">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Prendre un RDV</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7 — Contact rapide -->
+  <section class="contact-rapide-section" id="contact-rapide">
+    <div class="contact-rapide-card">
+      <div class="contact-content">
+        <h2>Prêt à optimiser vos finances ?</h2>
+        <div class="contact-text">
+          <p>Vous avez une question ou une urgence fiscale ?</p>
+          <p>🎁 Vous serez rappelé(e) sous 72h pour un échange gratuit et confidentiel.</p>
+        </div>
+      </div>
+      
+      <div class="contact-buttons">
+        <a href="tel:+3228860550" class="cta-phone">
+          <i class="fas fa-phone"></i>
+          <span>📞 +32 2 886 05 50</span>
+        </a>
+        
+        <button class="cta-contact-blue" (click)="scrollToSection('contactSection')">
+          <i class="fas fa-envelope"></i>
+          <span>Contactez-nous</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-contact-form-layout
+      [config]="formConfig"
+      [currentStep]="currentStep"
+      [totalSteps]="totalSteps"
+      [formSubmitted]="formSubmitted"
+      [isStepValid]="isStepValid"
+      [isFormValid]="isFormValid"
+      [isLoading]="isLoading"
+      (nextStep)="onNextStep()"
+      (previousStep)="onPreviousStep()"
+      (submit)="onSubmit()"
+      (reset)="onReset()"
+    >
+      <div slot="form-content">
+        <!-- Étape 1: Type de situation fiscale -->
+        <div *ngIf="currentStep === 1" class="step-content">
+          <h3 class="step-title mb-4">1. Votre situation fiscale</h3>
+          <p class="step-description mb-4">
+            Sélectionnez votre situation pour personnaliser nos conseils.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.situationFiscale === 'particulier'"
+              >
+                <input
+                  type="radio"
+                  name="situationFiscale"
+                  value="particulier"
+                  [(ngModel)]="formData.situationFiscale"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-user text-danger mb-2"></i>
+                  <h6 class="mb-1">Particulier</h6>
+                  <small class="text-muted">Déclaration personne physique</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.situationFiscale === 'independant'"
+              >
+                <input
+                  type="radio"
+                  name="situationFiscale"
+                  value="independant"
+                  [(ngModel)]="formData.situationFiscale"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-briefcase text-danger mb-2"></i>
+                  <h6 class="mb-1">Indépendant</h6>
+                  <small class="text-muted">Activité professionnelle</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.situationFiscale === 'investisseur'"
+              >
+                <input
+                  type="radio"
+                  name="situationFiscale"
+                  value="investisseur"
+                  [(ngModel)]="formData.situationFiscale"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-chart-line text-danger mb-2"></i>
+                  <h6 class="mb-1">Investisseur</h6>
+                  <small class="text-muted">Revenus mobiliers/immobiliers</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2: Urgence -->
+        <div *ngIf="currentStep === 2" class="step-content">
+          <h3 class="step-title mb-4">2. Délai souhaité</h3>
+          <p class="step-description mb-4">
+            Quand souhaitez-vous finaliser votre déclaration ?
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.urgence === 'avant-juin'"
+              >
+                <input
+                  type="radio"
+                  name="urgence"
+                  value="avant-juin"
+                  [(ngModel)]="formData.urgence"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-clock text-success mb-2"></i>
+                  <h6 class="mb-1">Avant le 30 juin</h6>
+                  <small class="text-muted">Tarif préférentiel : 90,75€</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.urgence === 'juillet-septembre'"
+              >
+                <input
+                  type="radio"
+                  name="urgence"
+                  value="juillet-septembre"
+                  [(ngModel)]="formData.urgence"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-calendar text-warning mb-2"></i>
+                  <h6 class="mb-1">Juillet - Septembre</h6>
+                  <small class="text-muted">Tarif : 151,25€</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.urgence === 'octobre'"
+              >
+                <input
+                  type="radio"
+                  name="urgence"
+                  value="octobre"
+                  [(ngModel)]="formData.urgence"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-exclamation-triangle text-danger mb-2"></i>
+                  <h6 class="mb-1">En octobre</h6>
+                  <small class="text-muted">Tarif urgent : 181,50€</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div *ngIf="currentStep === 3" class="step-content">
+          <h3 class="step-title mb-4">
+            3. Vos coordonnées pour l'assistance fiscale
+          </h3>
+          <p class="step-description mb-4">
+            <i class="fas fa-phone text-danger me-2"></i>
+            Nous vous contactons sous 72h pour votre consultation gratuite
+          </p>
+
+          <div class="form-group">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="nom" class="form-label">
+                    <i class="fas fa-user me-2"></i>Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="nom"
+                    name="nom"
+                    [(ngModel)]="formData.nom"
+                    placeholder="Votre nom et prénom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>Email
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="telephone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>Téléphone
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control custom-input"
+                    id="telephone"
+                    name="telephone"
+                    [(ngModel)]="formData.telephone"
+                    placeholder="+32 XXX XX XX XX"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-gift fa-2x text-info me-3"></i>
+                <div>
+                  <h6 class="mb-1">Consultation gratuite sous 72h</h6>
+                  <small>
+                    Analyse personnalisée de votre situation fiscale, confidentielle et sans engagement.
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-contact-form-layout>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-file-invoice"></i>
+      <span>Assistance fiscale</span>
+    </button>
+  </div>
+</div>

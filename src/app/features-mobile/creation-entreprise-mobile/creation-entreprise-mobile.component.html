@@ -1,0 +1,504 @@
+<div class="creation-entreprise-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>CRÉATION D'ENTREPRISE</span>
+      </div>
+      <h1 class="hero-title">Création d'entreprise</h1>
+      <p class="hero-subtitle">
+        À Bruxelles, nous vous accompagnons dans toutes les étapes comptables de
+        votre création d'entreprise.
+      </p>
+
+      <button class="cta-primary" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-user-tie cta-icon"></i>
+        <span class="cta-text">Contactez un expert</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 1 - Lancez votre entreprise sur des bases solides -->
+  <section class="bases-solides-section" id="bases-solides">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-rocket title-icon"></i>
+        Lancez votre entreprise sur des bases solides
+      </h2>
+    </div>
+
+    <div class="bases-content">
+      <div class="subtitle-container">
+        <h3 class="section-subtitle">
+          Plan financier solide et choix juridique approprié : deux piliers pour
+          réussir votre lancement.
+        </h3>
+      </div>
+
+      <div class="description-container">
+        <p class="section-description">
+          Nous vous guidons étape par étape, avec clarté et stratégie, pour
+          bâtir une entreprise solide.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 - Plan financier clair et motivé -->
+  <section class="plan-financier-section" id="plan-financier">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-chart-bar title-icon"></i>
+        Plan financier clair et motivé
+      </h2>
+    </div>
+
+    <div class="plan-financier-card">
+      <div class="plan-icon">
+        <i class="fas fa-briefcase"></i>
+      </div>
+
+      <div class="plan-content">
+        <h3 class="plan-title">Établissement d'un plan financier robuste</h3>
+
+        <div class="bullet-points">
+          <div class="bullet-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Prévisions de revenus</span>
+          </div>
+
+          <div class="bullet-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Estimations de coûts</span>
+          </div>
+
+          <div class="bullet-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Analyse des flux de trésorerie</span>
+          </div>
+        </div>
+
+        <button class="cta-success" (click)="scrollToSection('contactSection')">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Échange gratuit 72h</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 - Choix de la forme juridique -->
+  <section class="forme-juridique-section" id="forme-juridique">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-balance-scale title-icon"></i>
+        Choix de la forme juridique
+      </h2>
+    </div>
+
+    <div class="forme-juridique-content">
+      <h3 class="forme-title">Choisir la bonne structure</h3>
+
+      <div class="forme-description">
+        <p>
+          Nous vous aidons à choisir entre SRL, SA ou entreprise individuelle
+          selon votre fiscalité, vos responsabilités et votre activité.
+        </p>
+      </div>
+
+      <div class="note-block">
+        <div class="note-icon">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="note-content">
+          <strong>NB :</strong> Ce choix a un impact direct sur votre fiscalité
+          et vos obligations.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 - Accompagnement acte authentique -->
+  <section class="acte-authentique-section" id="acte-authentique">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-pen title-icon"></i>
+        Accompagnement acte authentique
+      </h2>
+    </div>
+
+    <div class="acte-card">
+      <div class="acte-icon">
+        <i class="fas fa-pen-fancy"></i>
+      </div>
+
+      <div class="acte-content">
+        <h3 class="acte-title">Assistance lors de la signature</h3>
+
+        <p class="acte-description">
+          Nous agissons comme intermédiaire avec les notaires et veillons à la
+          conformité de chaque étape.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 - Appel à l'action -->
+  <section class="call-to-action-section" id="call-to-action">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h2 class="cta-title">Prêt à lancer votre entreprise ?</h2>
+
+        <div class="cta-text">
+          <p>Expliquez-nous votre projet en 2 minutes.</p>
+          <p>🎁 Rappel garanti sous 72h, gratuitement.</p>
+        </div>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="tel:+3228860550" class="cta-phone">
+          <i class="fas fa-phone"></i>
+          <span>+32 2 886 05 50</span>
+        </a>
+
+        <button class="cta-contact" (click)="scrollToSection('contactSection')">
+          <i class="fas fa-envelope"></i>
+          <span>Contactez-nous</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-contact-form-layout
+      [config]="formConfig"
+      [currentStep]="currentStep"
+      [totalSteps]="totalSteps"
+      [formSubmitted]="formSubmitted"
+      [isStepValid]="isStepValid"
+      [isFormValid]="isFormValid"
+      [isLoading]="isLoading"
+      (nextStep)="onNextStep()"
+      (previousStep)="onPreviousStep()"
+      (submit)="onSubmit()"
+      (reset)="onReset()"
+    >
+      <div slot="form-content">
+        <!-- Étape 1: Type d'entreprise -->
+        <div *ngIf="currentStep === 1" class="step-content">
+          <h3 class="step-title mb-4">
+            1. Quel type d'entreprise souhaitez-vous créer ?
+          </h3>
+          <p class="step-description mb-4">
+            Sélectionnez la forme juridique qui correspond le mieux à votre
+            projet.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.typeEntreprise === 'entreprise-individuelle'
+                "
+              >
+                <input
+                  type="radio"
+                  name="typeEntreprise"
+                  value="entreprise-individuelle"
+                  [(ngModel)]="formData.typeEntreprise"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-user text-danger mb-2"></i>
+                  <h6 class="mb-1">Entreprise individuelle</h6>
+                  <small class="text-muted">Activité en nom propre</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.typeEntreprise === 'srl'"
+              >
+                <input
+                  type="radio"
+                  name="typeEntreprise"
+                  value="srl"
+                  [(ngModel)]="formData.typeEntreprise"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-building text-danger mb-2"></i>
+                  <h6 class="mb-1">SRL</h6>
+                  <small class="text-muted"
+                    >Société à responsabilité limitée</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.typeEntreprise === 'sa'"
+              >
+                <input
+                  type="radio"
+                  name="typeEntreprise"
+                  value="sa"
+                  [(ngModel)]="formData.typeEntreprise"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-university text-danger mb-2"></i>
+                  <h6 class="mb-1">SA</h6>
+                  <small class="text-muted">Société anonyme</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.typeEntreprise === 'autre'"
+              >
+                <input
+                  type="radio"
+                  name="typeEntreprise"
+                  value="autre"
+                  [(ngModel)]="formData.typeEntreprise"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-question-circle text-danger mb-2"></i>
+                  <h6 class="mb-1">Autre / Je ne sais pas</h6>
+                  <small class="text-muted">Nous vous conseillerons</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2: Secteur d'activité -->
+        <div *ngIf="currentStep === 2" class="step-content">
+          <h3 class="step-title mb-4">2. Dans quel secteur exercerez-vous ?</h3>
+          <p class="step-description mb-4">
+            Votre secteur d'activité nous aide à personnaliser nos conseils et
+            démarches.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.secteur === 'services'"
+              >
+                <input
+                  type="radio"
+                  name="secteur"
+                  value="services"
+                  [(ngModel)]="formData.secteur"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-cogs text-danger mb-2"></i>
+                  <h6 class="mb-1">Services</h6>
+                  <small class="text-muted"
+                    >Consulting, services aux entreprises</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.secteur === 'commerce'"
+              >
+                <input
+                  type="radio"
+                  name="secteur"
+                  value="commerce"
+                  [(ngModel)]="formData.secteur"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-store text-danger mb-2"></i>
+                  <h6 class="mb-1">Commerce</h6>
+                  <small class="text-muted">Vente, distribution</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.secteur === 'construction'"
+              >
+                <input
+                  type="radio"
+                  name="secteur"
+                  value="construction"
+                  [(ngModel)]="formData.secteur"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-hard-hat text-danger mb-2"></i>
+                  <h6 class="mb-1">Construction</h6>
+                  <small class="text-muted">Bâtiment, travaux publics</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.secteur === 'liberal'"
+              >
+                <input
+                  type="radio"
+                  name="secteur"
+                  value="liberal"
+                  [(ngModel)]="formData.secteur"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-user-md text-danger mb-2"></i>
+                  <h6 class="mb-1">Profession libérale</h6>
+                  <small class="text-muted">Médecin, avocat, consultant</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.secteur === 'autre'"
+              >
+                <input
+                  type="radio"
+                  name="secteur"
+                  value="autre"
+                  [(ngModel)]="formData.secteur"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-ellipsis-h text-danger mb-2"></i>
+                  <h6 class="mb-1">Autre secteur</h6>
+                  <small class="text-muted">Secteur spécifique</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div *ngIf="currentStep === 3" class="step-content">
+          <h3 class="step-title mb-4">
+            3. Vos coordonnées pour l'accompagnement
+          </h3>
+          <p class="step-description mb-4">
+            <i class="fas fa-rocket text-danger me-2"></i>
+            Nous vous contactons sous 72h pour démarrer votre projet
+            d'entreprise
+          </p>
+
+          <div class="form-group">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="nom" class="form-label">
+                    <i class="fas fa-user me-2"></i>Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="nom"
+                    name="nom"
+                    [(ngModel)]="formData.nom"
+                    placeholder="Votre nom et prénom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>Email
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="telephone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>Téléphone
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control custom-input"
+                    id="telephone"
+                    name="telephone"
+                    [(ngModel)]="formData.telephone"
+                    placeholder="+32 XXX XX XX XX"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="projet" class="form-label">
+                    <i class="fas fa-lightbulb me-2"></i>Décrivez votre projet
+                    (optionnel)
+                  </label>
+                  <textarea
+                    class="form-control custom-input"
+                    id="projet"
+                    name="projet"
+                    [(ngModel)]="formData.projet"
+                    placeholder="Décrivez brièvement votre projet d'entreprise..."
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-rocket fa-2x text-info me-3"></i>
+                <div>
+                  <h6 class="mb-1">Accompagnement personnalisé sous 72h</h6>
+                  <small>
+                    Analyse de votre projet, conseils juridiques et plan
+                    d'action personnalisé, gratuit et sans engagement.
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-contact-form-layout>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-rocket"></i>
+      <span>Créer mon entreprise</span>
+    </button>
+  </div>
+</div>

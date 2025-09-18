@@ -1,0 +1,871 @@
+<div class="investir-tresorerie-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>BIENVENUE À MFINANCES</span>
+      </div>
+      <h1 class="hero-title">
+        Investissements : Assurez votre Croissance sans Compromettre votre
+        Trésorerie
+      </h1>
+      <p class="hero-subtitle">
+        Financer un investissement peut booster votre activité… ou fragiliser
+        votre trésorerie. Voici comment décider intelligemment.
+      </p>
+
+      <button class="cta-video" (click)="toggleVideo()">
+        <i class="fas fa-play-circle cta-icon"></i>
+        <span class="cta-text">Faire mon diagnostic gratuit</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div class="video-modal" *ngIf="showVideo" (click)="toggleVideo()">
+    <div class="video-modal-content" (click)="$event.stopPropagation()">
+      <button class="close-video" (click)="toggleVideo()">
+        <i class="fas fa-times"></i>
+      </button>
+      <iframe
+        src="https://www.youtube.com/embed/ojdCKrUenL8?list=PLAMEY6kkUU7RWmsuOEBY7x7_8xIl0cmnr"
+        title="Investir sans risquer sa trésorerie"
+        allowfullscreen
+        class="video-frame"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Section 1 - Regardez la vidéo -->
+  <section class="video-section" id="video">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-play-circle title-icon"></i>
+        REGARDEZ LA VIDÉO SUR CETTE PAGE
+      </h2>
+      <div class="video-content">
+        <iframe
+          src="https://www.youtube.com/embed/ojdCKrUenL8?list=PLAMEY6kkUU7RWmsuOEBY7x7_8xIl0cmnr"
+          title="Investir sans risquer sa trésorerie"
+          allowfullscreen
+          class="video-frame-section"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 - Trésorerie : Transformez le Stress en Succès -->
+  <section class="tresorerie-section" id="tresorerie">
+    <div class="section-content">
+      <div class="tresorerie-text">
+        <h2 class="section-title">
+          <i class="fas fa-chart-line title-icon"></i>
+          Trésorerie : Transformez le Stress en Succès
+        </h2>
+
+        <p class="intro-text">
+          Investir sans mesurer l'impact sur vos liquidités peut vite devenir un
+          cauchemar financier.
+        </p>
+
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <span class="benefit-text">✔ Rôle vital de la trésorerie</span>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <span class="benefit-text"
+              >✔ Comparaison autofinancement / prêts / leasing</span
+            >
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <span class="benefit-text"
+              >✔ Astuces simples pour éviter les erreurs</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 - L'erreur de Marianne -->
+  <section class="marianne-section" id="marianne">
+    <div class="section-content">
+      <div class="marianne-text">
+        <h2 class="section-title">
+          <i class="fas fa-exclamation-triangle title-icon"></i>
+          L'erreur de Marianne : un investissement mal financé
+        </h2>
+
+        <p class="marianne-story">
+          Marianne investit comptant → trésorerie vidée → dépenses courantes
+          bloquées.
+        </p>
+
+        <div class="lesson-highlight">
+          <i class="fas fa-lightbulb lesson-icon"></i>
+          <span class="lesson-text">Leçon : préserver vos liquidités.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 - Trois solutions pour financer vos investissements -->
+  <section class="solutions-section" id="solutions">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-lightbulb title-icon"></i>
+        Trois solutions pour financer vos investissements sans danger
+      </h2>
+    </div>
+
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <div class="solution-number">1️⃣</div>
+        <div class="solution-content">
+          <h3 class="solution-title">Autofinancement</h3>
+          <p class="solution-description">
+            Risque de fragiliser vos liquidités
+          </p>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-number">2️⃣</div>
+        <div class="solution-content">
+          <h3 class="solution-title">Emprunt bancaire</h3>
+          <p class="solution-description">
+            Conserve votre trésorerie pour l'activité
+          </p>
+        </div>
+      </div>
+
+      <div class="solution-card highlight-card">
+        <div class="solution-number">3️⃣</div>
+        <div class="solution-content">
+          <h3 class="solution-title">Leasing</h3>
+          <p class="solution-description">
+            Étale les paiements et garde la machine opérationnelle
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Mobile Section -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-question-circle title-icon"></i>
+        FAQ : Investir sans Risquer sa Trésorerie
+      </h2>
+    </div>
+
+    <div class="faq-container">
+      <!-- FAQ visibles (3 premiers) -->
+      <div class="faq-item" *ngFor="let faq of visibleFaqs; let i = index">
+        <button
+          class="faq-question"
+          [class.active]="activeFaq === i"
+          (click)="toggleFaq(i)"
+        >
+          <span>{{ faq.question }}</span>
+          <i
+            class="fas fa-chevron-down faq-arrow"
+            [class.rotated]="activeFaq === i"
+          ></i>
+        </button>
+        <div class="faq-answer" [class.show]="activeFaq === i">
+          <div class="faq-answer-content">
+            <i class="fas fa-lightbulb answer-icon"></i>
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton voir plus -->
+      <div class="faq-show-more" *ngIf="!showAllFaqs && faqs.length > 3">
+        <button class="show-more-btn" (click)="toggleAllFaqs()">
+          <i class="fas fa-plus-circle"></i>
+          <span>Voir plus de questions ({{ faqs.length - 3 }} autres)</span>
+        </button>
+      </div>
+
+      <!-- FAQ supplémentaires -->
+      <div
+        class="faq-item"
+        *ngFor="let faq of hiddenFaqs; let i = index"
+        [@fadeInUp]
+      >
+        <button
+          class="faq-question"
+          [class.active]="activeFaq === i + 3"
+          (click)="toggleFaq(i + 3)"
+        >
+          <span>{{ faq.question }}</span>
+          <i
+            class="fas fa-chevron-down faq-arrow"
+            [class.rotated]="activeFaq === i + 3"
+          ></i>
+        </button>
+        <div class="faq-answer" [class.show]="activeFaq === i + 3">
+          <div class="faq-answer-content">
+            <i class="fas fa-lightbulb answer-icon"></i>
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton voir moins -->
+      <div class="faq-show-less" *ngIf="showAllFaqs">
+        <button class="show-less-btn" (click)="toggleAllFaqs()">
+          <i class="fas fa-minus-circle"></i>
+          <span>Voir moins</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Comment MFINANCES peut m'aider -->
+  <section class="help-section" id="help">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-hands-helping title-icon"></i>
+        Comment MFINANCES peut m'aider ?
+      </h2>
+    </div>
+
+    <div class="help-list">
+      <div class="help-item">
+        <div class="help-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <span class="help-text">Analyse de vos besoins</span>
+      </div>
+
+      <div class="help-item">
+        <div class="help-icon">
+          <i class="fas fa-table"></i>
+        </div>
+        <span class="help-text">Tableau de trésorerie prévisionnel</span>
+      </div>
+
+      <div class="help-item">
+        <div class="help-icon">
+          <i class="fas fa-balance-scale"></i>
+        </div>
+        <span class="help-text">Comparaison des financements</span>
+      </div>
+
+      <div class="help-item">
+        <div class="help-icon">
+          <i class="fas fa-hand-holding-usd"></i>
+        </div>
+        <span class="help-text">Recherche d'aides et subventions</span>
+      </div>
+    </div>
+
+    <button class="cta-primary" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-calendar-alt"></i>
+      <span>Prendre rendez-vous</span>
+    </button>
+  </section>
+
+  <!-- Section diagnostic express -->
+  <section class="diagnostic-section" id="diagnostic">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-chart-line title-icon"></i>
+        Diagnostic Investissement Express
+      </h2>
+      <p class="diagnostic-subtitle">
+        En 3 minutes, découvrez si votre projet va booster ou plomber votre
+        trésorerie.
+      </p>
+      <p class="diagnostic-details">
+        Formulaire rapide – 5 étapes – Gratuit & Confidentiel
+      </p>
+    </div>
+
+    <button class="cta-diagnostic" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-rocket"></i>
+      <span>Commencer mon diagnostic</span>
+    </button>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-contact-form-layout
+      [config]="formConfig"
+      [currentStep]="currentStep"
+      [totalSteps]="totalSteps"
+      [formSubmitted]="formSubmitted"
+      [isStepValid]="isStepValid"
+      [isFormValid]="isFormValid"
+      [isLoading]="isLoading"
+      (nextStep)="onNextStep()"
+      (previousStep)="onPreviousStep()"
+      (submit)="onSubmit()"
+      (reset)="onReset()"
+    >
+      <div slot="form-content">
+        <!-- Étape 1: Souhaitez-vous investir prochainement ? -->
+        <div *ngIf="currentStep === 1" class="step-content">
+          <h3 class="step-title mb-4">
+            1. Souhaitez-vous investir prochainement ?
+          </h3>
+          <p class="step-description mb-4">
+            Cette première question capte l'intention.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.souhaite_investir === 'oui'"
+              >
+                <input
+                  type="radio"
+                  name="souhaite_investir"
+                  value="oui"
+                  [(ngModel)]="formData.souhaite_investir"
+                  (change)="onSouhaiteInvestirChange('oui')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-check-circle text-success mb-2"></i>
+                  <h6 class="mb-1">Oui</h6>
+                  <small class="text-muted"
+                    >J'ai un projet d'investissement en cours</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.souhaite_investir === 'non'"
+              >
+                <input
+                  type="radio"
+                  name="souhaite_investir"
+                  value="non"
+                  [(ngModel)]="formData.souhaite_investir"
+                  (change)="onSouhaiteInvestirChange('non')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-times-circle text-secondary mb-2"></i>
+                  <h6 class="mb-1">Non</h6>
+                  <small class="text-muted"
+                    >Pas de projet d'investissement pour le moment</small
+                  >
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2: Quel est votre principal frein aujourd'hui ? -->
+        <div *ngIf="currentStep === 2" class="step-content">
+          <h3 class="step-title mb-4">
+            2. Quel est votre principal frein aujourd'hui ?
+          </h3>
+          <p class="step-description mb-4">
+            Identifie la difficulté principale pour mieux adapter
+            l'accompagnement.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.frein_principal === 'manque-tresorerie'
+                "
+              >
+                <input
+                  type="radio"
+                  name="frein_principal"
+                  value="manque-tresorerie"
+                  [(ngModel)]="formData.frein_principal"
+                  (change)="onFreinChange('manque-tresorerie')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-piggy-bank text-danger mb-2"></i>
+                  <h6 class="mb-1">Manque de trésorerie</h6>
+                  <small class="text-muted"
+                    >Je n'ai pas assez de liquidités disponibles</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.frein_principal === 'doutes-rentabilite'
+                "
+              >
+                <input
+                  type="radio"
+                  name="frein_principal"
+                  value="doutes-rentabilite"
+                  [(ngModel)]="formData.frein_principal"
+                  (change)="onFreinChange('doutes-rentabilite')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-question-circle text-warning mb-2"></i>
+                  <h6 class="mb-1">Doutes sur la rentabilité</h6>
+                  <small class="text-muted"
+                    >Je ne suis pas sûr que l'investissement sera
+                    rentable</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.frein_principal === 'pas-plan-financement'
+                "
+              >
+                <input
+                  type="radio"
+                  name="frein_principal"
+                  value="pas-plan-financement"
+                  [(ngModel)]="formData.frein_principal"
+                  (change)="onFreinChange('pas-plan-financement')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-file-invoice text-info mb-2"></i>
+                  <h6 class="mb-1">Pas de plan de financement</h6>
+                  <small class="text-muted"
+                    >Je n'ai pas de stratégie de financement claire</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.frein_principal === 'autre'"
+              >
+                <input
+                  type="radio"
+                  name="frein_principal"
+                  value="autre"
+                  [(ngModel)]="formData.frein_principal"
+                  (change)="onFreinChange('autre')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-ellipsis-h text-primary mb-2"></i>
+                  <h6 class="mb-1">Autre</h6>
+                  <small class="text-muted">Mon frein est différent</small>
+                </div>
+              </label>
+            </div>
+
+            <div
+              class="mt-3 animate__animated animate__fadeInDown"
+              *ngIf="showAutreFrein"
+            >
+              <div class="custom-input-group">
+                <label for="frein_autre" class="form-label">
+                  <i class="fas fa-edit me-2"></i>Précisez votre frein principal
+                </label>
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  id="frein_autre"
+                  name="frein_autre"
+                  [(ngModel)]="formData.frein_autre"
+                  placeholder="Décrivez votre frein principal..."
+                  maxlength="200"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div *ngIf="currentStep === 3" class="step-content">
+          <h3 class="step-title mb-4">
+            3. Vos coordonnées pour recevoir votre mini-diagnostic personnalisé
+          </h3>
+          <p class="step-description mb-4">
+            <i class="fas fa-lightbulb text-warning me-2"></i>
+            Encore deux petites minutes ! Remplissez vos coordonnées pour
+            recevoir un mini-diagnostic personnalisé, gratuit et confidentiel.
+          </p>
+
+          <div class="form-group">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="nom" class="form-label">
+                    <i class="fas fa-user me-2"></i>Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="nom"
+                    name="nom"
+                    [(ngModel)]="formData.nom"
+                    placeholder="Votre nom et prénom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>Email
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="telephone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>Téléphone
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control custom-input"
+                    id="telephone"
+                    name="telephone"
+                    [(ngModel)]="formData.telephone"
+                    placeholder="+32 XXX XX XX XX"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-success mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-phone-alt fa-2x text-success me-3"></i>
+                <div>
+                  <h6 class="mb-1">
+                    📞 Un expert MFINANCES vous appellera sous 72h
+                  </h6>
+                  <small
+                    >L'échange est gratuit, confidentiel et sans
+                    engagement.</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 4: Chiffre d'affaires -->
+        <div *ngIf="currentStep === 4" class="step-content">
+          <h3 class="step-title mb-4">
+            4. Quel est votre chiffre d'affaires annuel moyen ?
+          </h3>
+          <p class="step-description mb-4">
+            Permet de mieux cibler les recommandations en fonction de la taille
+            de l'activité.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.chiffre_affaires === 'moins-100k'"
+              >
+                <input
+                  type="radio"
+                  name="chiffre_affaires"
+                  value="moins-100k"
+                  [(ngModel)]="formData.chiffre_affaires"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-seedling text-success mb-2"></i>
+                  <h6 class="mb-1">Moins de 100K €/an</h6>
+                  <small class="text-muted"
+                    >Jeune entreprise ou activité réduite</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.chiffre_affaires === '100k-200k'"
+              >
+                <input
+                  type="radio"
+                  name="chiffre_affaires"
+                  value="100k-200k"
+                  [(ngModel)]="formData.chiffre_affaires"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-chart-line text-primary mb-2"></i>
+                  <h6 class="mb-1">100K à 200K €/an</h6>
+                  <small class="text-muted">Entreprise en développement</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.chiffre_affaires === '200k-500k'"
+              >
+                <input
+                  type="radio"
+                  name="chiffre_affaires"
+                  value="200k-500k"
+                  [(ngModel)]="formData.chiffre_affaires"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-trending-up text-warning mb-2"></i>
+                  <h6 class="mb-1">200K à 500K €/an</h6>
+                  <small class="text-muted">PME établie</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.chiffre_affaires === 'plus-500k'"
+              >
+                <input
+                  type="radio"
+                  name="chiffre_affaires"
+                  value="plus-500k"
+                  [(ngModel)]="formData.chiffre_affaires"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-building text-info mb-2"></i>
+                  <h6 class="mb-1">Plus de 500K €/an</h6>
+                  <small class="text-muted">Grande entreprise</small>
+                </div>
+              </label>
+            </div>
+
+            <div class="alert alert-warning mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-check-circle fa-2x text-warning me-3"></i>
+                <div>
+                  <h6 class="mb-1">
+                    ✅ Merci, plus que quelques clics pour personnaliser votre
+                    analyse.
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 5: Type d'activité -->
+        <div *ngIf="currentStep === 5" class="step-content">
+          <h3 class="step-title mb-4">
+            5. Quel est le type principal de votre activité ?
+          </h3>
+          <p class="step-description mb-4">
+            Segmente les prospects par secteur pour personnaliser les conseils.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.type_activite === 'horeca'"
+              >
+                <input
+                  type="radio"
+                  name="type_activite"
+                  value="horeca"
+                  [(ngModel)]="formData.type_activite"
+                  (change)="onActiviteChange('horeca')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-utensils text-danger mb-2"></i>
+                  <h6 class="mb-1">Horeca</h6>
+                  <small class="text-muted"
+                    >Restaurant, café, bar, hôtel...</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.type_activite === 'commerce-detail'"
+              >
+                <input
+                  type="radio"
+                  name="type_activite"
+                  value="commerce-detail"
+                  [(ngModel)]="formData.type_activite"
+                  (change)="onActiviteChange('commerce-detail')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-store text-primary mb-2"></i>
+                  <h6 class="mb-1">Commerce de détail</h6>
+                  <small class="text-muted">Magasin, boutique...</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.type_activite === 'commerce-gros'"
+              >
+                <input
+                  type="radio"
+                  name="type_activite"
+                  value="commerce-gros"
+                  [(ngModel)]="formData.type_activite"
+                  (change)="onActiviteChange('commerce-gros')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-warehouse text-success mb-2"></i>
+                  <h6 class="mb-1">Commerce de gros</h6>
+                  <small class="text-muted">Distribution, grossiste...</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.type_activite === 'services'"
+              >
+                <input
+                  type="radio"
+                  name="type_activite"
+                  value="services"
+                  [(ngModel)]="formData.type_activite"
+                  (change)="onActiviteChange('services')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-handshake text-info mb-2"></i>
+                  <h6 class="mb-1">Services</h6>
+                  <small class="text-muted"
+                    >Conseil, prestation de services...</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.type_activite === 'sante'"
+              >
+                <input
+                  type="radio"
+                  name="type_activite"
+                  value="sante"
+                  [(ngModel)]="formData.type_activite"
+                  (change)="onActiviteChange('sante')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-heartbeat text-danger mb-2"></i>
+                  <h6 class="mb-1">Santé</h6>
+                  <small class="text-muted"
+                    >Médecin, dentiste, pharmacie...</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.type_activite === 'autre'"
+              >
+                <input
+                  type="radio"
+                  name="type_activite"
+                  value="autre"
+                  [(ngModel)]="formData.type_activite"
+                  (change)="onActiviteChange('autre')"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-ellipsis-h text-secondary mb-2"></i>
+                  <h6 class="mb-1">Autre</h6>
+                  <small class="text-muted">Mon activité est différente</small>
+                </div>
+              </label>
+            </div>
+
+            <!-- Champ conditionnel pour "Autre" -->
+            <div
+              class="mt-3 animate__animated animate__fadeInDown"
+              *ngIf="showAutreActivite"
+            >
+              <div class="custom-input-group">
+                <label for="activite_autre" class="form-label">
+                  <i class="fas fa-edit me-2"></i>Précisez votre activité
+                </label>
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  id="activite_autre"
+                  name="activite_autre"
+                  [(ngModel)]="formData.activite_autre"
+                  placeholder="Décrivez votre activité..."
+                  maxlength="200"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-contact-form-layout>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-calendar-alt"></i>
+      <span>🔴 Commencer mon diagnostic</span>
+    </button>
+  </div>
+</div>

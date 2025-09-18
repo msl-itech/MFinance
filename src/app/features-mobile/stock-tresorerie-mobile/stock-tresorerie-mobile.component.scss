@@ -16,7 +16,7 @@ $muted-text: #6c757d;
 // Hero Section
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +104,8 @@ $muted-text: #6c757d;
         gap: 1.5rem;
       }
 
-      .cta-video, .cta-diagnostic {
+      .cta-video,
+      .cta-diagnostic {
         display: flex;
         align-items: center;
         gap: 0.75rem;
@@ -217,7 +218,7 @@ $muted-text: #6c757d;
 
   @media (max-width: 576px) {
     font-size: 1.5rem;
-    
+
     .title-icon {
       font-size: 1.3rem;
     }
@@ -395,7 +396,11 @@ $muted-text: #6c757d;
     margin-bottom: 2rem;
 
     .highlight-name {
-      background: linear-gradient(120deg, $primary-color 0%, darken($primary-color, 15%) 100%);
+      background: linear-gradient(
+        120deg,
+        $primary-color 0%,
+        darken($primary-color, 15%) 100%
+      );
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 25px;
@@ -438,7 +443,11 @@ $muted-text: #6c757d;
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: linear-gradient(45deg, $success-color 0%, darken($success-color, 10%) 100%);
+    background: linear-gradient(
+      45deg,
+      $success-color 0%,
+      darken($success-color, 10%) 100%
+    );
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -547,7 +556,11 @@ $muted-text: #6c757d;
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: linear-gradient(45deg, $warning-color 0%, darken($warning-color, 15%) 100%);
+    background: linear-gradient(
+      45deg,
+      $warning-color 0%,
+      darken($warning-color, 15%) 100%
+    );
     color: $dark-text;
     border: none;
     padding: 1.2rem 2rem;

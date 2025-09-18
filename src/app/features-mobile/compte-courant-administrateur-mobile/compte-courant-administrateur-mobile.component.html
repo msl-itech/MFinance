@@ -1,0 +1,755 @@
+<div class="compte-courant-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>COMPTE COURANT ADMINISTRATEUR</span>
+      </div>
+      <h1 class="hero-title">
+        Compte Courant Administrateur : erreurs & bonnes pratiques
+      </h1>
+      <p class="hero-subtitle">Cadavres Comptables : vérités déterrées</p>
+
+      <button class="cta-primary video-cta" (click)="playVideo()">
+        <i class="fas fa-play cta-icon"></i>
+        <span class="cta-text">▶Regarder la vidéo</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Intro -->
+  <section class="intro-section" id="intro">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-map-marker-alt title-icon"></i>
+        Intro
+      </h2>
+    </div>
+
+    <div class="intro-content">
+      <div class="intro-text">
+        <p class="intro-lead">
+          Le monde de la finance cache parfois des secrets.
+        </p>
+        <p>
+          Aujourd'hui, une enquête pour résoudre le meurtre… de votre
+          trésorerie.
+        </p>
+        <p>Rôles confondus, silences gênants, habitudes risquées.</p>
+        <p class="intro-highlight">🔎 On mène l'enquête.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Scène de crime -->
+  <section class="scene-crime-section" id="scene-crime">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-exclamation-triangle title-icon"></i>
+        Scène de crime
+      </h2>
+    </div>
+
+    <div class="crime-content">
+      <div class="crime-card">
+        <div class="crime-icon">
+          <i class="fas fa-chart-line-down"></i>
+        </div>
+        <div class="crime-text">
+          <h3>Trésorerie en chute libre.</h3>
+          <p>
+            Le compte courant administrateur révèle un déséquilibre inquiétant.
+          </p>
+          <p class="crime-highlight">
+            Mauvaise gestion, rôles flous. L'alerte est donnée.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Coupables présumés -->
+  <section class="coupables-section" id="coupables">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-user-secret title-icon"></i>
+        Coupables présumés
+      </h2>
+    </div>
+
+    <div class="coupables-content">
+      <div class="coupable-card">
+        <div class="coupable-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <div class="coupable-info">
+          <h3>L'expert-comptable</h3>
+          <ul class="coupable-list">
+            <li>Évite les discussions sensibles.</li>
+            <li>Laisse perdurer les pratiques risquées.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="coupable-card">
+        <div class="coupable-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="coupable-info">
+          <h3>Le client</h3>
+          <ul class="coupable-list">
+            <li>Ne distingue pas les rôles (secrétariat vs expert).</li>
+            <li>Alimente la confusion & désordre financier.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section L'Enquête -->
+  <section class="enquete-section" id="enquete">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-search title-icon"></i>
+        L'Enquête
+      </h2>
+    </div>
+
+    <div class="enquete-content">
+      <div class="enquete-text">
+        <p>Des experts muets.</p>
+        <p>Des clients accrochés au passé.</p>
+        <p class="enquete-conclusion">
+          Ce duo toxique tisse une tragédie financière.
+        </p>
+      </div>
+
+      <button class="cta-expert" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-phone"></i>
+        <span>📞 Parler à un expert</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Conséquences -->
+  <section class="consequences-section" id="consequences">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-bomb title-icon"></i>
+        Conséquences
+      </h2>
+    </div>
+
+    <div class="consequences-content">
+      <div class="consequence-grid">
+        <div class="consequence-item">
+          <i class="fas fa-times-circle"></i>
+          <span>Trésorerie détruite.</span>
+        </div>
+
+        <div class="consequence-item">
+          <i class="fas fa-percentage"></i>
+          <span>Taux d'intérêt élevé = endettement</span>
+        </div>
+
+        <div class="consequence-item">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>Base imposable + crédibilité bancaire = en danger</span>
+        </div>
+      </div>
+
+      <button class="cta-expert" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-phone"></i>
+        <span>📞 Parler à un expert</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Résolution -->
+  <section class="resolution-section" id="resolution">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-puzzle-piece title-icon"></i>
+        Résolution
+      </h2>
+    </div>
+
+    <div class="resolution-content">
+      <div class="resolution-grid">
+        <div class="resolution-item">
+          <i class="fas fa-sync-alt"></i>
+          <span>Pratiques à revoir.</span>
+        </div>
+
+        <div class="resolution-item">
+          <i class="fas fa-comments"></i>
+          <span>Communication.</span>
+        </div>
+
+        <div class="resolution-item">
+          <i class="fas fa-bullseye"></i>
+          <span>Rôles clairs.</span>
+        </div>
+
+        <div class="resolution-item">
+          <i class="fas fa-handshake"></i>
+          <span>Responsabilités.</span>
+        </div>
+      </div>
+
+      <div class="resolution-outcome">
+        <p>L'expert devient allié,</p>
+        <p>Le client devient pilote de sa croissance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Notre approche -->
+  <section class="approche-section" id="approche">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-compass title-icon"></i>
+        Notre approche
+      </h2>
+    </div>
+
+    <div class="approche-content">
+      <h3 class="approche-title">Chez Mfinances :</h3>
+
+      <div class="approche-list">
+        <div class="approche-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Transparence</span>
+        </div>
+
+        <div class="approche-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Analyse tous les 2 mois</span>
+        </div>
+
+        <div class="approche-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Prévention des crises</span>
+        </div>
+
+        <div class="approche-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Bases financières solides</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Accompagnement - 3 Étapes -->
+  <section class="accompagnement-section" id="accompagnement">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-chart-line title-icon"></i>
+        Notre accompagnement – 3 Étapes
+      </h2>
+    </div>
+
+    <div class="etapes-content">
+      <div class="etape-card">
+        <div class="etape-number">1</div>
+        <div class="etape-icon">
+          <i class="fas fa-file-invoice"></i>
+        </div>
+        <div class="etape-content">
+          <h3>Étape 1 – Audit & stratégie</h3>
+          <p>Analyse de votre situation.</p>
+          <p>Optimisation de votre rémunération & dettes.</p>
+        </div>
+      </div>
+
+      <div class="etape-card">
+        <div class="etape-number">2</div>
+        <div class="etape-icon">
+          <i class="fas fa-laptop"></i>
+        </div>
+        <div class="etape-content">
+          <h3>Étape 2 – Analyse techno</h3>
+          <p>Audit des outils.</p>
+          <p>Automatisation comptable dans Odoo.</p>
+        </div>
+      </div>
+
+      <div class="etape-card">
+        <div class="etape-number">3</div>
+        <div class="etape-icon">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <div class="etape-content">
+          <h3>Étape 3 – Process admin</h3>
+          <p>Automatisation globale.</p>
+          <p>Amélioration de l'efficacité opérationnelle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section FAQ Mobile -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-question-circle title-icon"></i>
+        ❓ FAQ Mobile
+      </h2>
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-list">
+        <div
+          class="faq-item"
+          [class.expanded]="expandedFaq === 1"
+          (click)="toggleFaq(1)"
+        >
+          <div class="faq-question">
+            <span>Qu'est-ce qu'un compte courant administrateur ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Le compte courant administrateur est un compte reflétant les
+              transactions financières entre un administrateur et son
+              entreprise. Il indique la santé financière de l'entreprise et
+              l'équilibre entre les apports et les retraits de l'administrateur.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="faq-item"
+          [class.expanded]="expandedFaq === 2"
+          (click)="toggleFaq(2)"
+        >
+          <div class="faq-question">
+            <span>Comment "cacher des cadavres" ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Cela se produit lorsque l'expert-comptable n'investit pas assez de
+              temps dans le dossier pour obtenir la documentation manquante. Par
+              facilité, il inscrit toutes les transactions non justifiées en
+              défaveur du compte courant administrateur.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="faq-item"
+          [class.expanded]="expandedFaq === 3"
+          (click)="toggleFaq(3)"
+        >
+          <div class="faq-question">
+            <span>Quelles conséquences d'une mauvaise gestion ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Une gestion inadéquate peut entraîner des problèmes de liquidité,
+              une augmentation de la dette, une base imposable plus élevée, et
+              une érosion de la crédibilité bancaire. Dans le pire des cas, cela
+              peut conduire à la faillite.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="voir-plus-btn"
+        (click)="showAllFaq = !showAllFaq"
+        *ngIf="!showAllFaq"
+      >
+        <span>⬇️ Voir plus</span>
+      </button>
+
+      <div class="faq-additional" *ngIf="showAllFaq">
+        <div
+          class="faq-item"
+          [class.expanded]="expandedFaq === 4"
+          (click)="toggleFaq(4)"
+        >
+          <div class="faq-question">
+            <span>En quoi le rôle confus contribue-t-il au problème ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Si le client confond les tâches de l'expert-comptable avec celles
+              du secrétariat, cela entraîne une mauvaise communication et une
+              gestion inefficace, exacerbant les problèmes financiers.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="faq-item"
+          [class.expanded]="expandedFaq === 5"
+          (click)="toggleFaq(5)"
+        >
+          <div class="faq-question">
+            <span
+              >Comment s'assurer que ma trésorerie n'est pas en danger ?</span
+            >
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Maintenez une communication ouverte avec votre expert-comptable,
+              comprenez vos responsabilités financières, et effectuez des
+              vérifications régulières. Chez Mfinances, nous offrons des
+              analyses approfondies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Diagnostic éclair -->
+  <section class="diagnostic-section" id="diagnostic">
+    <div class="diagnostic-card">
+      <div class="diagnostic-header">
+        <h2 class="diagnostic-title">
+          <i class="fas fa-flask"></i>
+          🧪 Diagnostic éclair
+        </h2>
+      </div>
+
+      <div class="diagnostic-content">
+        <h3>🧭 Êtes-vous maître de votre compte ?</h3>
+        <p>En 2 min, faites le point.</p>
+        <p>📞 Un expert vous appelle sous 72h.</p>
+        <p class="diagnostic-note">Analyse gratuite & confidentielle.</p>
+
+        <button
+          class="cta-diagnostic"
+          (click)="scrollToSection('contactSection')"
+        >
+          <i class="fas fa-stethoscope"></i>
+          <span>Diagnostic gratuit</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-contact-form-layout
+      [config]="formConfig"
+      [currentStep]="currentStep"
+      [totalSteps]="totalSteps"
+      [formSubmitted]="formSubmitted"
+      [isStepValid]="isStepValid"
+      [isFormValid]="isFormValid"
+      [isLoading]="isLoading"
+      (nextStep)="onNextStep()"
+      (previousStep)="onPreviousStep()"
+      (submit)="onSubmit()"
+      (reset)="onReset()"
+    >
+      <div slot="form-content">
+        <!-- Étape 1: Comment vous payez-vous ? -->
+        <div *ngIf="currentStep === 1" class="step-content">
+          <h3 class="step-title mb-4">1. Comment vous payez-vous ?</h3>
+          <p class="step-description mb-4">
+            Choisissez l'option qui décrit le mieux votre fonctionnement actuel
+            :
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.paiement === 'salaire-mensuel-suffisant'
+                "
+              >
+                <input
+                  type="radio"
+                  name="paiement"
+                  value="salaire-mensuel-suffisant"
+                  [(ngModel)]="formData.paiement"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-calendar-check text-danger mb-2"></i>
+                  <h6 class="mb-1">Salaire mensuel suffisant</h6>
+                  <small class="text-muted"
+                    >Je touche un salaire mensuel officiel qui couvre mes
+                    dépenses personnelles</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.paiement === 'salaire-avec-complement'
+                "
+              >
+                <input
+                  type="radio"
+                  name="paiement"
+                  value="salaire-avec-complement"
+                  [(ngModel)]="formData.paiement"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-plus-circle text-danger mb-2"></i>
+                  <h6 class="mb-1">Salaire avec complément</h6>
+                  <small class="text-muted"
+                    >J'ai un salaire déclaré, mais je dois souvent compléter
+                    avec de l'argent de la société</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.paiement === 'sans-salaire-fixe'"
+              >
+                <input
+                  type="radio"
+                  name="paiement"
+                  value="sans-salaire-fixe"
+                  [(ngModel)]="formData.paiement"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-hand-paper text-danger mb-2"></i>
+                  <h6 class="mb-1">Sans salaire fixe</h6>
+                  <small class="text-muted"
+                    >Je ne me verse pas de salaire fixe, je prends de l'argent
+                    quand j'en ai besoin</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.paiement === 'gestion-incertaine'"
+              >
+                <input
+                  type="radio"
+                  name="paiement"
+                  value="gestion-incertaine"
+                  [(ngModel)]="formData.paiement"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-question-circle text-danger mb-2"></i>
+                  <h6 class="mb-1">Gestion incertaine</h6>
+                  <small class="text-muted"
+                    >Je ne suis pas sûr de la façon dont mes revenus sont
+                    gérés</small
+                  >
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2: Et votre compte courant, vous y voyez clair ? -->
+        <div *ngIf="currentStep === 2" class="step-content">
+          <h3 class="step-title mb-4">
+            2. Et votre compte courant, vous y voyez clair ?
+          </h3>
+          <p class="step-description mb-4">Cochez ce qui vous parle :</p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.compteCourant === 'sais-exactement'"
+              >
+                <input
+                  type="radio"
+                  name="compteCourant"
+                  value="sais-exactement"
+                  [(ngModel)]="formData.compteCourant"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-eye text-danger mb-2"></i>
+                  <h6 class="mb-1">Je maîtrise totalement</h6>
+                  <small class="text-muted"
+                    >Je sais exactement combien je dois ou ce que ma société me
+                    doit</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.compteCourant === 'existe-mais-incompris'
+                "
+              >
+                <input
+                  type="radio"
+                  name="compteCourant"
+                  value="existe-mais-incompris"
+                  [(ngModel)]="formData.compteCourant"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-low-vision text-danger mb-2"></i>
+                  <h6 class="mb-1">J'en ai conscience</h6>
+                  <small class="text-muted"
+                    >Je sais qu'il existe, mais je ne comprends pas trop son
+                    utilité</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.compteCourant === 'comptable-silencieux'
+                "
+              >
+                <input
+                  type="radio"
+                  name="compteCourant"
+                  value="comptable-silencieux"
+                  [(ngModel)]="formData.compteCourant"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-user-slash text-danger mb-2"></i>
+                  <h6 class="mb-1">Silence radio</h6>
+                  <small class="text-muted"
+                    >Mon comptable n'en parle jamais</small
+                  >
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="
+                  formData.compteCourant === 'jamais-questionne'
+                "
+              >
+                <input
+                  type="radio"
+                  name="compteCourant"
+                  value="jamais-questionne"
+                  [(ngModel)]="formData.compteCourant"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-question text-danger mb-2"></i>
+                  <h6 class="mb-1">Terra incognita</h6>
+                  <small class="text-muted"
+                    >Je ne me suis jamais posé la question</small
+                  >
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div *ngIf="currentStep === 3" class="step-content">
+          <h3 class="step-title mb-4">3. Vos coordonnées</h3>
+          <p class="step-description mb-4">
+            <i class="fas fa-phone text-danger me-2"></i>
+            Pour recevoir votre analyse personnalisée, merci de compléter vos
+            coordonnées
+          </p>
+
+          <div class="form-group">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="nom" class="form-label">
+                    <i class="fas fa-user me-2"></i>Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="nom"
+                    name="nom"
+                    [(ngModel)]="formData.nom"
+                    placeholder="Votre nom et prénom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>Email
+                    <span class="badge bg-success ms-2">✅ obligatoire</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="telephone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>Téléphone
+                    <span class="badge bg-success ms-2">✅ obligatoire</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control custom-input"
+                    id="telephone"
+                    name="telephone"
+                    [(ngModel)]="formData.telephone"
+                    placeholder="+32 XXX XX XX XX"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
+                <div>
+                  <h6 class="mb-1">
+                    📞 Un conseiller Mfinances vous appelle sous 72h
+                  </h6>
+                  <small>L'appel est gratuit et confidentiel.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-contact-form-layout>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-search-dollar"></i>
+      <span>Diagnostic gratuit</span>
+    </button>
+  </div>
+</div>

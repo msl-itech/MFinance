@@ -13,10 +13,18 @@ import { AbslComponent } from './absl/absl.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AvisGoogleComponent } from './avis-google/avis-google.component';
+import { BoosteEntrepriseMobileComponent } from './features-mobile/booste-entreprise-mobile/booste-entreprise-mobile.component';
 import { ContactComponent } from './contact/contact.component';
+import { ComptabiliteMobileComponent } from './features-mobile/comptabilite-mobile/comptabilite-mobile.component';
+import { CompteCourantAdministrateurMobileComponent } from './features-mobile/compte-courant-administrateur-mobile/compte-courant-administrateur-mobile.component';
+import { CreationEntrepriseMobileComponent } from './features-mobile/creation-entreprise-mobile/creation-entreprise-mobile.component';
+import { DeclarationImpotMobileComponent } from './features-mobile/declaration-impot-mobile/declaration-impot-mobile.component';
+import { FiscaliteMobileComponent } from './features-mobile/fiscalite-mobile/fiscalite-mobile.component';
+import { InvestirTresorerieMobileComponent } from './features-mobile/investir-tresorerie-mobile/investir-tresorerie-mobile.component';
 import { PassageSocieteMobileComponent } from './features-mobile/passage-societe-mobile/passage-societe-mobile.component';
 import { ProfilPromoteurImmobilierMobileComponent } from './features-mobile/profil-promoteur-immobilier-mobile/profil-promoteur-immobilier-mobile.component';
 import { StockTresorerieMobileComponent } from './features-mobile/stock-tresorerie-mobile/stock-tresorerie-mobile.component';
+import { AnticipeTresorerieMobileComponent } from './features-mobile/anticipe-tresorerie-mobile/anticipe-tresorerie-mobile.component';
 import { TarifMobileComponent } from './features-mobile/tarif-mobile/tarif-mobile.component';
 import { SupportMobileComponent } from './features-mobile/support-mobile/support-mobile.component';
 import { FooterComponent } from './footer/footer.component';
@@ -92,9 +100,17 @@ import { EconomieAnalysieComponent } from './venteModule/economie-analysie/econo
     MobileLayoutComponent,
     TarifMobileComponent,
     SupportMobileComponent,
+    BoosteEntrepriseMobileComponent,
+    ComptabiliteMobileComponent,
+    CompteCourantAdministrateurMobileComponent,
+    CreationEntrepriseMobileComponent,
+    DeclarationImpotMobileComponent,
+    FiscaliteMobileComponent,
+    InvestirTresorerieMobileComponent,
     PassageSocieteMobileComponent,
     ProfilPromoteurImmobilierMobileComponent,
     StockTresorerieMobileComponent,
+    AnticipeTresorerieMobileComponent,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',
