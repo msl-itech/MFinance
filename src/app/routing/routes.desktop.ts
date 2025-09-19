@@ -32,7 +32,7 @@ export const DESKTOP_ROUTES: Routes = [
       { path: 'support', component: SupportComponent },
       { path: 'about', component: AboutComponent },
       { path: 'tarif', component: TarifComponent },
-      { path: 'absl', component: AbslComponent },
+      { path: 'asbl', component: AbslComponent },
       { path: 'avis-google', component: AvisGoogleComponent },
       { path: 'profil-independant', component: ProfilIndependantComponent },
       {

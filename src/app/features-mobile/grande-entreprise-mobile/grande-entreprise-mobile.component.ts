@@ -13,13 +13,13 @@ interface FormStep {
   label: string;
 }
 
-interface TypeProjet {
+interface Secteur {
   value: string;
   label: string;
   icon: string;
 }
 
-interface Budget {
+interface Revenu {
   value: string;
   label: string;
   icon: string;
@@ -32,7 +32,7 @@ interface BesoinOption {
 }
 
 @Component({
-  selector: 'app-profil-promoteur-immobilier-mobile',
+  selector: 'app-grande-entreprise-mobile',
   standalone: true,
   imports: [
     CommonModule,
@@ -40,12 +40,10 @@ interface BesoinOption {
     FormsModule,
     SidebarMobileComponent,
   ],
-  templateUrl: './profil-promoteur-immobilier-mobile.component.html',
-  styleUrls: ['./profil-promoteur-immobilier-mobile.component.scss'],
+  templateUrl: './grande-entreprise-mobile.component.html',
+  styleUrls: ['./grande-entreprise-mobile.component.scss'],
 })
-export class ProfilPromoteurImmobilierMobileComponent
-  implements OnInit, OnDestroy
-{
+export class GrandeEntrepriseMobileComponent implements OnInit, OnDestroy {
   // État du composant
   showFullIntro = false;
   formSubmitted = false;
@@ -58,51 +56,47 @@ export class ProfilPromoteurImmobilierMobileComponent
   activeCaseSlide = 0;
 
   // Formulaire
-  promoteurForm: FormGroup;
+  entrepriseForm: FormGroup;
 
   // Étapes du formulaire
   formSteps: FormStep[] = [
-    { label: 'Type' },
-    { label: 'Budget' },
+    { label: 'Secteur' },
+    { label: 'Revenus' },
     { label: 'Besoins' },
     { label: 'Contact' },
   ];
 
   // Options pour le formulaire
-  typesProjet: TypeProjet[] = [
-    { value: 'residentiel', label: 'Résidentiel', icon: '🏠' },
-    { value: 'commercial', label: 'Commercial', icon: '🏢' },
-    { value: 'mixte', label: 'Mixte', icon: '🏘️' },
-    { value: 'renovation', label: 'Rénovation', icon: '🔨' },
-    { value: 'autre', label: 'Autre type', icon: '➕' },
+  secteurs: Secteur[] = [
+    { value: 'industrie', label: 'Industrie', icon: '🏭' },
+    { value: 'services', label: 'Services', icon: '🤝' },
+    { value: 'commerce', label: 'Commerce', icon: '🏪' },
+    { value: 'technologie', label: 'Technologie', icon: '💻' },
+    { value: 'autre', label: 'Autre secteur', icon: '➕' },
   ];
 
-  budgets: Budget[] = [
-    { value: 'moins-500k', label: 'Moins de 500K €', icon: '🌱' },
-    { value: '500k-1m', label: '500K - 1M €', icon: '📈' },
-    { value: '1m-5m', label: '1M - 5M €', icon: '🏢' },
-    { value: 'plus-5m', label: 'Plus de 5M €', icon: '👑' },
+  revenus: Revenu[] = [
+    { value: 'moins-1m', label: 'Moins de 1M €/an', icon: '📈' },
+    { value: '1m-5m', label: '1M - 5M €/an', icon: '🏢' },
+    { value: '5m-10m', label: '5M - 10M €/an', icon: '🏛️' },
+    { value: 'plus-10m', label: 'Plus de 10M €/an', icon: '👑' },
   ];
 
   besoinsOptions: BesoinOption[] = [
     {
-      value: 'comptabilite-analytique',
-      label: 'Comptabilité analytique',
+      value: 'budget-previsionnel',
+      label: 'Budgets prévisionnels',
       icon: '📊',
     },
-    { value: 'optimisation-tva', label: 'Optimisation TVA', icon: '💰' },
-    {
-      value: 'planification-financiere',
-      label: 'Planification financière',
-      icon: '📈',
-    },
-    { value: 'reporting-avance', label: 'Reporting avancé', icon: '📋' },
-    { value: 'conseil-fiscal', label: 'Conseil fiscal', icon: '⚖️' },
-    { value: 'outils-digitaux', label: 'Outils digitaux', icon: '🔧' },
+    { value: 'tresorerie', label: 'Gestion de trésorerie', icon: '💰' },
+    { value: 'controle-gestion', label: 'Contrôle de gestion', icon: '📈' },
+    { value: 'daf-temps-partiel', label: 'DAF à temps partiel', icon: '👔' },
+    { value: 'digitalisation', label: 'Digitalisation processus', icon: '🔧' },
+    { value: 'audit-financier', label: 'Audit financier', icon: '🔍' },
   ];
 
   constructor(private fb: FormBuilder) {
-    this.promoteurForm = this.createForm();
+    this.entrepriseForm = this.createForm();
   }
 
   ngOnInit(): void {
@@ -115,8 +109,8 @@ export class ProfilPromoteurImmobilierMobileComponent
 
   private createForm(): FormGroup {
     const formConfig: any = {
-      typeProjet: ['', Validators.required],
-      budget: ['', Validators.required],
+      secteur: ['', Validators.required],
+      revenus: ['', Validators.required],
       nom: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       telephone: ['', Validators.required],
@@ -198,20 +192,20 @@ export class ProfilPromoteurImmobilierMobileComponent
   isFormStepValid(): boolean {
     switch (this.currentFormStep) {
       case 1:
-        return !!this.promoteurForm.get('typeProjet')?.value;
+        return !!this.entrepriseForm.get('secteur')?.value;
       case 2:
-        return !!this.promoteurForm.get('budget')?.value;
+        return !!this.entrepriseForm.get('revenus')?.value;
       case 3:
         // Au moins un besoin sélectionné
         return this.besoinsOptions.some(
-          (besoin) => this.promoteurForm.get(`besoin_${besoin.value}`)?.value
+          (besoin) => this.entrepriseForm.get(`besoin_${besoin.value}`)?.value
         );
       case 4:
         return !!(
-          this.promoteurForm.get('nom')?.value &&
-          this.promoteurForm.get('email')?.value &&
-          this.promoteurForm.get('telephone')?.value &&
-          this.promoteurForm.get('email')?.valid
+          this.entrepriseForm.get('nom')?.value &&
+          this.entrepriseForm.get('email')?.value &&
+          this.entrepriseForm.get('telephone')?.value &&
+          this.entrepriseForm.get('email')?.valid
         );
       default:
         return false;
@@ -240,8 +234,8 @@ export class ProfilPromoteurImmobilierMobileComponent
     if (this.isFormValid()) {
       // Simulation d'envoi du formulaire
       console.log(
-        'Données formulaire promoteur immobilier:',
-        this.promoteurForm.value
+        'Données formulaire grande entreprise:',
+        this.entrepriseForm.value
       );
 
       // Simulation d'appel API
@@ -255,21 +249,21 @@ export class ProfilPromoteurImmobilierMobileComponent
   resetForm(): void {
     this.currentFormStep = 1;
     this.formSubmitted = false;
-    this.promoteurForm.reset();
+    this.entrepriseForm.reset();
   }
 
   private sendFormData(): void {
     // Préparation des données pour l'API
     const selectedBesoins = this.besoinsOptions
       .filter(
-        (besoin) => this.promoteurForm.get(`besoin_${besoin.value}`)?.value
+        (besoin) => this.entrepriseForm.get(`besoin_${besoin.value}`)?.value
       )
       .map((besoin) => besoin.value);
 
     const formDataToSend = {
-      ...this.promoteurForm.value,
+      ...this.entrepriseForm.value,
       besoins_list: selectedBesoins,
-      source: 'promoteur-immobilier-mobile',
+      source: 'grande-entreprise-mobile',
       timestamp: new Date().toISOString(),
     };
 
@@ -284,7 +278,7 @@ export class ProfilPromoteurImmobilierMobileComponent
 
   emailNow(): void {
     window.location.href =
-      "mailto:info@mfinances.be?subject=Demande d'information - Promoteurs immobiliers";
+      "mailto:info@mfinances.be?subject=Demande d'information - Grandes entreprises";
   }
 
   scheduleAppointment(): void {
@@ -292,7 +286,7 @@ export class ProfilPromoteurImmobilierMobileComponent
     console.log('Redirection vers prise de RDV');
   }
 
-  openPromoteurContact(): void {
+  openEntrepriseContact(): void {
     this.scrollToContact();
   }
 

@@ -1,29 +1,22 @@
 import { Routes } from '@angular/router';
-import { AboutComponent } from '../about/about.component';
-import { AbslComponent } from '../absl/absl.component';
 import { AvisGoogleComponent } from '../avis-google/avis-google.component';
-import { BoosteEntrepriseMobileComponent } from '../features-mobile/booste-entreprise-mobile/booste-entreprise-mobile.component';
 import { ContactComponent } from '../contact/contact.component';
-import { ComptabiliteMobileComponent } from '../features-mobile/comptabilite-mobile/comptabilite-mobile.component';
-import { CompteCourantAdministrateurMobileComponent } from '../features-mobile/compte-courant-administrateur-mobile/compte-courant-administrateur-mobile.component';
-import { CreationEntrepriseMobileComponent } from '../features-mobile/creation-entreprise-mobile/creation-entreprise-mobile.component';
-import { DeclarationImpotMobileComponent } from '../features-mobile/declaration-impot-mobile/declaration-impot-mobile.component';
-import { FiscaliteMobileComponent } from '../features-mobile/fiscalite-mobile/fiscalite-mobile.component';
-import { AnticipeTresorerieMobileComponent } from '../features-mobile/anticipe-tresorerie-mobile/anticipe-tresorerie-mobile.component';
+import { AboutMobileComponent } from '../features-mobile/about-mobile/about-mobile.component';
+import { AccueilMobileComponent } from '../features-mobile/accueil-mobile/accueil-mobile.component';
+import { AsblMobileComponent } from '../features-mobile/asbl-mobile/asbl-mobile.component';
+import { GrandeEntrepriseMobileComponent } from '../features-mobile/grande-entreprise-mobile/grande-entreprise-mobile.component';
+import { IndependantMobileComponent } from '../features-mobile/independant-mobile/independant-mobile.component';
+import { ProfessionnelSanteMobileComponent } from '../features-mobile/professionnel-sante-mobile/professionnel-sante-mobile.component';
 import { ProfilPromoteurImmobilierMobileComponent } from '../features-mobile/profil-promoteur-immobilier-mobile/profil-promoteur-immobilier-mobile.component';
-import { ServiceMobileComponent } from '../features-mobile/service-mobile/service-mobile.component';
+import { SocieteExploitationMobileComponent } from '../features-mobile/societe-exploitation-mobile/societe-exploitation-mobile.component';
+import { SocieteManagementPatrimonialeMobileComponent } from '../features-mobile/societe-management-patrimoniale-mobile/societe-management-patrimoniale-mobile.component';
+import { SocieteMoyenMobileComponent } from '../features-mobile/societe-moyen-mobile/societe-moyen-mobile.component';
 import { TarifMobileComponent } from '../features-mobile/tarif-mobile/tarif-mobile.component';
+import { TresorerieBeneficeMobileComponent } from '../features-mobile/tresorerie-benefice-mobile/tresorerie-benefice-mobile.component';
 import { MobileLayoutComponent } from '../layouts/mobile-layout/mobile-layout.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
-import { ProfessionelSanteComponent } from '../professionel-sante/professionel-sante.component';
 import { ProfilCommercantHorecaComponent } from '../profil-commercant-horeca/profil-commercant-horeca.component';
-import { ProfilGrandeEntrepriseComponent } from '../profil-grande-entreprise/profil-grande-entreprise.component';
-import { ProfilIndependantComponent } from '../profil-independant/profil-independant.component';
-import { ProfilSocieteExploitationComponent } from '../profil-societe-exploitation/profil-societe-exploitation.component';
-import { ProfilSocieteManagementPatrimonialeComponent } from '../profil-societe-management-patrimoniale/profil-societe-management-patrimoniale.component';
-import { ProfilSocieteMoyenComponent } from '../profil-societe-moyen/profil-societe-moyen.component';
 import { SupportComponent } from '../support/support.component';
-
 export const MOBILE_ROUTES: Routes = [
   {
     path: '',
@@ -32,30 +25,33 @@ export const MOBILE_ROUTES: Routes = [
       { path: '', redirectTo: 'accueil', pathMatch: 'full' },
       {
         path: 'accueil',
-        loadChildren: () =>
-          import('../module-accueil/module-accueil.module').then(
-            (m) => m.ModuleAccueilModule
-          ),
+        component: AccueilMobileComponent,
       },
       { path: 'support', component: SupportComponent },
-      { path: 'about', component: AboutComponent },
+      { path: 'about', component: AboutMobileComponent },
+      { path: 'asbl', component: AsblMobileComponent },
       { path: 'tarif', component: TarifMobileComponent },
       { path: 'avis-google', component: AvisGoogleComponent },
-      { path: 'absl', component: AbslComponent },
-      { path: 'profil-independant', component: ProfilIndependantComponent },
+
+      { path: 'asbl', component: AsblMobileComponent },
+
+      { path: 'profil-independant', component: IndependantMobileComponent },
       {
         path: 'societe-management-patrimoniale',
-        component: ProfilSocieteManagementPatrimonialeComponent,
+        component: SocieteManagementPatrimonialeMobileComponent,
       },
-      { path: 'societe-moyen', component: ProfilSocieteMoyenComponent },
+      { path: 'societe-moyen', component: SocieteMoyenMobileComponent },
       {
         path: 'societe-exploitation',
-        component: ProfilSocieteExploitationComponent,
+        component: SocieteExploitationMobileComponent,
       },
       { path: 'commercant-horeca', component: ProfilCommercantHorecaComponent },
-      { path: 'professionel-sante', component: ProfessionelSanteComponent },
+      {
+        path: 'professionel-sante',
+        component: ProfessionnelSanteMobileComponent,
+      },
 
-      { path: 'grande-entreprise', component: ProfilGrandeEntrepriseComponent },
+      { path: 'grande-entreprise', component: GrandeEntrepriseMobileComponent },
       {
         path: 'promoteur-immobilier',
         component: ProfilPromoteurImmobilierMobileComponent,
@@ -82,13 +78,10 @@ export const MOBILE_ROUTES: Routes = [
             (m) => m.TresorireModule
           ),
       },
-      { path: 'services-mobile', component: ServiceMobileComponent },
-      { path: 'booste-entreprise-mobile', component: BoosteEntrepriseMobileComponent },
-      { path: 'comptabilite-mobile', component: ComptabiliteMobileComponent },
-      { path: 'declaration-impot-mobile', component: DeclarationImpotMobileComponent },
-      { path: 'creation-entreprise-mobile', component: CreationEntrepriseMobileComponent },
-      { path: 'compte-courant-administrateur-mobile', component: CompteCourantAdministrateurMobileComponent },
-      { path: 'anticipe-tresorerie-mobile', component: AnticipeTresorerieMobileComponent },
+      {
+        path: 'tresorerie-benefice-mobile',
+        component: TresorerieBeneficeMobileComponent,
+      },
       // Route wildcard pour la page 404
       { path: '**', component: NotFoundComponent },
     ],

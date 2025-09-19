@@ -25,6 +25,15 @@ import { PassageSocieteMobileComponent } from './features-mobile/passage-societe
 import { ProfilPromoteurImmobilierMobileComponent } from './features-mobile/profil-promoteur-immobilier-mobile/profil-promoteur-immobilier-mobile.component';
 import { StockTresorerieMobileComponent } from './features-mobile/stock-tresorerie-mobile/stock-tresorerie-mobile.component';
 import { AnticipeTresorerieMobileComponent } from './features-mobile/anticipe-tresorerie-mobile/anticipe-tresorerie-mobile.component';
+import { AlerteTresorerieMobileComponent } from './features-mobile/alerte-tresorerie-mobile/alerte-tresorerie-mobile.component';
+import { TresorerieBeneficeMobileComponent } from './features-mobile/tresorerie-benefice-mobile/tresorerie-benefice-mobile.component';
+import { AccueilMobileComponent } from './features-mobile/accueil-mobile/accueil-mobile.component';
+import { AboutMobileComponent } from './features-mobile/about-mobile/about-mobile.component';
+import { AsblMobileComponent } from './features-mobile/asbl-mobile/asbl-mobile.component';
+import { IndependantMobileComponent } from './features-mobile/independant-mobile/independant-mobile.component';
+import { SocieteExploitationMobileComponent } from './features-mobile/societe-exploitation-mobile/societe-exploitation-mobile.component';
+import { SocieteManagementPatrimonialeMobileComponent } from './features-mobile/societe-management-patrimoniale-mobile/societe-management-patrimoniale-mobile.component';
+import { SocieteMoyenMobileComponent } from './features-mobile/societe-moyen-mobile/societe-moyen-mobile.component';
 import { TarifMobileComponent } from './features-mobile/tarif-mobile/tarif-mobile.component';
 import { SupportMobileComponent } from './features-mobile/support-mobile/support-mobile.component';
 import { FooterComponent } from './footer/footer.component';
@@ -111,6 +120,15 @@ import { EconomieAnalysieComponent } from './venteModule/economie-analysie/econo
     ProfilPromoteurImmobilierMobileComponent,
     StockTresorerieMobileComponent,
     AnticipeTresorerieMobileComponent,
+    AlerteTresorerieMobileComponent,
+    TresorerieBeneficeMobileComponent,
+    AccueilMobileComponent,
+    AboutMobileComponent,
+    AsblMobileComponent,
+    IndependantMobileComponent,
+    SocieteExploitationMobileComponent,
+    SocieteManagementPatrimonialeMobileComponent,
+    SocieteMoyenMobileComponent,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',

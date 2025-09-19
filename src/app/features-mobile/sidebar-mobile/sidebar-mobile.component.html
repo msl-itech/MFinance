@@ -1,0 +1,87 @@
+<div class="sidebar-mobile-container">
+  <!-- Navigation par secteur d'activité -->
+  <div class="sector-navigation">
+    <div class="sector-header">
+      <h3>📋 Secteurs d'activité</h3>
+      <span class="sector-subtitle">Trouvez votre profil</span>
+    </div>
+
+    <div class="sector-select-container">
+      <select
+        class="sector-select"
+        (change)="onSectorChange($event)"
+        [value]="selectedSector"
+      >
+        <option value="">Sélectionnez votre secteur</option>
+        <option *ngFor="let category of categories" [value]="category.route">
+          {{ category.icon }} {{ category.name }}
+        </option>
+      </select>
+      <div class="select-arrow">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+
+    <!-- Pages populaires -->
+    <div class="popular-pages" *ngIf="!selectedSector">
+      <div class="popular-header">
+        <span>🔥 Populaires</span>
+      </div>
+      <div class="popular-items">
+        <button
+          class="popular-item"
+          *ngFor="let popular of popularPages"
+          (click)="navigateToPage(popular.route)"
+        >
+          <span class="popular-icon">{{ popular.icon }}</span>
+          <span class="popular-name">{{ popular.name }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact rapide -->
+  <!-- <div class="quick-contact">
+    <div class="contact-header">
+      <h3>📞 Contact rapide</h3>
+    </div>
+
+    <div class="contact-methods">
+      <a href="tel:+3228838686" class="contact-method">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="contact-info">
+          <span class="contact-label">Appeler</span>
+          <span class="contact-value">+32 2 883 86 86</span>
+        </div>
+      </a>
+
+      <a href="mailto:info@mfinances.be" class="contact-method">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="contact-info">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">info&#64;mfinances.be</span>
+        </div>
+      </a>
+
+      <button class="contact-method maps-btn" (click)="openMaps()">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="contact-info">
+          <span class="contact-label">Adresse</span>
+          <span class="contact-value">1180 Uccle</span>
+        </div>
+      </button>
+    </div>
+
+    <div class="cta-container">
+      <button class="cta-primary" (click)="openContact()">
+        🔴 Consultation gratuite
+      </button>
+    </div>
+  </div> -->
+</div>

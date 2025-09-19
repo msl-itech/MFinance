@@ -8,16 +8,16 @@ $text-muted: #6c757d;
 $success-color: #28a745;
 $warning-color: #ffc107;
 $info-color: #17a2b8;
-$entreprise-blue: #25335b;
+$medical-blue: #25335b;
 
-.promoteur-mobile-container {
+.professionnel-sante-mobile-container {
   width: 100%;
   min-height: 100vh;
   background: white;
   overflow-x: hidden;
 }
 
-// Section Hero avec titre mobile optimisé selon les recommandations
+// Section Hero avec titre mobile optimisé
 .hero-section {
   position: relative;
   height: 100vh;
@@ -39,7 +39,7 @@ $entreprise-blue: #25335b;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.7);
+      filter: brightness(0.7); // Image moins floue, plus nette
     }
 
     .hero-overlay {
@@ -61,15 +61,15 @@ $entreprise-blue: #25335b;
     max-width: 90%;
 
     .hero-title {
-      font-size: 1.6rem; // Titre réduit selon les recommandations UX
+      font-size: 1.8rem; // Réduit pour éviter troncature sur mobile
       font-weight: 700;
       margin-bottom: 16px;
       line-height: 1.2;
-      padding: 0 10px;
+      padding: 0 10px; // Padding réduit
     }
 
     .hero-subtitle {
-      font-size: 1rem; // Sous-titre engageant
+      font-size: 1rem;
       margin-bottom: 32px;
       line-height: 1.4;
       opacity: 0.95;
@@ -78,13 +78,13 @@ $entreprise-blue: #25335b;
 
     .quick-access {
       display: flex;
-      flex-direction: column; // Disposition verticale selon les recommandations
-      gap: 16px;
+      flex-direction: column;
+      gap: 16px; // Espacement vertical augmenté
       max-width: 320px;
       margin: 0 auto;
 
       .quick-access-btn {
-        padding: 16px 20px;
+        padding: 16px 20px; // Boutons pleine largeur
         border: none;
         border-radius: 25px;
         font-weight: 600;
@@ -92,7 +92,7 @@ $entreprise-blue: #25335b;
         cursor: pointer;
         transition: all 0.3s ease;
         touch-action: manipulation;
-        width: 100%;
+        width: 100%; // Pleine largeur
         display: flex;
         align-items: center;
         justify-content: center;
@@ -144,8 +144,7 @@ $entreprise-blue: #25335b;
       line-height: 1.6;
       color: $text-dark;
 
-      .intro-expand,
-      .intro-expanded {
+      .intro-expand, .intro-expanded {
         margin-top: 16px;
       }
 
@@ -168,7 +167,7 @@ $entreprise-blue: #25335b;
     .intro-img {
       width: 100%;
       max-width: 400px;
-      height: 200px;
+      height: 200px; // Hauteur réduite à 200px
       object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -240,107 +239,168 @@ $entreprise-blue: #25335b;
   }
 }
 
-// Section Besoins spécifiques (slider/accordion selon les recommandations UX)
-.besoins-section {
+// Section Profils (cartes cliquables avec séparation)
+.profils-section {
   padding: 40px 20px;
-  background: $entreprise-blue;
+  background: $medical-blue;
 
   .section-header {
-    .section-title,
-    .section-subtitle {
+    .section-title, .section-subtitle {
       color: white;
     }
   }
 
-  .besoins-slider {
+  .profils-grid {
     max-width: 800px;
     margin: 0 auto;
+    display: grid;
+    gap: 24px; // Marge de séparation verticale
+  }
 
-    .slider-navigation {
+  .profil-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &.clickable {
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba($primary-red, 0.2);
+      }
+    }
+
+    .profil-header {
       display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 32px;
+      align-items: center;
+      padding: 20px;
+      gap: 16px;
 
-      .nav-btn {
-        padding: 12px 20px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        background: transparent;
-        color: white;
-        border-radius: 25px;
+      .profil-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+      }
+
+      h3 {
+        flex: 1;
+        font-size: 1.2rem;
         font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 0.9rem;
+        color: $text-dark;
+        margin: 0;
+      }
 
-        &.active {
-          background: $primary-red;
-          border-color: $primary-red;
-        }
+      .profil-toggle {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $primary-red;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+        width: 24px;
+        text-align: center;
 
-        &:hover:not(.active) {
-          border-color: rgba(255, 255, 255, 0.6);
+        &.open {
+          transform: rotate(180deg);
         }
       }
     }
 
-    .slider-content {
-      position: relative;
-      min-height: 300px;
+    .profil-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
 
-      .slide-item {
-        display: none;
-        background: white;
-        padding: 32px 24px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      &.open {
+        max-height: 300px;
+      }
 
-        &.active {
-          display: block;
-          animation: fadeIn 0.5s ease-in-out;
-        }
+      .profil-benefits {
+        padding: 0 20px 20px;
 
-        .slide-icon {
-          font-size: 3rem;
-          text-align: center;
-          margin-bottom: 20px;
-        }
-
-        h3 {
-          font-size: 1.4rem;
-          font-weight: 600;
+        p {
+          margin-bottom: 12px;
+          line-height: 1.5;
+          font-size: 0.95rem;
           color: $text-dark;
-          margin-bottom: 16px;
-          text-align: center;
-        }
 
-        ul {
-          list-style: none;
-          padding: 0;
-          margin-bottom: 20px;
-
-          li {
-            margin-bottom: 12px;
-            padding-left: 16px;
-            position: relative;
-            line-height: 1.5;
-            color: $text-dark;
-
-            &:before {
-              content: "✓";
-              position: absolute;
-              left: 0;
-              color: $success-color;
-              font-weight: bold;
-            }
+          &:last-child {
+            margin-bottom: 0;
           }
         }
+      }
+    }
+  }
+}
 
-        .slide-result {
-          background: #f8f9fb;
-          padding: 16px;
-          border-radius: 8px;
-          border-left: 4px solid $primary-red;
+// Section Exemple concret améliorée
+.example-section {
+  padding: 40px 20px;
+  background: white;
+
+  .example-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .example-image {
+    margin-bottom: 24px; // Espacement entre image et encadré
+    text-align: center;
+
+    .example-img {
+      width: 100%;
+      max-width: 400px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .example-case {
+    background: #f8f9fb; // Bloc coloré léger au lieu de blanc
+    padding: 24px;
+    border-radius: 12px;
+    border: 2px solid $border-color;
+
+    .case-intro {
+      margin-bottom: 24px;
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: $text-dark;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: $text-dark;
+      }
+    }
+
+    .case-actions {
+      margin-bottom: 24px;
+
+      .action-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .action-icon {
+          font-size: 1.5rem;
+          flex-shrink: 0;
+        }
+
+        p {
+          margin: 0;
           font-size: 0.95rem;
           line-height: 1.5;
           color: $text-dark;
@@ -348,336 +408,250 @@ $entreprise-blue: #25335b;
       }
     }
 
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 24px;
+    .case-result {
+      background: $success-color;
+      color: white;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
 
-      .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.4);
-        cursor: pointer;
-        transition: all 0.3s ease;
+      .result-badge {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
 
-        &.active {
-          background: $primary-red;
-        }
+      p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+    }
+
+    .case-cta-btn {
+      background: $primary-red;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+
+      &:hover {
+        background: darken($primary-red, 10%);
+        transform: translateY(-2px);
       }
     }
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+// Section TVA optimisée
+.tva-section {
+  padding: 40px 20px;
+  background: $light-bg;
+
+  .tva-content {
+    max-width: 800px;
+    margin: 0 auto;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .tva-cards {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .tva-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    .tva-badge {
+      display: inline-block;
+      background: $info-color;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $text-dark;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: $text-dark;
+      margin: 0;
+    }
+  }
+
+  .tva-info {
+    text-align: center;
+    margin-bottom: 24px;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $text-dark;
+      margin: 0;
+    }
+  }
+
+  .tva-cta-btn {
+    background: $primary-red;
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 1rem;
+
+    &:hover {
+      background: darken(#ff3b30, 10%);
+      transform: translateY(-2px);
+    }
   }
 }
 
-// Section Pratiques complémentaires (horizontal slider avec 3 cartes cliquables)
-.pratiques-section {
+// Section Services (accordéons)
+.services-section {
   padding: 40px 20px;
   background: white;
 
-  .pratiques-slider {
+  .services-accordion {
     max-width: 800px;
     margin: 0 auto;
-    position: relative;
+    display: grid;
+    gap: 16px;
+  }
+
+  .service-item {
+    border: 2px solid $border-color;
+    border-radius: 12px;
     overflow: hidden;
+    background: white;
 
-    .slider-container {
+    .service-header {
+      padding: 20px;
+      background: $light-bg;
+      cursor: pointer;
       display: flex;
-      transition: transform 0.5s ease;
+      align-items: center;
+      gap: 16px;
+      transition: background 0.3s ease;
 
-      .pratique-card {
-        min-width: 100%;
-        background: #f8f9fb;
-        border: 2px solid $border-color;
-        border-radius: 12px;
-        padding: 24px;
-        margin: 0 8px;
+      &:hover {
+        background: #eff1f5;
+      }
 
-        .card-header {
-          margin-bottom: 20px;
+      .service-icon {
+        font-size: 1.8rem;
+        flex-shrink: 0;
+      }
 
-          .step-badge {
-            display: inline-block;
-            background: $primary-red;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-          }
+      h3 {
+        flex: 1;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $text-dark;
+        margin: 0;
+      }
 
-          h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: $text-dark;
-            margin: 0;
-            line-height: 1.3;
+      .service-toggle {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $primary-red;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+        width: 24px;
+        text-align: center;
+
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .service-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+
+      &.open {
+        max-height: 800px;
+      }
+
+      .service-points {
+        padding: 20px;
+
+        p {
+          margin-bottom: 12px;
+          line-height: 1.5;
+          font-size: 0.95rem;
+          color: $text-dark;
+
+          &:last-child {
+            margin-bottom: 0;
           }
         }
+      }
 
-        .card-content {
-          p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: $text-dark;
-            margin-bottom: 16px;
+      .service-sub-cards {
+        padding: 20px;
+        display: grid;
+        gap: 16px;
+
+        .sub-card {
+          background: $light-bg;
+          padding: 16px;
+          border-radius: 8px;
+          border: 1px solid $border-color;
+
+          .sub-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
           }
 
-          .card-advantage {
-            background: #e8f5e8;
-            padding: 12px;
-            border-radius: 8px;
-            border-left: 4px solid $success-color;
+          h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: $text-dark;
+            margin-bottom: 8px;
+          }
+
+          p {
             font-size: 0.9rem;
             line-height: 1.4;
-          }
-        }
-      }
-    }
-
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: $primary-red;
-      color: white;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 2;
-
-      &:hover:not(:disabled) {
-        background: darken($primary-red, 10%);
-        transform: translateY(-50%) scale(1.1);
-      }
-
-      &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      &.prev {
-        left: -20px;
-      }
-
-      &.next {
-        right: -20px;
-      }
-    }
-
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 24px;
-
-      .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: $border-color;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &.active {
-          background: $primary-red;
-        }
-      }
-    }
-  }
-}
-
-// Section Case Studies (horizontal slider)
-.case-studies-section {
-  padding: 40px 20px;
-  background: $entreprise-blue;
-
-  .section-header {
-    .section-title,
-    .section-subtitle {
-      color: white;
-    }
-  }
-
-  .case-studies-slider {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-
-    .slider-container {
-      display: flex;
-      transition: transform 0.5s ease;
-
-      .case-card {
-        min-width: 100%;
-        background: white;
-        border-radius: 12px;
-        padding: 24px;
-        margin: 0 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-
-        .case-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 20px;
-
-          h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: $text-dark;
+            color: $text-muted;
             margin: 0;
-            flex: 1;
           }
-
-          .case-type {
-            background: $primary-red;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-          }
-        }
-
-        .case-content {
-          .problem,
-          .solution,
-          .result {
-            margin-bottom: 20px;
-
-            h4 {
-              font-size: 1rem;
-              font-weight: 600;
-              margin-bottom: 8px;
-              color: $text-dark;
-            }
-
-            p {
-              font-size: 0.95rem;
-              line-height: 1.5;
-              color: $text-dark;
-              margin-bottom: 8px;
-            }
-
-            ul {
-              list-style: none;
-              padding: 0;
-
-              li {
-                margin-bottom: 8px;
-                padding-left: 16px;
-                position: relative;
-                font-size: 0.9rem;
-                line-height: 1.4;
-                color: $text-dark;
-
-                &:before {
-                  content: "•";
-                  position: absolute;
-                  left: 0;
-                  color: $primary-red;
-                  font-weight: bold;
-                }
-              }
-            }
-          }
-
-          .result {
-            background: #f8f9fb;
-            padding: 16px;
-            border-radius: 8px;
-            border-left: 4px solid $success-color;
-
-            ul li:before {
-              content: "";
-            }
-          }
-        }
-      }
-    }
-
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: $primary-red;
-      color: white;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 2;
-
-      &:hover:not(:disabled) {
-        background: darken($primary-red, 10%);
-        transform: translateY(-50%) scale(1.1);
-      }
-
-      &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      &.prev {
-        left: -20px;
-      }
-
-      &.next {
-        right: -20px;
-      }
-    }
-
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 24px;
-
-      .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.4);
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &.active {
-          background: $primary-red;
         }
       }
     }
   }
 }
 
-// Section Pourquoi choisir améliorée avec hiérarchie visuelle
+// Section Pourquoi choisir
 .why-choose-section {
   padding: 40px 20px;
   background: $light-bg;
 
   .why-choose-grid {
     max-width: 800px;
-    margin: 0 auto 32px;
+    margin: 0 auto;
     display: grid;
     gap: 24px;
   }
@@ -688,34 +662,10 @@ $entreprise-blue: #25335b;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     text-align: center;
-    transition: all 0.3s ease;
-
-    &.featured {
-      border: 2px solid $primary-red;
-      transform: scale(1.02);
-      position: relative;
-
-      .card-highlight {
-        position: absolute;
-        top: -10px;
-        right: 10px;
-        background: $primary-red;
-        color: white;
-        padding: 4px 8px;
-        border-radius: 12px;
-        font-size: 0.75rem;
-        font-weight: 600;
-      }
-    }
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba($primary-red, 0.15);
-    }
 
     .why-icon {
       font-size: 2.5rem;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     h3 {
@@ -723,7 +673,6 @@ $entreprise-blue: #25335b;
       font-weight: 600;
       color: $text-dark;
       margin-bottom: 12px;
-      line-height: 1.3;
     }
 
     p {
@@ -733,150 +682,125 @@ $entreprise-blue: #25335b;
       margin: 0;
     }
   }
+}
 
-  .why-cta {
+// Section FAQ
+.faq-section {
+  padding: 40px 20px;
+  background: white;
+
+  .faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border: 2px solid $border-color;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+
+    .faq-question {
+      padding: 20px;
+      background: $light-bg;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #eff1f5;
+      }
+
+      .faq-icon {
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+
+      h3 {
+        flex: 1;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $text-dark;
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      .faq-toggle {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $primary-red;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+        width: 24px;
+        text-align: center;
+
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+
+      &.open {
+        max-height: 500px;
+      }
+
+      > div {
+        padding: 20px;
+        background: white;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: $text-dark;
+
+        ul {
+          margin: 12px 0;
+          padding-left: 20px;
+
+          li {
+            margin-bottom: 8px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        strong {
+          color: $text-dark;
+        }
+      }
+    }
+  }
+
+  .faq-contact {
     text-align: center;
     margin-top: 32px;
 
-    .cta-btn-primary {
+    p {
+      font-size: 1rem;
+      color: $text-muted;
+      margin-bottom: 16px;
+    }
+
+    .faq-contact-btn {
       background: $primary-red;
       color: white;
       border: none;
-      padding: 16px 32px;
-      border-radius: 25px;
+      padding: 12px 24px;
+      border-radius: 20px;
       font-weight: 600;
-      font-size: 1.1rem;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-bottom: 8px;
 
       &:hover {
         background: darken($primary-red, 10%);
         transform: translateY(-2px);
-      }
-    }
-
-    .cta-subtitle {
-      font-size: 0.85rem;
-      color: $text-muted;
-      margin: 0;
-    }
-  }
-}
-
-// Section Défis des promoteurs immobiliers
-.defis-section {
-  padding: 40px 20px;
-  background: white;
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 32px;
-
-    .section-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: $text-dark;
-      margin-bottom: 12px;
-      line-height: 1.3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-
-      .title-icon {
-        font-size: 1.5rem;
-        color: $warning-color;
-      }
-    }
-  }
-
-  .defis-content {
-    max-width: 800px;
-    margin: 0 auto;
-    display: grid;
-    gap: 32px;
-    align-items: center;
-
-    .defis-image {
-      text-align: center;
-      order: 1;
-
-      img {
-        width: 100%;
-        max-width: 400px;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-    }
-
-    .defis-text {
-      order: 2;
-
-      .intro-text {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: $text-dark;
-        margin-bottom: 24px;
-        text-align: center;
-        font-weight: 500;
-      }
-
-      .defis-list {
-        display: grid;
-        gap: 20px;
-
-        .defi-item {
-          background: #f8f9fb;
-          border: 2px solid $border-color;
-          border-radius: 12px;
-          padding: 20px;
-          display: flex;
-          align-items: flex-start;
-          gap: 16px;
-          transition: all 0.3s ease;
-
-          &:hover {
-            border-color: $primary-red;
-            box-shadow: 0 4px 12px rgba($primary-red, 0.1);
-            transform: translateY(-2px);
-          }
-
-          .defi-icon {
-            flex-shrink: 0;
-            width: 50px;
-            height: 50px;
-            background: $primary-red;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: white;
-            box-shadow: 0 2px 8px rgba($primary-red, 0.3);
-          }
-
-          .defi-content {
-            flex: 1;
-
-            h4 {
-              font-size: 1.1rem;
-              font-weight: 600;
-              color: $text-dark;
-              margin-bottom: 8px;
-              line-height: 1.3;
-            }
-
-            p {
-              font-size: 0.95rem;
-              line-height: 1.5;
-              color: $text-muted;
-              margin: 0;
-            }
-          }
-        }
       }
     }
   }
@@ -965,7 +889,7 @@ $entreprise-blue: #25335b;
     }
   }
 
-  .contact-cta-entreprise {
+  .contact-cta-sante {
     text-align: center;
     max-width: 400px;
     margin: 0 auto;
@@ -973,7 +897,7 @@ $entreprise-blue: #25335b;
     flex-direction: column;
     gap: 12px;
 
-    .cta-entreprise-btn {
+    .cta-sante-btn {
       background: $primary-red;
       color: white;
       border: none;
@@ -1361,7 +1285,7 @@ $entreprise-blue: #25335b;
   z-index: 1000;
 
   &:hover {
-    background: darken($primary-red, 10%);
+    background: darken(#ff3b30, 10%);
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba($primary-red, 0.4);
   }
@@ -1371,7 +1295,7 @@ $entreprise-blue: #25335b;
 @media (min-width: 768px) {
   .hero-content {
     .hero-title {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
     }
 
     .hero-subtitle {
@@ -1384,8 +1308,16 @@ $entreprise-blue: #25335b;
     }
   }
 
-  .why-choose-grid {
+  .profils-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tva-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-choose-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .form-step .options-grid {
@@ -1399,47 +1331,12 @@ $entreprise-blue: #25335b;
       grid-column: 1 / -1;
     }
   }
-
-  .pratiques-slider .slider-arrow {
-    &.prev {
-      left: -50px;
-    }
-
-    &.next {
-      right: -50px;
-    }
-  }
-
-  .case-studies-slider .slider-arrow {
-    &.prev {
-      left: -50px;
-    }
-
-    &.next {
-      right: -50px;
-    }
-  }
-
-  .defis-section {
-    .defis-content {
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-
-      .defis-image {
-        order: 1;
-      }
-
-      .defis-text {
-        order: 2;
-      }
-    }
-  }
 }
 
 @media (min-width: 1024px) {
   .hero-content {
     .hero-title {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
     }
 
     .hero-subtitle {
@@ -1451,43 +1348,11 @@ $entreprise-blue: #25335b;
     font-size: 2.2rem;
   }
 
-  .why-choose-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .profils-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .defis-section {
-    .section-title {
-      font-size: 2.2rem;
-    }
-
-    .defis-content {
-      .defis-text {
-        .intro-text {
-          font-size: 1.2rem;
-        }
-
-        .defis-list {
-          .defi-item {
-            padding: 24px;
-
-            .defi-icon {
-              width: 60px;
-              height: 60px;
-              font-size: 1.4rem;
-            }
-
-            .defi-content {
-              h4 {
-                font-size: 1.2rem;
-              }
-
-              p {
-                font-size: 1rem;
-              }
-            }
-          }
-        }
-      }
-    }
+  .services-accordion .service-sub-cards {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

@@ -1,0 +1,772 @@
+// Variables - Charte couleur
+$primary-red: #ff3b30;
+$dark-blue: #1a2c51;
+$light-gray: #f8f9fb;
+$success-green: #28a745;
+$warning-orange: #ffc107;
+$text-muted: #6c757d;
+$border-gray: #e6e9f1;
+$white: #ffffff;
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-medium: rgba(0, 0, 0, 0.15);
+$shadow-heavy: rgba(0, 0, 0, 0.25);
+
+.tresorerie-benefice-mobile-container {
+  min-height: 100vh;
+  background: $light-gray;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// Hero Section
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, $dark-blue 0%, darken($dark-blue, 15%) 100%);
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba($primary-red, 0.1) 0%, transparent 70%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: $white;
+  max-width: 400px;
+  width: 100%;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba($primary-red, 0.2);
+  border: 1px solid rgba($primary-red, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+
+  span {
+    font-size: 12px;
+    font-weight: 600;
+    color: $primary-red;
+    letter-spacing: 0.5px;
+  }
+}
+
+.hero-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  color: $white;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  color: rgba($white, 0.9);
+}
+
+.hero-video {
+  margin: 24px 0;
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; // 16:9 aspect ratio
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba($white, 0.1);
+    
+    .video-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+  }
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, $primary-red, darken($primary-red, 10%));
+  color: $white;
+  border: none;
+  border-radius: 25px;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba($primary-red, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($primary-red, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  .cta-icon {
+    font-size: 18px;
+  }
+}
+
+// Sections communes
+.section-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: $dark-blue;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  .title-icon {
+    color: $primary-red;
+    font-size: 20px;
+  }
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: $text-muted;
+  font-weight: 500;
+}
+
+// Section Introduction
+.intro-section {
+  padding: 60px 20px;
+  background: $white;
+}
+
+.intro-content {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.intro-highlight {
+  background: linear-gradient(135deg, rgba($primary-red, 0.1), rgba($warning-orange, 0.1));
+  border-left: 4px solid $primary-red;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.key-points {
+  h4 {
+    color: $dark-blue;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+}
+
+.points-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.point-card {
+  background: $white;
+  border: 1px solid $border-gray;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 10px $shadow-light;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px $shadow-medium;
+  }
+
+  .point-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, $primary-red, darken($primary-red, 10%));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .point-content {
+    flex: 1;
+    
+    h5 {
+      font-size: 14px;
+      font-weight: 600;
+      color: $dark-blue;
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+}
+
+// Section Définition
+.definition-section {
+  padding: 60px 20px;
+  background: $light-gray;
+}
+
+.section-content {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.definition-highlight {
+  background: rgba($warning-orange, 0.1);
+  border: 1px solid rgba($warning-orange, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.definition-image {
+  margin: 32px 0;
+  text-align: center;
+  
+  img {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px $shadow-medium;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.cta-secondary {
+  background: transparent;
+  color: $primary-red;
+  border: 2px solid $primary-red;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $primary-red;
+    color: $white;
+    transform: translateY(-2px);
+  }
+}
+
+// Section Différence
+.difference-section {
+  padding: 60px 20px;
+  background: $white;
+}
+
+.comparison-grid {
+  display: grid;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto 32px;
+}
+
+.comparison-card {
+  background: $white;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 15px $shadow-light;
+  border-top: 4px solid $primary-red;
+  
+  .comparison-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    color: $white;
+    font-size: 24px;
+  }
+  
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: $dark-blue;
+    margin-bottom: 12px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: $text-muted;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+.benefit-card .comparison-icon {
+  background: linear-gradient(135deg, $primary-red, darken($primary-red, 10%));
+}
+
+.cashflow-card .comparison-icon {
+  background: linear-gradient(135deg, $success-green, darken($success-green, 10%));
+}
+
+.example-section {
+  background: rgba($dark-blue, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 32px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  h4 {
+    color: $dark-blue;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  .example-text {
+    font-size: 15px;
+    color: $dark-blue;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+// Section Cas d'étude
+.case-study-section {
+  padding: 60px 20px;
+  background: $light-gray;
+}
+
+.case-study-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: $text-muted;
+  margin: 24px 0;
+}
+
+.case-study-image {
+  margin: 32px 0;
+  text-align: center;
+  
+  img {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px $shadow-medium;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// Section Actions
+.actions-section {
+  padding: 60px 20px;
+  background: $white;
+}
+
+.actions-grid {
+  display: grid;
+  gap: 16px;
+  max-width: 400px;
+  margin: 0 auto 32px;
+}
+
+.action-card {
+  background: linear-gradient(135deg, rgba($primary-red, 0.05), rgba($warning-orange, 0.05));
+  border: 1px solid rgba($primary-red, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  
+  .action-number {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: $dark-blue;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+.cta-intermediate {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+// Section Offre
+.offer-section {
+  padding: 60px 20px;
+  background: $light-gray;
+}
+
+.offer-description {
+  margin: 24px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $text-muted;
+}
+
+.offer-image {
+  margin: 32px 0;
+  text-align: center;
+  
+  img {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px $shadow-medium;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// Section FAQ
+.faq-section {
+  padding: 60px 20px;
+  background: $white;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: $light-gray;
+  border-radius: 12px;
+  padding: 20px;
+  border-left: 4px solid $primary-red;
+  
+  .faq-number {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: $dark-blue;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: $text-muted;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+// Section Contact
+.contact-section {
+  padding: 60px 20px;
+  background: $light-gray;
+}
+
+// CTA Final
+.final-cta-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, $dark-blue, darken($dark-blue, 10%));
+  text-align: center;
+}
+
+.final-cta-content {
+  max-width: 400px;
+  margin: 0 auto;
+  
+  h3 {
+    color: $white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+}
+
+.cta-final {
+  background: linear-gradient(135deg, $primary-red, darken($primary-red, 10%));
+  color: $white;
+  border: none;
+  border-radius: 25px;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba($primary-red, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($primary-red, 0.4);
+  }
+}
+
+// CTA Fixe
+.fixed-cta {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+  
+  .cta-fixed {
+    background: linear-gradient(135deg, $primary-red, darken($primary-red, 10%));
+    color: $white;
+    border: none;
+    border-radius: 25px;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba($primary-red, 0.4);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba($primary-red, 0.5);
+    }
+  }
+}
+
+// Styles pour le formulaire
+.step-content {
+  padding: 20px;
+}
+
+.step-title {
+  color: $dark-blue;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.step-description {
+  color: $text-muted;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.custom-radio-group {
+  display: grid;
+  gap: 12px;
+}
+
+.custom-radio-option {
+  display: block;
+  background: $white;
+  border: 2px solid $border-gray;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    border-color: $primary-red;
+    box-shadow: 0 2px 10px $shadow-light;
+  }
+
+  &.selected {
+    border-color: $primary-red;
+    background: rgba($primary-red, 0.05);
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .radio-checkmark {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $border-gray;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 10px;
+      height: 10px;
+      background: $primary-red;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &.selected .radio-checkmark {
+    border-color: $primary-red;
+
+    &::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .radio-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    i {
+      font-size: 24px;
+      width: 32px;
+      text-align: center;
+    }
+
+    h6 {
+      font-size: 16px;
+      font-weight: 600;
+      color: $dark-blue;
+      margin: 0;
+    }
+
+    small {
+      font-size: 12px;
+      color: $text-muted;
+      display: block;
+      margin-top: 4px;
+    }
+  }
+}
+
+.custom-input-group {
+  margin-bottom: 20px;
+
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: $dark-blue;
+    font-size: 14px;
+
+    i {
+      color: $primary-red;
+    }
+
+    .badge {
+      font-size: 10px;
+    }
+  }
+
+  .custom-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid $border-gray;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-red;
+      box-shadow: 0 0 0 3px rgba($primary-red, 0.1);
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .point-card,
+  .action-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .fixed-cta {
+    bottom: 80px; // Éviter la bottom nav
+  }
+}

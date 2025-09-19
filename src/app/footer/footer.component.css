@@ -254,3 +254,142 @@
     text-align: center;
   }
 }
+
+/* Styles pour le footer mobile minimaliste */
+.mobile-footer {
+  background: linear-gradient(135deg, #1a2c51, #25335b);
+  color: white;
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+.mobile-footer-content {
+  max-width: 100%;
+  padding: 0 16px;
+}
+
+.mobile-contact-section {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  flex: 1;
+  justify-content: center;
+  max-width: 140px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.phone-btn {
+  background: linear-gradient(135deg, #ff3b30, #ff6b5a);
+  color: white;
+}
+
+.phone-btn:hover {
+  background: linear-gradient(135deg, #ff6b5a, #ff3b30);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.3);
+}
+
+.email-btn {
+  background: linear-gradient(135deg, #007AFF, #4A90E2);
+  color: white;
+}
+
+.email-btn:hover {
+  background: linear-gradient(135deg, #4A90E2, #007AFF);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+}
+
+.mobile-social-section {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.mobile-social-links a {
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.mobile-social-links a:hover {
+  background: rgba(255, 59, 48, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 59, 48, 0.3);
+}
+
+.mobile-social-links i {
+  font-size: 18px;
+}
+
+.mobile-copyright {
+  padding: 16px 0;
+  text-align: center;
+}
+
+.mobile-copyright p {
+  margin: 4px 0;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.mobile-copyright .design-credit a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-copyright .design-credit a:hover {
+  color: #ff3b30;
+}
+
+/* Responsive pour très petits écrans */
+@media (max-width: 320px) {
+  .contact-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-btn {
+    max-width: 200px;
+  }
+  
+  .mobile-social-links {
+    gap: 12px;
+  }
+  
+  .mobile-social-links a {
+    width: 40px;
+    height: 40px;
+  }
+}

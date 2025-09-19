@@ -1,10 +1,12 @@
 <ng-container *ngIf="isLoaded$ | async">
-  <ng-container *ngIf="showHeaderFooter$ | async">
+  <!-- Header seulement pour desktop -->
+  <ng-container *ngIf="(showHeaderFooter$ | async) && !(shouldUseMobileVersion$ | async)">
     <app-nav-bar></app-nav-bar>
   </ng-container>
 
   <router-outlet></router-outlet>
 
+  <!-- Footer pour toutes les plateformes -->
   <ng-container *ngIf="showHeaderFooter$ | async">
     <app-footer></app-footer>
   </ng-container>

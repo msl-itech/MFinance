@@ -1,0 +1,577 @@
+<div class="tresorerie-benefice-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>GESTION TRÉSORERIE</span>
+      </div>
+      <h1 class="hero-title">Entrepreneurs : Pourquoi votre trésorerie est plus importante que vos bénéfices</h1>
+      <p class="hero-subtitle">
+        Transformez le stress en succès : Comprendre la trésorerie, le carburant de votre PME
+      </p>
+
+      <!-- Visuel Hero -->
+      <div class="hero-video">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/-myPEHrSucw"
+            title="Trésorerie vs Bénéfices - Vidéo explicative"
+            allowfullscreen
+            class="video-iframe"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
+        </div>
+      </div>
+
+      <button class="cta-primary" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-calculator cta-icon"></i>
+        <span class="cta-text">Faire mon diagnostic gratuit</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 1 - Introduction rapide -->
+  <section class="intro-section" id="intro">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-rocket title-icon"></i>
+        Transformez le stress en succès
+      </h2>
+      <p class="section-subtitle">Comprendre la trésorerie, le carburant de votre PME</p>
+    </div>
+
+    <div class="intro-content">
+      <div class="intro-text">
+        <p class="intro-highlight">
+          💬 La trésorerie = carburant de votre entreprise.<br>
+          ❌ Confondre bénéfice et cash disponible peut coûter cher.
+        </p>
+
+        <div class="key-points">
+          <h4>3 puces clés :</h4>
+          <div class="points-grid">
+            <div class="point-card">
+              <div class="point-icon">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <div class="point-content">
+                <h5>Trésorerie = santé de votre entreprise</h5>
+              </div>
+            </div>
+
+            <div class="point-card">
+              <div class="point-icon">
+                <i class="fas fa-not-equal"></i>
+              </div>
+              <div class="point-content">
+                <h5>Différences avec bénéfice</h5>
+              </div>
+            </div>
+
+            <div class="point-card">
+              <div class="point-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="point-content">
+                <h5>Actions simples pour éviter les crises</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 - Définition simple -->
+  <section class="definition-section" id="definition">
+    <div class="section-content">
+      <div class="definition-text">
+        <h2 class="section-title">
+          <i class="fas fa-question-circle title-icon"></i>
+          Qu'est-ce que la trésorerie ? Une définition simple
+        </h2>
+
+        <div class="definition-description">
+          <p class="definition-highlight">
+            💬 Argent réellement dispo pour payer vos charges.<br>
+            ⚠️ Un bénéfice positif ne garantit pas une trésorerie saine.
+          </p>
+        </div>
+
+        <button class="cta-secondary" (click)="scrollToSection('contactSection')">
+          <i class="fas fa-arrow-right"></i>
+          <span>Faire mon diagnostic</span>
+        </button>
+      </div>
+
+      <div class="definition-image">
+        <img
+          src="../../../assets/img/webp/treasur.webp"
+          alt="Trésorerie vs Bénéfices"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 - Différence Bénéfice / Cash-flow -->
+  <section class="difference-section" id="difference">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-balance-scale title-icon"></i>
+        La différence entre bénéfice et cash-flow : Une clé pour éviter les crises
+      </h2>
+    </div>
+
+    <div class="comparison-grid">
+      <div class="comparison-card benefit-card">
+        <div class="comparison-icon">
+          <i class="fas fa-chart-pie"></i>
+        </div>
+        <h4>Bénéfice</h4>
+        <p>C'est ce qui reste après avoir déduit toutes vos charges de vos revenus.</p>
+      </div>
+
+      <div class="comparison-card cashflow-card">
+        <div class="comparison-icon">
+          <i class="fas fa-exchange-alt"></i>
+        </div>
+        <h4>Cash-flow</h4>
+        <p>C'est l'argent qui circule sur votre compte, entrant et sortant au fil des transactions.</p>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <div class="example-content">
+        <h4>Exemple condensé :</h4>
+        <p class="example-text">
+          10 000 € de bénéfices + clients payant à 60 jours = trésorerie vide.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 - Cas réel -->
+  <section class="case-study-section" id="case-study">
+    <div class="section-content">
+      <div class="case-study-text">
+        <h2 class="section-title">
+          <i class="fas fa-user-tie title-icon"></i>
+          L'histoire de Marianne : Une leçon à retenir
+        </h2>
+
+        <div class="case-study-description">
+          <p>
+            Ventes élevées, paiements lents → trésorerie bloquée malgré les bénéfices.<br>
+            📌 <strong>Leçon :</strong> suivre ses flux en continu.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-study-image">
+        <img
+          src="../../../assets/img/webp/fiscalite_entreprise_3_mfinances.webp"
+          alt="Histoire de Marianne"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 - Actions concrètes -->
+  <section class="actions-section" id="actions">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-tasks title-icon"></i>
+        Pourquoi une gestion proactive est indispensable
+      </h2>
+    </div>
+
+    <div class="actions-grid">
+      <div class="action-card">
+        <div class="action-number">1️⃣</div>
+        <h4>Suivre vos flux chaque jour</h4>
+      </div>
+
+      <div class="action-card">
+        <div class="action-number">2️⃣</div>
+        <h4>Anticiper vos besoins financiers</h4>
+      </div>
+
+      <div class="action-card">
+        <div class="action-number">3️⃣</div>
+        <h4>Garder une réserve</h4>
+      </div>
+    </div>
+
+    <div class="cta-intermediate">
+      <button class="cta-secondary" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-calculator"></i>
+        <span>Faire mon diagnostic gratuit</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 6 - Offre MFINANCES -->
+  <section class="offer-section" id="offer">
+    <div class="section-content">
+      <div class="offer-text">
+        <h2 class="section-title">
+          <i class="fas fa-handshake title-icon"></i>
+          Passez à l'action avec MFINANCES
+        </h2>
+
+        <div class="offer-description">
+          <p>
+            Audit gratuit + outils simples pour sécuriser votre trésorerie.
+          </p>
+        </div>
+
+        <button class="cta-primary" (click)="scrollToSection('contactSection')">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Faire le test maintenant</span>
+        </button>
+      </div>
+
+      <div class="offer-image">
+        <img
+          src="../../../assets/img/vente/img_passage_en_societe1.webp"
+          alt="MFINANCES accompagnement"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Mobile ultra-condensée -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-question-circle title-icon"></i>
+        📱 FAQ Mobile ultra-condensée – Mfinances
+      </h2>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-number">1️⃣</div>
+        <h5>Différence trésorerie / bénéfices</h5>
+        <p>Bénéfice : reste après charges.<br>Trésorerie : cash dispo.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">2️⃣</div>
+        <h5>Importance de la trésorerie</h5>
+        <p>Sans cash, pas de paiements, même rentable.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">3️⃣</div>
+        <h5>Trésorerie en danger</h5>
+        <p>Retards clients + sorties rapides > entrées.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">4️⃣</div>
+        <h5>Outils de suivi</h5>
+        <p>Excel, Google Sheets, logiciel cash-flow.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">5️⃣</div>
+        <h5>Améliorer rapidement</h5>
+        <p>Relances, négos délais, réduire dépenses.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">6️⃣</div>
+        <h5>Réserve idéale</h5>
+        <p>3 à 6 mois de charges fixes.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">7️⃣</div>
+        <h5>Pièges à éviter</h5>
+        <p>Oublier délais, tout dépenser, pas de réserve.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">8️⃣</div>
+        <h5>Tableau de suivi</h5>
+        <p>Anticipe tensions et actions à prendre.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">9️⃣</div>
+        <h5>Aide MFINANCES</h5>
+        <p>Diagnostic gratuit + suivi + conseils.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-number">🔟</div>
+        <h5>Éviter les crises</h5>
+        <p>Suivi régulier + anticipation + réserve.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-contact-form-layout
+      [config]="formConfig"
+      [currentStep]="currentStep"
+      [totalSteps]="totalSteps"
+      [formSubmitted]="formSubmitted"
+      [isStepValid]="isStepValid"
+      [isFormValid]="isFormValid"
+      [isLoading]="isLoading"
+      (nextStep)="onNextStep()"
+      (previousStep)="onPreviousStep()"
+      (submit)="onSubmit()"
+      (reset)="onReset()"
+    >
+      <div slot="form-content">
+        <!-- Étape 1: Situation de trésorerie -->
+        <div *ngIf="currentStep === 1" class="step-content">
+          <h3 class="step-title mb-4">1. Quelle est votre situation de trésorerie ?</h3>
+          <p class="step-description mb-4">
+            Sélectionnez ce qui décrit le mieux votre situation actuelle.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.situationTresorerie === 'benefices-sans-cash'"
+              >
+                <input
+                  type="radio"
+                  name="situationTresorerie"
+                  value="benefices-sans-cash"
+                  [(ngModel)]="formData.situationTresorerie"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-chart-pie text-danger mb-2"></i>
+                  <h6 class="mb-1">Bénéfices sans cash</h6>
+                  <small class="text-muted">J'ai des bénéfices mais pas de liquidités</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.situationTresorerie === 'clients-retards'"
+              >
+                <input
+                  type="radio"
+                  name="situationTresorerie"
+                  value="clients-retards"
+                  [(ngModel)]="formData.situationTresorerie"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-clock text-warning mb-2"></i>
+                  <h6 class="mb-1">Clients en retard</h6>
+                  <small class="text-muted">Mes clients tardent à payer</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.situationTresorerie === 'pas-de-visibilite'"
+              >
+                <input
+                  type="radio"
+                  name="situationTresorerie"
+                  value="pas-de-visibilite"
+                  [(ngModel)]="formData.situationTresorerie"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-eye-slash text-danger mb-2"></i>
+                  <h6 class="mb-1">Pas de visibilité</h6>
+                  <small class="text-muted">Je ne suis pas mes flux de trésorerie</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2: Chiffre d'affaires -->
+        <div *ngIf="currentStep === 2" class="step-content">
+          <h3 class="step-title mb-4">2. Quel est votre chiffre d'affaires annuel ?</h3>
+          <p class="step-description mb-4">
+            Cette information nous aide à personnaliser nos conseils.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.chiffreAffaires === 'moins-100k'"
+              >
+                <input
+                  type="radio"
+                  name="chiffreAffaires"
+                  value="moins-100k"
+                  [(ngModel)]="formData.chiffreAffaires"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-seedling text-danger mb-2"></i>
+                  <h6 class="mb-1">Moins de 100k €</h6>
+                  <small class="text-muted">Jeune entreprise</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.chiffreAffaires === '100k-500k'"
+              >
+                <input
+                  type="radio"
+                  name="chiffreAffaires"
+                  value="100k-500k"
+                  [(ngModel)]="formData.chiffreAffaires"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-chart-line text-danger mb-2"></i>
+                  <h6 class="mb-1">100k à 500k €</h6>
+                  <small class="text-muted">PME en développement</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.chiffreAffaires === 'plus-500k'"
+              >
+                <input
+                  type="radio"
+                  name="chiffreAffaires"
+                  value="plus-500k"
+                  [(ngModel)]="formData.chiffreAffaires"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-building text-danger mb-2"></i>
+                  <h6 class="mb-1">Plus de 500k €</h6>
+                  <small class="text-muted">Grande entreprise</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div *ngIf="currentStep === 3" class="step-content">
+          <h3 class="step-title mb-4">
+            3. Vos coordonnées pour le diagnostic gratuit
+          </h3>
+          <p class="step-description mb-4">
+            <i class="fas fa-phone text-danger me-2"></i>
+            Nous vous contactons sous 72h pour votre diagnostic personnalisé
+          </p>
+
+          <div class="form-group">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="nom" class="form-label">
+                    <i class="fas fa-user me-2"></i>Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="nom"
+                    name="nom"
+                    [(ngModel)]="formData.nom"
+                    placeholder="Votre nom et prénom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>Email
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="telephone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>Téléphone
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control custom-input"
+                    id="telephone"
+                    name="telephone"
+                    [(ngModel)]="formData.telephone"
+                    placeholder="+32 XXX XX XX XX"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
+                <div>
+                  <h6 class="mb-1">Diagnostic gratuit sous 72h</h6>
+                  <small
+                    >Analyse personnalisée, confidentielle et sans
+                    engagement.</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-contact-form-layout>
+  </section>
+
+  <!-- CTA final -->
+  <section class="final-cta-section">
+    <div class="final-cta-content">
+      <h3>💡 Prêt à sécuriser votre trésorerie ?</h3>
+      <button class="cta-final" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-calculator"></i>
+        <span>Faire mon diagnostic gratuit</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-calculator"></i>
+      <span>Diagnostic gratuit</span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,803 @@
+<div class="societe-moyen-mobile-container">
+  <!-- Section Hero Optimisée -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <img
+        src="assets/img/webp/societe_moyen1.webp"
+        alt="Société de Moyens Background"
+        class="hero-bg-image"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        🏆 Transformez vos revenus en patrimoine durable avec une SCM
+      </h1>
+      <p class="hero-subtitle">
+        Mutualisez vos moyens pour réduire vos coûts et optimiser votre
+        structure
+      </p>
+
+      <!-- Bouton d'accès rapide mobile -->
+      <div class="quick-access">
+        <button
+          class="quick-access-btn primary"
+          (click)="scrollToSection('services')"
+        >
+          💡 Découvrez ce que vous gagnerez
+        </button>
+        <button
+          class="quick-access-btn secondary"
+          (click)="scrollToSection('formulaire-evaluation')"
+        >
+          🧭 Évaluez votre société (2 min)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Mobile Navigation -->
+  <app-sidebar-mobile></app-sidebar-mobile>
+
+  <!-- Section Introduction Simplifiée -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <h2 class="intro-title">Qu'est-ce qu'une société de moyens ?</h2>
+
+      <!-- Texte mobile simplifié -->
+      <div class="intro-text">
+        <p>
+          Une structure juridique pour
+          <strong>mutualiser les moyens</strong> entre professionnels et
+          <strong>réduire les coûts</strong> sans perdre votre
+          <strong>autonomie</strong>.
+        </p>
+
+        <div class="intro-expand" *ngIf="!showFullIntro">
+          <button class="expand-btn" (click)="toggleIntro()">
+            + En savoir plus
+          </button>
+        </div>
+
+        <div class="intro-expanded" *ngIf="showFullIntro">
+          <p>
+            Elle permet de partager locaux, équipements et abonnements tout en
+            conservant l'indépendance de chaque membre dans l'exercice de son
+            activité professionnelle.
+          </p>
+          <p>
+            <strong>Objectif :</strong> Réduire les coûts grâce à la
+            mutualisation et négocier des tarifs avantageux tout en gardant
+            votre autonomie.
+          </p>
+          <button class="expand-btn" (click)="toggleIntro()">- Réduire</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA bouton rouge stratégique -->
+    <div class="section-cta">
+      <button class="cta-primary" (click)="scrollToContact()">
+        📞 Prendre un rendez-vous gratuit
+      </button>
+      <p class="cta-subtitle">Consultation sous 72h - Gratuit</p>
+    </div>
+  </section>
+
+  <!-- Section Avantages (3 cartes scrollables) -->
+  <section class="avantages-section" id="services">
+    <div class="section-header">
+      <h2 class="section-title">Les avantages clés d'une société de moyens</h2>
+      <p class="section-subtitle">
+        Voici les 3 piliers d'une mutualisation réussie
+      </p>
+    </div>
+
+    <div class="avantages-container">
+      <div class="avantage-card">
+        <div class="avantage-icon">💡</div>
+        <h3>Mutualisation intelligente</h3>
+        <div class="avantage-details">
+          <p>
+            🏢 <strong>Locaux partagés :</strong> réduction du loyer et charges
+          </p>
+          <p>
+            🔧 <strong>Équipements communs :</strong> accès sans achat
+            individuel
+          </p>
+        </div>
+      </div>
+
+      <div class="avantage-card">
+        <div class="avantage-icon">💰</div>
+        <h3>Réduction des coûts</h3>
+        <div class="avantage-details">
+          <p>
+            📊 <strong>Négociation groupée :</strong> tarifs préférentiels
+            fournisseurs
+          </p>
+          <p>
+            📈 <strong>Économies réelles :</strong> jusqu'à 30% sur certains
+            postes
+          </p>
+        </div>
+      </div>
+
+      <div class="avantage-card">
+        <div class="avantage-icon">🔒</div>
+        <h3>Indépendance & transparence</h3>
+        <div class="avantage-details">
+          <p>
+            ⚖️ <strong>Autonomie préservée :</strong> chacun reste indépendant
+          </p>
+          <p>
+            📋 <strong>Gestion claire :</strong> règles transparentes définies
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Fonctionnement (2 cartes principales) -->
+  <section class="fonctionnement-section">
+    <div class="section-header">
+      <h2 class="section-title">Comment ça fonctionne ?</h2>
+      <p class="section-subtitle">
+        Deux axes principaux pour optimiser vos coûts
+      </p>
+    </div>
+
+    <div class="fonctionnement-cards">
+      <!-- Carte Bénéfices clés -->
+      <div class="fonction-card">
+        <div class="fonction-icon">🧰</div>
+        <h3>Bénéfices clés</h3>
+        <div class="fonction-content">
+          <div class="benefit-item">
+            <span class="benefit-title">Mutualisation des moyens</span>
+            <p>Locaux, équipements, abonnements partagés</p>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-title">Réduction des coûts</span>
+            <p>Négociations groupées et tarifs préférentiels</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte Gestion des contributions -->
+      <div class="fonction-card">
+        <div class="fonction-icon">📊</div>
+        <h3>Gestion des contributions</h3>
+        <div class="fonction-content">
+          <div class="benefit-item">
+            <span class="benefit-title">Répartition équitable</span>
+            <p>Charges réparties selon l'usage réel</p>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-title">Cash collecting</span>
+            <p>Gestion automatisée et transparente</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Besoins spécifiques (4 cartes thématiques) -->
+  <section class="besoins-section">
+    <div class="section-header">
+      <h2 class="section-title">Besoins spécifiques des Sociétés de Moyens</h2>
+      <p class="section-subtitle">
+        Nos services adaptés à votre structure collaborative
+      </p>
+    </div>
+
+    <div class="besoins-grid">
+      <div class="besoin-card">
+        <div class="besoin-icon">📊</div>
+        <h3>Comptabilité & fiscalité</h3>
+        <div class="besoin-list">
+          <p>✅ Suivi précis des dépenses et recettes</p>
+          <p>✅ Déclarations fiscales spécifiques SCM</p>
+          <p>✅ Documents de justification</p>
+        </div>
+      </div>
+
+      <div class="besoin-card">
+        <div class="besoin-icon">🤝</div>
+        <h3>Achats mutualisés</h3>
+        <div class="besoin-list">
+          <p>✅ Centralisation des commandes</p>
+          <p>✅ Négociations fournisseurs</p>
+          <p>✅ Planification des achats</p>
+        </div>
+      </div>
+
+      <div class="besoin-card">
+        <div class="besoin-icon">🧾</div>
+        <h3>Statuts & documents</h3>
+        <div class="besoin-list">
+          <p>✅ Rédaction des statuts optimisés</p>
+          <p>✅ Règles de fonctionnement claires</p>
+          <p>✅ Prévention des conflits</p>
+        </div>
+      </div>
+
+      <div class="besoin-card">
+        <div class="besoin-icon">📈</div>
+        <h3>Indicateurs de performance</h3>
+        <div class="besoin-list">
+          <p>✅ Tableaux de bord personnalisés</p>
+          <p>✅ Suivi des économies réalisées</p>
+          <p>✅ Analyse de rentabilité</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Exemple de mutualisation (carrousel horizontal) -->
+  <section class="mutualisation-section">
+    <div class="section-header">
+      <h2 class="section-title">Exemples de mutualisation</h2>
+      <p class="section-subtitle">
+        💡 Mutualisez vos dépenses pour gagner en efficacité, réduire vos coûts
+        et offrir plus de confort à vos collaborateurs
+      </p>
+    </div>
+
+    <!-- Carrousel horizontal swipeable -->
+    <div class="mutualisation-carousel">
+      <div class="carousel-container" #carouselContainer>
+        <div class="carousel-track" [style.transform]="getCarouselTransform()">
+          <!-- Carte Locaux professionnels -->
+          <div class="mutualisation-card">
+            <div class="mutualisation-icon">🏢</div>
+            <h3>Locaux professionnels</h3>
+            <div class="mutualisation-benefits">
+              <div class="benefit-tag">
+                ✔ Réduction du loyer grâce à la mutualisation
+              </div>
+              <div class="benefit-tag">
+                ✔ Entretien premium sans coût individuel
+              </div>
+              <div class="benefit-tag">
+                ✔ Partage des charges énergie / climatisation
+              </div>
+              <div class="benefit-tag">
+                ✔ Optimisation de l'espace disponible
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte Matériel & Fournitures -->
+          <div class="mutualisation-card">
+            <div class="mutualisation-icon">💻</div>
+            <h3>Matériel & Fournitures</h3>
+            <div class="mutualisation-benefits">
+              <div class="benefit-tag">
+                ✔ Accès à des équipements high-tech sans achat initial
+              </div>
+              <div class="benefit-tag">✔ Mobilier ergonomique mutualisé</div>
+              <div class="benefit-tag">✔ Gestion centralisée des stocks</div>
+              <div class="benefit-tag">
+                ✔ Réduction des frais de maintenance
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte Services partagés -->
+          <div class="mutualisation-card">
+            <div class="mutualisation-icon">🧑‍💼</div>
+            <h3>Services partagés</h3>
+            <div class="mutualisation-benefits">
+              <div class="benefit-tag">✔ Support administratif externalisé</div>
+              <div class="benefit-tag">
+                ✔ Outils digitaux toujours à jour (cloud, logiciels)
+              </div>
+              <div class="benefit-tag">
+                ✔ Réduction du coût de personnel interne
+              </div>
+              <div class="benefit-tag">
+                ✔ Secrétariat personnalisé à la demande
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation carrousel -->
+      <div class="carousel-navigation">
+        <button
+          class="nav-btn prev"
+          (click)="prevMutualisation()"
+          [disabled]="currentMutualisationIndex === 0"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="carousel-indicators">
+          <span
+            class="indicator"
+            *ngFor="let item of mutualisationItems; let i = index"
+            [class.active]="i === currentMutualisationIndex"
+            (click)="goToMutualisation(i)"
+          ></span>
+        </div>
+        <button
+          class="nav-btn next"
+          (click)="nextMutualisation()"
+          [disabled]="
+            currentMutualisationIndex >= mutualisationItems.length - 1
+          "
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mini-calculateur estimateur d'économies -->
+    <div class="economies-calculator">
+      <div class="calculator-header">
+        <h4>💰 Estimez vos économies en mutualisant</h4>
+      </div>
+      <div class="calculator-content">
+        <div class="calculator-input">
+          <label>Charges mensuelles actuelles :</label>
+          <input
+            type="number"
+            [(ngModel)]="chargesActuelles"
+            placeholder="ex: 3000€"
+            (input)="calculateEconomies()"
+          />
+        </div>
+        <div class="calculator-result" *ngIf="economiesEstimees > 0">
+          <div class="result-highlight">
+            <span class="result-amount">{{ economiesEstimees }}€</span>
+            <span class="result-label">d'économies potentielles/mois</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi choisir MFINANCES -->
+  <section class="why-choose-section">
+    <div class="section-header">
+      <div class="why-badge">🎯 Ce qui nous distingue</div>
+      <h2 class="section-title">Pourquoi choisir MFINANCES ?</h2>
+    </div>
+
+    <div class="why-choose-grid">
+      <div class="why-card">
+        <div class="why-icon">💼</div>
+        <h3>Expertise spécifique</h3>
+        <p>
+          Expérience approfondie dans la gestion des structures collaboratives
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🛠️</div>
+        <h3>Solutions personnalisées</h3>
+        <p>Outils et services adaptés aux besoins spécifiques de votre SCM</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🔄</div>
+        <h3>Cash Collecting intégré</h3>
+        <p>Gestion transparente et impartiale des cotisations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Étude de cas : Cabinet médical (carrousel 4 slides) -->
+  <section class="case-study-section">
+    <div class="section-header">
+      <h2 class="section-title">Étude de cas : Cabinet médical</h2>
+      <p class="section-subtitle">
+        Découvrez comment nous avons transformé leur gestion collaborative
+      </p>
+    </div>
+
+    <!-- Carrousel étude de cas -->
+    <div class="case-study-carousel">
+      <div class="case-slides-container">
+        <!-- Slide 1: Situation initiale -->
+        <div class="case-slide" *ngIf="currentCaseSlide === 0">
+          <div class="slide-icon">👩‍⚕️</div>
+          <h3>Situation initiale</h3>
+          <div class="slide-content">
+            <p>Un groupe de médecins partageait un cabinet</p>
+            <p>Besoin d'optimiser leur gestion commune</p>
+            <p>Tensions liées aux contributions inégales</p>
+          </div>
+        </div>
+
+        <!-- Slide 2: Problèmes rencontrés -->
+        <div class="case-slide" *ngIf="currentCaseSlide === 1">
+          <div class="slide-icon">❗</div>
+          <h3>Problèmes rencontrés</h3>
+          <div class="slide-content">
+            <p>• Répartition des charges locatives complexe</p>
+            <p>• Achats individuels coûteux</p>
+            <p>• Manque de transparence financière</p>
+          </div>
+        </div>
+
+        <!-- Slide 3: Solution MFINANCES -->
+        <div class="case-slide" *ngIf="currentCaseSlide === 2">
+          <div class="slide-icon">🛠️</div>
+          <h3>Solution MFINANCES</h3>
+          <div class="slide-content">
+            <p>✅ Comptabilité transparente basée sur l'activité</p>
+            <p>✅ Négociation centralisée (-15% consommables)</p>
+            <p>✅ Système automatisé de cotisations</p>
+          </div>
+        </div>
+
+        <!-- Slide 4: Résultats obtenus -->
+        <div class="case-slide" *ngIf="currentCaseSlide === 3">
+          <div class="slide-icon">🏆</div>
+          <h3>Résultats obtenus</h3>
+          <div class="slide-content">
+            <p>🎯 Réduction significative des charges</p>
+            <p>🤝 Collaboration harmonieuse</p>
+            <p>📊 Transparence totale des finances</p>
+          </div>
+          <!-- Témoignage client -->
+          <div class="testimonial">
+            <p class="testimonial-quote">
+              "MFINANCES a transformé notre gestion. Plus de tensions, des
+              économies réelles !"
+            </p>
+            <span class="testimonial-author"
+              >- Dr. Martin, Cabinet médical</span
+            >
+            <div class="satisfaction-note">⭐⭐⭐⭐⭐ 5/5</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation slides -->
+      <div class="case-navigation">
+        <button
+          class="case-nav-btn prev"
+          (click)="prevCaseSlide()"
+          [disabled]="currentCaseSlide === 0"
+        >
+          ←
+        </button>
+
+        <div class="case-indicators">
+          <span
+            class="case-indicator"
+            *ngFor="let slide of caseSlides; let i = index"
+            [class.active]="i === currentCaseSlide"
+            (click)="goToCaseSlide(i)"
+            >{{ i + 1 }}</span
+          >
+        </div>
+
+        <button
+          class="case-nav-btn next"
+          (click)="nextCaseSlide()"
+          [disabled]="currentCaseSlide === caseSlides.length - 1"
+        >
+          →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Optimisée -->
+  <section class="faq-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        ❓ Questions fréquentes sur les Sociétés de Moyens
+      </h2>
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <span class="faq-icon" *ngIf="faq.priority">🧠</span>
+          <h3>{{ faq.question }}</h3>
+          <span class="faq-toggle" [class.open]="faq.isOpen">
+            {{ faq.isOpen ? "−" : "+" }}
+          </span>
+        </div>
+        <div class="faq-answer" [class.open]="faq.isOpen">
+          <div [innerHTML]="faq.answer"></div>
+        </div>
+      </div>
+
+      <div class="faq-contact">
+        <p>Contactez-nous si vous avez d'autres questions</p>
+        <button class="faq-contact-btn" (click)="scrollToContact()">
+          💬 Poser une question
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact spécifique optimisé -->
+  <section class="contact-section" id="contact">
+    <div class="contact-header">
+      <div class="contact-badge">
+        <span>📞 CONTACT SOCIÉTÉ DE MOYENS</span>
+      </div>
+      <h2 class="contact-title">
+        Prêt à optimiser votre structure collaborative ?
+      </h2>
+      <p class="contact-subtitle">
+        Contactez-nous dès aujourd'hui pour une consultation gratuite !
+      </p>
+    </div>
+
+    <div class="contact-actions">
+      <div class="contact-method" (click)="callNow()">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">
+          <span class="contact-label">Appelez-nous directement</span>
+          <span class="contact-value">+32 2 542 04 32</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="emailNow()">
+        <div class="contact-icon">📧</div>
+        <div class="contact-info">
+          <span class="contact-label">Envoyez-nous un email</span>
+          <span class="contact-value">info&#64;mfinances.be</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="scheduleAppointment()">
+        <div class="contact-icon">📅</div>
+        <div class="contact-info">
+          <span class="contact-label">Réservez un créneau</span>
+          <span class="contact-value">Prendre RDV en ligne</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-cta-societe">
+      <button class="cta-societe-btn" (click)="openSocieteContact()">
+        📆 Prendre un rendez-vous SCM
+      </button>
+      <button class="maps-btn" (click)="openMaps()">
+        📍 Voir sur Google Maps
+      </button>
+    </div>
+  </section>
+
+  <!-- Formulaire d'évaluation avec stepper visuel -->
+  <section class="evaluation-section" id="formulaire-evaluation">
+    <div class="evaluation-header">
+      <div class="evaluation-badge">
+        <span>🧭 ÉVALUATION GRATUITE</span>
+      </div>
+      <h2 class="evaluation-title">Évaluez votre société en 2 minutes</h2>
+      <p class="evaluation-subtitle">
+        Recevez un mini-diagnostic personnalisé, puis un appel gratuit sous 72h
+      </p>
+    </div>
+
+    <div class="evaluation-form">
+      <!-- Stepper visuel amélioré -->
+      <div class="form-stepper">
+        <div class="stepper-container">
+          <div
+            class="stepper-step"
+            *ngFor="let step of formSteps; let i = index"
+            [class.active]="i + 1 === currentFormStep"
+            [class.completed]="i + 1 < currentFormStep"
+          >
+            <div class="step-circle">
+              <span *ngIf="i + 1 < currentFormStep">✅</span>
+              <span *ngIf="i + 1 >= currentFormStep">{{ i + 1 }}</span>
+            </div>
+            <span class="step-label">{{ step.label }}</span>
+          </div>
+        </div>
+        <div class="stepper-progress">
+          <div
+            class="progress-fill"
+            [style.width.%]="(currentFormStep / totalFormSteps) * 100"
+          ></div>
+        </div>
+      </div>
+
+      <form
+        class="form-content"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="societeForm"
+      >
+        <!-- Étape 1: Type de collaboration -->
+        <div class="form-step" *ngIf="currentFormStep === 1">
+          <h3>Quel type de collaboration envisagez-vous ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let type of collaborationTypes"
+              [class.selected]="
+                societeForm.get('typeCollaboration')?.value === type.value
+              "
+            >
+              <input
+                type="radio"
+                name="typeCollaboration"
+                [value]="type.value"
+                formControlName="typeCollaboration"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ type.icon }}</div>
+                <span class="option-label">{{ type.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="
+                    societeForm.get('typeCollaboration')?.value === type.value
+                  "
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 2: Nombre de membres -->
+        <div class="form-step" *ngIf="currentFormStep === 2">
+          <h3>Combien de membres dans votre projet ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let nombre of nombreMembres"
+              [class.selected]="
+                societeForm.get('nombreMembres')?.value === nombre.value
+              "
+            >
+              <input
+                type="radio"
+                name="nombreMembres"
+                [value]="nombre.value"
+                formControlName="nombreMembres"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ nombre.icon }}</div>
+                <span class="option-label">{{ nombre.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="
+                    societeForm.get('nombreMembres')?.value === nombre.value
+                  "
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 3: Besoins spécifiques -->
+        <div class="form-step" *ngIf="currentFormStep === 3">
+          <h3>Quels sont vos besoins actuels ?</h3>
+          <p class="step-subtitle">Plusieurs choix possibles</p>
+          <div class="options-grid">
+            <label
+              class="option-card checkbox-card"
+              *ngFor="let besoin of besoinsOptions"
+              [class.selected]="
+                societeForm.get('besoin_' + besoin.value)?.value
+              "
+            >
+              <input
+                type="checkbox"
+                [formControlName]="'besoin_' + besoin.value"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ besoin.icon }}</div>
+                <span class="option-label">{{ besoin.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="societeForm.get('besoin_' + besoin.value)?.value"
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 4: Coordonnées -->
+        <div class="form-step" *ngIf="currentFormStep === 4">
+          <h3>Vos coordonnées</h3>
+          <p class="step-subtitle">
+            Pour être recontacté(e) par un conseiller et recevoir votre
+            diagnostic :
+          </p>
+          <div class="input-group">
+            <div class="input-field">
+              <label for="nom">Nom *</label>
+              <input
+                id="nom"
+                type="text"
+                formControlName="nom"
+                placeholder="Votre nom complet"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="email">Email *</label>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="votre@email.com"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="telephone">Téléphone *</label>
+              <input
+                id="telephone"
+                type="tel"
+                formControlName="telephone"
+                placeholder="+32 4XX XX XX XX"
+                required
+              />
+            </div>
+          </div>
+          <div class="contact-info">
+            📞 Un conseiller vous appellera sous 72h pour un échange gratuit
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button
+            type="button"
+            class="btn-prev"
+            *ngIf="currentFormStep > 1"
+            (click)="previousFormStep()"
+          >
+            ← Précédent
+          </button>
+          <button
+            type="button"
+            class="btn-next"
+            *ngIf="currentFormStep < totalFormSteps"
+            (click)="nextFormStep()"
+            [disabled]="!isFormStepValid()"
+          >
+            Suivant →
+          </button>
+          <button
+            type="submit"
+            class="btn-submit"
+            *ngIf="currentFormStep === totalFormSteps"
+            [disabled]="!isFormValid()"
+          >
+            📞 Demander mon diagnostic gratuit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Message de succès -->
+    <div class="success-message" *ngIf="formSubmitted">
+      <div class="success-icon">✅</div>
+      <h3>🎉 Merci !</h3>
+      <p>
+        Votre évaluation a été envoyée. Nous vous rappelons sous 72h avec votre
+        diagnostic personnalisé.
+      </p>
+      <button class="btn-reset" (click)="resetForm()">
+        Nouvelle évaluation
+      </button>
+    </div>
+  </section>
+
+  <!-- Bouton sticky flottant -->
+  <div
+    class="sticky-contact"
+    *ngIf="!formSubmitted"
+    (click)="scrollToContact()"
+  >
+    📞 Prendre contact
+  </div>
+</div>

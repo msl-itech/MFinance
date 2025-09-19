@@ -1,8 +1,11 @@
 import { NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DeviceService } from '../../core/device.service';
+import { AlerteTresorerieMobileComponent } from '../../features-mobile/alerte-tresorerie-mobile/alerte-tresorerie-mobile.component';
+import { AnticipeTresorerieMobileComponent } from '../../features-mobile/anticipe-tresorerie-mobile/anticipe-tresorerie-mobile.component';
 import { InvestirTresorerieMobileComponent } from '../../features-mobile/investir-tresorerie-mobile/investir-tresorerie-mobile.component';
 import { StockTresorerieMobileComponent } from '../../features-mobile/stock-tresorerie-mobile/stock-tresorerie-mobile.component';
+import { TresorerieBeneficeMobileComponent } from '../../features-mobile/tresorerie-benefice-mobile/tresorerie-benefice-mobile.component';
 import { TresorerieMobileComponent } from '../../features-mobile/tresorerie-mobile/tresorerie-mobile.component';
 import { StockTresorerieComponent } from '../../venteModule/stock-tresorerie/stock-tresorerie.component';
 import { AccompagnementComponent } from '../accompagnement/accompagnement.component';
@@ -34,8 +37,27 @@ const routes: Routes = [
     ],
     component: TresorerieMobileComponent,
   },
-  { path: 'tresorerie-benefice', component: TresorerieBeneficeComponent },
 
+  {
+    path: 'tresorerie-benefice',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return !deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: TresorerieBeneficeComponent,
+  },
+  {
+    path: 'tresorerie-benefice',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: TresorerieBeneficeMobileComponent,
+  },
   {
     path: 'investir-tresorerie',
     canMatch: [
@@ -77,9 +99,48 @@ const routes: Routes = [
     ],
     component: StockTresorerieMobileComponent,
   },
-  { path: 'alerte-tresorerie', component: AlerteTresorerieComponent },
+  {
+    path: 'alerte-tresorerie',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return !deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: AlerteTresorerieComponent,
+  },
+  {
+    path: 'alerte-tresorerie',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: AlerteTresorerieMobileComponent,
+  },
   { path: 'proteger-sa-tresorerie', component: ProtegerTresorerieComponent },
-  { path: 'anticiper-sa-tresorerie', component: AnticiperTresorerieComponent },
+
+  {
+    path: 'anticiper-sa-tresorerie',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return !deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: AnticiperTresorerieComponent,
+  },
+  {
+    path: 'anticiper-sa-tresorerie',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: AnticipeTresorerieMobileComponent,
+  },
   { path: 'accompagnement', component: AccompagnementComponent },
 ];
 

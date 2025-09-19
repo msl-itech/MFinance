@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import * as AOS from 'aos';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { distinctUntilChanged, filter, map, startWith } from 'rxjs/operators';
 import { DeviceService } from './core/device.service';
 import { MetaService } from './services/meta.service';
@@ -29,7 +29,11 @@ export class AppComponent implements OnInit {
       duration: 1200, // Durée de l'animation en millisecondes
       once: true, // L'animation se déclenche une seule fois
     });
-    this.isLoaded$ = of(true);
+    this.isLoaded$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map(() => true),
+      startWith(false) // Attend la première navigation
+    );
 
     // Utiliser l'observable réactif du DeviceService
     this.shouldUseMobileVersion$ = this.deviceService.shouldUseMobileVersion$;

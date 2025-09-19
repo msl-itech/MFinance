@@ -1,0 +1,276 @@
+// Variables - Charte couleur
+$primary-red: #ff3b30;
+$dark-blue: #1a2c51;
+$light-gray: #f8f9fb;
+$success-green: #28a745;
+$warning-orange: #ffc107;
+$text-muted: #6c757d;
+$border-gray: #e6e9f1;
+$white: #ffffff;
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-medium: rgba(0, 0, 0, 0.15);
+$shadow-heavy: rgba(0, 0, 0, 0.25);
+
+.sidebar-mobile-container {
+  display: grid;
+  gap: 24px;
+  padding: 16px;
+  background: $white;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px $shadow-light;
+  margin: 16px;
+}
+
+// Navigation par secteur d'activité
+.sector-navigation {
+  .sector-header {
+    margin-bottom: 16px;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: $dark-blue;
+      margin: 0 0 4px;
+    }
+
+    .sector-subtitle {
+      font-size: 12px;
+      color: $text-muted;
+      font-weight: 500;
+    }
+  }
+}
+
+.sector-select-container {
+  position: relative;
+  margin-bottom: 16px;
+
+  .sector-select {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    border: 2px solid $border-gray;
+    border-radius: 8px;
+    background: $white;
+    font-size: 14px;
+    color: $dark-blue;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-red;
+      box-shadow: 0 0 0 3px rgba($primary-red, 0.1);
+    }
+
+    option {
+      padding: 8px;
+      color: $dark-blue;
+    }
+  }
+
+  .select-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $text-muted;
+    pointer-events: none;
+    font-size: 12px;
+  }
+}
+
+// Pages populaires
+.popular-pages {
+  .popular-header {
+    margin-bottom: 12px;
+
+    span {
+      font-size: 14px;
+      font-weight: 600;
+      color: $primary-red;
+      background: rgba($primary-red, 0.1);
+      padding: 4px 8px;
+      border-radius: 12px;
+    }
+  }
+
+  .popular-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .popular-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: $light-gray;
+    border: 1px solid $border-gray;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 12px;
+
+    &:hover {
+      background: rgba($primary-red, 0.05);
+      border-color: $primary-red;
+      transform: translateY(-1px);
+    }
+
+    .popular-icon {
+      font-size: 14px;
+    }
+
+    .popular-name {
+      font-weight: 500;
+      color: $dark-blue;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+// Contact rapide
+.quick-contact {
+  .contact-header {
+    margin-bottom: 16px;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: $dark-blue;
+      margin: 0;
+    }
+  }
+}
+
+.contact-methods {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: $light-gray;
+  border: 1px solid $border-gray;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba($primary-red, 0.05);
+    border-color: $primary-red;
+    transform: translateY(-1px);
+  }
+
+  &.maps-btn {
+    background: none;
+    border: none;
+    text-align: left;
+    width: 100%;
+  }
+
+  .contact-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba($primary-red, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-red;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+
+    .contact-label {
+      font-size: 11px;
+      color: $text-muted;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-value {
+      font-size: 13px;
+      color: $dark-blue;
+      font-weight: 600;
+    }
+  }
+}
+
+// CTA principal
+.cta-container {
+  .cta-primary {
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, $primary-red, darken($primary-red, 10%));
+    color: $white;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba($primary-red, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba($primary-red, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 480px) {
+  .sidebar-mobile-container {
+    margin: 8px;
+    padding: 12px;
+  }
+
+  .popular-items {
+    grid-template-columns: 1fr;
+  }
+
+  .popular-item {
+    justify-content: center;
+  }
+
+  .contact-method {
+    padding: 10px;
+
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      font-size: 12px;
+    }
+
+    .contact-info {
+      .contact-label {
+        font-size: 10px;
+      }
+
+      .contact-value {
+        font-size: 12px;
+      }
+    }
+  }
+}

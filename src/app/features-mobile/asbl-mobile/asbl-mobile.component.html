@@ -1,0 +1,501 @@
+<div class="asbl-mobile-container">
+  <!-- Header Fixe Mobile -->
+
+  <!-- Section Hero Optimisée avec image -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <img
+        src="assets/img/webp/57.avif"
+        alt="ASBL Background"
+        class="hero-bg-image"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <nav class="breadcrumb-mobile">
+        <span>Accueill > ASBL</span>
+      </nav>
+
+      <h1 class="hero-title">ASBL</h1>
+
+      <p class="hero-subtitle">
+        Accompagnement pour les ASBL : Donnez vie à votre mission sociale
+      </p>
+
+      <!-- Bouton d'accès rapide mobile -->
+      <div class="quick-access">
+        <button class="quick-access-btn" (click)="scrollToSection('services')">
+          ⚡ Accéder directement à l'info
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Mobile Navigation -->
+  <app-sidebar-mobile></app-sidebar-mobile>
+
+  <!-- Section Introduction Simplifiée -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <h2 class="intro-title">Tout savoir sur l'ASBL</h2>
+
+      <!-- Texte mobile simplifié -->
+      <div class="intro-text">
+        <p>
+          <strong>Enjeux administratifs</strong> complexes pour votre ASBL ?
+          Chez MFINANCES, nous offrons un
+          <strong>accompagnement sur mesure</strong> pour une
+          <strong>gestion simplifiée</strong> de votre association.
+        </p>
+
+        <div class="intro-expand" *ngIf="!showFullIntro">
+          <button class="expand-btn" (click)="toggleIntro()">
+            + En savoir plus
+          </button>
+        </div>
+
+        <div class="intro-expanded" *ngIf="showFullIntro">
+          <p>
+            Les ASBL belges portent des projets sociaux, culturels, éducatifs ou
+            environnementaux essentiels. Mais leur gestion implique des défis
+            administratifs, financiers et organisationnels que nous maîtrisons
+            parfaitement.
+          </p>
+          <button class="expand-btn" (click)="toggleIntro()">- Réduire</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA bouton rouge stratégique -->
+    <div class="section-cta">
+      <button class="cta-primary" (click)="scrollToContact()">
+        📞 Prendre un rendez-vous gratuit
+      </button>
+      <p class="cta-subtitle">Consultation sous 72h - Gratuit</p>
+    </div>
+  </section>
+
+  <!-- Section Défis avec emojis et ordre amélioré -->
+  <section class="defis-section">
+    <div class="section-header">
+      <h2 class="section-title">Les défis majeurs de votre ASBL</h2>
+    </div>
+
+    <div class="defis-grid">
+      <div class="defi-item">
+        <div class="defi-emoji">📑</div>
+        <div class="defi-content">
+          <h3 class="defi-title">Respect des obligations légales</h3>
+          <p class="defi-description">
+            Assemblées générales, rapports annuels, dépôt des comptes : la
+            gestion administrative chronophage.
+          </p>
+        </div>
+      </div>
+
+      <div class="defi-item">
+        <div class="defi-emoji">💰</div>
+        <div class="defi-content">
+          <h3 class="defi-title">Subsides : gestion rigoureuse</h3>
+          <p class="defi-description">
+            Justification précise des coûts et respect des critères stricts
+            imposés par les financeurs.
+          </p>
+        </div>
+      </div>
+
+      <div class="defi-item">
+        <div class="defi-emoji">👥</div>
+        <div class="defi-content">
+          <h3 class="defi-title">Gestion des bénévoles & ressources</h3>
+          <p class="defi-description">
+            Encadrement, répartition des frais entre projets et sécurisation de
+            la trésorerie.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services Simplifiée -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <h2 class="section-title">Nos services pour les ASBL</h2>
+      <p class="section-subtitle">Solutions comptables spécialisées</p>
+    </div>
+
+    <!-- Menu sommaire cliquable -->
+    <div class="services-menu">
+      <div class="menu-items">
+        <button
+          class="menu-item"
+          (click)="scrollToSection('creation')"
+          [class.active]="activeService === 'creation'"
+        >
+          🎯 Création d'ASBL
+        </button>
+        <button
+          class="menu-item"
+          (click)="scrollToSection('direction')"
+          [class.active]="activeService === 'direction'"
+        >
+          💼 Direction financière
+        </button>
+        <button
+          class="menu-item"
+          (click)="scrollToSection('fiscalite')"
+          [class.active]="activeService === 'fiscalite'"
+        >
+          📊 Fiscalité & TVA
+        </button>
+        <button
+          class="menu-item"
+          (click)="scrollToSection('subsides')"
+          [class.active]="activeService === 'subsides'"
+        >
+          💡 Recherche de subsides
+        </button>
+      </div>
+    </div>
+
+    <!-- Services principaux -->
+    <div class="services-content">
+      <!-- Service 1: Création -->
+      <div class="service-card" id="creation">
+        <h3>Création d'ASBL</h3>
+        <div class="service-points">
+          <div class="point-item">✅ Rédaction et dépôt des statuts</div>
+          <div class="point-item">✅ Assistance pour l'enregistrement</div>
+          <div class="point-item">✅ Suivi des obligations légales</div>
+        </div>
+        <button class="service-btn" (click)="openServiceContact('creation')">
+          Je suis intéressé
+        </button>
+      </div>
+
+      <!-- Service 2: Direction financière -->
+      <div class="service-card" id="direction">
+        <h3>Direction financière</h3>
+        <div class="service-points">
+          <div class="point-item">📊 Analyse financière approfondie</div>
+          <div class="point-item">📈 Budgets annuels et trésorerie</div>
+          <div class="point-item">🎯 Optimisation des ressources</div>
+        </div>
+        <div class="service-price">Tarif : 135 € HTVA/heure</div>
+        <button class="service-btn" (click)="openServiceContact('direction')">
+          Je suis intéressé
+        </button>
+      </div>
+
+      <!-- Service 3: Fiscalité -->
+      <div class="service-card" id="fiscalite">
+        <h3>Fiscalité & TVA</h3>
+        <div class="service-points">
+          <div class="point-item">📋 Comptabilité générale et analytique</div>
+          <div class="point-item">💼 Déclarations fiscales et TVA</div>
+          <div class="point-item">📄 Comptes annuels</div>
+        </div>
+        <button class="service-btn" (click)="openServiceContact('fiscalite')">
+          Je suis intéressé
+        </button>
+      </div>
+
+      <!-- Service 4: Subsides -->
+      <div class="service-card" id="subsides">
+        <h3>Recherche de subsides</h3>
+        <div class="service-points">
+          <div class="point-item">📝 Plans financiers détaillés</div>
+          <div class="point-item">🔍 Suivi des coûts par projet</div>
+          <div class="point-item">📊 Budget global consolidé</div>
+        </div>
+        <button class="service-btn" (click)="openServiceContact('subsides')">
+          Je suis intéressé
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi nous choisir -->
+  <section class="why-choose-section">
+    <div class="section-header">
+      <h2 class="section-title">Pourquoi collaborer avec nous ?</h2>
+      <p class="section-subtitle">
+        En choisissant MFINANCES, vous bénéficiez de :
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">✅</div>
+        <h3>Conformité légale garantie</h3>
+        <p>
+          Respect des réglementations belges pour éviter les erreurs coûteuses
+        </p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <h3>Gain de temps</h3>
+        <p>Vous vous concentrez sur vos actions, nous gérons l'administratif</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">💎</div>
+        <h3>Optimisation des ressources</h3>
+        <p>Chaque euro collecté est utilisé au mieux pour maximiser l'impact</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h3>Service personnalisé</h3>
+        <p>Adapté à la taille et aux ambitions de votre ASBL</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Optimisée -->
+  <section class="faq-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        ❓ Questions fréquentes sur les ASBL en Belgique
+      </h2>
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <h3>{{ faq.question }}</h3>
+          <span class="faq-toggle" [class.open]="faq.isOpen">
+            {{ faq.isOpen ? "−" : "+" }}
+          </span>
+        </div>
+        <div class="faq-answer" [class.open]="faq.isOpen">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+
+      <div class="faq-contact">
+        <p>Contactez-nous si vous avez d'autres questions</p>
+        <button class="faq-contact-btn" (click)="scrollToContact()">
+          💬 Poser une question
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact ASBL spécifique optimisé -->
+  <section class="contact-section" id="contact">
+    <div class="contact-header">
+      <div class="contact-badge">
+        <span>📞 CONTACT ASBL</span>
+      </div>
+      <h2 class="contact-title">Prêt à optimiser la gestion de votre ASBL ?</h2>
+      <p class="contact-subtitle">
+        Contactez-nous dès aujourd'hui pour une consultation gratuite !
+      </p>
+    </div>
+
+    <div class="contact-actions">
+      <div class="contact-method" (click)="callNow()">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">
+          <span class="contact-label">Appelez-nous directement</span>
+          <span class="contact-value">+32 2 542 04 32</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="emailNow()">
+        <div class="contact-icon">📧</div>
+        <div class="contact-info">
+          <span class="contact-label">Envoyez-nous un email</span>
+          <span class="contact-value">info&#64;mfinances.be</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="scheduleAppointment()">
+        <div class="contact-icon">📅</div>
+        <div class="contact-info">
+          <span class="contact-label">Réservez un créneau</span>
+          <span class="contact-value">Prendre RDV en ligne</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-cta-asbl">
+      <button class="cta-asbl-btn" (click)="openAsblContact()">
+        📆 Prendre un rendez-vous ASBL
+      </button>
+      <button class="maps-btn" (click)="openMaps()">
+        📍 Voir sur Google Maps
+      </button>
+    </div>
+  </section>
+
+  <!-- Formulaire d'évaluation optimisé -->
+  <section class="evaluation-section" id="formulaire-evaluation">
+    <div class="evaluation-header">
+      <div class="evaluation-badge">
+        <span>🧭 ÉVALUATION GRATUITE</span>
+      </div>
+      <h2 class="evaluation-title">Évaluez votre ASBL en 2 minutes</h2>
+      <p class="evaluation-subtitle">
+        Recevez un mini-diagnostic personnalisé, puis un appel gratuit sous 72h
+      </p>
+    </div>
+
+    <div class="evaluation-form">
+      <!-- Indicateur d'étape fixe -->
+      <div class="form-progress">
+        <div class="progress-bar">
+          <div
+            class="progress-fill"
+            [style.width.%]="(currentStep / totalSteps) * 100"
+          ></div>
+        </div>
+        <span class="progress-text"
+          >{{ currentStep }}/{{ totalSteps }} -
+          {{ getCurrentStepTitle() }}</span
+        >
+      </div>
+
+      <form
+        class="form-content"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="evaluationForm"
+      >
+        <!-- Étape 1: Type d'ASBL -->
+        <div class="form-step" *ngIf="currentStep === 1">
+          <h3>Quel est le domaine principal de votre ASBL ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let type of asblTypes"
+              [class.selected]="
+                evaluationForm.get('typeAsbl')?.value === type.value
+              "
+            >
+              <input
+                type="radio"
+                name="typeAsbl"
+                [value]="type.value"
+                formControlName="typeAsbl"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ type.icon }}</div>
+                <span class="option-label">{{ type.label }}</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 2: Budget -->
+        <div class="form-step" *ngIf="currentStep === 2">
+          <h3>Quel est le budget annuel moyen de votre ASBL ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let budget of budgetRanges"
+              [class.selected]="
+                evaluationForm.get('budget')?.value === budget.value
+              "
+            >
+              <input
+                type="radio"
+                name="budget"
+                [value]="budget.value"
+                formControlName="budget"
+              />
+              <div class="option-content">
+                <div class="option-icon">💰</div>
+                <span class="option-label">{{ budget.label }}</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div class="form-step" *ngIf="currentStep === 3">
+          <h3>Vos coordonnées</h3>
+          <p class="step-subtitle">
+            Pour être recontacté(e) par un conseiller et recevoir votre
+            diagnostic :
+          </p>
+          <div class="input-group">
+            <div class="input-field">
+              <label>Nom *</label>
+              <input
+                type="text"
+                formControlName="nom"
+                placeholder="Votre nom"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label>Email *</label>
+              <input
+                type="email"
+                formControlName="email"
+                placeholder="votre@email.com"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label>Téléphone *</label>
+              <input
+                type="tel"
+                formControlName="telephone"
+                placeholder="+32 4XX XX XX XX"
+                required
+              />
+            </div>
+          </div>
+          <div class="contact-info">
+            📞 Un conseiller vous appellera sous 72h pour un échange gratuit
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button
+            type="button"
+            class="btn-prev"
+            *ngIf="currentStep > 1"
+            (click)="previousStep()"
+          >
+            ← Précédent
+          </button>
+          <button
+            type="button"
+            class="btn-next"
+            *ngIf="currentStep < totalSteps"
+            (click)="nextStep()"
+            [disabled]="!isStepValid()"
+          >
+            Suivant →
+          </button>
+          <button
+            type="submit"
+            class="btn-submit"
+            *ngIf="currentStep === totalSteps"
+            [disabled]="!isFormValid()"
+          >
+            📞 Demander mon diagnostic gratuit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Message de succès -->
+    <div class="success-message" *ngIf="formSubmitted">
+      <div class="success-icon">✅</div>
+      <h3>🎉 Merci !</h3>
+      <p>
+        Votre évaluation a été envoyée. Nous vous rappelons sous 72h avec votre
+        diagnostic personnalisé.
+      </p>
+      <button class="btn-reset" (click)="resetForm()">
+        Nouvelle évaluation
+      </button>
+    </div>
+  </section>
+</div>
