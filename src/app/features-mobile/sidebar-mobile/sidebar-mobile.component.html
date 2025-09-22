@@ -23,7 +23,7 @@
     </div>
 
     <!-- Pages populaires -->
-    <div class="popular-pages" *ngIf="!selectedSector">
+    <!-- <div class="popular-pages" *ngIf="!selectedSector">
       <div class="popular-header">
         <span>🔥 Populaires</span>
       </div>
@@ -37,11 +37,11 @@
           <span class="popular-name">{{ popular.name }}</span>
         </button>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <!-- Contact rapide -->
-  <!-- <div class="quick-contact">
+  <div class="quick-contact">
     <div class="contact-header">
       <h3>📞 Contact rapide</h3>
     </div>
@@ -53,7 +53,7 @@
         </div>
         <div class="contact-info">
           <span class="contact-label">Appeler</span>
-          <span class="contact-value">+32 2 883 86 86</span>
+          <span class="contact-value">+32 2 883 05 50 </span>
         </div>
       </a>
 
@@ -66,22 +66,15 @@
           <span class="contact-value">info&#64;mfinances.be</span>
         </div>
       </a>
-
-      <button class="contact-method maps-btn" (click)="openMaps()">
-        <div class="contact-icon">
-          <i class="fas fa-map-marker-alt"></i>
-        </div>
-        <div class="contact-info">
-          <span class="contact-label">Adresse</span>
-          <span class="contact-value">1180 Uccle</span>
-        </div>
-      </button>
     </div>
 
     <div class="cta-container">
       <button class="cta-primary" (click)="openContact()">
         🔴 Consultation gratuite
       </button>
+      <button class="cta-secondary" (click)="openGoogleReview()">
+        ⭐ Avis Google
+      </button>
     </div>
-  </div> -->
+  </div>
 </div>

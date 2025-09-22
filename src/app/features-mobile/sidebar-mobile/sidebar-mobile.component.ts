@@ -27,14 +27,30 @@ export class SidebarMobileComponent implements OnInit {
   // Catégories de secteurs d'activité
   categories: Category[] = [
     { name: 'Indépendant', route: '/profil-independant', icon: '👤' },
-    { name: 'Société Management Patrimoniale', route: '/societe-management-patrimoniale', icon: '🏛️' },
+    {
+      name: 'Société Management Patrimoniale',
+      route: '/societe-management-patrimoniale',
+      icon: '🏛️',
+    },
     { name: 'Société Moyen', route: '/societe-moyen', icon: '🏢' },
-    { name: 'Société d\'Exploitation', route: '/societe-exploitation', icon: '🏭' },
+    {
+      name: "Société d'Exploitation",
+      route: '/societe-exploitation',
+      icon: '🏭',
+    },
     { name: 'Commerçant HORECA', route: '/commercant-horeca', icon: '🍽️' },
-    { name: 'Professionnel de Santé', route: '/professionel-sante', icon: '⚕️' },
+    {
+      name: 'Professionnel de Santé',
+      route: '/professionel-sante',
+      icon: '⚕️',
+    },
     { name: 'Grande Entreprise', route: '/grande-entreprise', icon: '🏗️' },
-    { name: 'Promoteur Immobilier', route: '/promoteur-immobilier', icon: '🏠' },
-    { name: 'ASBL', route: '/asbl', icon: '🤝' }
+    {
+      name: 'Promoteur Immobilier',
+      route: '/promoteur-immobilier',
+      icon: '🏠',
+    },
+    { name: 'ASBL', route: '/asbl', icon: '🤝' },
   ];
 
   // Pages populaires
@@ -42,7 +58,7 @@ export class SidebarMobileComponent implements OnInit {
     { name: 'ASBL', route: '/asbl', icon: '🤝' },
     { name: 'Indépendant', route: '/profil-independant', icon: '👤' },
     { name: 'HORECA', route: '/commercant-horeca', icon: '🍽️' },
-    { name: 'Tarifs', route: '/tarif', icon: '💰' }
+    { name: 'Tarifs', route: '/tarif', icon: '💰' },
   ];
 
   constructor(private router: Router) {}
@@ -68,6 +84,16 @@ export class SidebarMobileComponent implements OnInit {
   }
 
   openMaps(): void {
-    window.open('https://maps.google.com/?q=20+Rue+de+la+Magnanerie,+1180+Uccle', '_blank');
+    window.open(
+      'https://maps.google.com/?q=20+Rue+de+la+Magnanerie,+1180+Uccle',
+      '_blank'
+    );
+  }
+
+  openGoogleReview(): void {
+    window.open(
+      'https://www.google.com/search?q=mfinances&oq=mfinances&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQLhivARjHARiABDIJCAIQABgKGIAEMg8IAxAAGAoYgwEYsQMYgAQyCQgEEAAYChiABDIHCAUQABiABDIGCAYQRRg9MgYIBxBFGD3SAQg0NDAyajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=',
+      '_blank'
+    );
   }
 }

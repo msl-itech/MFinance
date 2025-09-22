@@ -9,6 +9,7 @@ import { DeviceService } from '../core/device.service';
 })
 export class SupportComponent implements OnInit {
   shouldUseMobileVersion: boolean;
+  showFloatingPopup: boolean = false;
 
   constructor(
     private titleService: Title, 
@@ -51,5 +52,25 @@ export class SupportComponent implements OnInit {
       content: 'https://www.mfinances.be/support',
     });
     this.metaService.updateTag({ property: 'og:type', content: 'website' });
+    
+    // Afficher le popup flottant après un délai si pas déjà fermé
+    const popupClosed = localStorage.getItem('support-popup-closed');
+    if (!popupClosed) {
+      setTimeout(() => {
+        this.showFloatingPopup = true;
+      }, 3000); // Apparaît après 3 secondes
+    }
+  }
+
+  closeFloatingPopup(): void {
+    this.showFloatingPopup = false;
+    // Optionnel: Sauvegarder dans localStorage que l'utilisateur a fermé le popup
+    localStorage.setItem('support-popup-closed', 'true');
+  }
+
+  trackDownload(platform: string): void {
+    console.log(`Téléchargement initié pour ${platform}`);
+    // Optionnel: Analytics ou tracking
+    this.closeFloatingPopup();
   }
 }

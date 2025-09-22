@@ -366,10 +366,18 @@ import { filter, takeUntil } from 'rxjs/operators';
           <i class="fas fa-home"></i>
           <span>Accueil</span>
         </a>
-        <button class="bottom-nav-item" (click)="openQuickServices()">
+        <!-- <button class="bottom-nav-item" (click)="openQuickServices()">
           <i class="fas fa-th-large"></i>
           <span>Menu</span>
-        </button>
+        </button> -->
+        <a
+          routerLink="/about"
+          class="bottom-nav-item"
+          routerLinkActive="active"
+        >
+          <i class="fas fa-info-circle"></i>
+          <span>À propos</span>
+        </a>
         <!-- Bouton central avec action rapide -->
         <button class="bottom-nav-item bottom-nav-cta" (click)="quickAction()">
           <i class="fas fa-phone"></i>

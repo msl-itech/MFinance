@@ -29,4 +29,11 @@ export class SidebarComponent {
   showAllCategories() {
     this.maxVisibleCategories = this.categories.length;
   }
+
+  openGoogleReview(): void {
+    window.open(
+      'https://www.google.com/search?q=mfinances&oq=mfinances&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQLhivARjHARiABDIJCAIQABgKGIAEMg8IAxAAGAoYgwEYsQMYgAQyCQgEEAAYChiABDIHCAUQABiABDIGCAYQRRg9MgYIBxBFGD3SAQg0NDAyajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=',
+      '_blank'
+    );
+  }
 }

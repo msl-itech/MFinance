@@ -215,10 +215,18 @@ $shadow-heavy: rgba(0, 0, 0, 0.25);
 
 // CTA principal
 .cta-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
   .cta-primary {
     width: 100%;
     padding: 14px 20px;
-    background: linear-gradient(135deg, $primary-red, darken($primary-red, 10%));
+    background: linear-gradient(
+      135deg,
+      $primary-red,
+      darken($primary-red, 10%)
+    );
     color: $white;
     border: none;
     border-radius: 25px;
@@ -231,6 +239,33 @@ $shadow-heavy: rgba(0, 0, 0, 0.25);
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba($primary-red, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  .cta-secondary {
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(
+      135deg,
+      $warning-orange,
+      darken($warning-orange, 10%)
+    );
+    color: $white;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba($warning-orange, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba($warning-orange, 0.4);
     }
 
     &:active {
