@@ -61,7 +61,11 @@
   opacity: 0.85;
   margin: 12px 0 0 0;
   line-height: 1.5;
-  color: #6c757d;
+  color: white;
+  display: inline-block;        
+  padding: 8px 20px;            
+  border: 2px solid red;        
+  border-radius: 50px;
 }
 
 .card-content {
@@ -75,7 +79,7 @@
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #25335b, #3a4a7b);
+  background: #f34947;
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -142,4 +146,5 @@
   line-height: 1.4;
   margin-left: 5%;
   color: #6c757d;
+  margin-left: 20%;
 }
