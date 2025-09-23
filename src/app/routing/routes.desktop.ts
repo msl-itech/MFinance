@@ -15,8 +15,10 @@ import { ProfilSocieteManagementPatrimonialeComponent } from '../profil-societe-
 import { ProfilSocieteMoyenComponent } from '../profil-societe-moyen/profil-societe-moyen.component';
 import { SupportComponent } from '../support/support.component';
 import { TarifComponent } from '../tarif/tarif.component';
+import { CalculatriceComponent } from '../calculatrice/calculatrice.component';
 
 export const DESKTOP_ROUTES: Routes = [
+  { path: 'calculatrice', component: CalculatriceComponent },
   {
     path: '',
     component: DesktopLayoutComponent,

@@ -1,0 +1,38 @@
+<div class="calculatrice-page">
+  <div class="container">
+    <div class="calculatrice-card">
+
+      <!-- Header avec titre et sous-titre -->
+      <div class="card-header">
+        <div class="brand">
+          <h2>En 2 minutes, découvrez si votre activité est vraiment rentable</h2>
+          <p class="subtitle">
+            Un outil simple, gratuit et confidentiel, conçu pour tous les indépendants, dirigeants et professions libérales.
+          </p>
+        </div>
+      </div>
+
+      <div class="card-content">
+        <h3 class="main-title">Estimez votre valeur</h3>
+        <p class="description">Sélectionnez une option pour lancer le calcul</p>
+
+        <select [(ngModel)]="selectedOption">
+            <option value="">Lancer le calcul</option>
+            <option *ngFor="let opt of options" [value]="opt.label">{{ opt.label }}</option>
+        </select>
+        </div>
+
+        <div class="card-footer">
+        <button class="start-btn" (click)="redirectToForm()">Commencer le test maintenant</button>
+        <div class="separator"></div>
+        <p class="confidential"><strong>
+                 Vos réponses sont totalement confidentielles. Vous seul(e) aurez accès à votre résultat.
+        
+        </strong>
+           </p>
+    </div>
+
+
+    </div>
+  </div>
+</div>

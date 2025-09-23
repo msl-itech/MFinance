@@ -62,6 +62,8 @@ import { TimelineIndependantComponent } from './timeline-independant/timeline-in
 import { TimelinePatrimonialeComponent } from './timeline-patrimoniale/timeline-patrimoniale.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
+import { CalculatriceComponent } from './calculatrice/calculatrice.component';
+
 
 @NgModule({
   declarations: [
@@ -94,6 +96,7 @@ import { EconomieAnalysieComponent } from './venteModule/economie-analysie/econo
     PromoBannerComponent,
     NotFoundComponent,
     SupportComponent,
+    CalculatriceComponent,
   ],
   imports: [
     BrowserModule,

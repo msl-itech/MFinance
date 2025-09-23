@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DeviceService } from './core/device.service';
 import { DESKTOP_ROUTES } from './routing/routes.desktop';
 import { MOBILE_ROUTES } from './routing/routes.mobile';
+import { CalculatriceComponent } from './calculatrice/calculatrice.component';
 
 // Fonction pour obtenir les routes appropriées selon l'appareil
 function getRoutes(): Routes {
@@ -13,6 +14,7 @@ function getRoutes(): Routes {
 }
 
 const routes: Routes = [
+  { path: 'calculatrice', component: CalculatriceComponent },
   {
     path: '',
     canMatch: [
