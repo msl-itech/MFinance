@@ -2,18 +2,19 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
+import { ZoneContactMobileComponent } from '../../zone-contact-mobile/zone-contact-mobile.component';
 
 @Component({
   selector: 'app-tresorerie-mobile',
   standalone: true,
-  imports: [CommonModule, ShardeModuleModule],
+  imports: [CommonModule, ShardeModuleModule, ZoneContactMobileComponent],
   templateUrl: './tresorerie-mobile.component.html',
   styleUrls: ['./tresorerie-mobile.component.scss'],
 })
 export class TresorerieMobileComponent implements OnInit {
   // Variables pour la modal de contact
   showContactModal = false;
-  
+
   // Variable pour la sélection de situation
   selectedSituation: string | null = null;
 
@@ -21,42 +22,42 @@ export class TresorerieMobileComponent implements OnInit {
   articles = [
     {
       title: 'Pourquoi votre trésorerie est plus importante que vos bénéfices',
-      readingTime: 5
+      readingTime: 5,
     },
     {
       title: 'Investir sans risque',
-      readingTime: 7
+      readingTime: 7,
     },
     {
       title: 'Optimiser la gestion des stocks',
-      readingTime: 6
+      readingTime: 6,
     },
     {
       title: 'SOS Trésorerie : Garder le cap',
-      readingTime: 8
+      readingTime: 8,
     },
     {
       title: 'Fidélisation et différenciation',
-      readingTime: 6
+      readingTime: 6,
     },
     {
-      title: 'L\'anticipation, votre meilleure arme',
-      readingTime: 4
+      title: "L'anticipation, votre meilleure arme",
+      readingTime: 4,
     },
     {
       title: 'Gagnez en sécurité financière',
-      readingTime: 5
-    }
+      readingTime: 5,
+    },
   ];
 
   // Options de situation pour le formulaire
   situationOptions = [
-    'Particulier – Déclaration d\'impôt',
+    "Particulier – Déclaration d'impôt",
     'Devenir indépendant',
     'Indépendant en personne physique',
     'Création de société',
     'Société active',
-    'Autre'
+    'Autre',
   ];
 
   constructor(private router: Router) {}

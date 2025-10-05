@@ -3,7 +3,7 @@ export const environment = {
   odooApiUrl: 'https://api-connect-odoo.vercel.app/api',
   odooDb: 'nom_de_votre_base_de_donnees',
   xSignature:
-    '63d0e366058e1eb8407eda60d76264dc1463f135b532ce99969448ba2616588d',
+    '196b63f5e878f2df528b484da7e6db0a923a8ab497d53b5977166af3b0e6068f',
   xClientId: 'client_mfinances',
   xCompanyId: '3',
 };

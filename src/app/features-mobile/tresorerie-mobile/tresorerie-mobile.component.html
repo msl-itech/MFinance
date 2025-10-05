@@ -5,9 +5,12 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <h1 class="hero-title">Trésorerie : Transformez votre stress en succès</h1>
+      <h1 class="hero-title">
+        Trésorerie : Transformez votre stress en succès
+      </h1>
       <p class="hero-subtitle">
-        Une trésorerie bien gérée sécurise vos opérations, réduit le stress et prépare votre croissance.
+        Une trésorerie bien gérée sécurise vos opérations, réduit le stress et
+        prépare votre croissance.
       </p>
 
       <button class="cta-primary" (click)="openContactModal()">
@@ -27,20 +30,20 @@
       <p class="vision-text">
         La trésorerie prime sur les bénéfices pour assurer la continuité.
       </p>
-      
+
       <div class="vision-subtitle">Une visibilité claire =</div>
-      
+
       <div class="benefits-list">
         <div class="benefit-item">
           <i class="fas fa-shield-alt benefit-icon"></i>
           <span class="benefit-text">Sécuriser vos opérations</span>
         </div>
-        
+
         <div class="benefit-item">
           <i class="fas fa-chart-line benefit-icon"></i>
           <span class="benefit-text">Saisir les opportunités</span>
         </div>
-        
+
         <div class="benefit-item">
           <i class="fas fa-bullseye benefit-icon"></i>
           <span class="benefit-text">Décider stratégiquement</span>
@@ -61,12 +64,12 @@
           <i class="fas fa-table feature-icon"></i>
           <span class="feature-text">Tableau prévisionnel personnalisé</span>
         </div>
-        
+
         <div class="feature-item">
           <i class="fas fa-calendar-check feature-icon"></i>
           <span class="feature-text">Contrôle budgétaire trimestriel</span>
         </div>
-        
+
         <div class="feature-item">
           <i class="fas fa-handshake feature-icon"></i>
           <span class="feature-text">Accompagnement stratégique continu</span>
@@ -88,7 +91,9 @@
 
     <div class="articles-list">
       <div class="article-item" *ngFor="let article of articles; index as i">
-        <div class="article-number">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="article-number">
+          {{ (i + 1).toString().padStart(2, "0") }}
+        </div>
         <div class="article-content">
           <h3 class="article-title">{{ article.title }}</h3>
           <div class="article-meta">
@@ -111,52 +116,15 @@
 
     <div class="importance-content">
       <p class="importance-text">
-        Une entreprise rentable peut tomber si les liquidités manquent. La trésorerie est un outil stratégique : investir, résister aux crises, rester stable.
+        Une entreprise rentable peut tomber si les liquidités manquent. La
+        trésorerie est un outil stratégique : investir, résister aux crises,
+        rester stable.
       </p>
 
       <button class="cta-primary" (click)="openContactModal()">
         <i class="fas fa-circle cta-icon"></i>
         <span class="cta-text">Diagnostic gratuit</span>
       </button>
-    </div>
-  </section>
-
-  <!-- Section 5 - Formulaire rapide -->
-  <section class="form-section" id="form">
-    <div class="section-header">
-      <h2 class="section-title">Prêt à optimiser vos finances ?</h2>
-      <p class="section-subtitle">
-        En 2 minutes, décrivez votre situation → rappel sous 72 h, gratuit et confidentiel.
-      </p>
-    </div>
-
-    <div class="form-content">
-      <div class="form-step">
-        <div class="step-header">
-          <span class="step-number">Étape 1 sur 4</span>
-          <h3 class="step-title">Quelle est votre situation actuelle ?</h3>
-        </div>
-
-        <div class="options-grid">
-          <button 
-            class="option-button" 
-            *ngFor="let option of situationOptions"
-            [class.selected]="selectedSituation === option"
-            (click)="selectSituation(option)"
-          >
-            {{ option }}
-          </button>
-        </div>
-
-        <button 
-          class="next-button" 
-          [disabled]="!selectedSituation"
-          (click)="goToContact()"
-        >
-          Continuer
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
     </div>
   </section>
 </div>
@@ -186,4 +154,4 @@
   </div>
 </div>
 
-<app-zone-contact></app-zone-contact>
+<app-zone-contact-mobile></app-zone-contact-mobile>

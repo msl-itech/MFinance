@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProfilTypeMobileComponent } from '../profil-type-mobile/profil-type-mobile.component';
+import { ZoneContactMobileComponent } from "../../zone-contact-mobile/zone-contact-mobile.component";
 
 interface FormData {
   profil: string;
@@ -19,7 +20,7 @@ interface FormData {
 @Component({
   selector: 'app-accueil-mobile',
   standalone: true,
-  imports: [CommonModule, FormsModule, ProfilTypeMobileComponent],
+  imports: [CommonModule, FormsModule, ProfilTypeMobileComponent, ZoneContactMobileComponent],
   templateUrl: './accueil-mobile.component.html',
   styleUrls: ['./accueil-mobile.component.scss'],
 })

@@ -9,13 +9,49 @@ import { CreationEntrepriseComponent } from './creation-entreprise/creation-entr
 import { DeclarationImpotComponent } from './declaration-impot/declaration-impot.component';
 import { FiscaliteComponent } from './fiscalite/fiscalite.component';
 import { PageServiceComponent } from './page-service/page-service.component';
+import { ComptabiliteMobileComponent } from '../features-mobile/comptabilite-mobile/comptabilite-mobile.component';
+import { ServiceMobileComponent } from '../features-mobile/service-mobile/service-mobile.component';
 const routes: Routes = [
-  {
+     {
     path: '',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return !deviceService.shouldUseMobileVersion();
+      },
+    ],
     component: PageServiceComponent,
   },
-  { path: 'comptabilite', component: ComptabiliteComponent },
-  
+  {
+    path: '',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: ServiceMobileComponent,
+  },
+    {
+    path: 'comptabilite',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return !deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: ComptabiliteComponent,
+  },
+  {
+    path: 'comptabilite',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: ComptabiliteMobileComponent,
+  },
   {
     path: 'creation-entreprise',
     canMatch: [

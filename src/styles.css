@@ -86,7 +86,7 @@
 }
 
 .bg-custom--primary {
-  background-color: #25335b;
+  background-color: #1a2c51;
 }
 
 button.cta-button {
@@ -170,11 +170,11 @@ button.cta-button {
 }
 
 .card-header.bg-custom--primary {
-  background-color: #25335b !important;
+  background-color: #1a2c51 !important;
 }
 
 .text-primary {
-  color: #25335b !important;
+  color: #1a2c51 !important;
 }
 
 /* Animation pour les cartes d'options */
@@ -662,7 +662,7 @@ button.cta-button {
 }
 
 .benefit-item i {
-  color: #10b981;
+  color: #1a2c51;
   font-size: 0.9rem;
   flex-shrink: 0;
 }

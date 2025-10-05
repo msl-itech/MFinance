@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ZoneContactMobileComponent } from "../../zone-contact-mobile/zone-contact-mobile.component";
 
 @Component({
   selector: 'app-service-mobile',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, ZoneContactMobileComponent],
   templateUrl: './service-mobile.component.html',
   styleUrls: ['./service-mobile.component.scss'],
 })

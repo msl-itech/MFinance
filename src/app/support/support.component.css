@@ -2,7 +2,7 @@
 
 /* En-tête de la page */
 .support-header {
-  background: linear-gradient(135deg, #25335b 0%, #2f4173 60%, #3a4f8c 100%);
+  background: linear-gradient(135deg, #1a2c51 0%, #2f4173 60%, #3a4f8c 100%);
   color: white;
   padding: 6rem 0;
   margin-bottom: 4rem;
@@ -101,7 +101,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #f34947 0%, #f56765 50%, #25335b 100%);
+  background: linear-gradient(90deg, #f34947 0%, #f56765 50%, #1a2c51 100%);
   background-size: 200% 100%;
   animation: gradientFlow 3s linear infinite;
 }
@@ -143,7 +143,7 @@
 .popup-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #25335b 0%, #3a4f8c 100%);
+  background: linear-gradient(135deg, #1a2c51 0%, #3a4f8c 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -164,7 +164,7 @@
 }
 
 .floating-popup-header h4 {
-  color: #25335b;
+  color: #1a2c51;
   font-size: 1.3rem;
   font-weight: 700;
   margin: 0 0 5px;
@@ -190,7 +190,7 @@
   align-items: center;
   padding: 15px 10px;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  color: #25335b;
+  color: #1a2c51;
   text-decoration: none;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -225,14 +225,14 @@
 .btn-floating-download span {
   font-weight: 600;
   font-size: 0.85rem;
-  color: #25335b;
+  color: #1a2c51;
   transition: color 0.3s ease;
 }
 
 .btn-floating-download:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  color: #25335b;
+  color: #1a2c51;
   text-decoration: none;
 }
 
@@ -245,12 +245,12 @@
 }
 
 .btn-floating-download.windows:hover {
-  border-color: #25335b;
+  border-color: #1a2c51;
   background: linear-gradient(135deg, #e6f3ff 0%, #ffffff 100%);
 }
 
 .btn-floating-download.windows i {
-  color: #25335b;
+  color: #1a2c51;
 }
 
 .btn-floating-download.mac {
@@ -258,12 +258,12 @@
 }
 
 .btn-floating-download.mac:hover {
-  border-color: #25335b;
+  border-color: #1a2c51;
   background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%);
 }
 
 .btn-floating-download.mac i {
-  color: #25335b;
+  color: #1a2c51;
 }
 
 .floating-popup-footer {
@@ -366,7 +366,7 @@
 
 .section-title h2 {
   font-size: 2.4rem;
-  color: #25335b;
+  color: #1a2c51;
   font-weight: 700;
   margin-bottom: 1.2rem;
   position: relative;
@@ -447,7 +447,7 @@
   width: 90px;
   height: 90px;
   min-width: 90px;
-  background: linear-gradient(135deg, #25335b 0%, #3a4f8c 100%);
+  background: linear-gradient(135deg, #1a2c51 0%, #3a4f8c 100%);
   color: white;
   border-radius: 50%;
   margin-right: 2.5rem;
@@ -495,7 +495,7 @@
 }
 
 .step-content h3 {
-  color: #25335b;
+  color: #1a2c51;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
@@ -509,7 +509,7 @@
 }
 
 .step-content a {
-  color: #25335b;
+  color: #1a2c51;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s ease;
@@ -587,7 +587,7 @@
 
 .card-icon i {
   font-size: 3.2rem;
-  background: linear-gradient(135deg, #25335b 0%, #3a4f8c 100%);
+  background: linear-gradient(135deg, #1a2c51 0%, #3a4f8c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -700,7 +700,7 @@
   left: 0;
   width: 100%;
   height: 8px;
-  background: linear-gradient(90deg, #25335b 0%, #3a4f8c 50%, #2f4173 100%);
+  background: linear-gradient(90deg, #1a2c51 0%, #3a4f8c 50%, #2f4173 100%);
   animation: gradientFlow 3s linear infinite;
 }
 
@@ -732,13 +732,13 @@
 
 .security-icon i {
   font-size: 2.8rem;
-  background: linear-gradient(135deg, #25335b 0%, #3a4f8c 100%);
+  background: linear-gradient(135deg, #1a2c51 0%, #3a4f8c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .security-content h3 {
-  color: #25335b;
+  color: #1a2c51;
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
@@ -806,7 +806,7 @@
 }
 
 .contact-section h2 {
-  color: #25335b;
+  color: #1a2c51;
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
@@ -834,7 +834,7 @@
 }
 
 .btn-contact {
-  background: linear-gradient(135deg, #25335b 0%, #3a4f8c 100%);
+  background: linear-gradient(135deg, #1a2c51 0%, #3a4f8c 100%);
   color: white;
   padding: 1.2rem 2.2rem;
   border-radius: 50px;
@@ -1103,7 +1103,7 @@
   display: inline-flex;
   align-items: center;
   padding: 8px 16px;
-  background: #25335b;
+  background: #1a2c51;
   color: white;
   border-radius: 6px;
   margin-bottom: 18px;
@@ -1148,14 +1148,14 @@
 }
 
 .mac-badge {
-  background: #25335b;
+  background: #1a2c51;
 }
 
 .tutorial-content h3 {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #25335b;
+  color: #1a2c51;
   letter-spacing: -0.02em;
   line-height: 1.3;
 }
@@ -1176,7 +1176,7 @@
 
 .video-stats i {
   margin-right: 8px;
-  color: #25335b;
+  color: #1a2c51;
   font-size: 1.1rem;
 }
 
@@ -1207,7 +1207,7 @@
 
 .tutorial-description li:hover {
   transform: translateX(3px);
-  color: #25335b;
+  color: #1a2c51;
 }
 
 .tutorial-description li::before {
@@ -1224,7 +1224,7 @@
 
 .tutorial-description li:hover::before {
   transform: scale(1.5);
-  background-color: #25335b;
+  background-color: #1a2c51;
 }
 
 .video-action-btn {
@@ -1308,7 +1308,7 @@
 
 .service-faq h1 {
   font-weight: 700;
-  color: #25335b;
+  color: #1a2c51;
   position: relative;
   margin-bottom: 30px;
 }
@@ -1343,7 +1343,7 @@
 
 .accordion-button {
   background-color: #f8f9fb;
-  color: #25335b;
+  color: #1a2c51;
   font-weight: 600;
   border-radius: 8px !important;
   box-shadow: 0 4px 10px rgba(37, 51, 91, 0.1);
@@ -1371,7 +1371,7 @@
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #25335b;
+  background-color: #1a2c51;
   color: white;
   box-shadow: 0 8px 15px rgba(37, 51, 91, 0.2);
 }
@@ -1452,7 +1452,7 @@
 }
 
 .bg-primary {
-  background-color: #25335b !important;
+  background-color: #1a2c51 !important;
   color: white;
   position: relative;
 }
@@ -1672,7 +1672,7 @@
 }
 
 .mac-tutorials .os-badge {
-  background: #25335b;
+  background: #1a2c51;
   display: inline-flex;
   align-items: center;
   padding: 8px 16px;
@@ -1682,7 +1682,7 @@
 }
 
 .mac-tutorials .tutorial-content h3 {
-  color: #25335b;
+  color: #1a2c51;
   font-weight: 700;
 }
 

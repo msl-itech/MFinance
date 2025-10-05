@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
 import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-passage-societe',
   templateUrl: './passage-societe.component.html',
   styleUrl: './passage-societe.component.css',
 })
-export class PassageSocieteComponent implements OnInit {
+export class PassageSocieteComponent implements OnInit, AfterViewInit {
   // Configuration du formulaire
   formConfig: ContactFormConfig = {
     // Texte à gauche
@@ -69,6 +70,13 @@ export class PassageSocieteComponent implements OnInit {
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Passage en Société
     this.metaService.setPassageEnSocietePageMeta();
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      AOS.refresh();
+    }, 150);
   }
 
   scrollToSection(sectionId: string): void {

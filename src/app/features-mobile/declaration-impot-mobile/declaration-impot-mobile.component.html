@@ -25,7 +25,7 @@
     <div class="section-header">
       <h2 class="section-title">
         <i class="fas fa-users title-icon"></i>
-        3. Contexte client
+          Contexte client
       </h2>
     </div>
 
@@ -170,7 +170,7 @@
   </section>
 
   <!-- Section formulaire de contact -->
-  <section id="contactSection" class="contact-section">
+  <!-- <section id="contactSection" class="contact-section">
     <app-contact-form-layout
       [config]="formConfig"
       [currentStep]="currentStep"
@@ -185,7 +185,7 @@
       (reset)="onReset()"
     >
       <div slot="form-content">
-        <!-- Étape 1: Type de situation fiscale -->
+       
         <div *ngIf="currentStep === 1" class="step-content">
           <h3 class="step-title mb-4">1. Votre situation fiscale</h3>
           <p class="step-description mb-4">
@@ -254,7 +254,7 @@
           </div>
         </div>
 
-        <!-- Étape 2: Urgence -->
+
         <div *ngIf="currentStep === 2" class="step-content">
           <h3 class="step-title mb-4">2. Délai souhaité</h3>
           <p class="step-description mb-4">
@@ -323,7 +323,6 @@
           </div>
         </div>
 
-        <!-- Étape 3: Coordonnées -->
         <div *ngIf="currentStep === 3" class="step-content">
           <h3 class="step-title mb-4">
             3. Vos coordonnées pour l'assistance fiscale
@@ -404,8 +403,9 @@
         </div>
       </div>
     </app-contact-form-layout>
-  </section>
+  </section> -->
 
+   <app-zone-contact-mobile id="contactSection"></app-zone-contact-mobile>
   <!-- CTA fixe bas de page -->
   <div class="fixed-cta">
     <button class="cta-fixed" (click)="scrollToSection('contactSection')">

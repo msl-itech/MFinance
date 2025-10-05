@@ -214,6 +214,13 @@ import { filter, takeUntil } from 'rxjs/operators';
               </ul>
             </li>
 
+             <li>
+              <a routerLink="/tarif" (click)="closeMobileMenu()">
+                <i class="fas fa-euro-sign"></i>
+                <span>Tarifs</span>
+              </a>
+            </li>
+
             <!-- Boostez votre entreprise avec sous-menu -->
             <li
               class="nav-expandable"
@@ -319,13 +326,10 @@ import { filter, takeUntil } from 'rxjs/operators';
               </ul>
             </li>
 
-            <li class="nav-section">
-              <span class="nav-section-title">Support</span>
-            </li>
             <li>
-              <a routerLink="/tarif" (click)="closeMobileMenu()">
+              <a routerLink="/support" (click)="closeMobileMenu()">
                 <i class="fas fa-euro-sign"></i>
-                <span>Tarifs</span>
+                <span>Support</span>
               </a>
             </li>
             <li>

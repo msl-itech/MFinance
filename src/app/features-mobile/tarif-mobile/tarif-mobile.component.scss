@@ -22,24 +22,26 @@
 }
 
 .hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #1a2c51 0%, #2d5a87 100%);
-  z-index: -2;
-}
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("../../../assets/img/image/profilw-societemanagement.webp") no-repeat center
+        center/cover;
+      z-index: 1;
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(26, 44, 81, 0.1);
-  z-index: -1;
-}
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(#1a2c51, 0.9);
+        z-index: 2;
+      }
+  }
+
 
 .hero-content {
   max-width: 100%;
@@ -503,7 +505,7 @@
 }
 
 .comparison-card.positive {
-  border-left: 4px solid #10b981;
+  border-left: 4px solid #1a2c51;
 }
 
 .card-icon {

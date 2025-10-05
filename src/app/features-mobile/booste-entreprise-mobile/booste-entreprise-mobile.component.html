@@ -10,7 +10,7 @@
       </div>
       <h1 class="hero-title">Boostez votre entreprise dès aujourd'hui</h1>
       <p class="hero-subtitle">
-        📈 Des conseils clairs. Des résultats concrets.
+         Des conseils clairs. Des résultats concrets.
       </p>
 
       <button class="cta-primary" (click)="scrollToSection('contactSection')">
@@ -38,21 +38,21 @@
             <div class="point-icon">
               <i class="fas fa-search"></i>
             </div>
-            <span>📌 Anticipez les défis</span>
+            <span>Anticipez les défis</span>
           </div>
-          
+
           <div class="point-item">
             <div class="point-icon">
               <i class="fas fa-bullseye"></i>
             </div>
-            <span>📌 Faites les bons choix au bon moment</span>
+            <span>Faites les bons choix au bon moment</span>
           </div>
-          
+
           <div class="point-item">
             <div class="point-icon">
               <i class="fas fa-check-circle"></i>
             </div>
-            <span>📌 Avancez avec sérénité</span>
+            <span>Avancez avec sérénité</span>
           </div>
         </div>
       </div>
@@ -76,33 +76,33 @@
           <div class="levier-icon">
             <i class="fas fa-cog"></i>
           </div>
-          <h3>✅ Gestion quotidienne</h3>
+          <h3>Gestion quotidienne</h3>
         </div>
 
         <div class="levier-card">
           <div class="levier-icon">
             <i class="fas fa-chart-bar"></i>
           </div>
-          <h3>✅ Rentabilité</h3>
+          <h3>Rentabilité</h3>
         </div>
 
         <div class="levier-card">
           <div class="levier-icon">
             <i class="fas fa-shield-alt"></i>
           </div>
-          <h3>✅ Solidité financière</h3>
+          <h3>Solidité financière</h3>
         </div>
 
         <div class="levier-card">
           <div class="levier-icon">
             <i class="fas fa-smile"></i>
           </div>
-          <h3>✅ Sérénité entrepreneuriale</h3>
+          <h3>Sérénité entrepreneuriale</h3>
         </div>
       </div>
 
       <button class="cta-conseils" (click)="scrollToSection('conseils')">
-        🟦 Découvrez nos conseils d'experts
+         Découvrez nos conseils d'experts
       </button>
     </div>
   </section>
@@ -112,7 +112,7 @@
     <div class="section-header">
       <h2 class="section-title">
         <i class="fas fa-coins title-icon"></i>
-        💡 Trésorerie : Transformez votre stress en succès
+        Trésorerie : Transformez votre stress en succès
       </h2>
     </div>
 
@@ -125,7 +125,7 @@
             <i class="fas fa-lock"></i>
           </div>
           <div class="benefit-text">
-            <h3>🔐 Sécurisez vos opérations</h3>
+            <h3>Sécurisez vos opérations</h3>
             <p>Payez vos charges et salaires à temps</p>
           </div>
         </div>
@@ -135,7 +135,7 @@
             <i class="fas fa-calendar-alt"></i>
           </div>
           <div class="benefit-text">
-            <h3>📅 Anticipez vos besoins</h3>
+            <h3>Anticipez vos besoins</h3>
             <p>Prévoyez les creux de trésorerie</p>
           </div>
         </div>
@@ -145,14 +145,14 @@
             <i class="fas fa-crosshairs"></i>
           </div>
           <div class="benefit-text">
-            <h3>🎯 Prenez le contrôle</h3>
+            <h3>Prenez le contrôle</h3>
             <p>Fini les imprévus qui paralysent</p>
           </div>
         </div>
       </div>
 
       <button class="cta-excellence" (click)="scrollToSection('excellence')">
-        🟩 Découvrez l'Offre Excellence
+        Découvrez l'Offre Excellence
       </button>
     </div>
   </section>
@@ -162,7 +162,7 @@
     <div class="section-header">
       <h2 class="section-title">
         <i class="fas fa-star title-icon"></i>
-        ⭐ Offre Excellence
+        Offre Excellence
       </h2>
     </div>
 
@@ -170,22 +170,22 @@
       <div class="excellence-features">
         <div class="feature-item">
           <i class="fas fa-table"></i>
-          <span>🧾 Tableau de trésorerie prévisionnel</span>
+          <span>Tableau de trésorerie prévisionnel</span>
         </div>
 
         <div class="feature-item">
           <i class="fas fa-chart-pie"></i>
-          <span>📊 Contrôle budgétaire trimestriel</span>
+          <span>Contrôle budgétaire trimestriel</span>
         </div>
 
         <div class="feature-item">
           <i class="fas fa-user-tie"></i>
-          <span>👨‍💼 Accompagnement personnalisé</span>
+          <span>Accompagnement personnalisé</span>
         </div>
       </div>
 
       <button class="cta-excellence-detail" (click)="scrollToSection('contactSection')">
-        🟩 En savoir plus
+        En savoir plus
       </button>
     </div>
   </section>
@@ -195,18 +195,18 @@
     <div class="section-header">
       <h2 class="section-title">
         <i class="fas fa-book-open title-icon"></i>
-        📚 Nos articles pratiques
+        Nos articles pratiques
       </h2>
     </div>
 
     <div class="articles-content">
       <div class="articles-carousel">
         <div class="article-card" *ngFor="let article of articles; let i = index">
-          <div class="article-number">{{ i + 1 }}️⃣</div>
+          <div class="article-number">{{ i + 1 }}</div>
           <div class="article-info">
             <h3>{{ article.title }}</h3>
             <div class="article-meta">
-              <span>🕒 {{ article.duration }}</span>
+              <span><i class="fas fa-clock"></i> {{ article.duration }}</span>
               <span>{{ article.icon }} {{ article.category }}</span>
             </div>
           </div>
@@ -214,7 +214,7 @@
       </div>
 
       <button class="cta-articles" (click)="scrollToSection('contactSection')">
-        🟦 Voir tous les articles
+        Voir tous les articles
       </button>
     </div>
   </section>
@@ -224,7 +224,7 @@
     <div class="section-header">
       <h2 class="section-title">
         <i class="fas fa-sitemap title-icon"></i>
-        📊 Nos grandes thématiques
+        Nos grandes thématiques
       </h2>
     </div>
 
@@ -234,8 +234,8 @@
         <div class="thematique-info">
           <h3>Salarié ou Indépendant</h3>
           <p>Quel statut choisir ? Avantages, contraintes, impact fiscal.</p>
-          <a href="/salarie-independant" class="thematique-link">
-            ➡️ Lire l'article complet
+          <a routerLink="/vente/salarie-independant" class="thematique-link">
+            <i class="fas fa-arrow-right"></i> Lire l'article complet
           </a>
         </div>
       </div>
@@ -245,8 +245,8 @@
         <div class="thematique-info">
           <h3>Passage en société</h3>
           <p>Comment structurer votre activité pour plus de rentabilité et de sécurité ?</p>
-          <a href="/passage-societe" class="thematique-link">
-            ➡️ Lire l'article complet
+          <a routerLink="/vente/passage-en-societe" class="thematique-link">
+            <i class="fas fa-arrow-right"></i> Lire l'article complet
           </a>
         </div>
       </div>
@@ -256,8 +256,8 @@
         <div class="thematique-info">
           <h3>Compte courant administrateur</h3>
           <p>Évitez les erreurs coûteuses. Apprenez à bien le gérer.</p>
-          <a href="/compte-courant-administrateur" class="thematique-link">
-            ➡️ Lire l'article complet
+          <a routerLink="/vente/compte-courant" class="thematique-link">
+            <i class="fas fa-arrow-right"></i> Lire l'article complet
           </a>
         </div>
       </div>
@@ -269,7 +269,7 @@
     <div class="section-header">
       <h2 class="section-title">
         <i class="fas fa-brain title-icon"></i>
-        🧠 Nos conseils pratiques
+        Nos conseils pratiques
       </h2>
     </div>
 
@@ -279,7 +279,7 @@
           <i class="fas fa-building"></i>
         </div>
         <div class="conseil-info">
-          <h3>👨‍💼 Passage en société</h3>
+          <h3>Passage en société</h3>
           <ul class="conseil-list">
             <li>Évaluation de la pertinence</li>
             <li>Protection du patrimoine</li>
@@ -293,7 +293,7 @@
           <i class="fas fa-user-tie"></i>
         </div>
         <div class="conseil-info">
-          <h3>👤 Salarié ou indépendant</h3>
+          <h3>Salarié ou indépendant</h3>
           <ul class="conseil-list">
             <li>Comparatif clair</li>
             <li>Analyse personnalisée</li>
@@ -303,7 +303,7 @@
       </div>
 
       <button class="cta-conseil-adapte" (click)="scrollToSection('contactSection')">
-        🟦 Recevoir un conseil adapté
+        Recevoir un conseil adapté
       </button>
     </div>
   </section>
@@ -313,7 +313,7 @@
     <div class="section-header">
       <h2 class="section-title">
         <i class="fas fa-comments title-icon"></i>
-        💬 Pourquoi choisir Mfinances ?
+        Pourquoi choisir Mfinances ?
       </h2>
     </div>
 
@@ -323,10 +323,10 @@
       <div class="avantages-list">
         <div class="avantage-item">
           <div class="avantage-icon">
-            <i class="fas fa-lightning-bolt"></i>
+            <i class="fas fa-bolt"></i>
           </div>
           <div class="avantage-text">
-            <h3>📍 Expertise proactive</h3>
+            <h3>Expertise proactive</h3>
             <p>On agit avant que les problèmes n'arrivent.</p>
           </div>
         </div>
@@ -336,7 +336,7 @@
             <i class="fas fa-graduation-cap"></i>
           </div>
           <div class="avantage-text">
-            <h3>📍 Pédagogie claire</h3>
+            <h3>Pédagogie claire</h3>
             <p>Des conseils simples et concrets.</p>
           </div>
         </div>
@@ -346,7 +346,7 @@
             <i class="fas fa-handshake"></i>
           </div>
           <div class="avantage-text">
-            <h3>📍 Accompagnement personnalisé</h3>
+            <h3>Accompagnement personnalisé</h3>
             <p>Vos résultats sont notre priorité.</p>
           </div>
         </div>
@@ -356,14 +356,14 @@
             <i class="fas fa-eye"></i>
           </div>
           <div class="avantage-text">
-            <h3>📍 Vision globale</h3>
+            <h3>Vision globale</h3>
             <p>On pense à tout pour une stratégie cohérente.</p>
           </div>
         </div>
       </div>
 
       <button class="cta-contact" (click)="scrollToSection('contactSection')">
-        🟥 Contactez-nous
+        Contactez-nous
       </button>
     </div>
   </section>
@@ -373,7 +373,7 @@
     <div class="section-header">
       <h2 class="section-title">
         <i class="fas fa-rocket title-icon"></i>
-        🚀 Passez à l'action
+        Passez à l'action
       </h2>
     </div>
 
@@ -383,13 +383,16 @@
         
         <div class="action-steps">
           <div class="action-step">
-            <span>🌱 Explorez nos conseils</span>
+            <i class="fas fa-seedling"></i>
+            <span>Explorez nos conseils</span>
           </div>
           <div class="action-step">
-            <span>💡 Inspirez-vous</span>
+            <i class="fas fa-lightbulb"></i>
+            <span>Inspirez-vous</span>
           </div>
           <div class="action-step">
-            <span>📞 Contactez-nous</span>
+            <i class="fas fa-phone"></i>
+            <span>Contactez-nous</span>
           </div>
         </div>
 
@@ -397,7 +400,7 @@
       </div>
 
       <button class="cta-rendez-vous" (click)="scrollToSection('contactSection')">
-        🟥 Je demande mon premier rendez-vous gratuit
+        Je demande mon premier rendez-vous gratuit
       </button>
     </div>
   </section>
@@ -623,7 +626,7 @@
                 <div class="custom-input-group">
                   <label for="email" class="form-label">
                     <i class="fas fa-envelope me-2"></i>Email
-                    <span class="badge bg-success ms-2">✅ obligatoire</span>
+                    <span class="badge bg-success ms-2"><i class="fas fa-check"></i> obligatoire</span>
                   </label>
                   <input
                     type="email"
@@ -641,7 +644,7 @@
                 <div class="custom-input-group">
                   <label for="telephone" class="form-label">
                     <i class="fas fa-phone me-2"></i>Téléphone
-                    <span class="badge bg-success ms-2">✅ obligatoire</span>
+                    <span class="badge bg-success ms-2"><i class="fas fa-check"></i> obligatoire</span>
                   </label>
                   <input
                     type="tel"
@@ -660,7 +663,7 @@
               <div class="d-flex align-items-center">
                 <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
                 <div>
-                  <h6 class="mb-1">📞 Un expert Mfinances vous appelle sous 72h</h6>
+                  <h6 class="mb-1">Un expert Mfinances vous appelle sous 72h</h6>
                   <small>Premier rendez-vous gratuit et confidentiel.</small>
                 </div>
               </div>

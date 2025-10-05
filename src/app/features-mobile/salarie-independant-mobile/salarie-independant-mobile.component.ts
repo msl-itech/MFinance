@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
+import { ZoneContactMobileComponent } from "../../zone-contact-mobile/zone-contact-mobile.component";
 
 @Component({
   selector: 'app-salarie-independant-mobile',
   standalone: true,
-  imports: [CommonModule, ShardeModuleModule],
+  imports: [CommonModule, ShardeModuleModule, ZoneContactMobileComponent],
   templateUrl: './salarie-independant-mobile.component.html',
   styleUrls: ['./salarie-independant-mobile.component.scss']
 })
@@ -63,6 +64,6 @@ export class SalarieIndependantMobileComponent implements OnInit {
 
   sendRequest(): void {
     // Logique pour envoyer une demande
-    console.log('Envoi de la demande');
+      this.router.navigate(['/contact']);
   }
 }

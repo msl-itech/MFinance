@@ -290,7 +290,6 @@
       <!-- Service 1: Développer et structurer -->
       <div class="service-item">
         <div class="service-header" (click)="toggleService('developper')">
-          <div class="service-icon">🏛️</div>
           <h3>Créer votre entreprise</h3>
           <span
             class="service-toggle"
@@ -311,7 +310,6 @@
       <!-- Service 2: Structuration activité -->
       <div class="service-item">
         <div class="service-header" (click)="toggleService('structurer')">
-          <div class="service-icon">📈</div>
           <h3>Structuration activité médicale</h3>
           <span
             class="service-toggle"
@@ -323,17 +321,14 @@
         <div class="service-content" [class.open]="openServices['structurer']">
           <div class="service-sub-cards">
             <div class="sub-card">
-              <div class="sub-icon">💼</div>
               <h4>Investissements stratégiques</h4>
               <p>Matériel médical, locaux pour maximiser rentabilité</p>
             </div>
             <div class="sub-card">
-              <div class="sub-icon">🏠</div>
               <h4>Gestion immobilière</h4>
               <p>Patrimoine immobilier pour sécurité financière</p>
             </div>
             <div class="sub-card">
-              <div class="sub-icon">🚗</div>
               <h4>Ressources professionnelles</h4>
               <p>Avantages fiscaux : indemnités vs véhicule société</p>
             </div>
@@ -415,14 +410,14 @@
   <section class="faq-section">
     <div class="section-header">
       <h2 class="section-title">
-        ❓ Questions fréquentes - Professionnels de santé
+        Questions fréquentes - Professionnels de santé
       </h2>
     </div>
 
     <div class="faq-content">
       <div class="faq-item" *ngFor="let faq of faqs; let i = index">
         <div class="faq-question" (click)="toggleFaq(i)">
-          <span class="faq-icon" *ngIf="faq.priority">🧠</span>
+          <!-- <span class="faq-icon" *ngIf="faq.priority">🧠</span> -->
           <h3>{{ faq.question }}</h3>
           <span class="faq-toggle" [class.open]="faq.isOpen">
             {{ faq.isOpen ? "−" : "+" }}

@@ -1,14 +1,14 @@
 // Variables
 $primary-red: #ff3333;
-$dark-blue: #25335b;
+$dark-blue: #1a2c51;
 $light-gray: #f8f9fb;
-$success-green: #28a745;
-$warning-orange: #ffc107;
+$success-green: #ff3333;
+$warning-orange: #ff3333;
 $danger-red: #dc3545;
 $text-muted: #6c757d;
 $border-gray: #e6e9f1;
-$blue-button: #007bff;
-$green-button: #28a745;
+$blue-button: #ff3333;
+$green-button: #ff3333;
 
 .booste-entreprise-mobile-container {
   width: 100%;
@@ -34,7 +34,7 @@ $green-button: #28a745;
       left: 0;
       width: 100%;
       height: 100%;
-      background: url("../../../assets/img/bg/bg_about.webp") no-repeat center
+   background: url("../../../assets/img/image/profilw-societemanagement.webp") no-repeat center
         center/cover;
       z-index: 1;
 
@@ -346,6 +346,7 @@ $green-button: #28a745;
             flex-shrink: 0;
 
             i {
+              color:$light-gray;
               font-size: 1.3rem;
             }
           }

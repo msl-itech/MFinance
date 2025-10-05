@@ -126,7 +126,7 @@
 
   .sidebar-widget .widget h2 {
     font-size: 20px;
-    color: #25335b;
+    color: #1a2c51;
     margin-bottom: 20px;
     font-weight: 700;
     text-align: center;
@@ -174,7 +174,7 @@
 
   /* Contact widget mobile styling */
   .sidebar-widget .contact-widget {
-    background: linear-gradient(135deg, #25335b 0%, #1e2a4a 100%);
+    background: linear-gradient(135deg, #1a2c51 0%, #1e2a4a 100%);
     color: white;
     text-align: center;
   }
@@ -427,7 +427,7 @@ p {
 }
 
 .service {
-  background-color: #25335b;
+  background-color: #1a2c51;
 }
 
 .rectangle-red {
@@ -447,7 +447,7 @@ a {
   text-decoration: none;
 }
 .service-faq {
-  background-color: #25335b;
+  background-color: #1a2c51;
 }
 .contact-info {
 }

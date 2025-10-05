@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
 import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-compte-courant-administrateur',
   templateUrl: './compte-courant-administrateur.component.html',
   styleUrl: './compte-courant-administrateur.component.css',
 })
-export class CompteCourantAdministrateurComponent implements OnInit {
+export class CompteCourantAdministrateurComponent implements OnInit, AfterViewInit {
   // Configuration du formulaire
   formConfig: ContactFormConfig = {
     // Texte à gauche
@@ -64,6 +65,13 @@ export class CompteCourantAdministrateurComponent implements OnInit {
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Compte Courant Administrateur
     this.metaService.setCompteCourantPageMeta();
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      AOS.refresh();
+    }, 150);
   }
 
   scrollToSection(sectionId: string): void {

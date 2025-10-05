@@ -23,24 +23,26 @@
 }
 
 .hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #1a2c51 0%, #2d5a87 100%);
-  z-index: -2;
-}
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   background: url("../../../assets/img/image/profilw-societemanagement.webp") no-repeat center
+        center/cover;
+      z-index: 1;
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(26, 44, 81, 0.1);
-  z-index: -1;
-}
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(#1a2c51, 0.9);
+        z-index: 2;
+      }
+  }
+
 
 .hero-content {
   max-width: 100%;
@@ -157,7 +159,7 @@
 }
 
 .point-card.constructive {
-  border-left-color: #10b981;
+  border-left-color: #1a2c51;
 }
 
 .point-card:hover {
@@ -182,7 +184,7 @@
 }
 
 .constructive .point-icon {
-  background: linear-gradient(135deg, #10b981, #34d399);
+  background: linear-gradient(135deg, #1a2c51, #34d399);
 }
 
 .point-content {
@@ -260,7 +262,7 @@
 }
 
 .check-icon {
-  color: #10b981;
+  color: #1a2c51;
   font-size: 0.9rem;
   flex-shrink: 0;
 }
@@ -398,7 +400,7 @@
 }
 
 .step-check {
-  color: #10b981;
+  color: #1a2c51;
   font-size: 0.9rem;
   flex-shrink: 0;
   margin-top: 0.2rem;
@@ -466,7 +468,7 @@
 .tool-logo {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  background: linear-gradient(135deg, #f34947, #f34947);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -495,7 +497,7 @@
 }
 
 .feature-check {
-  color: #10b981;
+  color: #1a2c51;
   font-size: 0.9rem;
   flex-shrink: 0;
 }
@@ -539,7 +541,7 @@
 }
 
 .analysis-check {
-  color: #10b981;
+  color: #1a2c51;
   font-size: 0.9rem;
   flex-shrink: 0;
 }

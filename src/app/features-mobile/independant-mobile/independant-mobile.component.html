@@ -266,33 +266,9 @@
   <!-- FAQ Optimisée avec sommaire -->
   <section class="faq-section">
     <div class="section-header">
-      <h2 class="section-title">❓ Questions fréquentes - Indépendants</h2>
+      <h2 class="section-title">Questions fréquentes - Indépendants</h2>
     </div>
 
-    <!-- Mini sommaire cliquable -->
-    <div class="faq-sommaire">
-      <button
-        class="sommaire-btn"
-        (click)="scrollToFaqCategory('fiscalite')"
-        [class.active]="activeFaqCategory === 'fiscalite'"
-      >
-        🔹 Fiscalité
-      </button>
-      <button
-        class="sommaire-btn"
-        (click)="scrollToFaqCategory('demarches')"
-        [class.active]="activeFaqCategory === 'demarches'"
-      >
-        🔹 Démarches
-      </button>
-      <button
-        class="sommaire-btn"
-        (click)="scrollToFaqCategory('aides')"
-        [class.active]="activeFaqCategory === 'aides'"
-      >
-        🔹 Aides
-      </button>
-    </div>
 
     <div class="faq-content">
       <div class="faq-item" *ngFor="let faq of faqs; let i = index">
@@ -318,7 +294,7 @@
   </section>
 
   <!-- Contact Indépendant spécifique optimisé -->
-  <section class="contact-section" id="contact">
+  <!-- <section class="contact-section" id="contact">
     <div class="contact-header">
       <div class="contact-badge">
         <span>📞 CONTACT INDÉPENDANT</span>
@@ -365,7 +341,7 @@
         📍 Voir sur Google Maps
       </button>
     </div>
-  </section>
+  </section> -->
 
   <!-- Formulaire d'évaluation optimisé avec améliorations -->
   <section class="evaluation-section" id="formulaire-evaluation">
