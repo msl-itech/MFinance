@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { ZoneContactMobileComponent } from '../../zone-contact-mobile/zone-contact-mobile.component';
 
 @Component({
   selector: 'app-tresorerie-mobile',
   standalone: true,
-  imports: [CommonModule, ShardeModuleModule, ZoneContactMobileComponent],
+  imports: [CommonModule, RouterModule, ShardeModuleModule, ZoneContactMobileComponent],
   templateUrl: './tresorerie-mobile.component.html',
   styleUrls: ['./tresorerie-mobile.component.scss'],
 })
@@ -23,30 +23,37 @@ export class TresorerieMobileComponent implements OnInit {
     {
       title: 'Pourquoi votre trésorerie est plus importante que vos bénéfices',
       readingTime: 5,
+      route: '/tresorerie/tresorerie-benefice'
     },
     {
       title: 'Investir sans risque',
       readingTime: 7,
+      route: '/tresorerie/investir-tresorerie'
     },
     {
       title: 'Optimiser la gestion des stocks',
       readingTime: 6,
+      route: '/tresorerie/optimiser-stock'
     },
     {
       title: 'SOS Trésorerie : Garder le cap',
       readingTime: 8,
+      route: '/tresorerie/alerte-tresorerie'
     },
     {
       title: 'Fidélisation et différenciation',
       readingTime: 6,
+      route: '/tresorerie/proteger-sa-tresorerie'
     },
     {
       title: "L'anticipation, votre meilleure arme",
       readingTime: 4,
+      route: '/tresorerie/anticiper-sa-tresorerie'
     },
     {
       title: 'Gagnez en sécurité financière',
       readingTime: 5,
+      route: '/tresorerie/accompagnement'
     },
   ];
 
