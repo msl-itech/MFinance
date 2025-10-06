@@ -260,6 +260,8 @@
   background: linear-gradient(135deg, #1a2c51, #1a2c51);
   color: white;
   padding: 20px 0;
+  padding-bottom: 120px;
+  padding-bottom: calc(120px + env(safe-area-inset-bottom, 0));
   margin-top: auto;
 }
 
@@ -307,12 +309,12 @@
 }
 
 .email-btn {
-  background: linear-gradient(135deg, #007AFF, #4A90E2);
+  background: #1a2c51;
   color: white;
 }
 
 .email-btn:hover {
-  background: linear-gradient(135deg, #4A90E2, #007AFF);
+  background: #1a2c51;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
 }
