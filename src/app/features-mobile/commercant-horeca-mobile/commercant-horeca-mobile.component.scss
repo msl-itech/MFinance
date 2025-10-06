@@ -1,15 +1,12 @@
-// Variables
-:root {
-  --primary-red: #ff3b30;
-  --primary-dark: #1a2c51;
-  --light-bg: #f8f9fb;
-  --border-color: #e6e9f1;
-  --text-dark: #2c3e50;
-  --text-muted: #6c757d;
-  --success-color: #ff3b30;
-  --warning-color: #ffc107;
-  --info-color: #17a2b8;
-}
+$primary-red: #ff3333;
+$dark-blue: #1a2c51;
+$primary-dark: #1a2c51;
+$light-gray: #f8f9fb;
+$success-green: #ff3333;
+$warning-orange: #ff3333;
+$danger-red: #ff3333;
+$text-muted: #6c757d;
+$border-gray: #e6e9f1;
 
 .commercant-horeca-mobile-container {
   width: 100%;
@@ -92,7 +89,7 @@
         touch-action: manipulation;
 
         &.primary {
-          background: var(--primary-red);
+          background: $primary-red;
           color: white;
 
           &:hover {
@@ -103,7 +100,7 @@
 
         &.secondary {
           background: white;
-          color: var(--primary-dark);
+          color: $dark-blue;
 
           &:hover {
             background: #f8f9fa;
@@ -127,7 +124,7 @@
     .intro-title {
       font-size: 1.8rem;
       font-weight: 700;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 20px;
       line-height: 1.3;
     }
@@ -135,7 +132,7 @@
     .intro-text {
       font-size: 1rem;
       line-height: 1.6;
-      color: var(--text-dark);
+      color: $primary-dark;
 
       .intro-expand, .intro-expanded {
         margin-top: 16px;
@@ -144,7 +141,7 @@
       .expand-btn {
         background: none;
         border: none;
-        color: var(--primary-red);
+        color: $primary-red;
         font-weight: 600;
         cursor: pointer;
         padding: 8px 0;
@@ -158,7 +155,7 @@
     margin-top: 32px;
 
     .cta-primary {
-      background: var(--primary-red);
+      background: $primary-red;
       color: white;
       border: none;
       padding: 16px 24px;
@@ -181,7 +178,7 @@
 
     .cta-subtitle {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: $text-muted;
       margin: 0;
     }
   }
@@ -195,20 +192,20 @@
   .section-title {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: $primary-dark;
     margin-bottom: 12px;
     line-height: 1.3;
   }
 
   .section-subtitle {
     font-size: 1rem;
-    color: var(--text-muted);
+    color: $text-muted;
     line-height: 1.5;
   }
 
   .why-badge {
     display: inline-block;
-    background: var(--primary-red);
+    background: $primary-red;
     color: white;
     padding: 6px 12px;
     border-radius: 15px;
@@ -221,7 +218,7 @@
 // Section Transition numérique
 .transition-section {
   padding: 40px 20px;
-  background: var(--light-bg);
+  background: $light-gray;
 
   .transition-content {
     max-width: 800px;
@@ -244,7 +241,7 @@
     h3 {
       font-size: 1.3rem;
       font-weight: 600;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 16px;
     }
 
@@ -271,16 +268,16 @@
   }
 
   .tresorerie-calculator {
-    background: var(--light-bg);
+    background: $light-gray;
     padding: 24px;
     border-radius: 12px;
     margin-bottom: 32px;
-    border: 2px solid var(--border-color);
+    border: 2px solid $border-gray;
 
     .calculator-header h4 {
       font-size: 1.2rem;
       font-weight: 600;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 16px;
       text-align: center;
     }
@@ -293,19 +290,19 @@
           display: block;
           font-weight: 600;
           margin-bottom: 8px;
-          color: var(--text-dark);
+          color: $primary-dark;
         }
 
         input {
           width: 100%;
           padding: 12px;
-          border: 2px solid var(--border-color);
+          border: 2px solid $border-gray;
           border-radius: 8px;
           font-size: 1rem;
 
           &:focus {
             outline: none;
-            border-color: var(--primary-red);
+            border-color: $primary-red;
           }
         }
       }
@@ -314,7 +311,7 @@
         text-align: center;
 
         .result-highlight {
-          background: var(--success-color);
+          background: $primary-red;
           color: white;
           padding: 16px;
           border-radius: 8px;
@@ -342,10 +339,10 @@
   }
 
   .tresorerie-card {
-    background: var(--light-bg);
+    background: $light-gray;
     padding: 24px;
     border-radius: 12px;
-    border: 2px solid var(--border-color);
+    border: 2px solid $border-gray;
 
     .tresorerie-icon {
       font-size: 2.5rem;
@@ -355,7 +352,7 @@
     h3 {
       font-size: 1.3rem;
       font-weight: 600;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 16px;
     }
 
@@ -374,7 +371,7 @@
 // Section Stocks
 .stocks-section {
   padding: 40px 20px;
-  background: var(--light-bg);
+  background: $light-gray;
 
   .stocks-content {
     max-width: 800px;
@@ -389,7 +386,7 @@
     p {
       font-size: 1rem;
       line-height: 1.6;
-      color: var(--text-dark);
+      color: $primary-dark;
     }
   }
 
@@ -412,7 +409,7 @@
     h3 {
       font-size: 1.3rem;
       font-weight: 600;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 16px;
     }
 
@@ -438,16 +435,23 @@
     margin: 0 auto;
     display: grid;
     gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 
   .defi-card {
-    background: var(--light-bg);
+    background: $light-gray;
     padding: 24px;
     border-radius: 12px;
-    border: 2px solid var(--border-color);
+    border: 2px solid $border-gray;
     display: flex;
     align-items: flex-start;
     gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(26, 44, 81, 0.08);
+    }
 
     .defi-icon {
       font-size: 2rem;
@@ -455,21 +459,38 @@
       margin-top: 4px;
     }
 
-    .defi-content {
+    .defi-body {
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
 
       h3 {
         font-size: 1.2rem;
         font-weight: 600;
-        color: var(--text-dark);
-        margin-bottom: 8px;
+        color: $primary-dark;
+        margin: 0;
       }
 
-      p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        color: var(--text-muted);
-        margin: 0;
+      .defi-content {
+        p {
+          font-size: 0.95rem;
+          line-height: 1.5;
+          color: $text-muted;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .defi-card {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+
+      .defi-icon {
+        margin-top: 0;
       }
     }
   }
@@ -478,7 +499,7 @@
 // Section Solutions
 .solutions-section {
   padding: 40px 20px;
-  background: var(--light-bg);
+  background: $light-gray;
 
   .solutions-grid {
     max-width: 800px;
@@ -502,7 +523,7 @@
     h3 {
       font-size: 1.3rem;
       font-weight: 600;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 16px;
       line-height: 1.3;
     }
@@ -513,7 +534,7 @@
       p {
         font-size: 0.95rem;
         line-height: 1.5;
-        color: var(--text-dark);
+        color: $primary-dark;
         margin-bottom: 8px;
 
         &:last-child {
@@ -523,7 +544,7 @@
     }
 
     .solution-btn {
-      background: var(--primary-red);
+      background: $primary-red;
       color: white;
       border: none;
       padding: 12px 24px;
@@ -554,10 +575,10 @@
   }
 
   .why-card {
-    background: var(--light-bg);
+    background: $light-gray;
     padding: 24px;
     border-radius: 12px;
-    border: 2px solid var(--border-color);
+    border: 2px solid $border-gray;
     text-align: center;
 
     .why-icon {
@@ -568,14 +589,14 @@
     h3 {
       font-size: 1.3rem;
       font-weight: 600;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 12px;
     }
 
     p {
       font-size: 0.95rem;
       line-height: 1.5;
-      color: var(--text-muted);
+      color: $text-muted;
       margin: 0;
     }
   }
@@ -584,7 +605,7 @@
 // Section Études de cas
 .case-studies-section {
   padding: 40px 20px;
-  background: var(--light-bg);
+  background: $light-gray;
 
   .case-studies-carousel {
     max-width: 600px;
@@ -610,7 +631,7 @@
     h3 {
       font-size: 1.4rem;
       font-weight: 600;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 20px;
     }
 
@@ -618,14 +639,14 @@
       font-size: 0.95rem;
       line-height: 1.6;
       margin-bottom: 12px;
-      color: var(--text-dark);
+      color: $primary-dark;
 
       &:last-child {
         margin-bottom: 0;
       }
 
       .result-highlight {
-        background: var(--success-color);
+        background: $dark-blue;
         color: white;
         padding: 2px 8px;
         border-radius: 4px;
@@ -641,7 +662,7 @@
     gap: 16px;
 
     .case-nav-btn {
-      background: var(--primary-red);
+      background: $primary-red;
       color: white;
       border: none;
       width: 40px;
@@ -670,8 +691,8 @@
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: var(--border-color);
-        color: var(--text-muted);
+        background: $border-gray;
+        color: $text-muted;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -681,7 +702,7 @@
         transition: all 0.3s ease;
 
         &.active {
-          background: var(--primary-red);
+          background: $primary-red;
           color: white;
         }
       }
@@ -700,14 +721,14 @@
   }
 
   .faq-item {
-    border: 2px solid var(--border-color);
+    border: 2px solid $border-gray;
     border-radius: 8px;
     margin-bottom: 12px;
     overflow: hidden;
 
     .faq-question {
       padding: 20px;
-      background: var(--light-bg);
+      background: $light-gray;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -727,7 +748,7 @@
         flex: 1;
         font-size: 1.1rem;
         font-weight: 600;
-        color: var(--text-dark);
+        color: $primary-dark;
         margin: 0;
         line-height: 1.4;
       }
@@ -735,7 +756,7 @@
       .faq-toggle {
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--primary-red);
+        color: $primary-red;
         transition: transform 0.3s ease;
         flex-shrink: 0;
         width: 24px;
@@ -761,7 +782,7 @@
         background: white;
         font-size: 0.95rem;
         line-height: 1.6;
-        color: var(--text-dark);
+        color: $primary-dark;
 
         ul {
           margin: 12px 0;
@@ -777,7 +798,7 @@
         }
 
         strong {
-          color: var(--text-dark);
+          color: $primary-dark;
         }
       }
     }
@@ -789,12 +810,12 @@
 
     p {
       font-size: 1rem;
-      color: var(--text-muted);
+      color: $text-muted;
       margin-bottom: 16px;
     }
 
     .faq-contact-btn {
-      background: var(--primary-red);
+      background: $primary-red;
       color: white;
       border: none;
       padding: 12px 24px;
@@ -814,7 +835,7 @@
 // Section Contact
 .contact-section {
   padding: 40px 20px;
-  background: var(--light-bg);
+  background: $light-gray;
 
   .contact-header {
     text-align: center;
@@ -822,7 +843,7 @@
 
     .contact-badge {
       display: inline-block;
-      background: var(--primary-red);
+      background: $primary-red;
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
@@ -834,14 +855,14 @@
     .contact-title {
       font-size: 1.8rem;
       font-weight: 700;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 12px;
       line-height: 1.3;
     }
 
     .contact-subtitle {
       font-size: 1rem;
-      color: var(--text-muted);
+      color: $text-muted;
       line-height: 1.5;
     }
   }
@@ -858,7 +879,7 @@
     background: white;
     padding: 20px;
     border-radius: 12px;
-    border: 2px solid var(--border-color);
+    border: 2px solid $border-gray;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -866,7 +887,7 @@
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: var(--primary-red);
+      border-color: $primary-red;
       box-shadow: 0 2px 10px rgba(255, 59, 48, 0.1);
     }
 
@@ -881,7 +902,7 @@
       .contact-label {
         display: block;
         font-size: 0.85rem;
-        color: var(--text-muted);
+        color: $text-muted;
         margin-bottom: 4px;
       }
 
@@ -889,7 +910,7 @@
         display: block;
         font-size: 1rem;
         font-weight: 600;
-        color: var(--text-dark);
+        color: $primary-dark;
       }
     }
   }
@@ -903,7 +924,7 @@
     gap: 12px;
 
     .cta-horeca-btn {
-      background: var(--primary-red);
+      background: $primary-red;
       color: white;
       border: none;
       padding: 16px 24px;
@@ -921,8 +942,8 @@
 
     .maps-btn {
       background: white;
-      color: var(--text-dark);
-      border: 2px solid var(--border-color);
+      color: $primary-dark;
+      border: 2px solid $border-gray;
       padding: 12px 24px;
       border-radius: 20px;
       font-weight: 600;
@@ -930,8 +951,8 @@
       transition: all 0.3s ease;
 
       &:hover {
-        border-color: var(--primary-red);
-        color: var(--primary-red);
+        border-color: $primary-red;
+        color: $primary-red;
       }
     }
   }
@@ -948,7 +969,7 @@
 
     .evaluation-badge {
       display: inline-block;
-      background: var(--success-color);
+      background: $primary-red;
       color: white;
       padding: 8px 16px;
       border-radius: 20px;
@@ -960,14 +981,14 @@
     .evaluation-title {
       font-size: 1.8rem;
       font-weight: 700;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 12px;
       line-height: 1.3;
     }
 
     .evaluation-subtitle {
       font-size: 1rem;
-      color: var(--text-muted);
+      color: $text-muted;
       line-height: 1.5;
     }
   }
@@ -999,8 +1020,8 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background: var(--border-color);
-        color: var(--text-muted);
+        background: $border-gray;
+        color: $text-muted;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1011,44 +1032,44 @@
 
       .step-label {
         font-size: 0.75rem;
-        color: var(--text-muted);
+        color: $text-muted;
         text-align: center;
         font-weight: 500;
       }
 
       &.active {
         .step-circle {
-          background: var(--primary-red);
+          background: $primary-red;
           color: white;
         }
 
         .step-label {
-          color: var(--primary-red);
+          color: $primary-red;
           font-weight: 600;
         }
       }
 
       &.completed {
         .step-circle {
-          background: var(--success-color);
+          background: $primary-red;
           color: white;
         }
 
         .step-label {
-          color: var(--success-color);
+          color: $primary-red;
         }
       }
     }
 
     .stepper-progress {
       height: 4px;
-      background: var(--border-color);
+      background: $primary-red;
       border-radius: 2px;
       overflow: hidden;
 
       .progress-fill {
         height: 100%;
-        background: var(--primary-red);
+        background: $primary-red;
         transition: width 0.3s ease;
       }
     }
@@ -1061,14 +1082,14 @@
       h3 {
         font-size: 1.3rem;
         font-weight: 600;
-        color: var(--text-dark);
+        color: $primary-dark;
         margin-bottom: 8px;
         line-height: 1.3;
       }
 
       .step-subtitle {
         font-size: 0.9rem;
-        color: var(--text-muted);
+        color: $text-muted;
         margin-bottom: 24px;
       }
 
@@ -1078,8 +1099,8 @@
       }
 
       .option-card {
-        background: var(--light-bg);
-        border: 2px solid var(--border-color);
+        background: $light-gray;
+        border: 2px solid $border-gray;
         border-radius: 8px;
         padding: 16px;
         display: flex;
@@ -1090,12 +1111,12 @@
         position: relative;
 
         &:hover {
-          border-color: var(--primary-red);
+          border-color: $primary-red;
           background: #fff5f5;
         }
 
         &.selected {
-          border-color: var(--primary-red);
+          border-color: $primary-red;
           background: #fff5f5;
         }
 
@@ -1120,13 +1141,13 @@
           .option-label {
             font-size: 0.95rem;
             font-weight: 500;
-            color: var(--text-dark);
+            color: $primary-dark;
             flex: 1;
           }
 
           .option-check {
             font-size: 1.2rem;
-            color: var(--success-color);
+            color: $primary-red;
           }
         }
       }
@@ -1141,33 +1162,33 @@
           display: block;
           font-size: 0.9rem;
           font-weight: 600;
-          color: var(--text-dark);
+          color: $primary-dark;
           margin-bottom: 6px;
         }
 
         input {
           width: 100%;
           padding: 12px;
-          border: 2px solid var(--border-color);
+          border: 2px solid $border-gray;
           border-radius: 8px;
           font-size: 1rem;
           transition: border-color 0.3s ease;
 
           &:focus {
             outline: none;
-            border-color: var(--primary-red);
+            border-color: $primary-red;
           }
         }
       }
 
       .contact-info {
-        background: var(--light-bg);
+        background: $light-gray;
         padding: 16px;
         border-radius: 8px;
-        border: 2px solid var(--border-color);
+        border: 2px solid $border-gray;
         text-align: center;
         font-size: 0.9rem;
-        color: var(--text-dark);
+        color: $primary-dark;
         margin-top: 16px;
       }
     }
@@ -1193,18 +1214,18 @@
 
       .btn-prev {
         background: white;
-        color: var(--text-dark);
-        border: 2px solid var(--border-color);
+        color: $primary-dark;
+        border: 2px solid $border-gray;
 
         &:hover {
-          border-color: var(--primary-red);
-          color: var(--primary-red);
+          border-color: $primary-red;
+          color: $primary-red;
         }
       }
 
       .btn-next,
       .btn-submit {
-        background: var(--primary-red);
+        background: $primary-red;
         color: white;
 
         &:hover:not(:disabled) {
@@ -1219,7 +1240,7 @@
       }
 
       .btn-submit {
-        background: var(--success-color);
+        background: $primary-red;
         min-width: 200px;
 
         &:hover:not(:disabled) {
@@ -1233,7 +1254,7 @@
     text-align: center;
     padding: 40px 20px;
     background: #f8fff8;
-    border: 2px solid var(--success-color);
+    border: 2px solid $primary-red;
     border-radius: 12px;
 
     .success-icon {
@@ -1244,19 +1265,19 @@
     h3 {
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--success-color);
+      color: $primary-red;
       margin-bottom: 12px;
     }
 
     p {
       font-size: 1rem;
       line-height: 1.6;
-      color: var(--text-dark);
+      color: $primary-dark;
       margin-bottom: 24px;
     }
 
     .btn-reset {
-      background: var(--primary-red);
+      background: $primary-red;
       color: white;
       border: none;
       padding: 12px 24px;
@@ -1278,7 +1299,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: var(--primary-red);
+  background: $primary-red;
   color: white;
   padding: 12px 20px;
   border-radius: 25px;

@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormsModule } from '@angular/forms';
 import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.component';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 
 interface FaqItem {
   question: string;
@@ -176,7 +178,11 @@ export class CommercantHorecaMobileComponent implements OnInit, OnDestroy {
     }
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {
     this.horecaForm = this.createForm();
   }
 
@@ -309,39 +315,52 @@ export class CommercantHorecaMobileComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    if (this.isFormValid()) {
-      // Simulation d'envoi du formulaire
-      console.log('Données formulaire HORECA/Commerce:', this.horecaForm.value);
-      
-      // Simulation d'appel API
-      setTimeout(() => {
-        this.formSubmitted = true;
-        this.sendFormData();
-      }, 1000);
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    // Get labels for selected options
+    const typeEtablissementLabel = this.etablissementTypes.find(e => e.value === this.horecaForm.value.typeEtablissement)?.label || this.horecaForm.value.typeEtablissement;
+    const chiffreAffairesLabel = this.chiffreAffaires.find(c => c.value === this.horecaForm.value.chiffreAffaires)?.label || this.horecaForm.value.chiffreAffaires;
+
+    // Get selected besoins
+    const selectedBesoins = this.besoinsOptions
+      .filter(besoin => this.horecaForm.get(`besoin_${besoin.value}`)?.value)
+      .map(besoin => besoin.label);
+
+    const descriptionParts = [
+      `<h3>Évaluation Commerçant / HORECA</h3>`,
+      `<p><strong>Type d'établissement:</strong> ${typeEtablissementLabel}</p>`,
+      `<p><strong>Chiffre d'affaires:</strong> ${chiffreAffairesLabel}</p>`,
+      `<p><strong>Besoins:</strong></p>`,
+      `<ul>${selectedBesoins.map(b => `<li>${b}</li>`).join('')}</ul>`,
+      `<p><strong>Source:</strong> Formulaire mobile commercant-horeca</p>`,
+    ];
+
+    const leadData = {
+      name: this.horecaForm.value.nom,
+      phone: this.horecaForm.value.telephone,
+      email_from: this.horecaForm.value.email,
+      description: descriptionParts.join('\n'),
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: () => {
+        this.formSubmitted = true;
+        this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+      },
+      error: (error) => {
+        this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+        console.error('Erreur:', error);
+      },
+    });
   }
 
   resetForm(): void {
     this.currentFormStep = 1;
     this.formSubmitted = false;
     this.horecaForm.reset();
-  }
-
-  private sendFormData(): void {
-    // Préparation des données pour l'API
-    const selectedBesoins = this.besoinsOptions
-      .filter(besoin => this.horecaForm.get(`besoin_${besoin.value}`)?.value)
-      .map(besoin => besoin.value);
-
-    const formDataToSend = {
-      ...this.horecaForm.value,
-      besoins_list: selectedBesoins,
-      source: 'commercant-horeca-mobile',
-      timestamp: new Date().toISOString(),
-    };
-    
-    console.log('Envoi des données:', formDataToSend);
-    // Ici, vous pouvez implémenter l'appel à votre service API
   }
 
   // Méthodes de contact et services
@@ -359,12 +378,13 @@ export class CommercantHorecaMobileComponent implements OnInit, OnDestroy {
   }
 
   scheduleAppointment(): void {
-    // Redirection vers le système de prise de RDV
-    console.log('Redirection vers prise de RDV');
+     const calendlyUrl = 'https://calendly.com/mfinances/rdv-client-en-teleconference';
+    window.open(calendlyUrl, '_blank');
   }
 
   openHorecaContact(): void {
-    this.scrollToContact();
+    const calendlyUrl = 'https://calendly.com/mfinances/rdv-client-en-teleconference';
+    window.open(calendlyUrl, '_blank');
   }
 
   openMaps(): void {

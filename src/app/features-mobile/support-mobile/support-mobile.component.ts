@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
+import { ZoneContactMobileComponent } from "../../zone-contact-mobile/zone-contact-mobile.component";
 
 @Component({
   selector: 'app-support-mobile',
   standalone: true,
-  imports: [CommonModule, ShardeModuleModule],
+  imports: [CommonModule, ShardeModuleModule, ZoneContactMobileComponent],
   templateUrl: './support-mobile.component.html',
   styleUrls: ['./support-mobile.component.scss'],
 })

@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.component';
 
 interface FaqItem {
@@ -39,6 +41,13 @@ export class AsblMobileComponent implements OnInit {
   currentStep = 1;
   totalSteps = 3;
   formSubmitted = false;
+
+  // Étapes du formulaire pour le stepper
+  formSteps = [
+    { label: 'Type d\'ASBL' },
+    { label: 'Budget' },
+    { label: 'Contact' }
+  ];
 
   // FAQ
   faqs: FaqItem[] = [
@@ -79,7 +88,9 @@ export class AsblMobileComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private odooService: OdooService,
+    private toastr: ToastrService
   ) {
     this.initializeForm();
   }
@@ -221,32 +232,43 @@ export class AsblMobileComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.isFormValid()) {
-      console.log('Données du formulaire ASBL:', this.evaluationForm.value);
-      
-      // Simulation d'envoi du formulaire
-      setTimeout(() => {
-        this.formSubmitted = true;
-        this.sendFormData();
-      }, 1000);
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    const typeAsblLabel = this.asblTypes.find(t => t.value === this.evaluationForm.value.typeAsbl)?.label || this.evaluationForm.value.typeAsbl;
+    const budgetLabel = this.budgetRanges.find(b => b.value === this.evaluationForm.value.budget)?.label || this.evaluationForm.value.budget;
+
+    const descriptionParts = [
+      `<h3>Évaluation ASBL</h3>`,
+      `<p><strong>Type d'ASBL:</strong> ${typeAsblLabel}</p>`,
+      `<p><strong>Budget annuel:</strong> ${budgetLabel}</p>`,
+      `<p><strong>Source:</strong> Formulaire mobile ASBL</p>`,
+    ];
+
+    const leadData = {
+      name: this.evaluationForm.value.nom,
+      phone: this.evaluationForm.value.telephone,
+      email_from: this.evaluationForm.value.email,
+      description: descriptionParts.join('\n'),
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: () => {
+        this.formSubmitted = true;
+        this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+      },
+      error: (error) => {
+        this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+        console.error('Erreur:', error);
+      },
+    });
   }
 
   resetForm(): void {
     this.currentStep = 1;
     this.formSubmitted = false;
     this.evaluationForm.reset();
-  }
-
-  private sendFormData(): void {
-    // Préparation des données pour l'API
-    const formDataToSend = {
-      ...this.evaluationForm.value,
-      source: 'asbl-mobile-evaluation',
-      timestamp: new Date().toISOString(),
-    };
-    
-    console.log('Envoi des données ASBL:', formDataToSend);
-    // Ici, vous pouvez implémenter l'appel à votre service API
   }
 }

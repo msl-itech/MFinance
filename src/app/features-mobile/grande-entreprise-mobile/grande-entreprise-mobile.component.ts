@@ -8,6 +8,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.component';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 
 interface FormStep {
   label: string;
@@ -95,7 +97,11 @@ export class GrandeEntrepriseMobileComponent implements OnInit, OnDestroy {
     { value: 'audit-financier', label: 'Audit financier', icon: '🔍' },
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {
     this.entrepriseForm = this.createForm();
   }
 
@@ -231,44 +237,52 @@ export class GrandeEntrepriseMobileComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    if (this.isFormValid()) {
-      // Simulation d'envoi du formulaire
-      console.log(
-        'Données formulaire grande entreprise:',
-        this.entrepriseForm.value
-      );
-
-      // Simulation d'appel API
-      setTimeout(() => {
-        this.formSubmitted = true;
-        this.sendFormData();
-      }, 1000);
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    // Get labels for selected options
+    const secteurLabel = this.secteurs.find(s => s.value === this.entrepriseForm.value.secteur)?.label || this.entrepriseForm.value.secteur;
+    const revenusLabel = this.revenus.find(r => r.value === this.entrepriseForm.value.revenus)?.label || this.entrepriseForm.value.revenus;
+
+    // Get selected besoins
+    const selectedBesoins = this.besoinsOptions
+      .filter(besoin => this.entrepriseForm.get(`besoin_${besoin.value}`)?.value)
+      .map(besoin => besoin.label);
+
+    const descriptionParts = [
+      `<h3>Évaluation Grande Entreprise</h3>`,
+      `<p><strong>Secteur d'activité:</strong> ${secteurLabel}</p>`,
+      `<p><strong>Revenus annuels:</strong> ${revenusLabel}</p>`,
+      `<p><strong>Besoins:</strong></p>`,
+      `<ul>${selectedBesoins.map(b => `<li>${b}</li>`).join('')}</ul>`,
+      `<p><strong>Source:</strong> Formulaire mobile grande-entreprise</p>`,
+    ];
+
+    const leadData = {
+      name: this.entrepriseForm.value.nom,
+      phone: this.entrepriseForm.value.telephone,
+      email_from: this.entrepriseForm.value.email,
+      description: descriptionParts.join('\n'),
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: () => {
+        this.formSubmitted = true;
+        this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+      },
+      error: (error) => {
+        this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+        console.error('Erreur:', error);
+      },
+    });
   }
 
   resetForm(): void {
     this.currentFormStep = 1;
     this.formSubmitted = false;
     this.entrepriseForm.reset();
-  }
-
-  private sendFormData(): void {
-    // Préparation des données pour l'API
-    const selectedBesoins = this.besoinsOptions
-      .filter(
-        (besoin) => this.entrepriseForm.get(`besoin_${besoin.value}`)?.value
-      )
-      .map((besoin) => besoin.value);
-
-    const formDataToSend = {
-      ...this.entrepriseForm.value,
-      besoins_list: selectedBesoins,
-      source: 'grande-entreprise-mobile',
-      timestamp: new Date().toISOString(),
-    };
-
-    console.log('Envoi des données:', formDataToSend);
-    // Ici, vous pouvez implémenter l'appel à votre service API
   }
 
   // Méthodes de contact

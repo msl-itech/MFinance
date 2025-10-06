@@ -17,6 +17,7 @@ import { MobileLayoutComponent } from '../layouts/mobile-layout/mobile-layout.co
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { ProfilCommercantHorecaComponent } from '../profil-commercant-horeca/profil-commercant-horeca.component';
 import { SupportComponent } from '../support/support.component';
+import { CommercantHorecaMobileComponent } from '../features-mobile/commercant-horeca-mobile/commercant-horeca-mobile.component';
 export const MOBILE_ROUTES: Routes = [
   {
     path: '',
@@ -29,7 +30,6 @@ export const MOBILE_ROUTES: Routes = [
       },
       { path: 'support', component: SupportComponent },
       { path: 'about', component: AboutMobileComponent },
-      { path: 'asbl', component: AsblMobileComponent },
       { path: 'tarif', component: TarifMobileComponent },
       { path: 'avis-google', component: AvisGoogleComponent },
 
@@ -45,7 +45,7 @@ export const MOBILE_ROUTES: Routes = [
         path: 'societe-exploitation',
         component: SocieteExploitationMobileComponent,
       },
-      { path: 'commercant-horeca', component: ProfilCommercantHorecaComponent },
+      { path: 'commercant-horeca', component: CommercantHorecaMobileComponent },
       {
         path: 'professionel-sante',
         component: ProfessionnelSanteMobileComponent,

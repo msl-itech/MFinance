@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.component';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 
 interface FaqItem {
   question: string;
@@ -221,7 +223,11 @@ export class SocieteManagementPatrimonialeMobileComponent implements OnInit, OnD
     }
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {
     this.managementForm = this.createForm();
   }
 
@@ -354,39 +360,52 @@ export class SocieteManagementPatrimonialeMobileComponent implements OnInit, OnD
   }
 
   onSubmit(): void {
-    if (this.isFormValid()) {
-      // Simulation d'envoi du formulaire
-      console.log('Données formulaire management:', this.managementForm.value);
-      
-      // Simulation d'appel API
-      setTimeout(() => {
-        this.formSubmitted = true;
-        this.sendFormData();
-      }, 1000);
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    // Get labels for selected options
+    const typeSocieteLabel = this.societeTypes.find(s => s.value === this.managementForm.value.typeSociete)?.label || this.managementForm.value.typeSociete;
+    const chiffreAffairesLabel = this.chiffreAffairesOptions.find(c => c.value === this.managementForm.value.chiffreAffaires)?.label || this.managementForm.value.chiffreAffaires;
+
+    // Get selected besoins
+    const selectedBesoins = this.besoinsOptions
+      .filter(besoin => this.managementForm.get(`besoin_${besoin.value}`)?.value)
+      .map(besoin => besoin.label);
+
+    const descriptionParts = [
+      `<h3>Évaluation Société de Management Patrimoniale</h3>`,
+      `<p><strong>Type de société:</strong> ${typeSocieteLabel}</p>`,
+      `<p><strong>Chiffre d'affaires:</strong> ${chiffreAffairesLabel}</p>`,
+      `<p><strong>Besoins:</strong></p>`,
+      `<ul>${selectedBesoins.map(b => `<li>${b}</li>`).join('')}</ul>`,
+      `<p><strong>Source:</strong> Formulaire mobile société-management-patrimoniale</p>`,
+    ];
+
+    const leadData = {
+      name: this.managementForm.value.nom,
+      phone: this.managementForm.value.telephone,
+      email_from: this.managementForm.value.email,
+      description: descriptionParts.join('\n'),
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: () => {
+        this.formSubmitted = true;
+        this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+      },
+      error: (error) => {
+        this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+        console.error('Erreur:', error);
+      },
+    });
   }
 
   resetForm(): void {
     this.currentFormStep = 1;
     this.formSubmitted = false;
     this.managementForm.reset();
-  }
-
-  private sendFormData(): void {
-    // Préparation des données pour l'API
-    const selectedBesoins = this.besoinsOptions
-      .filter(besoin => this.managementForm.get(`besoin_${besoin.value}`)?.value)
-      .map(besoin => besoin.value);
-
-    const formDataToSend = {
-      ...this.managementForm.value,
-      besoins_list: selectedBesoins,
-      source: 'management-patrimoniale-mobile',
-      timestamp: new Date().toISOString(),
-    };
-    
-    console.log('Envoi des données:', formDataToSend);
-    // Ici, vous pouvez implémenter l'appel à votre service API
   }
 
   // Méthodes de contact

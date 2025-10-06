@@ -8,6 +8,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.component';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 
 interface FormStep {
   label: string;
@@ -101,7 +103,11 @@ export class ProfilPromoteurImmobilierMobileComponent
     { value: 'outils-digitaux', label: 'Outils digitaux', icon: '🔧' },
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {
     this.promoteurForm = this.createForm();
   }
 
@@ -237,44 +243,52 @@ export class ProfilPromoteurImmobilierMobileComponent
   }
 
   onSubmit(): void {
-    if (this.isFormValid()) {
-      // Simulation d'envoi du formulaire
-      console.log(
-        'Données formulaire promoteur immobilier:',
-        this.promoteurForm.value
-      );
-
-      // Simulation d'appel API
-      setTimeout(() => {
-        this.formSubmitted = true;
-        this.sendFormData();
-      }, 1000);
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    // Get labels for selected options
+    const typeProjetLabel = this.typesProjet.find(t => t.value === this.promoteurForm.value.typeProjet)?.label || this.promoteurForm.value.typeProjet;
+    const budgetLabel = this.budgets.find(b => b.value === this.promoteurForm.value.budget)?.label || this.promoteurForm.value.budget;
+
+    // Get selected besoins
+    const selectedBesoins = this.besoinsOptions
+      .filter(besoin => this.promoteurForm.get(`besoin_${besoin.value}`)?.value)
+      .map(besoin => besoin.label);
+
+    const descriptionParts = [
+      `<h3>Évaluation Promoteur Immobilier</h3>`,
+      `<p><strong>Type de projet:</strong> ${typeProjetLabel}</p>`,
+      `<p><strong>Budget:</strong> ${budgetLabel}</p>`,
+      `<p><strong>Besoins:</strong></p>`,
+      `<ul>${selectedBesoins.map(b => `<li>${b}</li>`).join('')}</ul>`,
+      `<p><strong>Source:</strong> Formulaire mobile promoteur-immobilier</p>`,
+    ];
+
+    const leadData = {
+      name: this.promoteurForm.value.nom,
+      phone: this.promoteurForm.value.telephone,
+      email_from: this.promoteurForm.value.email,
+      description: descriptionParts.join('\n'),
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: () => {
+        this.formSubmitted = true;
+        this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+      },
+      error: (error) => {
+        this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+        console.error('Erreur:', error);
+      },
+    });
   }
 
   resetForm(): void {
     this.currentFormStep = 1;
     this.formSubmitted = false;
     this.promoteurForm.reset();
-  }
-
-  private sendFormData(): void {
-    // Préparation des données pour l'API
-    const selectedBesoins = this.besoinsOptions
-      .filter(
-        (besoin) => this.promoteurForm.get(`besoin_${besoin.value}`)?.value
-      )
-      .map((besoin) => besoin.value);
-
-    const formDataToSend = {
-      ...this.promoteurForm.value,
-      besoins_list: selectedBesoins,
-      source: 'promoteur-immobilier-mobile',
-      timestamp: new Date().toISOString(),
-    };
-
-    console.log('Envoi des données:', formDataToSend);
-    // Ici, vous pouvez implémenter l'appel à votre service API
   }
 
   // Méthodes de contact

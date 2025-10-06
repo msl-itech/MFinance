@@ -345,18 +345,28 @@
     </div>
 
     <div class="evaluation-form">
-      <!-- Indicateur d'étape fixe -->
-      <div class="form-progress">
-        <div class="progress-bar">
+      <!-- Stepper visuel amélioré -->
+      <div class="form-stepper">
+        <div class="stepper-container">
+          <div
+            class="stepper-step"
+            *ngFor="let step of formSteps; let i = index"
+            [class.active]="i + 1 === currentStep"
+            [class.completed]="i + 1 < currentStep"
+          >
+            <div class="step-circle">
+              <span *ngIf="i + 1 < currentStep">✅</span>
+              <span *ngIf="i + 1 >= currentStep">{{ i + 1 }}</span>
+            </div>
+            <span class="step-label">{{ step.label }}</span>
+          </div>
+        </div>
+        <div class="stepper-progress">
           <div
             class="progress-fill"
             [style.width.%]="(currentStep / totalSteps) * 100"
           ></div>
         </div>
-        <span class="progress-text"
-          >{{ currentStep }}/{{ totalSteps }} -
-          {{ getCurrentStepTitle() }}</span
-        >
       </div>
 
       <form
@@ -384,6 +394,13 @@
               <div class="option-content">
                 <div class="option-icon">{{ type.icon }}</div>
                 <span class="option-label">{{ type.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="
+                    evaluationForm.get('typeAsbl')?.value === type.value
+                  "
+                  >✅</span
+                >
               </div>
             </label>
           </div>
@@ -409,6 +426,11 @@
               <div class="option-content">
                 <div class="option-icon">💰</div>
                 <span class="option-label">{{ budget.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="evaluationForm.get('budget')?.value === budget.value"
+                  >✅</span
+                >
               </div>
             </label>
           </div>
@@ -423,17 +445,19 @@
           </p>
           <div class="input-group">
             <div class="input-field">
-              <label>Nom *</label>
+              <label for="nom">Nom *</label>
               <input
+                id="nom"
                 type="text"
                 formControlName="nom"
-                placeholder="Votre nom"
+                placeholder="Votre nom complet"
                 required
               />
             </div>
             <div class="input-field">
-              <label>Email *</label>
+              <label for="email">Email *</label>
               <input
+                id="email"
                 type="email"
                 formControlName="email"
                 placeholder="votre@email.com"
@@ -441,8 +465,9 @@
               />
             </div>
             <div class="input-field">
-              <label>Téléphone *</label>
+              <label for="telephone">Téléphone *</label>
               <input
+                id="telephone"
                 type="tel"
                 formControlName="telephone"
                 placeholder="+32 4XX XX XX XX"

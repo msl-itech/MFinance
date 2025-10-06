@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.component';
 
 interface FaqItem {
@@ -34,6 +36,10 @@ interface Step {
   description: string;
 }
 
+interface FormStep {
+  label: string;
+}
+
 @Component({
   selector: 'app-independant-mobile',
   standalone: true,
@@ -53,6 +59,14 @@ export class IndependantMobileComponent implements OnInit {
   currentFormStep = 1;
   totalFormSteps = 4;
   formSubmitted = false;
+
+  // Étapes du formulaire
+  formSteps: FormStep[] = [
+    { label: 'Statut' },
+    { label: 'Revenus' },
+    { label: 'Besoins' },
+    { label: 'Contact' }
+  ];
 
   // Étapes pour devenir indépendant
   steps: Step[] = [
@@ -144,7 +158,9 @@ export class IndependantMobileComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private odooService: OdooService,
+    private toastr: ToastrService
   ) {
     this.initializeForm();
   }
@@ -319,37 +335,54 @@ export class IndependantMobileComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.isFormValid()) {
-      console.log('Données du formulaire Indépendant:', this.independantForm.value);
-      
-      // Simulation d'envoi du formulaire
-      setTimeout(() => {
-        this.formSubmitted = true;
-        this.sendFormData();
-      }, 1000);
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    const statutLabel = this.statutOptions.find(s => s.value === this.independantForm.value.statut)?.label || this.independantForm.value.statut;
+    const revenuLabel = this.revenuOptions.find(r => r.value === this.independantForm.value.revenuAnnuel)?.label || this.independantForm.value.revenuAnnuel;
+
+    const selectedBesoins = this.besoinsOptions
+      .filter(besoin => this.independantForm.get(`besoin_${besoin.value}`)?.value)
+      .map(besoin => besoin.label);
+
+    const descriptionParts = [
+      `<h3>Évaluation Indépendant</h3>`,
+      `<p><strong>Statut:</strong> ${statutLabel}</p>`,
+      `<p><strong>Revenu annuel estimé:</strong> ${revenuLabel}</p>`,
+      `<p><strong>Besoins:</strong></p>`,
+      `<ul>${selectedBesoins.map(b => `<li>${b}</li>`).join('')}</ul>`,
+      `<p><strong>Source:</strong> Formulaire mobile Indépendant</p>`,
+    ];
+
+    const leadData = {
+      name: this.independantForm.value.nom,
+      phone: this.independantForm.value.telephone,
+      email_from: this.independantForm.value.email,
+      description: descriptionParts.join('\n'),
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: () => {
+        this.formSubmitted = true;
+        this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+      },
+      error: (error) => {
+        this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+        console.error('Erreur:', error);
+      },
+    });
   }
 
   resetForm(): void {
     this.currentFormStep = 1;
     this.formSubmitted = false;
     this.independantForm.reset();
-    
+
     // Réinitialiser les checkboxes
     this.besoinsOptions.forEach(besoin => {
       this.independantForm.get(`besoin_${besoin.value}`)?.setValue(false);
     });
-  }
-
-  private sendFormData(): void {
-    // Préparation des données pour l'API
-    const formDataToSend = {
-      ...this.independantForm.value,
-      source: 'independant-mobile-evaluation',
-      timestamp: new Date().toISOString(),
-    };
-    
-    console.log('Envoi des données Indépendant:', formDataToSend);
-    // Ici, vous pouvez implémenter l'appel à votre service API
   }
 }

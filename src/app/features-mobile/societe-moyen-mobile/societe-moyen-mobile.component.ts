@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormsModule } from '@angular/forms';
 import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.component';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 
 interface FaqItem {
   question: string;
@@ -224,7 +226,11 @@ export class SocieteMoyenMobileComponent implements OnInit, OnDestroy {
     }
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {
     this.societeForm = this.createForm();
   }
 
@@ -378,39 +384,52 @@ export class SocieteMoyenMobileComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    if (this.isFormValid()) {
-      // Simulation d'envoi du formulaire
-      console.log('Données formulaire société de moyens:', this.societeForm.value);
-      
-      // Simulation d'appel API
-      setTimeout(() => {
-        this.formSubmitted = true;
-        this.sendFormData();
-      }, 1000);
+    if (!this.isFormValid()) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
     }
+
+    // Get labels for selected options
+    const typeCollaborationLabel = this.collaborationTypes.find(c => c.value === this.societeForm.value.typeCollaboration)?.label || this.societeForm.value.typeCollaboration;
+    const nombreMembresLabel = this.nombreMembres.find(n => n.value === this.societeForm.value.nombreMembres)?.label || this.societeForm.value.nombreMembres;
+
+    // Get selected besoins
+    const selectedBesoins = this.besoinsOptions
+      .filter(besoin => this.societeForm.get(`besoin_${besoin.value}`)?.value)
+      .map(besoin => besoin.label);
+
+    const descriptionParts = [
+      `<h3>Évaluation Société de Moyens</h3>`,
+      `<p><strong>Type de collaboration:</strong> ${typeCollaborationLabel}</p>`,
+      `<p><strong>Nombre de membres:</strong> ${nombreMembresLabel}</p>`,
+      `<p><strong>Besoins:</strong></p>`,
+      `<ul>${selectedBesoins.map(b => `<li>${b}</li>`).join('')}</ul>`,
+      `<p><strong>Source:</strong> Formulaire mobile société-de-moyens</p>`,
+    ];
+
+    const leadData = {
+      name: this.societeForm.value.nom,
+      phone: this.societeForm.value.telephone,
+      email_from: this.societeForm.value.email,
+      description: descriptionParts.join('\n'),
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: () => {
+        this.formSubmitted = true;
+        this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+      },
+      error: (error) => {
+        this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+        console.error('Erreur:', error);
+      },
+    });
   }
 
   resetForm(): void {
     this.currentFormStep = 1;
     this.formSubmitted = false;
     this.societeForm.reset();
-  }
-
-  private sendFormData(): void {
-    // Préparation des données pour l'API
-    const selectedBesoins = this.besoinsOptions
-      .filter(besoin => this.societeForm.get(`besoin_${besoin.value}`)?.value)
-      .map(besoin => besoin.value);
-
-    const formDataToSend = {
-      ...this.societeForm.value,
-      besoins_list: selectedBesoins,
-      source: 'societe-moyen-mobile',
-      timestamp: new Date().toISOString(),
-    };
-    
-    console.log('Envoi des données:', formDataToSend);
-    // Ici, vous pouvez implémenter l'appel à votre service API
   }
 
   // Méthodes de contact
