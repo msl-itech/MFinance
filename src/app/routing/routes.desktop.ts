@@ -18,7 +18,6 @@ import { TarifComponent } from '../tarif/tarif.component';
 import { CalculatriceComponent } from '../calculatrice/calculatrice.component';
 
 export const DESKTOP_ROUTES: Routes = [
-  { path: 'calculatrice', component: CalculatriceComponent },
   {
     path: '',
     component: DesktopLayoutComponent,
@@ -31,6 +30,7 @@ export const DESKTOP_ROUTES: Routes = [
             (m) => m.ModuleAccueilModule
           ),
       },
+      { path: 'calculatrice', component: CalculatriceComponent },
       { path: 'support', component: SupportComponent },
       { path: 'about', component: AboutComponent },
       { path: 'tarif', component: TarifComponent },

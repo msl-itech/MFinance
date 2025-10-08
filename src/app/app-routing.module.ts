@@ -14,7 +14,6 @@ function getRoutes(): Routes {
 }
 
 const routes: Routes = [
-  { path: 'calculatrice', component: CalculatriceComponent },
   {
     path: '',
     canMatch: [

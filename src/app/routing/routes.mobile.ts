@@ -18,6 +18,7 @@ import { NotFoundComponent } from '../not-found/not-found.component';
 import { ProfilCommercantHorecaComponent } from '../profil-commercant-horeca/profil-commercant-horeca.component';
 import { SupportComponent } from '../support/support.component';
 import { CommercantHorecaMobileComponent } from '../features-mobile/commercant-horeca-mobile/commercant-horeca-mobile.component';
+import { CalculatriceComponent } from '../calculatrice/calculatrice.component';
 export const MOBILE_ROUTES: Routes = [
   {
     path: '',
@@ -28,6 +29,7 @@ export const MOBILE_ROUTES: Routes = [
         path: 'accueil',
         component: AccueilMobileComponent,
       },
+      { path: 'calculatrice', component: CalculatriceComponent },
       { path: 'support', component: SupportComponent },
       { path: 'about', component: AboutMobileComponent },
       { path: 'tarif', component: TarifMobileComponent },

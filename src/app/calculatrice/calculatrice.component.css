@@ -1,7 +1,7 @@
 .calculatrice-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
-  padding: 30px 20px;
+  padding: 20px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,50 +44,51 @@
 
 .card-header {
   background: #1a2c51;
-  padding: 36px 28px;
+  padding: 28px 20px;
   text-align: center;
   color: white;
 }
 
 .brand h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 900;
   margin: 0;
   line-height: 1.3;
 }
 
 .brand .subtitle {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   opacity: 0.85;
   margin: 12px 0 0 0;
   line-height: 1.5;
   color: white;
-  display: inline-block;        
-  padding: 8px 20px;            
-  border: 2px solid red;        
+  display: inline-block;
+  padding: 6px 16px;
+  border: 2px solid red;
   border-radius: 50px;
 }
 
 .card-content {
-  flex: 1; 
-  padding: 36px 32px;
+  flex: 1;
+  padding: 28px 20px;
   text-align: center;
-  
 }
 
 .main-title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 800;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   background: #f34947;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #6c757d;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .calculatrice-card select {
@@ -119,7 +120,9 @@
 }
 
 .card-footer {
-  margin-top: auto; 
+  margin-top: auto;
+  padding: 0 20px 28px 20px;
+  text-align: center;
 }
 
 .start-btn {
@@ -132,11 +135,14 @@
   cursor: pointer;
   font-size: 1rem;
   transition: all 0.3s ease;
-  margin-left: 20%;
+  width: 100%;
+  max-width: 400px;
 }
 
 .start-btn:hover {
   background: #d73839;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(243, 73, 71, 0.3);
 }
 
 .confidential {
@@ -144,7 +150,95 @@
   color: #6c757d;
   margin-top: 12px;
   line-height: 1.4;
-  margin-left: 5%;
-  color: #6c757d;
-  margin-left: 20%;
+  padding: 0 10px;
+}
+
+/* Media Queries pour le responsive */
+@media (min-width: 768px) {
+  .calculatrice-page {
+    padding: 40px 20px;
+  }
+
+  .card-header {
+    padding: 36px 28px;
+  }
+
+  .brand h2 {
+    font-size: 1.8rem;
+  }
+
+  .brand .subtitle {
+    font-size: 0.95rem;
+    padding: 8px 20px;
+  }
+
+  .card-content {
+    padding: 36px 32px;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .card-footer {
+    padding: 0 32px 36px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculatrice-page {
+    padding: 15px 10px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .calculatrice-card {
+    border-radius: 20px;
+  }
+
+  .card-header {
+    padding: 24px 16px;
+  }
+
+  .brand h2 {
+    font-size: 1.3rem;
+  }
+
+  .brand .subtitle {
+    font-size: 0.8rem;
+    padding: 5px 14px;
+  }
+
+  .card-content {
+    padding: 24px 16px;
+  }
+
+  .main-title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .start-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  .confidential {
+    font-size: 0.8rem;
+  }
+
+  .card-footer {
+    padding: 0 16px 24px 16px;
+  }
 }
