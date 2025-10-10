@@ -27,7 +27,7 @@ export class AvisGoogleComponent implements OnInit {
     // Remplacez cet URL par votre vrai lien Google My Business
     // Pour obtenir votre lien, allez sur votre profil Google My Business et copiez l'URL de la section avis
     const googleReviewUrl =
-      'https://www.google.com/search?q=mfinances&oq=mfinances&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQLhivARjHARiABDIJCAIQABgKGIAEMg8IAxAAGAoYgwEYsQMYgAQyCQgEEAAYChiABDIHCAUQABiABDIGCAYQRRg9MgYIBxBFGD3SAQg0NDAyajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x47c3c5d9d41dc777:0x4287de38397fa316,3,,,,';
+      'https://www.google.com/search?sca_esv=bd4826c8ba41a3de&sxsrf=AE3TifM3-FaoUqMNelL-lPkK2eH0t4T5uA:1756115093965&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-EwY9wN49Ss6yAYNaMVwXLLnhCVrZfroQSEJ8Ic37tSPE45TmTK8NHm43mqXIGNlV9QOzePtNz3cqX83iRtIaiObLoZxVw1-lVXBh3mapUAuTKAMIXg%3D%3D&q=MFinances+%7C+Expert-Comptable+Avis&sa=X&ved=2ahUKEwie7_DC1qWPAxW1RKQEHcxVAFsQ0bkNegQIHhAE&biw=1680&bih=928&dpr=2#lrd=0x47c3c5d9d41dc777:0x4287de38397fa316,3';
 
     // Alternative : vous pouvez aussi utiliser un lien de recherche Google
     // const googleReviewUrl = 'https://www.google.com/search?q=MFinances+avis&rlz=1C1GCEU_fr';
