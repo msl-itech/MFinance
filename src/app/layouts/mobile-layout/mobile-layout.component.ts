@@ -326,12 +326,12 @@ import { filter, takeUntil } from 'rxjs/operators';
               </ul>
             </li>
 
-            <li>
+            <!-- <li>
               <a routerLink="/calculatrice" (click)="closeMobileMenu()">
                 <i class="fas fa-calculator"></i>
                 <span>Calculatrice</span>
               </a>
-            </li>
+            </li> -->
             <li>
               <a routerLink="/support" (click)="closeMobileMenu()">
                 <i class="fas fa-headset"></i>
