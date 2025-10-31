@@ -1,0 +1,1517 @@
+// Variables - Charte couleur
+$primary-red: #ff3b30;
+$dark-blue: #1a2c51;
+$light-gray: #f8f9fb;
+$success-green: #ff3333;
+$warning-orange: #ff3333;
+$text-muted: #6c757d;
+$border-gray: #e6e9f1;
+$white: #ffffff;
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-medium: rgba(0, 0, 0, 0.15);
+$shadow-heavy: rgba(0, 0, 0, 0.25);
+
+.societe-moyen-mobile-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+// Section Hero
+.hero-section {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: $white;
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    .hero-bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba($dark-blue, 0.8) 0%,
+        rgba($primary-red, 0.6) 100%
+      );
+    }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px 16px;
+    text-align: center;
+    width: 100%;
+
+    .hero-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      margin-bottom: 24px;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+
+    .quick-access {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+
+      .quick-access-btn {
+        border: none;
+        border-radius: 25px;
+        padding: 16px 32px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 280px;
+
+        &.primary {
+          background: $primary-red;
+          color: $white;
+          box-shadow: 0 4px 15px rgba($primary-red, 0.3);
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba($primary-red, 0.4);
+          }
+        }
+
+        &.secondary {
+          background: rgba($white, 0.1);
+          color: $white;
+          border: 2px solid rgba($white, 0.3);
+
+          &:hover {
+            background: rgba($white, 0.2);
+            border-color: rgba($white, 0.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section Introduction
+.intro-section {
+  padding: 40px 16px;
+  background: $white;
+
+  .intro-content {
+    .intro-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $dark-blue;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .intro-text {
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        color: $dark-blue;
+      }
+
+      .intro-expand,
+      .intro-expanded {
+        margin-top: 16px;
+        text-align: center;
+
+        .expand-btn {
+          background: none;
+          border: 1px solid $primary-red;
+          color: $primary-red;
+          padding: 8px 16px;
+          border-radius: 20px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: $primary-red;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .section-cta {
+    text-align: center;
+    margin-top: 32px;
+
+    .cta-primary {
+      background: $primary-red;
+      color: $white;
+      border: none;
+      border-radius: 25px;
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba($primary-red, 0.3);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($primary-red, 0.4);
+      }
+    }
+
+    .cta-subtitle {
+      font-size: 14px;
+      color: $text-muted;
+      margin-top: 8px;
+    }
+  }
+}
+
+// Section Avantages
+.avantages-section {
+  padding: 40px 16px;
+  background: $light-gray;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $dark-blue;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: $text-muted;
+      font-weight: 500;
+    }
+  }
+
+  .avantages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .avantage-card {
+      background: $white;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 20px $shadow-light;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+      }
+
+      .avantage-icon {
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: $dark-blue;
+        margin-bottom: 16px;
+      }
+
+      .avantage-details {
+        p {
+          font-size: 14px;
+          color: $text-muted;
+          margin-bottom: 8px;
+          text-align: left;
+          line-height: 1.5;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section Fonctionnement
+.fonctionnement-section {
+  padding: 40px 16px;
+  background: $white;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $dark-blue;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: $text-muted;
+      font-weight: 500;
+    }
+  }
+
+  .fonctionnement-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .fonction-card {
+      background: $light-gray;
+      border-radius: 16px;
+      padding: 24px;
+      border-left: 4px solid $primary-red;
+
+      .fonction-icon {
+        font-size: 28px;
+        margin-bottom: 16px;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: $dark-blue;
+        margin-bottom: 16px;
+      }
+
+      .fonction-content {
+        .benefit-item {
+          margin-bottom: 16px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .benefit-title {
+            font-weight: 600;
+            color: $dark-blue;
+            display: block;
+            margin-bottom: 4px;
+          }
+
+          p {
+            font-size: 14px;
+            color: $text-muted;
+            line-height: 1.5;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section Besoins spécifiques
+.besoins-section {
+  padding: 40px 16px;
+  background: $light-gray;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $dark-blue;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: $text-muted;
+      font-weight: 500;
+    }
+  }
+
+  .besoins-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    .besoin-card {
+      background: $white;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 20px $shadow-light;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+      }
+
+      .besoin-icon {
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: $dark-blue;
+        margin-bottom: 16px;
+      }
+
+      .besoin-list {
+        p {
+          font-size: 14px;
+          color: $text-muted;
+          margin-bottom: 8px;
+          text-align: left;
+          line-height: 1.5;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section Mutualisation avec carrousel
+.mutualisation-section {
+  padding: 40px 16px;
+  background: $white;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $dark-blue;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: $text-muted;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
+
+  .mutualisation-carousel {
+    margin-bottom: 32px;
+
+    .carousel-container {
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.3s ease;
+
+      .mutualisation-card {
+        flex: 0 0 100%;
+        background: $light-gray;
+        padding: 24px;
+        border-left: 4px solid $primary-red;
+
+        .mutualisation-icon {
+          font-size: 32px;
+          text-align: center;
+          margin-bottom: 16px;
+        }
+
+        h3 {
+          font-size: 18px;
+          font-weight: 700;
+          color: $dark-blue;
+          margin-bottom: 16px;
+          text-align: center;
+        }
+
+        .mutualisation-benefits {
+          .benefit-tag {
+            display: block;
+            font-size: 14px;
+            color: $dark-blue;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            background: $white;
+            border-radius: 8px;
+            line-height: 1.4;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+
+      .nav-btn {
+        background: $primary-red;
+        color: $white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:disabled {
+          background: $text-muted;
+          cursor: not-allowed;
+        }
+
+        &:not(:disabled):hover {
+          transform: scale(1.1);
+          box-shadow: 0 4px 12px rgba($primary-red, 0.3);
+        }
+      }
+
+      .carousel-indicators {
+        display: flex;
+        gap: 8px;
+
+        .indicator {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: $border-gray;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &.active {
+            background: $primary-red;
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+
+  // Calculateur d'économies
+  .economies-calculator {
+    background: linear-gradient(
+      135deg,
+      $success-green,
+      darken($success-green, 10%)
+    );
+    color: $white;
+    border-radius: 16px;
+    padding: 24px;
+
+    .calculator-header {
+      text-align: center;
+      margin-bottom: 20px;
+
+      h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+
+    .calculator-content {
+      .calculator-input {
+        margin-bottom: 16px;
+
+        label {
+          display: block;
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 8px;
+        }
+
+        input {
+          width: 100%;
+          padding: 12px;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          text-align: center;
+
+          &::placeholder {
+            color: $text-muted;
+          }
+        }
+      }
+
+      .calculator-result {
+        text-align: center;
+
+        .result-highlight {
+          background: rgba($white, 0.2);
+          padding: 16px;
+          border-radius: 12px;
+
+          .result-amount {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+          }
+
+          .result-label {
+            font-size: 14px;
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section Pourquoi choisir MFINANCES
+.why-choose-section {
+  padding: 40px 16px;
+  background: $light-gray;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .why-badge {
+      background: $primary-red;
+      color: $white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $dark-blue;
+    }
+  }
+
+  .why-choose-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .why-card {
+      background: $white;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 20px $shadow-light;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+      }
+
+      .why-icon {
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: $dark-blue;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 14px;
+        color: $text-muted;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+// Section Étude de cas avec carrousel
+.case-study-section {
+  padding: 40px 16px;
+  background: $white;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $dark-blue;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: $text-muted;
+      font-weight: 500;
+    }
+  }
+
+  .case-study-carousel {
+    .case-slides-container {
+      background: $light-gray;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      margin-bottom: 24px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .case-slide {
+        .slide-icon {
+          font-size: 48px;
+          margin-bottom: 16px;
+        }
+
+        h3 {
+          font-size: 20px;
+          font-weight: 700;
+          color: $dark-blue;
+          margin-bottom: 20px;
+        }
+
+        .slide-content {
+          p {
+            font-size: 15px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            color: $dark-blue;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        .testimonial {
+          background: $white;
+          padding: 20px;
+          border-radius: 12px;
+          margin-top: 20px;
+          border-left: 4px solid $success-green;
+
+          .testimonial-quote {
+            font-style: italic;
+            font-size: 16px;
+            color: $dark-blue;
+            margin-bottom: 12px;
+          }
+
+          .testimonial-author {
+            font-size: 14px;
+            color: $text-muted;
+            display: block;
+            margin-bottom: 8px;
+          }
+
+          .satisfaction-note {
+            font-size: 14px;
+            color: $warning-orange;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .case-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .case-nav-btn {
+        background: $primary-red;
+        color: $white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:disabled {
+          background: $text-muted;
+          cursor: not-allowed;
+        }
+
+        &:not(:disabled):hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba($primary-red, 0.3);
+        }
+      }
+
+      .case-indicators {
+        display: flex;
+        gap: 8px;
+
+        .case-indicator {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: $border-gray;
+          color: $text-muted;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &.active {
+            background: $primary-red;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// FAQ Section
+.faq-section {
+  padding: 40px 16px;
+  background: $light-gray;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $dark-blue;
+    }
+  }
+
+  .faq-content {
+    .faq-item {
+      background: $white;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px $shadow-light;
+
+      .faq-question {
+        padding: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: lighten($light-gray, 2%);
+        }
+
+        .faq-icon {
+          font-size: 20px;
+          margin-right: 12px;
+        }
+
+        h3 {
+          font-size: 16px;
+          font-weight: 600;
+          color: $dark-blue;
+          margin: 0;
+          flex-grow: 1;
+        }
+
+        .faq-toggle {
+          font-size: 20px;
+          font-weight: 700;
+          color: $primary-red;
+          transition: transform 0.3s ease;
+
+          &.open {
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+
+        &.open {
+          max-height: 500px;
+        }
+
+        div {
+          padding: 0 20px 20px;
+          color: $text-muted;
+          line-height: 1.6;
+
+          ul {
+            margin: 12px 0;
+            padding-left: 20px;
+
+            li {
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+
+    .faq-contact {
+      text-align: center;
+      margin-top: 32px;
+
+      p {
+        font-size: 16px;
+        color: $text-muted;
+        margin-bottom: 16px;
+      }
+
+      .faq-contact-btn {
+        background: $primary-red;
+        color: $white;
+        border: none;
+        border-radius: 25px;
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba($primary-red, 0.3);
+        }
+      }
+    }
+  }
+}
+
+// Section Contact
+.contact-section {
+  padding: 40px 16px;
+  background: $white;
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .contact-badge {
+      span {
+        background: $primary-red;
+        color: $white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+    }
+
+    .contact-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $dark-blue;
+      margin-bottom: 8px;
+    }
+
+    .contact-subtitle {
+      font-size: 16px;
+      color: $text-muted;
+      font-weight: 500;
+    }
+  }
+
+  .contact-actions {
+    margin-bottom: 32px;
+
+    .contact-method {
+      background: $light-gray;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: darken($light-gray, 5%);
+        transform: translateY(-2px);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-icon {
+        font-size: 24px;
+        margin-right: 16px;
+        flex-shrink: 0;
+      }
+
+      .contact-info {
+        .contact-label {
+          display: block;
+          font-size: 14px;
+          color: $text-muted;
+          margin-bottom: 4px;
+        }
+
+        .contact-value {
+          font-size: 16px;
+          font-weight: 600;
+          color: $dark-blue;
+        }
+      }
+    }
+  }
+
+  .contact-cta-societe {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .cta-societe-btn,
+    .maps-btn {
+      border: none;
+      border-radius: 25px;
+      padding: 16px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cta-societe-btn {
+      background: $primary-red;
+      color: $white;
+      box-shadow: 0 4px 15px rgba($primary-red, 0.3);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($primary-red, 0.4);
+      }
+    }
+
+    .maps-btn {
+      background: $white;
+      color: $dark-blue;
+      border: 2px solid $border-gray;
+
+      &:hover {
+        border-color: $primary-red;
+        color: $primary-red;
+      }
+    }
+  }
+}
+
+// Section Évaluation
+.evaluation-section {
+  padding: 40px 16px;
+  background: $light-gray;
+
+  .evaluation-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .evaluation-badge {
+      span {
+        background: $warning-orange;
+        color: $white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+    }
+
+    .evaluation-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $dark-blue;
+      margin-bottom: 8px;
+    }
+
+    .evaluation-subtitle {
+      font-size: 16px;
+      color: $text-muted;
+      font-weight: 500;
+    }
+  }
+
+  .evaluation-form {
+    background: $white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px $shadow-light;
+
+    // Stepper visuel
+    .form-stepper {
+      margin-bottom: 32px;
+
+      .stepper-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        overflow-x: auto;
+        padding: 0 8px;
+      }
+
+      .stepper-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        min-width: 60px;
+
+        .step-circle {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: $border-gray;
+          color: $text-muted;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 600;
+          font-size: 0.9rem;
+          transition: all 0.3s ease;
+        }
+
+        .step-label {
+          font-size: 0.75rem;
+          color: $text-muted;
+          text-align: center;
+          font-weight: 500;
+        }
+
+        &.active {
+          .step-circle {
+            background: $primary-red;
+            color: white;
+          }
+
+          .step-label {
+            color: $primary-red;
+            font-weight: 600;
+          }
+        }
+
+        &.completed {
+          .step-circle {
+            background: $success-green;
+            color: white;
+          }
+
+          .step-label {
+            color: $success-green;
+          }
+        }
+      }
+
+      .stepper-progress {
+        height: 4px;
+        background: $border-gray;
+        border-radius: 2px;
+        overflow: hidden;
+
+        .progress-fill {
+          height: 100%;
+          background: $primary-red;
+          transition: width 0.3s ease;
+        }
+      }
+    }
+
+    // Contenu des étapes du formulaire
+    .form-step {
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: $dark-blue;
+        margin-bottom: 8px;
+      }
+
+      .step-subtitle {
+        font-size: 14px;
+        color: $text-muted;
+        margin-bottom: 24px;
+      }
+
+      .options-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 24px;
+
+        .option-card {
+          border: 2px solid $border-gray;
+          border-radius: 12px;
+          padding: 16px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+
+          &:hover {
+            border-color: lighten($primary-red, 20%);
+          }
+
+          &.selected {
+            border-color: $primary-red;
+            background: lighten($primary-red, 45%);
+          }
+
+          input[type="radio"],
+          input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+          }
+
+          .option-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            .option-icon {
+              font-size: 24px;
+              flex-shrink: 0;
+            }
+
+            .option-label {
+              font-size: 15px;
+              font-weight: 600;
+              color: $dark-blue;
+              flex-grow: 1;
+            }
+
+            .option-check {
+              font-size: 18px;
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+
+      .input-group {
+        .input-field {
+          margin-bottom: 16px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: $dark-blue;
+            margin-bottom: 6px;
+          }
+
+          input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid $border-gray;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+              outline: none;
+              border-color: $primary-red;
+            }
+
+            &::placeholder {
+              color: $text-muted;
+            }
+          }
+        }
+      }
+
+      .contact-info {
+        background: lighten($success-green, 40%);
+        border: 1px solid lighten($success-green, 20%);
+        color: darken($success-green, 20%);
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 16px;
+      }
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      margin-top: 32px;
+
+      .btn-prev,
+      .btn-next,
+      .btn-submit {
+        border: none;
+        border-radius: 8px;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex: 1;
+      }
+
+      .btn-prev {
+        background: $white;
+        color: $text-muted;
+        border: 2px solid $border-gray;
+
+        &:hover {
+          border-color: $primary-red;
+          color: $primary-red;
+        }
+      }
+
+      .btn-next,
+      .btn-submit {
+        background: $primary-red;
+        color: $white;
+
+        &:hover:not(:disabled) {
+          background: darken($primary-red, 10%);
+          transform: translateY(-2px);
+        }
+
+        &:disabled {
+          background: $text-muted;
+          cursor: not-allowed;
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .success-message {
+    background: $success-green;
+    color: $white;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+
+    .success-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+
+    .btn-reset {
+      background: rgba($white, 0.2);
+      color: $white;
+      border: 2px solid rgba($white, 0.3);
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba($white, 0.3);
+        border-color: rgba($white, 0.5);
+      }
+    }
+  }
+}
+
+// Bouton sticky
+.sticky-contact {
+  position: fixed;
+  bottom: 20px;
+  right: 16px;
+  background: $primary-red;
+  color: $white;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba($primary-red, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($primary-red, 0.5);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .hero-section .hero-content {
+    padding: 32px 12px;
+
+    .hero-title {
+      font-size: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+    }
+
+    .quick-access-btn {
+      min-width: 250px;
+      font-size: 14px;
+      padding: 14px 24px;
+    }
+  }
+
+  .avantages-section,
+  .fonctionnement-section,
+  .besoins-section,
+  .mutualisation-section,
+  .why-choose-section,
+  .case-study-section,
+  .faq-section,
+  .contact-section,
+  .evaluation-section {
+    padding: 32px 12px;
+  }
+
+  .section-header .section-title {
+    font-size: 18px;
+  }
+
+  .mutualisation-carousel .carousel-track .mutualisation-card {
+    padding: 20px 16px;
+
+    .mutualisation-icon {
+      font-size: 28px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    .benefit-tag {
+      font-size: 13px;
+      padding: 6px 10px;
+    }
+  }
+
+  .case-study-carousel .case-slides-container {
+    padding: 24px 16px;
+    min-height: 250px;
+
+    .case-slide {
+      .slide-icon {
+        font-size: 40px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .evaluation-form {
+    padding: 20px;
+
+    .form-stepper .stepper-container .stepper-step {
+      .step-circle {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+
+        &::after {
+          width: 30px;
+        }
+      }
+
+      .step-label {
+        font-size: 11px;
+      }
+    }
+  }
+
+  .sticky-contact {
+    bottom: 20px;
+    right: 12px;
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .avantages-container,
+  .besoins-grid,
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fonctionnement-cards {
+    flex-direction: row;
+  }
+}
+
+.input-group {
+  display: block !important;
+}

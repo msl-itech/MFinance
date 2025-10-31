@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { DeviceService } from '../core/device.service';
 
 @Component({
   selector: 'app-support',
@@ -7,7 +8,16 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrl: './support.component.css',
 })
 export class SupportComponent implements OnInit {
-  constructor(private titleService: Title, private metaService: Meta) {}
+  shouldUseMobileVersion: boolean;
+  showFloatingPopup: boolean = false;
+
+  constructor(
+    private titleService: Title, 
+    private metaService: Meta,
+    private deviceService: DeviceService
+  ) {
+    this.shouldUseMobileVersion = this.deviceService.shouldUseMobileVersion();
+  }
 
   ngOnInit(): void {
     // Mise à jour du titre de la page
@@ -42,5 +52,25 @@ export class SupportComponent implements OnInit {
       content: 'https://www.mfinances.be/support',
     });
     this.metaService.updateTag({ property: 'og:type', content: 'website' });
+    
+    // Afficher le popup flottant après un délai si pas déjà fermé
+    const popupClosed = localStorage.getItem('support-popup-closed');
+    if (!popupClosed) {
+      setTimeout(() => {
+        this.showFloatingPopup = true;
+      }, 3000); // Apparaît après 3 secondes
+    }
+  }
+
+  closeFloatingPopup(): void {
+    this.showFloatingPopup = false;
+    // Optionnel: Sauvegarder dans localStorage que l'utilisateur a fermé le popup
+    localStorage.setItem('support-popup-closed', 'true');
+  }
+
+  trackDownload(platform: string): void {
+    console.log(`Téléchargement initié pour ${platform}`);
+    // Optionnel: Analytics ou tracking
+    this.closeFloatingPopup();
   }
 }

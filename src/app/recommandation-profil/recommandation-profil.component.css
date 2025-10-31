@@ -3,7 +3,7 @@
 /*}*/
 
 /*.card-body {*/
-/*    color: #004865;*/
+/*    color: #1a2c51;*/
 /*}*/
 /*.card-body h5 {*/
 /*    font-weight: 600;*/
@@ -98,7 +98,7 @@
   }
   
   .nav-btn {
-    border: 2px solid #25335b;; /* Bordure circulaire */
+    border: 2px solid #1a2c51;; /* Bordure circulaire */
     background: none; /* Pas de fond */
     border-radius: 50%; /* Forme circulaire */
     width: 50px;
@@ -111,7 +111,7 @@
   }
   
   .nav-btn i {
-    color: #25335b;; /* Couleur de l'icône */
+    color: #1a2c51;; /* Couleur de l'icône */
     font-size: 20px;
   }
   

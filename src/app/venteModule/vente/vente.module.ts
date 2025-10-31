@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
+import { PassageSocieteMobileComponent } from '../../features-mobile/passage-societe-mobile/passage-societe-mobile.component';
+import { SalarieIndependantMobileComponent } from '../../features-mobile/salarie-independant-mobile/salarie-independant-mobile.component';
 import { BoosteEntrepriseComponent } from '../booste-entreprise/booste-entreprise.component';
 import { CompteCourantAdministrateurComponent } from '../compte-courant-administrateur/compte-courant-administrateur.component';
 import { GuerrePrixComponent } from '../guerre-prix/guerre-prix.component';
@@ -23,6 +25,6 @@ import { VenteRoutingModule } from './vente-routing.module';
     CompteCourantAdministrateurComponent,
     BoosteEntrepriseComponent,
   ],
-  imports: [CommonModule, FormsModule, ShardeModuleModule, VenteRoutingModule],
+  imports: [CommonModule, FormsModule, ShardeModuleModule, VenteRoutingModule, PassageSocieteMobileComponent, SalarieIndependantMobileComponent],
 })
 export class VenteModule {}

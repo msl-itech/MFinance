@@ -852,7 +852,7 @@ ul.theme-mega-menu li.mega-menu {
   height: 80%;
   top: 19px;
   left: 0;
-  background-color: #25335b;
+  background-color: #1a2c51;
   z-index: -1;
   border-radius: 4px;
 }
@@ -1232,7 +1232,7 @@ ul.theme-mega-menu li.mega-menu {
   height: 100%;
  
   left: 0;
-  background-color: #25335b;
+  background-color: #1a2c51;
   z-index: -1;
   border-radius: 4px;
 }
@@ -1474,7 +1474,7 @@ ul.theme-mega-menu li.mega-menu {
 
 }
 .work-item:hover .work-icon {
-  background-color: #25335b;;
+  background-color: #1a2c51;;
 }
 .work-item::after {
   content: "";

@@ -7,6 +7,7 @@ import { PodcastAccueilComponent } from '../podcast-accueil/podcast-accueil.comp
 import { ProfilTypeComponent } from '../profil-type/profil-type.component';
 import { ShardeModuleModule } from '../sharde-module/sharde-module.module';
 import { ImageOptimizerDirective } from '../shared/image-optimizer.directive';
+import { TestimonialsComponent } from '../testimonials/testimonials.component';
 import { WhyChoiseComponent } from '../why-choise/why-choise.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ModuleAccueilRoutingModule } from './module-accueil-routing.module';
@@ -17,6 +18,7 @@ import { ModuleAccueilRoutingModule } from './module-accueil-routing.module';
     ProfilTypeComponent,
     HeaderAccueilComponent,
     PodcastAccueilComponent,
+    TestimonialsComponent,
   ],
   imports: [
     CommonModule,

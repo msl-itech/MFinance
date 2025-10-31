@@ -1,0 +1,645 @@
+<div class="anticipe-tresorerie-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>ANTICIPATION TRÉSORERIE</span>
+      </div>
+      <h1 class="hero-title">Anticipez, stabilisez vos finances</h1>
+      <p class="hero-subtitle">
+        👉 Évitez les crises de trésorerie grâce à une gestion proactive et dynamique.
+      </p>
+
+      <button class="cta-primary" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-chart-line cta-icon"></i>
+        <span class="cta-text">🔴 Faire mon diagnostic trésorerie</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 1 - L'anticipation, votre meilleure arme -->
+  <section class="anticipation-section" id="anticipation">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-shield-alt title-icon"></i>
+        L'anticipation, votre meilleure arme financière
+      </h2>
+    </div>
+
+    <div class="anticipation-content">
+      <div class="anticipation-text">
+        <p class="intro-text">
+          "Les entreprises qui survivent ne réagissent pas, elles anticipent. Une trésorerie proactive n'est plus un luxe mais une nécessité pour garantir stabilité et croissance."
+        </p>
+        
+        <div class="pieges-section">
+          <h3 class="pieges-title">👉 Pièges fréquents :</h3>
+          <div class="pieges-list">
+            <div class="piege-item">
+              <div class="piege-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <span>Outils obsolètes</span>
+            </div>
+            
+            <div class="piege-item">
+              <div class="piege-icon">
+                <i class="fas fa-times-circle"></i>
+              </div>
+              <span>Absence de planification</span>
+            </div>
+            
+            <div class="piege-item">
+              <div class="piege-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <span>Vision trop court-terme</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 - Podcast Storytelling Mika -->
+  <section class="podcast-section" id="podcast">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-microphone title-icon"></i>
+        🎙️ Podcast : "Trésorerie : Transformez le Stress en Succès"
+      </h2>
+    </div>
+
+    <div class="podcast-content">
+      <div class="podcast-info">
+        <p class="podcast-intro">Mika Musungayi partage :</p>
+        
+        <div class="podcast-points">
+          <div class="point-item">
+            <i class="fas fa-check-circle"></i>
+            <span>✔ Les clés pour anticiper vos besoins financiers</span>
+          </div>
+          
+          <div class="point-item">
+            <i class="fas fa-check-circle"></i>
+            <span>✔ Pourquoi un tableau prévisionnel est essentiel</span>
+          </div>
+          
+          <div class="point-item">
+            <i class="fas fa-check-circle"></i>
+            <span>✔ Comment moderniser votre gestion avec Odoo</span>
+          </div>
+        </div>
+
+        <button class="cta-podcast" (click)="playPodcast()">
+          <i class="fas fa-play"></i>
+          <span>▶️ Écouter l'épisode</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 - Pourquoi tant d'entreprises négligent -->
+  <section class="negligence-section" id="negligence">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-question-circle title-icon"></i>
+        Pourquoi tant d'entreprises négligent l'anticipation financière ?
+      </h2>
+    </div>
+
+    <div class="negligence-content">
+      <div class="probleme-card">
+        <div class="probleme-number">1️⃣</div>
+        <div class="probleme-info">
+          <h3>Des outils dépassés et inefficaces</h3>
+          <p class="probleme-text">Excel statique = vision tardive et incomplète.</p>
+          <div class="astuce-box">
+            <i class="fas fa-lightbulb"></i>
+            <div class="astuce-content">
+              <strong>💡 Astuce :</strong>
+              <p>Passez à des outils automatisés (ex. Odoo).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="probleme-card">
+        <div class="probleme-number">2️⃣</div>
+        <div class="probleme-info">
+          <h3>Un manque d'analyse régulière</h3>
+          <p class="probleme-text">Décider sans données à jour = erreurs coûteuses.</p>
+          <div class="conseil-box">
+            <i class="fas fa-check-circle"></i>
+            <div class="conseil-content">
+              <strong>✅ Conseil :</strong>
+              <p>Analysez vos finances mensuellement et ajustez vos prévisions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="probleme-card">
+        <div class="probleme-number">3️⃣</div>
+        <div class="probleme-info">
+          <h3>Une vision trop court-terme</h3>
+          <p class="probleme-text">Se limiter à l'immédiat empêche d'anticiper tensions et opportunités.</p>
+          <div class="exemple-box">
+            <i class="fas fa-chart-bar"></i>
+            <div class="exemple-content">
+              <strong>📊 Exemple :</strong>
+              <p>Planifiez sur 3, 6 et 12 mois.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 - Storytelling Marianne -->
+  <section class="storytelling-section" id="storytelling">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-user title-icon"></i>
+        👩 Marianne : Une transformation grâce à l'anticipation
+      </h2>
+    </div>
+
+    <div class="storytelling-content">
+      <p class="story-intro">"Grâce à Mika, Marianne a sécurisé sa trésorerie avec 3 actions clés :"</p>
+      
+      <div class="actions-list">
+        <div class="action-item">
+          <div class="action-icon">
+            <i class="fas fa-table"></i>
+          </div>
+          <div class="action-text">
+            <h3>✔ Créer un tableau dynamique</h3>
+            <p>visualiser ses finances</p>
+          </div>
+        </div>
+
+        <div class="action-item">
+          <div class="action-icon">
+            <i class="fas fa-sort-numeric-down"></i>
+          </div>
+          <div class="action-text">
+            <h3>✔ Prioriser ses paiements</h3>
+            <p>selon échéances & importance</p>
+          </div>
+        </div>
+
+        <div class="action-item">
+          <div class="action-icon">
+            <i class="fas fa-piggy-bank"></i>
+          </div>
+          <div class="action-text">
+            <h3>✔ Prévoir une épargne mensuelle</h3>
+            <p>pour couvrir les imprévus</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-box">
+        <p><strong>👉 Résultat :</strong> Marianne gère son entreprise avec sérénité.</p>
+      </div>
+
+      <button class="cta-video" (click)="playVideo()">
+        <i class="fas fa-play"></i>
+        <span>▶️ Voir la vidéo</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 5 - FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-question-circle title-icon"></i>
+        FAQ : Anticipation et gestion de la trésorerie
+      </h2>
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-list">
+        <div class="faq-item" [class.expanded]="expandedFaq === 1" (click)="toggleFaq(1)">
+          <div class="faq-question">
+            <span>Pourquoi est-il crucial d'anticiper ses flux de trésorerie ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>L'anticipation vous permet d'éviter les imprévus financiers, d'identifier les périodes critiques et de planifier les investissements sans mettre en péril la stabilité.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" [class.expanded]="expandedFaq === 2" (click)="toggleFaq(2)">
+          <div class="faq-question">
+            <span>Quels outils utiliser pour anticiper efficacement ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Utilisez des outils modernes comme Odoo pour une mise à jour en temps réel et des tableaux prévisionnels dynamiques pour projeter vos finances.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" [class.expanded]="expandedFaq === 3" (click)="toggleFaq(3)">
+          <div class="faq-question">
+            <span>Comment créer un tableau de trésorerie prévisionnel ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Listez vos entrées et sorties de fonds, prévoyez différents scénarios (base, optimiste, pessimiste) et mettez à jour régulièrement.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" [class.expanded]="expandedFaq === 4" (click)="toggleFaq(4)">
+          <div class="faq-question">
+            <span>Que faire si ma trésorerie est en tension ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Priorisez vos paiements essentiels, négociez avec vos fournisseurs et cherchez des financements court-terme si nécessaire.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" [class.expanded]="expandedFaq === 5" (click)="toggleFaq(5)">
+          <div class="faq-question">
+            <span>Quels sont les bénéfices d'un tableau automatisé avec Odoo ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Mise à jour en temps réel, réduction des erreurs humaines et analyse instantanée de l'impact financier de vos décisions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-additional" *ngIf="showAllFaq">
+        <div class="faq-item" [class.expanded]="expandedFaq === 6" (click)="toggleFaq(6)">
+          <div class="faq-question">
+            <span>Pourquoi créer des scénarios financiers ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Les scénarios vous permettent d'anticiper différents cas de figure : base, optimiste et pessimiste, pour réagir rapidement.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" [class.expanded]="expandedFaq === 7" (click)="toggleFaq(7)">
+          <div class="faq-question">
+            <span>Quelle est la différence entre un tableau statique et dynamique ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Un tableau statique doit être mis à jour manuellement, tandis qu'un tableau dynamique s'actualise automatiquement.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" [class.expanded]="expandedFaq === 8" (click)="toggleFaq(8)">
+          <div class="faq-question">
+            <span>Comment anticiper les périodes critiques de trésorerie ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Analysez les cycles de votre activité, identifiez les pics de dépenses et préparez des solutions comme des épargnes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" [class.expanded]="expandedFaq === 9" (click)="toggleFaq(9)">
+          <div class="faq-question">
+            <span>Quelle a été la solution pour Marianne ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Créer un tableau dynamique, prioriser ses paiements et épargner mensuellement pour couvrir les imprévus.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" [class.expanded]="expandedFaq === 10" (click)="toggleFaq(10)">
+          <div class="faq-question">
+            <span>Comment commencer à mieux gérer ma trésorerie ?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Contactez un expert comme MFINANCES, automatisez avec Odoo et adoptez une approche proactive sur 3, 6 et 12 mois.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="voir-plus-btn" (click)="showAllFaq = !showAllFaq" *ngIf="!showAllFaq">
+        <span>⬇️ Voir plus de questions</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 6 - CTA Final Diagnostic -->
+  <section class="diagnostic-section" id="diagnostic">
+    <div class="diagnostic-card">
+      <div class="diagnostic-header">
+        <h2 class="diagnostic-title">
+          <i class="fas fa-chart-line"></i>
+          📊 Diagnostic Anticipation
+        </h2>
+      </div>
+      
+      <div class="diagnostic-content">
+        <h3>👉 Peut-on prédire vos prochaines tensions de trésorerie ?</h3>
+        <p>Faites le test en 5 étapes.</p>
+        <div class="diagnostic-info">
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <span>3 minutes</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-gift"></i>
+            <span>Gratuit & Confidentiel</span>
+          </div>
+        </div>
+        
+        <button class="cta-diagnostic" (click)="scrollToSection('contactSection')">
+          <i class="fas fa-stethoscope"></i>
+          <span>🔴 Tester maintenant ma trésorerie</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-contact-form-layout
+      [config]="formConfig"
+      [currentStep]="currentStep"
+      [totalSteps]="totalSteps"
+      [formSubmitted]="formSubmitted"
+      [isStepValid]="isStepValid"
+      [isFormValid]="isFormValid"
+      [isLoading]="isLoading"
+      (nextStep)="onNextStep()"
+      (previousStep)="onPreviousStep()"
+      (submit)="onSubmit()"
+      (reset)="onReset()"
+    >
+      <div slot="form-content">
+        <!-- Étape 1: Tableau de trésorerie -->
+        <div *ngIf="currentStep === 1" class="step-content">
+          <h3 class="step-title mb-4">1. Avez-vous un tableau de trésorerie prévisionnel ?</h3>
+          <p class="step-description mb-4">
+            Première question pour évaluer votre maturité financière :
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.tableauTresorerie === 'oui-regulier'"
+              >
+                <input
+                  type="radio"
+                  name="tableauTresorerie"
+                  value="oui-regulier"
+                  [(ngModel)]="formData.tableauTresorerie"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-check-circle text-success mb-2"></i>
+                  <h6 class="mb-1">Oui, je le mets à jour régulièrement</h6>
+                  <small class="text-muted">Excellente pratique de gestion prévisionnelle</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.tableauTresorerie === 'oui-pas-jour'"
+              >
+                <input
+                  type="radio"
+                  name="tableauTresorerie"
+                  value="oui-pas-jour"
+                  [(ngModel)]="formData.tableauTresorerie"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-exclamation-triangle text-warning mb-2"></i>
+                  <h6 class="mb-1">Oui, mais il n'est pas toujours à jour</h6>
+                  <small class="text-muted">Bonne base, mais nécessite plus de rigueur</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.tableauTresorerie === 'non-jour-jour'"
+              >
+                <input
+                  type="radio"
+                  name="tableauTresorerie"
+                  value="non-jour-jour"
+                  [(ngModel)]="formData.tableauTresorerie"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-calendar-day text-danger mb-2"></i>
+                  <h6 class="mb-1">Non, je fais au jour le jour</h6>
+                  <small class="text-muted">Gestion réactive, risques d'imprévus</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.tableauTresorerie === 'non-sais-pas'"
+              >
+                <input
+                  type="radio"
+                  name="tableauTresorerie"
+                  value="non-sais-pas"
+                  [(ngModel)]="formData.tableauTresorerie"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-question-circle text-secondary mb-2"></i>
+                  <h6 class="mb-1">Non, je ne sais même pas ce que c'est</h6>
+                  <small class="text-muted">Besoin urgent de formation et d'accompagnement</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2: Principal défi -->
+        <div *ngIf="currentStep === 2" class="step-content">
+          <h3 class="step-title mb-4">2. Quel est votre plus grand défi aujourd'hui ?</h3>
+          <p class="step-description mb-4">Identification du frein principal à l'anticipation :</p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.defiPrincipal === 'manque-visibilite'"
+              >
+                <input
+                  type="radio"
+                  name="defiPrincipal"
+                  value="manque-visibilite"
+                  [(ngModel)]="formData.defiPrincipal"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-eye-slash text-danger mb-2"></i>
+                  <h6 class="mb-1">Manque de visibilité sur les flux à venir</h6>
+                  <small class="text-muted">Difficile de prévoir les entrées et sorties futures</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.defiPrincipal === 'depenses-imprevues'"
+              >
+                <input
+                  type="radio"
+                  name="defiPrincipal"
+                  value="depenses-imprevues"
+                  [(ngModel)]="formData.defiPrincipal"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-surprise text-warning mb-2"></i>
+                  <h6 class="mb-1">Trop de dépenses imprévues</h6>
+                  <small class="text-muted">Budget constamment bouleversé par l'inattendu</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.defiPrincipal === 'prioriser-paiements'"
+              >
+                <input
+                  type="radio"
+                  name="defiPrincipal"
+                  value="prioriser-paiements"
+                  [(ngModel)]="formData.defiPrincipal"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-sort-numeric-down text-info mb-2"></i>
+                  <h6 class="mb-1">Difficultés à prioriser les paiements</h6>
+                  <small class="text-muted">Problème de gestion des échéances</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.defiPrincipal === 'aucun-outil'"
+              >
+                <input
+                  type="radio"
+                  name="defiPrincipal"
+                  value="aucun-outil"
+                  [(ngModel)]="formData.defiPrincipal"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-tools text-secondary mb-2"></i>
+                  <h6 class="mb-1">Aucun outil automatisé</h6>
+                  <small class="text-muted">Gestion manuelle chronophage et risquée</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div *ngIf="currentStep === 3" class="step-content">
+          <h3 class="step-title mb-4">3. Vos coordonnées pour recevoir votre diagnostic</h3>
+          <p class="step-description mb-4">
+            <i class="fas fa-lightbulb text-warning me-2"></i>
+            Remplissez vos coordonnées pour recevoir un diagnostic personnalisé gratuit et confidentiel
+          </p>
+
+          <div class="form-group">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="nom" class="form-label">
+                    <i class="fas fa-user me-2"></i>Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="nom"
+                    name="nom"
+                    [(ngModel)]="formData.nom"
+                    placeholder="Votre nom et prénom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>Email
+                    <span class="badge bg-success ms-2">✅ obligatoire</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="telephone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>Téléphone
+                    <span class="badge bg-success ms-2">✅ obligatoire</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control custom-input"
+                    id="telephone"
+                    name="telephone"
+                    [(ngModel)]="formData.telephone"
+                    placeholder="+32 XXX XX XX XX"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-success mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-phone-alt fa-2x text-success me-3"></i>
+                <div>
+                  <h6 class="mb-1">📞 Un expert MFINANCES vous appelle sous 72h</h6>
+                  <small>Échange gratuit, confidentiel et sans engagement.</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-contact-form-layout>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-chart-line"></i>
+      <span>Diagnostic trésorerie</span>
+    </button>
+  </div>
+</div>

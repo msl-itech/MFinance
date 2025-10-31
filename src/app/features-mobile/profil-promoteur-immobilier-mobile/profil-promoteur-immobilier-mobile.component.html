@@ -1,0 +1,819 @@
+<div class="promoteur-mobile-container">
+  <!-- Section Hero Optimisée selon les recommandations -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <img
+        src="assets/img/webp/22.webp"
+        alt="Promotion Immobilière Background"
+        class="hero-bg-image"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Maximisez votre rentabilité immobilière avec une gestion sur mesure
+      </h1>
+      <p class="hero-subtitle">
+        Anticipez, gérez et innovez pour optimiser vos projets immobiliers.
+      </p>
+
+      <!-- Boutons verticaux optimisés pour mobile -->
+      <div class="quick-access">
+        <button
+          class="quick-access-btn primary"
+          (click)="scrollToSection('services')"
+        >
+          🎯 Découvrez ce que vous gagnerez
+        </button>
+        <button
+          class="quick-access-btn secondary"
+          (click)="scrollToSection('formulaire-evaluation')"
+        >
+          🧭 Évaluez vos projets (2 min)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Mobile Navigation -->
+  <app-sidebar-mobile></app-sidebar-mobile>
+
+  <!-- Section Introduction Simplifiée -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <h2 class="intro-title">
+        Des solutions adaptées aux défis des promoteurs immobiliers
+      </h2>
+
+      <!-- Texte mobile simplifié -->
+      <div class="intro-text">
+        <p>
+          La promotion immobilière est une activité complexe qui exige une
+          <strong>gestion rigoureuse des finances</strong>, de la fiscalité, et
+          des flux de trésorerie. MFINANCES vous propose des
+          <strong>solutions sur mesure</strong> intégrant comptabilité
+          analytique, optimisation TVA et reporting avancé.
+        </p>
+
+        <div class="intro-expand" *ngIf="!showFullIntro">
+          <button class="expand-btn" (click)="toggleIntro()">
+            + En savoir plus
+          </button>
+        </div>
+
+        <div class="intro-expanded" *ngIf="showFullIntro">
+          <p>
+            Entre budgets conséquents, règles TVA complexes et analyse détaillée
+            des coûts, bénéficiez d'un accompagnement expert pour maximiser la
+            rentabilité de chaque projet et optimiser votre gestion fiscale.
+          </p>
+          <button class="expand-btn" (click)="toggleIntro()">- Réduire</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image mobile adaptée -->
+    <div class="intro-image">
+      <img
+        src="assets/img/webp/34.webp"
+        alt="Promotion immobilière"
+        class="intro-img"
+      />
+    </div>
+
+    <!-- CTA bouton rouge stratégique -->
+    <div class="section-cta">
+      <button class="cta-primary" (click)="scrollToContact()">
+        📞 Prendre un rendez-vous gratuit
+      </button>
+      <p class="cta-subtitle">Diagnostic sous 72h - Gratuit</p>
+    </div>
+  </section>
+
+  <!-- Section 1 - Les défis des promoteurs immobiliers -->
+  <section class="defis-section" id="defis">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-exclamation-triangle title-icon"></i>
+        Les défis des promoteurs immobiliers
+      </h2>
+    </div>
+
+    <div class="defis-content">
+      <div class="defis-image">
+        <img
+          src="../../assets/img/webp/22.webp"
+          alt="Défis promoteurs immobiliers"
+          class="img-fluid"
+        />
+      </div>
+
+      <div class="defis-text">
+        <p class="intro-text">
+          En tant qu'acteurs clés du développement immobilier, les promoteurs
+          doivent relever plusieurs défis spécifiques :
+        </p>
+
+        <div class="defis-list">
+          <div class="defi-item">
+            <div class="defi-icon">
+              <i class="fas fa-euro-sign"></i>
+            </div>
+            <div class="defi-content">
+              <h4>Budgets conséquents et marges serrées</h4>
+              <p>nécessitant une planification financière précise.</p>
+            </div>
+          </div>
+
+          <div class="defi-item">
+            <div class="defi-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <div class="defi-content">
+              <h4>Règles TVA complexes</h4>
+              <p>
+                qui varient selon la finalité des immeubles (revente, location,
+                rénovation).
+              </p>
+            </div>
+          </div>
+
+          <div class="defi-item">
+            <div class="defi-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="defi-content">
+              <h4>Analyse détaillée des coûts par projet</h4>
+              <p>essentielle pour optimiser la rentabilité.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Besoins spécifiques (slider/accordion selon les recommandations) -->
+  <section class="besoins-section" id="services">
+    <div class="section-header">
+      <h2 class="section-title">
+        Besoins spécifiques des promoteurs immobiliers
+      </h2>
+      <p class="section-subtitle">
+        Une gestion sur mesure pour des projets rentables
+      </p>
+    </div>
+
+    <!-- Navigation slider -->
+    <div class="besoins-slider">
+      <div class="slider-navigation">
+        <button
+          class="nav-btn"
+          [class.active]="activeBesoinsSlide === 0"
+          (click)="setActiveBesoinsSlide(0)"
+        >
+          Planification
+        </button>
+        <button
+          class="nav-btn"
+          [class.active]="activeBesoinsSlide === 1"
+          (click)="setActiveBesoinsSlide(1)"
+        >
+          TVA & Fiscalité
+        </button>
+        <button
+          class="nav-btn"
+          [class.active]="activeBesoinsSlide === 2"
+          (click)="setActiveBesoinsSlide(2)"
+        >
+          Comptabilité
+        </button>
+      </div>
+
+      <div class="slider-content">
+        <!-- Slide 1: Planification -->
+        <div class="slide-item" [class.active]="activeBesoinsSlide === 0">
+          <div class="slide-icon">📊</div>
+          <h3>Planification financière et prévisions</h3>
+          <ul>
+            <li>Budgets détaillés pour prévoir les coûts de chaque projet</li>
+            <li>Analyse des besoins en financement et projection des flux</li>
+            <li>Planification stratégique pour optimiser la rentabilité</li>
+          </ul>
+          <div class="slide-result">
+            <strong>Résultat :</strong> Maîtrise des coûts et anticipation des
+            besoins financiers
+          </div>
+        </div>
+
+        <!-- Slide 2: TVA & Fiscalité -->
+        <div class="slide-item" [class.active]="activeBesoinsSlide === 1">
+          <div class="slide-icon">💰</div>
+          <h3>TVA : opportunité et complexité</h3>
+          <ul>
+            <li>Immeuble neuf : TVA 21% déductible sur les travaux</li>
+            <li>Régime d'autoliquidation pour optimiser la trésorerie</li>
+            <li>Calcul du prorata de déductibilité selon la finalité</li>
+          </ul>
+          <div class="slide-result">
+            <strong>Résultat :</strong> Récupération maximale de TVA et
+            optimisation fiscale
+          </div>
+        </div>
+
+        <!-- Slide 3: Comptabilité -->
+        <div class="slide-item" [class.active]="activeBesoinsSlide === 2">
+          <div class="slide-icon">📈</div>
+          <h3>Comptabilité analytique pour la rentabilité</h3>
+          <ul>
+            <li>Structure des coûts par projet et par unité</li>
+            <li>Identification des postes coûteux pour optimisation</li>
+            <li>Reporting détaillé pour prise de décisions éclairées</li>
+          </ul>
+          <div class="slide-result">
+            <strong>Résultat :</strong> Visibilité complète sur la rentabilité
+            de chaque projet
+          </div>
+        </div>
+      </div>
+
+      <!-- Dots navigation -->
+      <div class="slider-dots">
+        <span
+          class="dot"
+          [class.active]="activeBesoinsSlide === 0"
+          (click)="setActiveBesoinsSlide(0)"
+        ></span>
+        <span
+          class="dot"
+          [class.active]="activeBesoinsSlide === 1"
+          (click)="setActiveBesoinsSlide(1)"
+        ></span>
+        <span
+          class="dot"
+          [class.active]="activeBesoinsSlide === 2"
+          (click)="setActiveBesoinsSlide(2)"
+        ></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pratiques complémentaires (horizontal slider avec 3 cartes cliquables) -->
+  <section class="pratiques-section">
+    <div class="section-header">
+      <h2 class="section-title">Comment MFINANCES transforme vos projets ?</h2>
+      <p class="section-subtitle">
+        Des solutions pratiques pour une gestion optimisée
+      </p>
+    </div>
+
+    <div class="pratiques-slider">
+      <div
+        class="slider-container"
+        [style.transform]="'translateX(' + -activePratiqueSlide * 100 + '%)'"
+      >
+        <!-- Carte 1 -->
+        <div class="pratique-card">
+          <div class="card-header">
+            <div class="step-badge">ÉTAPE 01</div>
+            <h3>Gestion comptable et analytique dédiée</h3>
+          </div>
+          <div class="card-content">
+            <p>
+              Comptabilité analytique par projet pour une traçabilité optimale,
+              suivi précis des marges à chaque phase et bilans intermédiaires
+              pour ajuster les stratégies.
+            </p>
+            <div class="card-advantage">
+              <strong>Avantage :</strong> Visibilité complète sur la rentabilité
+              de chaque projet et optimisation continue.
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 2 -->
+        <div class="pratique-card">
+          <div class="card-header">
+            <div class="step-badge">ÉTAPE 02</div>
+            <h3>Optimisation fiscale et TVA</h3>
+          </div>
+          <div class="card-content">
+            <p>
+              Récupération de la TVA sur les travaux et acquisitions, calcul
+              précis du prorata pour optimiser les déductions et stratégies
+              fiscales adaptées.
+            </p>
+            <div class="card-advantage">
+              <strong>Avantage :</strong> Réduction significative des charges
+              fiscales et amélioration de la trésorerie.
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 3 -->
+        <div class="pratique-card">
+          <div class="card-header">
+            <div class="step-badge">ÉTAPE 03</div>
+            <h3>Outils digitaux & reporting avancé</h3>
+          </div>
+          <div class="card-content">
+            <p>
+              Tableaux de bord personnalisés en temps réel, automatisation des
+              rapports comptables et prévisions financières pour anticiper les
+              besoins.
+            </p>
+            <div class="card-advantage">
+              <strong>Avantage :</strong> Pilotage précis et prise de décision
+              basée sur des données fiables.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation arrows -->
+      <button
+        class="slider-arrow prev"
+        (click)="previousPratiqueSlide()"
+        [disabled]="activePratiqueSlide === 0"
+      >
+        ‹
+      </button>
+      <button
+        class="slider-arrow next"
+        (click)="nextPratiqueSlide()"
+        [disabled]="activePratiqueSlide === 2"
+      >
+        ›
+      </button>
+
+      <!-- Dots navigation -->
+      <div class="slider-dots">
+        <span
+          class="dot"
+          [class.active]="activePratiqueSlide === 0"
+          (click)="setPratiqueSlide(0)"
+        ></span>
+        <span
+          class="dot"
+          [class.active]="activePratiqueSlide === 1"
+          (click)="setPratiqueSlide(1)"
+        ></span>
+        <span
+          class="dot"
+          [class.active]="activePratiqueSlide === 2"
+          (click)="setPratiqueSlide(2)"
+        ></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Case Studies (horizontal slider) -->
+  <section class="case-studies-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        Exemple concret : Résultats obtenus avec MFINANCES
+      </h2>
+      <p class="section-subtitle">
+        Découvrez comment nous avons transformé un projet immobilier
+      </p>
+    </div>
+
+    <div class="case-studies-slider">
+      <div
+        class="slider-container"
+        [style.transform]="'translateX(' + -activeCaseSlide * 100 + '%)'"
+      >
+        <!-- Case Study 1 -->
+        <div class="case-card">
+          <div class="case-header">
+            <h3>Promoteur immobilier - Projets résidentiels</h3>
+            <div class="case-type">Immobilier</div>
+          </div>
+          <div class="case-content">
+            <div class="problem">
+              <h4>Problème</h4>
+              <p>
+                Gestion complexe des coûts par unité, ventes concentrées en fin
+                de projet et tensions de trésorerie dues à l'annualité de
+                l'impôt.
+              </p>
+            </div>
+            <div class="solution">
+              <h4>Solution</h4>
+              <ul>
+                <li>
+                  Comptabilité analytique détaillée par projet et par unité
+                </li>
+                <li>Suivi budgétaire rigoureux avec analyse des scénarios</li>
+                <li>
+                  Stratégie d'ajustement des ventes pour optimisation fiscale
+                </li>
+              </ul>
+            </div>
+            <div class="result">
+              <h4>Résultat</h4>
+              <ul>
+                <li>✅ Rentabilité globale accrue de +12% à +20%</li>
+                <li>
+                  ✅ Trésorerie renforcée pour nouveau projet sans financement
+                  externe
+                </li>
+                <li>✅ Gestion fiscale optimisée réduisant les charges</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 2 - Si besoin d'un second exemple -->
+        <div class="case-card">
+          <div class="case-header">
+            <h3>Développeur immobilier - Complexe commercial</h3>
+            <div class="case-type">Commercial</div>
+          </div>
+          <div class="case-content">
+            <div class="problem">
+              <h4>Problème</h4>
+              <p>
+                Règles TVA complexes selon la finalité des locaux
+                (vente/location) et besoin d'optimiser les déductions fiscales.
+              </p>
+            </div>
+            <div class="solution">
+              <h4>Solution</h4>
+              <ul>
+                <li>Mise en place du régime d'autoliquidation TVA</li>
+                <li>Calcul optimal du prorata de déductibilité</li>
+                <li>Reporting en temps réel des flux financiers</li>
+              </ul>
+            </div>
+            <div class="result">
+              <h4>Résultat</h4>
+              <ul>
+                <li>✅ Récupération TVA optimisée sur tous les travaux</li>
+                <li>✅ Amélioration de la trésorerie de 15%</li>
+                <li>✅ Visibilité complète sur la rentabilité par local</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation arrows -->
+      <button
+        class="slider-arrow prev"
+        (click)="previousCaseSlide()"
+        [disabled]="activeCaseSlide === 0"
+      >
+        ‹
+      </button>
+      <button
+        class="slider-arrow next"
+        (click)="nextCaseSlide()"
+        [disabled]="activeCaseSlide === 1"
+      >
+        ›
+      </button>
+
+      <!-- Dots navigation -->
+      <div class="slider-dots">
+        <span
+          class="dot"
+          [class.active]="activeCaseSlide === 0"
+          (click)="setCaseSlide(0)"
+        ></span>
+        <span
+          class="dot"
+          [class.active]="activeCaseSlide === 1"
+          (click)="setCaseSlide(1)"
+        ></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi MFINANCES améliorée avec hiérarchie visuelle -->
+  <section class="why-choose-section">
+    <div class="section-header">
+      <div class="why-badge">🎯 Ce qui nous distingue</div>
+      <h2 class="section-title">Pourquoi choisir MFINANCES ?</h2>
+      <p class="section-subtitle">
+        Un accompagnement stratégique pour maximiser vos projets immobiliers
+      </p>
+    </div>
+
+    <div class="why-choose-grid">
+      <div class="why-card featured">
+        <div class="why-icon">🏗️</div>
+        <h3>Expertise sectorielle immobilière</h3>
+        <p>
+          Maîtrise approfondie des spécificités fiscales, comptables et
+          financières des promoteurs immobiliers avec solutions sur mesure.
+        </p>
+        <div class="card-highlight">Expert spécialisé</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🔧</div>
+        <h3>Outils & stratégies digitales</h3>
+        <p>
+          Automatisation et digitalisation pour un pilotage efficace en temps
+          réel avec conseils stratégiques à chaque étape.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">📊</div>
+        <h3>Suivi durable et prévisibilité</h3>
+        <p>
+          Prévisions financières claires pour lisser les revenus et analyses
+          détaillées pour ajuster rapidement vos stratégies.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="why-cta">
+      <button class="cta-btn-primary" (click)="scrollToContact()">
+        🚀 Optimisez vos projets immobiliers
+      </button>
+      <p class="cta-subtitle">Diagnostic gratuit sous 72h</p>
+    </div>
+  </section>
+
+  <!-- Contact spécifique optimisé -->
+  <section class="contact-section" id="contact">
+    <div class="contact-header">
+      <div class="contact-badge">
+        <span>📞 CONTACT PROMOTEURS IMMOBILIERS</span>
+      </div>
+      <h2 class="contact-title">
+        Pilotez vos projets immobiliers avec MFINANCES
+      </h2>
+      <p class="contact-subtitle">
+        Contactez-nous pour un diagnostic fiscal et financier personnalisé !
+      </p>
+    </div>
+
+    <div class="contact-actions">
+      <div class="contact-method" (click)="callNow()">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">
+          <span class="contact-label">Appelez-nous directement</span>
+          <span class="contact-value">+32 2 542 04 32</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="emailNow()">
+        <div class="contact-icon">📧</div>
+        <div class="contact-info">
+          <span class="contact-label">Envoyez-nous un email</span>
+          <span class="contact-value">info&#64;mfinances.be</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="scheduleAppointment()">
+        <div class="contact-icon">📅</div>
+        <div class="contact-info">
+          <span class="contact-label">Réservez un créneau</span>
+          <span class="contact-value">Prendre RDV en ligne</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="contact-cta-promoteur">
+      <button class="cta-promoteur-btn" (click)="openPromoteurContact()">
+        📆 Diagnostic gratuit promoteurs immobiliers
+      </button>
+      <button class="maps-btn" (click)="openMaps()">
+        📍 Voir sur Google Maps
+      </button>
+    </div> -->
+  </section>
+
+  <!-- Formulaire d'évaluation avec stepper visuel -->
+  <section class="evaluation-section" id="formulaire-evaluation">
+    <div class="evaluation-header">
+      <div class="evaluation-badge">
+        <span>🧭 ÉVALUATION GRATUITE</span>
+      </div>
+      <h2 class="evaluation-title">Évaluez vos projets en 2 minutes</h2>
+      <p class="evaluation-subtitle">
+        Recevez un mini-diagnostic personnalisé, puis un appel gratuit sous 72h
+      </p>
+    </div>
+
+    <div class="evaluation-form">
+      <!-- Stepper visuel amélioré -->
+      <div class="form-stepper">
+        <div class="stepper-container">
+          <div
+            class="stepper-step"
+            *ngFor="let step of formSteps; let i = index"
+            [class.active]="i + 1 === currentFormStep"
+            [class.completed]="i + 1 < currentFormStep"
+          >
+            <div class="step-circle">
+              <span *ngIf="i + 1 < currentFormStep">✅</span>
+              <span *ngIf="i + 1 >= currentFormStep">{{ i + 1 }}</span>
+            </div>
+            <span class="step-label">{{ step.label }}</span>
+          </div>
+        </div>
+        <div class="stepper-progress">
+          <div
+            class="progress-fill"
+            [style.width.%]="(currentFormStep / totalFormSteps) * 100"
+          ></div>
+        </div>
+      </div>
+
+      <form
+        class="form-content"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="promoteurForm"
+      >
+        <!-- Étape 1: Type de projet -->
+        <div class="form-step" *ngIf="currentFormStep === 1">
+          <h3>Quel type de projets développez-vous ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let type of typesProjet"
+              [class.selected]="
+                promoteurForm.get('typeProjet')?.value === type.value
+              "
+            >
+              <input
+                type="radio"
+                name="typeProjet"
+                [value]="type.value"
+                formControlName="typeProjet"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ type.icon }}</div>
+                <span class="option-label">{{ type.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="promoteurForm.get('typeProjet')?.value === type.value"
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 2: Budget moyen -->
+        <div class="form-step" *ngIf="currentFormStep === 2">
+          <h3>Quel est le budget moyen de vos projets ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let budget of budgets"
+              [class.selected]="
+                promoteurForm.get('budget')?.value === budget.value
+              "
+            >
+              <input
+                type="radio"
+                name="budget"
+                [value]="budget.value"
+                formControlName="budget"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ budget.icon }}</div>
+                <span class="option-label">{{ budget.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="promoteurForm.get('budget')?.value === budget.value"
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 3: Besoins spécifiques -->
+        <div class="form-step" *ngIf="currentFormStep === 3">
+          <h3>Quels sont vos besoins actuels ?</h3>
+          <p class="step-subtitle">Plusieurs choix possibles</p>
+          <div class="options-grid">
+            <label
+              class="option-card checkbox-card"
+              *ngFor="let besoin of besoinsOptions"
+              [class.selected]="
+                promoteurForm.get('besoin_' + besoin.value)?.value
+              "
+            >
+              <input
+                type="checkbox"
+                [formControlName]="'besoin_' + besoin.value"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ besoin.icon }}</div>
+                <span class="option-label">{{ besoin.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="promoteurForm.get('besoin_' + besoin.value)?.value"
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 4: Coordonnées -->
+        <div class="form-step" *ngIf="currentFormStep === 4">
+          <h3>Vos coordonnées</h3>
+          <p class="step-subtitle">
+            Pour être recontacté(e) par un conseiller et recevoir votre
+            diagnostic :
+          </p>
+          <div class="input-group">
+            <div class="input-field">
+              <label for="nom">Nom *</label>
+              <input
+                id="nom"
+                type="text"
+                formControlName="nom"
+                placeholder="Votre nom complet"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="email">Email *</label>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="votre@email.com"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="telephone">Téléphone *</label>
+              <input
+                id="telephone"
+                type="tel"
+                formControlName="telephone"
+                placeholder="+32 4XX XX XX XX"
+                required
+              />
+            </div>
+          </div>
+          <div class="contact-info">
+            📞 Un conseiller vous appellera sous 72h pour un échange gratuit
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button
+            type="button"
+            class="btn-prev"
+            *ngIf="currentFormStep > 1"
+            (click)="previousFormStep()"
+          >
+            ← Précédent
+          </button>
+          <button
+            type="button"
+            class="btn-next"
+            *ngIf="currentFormStep < totalFormSteps"
+            (click)="nextFormStep()"
+            [disabled]="!isFormStepValid()"
+          >
+            Suivant →
+          </button>
+          <button
+            type="submit"
+            class="btn-submit"
+            *ngIf="currentFormStep === totalFormSteps"
+            [disabled]="!isFormValid()"
+          >
+            📞 Demander mon diagnostic gratuit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Message de succès -->
+    <div class="success-message" *ngIf="formSubmitted">
+      <div class="success-icon">✅</div>
+      <h3>🎉 Merci !</h3>
+      <p>
+        Votre évaluation a été envoyée. Nous vous rappelons sous 72h avec votre
+        diagnostic personnalisé.
+      </p>
+      <button class="btn-reset" (click)="resetForm()">
+        Nouvelle évaluation
+      </button>
+    </div>
+  </section>
+
+  <!-- Bouton sticky flottant -->
+  <div
+    class="sticky-contact"
+    *ngIf="!formSubmitted"
+    (click)="scrollToContact()"
+  >
+    📞 Prendre contact
+  </div>
+</div>

@@ -1,0 +1,194 @@
+<div class="service-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>NOS SERVICES</span>
+      </div>
+      <h1 class="hero-title">Nos services comptables</h1>
+      <p class="hero-subtitle">
+        Un accompagnement clair, fiable et personnalisé à chaque étape.
+      </p>
+
+      <button class="cta-primary" (click)="openContactModal()">
+        <i class="fas fa-phone cta-icon"></i>
+        <span class="cta-text">Je souhaite être rappelé(e)</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi nous choisir -->
+  <section class="why-section" id="why">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-shield-alt title-icon"></i>
+        Pourquoi faire confiance à MFINANCES ?
+      </h2>
+    </div>
+
+    <div class="why-content">
+      <p class="lead-text">
+        Notre cabinet vous aide à éviter les erreurs qui coûtent cher et vous
+        accompagne pour sécuriser vos démarches fiscales et comptables.
+      </p>
+
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <i class="fas fa-check-circle benefit-icon"></i>
+          <span class="benefit-text">Réponses simples et concrètes</span>
+        </div>
+
+        <div class="benefit-item">
+          <i class="fas fa-check-circle benefit-icon"></i>
+          <span class="benefit-text">Démarches expliquées sans jargon</span>
+        </div>
+
+        <div class="benefit-item">
+          <i class="fas fa-check-circle benefit-icon"></i>
+          <span class="benefit-text">Experts locaux certifiés</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Équipe -->
+  <!-- <section class="team-section" id="team">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-users title-icon"></i>
+        Une équipe réactive, proche de vous
+      </h2>
+    </div>
+
+    <div class="team-content">
+      <p class="team-text">
+        Nous corrigeons les oublis et vous évitons les pertes de déductibilité.
+      </p>
+      <p class="team-text">
+        Chaque situation est suivie avec attention.
+      </p>
+
+      <div class="team-visual">
+        <img src="assets/img/public/team.jpg" alt="Équipe MFINANCES" />
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Section Services -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-briefcase title-icon"></i>
+        Nos services
+      </h2>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+      
+        <div class="service-content">
+          <h3 class="service-title">Comptabilité</h3>
+          <p class="service-description">Une lecture claire des chiffres pour piloter votre entreprise.</p>
+          <a routerLink="/services/comptabilite" class="service-link">
+            <span>Voir plus</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="service-card">
+      
+        <div class="service-content">
+          <h3 class="service-title">Création d'entreprise</h3>
+          <p class="service-description">Plan financier sur-mesure et compréhensible.</p>
+          <a routerLink="/services/creation-entreprise" class="service-link">
+            <span>Voir plus</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="service-card">
+     
+        <div class="service-content">
+          <h3 class="service-title">Fiscalité des entreprises</h3>
+          <p class="service-description">Déclarations fiscales prises en charge (TVA, ISOC...).</p>
+          <a routerLink="/services/fiscalite" class="service-link">
+            <span>Voir plus</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="service-card">
+      
+        <div class="service-content">
+          <h3 class="service-title">Gestion d'entreprise</h3>
+          <p class="service-description">Suivi d'activité et conseils pour anticiper.</p>
+          <a routerLink="/tresorerie" class="service-link">
+            <span>Voir plus</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <article class="service-card">
+   
+        <div class="service-content">
+          <h3 class="service-title">Déclaration d'impôt</h3>
+          <p class="service-description">Pour les particuliers : simple, rapide, efficace.</p>
+          <a routerLink="/services/declaration-impot" class="service-link">
+            <span>Voir plus</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section Contact rapide -->
+  <section class="contact-section" id="contact">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-phone-alt title-icon"></i>
+        Besoin d'une réponse ?
+      </h2>
+    </div>
+
+    <div class="contact-content">
+      <p class="contact-text">Notre équipe est disponible pour répondre à vos questions.</p>
+
+      <a class="cta-call" href="tel:+3228860550">
+        <i class="fas fa-phone cta-icon"></i>
+        <span class="cta-text">+32 2 886 05 50</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+<app-zone-contact-mobile></app-zone-contact-mobile>
+<!-- Modal de contact -->
+<div
+  class="contact-modal"
+  *ngIf="showContactModal"
+  (click)="closeContactModal()"
+>
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>Demande de rappel</h3>
+      <button class="close-btn" (click)="closeContactModal()">
+        <i class="fas fa-times close-icon"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Laissez-nous vos coordonnées via la page Contact.</p>
+      <a routerLink="/contact" class="contact-btn" (click)="closeContactModal()">
+        <i class="fas fa-envelope btn-icon"></i>
+        <span class="btn-text">Aller au formulaire</span>
+      </a>
+    </div>
+  </div>
+</div>

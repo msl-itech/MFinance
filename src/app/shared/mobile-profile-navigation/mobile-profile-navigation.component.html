@@ -1,0 +1,38 @@
+<!-- Navigation mobile entre profils -->
+<section class="mobile-navigation-section">
+  <div class="mobile-nav-container">
+    <div class="nav-selector">
+      <label for="profile-select" class="nav-label">
+        <i class="fas fa-users"></i>
+        <span>Explorer d'autres profils</span>
+      </label>
+      <select 
+        id="profile-select" 
+        class="profile-select" 
+        (change)="navigateToProfile($event)"
+        [value]="currentProfile"
+      >
+        <option value="" disabled>Choisissez votre profil</option>
+        <option 
+          *ngFor="let profile of profiles" 
+          [value]="profile.route"
+          [selected]="profile.route === currentProfile"
+        >
+          {{ profile.name }}
+        </option>
+      </select>
+      <i class="fas fa-chevron-down select-arrow"></i>
+    </div>
+    
+    <!-- Contact rapide mobile -->
+    <div class="quick-contact-mobile">
+      <a href="tel:+3228860550" class="quick-contact-btn">
+        <i class="fas fa-phone"></i>
+        <div class="contact-text">
+          <span class="contact-label">Appelez-nous</span>
+          <span class="contact-number">+32 2 886 05 50</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

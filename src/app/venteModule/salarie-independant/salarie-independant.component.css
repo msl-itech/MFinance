@@ -428,7 +428,7 @@ button.cta-button {
 }
 
 .comparison-section {
-  background: #25335b;
+  background: #1a2c51;
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
@@ -456,7 +456,7 @@ button.cta-button {
 }
 
 .status-employee .status-icon {
-  background: #25335b;
+  background: #1a2c51;
   color: white;
 }
 
@@ -487,7 +487,7 @@ button.cta-button {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #25335b;
+  background: #1a2c51;
 }
 
 .status-freelance .feature-list li::before {
@@ -509,7 +509,7 @@ button.cta-button {
 }
 
 .highlight-blue {
-  color: #25335b;
+  color: #1a2c51;
   font-weight: 600;
 }
 
@@ -531,7 +531,7 @@ h3 {
   margin-bottom: 1.5rem;
 }
 .background {
-  background-color: #25335b;
+  background-color: #1a2c51;
   min-height: 500px;
   color: white;
 }
@@ -595,7 +595,7 @@ h3 {
   position: absolute;
   left: 0;
   top: 1.2rem;
-  color: #25335b;
+  color: #1a2c51;
 }
 
 .info-card {
@@ -623,14 +623,14 @@ h3 {
 }
 
 .card-title {
-  color: #25335b;
+  color: #1a2c51;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
 
 .important-note {
-  border-left: 4px solid #25335b;
+  border-left: 4px solid #1a2c51;
   padding-left: 1.5rem;
   margin: 1.5rem 0;
   font-style: italic;
@@ -638,7 +638,7 @@ h3 {
 }
 
 .decision-section {
-  background: #25335b;
+  background: #1a2c51;
   padding: 8rem 0;
   position: relative;
   overflow: hidden;
@@ -789,7 +789,7 @@ h2 {
 
 .employee .priority-tag {
   background: #e6f0ff;
-  color: #25335b;
+  color: #1a2c51;
 }
 
 .freelance .priority-tag {
@@ -824,7 +824,7 @@ h2 {
 }
 
 .employee .benefit-list li i {
-  color: #25335b;
+  color: #1a2c51;
 }
 
 .freelance .benefit-list li i {

@@ -1,0 +1,697 @@
+<div class="grande-entreprise-mobile-container">
+  <!-- Section Hero Optimisée selon les recommandations -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <img
+        src="assets/img/webp/26.webp"
+        alt="Grande Entreprise Background"
+        class="hero-bg-image"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Maximisez votre rentabilité avec une gestion financière sur mesure</h1>
+      <p class="hero-subtitle">
+        Anticipez, gérez et innovez pour optimiser vos performances financières.
+      </p>
+
+      <!-- Boutons verticaux optimisés pour mobile -->
+      <div class="quick-access">
+        <button
+          class="quick-access-btn primary"
+          (click)="scrollToSection('services')"
+        >
+          🎯 Découvrez ce que vous gagnerez
+        </button>
+        <button
+          class="quick-access-btn secondary"
+          (click)="scrollToSection('formulaire-evaluation')"
+        >
+          🧭 Évaluez votre entreprise (2 min)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Mobile Navigation -->
+  <app-sidebar-mobile></app-sidebar-mobile>
+
+  <!-- Section Introduction Simplifiée -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <h2 class="intro-title">
+        Des solutions adaptées aux défis des grandes entreprises
+      </h2>
+
+      <!-- Texte mobile simplifié -->
+      <div class="intro-text">
+        <p>
+          Les grandes entreprises évoluent dans un environnement complexe où une 
+          <strong>gestion rigoureuse des finances</strong> est essentielle pour garantir 
+          leur <strong>compétitivité</strong>. MFINANCES vous propose des 
+          <strong>solutions sur mesure</strong> intégrant budgets prévisionnels, 
+          situations mensuelles et cash collecting optimisé.
+        </p>
+
+        <div class="intro-expand" *ngIf="!showFullIntro">
+          <button class="expand-btn" (click)="toggleIntro()">
+            + En savoir plus
+          </button>
+        </div>
+
+        <div class="intro-expanded" *ngIf="showFullIntro">
+          <p>
+            Entre le pilotage stratégique, la gestion des flux de trésorerie, et 
+            l'optimisation des ressources, bénéficiez d'un accompagnement expert 
+            avec contrôleur de gestion et DAF à temps partiel pour un pilotage 
+            financier précis et accessible.
+          </p>
+          <button class="expand-btn" (click)="toggleIntro()">- Réduire</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image mobile adaptée -->
+    <div class="intro-image">
+      <img
+        src="assets/img/webp/39.webp"
+        alt="Grande entreprise"
+        class="intro-img"
+      />
+    </div>
+
+    <!-- CTA bouton rouge stratégique -->
+    <div class="section-cta">
+      <button class="cta-primary" (click)="scrollToContact()">
+        📞 Prendre un rendez-vous gratuit
+      </button>
+      <p class="cta-subtitle">Diagnostic sous 72h - Gratuit</p>
+    </div>
+  </section>
+
+  <!-- Section Besoins spécifiques (slider/accordion selon les recommandations) -->
+  <section class="besoins-section" id="services">
+    <div class="section-header">
+      <h2 class="section-title">Besoins spécifiques des grandes entreprises</h2>
+      <p class="section-subtitle">
+        Une gestion sur mesure pour des résultats concrets
+      </p>
+    </div>
+
+    <!-- Navigation slider -->
+    <div class="besoins-slider">
+      <div class="slider-navigation">
+        <button 
+          class="nav-btn"
+          [class.active]="activeBesoinsSlide === 0"
+          (click)="setActiveBesoinsSlide(0)"
+        >
+          Budget
+        </button>
+        <button 
+          class="nav-btn"
+          [class.active]="activeBesoinsSlide === 1"
+          (click)="setActiveBesoinsSlide(1)"
+        >
+          Trésorerie
+        </button>
+        <button 
+          class="nav-btn"
+          [class.active]="activeBesoinsSlide === 2"
+          (click)="setActiveBesoinsSlide(2)"
+        >
+          Contrôle de gestion
+        </button>
+      </div>
+
+      <div class="slider-content">
+        <!-- Slide 1: Budget -->
+        <div class="slide-item" [class.active]="activeBesoinsSlide === 0">
+          <div class="slide-icon">📊</div>
+          <h3>Budgets prévisionnels dynamiques</h3>
+          <ul>
+            <li>Projection des recettes et dépenses pour planification stratégique</li>
+            <li>Anticipation des besoins financiers et réévaluation des priorités</li>
+          </ul>
+          <div class="slide-result">
+            <strong>Résultat :</strong> Prise de décision éclairée et réduction des imprévus financiers
+          </div>
+        </div>
+
+        <!-- Slide 2: Trésorerie -->
+        <div class="slide-item" [class.active]="activeBesoinsSlide === 1">
+          <div class="slide-icon">💰</div>
+          <h3>Gestion proactive de la trésorerie</h3>
+          <ul>
+            <li>Identification des périodes critiques pour éviter les découverts coûteux</li>
+            <li>Optimisation des flux financiers et réduction des délais clients</li>
+          </ul>
+          <div class="slide-result">
+            <strong>Résultat :</strong> Meilleure capacité d'investissement et visibilité renforcée
+          </div>
+        </div>
+
+        <!-- Slide 3: Contrôle de gestion -->
+        <div class="slide-item" [class.active]="activeBesoinsSlide === 2">
+          <div class="slide-icon">📈</div>
+          <h3>Contrôle de gestion avancé</h3>
+          <ul>
+            <li>Tableaux de bord personnalisés pour indicateurs clés</li>
+            <li>Analyse proactive des écarts pour ajustements rapides</li>
+          </ul>
+          <div class="slide-result">
+            <strong>Résultat :</strong> Allocation optimisée des ressources et performance accrue
+          </div>
+        </div>
+      </div>
+
+      <!-- Dots navigation -->
+      <div class="slider-dots">
+        <span 
+          class="dot"
+          [class.active]="activeBesoinsSlide === 0"
+          (click)="setActiveBesoinsSlide(0)"
+        ></span>
+        <span 
+          class="dot"
+          [class.active]="activeBesoinsSlide === 1"
+          (click)="setActiveBesoinsSlide(1)"
+        ></span>
+        <span 
+          class="dot"
+          [class.active]="activeBesoinsSlide === 2"
+          (click)="setActiveBesoinsSlide(2)"
+        ></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pratiques complémentaires (horizontal slider avec 3 cartes cliquables) -->
+  <section class="pratiques-section">
+    <div class="section-header">
+      <h2 class="section-title">Pratiques complémentaires pour une gestion optimisée</h2>
+      <p class="section-subtitle">Les pratiques pour une gestion efficace</p>
+    </div>
+
+    <div class="pratiques-slider">
+      <div class="slider-container" [style.transform]="'translateX(' + (-activePratiqueSlide * 100) + '%)'">
+        <!-- Carte 1 -->
+        <div class="pratique-card">
+          <div class="card-header">
+            <div class="step-badge">ÉTAPE 01</div>
+            <h3>Situations mensuelles intermédiaires</h3>
+          </div>
+          <div class="card-content">
+            <p>
+              Produisez des rapports réguliers pour analyser les écarts et ajuster 
+              les stratégies en cours. Identifiez rapidement les anomalies pour 
+              garantir un pilotage précis.
+            </p>
+            <div class="card-advantage">
+              <strong>Avantage :</strong> Réactivité accrue face aux imprévus, 
+              évitant des pertes opérationnelles.
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 2 -->
+        <div class="pratique-card">
+          <div class="card-header">
+            <div class="step-badge">ÉTAPE 02</div>
+            <h3>Analyse approfondie des indicateurs financiers</h3>
+          </div>
+          <div class="card-content">
+            <p>
+              Ratio de trésorerie, délai moyen de paiement clients (DSO), marge 
+              brute et rentabilité par projet.
+            </p>
+            <div class="card-advantage">
+              <strong>Avantage :</strong> Vision claire pour prioriser les actions 
+              et allouer les budgets efficacement.
+            </div>
+          </div>
+        </div>
+
+        <!-- Carte 3 -->
+        <div class="pratique-card">
+          <div class="card-header">
+            <div class="step-badge">ÉTAPE 03</div>
+            <h3>Automatisation des tâches et outils de suivi</h3>
+          </div>
+          <div class="card-content">
+            <p>
+              Implémentez des logiciels adaptés pour réduire le temps passé sur 
+              les tâches administratives.
+            </p>
+            <div class="card-advantage">
+              <strong>Avantage :</strong> Moins de ressources immobilisées sur des tâches 
+              répétitives, davantage consacrées à l'innovation.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation arrows -->
+      <button class="slider-arrow prev" (click)="previousPratiqueSlide()" [disabled]="activePratiqueSlide === 0">
+        ‹
+      </button>
+      <button class="slider-arrow next" (click)="nextPratiqueSlide()" [disabled]="activePratiqueSlide === 2">
+        ›
+      </button>
+
+      <!-- Dots navigation -->
+      <div class="slider-dots">
+        <span 
+          class="dot"
+          [class.active]="activePratiqueSlide === 0"
+          (click)="setPratiqueSlide(0)"
+        ></span>
+        <span 
+          class="dot"
+          [class.active]="activePratiqueSlide === 1"
+          (click)="setPratiqueSlide(1)"
+        ></span>
+        <span 
+          class="dot"
+          [class.active]="activePratiqueSlide === 2"
+          (click)="setPratiqueSlide(2)"
+        ></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Case Studies (horizontal slider) -->
+  <section class="case-studies-section">
+    <div class="section-header">
+      <h2 class="section-title">Exemples concrets : Résultats obtenus avec MFINANCES</h2>
+      <p class="section-subtitle">Découvrez comment nous avons transformé leurs défis en opportunités</p>
+    </div>
+
+    <div class="case-studies-slider">
+      <div class="slider-container" [style.transform]="'translateX(' + (-activeCaseSlide * 100) + '%)'">
+        <!-- Case Study 1 -->
+        <div class="case-card">
+          <div class="case-header">
+            <h3>Entreprise industrielle multi-sites</h3>
+            <div class="case-type">Industrie</div>
+          </div>
+          <div class="case-content">
+            <div class="problem">
+              <h4>Problème</h4>
+              <p>Manque de visibilité sur les flux financiers et tensions fréquentes sur la trésorerie.</p>
+            </div>
+            <div class="solution">
+              <h4>Solution</h4>
+              <ul>
+                <li>Situations mensuelles intermédiaires</li>
+                <li>Tableaux de trésorerie prévisionnels actualisés chaque semaine</li>
+                <li>Système de cash collecting centralisé</li>
+              </ul>
+            </div>
+            <div class="result">
+              <h4>Résultat</h4>
+              <ul>
+                <li>✅ Réduction des retards de paiement de 40%</li>
+                <li>✅ Projections financières fiables sur 12 mois</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="case-card">
+          <div class="case-header">
+            <h3>Groupe technologique en pleine croissance</h3>
+            <div class="case-type">Tech</div>
+          </div>
+          <div class="case-content">
+            <div class="problem">
+              <h4>Problème</h4>
+              <p>Retards dans les encaissements clients, entraînant des difficultés à financer l'innovation.</p>
+            </div>
+            <div class="solution">
+              <h4>Solution</h4>
+              <ul>
+                <li>Budgets prévisionnels dynamiques et tableaux de trésorerie</li>
+                <li>Formation des équipes au cash collecting</li>
+              </ul>
+            </div>
+            <div class="result">
+              <h4>Résultat</h4>
+              <ul>
+                <li>✅ Diminution des délais de paiement clients de 20 jours</li>
+                <li>✅ Augmentation des liquidités pour financer la R&D</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation arrows -->
+      <button class="slider-arrow prev" (click)="previousCaseSlide()" [disabled]="activeCaseSlide === 0">
+        ‹
+      </button>
+      <button class="slider-arrow next" (click)="nextCaseSlide()" [disabled]="activeCaseSlide === 1">
+        ›
+      </button>
+
+      <!-- Dots navigation -->
+      <div class="slider-dots">
+        <span 
+          class="dot"
+          [class.active]="activeCaseSlide === 0"
+          (click)="setCaseSlide(0)"
+        ></span>
+        <span 
+          class="dot"
+          [class.active]="activeCaseSlide === 1"
+          (click)="setCaseSlide(1)"
+        ></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi MFINANCES améliorée avec hiérarchie visuelle -->
+  <section class="why-choose-section">
+    <div class="section-header">
+      <div class="why-badge">🎯 Ce qui nous distingue</div>
+      <h2 class="section-title">Pourquoi choisir MFINANCES ?</h2>
+      <p class="section-subtitle">Un accompagnement stratégique pour maximiser votre rentabilité</p>
+    </div>
+
+    <div class="why-choose-grid">
+      <div class="why-card featured">
+        <div class="why-icon">💼</div>
+        <h3>Accompagnement stratégique et personnalisé</h3>
+        <p>
+          Nos contrôleurs de gestion et DAF apportent des solutions 
+          spécifiques à vos défis avec une expertise de haut niveau.
+        </p>
+        <div class="card-highlight">Expert dédié</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🔧</div>
+        <h3>Outils modernes et flexibles</h3>
+        <p>
+          Intégration de tableaux de bord, ERP, et CRM pour un pilotage 
+          précis et une productivité accrue.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">📊</div>
+        <h3>Résultats concrets et mesurables</h3>
+        <p>
+          Réduction des coûts opérationnels, amélioration des liquidités, 
+          et croissance durable grâce à notre méthodologie éprouvée.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="why-cta">
+      <button class="cta-btn-primary" (click)="scrollToContact()">
+        🚀 Transformez vos défis en opportunités
+      </button>
+      <p class="cta-subtitle">Diagnostic gratuit sous 72h</p>
+    </div>
+  </section>
+
+  <!-- Contact spécifique optimisé -->
+  <section class="contact-section" id="contact">
+    <div class="contact-header">
+      <div class="contact-badge">
+        <span>📞 CONTACT GRANDES ENTREPRISES</span>
+      </div>
+      <h2 class="contact-title">Maximisez votre rentabilité dès aujourd'hui</h2>
+      <p class="contact-subtitle">
+        Prenez rendez-vous pour un diagnostic gratuit et personnalisé !
+      </p>
+    </div>
+
+    <div class="contact-actions">
+      <div class="contact-method" (click)="callNow()">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">
+          <span class="contact-label">Appelez-nous directement</span>
+          <span class="contact-value">+32 2 542 04 32</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="emailNow()">
+        <div class="contact-icon">📧</div>
+        <div class="contact-info">
+          <span class="contact-label">Envoyez-nous un email</span>
+          <span class="contact-value">info&#64;mfinances.be</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="scheduleAppointment()">
+        <div class="contact-icon">📅</div>
+        <div class="contact-info">
+          <span class="contact-label">Réservez un créneau</span>
+          <span class="contact-value">Prendre RDV en ligne</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-cta-entreprise">
+      <button class="cta-entreprise-btn" (click)="openEntrepriseContact()">
+        📆 Diagnostic gratuit grandes entreprises
+      </button>
+      <button class="maps-btn" (click)="openMaps()">
+        📍 Voir sur Google Maps
+      </button>
+    </div>
+  </section>
+
+  <!-- Formulaire d'évaluation avec stepper visuel -->
+  <section class="evaluation-section" id="formulaire-evaluation">
+    <div class="evaluation-header">
+      <div class="evaluation-badge">
+        <span>🧭 ÉVALUATION GRATUITE</span>
+      </div>
+      <h2 class="evaluation-title">Évaluez votre entreprise en 2 minutes</h2>
+      <p class="evaluation-subtitle">
+        Recevez un mini-diagnostic personnalisé, puis un appel gratuit sous 72h
+      </p>
+    </div>
+
+    <div class="evaluation-form">
+      <!-- Stepper visuel amélioré -->
+      <div class="form-stepper">
+        <div class="stepper-container">
+          <div
+            class="stepper-step"
+            *ngFor="let step of formSteps; let i = index"
+            [class.active]="i + 1 === currentFormStep"
+            [class.completed]="i + 1 < currentFormStep"
+          >
+            <div class="step-circle">
+              <span *ngIf="i + 1 < currentFormStep">✅</span>
+              <span *ngIf="i + 1 >= currentFormStep">{{ i + 1 }}</span>
+            </div>
+            <span class="step-label">{{ step.label }}</span>
+          </div>
+        </div>
+        <div class="stepper-progress">
+          <div
+            class="progress-fill"
+            [style.width.%]="(currentFormStep / totalFormSteps) * 100"
+          ></div>
+        </div>
+      </div>
+
+      <form
+        class="form-content"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="entrepriseForm"
+      >
+        <!-- Étape 1: Secteur d'activité -->
+        <div class="form-step" *ngIf="currentFormStep === 1">
+          <h3>Quel est votre secteur d'activité ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let secteur of secteurs"
+              [class.selected]="
+                entrepriseForm.get('secteur')?.value === secteur.value
+              "
+            >
+              <input
+                type="radio"
+                name="secteur"
+                [value]="secteur.value"
+                formControlName="secteur"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ secteur.icon }}</div>
+                <span class="option-label">{{ secteur.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="
+                    entrepriseForm.get('secteur')?.value === secteur.value
+                  "
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 2: Revenus annuels -->
+        <div class="form-step" *ngIf="currentFormStep === 2">
+          <h3>Quel est votre chiffre d'affaires annuel ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let revenu of revenus"
+              [class.selected]="
+                entrepriseForm.get('revenus')?.value === revenu.value
+              "
+            >
+              <input
+                type="radio"
+                name="revenus"
+                [value]="revenu.value"
+                formControlName="revenus"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ revenu.icon }}</div>
+                <span class="option-label">{{ revenu.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="entrepriseForm.get('revenus')?.value === revenu.value"
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 3: Besoins spécifiques -->
+        <div class="form-step" *ngIf="currentFormStep === 3">
+          <h3>Quels sont vos besoins actuels ?</h3>
+          <p class="step-subtitle">Plusieurs choix possibles</p>
+          <div class="options-grid">
+            <label
+              class="option-card checkbox-card"
+              *ngFor="let besoin of besoinsOptions"
+              [class.selected]="entrepriseForm.get('besoin_' + besoin.value)?.value"
+            >
+              <input
+                type="checkbox"
+                [formControlName]="'besoin_' + besoin.value"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ besoin.icon }}</div>
+                <span class="option-label">{{ besoin.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="entrepriseForm.get('besoin_' + besoin.value)?.value"
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 4: Coordonnées -->
+        <div class="form-step" *ngIf="currentFormStep === 4">
+          <h3>Vos coordonnées</h3>
+          <p class="step-subtitle">
+            Pour être recontacté(e) par un conseiller et recevoir votre
+            diagnostic :
+          </p>
+          <div class="input-group">
+            <div class="input-field">
+              <label for="nom">Nom *</label>
+              <input
+                id="nom"
+                type="text"
+                formControlName="nom"
+                placeholder="Votre nom complet"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="email">Email *</label>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="votre@email.com"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="telephone">Téléphone *</label>
+              <input
+                id="telephone"
+                type="tel"
+                formControlName="telephone"
+                placeholder="+32 4XX XX XX XX"
+                required
+              />
+            </div>
+          </div>
+          <div class="contact-info">
+            📞 Un conseiller vous appellera sous 72h pour un échange gratuit
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button
+            type="button"
+            class="btn-prev"
+            *ngIf="currentFormStep > 1"
+            (click)="previousFormStep()"
+          >
+            ← Précédent
+          </button>
+          <button
+            type="button"
+            class="btn-next"
+            *ngIf="currentFormStep < totalFormSteps"
+            (click)="nextFormStep()"
+            [disabled]="!isFormStepValid()"
+          >
+            Suivant →
+          </button>
+          <button
+            type="submit"
+            class="btn-submit"
+            *ngIf="currentFormStep === totalFormSteps"
+            [disabled]="!isFormValid()"
+          >
+            📞 Demander mon diagnostic gratuit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Message de succès -->
+    <div class="success-message" *ngIf="formSubmitted">
+      <div class="success-icon">✅</div>
+      <h3>🎉 Merci !</h3>
+      <p>
+        Votre évaluation a été envoyée. Nous vous rappelons sous 72h avec votre
+        diagnostic personnalisé.
+      </p>
+      <button class="btn-reset" (click)="resetForm()">
+        Nouvelle évaluation
+      </button>
+    </div>
+  </section>
+
+  <!-- Bouton sticky flottant -->
+  <div
+    class="sticky-contact"
+    *ngIf="!formSubmitted"
+    (click)="scrollToContact()"
+  >
+    📞 Prendre contact
+  </div>
+</div>

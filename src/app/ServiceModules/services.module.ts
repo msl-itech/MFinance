@@ -1,15 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { ServicesRoutingModule } from './services-routing.module';
-import { ComptabiliteComponent } from './comptabilite/comptabilite.component';
-import { PageServiceComponent } from './page-service/page-service.component';
+import { ComptabiliteMobileComponent } from '../features-mobile/comptabilite-mobile/comptabilite-mobile.component';
+import { CreationEntrepriseMobileComponent } from '../features-mobile/creation-entreprise-mobile/creation-entreprise-mobile.component';
+import { DeclarationImpotMobileComponent } from '../features-mobile/declaration-impot-mobile/declaration-impot-mobile.component';
+import { FiscaliteMobileComponent } from '../features-mobile/fiscalite-mobile/fiscalite-mobile.component';
 import { ShardeModuleModule } from '../sharde-module/sharde-module.module';
-import { FiscaliteComponent } from './fiscalite/fiscalite.component';
+import { ComptabiliteComponent } from './comptabilite/comptabilite.component';
 import { CreationEntrepriseComponent } from './creation-entreprise/creation-entreprise.component';
 import { DeclarationImpotComponent } from './declaration-impot/declaration-impot.component';
+import { FiscaliteComponent } from './fiscalite/fiscalite.component';
+import { PageServiceComponent } from './page-service/page-service.component';
 import { PricingComponent } from './pricing/pricing.component';
-
+import { ServicesRoutingModule } from './services-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,16 @@ import { PricingComponent } from './pricing/pricing.component';
     FiscaliteComponent,
     CreationEntrepriseComponent,
     DeclarationImpotComponent,
-    PricingComponent
+    PricingComponent,
   ],
   imports: [
     CommonModule,
     ServicesRoutingModule,
-    ShardeModuleModule
-  ]
+    ShardeModuleModule,
+    CreationEntrepriseMobileComponent,
+    FiscaliteMobileComponent,
+    DeclarationImpotMobileComponent,
+    ComptabiliteMobileComponent,
+  ],
 })
-export class ServicesModule { }
+export class ServicesModule {}

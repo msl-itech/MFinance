@@ -1,0 +1,1493 @@
+// Variables SCSS
+$primary-red: #ff3b30;
+$primary-dark: #1a2c51;
+$light-bg: #f8f9fb;
+$border-color: #e6e9f1;
+$text-dark: #2c3e50;
+$text-muted: #6c757d;
+$success-color: #ff3b30;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+$entreprise-blue: #1a2c51;
+
+.promoteur-mobile-container {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  overflow-x: hidden;
+}
+
+// Section Hero avec titre mobile optimisé selon les recommandations
+.hero-section {
+  position: relative;
+  height: 100vh;
+  max-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    .hero-bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($primary-dark, 0.75);
+    }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 90%;
+
+    .hero-title {
+      font-size: 1.6rem; // Titre réduit selon les recommandations UX
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      padding: 0 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem; // Sous-titre engageant
+      margin-bottom: 32px;
+      line-height: 1.4;
+      opacity: 0.95;
+      padding: 0 10px;
+    }
+
+    .quick-access {
+      display: flex;
+      flex-direction: column; // Disposition verticale selon les recommandations
+      gap: 16px;
+      max-width: 320px;
+      margin: 0 auto;
+
+      .quick-access-btn {
+        padding: 16px 20px;
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        touch-action: manipulation;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        &.primary {
+          background: $primary-red;
+          color: white;
+
+          &:hover {
+            background: darken($primary-red, 10%);
+            transform: translateY(-2px);
+          }
+        }
+
+        &.secondary {
+          background: white;
+          color: $primary-dark;
+
+          &:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section Introduction avec image mobile adaptée
+.intro-section {
+  padding: 40px 20px;
+  background: white;
+
+  .intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .intro-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $text-dark;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .intro-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $text-dark;
+
+      .intro-expand,
+      .intro-expanded {
+        margin-top: 16px;
+      }
+
+      .expand-btn {
+        background: none;
+        border: none;
+        color: $primary-red;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 8px 0;
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .intro-image {
+    margin: 32px 0;
+    text-align: center;
+
+    .intro-img {
+      width: 100%;
+      max-width: 400px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .section-cta {
+    text-align: center;
+    margin-top: 32px;
+
+    .cta-primary {
+      background: $primary-red;
+      color: white;
+      border: none;
+      padding: 16px 24px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 8px;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 8px;
+
+      &:hover {
+        background: darken($primary-red, 10%);
+        transform: translateY(-2px);
+      }
+    }
+
+    .cta-subtitle {
+      font-size: 0.85rem;
+      color: $text-muted;
+      margin: 0;
+    }
+  }
+}
+
+// Section Header Commune
+.section-header {
+  text-align: center;
+  margin-bottom: 32px;
+
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    color: $text-muted;
+    line-height: 1.5;
+  }
+
+  .why-badge {
+    display: inline-block;
+    background: $primary-red;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+}
+
+// Section Besoins spécifiques (slider/accordion selon les recommandations UX)
+.besoins-section {
+  padding: 40px 20px;
+  background: $entreprise-blue;
+
+  .section-header {
+    .section-title,
+    .section-subtitle {
+      color: white;
+    }
+  }
+
+  .besoins-slider {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .slider-navigation {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+
+      .nav-btn {
+        padding: 12px 20px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        background: transparent;
+        color: white;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+
+        &.active {
+          background: $primary-red;
+          border-color: $primary-red;
+        }
+
+        &:hover:not(.active) {
+          border-color: rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+
+    .slider-content {
+      position: relative;
+      min-height: 300px;
+
+      .slide-item {
+        display: none;
+        background: white;
+        padding: 32px 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        &.active {
+          display: block;
+          animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide-icon {
+          font-size: 3rem;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        h3 {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: $text-dark;
+          margin-bottom: 16px;
+          text-align: center;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin-bottom: 20px;
+
+          li {
+            margin-bottom: 12px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.5;
+            color: $text-dark;
+
+            &:before {
+              content: "✓";
+              position: absolute;
+              left: 0;
+              color: $success-color;
+              font-weight: bold;
+            }
+          }
+        }
+
+        .slide-result {
+          background: #f8f9fb;
+          padding: 16px;
+          border-radius: 8px;
+          border-left: 4px solid $primary-red;
+          font-size: 0.95rem;
+          line-height: 1.5;
+          color: $text-dark;
+        }
+      }
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: $primary-red;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Section Pratiques complémentaires (horizontal slider avec 3 cartes cliquables)
+.pratiques-section {
+  padding: 40px 20px;
+  background: white;
+
+  .pratiques-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    .slider-container {
+      display: flex;
+      transition: transform 0.5s ease;
+
+      .pratique-card {
+        min-width: 100%;
+        background: #f8f9fb;
+        border: 2px solid $border-color;
+        border-radius: 12px;
+        padding: 24px;
+        margin: 0 8px;
+
+        .card-header {
+          margin-bottom: 20px;
+
+          .step-badge {
+            display: inline-block;
+            background: $primary-red;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+          }
+
+          h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: $text-dark;
+            margin: 0;
+            line-height: 1.3;
+          }
+        }
+
+        .card-content {
+          p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: $text-dark;
+            margin-bottom: 16px;
+          }
+
+          .card-advantage {
+            background: #e8f5e8;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid $success-color;
+            font-size: 0.9rem;
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $primary-red;
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 2;
+
+      &:hover:not(:disabled) {
+        background: darken($primary-red, 10%);
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      &.prev {
+        left: -20px;
+      }
+
+      &.next {
+        right: -20px;
+      }
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: $border-color;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: $primary-red;
+        }
+      }
+    }
+  }
+}
+
+// Section Case Studies (horizontal slider)
+.case-studies-section {
+  padding: 40px 20px;
+  background: $entreprise-blue;
+
+  .section-header {
+    .section-title,
+    .section-subtitle {
+      color: white;
+    }
+  }
+
+  .case-studies-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    .slider-container {
+      display: flex;
+      transition: transform 0.5s ease;
+
+      .case-card {
+        min-width: 100%;
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        margin: 0 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        .case-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+
+          h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: $text-dark;
+            margin: 0;
+            flex: 1;
+          }
+
+          .case-type {
+            background: $primary-red;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+          }
+        }
+
+        .case-content {
+          .problem,
+          .solution,
+          .result {
+            margin-bottom: 20px;
+
+            h4 {
+              font-size: 1rem;
+              font-weight: 600;
+              margin-bottom: 8px;
+              color: $text-dark;
+            }
+
+            p {
+              font-size: 0.95rem;
+              line-height: 1.5;
+              color: $text-dark;
+              margin-bottom: 8px;
+            }
+
+            ul {
+              list-style: none;
+              padding: 0;
+
+              li {
+                margin-bottom: 8px;
+                padding-left: 16px;
+                position: relative;
+                font-size: 0.9rem;
+                line-height: 1.4;
+                color: $text-dark;
+
+                &:before {
+                  content: "•";
+                  position: absolute;
+                  left: 0;
+                  color: $primary-red;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+
+          .result {
+            background: #f8f9fb;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid $success-color;
+
+            ul li:before {
+              content: "";
+            }
+          }
+        }
+      }
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $primary-red;
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 2;
+
+      &:hover:not(:disabled) {
+        background: darken($primary-red, 10%);
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      &.prev {
+        left: -20px;
+      }
+
+      &.next {
+        right: -20px;
+      }
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: $primary-red;
+        }
+      }
+    }
+  }
+}
+
+// Section Pourquoi choisir améliorée avec hiérarchie visuelle
+.why-choose-section {
+  padding: 40px 20px;
+  background: $light-bg;
+
+  .why-choose-grid {
+    max-width: 800px;
+    margin: 0 auto 32px;
+    display: grid;
+    gap: 24px;
+  }
+
+  .why-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &.featured {
+      border: 2px solid $primary-red;
+      transform: scale(1.02);
+      position: relative;
+
+      .card-highlight {
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        background: $primary-red;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba($primary-red, 0.15);
+    }
+
+    .why-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: $text-dark;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: $text-muted;
+      margin: 0;
+    }
+  }
+
+  .why-cta {
+    text-align: center;
+    margin-top: 32px;
+
+    .cta-btn-primary {
+      background: $primary-red;
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 8px;
+
+      &:hover {
+        background: darken($primary-red, 10%);
+        transform: translateY(-2px);
+      }
+    }
+
+    .cta-subtitle {
+      font-size: 0.85rem;
+      color: $text-muted;
+      margin: 0;
+    }
+  }
+}
+
+// Section Défis des promoteurs immobiliers
+.defis-section {
+  padding: 40px 20px;
+  background: white;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $text-dark;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      .title-icon {
+        font-size: 1.5rem;
+        color: $warning-color;
+      }
+    }
+  }
+
+  .defis-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: 32px;
+    align-items: center;
+
+    .defis-image {
+      text-align: center;
+      order: 1;
+
+      img {
+        width: 100%;
+        max-width: 400px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .defis-text {
+      order: 2;
+
+      .intro-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: $text-dark;
+        margin-bottom: 24px;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .defis-list {
+        display: grid;
+        gap: 20px;
+
+        .defi-item {
+          background: #f8f9fb;
+          border: 2px solid $border-color;
+          border-radius: 12px;
+          padding: 20px;
+          display: flex;
+          align-items: flex-start;
+          gap: 16px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            border-color: $primary-red;
+            box-shadow: 0 4px 12px rgba($primary-red, 0.1);
+            transform: translateY(-2px);
+          }
+
+          .defi-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: $primary-red;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 2px 8px rgba($primary-red, 0.3);
+          }
+
+          .defi-content {
+            flex: 1;
+
+            h4 {
+              font-size: 1.1rem;
+              font-weight: 600;
+              color: $text-dark;
+              margin-bottom: 8px;
+              line-height: 1.3;
+            }
+
+            p {
+              font-size: 0.95rem;
+              line-height: 1.5;
+              color: $text-muted;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Section Contact
+.contact-section {
+  padding: 40px 20px;
+  background: $light-bg;
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .contact-badge {
+      display: inline-block;
+      background: $primary-red;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .contact-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $text-dark;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .contact-subtitle {
+      font-size: 1rem;
+      color: $text-muted;
+      line-height: 1.5;
+    }
+  }
+
+  .contact-actions {
+    max-width: 500px;
+    margin: 0 auto 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-method {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid $border-color;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $primary-red;
+      box-shadow: 0 2px 10px rgba($primary-red, 0.1);
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info {
+      flex: 1;
+
+      .contact-label {
+        display: block;
+        font-size: 0.85rem;
+        color: $text-muted;
+        margin-bottom: 4px;
+      }
+
+      .contact-value {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        color: $text-dark;
+      }
+    }
+  }
+
+  .contact-cta-entreprise {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .cta-entreprise-btn {
+      background: $primary-red;
+      color: white;
+      border: none;
+      padding: 16px 24px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: darken($primary-red, 10%);
+        transform: translateY(-2px);
+      }
+    }
+
+    .maps-btn {
+      background: white;
+      color: $text-dark;
+      border: 2px solid $border-color;
+      padding: 12px 24px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: $primary-red;
+        color: $primary-red;
+      }
+    }
+  }
+}
+
+// Section Formulaire d'évaluation
+.evaluation-section {
+  padding: 40px 20px;
+  background: white;
+
+  .evaluation-header {
+    text-align: center;
+    margin-bottom: 32px;
+
+    .evaluation-badge {
+      display: inline-block;
+      background: $success-color;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .evaluation-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $text-dark;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .evaluation-subtitle {
+      font-size: 1rem;
+      color: $text-muted;
+      line-height: 1.5;
+    }
+  }
+
+  .evaluation-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-stepper {
+    margin-bottom: 32px;
+
+    .stepper-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      overflow-x: auto;
+      padding: 0 8px;
+    }
+
+    .stepper-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      min-width: 60px;
+
+      .step-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $border-color;
+        color: $text-muted;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .step-label {
+        font-size: 0.75rem;
+        color: $text-muted;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      &.active {
+        .step-circle {
+          background: $primary-red;
+          color: white;
+        }
+
+        .step-label {
+          color: $primary-red;
+          font-weight: 600;
+        }
+      }
+
+      &.completed {
+        .step-circle {
+          background: $success-color;
+          color: white;
+        }
+
+        .step-label {
+          color: $success-color;
+        }
+      }
+    }
+
+    .stepper-progress {
+      height: 4px;
+      background: $border-color;
+      border-radius: 2px;
+      overflow: hidden;
+
+      .progress-fill {
+        height: 100%;
+        background: $primary-red;
+        transition: width 0.3s ease;
+      }
+    }
+  }
+
+  .form-content {
+    .form-step {
+      margin-bottom: 32px;
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: $text-dark;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+
+      .step-subtitle {
+        font-size: 0.9rem;
+        color: $text-muted;
+        margin-bottom: 24px;
+      }
+
+      .options-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .option-card {
+        background: $light-bg;
+        border: 2px solid $border-color;
+        border-radius: 8px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+
+        &:hover {
+          border-color: $primary-red;
+          background: #fff5f5;
+        }
+
+        &.selected {
+          border-color: $primary-red;
+          background: #fff5f5;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+          position: absolute;
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .option-content {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          flex: 1;
+
+          .option-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+          }
+
+          .option-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: $text-dark;
+            flex: 1;
+          }
+
+          .option-check {
+            font-size: 1.2rem;
+            color: $success-color;
+          }
+        }
+      }
+
+      .input-group {
+        display: grid;
+        gap: 16px;
+      }
+
+      .input-field {
+        label {
+          display: block;
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: $text-dark;
+          margin-bottom: 6px;
+        }
+
+        input {
+          width: 100%;
+          padding: 12px;
+          border: 2px solid $border-color;
+          border-radius: 8px;
+          font-size: 1rem;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+            outline: none;
+            border-color: $primary-red;
+          }
+        }
+      }
+
+      .contact-info {
+        background: $light-bg;
+        padding: 16px;
+        border-radius: 8px;
+        border: 2px solid $border-color;
+        text-align: center;
+        font-size: 0.9rem;
+        color: $text-dark;
+        margin-top: 16px;
+      }
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .btn-prev,
+      .btn-next,
+      .btn-submit {
+        padding: 12px 24px;
+        border-radius: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        font-size: 0.95rem;
+        min-width: 120px;
+      }
+
+      .btn-prev {
+        background: white;
+        color: $text-dark;
+        border: 2px solid $border-color;
+
+        &:hover {
+          border-color: $primary-red;
+          color: $primary-red;
+        }
+      }
+
+      .btn-next,
+      .btn-submit {
+        background: $primary-red;
+        color: white;
+
+        &:hover:not(:disabled) {
+          background: darken($primary-red, 10%);
+          transform: translateY(-2px);
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+
+      .btn-submit {
+        background: $success-color;
+        min-width: 200px;
+
+        &:hover:not(:disabled) {
+          background: darken($success-color, 10%);
+        }
+      }
+    }
+  }
+
+  .success-message {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f8fff8;
+    border: 2px solid $success-color;
+    border-radius: 12px;
+
+    .success-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $success-color;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $text-dark;
+      margin-bottom: 24px;
+    }
+
+    .btn-reset {
+      background: $primary-red;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: darken($primary-red, 10%);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+// Bouton sticky
+.sticky-contact {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: $primary-red;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba($primary-red, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+  &:hover {
+    background: darken($primary-red, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba($primary-red, 0.4);
+  }
+}
+
+// Responsive adjustments
+@media (min-width: 768px) {
+  .hero-content {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .quick-access {
+      flex-direction: row;
+      max-width: 500px;
+    }
+  }
+
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-step .options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-step .input-group {
+    grid-template-columns: repeat(2, 1fr);
+
+    .input-field:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .pratiques-slider .slider-arrow {
+    &.prev {
+      left: -50px;
+    }
+
+    &.next {
+      right: -50px;
+    }
+  }
+
+  .case-studies-slider .slider-arrow {
+    &.prev {
+      left: -50px;
+    }
+
+    &.next {
+      right: -50px;
+    }
+  }
+
+  .defis-section {
+    .defis-content {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+
+      .defis-image {
+        order: 1;
+      }
+
+      .defis-text {
+        order: 2;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    .hero-title {
+      font-size: 2.6rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+    }
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .why-choose-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .defis-section {
+    .section-title {
+      font-size: 2.2rem;
+    }
+
+    .defis-content {
+      .defis-text {
+        .intro-text {
+          font-size: 1.2rem;
+        }
+
+        .defis-list {
+          .defi-item {
+            padding: 24px;
+
+            .defi-icon {
+              width: 60px;
+              height: 60px;
+              font-size: 1.4rem;
+            }
+
+            .defi-content {
+              h4 {
+                font-size: 1.2rem;
+              }
+
+              p {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

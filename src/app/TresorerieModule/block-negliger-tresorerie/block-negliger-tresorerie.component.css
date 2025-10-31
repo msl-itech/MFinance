@@ -119,7 +119,7 @@
 
 .card:nth-child(1) .card-corner { background: #ef4444; }
 .card:nth-child(2) .card-corner { background: #f59e0b; }
-.card:nth-child(3) .card-corner { background: #3b82f6; }
+.card:nth-child(3) .card-corner { background: #f34947; }
 
 .icon-wrapper {
     display: flex;

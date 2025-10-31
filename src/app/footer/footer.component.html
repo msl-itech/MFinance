@@ -1,4 +1,5 @@
-<div class="footer-container">
+<!-- Version Desktop du footer -->
+<div class="footer-container" *ngIf="!(deviceService.shouldUseMobileVersion$ | async)">
   <div class="footer-content">
     <div class="contact-section">
       <p><i class="fas fa-map-marker-alt"></i> 20 Rue de la Magnanerie</p>
@@ -91,6 +92,53 @@
           >Design and Code by MSL-iTECH</a
         >
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Version Mobile minimaliste du footer -->
+<div class="mobile-footer" *ngIf="deviceService.shouldUseMobileVersion$ | async">
+  <div class="mobile-footer-content">
+    <!-- Contact rapide -->
+    <div class="mobile-contact-section">
+      <div class="contact-actions">
+        <a href="tel:+32288605050" class="contact-btn phone-btn">
+          <i class="fas fa-phone"></i>
+          <span>Appeler</span>
+        </a>
+        <a href="mailto:info@mfinances.be" class="contact-btn email-btn">
+          <i class="fas fa-envelope"></i>
+          <span>Email</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Réseaux sociaux compacts -->
+    <div class="mobile-social-section">
+      <div class="mobile-social-links">
+        <a href="https://www.facebook.com/mfinancessrl/" aria-label="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/mfinances-cabinet-expertise-comptable-l-bruxelles-4b0b9798/"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a href="https://www.youtube.com/@mfinances4354" aria-label="YouTube"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="https://www.instagram.com/mfinances_expertcomptable/" aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </div>
+
+    <!-- Copyright minimaliste -->
+    <div class="mobile-copyright">
+      <p>© 2025 MFinances S.R.L.</p>
+      <p class="design-credit">
+        <a href="https://www.msl-itech.com" target="_blank">MSL-iTECH</a>
+      </p>
     </div>
   </div>
 </div>

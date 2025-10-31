@@ -1,0 +1,520 @@
+<div class="alerte-tresorerie-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>SOS TRÉSORERIE</span>
+      </div>
+      <h1 class="hero-title">Alerte trésorerie face à la concurrence !</h1>
+      <p class="hero-subtitle">
+        Réagissez efficacement face à une concurrence agressive sans fragiliser vos finances.
+      </p>
+
+      <div class="hero-cta-group">
+        <button class="cta-primary" (click)="scrollToSection('videoSection')">
+          <i class="fas fa-play-circle cta-icon"></i>
+          <span class="cta-text">Regarder la vidéo</span>
+        </button>
+        
+        <button class="cta-secondary" (click)="scrollToSection('contactSection')">
+          <i class="fas fa-shield-alt cta-icon"></i>
+          <span class="cta-text">Faire le test</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1 — SOS Trésorerie -->
+  <section class="sos-section" id="videoSection">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-exclamation-triangle title-icon"></i>
+        SECTION 1 – SOS Trésorerie
+      </h2>
+      <h3 class="section-subtitle">Comment garder le cap face à la concurrence déloyale</h3>
+    </div>
+
+    <div class="sos-content">
+      <div class="intro-text">
+        <p class="intro-highlight">
+          Imaginez : un concurrent s'installe juste en face de vous, propose une offre similaire… à prix cassés. 
+          Rapidement, ventes et marges chutent, la trésorerie vacille.
+        </p>
+      </div>
+
+      <div class="reactions-grid">
+        <h4 class="reactions-title">Réactions courantes (à éviter) :</h4>
+        
+        <div class="reaction-card danger">
+          <div class="reaction-icon">
+            <i class="fas fa-chart-line-down"></i>
+          </div>
+          <div class="reaction-content">
+            <h5>Baisser les prix</h5>
+            <p>→ fragilise la rentabilité</p>
+          </div>
+        </div>
+
+        <div class="reaction-card warning">
+          <div class="reaction-icon">
+            <i class="fas fa-cut"></i>
+          </div>
+          <div class="reaction-content">
+            <h5>Réduire les coûts</h5>
+            <p>→ baisse de qualité</p>
+          </div>
+        </div>
+
+        <div class="reaction-card info">
+          <div class="reaction-icon">
+            <i class="fas fa-door-open"></i>
+          </div>
+          <div class="reaction-content">
+            <h5>Laisser partir les clients</h5>
+            <p>→ perte de parts de marché</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem-alert">
+        <div class="alert-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="alert-content">
+          <strong>Problème :</strong> Ce ne sont pas des solutions durables.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Podcast -->
+  <section class="podcast-section">
+    <div class="podcast-content">
+      <div class="podcast-icon">
+        <i class="fas fa-podcast"></i>
+      </div>
+      <div class="podcast-text">
+        <h3>PODCAST - Boostez votre entreprise</h3>
+        <p>
+          Découvrez des stratégies simples et efficaces pour reprendre le contrôle 
+          et transformer la menace en opportunité.
+        </p>
+      </div>
+      <button class="podcast-cta" (click)="scrollToSection('strategiesSection')">
+        <i class="fas fa-play"></i>
+        <span>Écouter l'épisode</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section 2 — Cas réel : Marianne -->
+  <section class="cas-reel-section">
+    <div class="cas-header">
+      <h2 class="section-title">
+        <i class="fas fa-user-circle title-icon"></i>
+        SECTION 2 – Cas réel : Marianne
+      </h2>
+      <h3 class="section-subtitle">Quand la concurrence met à mal votre trésorerie</h3>
+    </div>
+
+    <div class="cas-content">
+      <div class="histoire-card">
+        <div class="histoire-icon">
+          <i class="fas fa-store"></i>
+        </div>
+        <div class="histoire-text">
+          <h4>Histoire :</h4>
+          <p>
+            Marianne, propriétaire de "Jolies Chaussures à ton Pied", voit un concurrent 
+            s'installer juste en face… et appeler sa boutique "Très, Très Jolies Chaussures à ton Pied" !
+          </p>
+        </div>
+      </div>
+
+      <button class="video-cta" (click)="scrollToSection('strategiesSection')">
+        <i class="fas fa-play-circle"></i>
+        <span>Voir la vidéo</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Guide Pratique -->
+  <section class="strategies-section" id="strategiesSection">
+    <div class="section-header">
+      <span class="section-tag">GUIDE PRATIQUE</span>
+      <h2 class="section-title">3 Stratégies</h2>
+    </div>
+
+    <div class="strategies-container">
+      <!-- Stratégie 1 -->
+      <div class="strategy-card">
+        <div class="strategy-number">1️⃣</div>
+        <div class="strategy-content">
+          <h3>Analysez vos clients</h3>
+          
+          <div class="strategy-points">
+            <div class="point-item">
+              <i class="fas fa-heart"></i>
+              <span>Ce qu'ils apprécient</span>
+            </div>
+            <div class="point-item">
+              <i class="fas fa-search"></i>
+              <span>Leurs besoins non satisfaits</span>
+            </div>
+          </div>
+
+          <div class="strategy-tip">
+            <i class="fas fa-lightbulb"></i>
+            <div>
+              <strong>Astuce :</strong> Google Forms ou sondage direct
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stratégie 2 -->
+      <div class="strategy-card">
+        <div class="strategy-number">2️⃣</div>
+        <div class="strategy-content">
+          <h3>Mettez en avant votre valeur unique</h3>
+          
+          <div class="strategy-points">
+            <div class="point-item">
+              <i class="fas fa-star"></i>
+              <span>Expérience client exceptionnelle</span>
+            </div>
+            <div class="point-item">
+              <i class="fas fa-gem"></i>
+              <span>Différenciateurs : qualité, originalité, SAV</span>
+            </div>
+            <div class="point-item">
+              <i class="fas fa-users"></i>
+              <span>Fidélisation : programme exclusif</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stratégie 3 -->
+      <div class="strategy-card">
+        <div class="strategy-number">3️⃣</div>
+        <div class="strategy-content">
+          <h3>Innovez dans votre communication</h3>
+          
+          <div class="strategy-points">
+            <div class="point-item">
+              <i class="fas fa-book-open"></i>
+              <span>Racontez votre histoire</span>
+            </div>
+            <div class="point-item">
+              <i class="fas fa-share-alt"></i>
+              <span>Campagnes engageantes réseaux sociaux</span>
+            </div>
+            <div class="point-item">
+              <i class="fas fa-envelope"></i>
+              <span>Newsletters personnalisées</span>
+            </div>
+          </div>
+
+          <div class="strategy-tip">
+            <i class="fas fa-lightbulb"></i>
+            <div>
+              <strong>Astuce :</strong> Canva pour créer des visuels pro
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-contact-form-layout
+      [config]="formConfig"
+      [currentStep]="currentStep"
+      [totalSteps]="totalSteps"
+      [formSubmitted]="formSubmitted"
+      [isStepValid]="isStepValid"
+      [isFormValid]="isFormValid"
+      [isLoading]="isLoading"
+      (nextStep)="onNextStep()"
+      (previousStep)="onPreviousStep()"
+      (submit)="onSubmit()"
+      (reset)="onReset()"
+    >
+      <div slot="form-content">
+        <!-- Étape 1: Perdu des clients récemment -->
+        <div *ngIf="currentStep === 1" class="step-content">
+          <h3 class="step-title mb-4">
+            1. Avez-vous perdu des clients récemment à cause d'un concurrent ?
+          </h3>
+          <p class="step-description mb-4">
+            Une première question simple pour évaluer l'impact.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.perdu_clients === 'oui-clairement'"
+              >
+                <input
+                  type="radio"
+                  name="perdu_clients"
+                  value="oui-clairement"
+                  [(ngModel)]="formData.perdu_clients"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-exclamation-triangle text-danger mb-2"></i>
+                  <h6 class="mb-1">Oui, clairement</h6>
+                  <small class="text-muted">Impact visible sur le chiffre d'affaires</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.perdu_clients === 'un-peu-resiste'"
+              >
+                <input
+                  type="radio"
+                  name="perdu_clients"
+                  value="un-peu-resiste"
+                  [(ngModel)]="formData.perdu_clients"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-shield-alt text-warning mb-2"></i>
+                  <h6 class="mb-1">Un peu, mais je résiste</h6>
+                  <small class="text-muted">Situation sous contrôle mais vigilance requise</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.perdu_clients === 'non-connaissance'"
+              >
+                <input
+                  type="radio"
+                  name="perdu_clients"
+                  value="non-connaissance"
+                  [(ngModel)]="formData.perdu_clients"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-check-circle text-success mb-2"></i>
+                  <h6 class="mb-1">Non, pas à ma connaissance</h6>
+                  <small class="text-muted">Position stable sur le marché</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.perdu_clients === 'ne-sais-pas'"
+              >
+                <input
+                  type="radio"
+                  name="perdu_clients"
+                  value="ne-sais-pas"
+                  [(ngModel)]="formData.perdu_clients"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-question-circle text-secondary mb-2"></i>
+                  <h6 class="mb-1">Je ne sais pas</h6>
+                  <small class="text-muted">Besoin d'analyse de la situation concurrentielle</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 2: Première réaction face à la concurrence -->
+        <div *ngIf="currentStep === 2" class="step-content">
+          <h3 class="step-title mb-4">
+            2. Quelle a été votre première réaction face à cette concurrence ?
+          </h3>
+          <p class="step-description mb-4">
+            Pour comprendre la stratégie (ou le réflexe) adoptée.
+          </p>
+
+          <div class="form-group">
+            <div class="custom-radio-group">
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.reaction_concurrence === 'baisse-prix'"
+              >
+                <input
+                  type="radio"
+                  name="reaction_concurrence"
+                  value="baisse-prix"
+                  [(ngModel)]="formData.reaction_concurrence"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-arrow-down text-danger mb-2"></i>
+                  <h6 class="mb-1">J'ai baissé mes prix</h6>
+                  <small class="text-muted">Réaction défensive sur les tarifs</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.reaction_concurrence === 'reduit-depenses'"
+              >
+                <input
+                  type="radio"
+                  name="reaction_concurrence"
+                  value="reduit-depenses"
+                  [(ngModel)]="formData.reaction_concurrence"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-cut text-warning mb-2"></i>
+                  <h6 class="mb-1">J'ai réduit mes dépenses</h6>
+                  <small class="text-muted">Optimisation des coûts internes</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.reaction_concurrence === 'attendu-voir'"
+              >
+                <input
+                  type="radio"
+                  name="reaction_concurrence"
+                  value="attendu-voir"
+                  [(ngModel)]="formData.reaction_concurrence"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-clock text-info mb-2"></i>
+                  <h6 class="mb-1">J'ai attendu de voir</h6>
+                  <small class="text-muted">Approche d'observation et d'attente</small>
+                </div>
+              </label>
+
+              <label
+                class="custom-radio-option"
+                [class.selected]="formData.reaction_concurrence === 'ameliore-communication'"
+              >
+                <input
+                  type="radio"
+                  name="reaction_concurrence"
+                  value="ameliore-communication"
+                  [(ngModel)]="formData.reaction_concurrence"
+                  required
+                />
+                <span class="radio-checkmark"></span>
+                <div class="radio-content">
+                  <i class="fas fa-bullhorn text-success mb-2"></i>
+                  <h6 class="mb-1">J'ai amélioré ma communication</h6>
+                  <small class="text-muted">Stratégie proactive de différenciation</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Étape 3: Coordonnées -->
+        <div *ngIf="currentStep === 3" class="step-content">
+          <h3 class="step-title mb-4">
+            3. Vos coordonnées pour recevoir votre analyse
+          </h3>
+          <p class="step-description mb-4">
+            <i class="fas fa-lightbulb text-warning me-2"></i>
+            Encore deux petites minutes ! Remplissez vos coordonnées pour recevoir
+            un mini-diagnostic gratuit sur la résilience de votre trésorerie et vos marges.
+          </p>
+
+          <div class="form-group">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="nom" class="form-label">
+                    <i class="fas fa-user me-2"></i>Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="nom"
+                    name="nom"
+                    [(ngModel)]="formData.nom"
+                    placeholder="Votre nom et prénom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope me-2"></i>Email
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control custom-input"
+                    id="email"
+                    name="email"
+                    [(ngModel)]="formData.email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="custom-input-group">
+                  <label for="telephone" class="form-label">
+                    <i class="fas fa-phone me-2"></i>Téléphone
+                    <span class="badge bg-success ms-2">obligatoire</span>
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control custom-input"
+                    id="telephone"
+                    name="telephone"
+                    [(ngModel)]="formData.telephone"
+                    placeholder="+32 XXX XX XX XX"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-success mt-4">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-phone-alt fa-2x text-success me-3"></i>
+                <div>
+                  <h6 class="mb-1">
+                    Un conseiller MFINANCES vous contactera sous 72h,
+                    gratuitement et sans engagement.
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-contact-form-layout>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-shield-alt"></i>
+      <span>Faire le test</span>
+    </button>
+  </div>
+</div>

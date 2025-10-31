@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
 import { OdooService } from '../../services/odoo.service';
+import { DeviceService } from '../../core/device.service';
 import { SALARIE_INDEPENDANT_FORM_CONFIG } from '../../shared/contact-form-layout/contact-form-configs';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-salarie-independant',
   templateUrl: './salarie-independant.component.html',
   styleUrl: './salarie-independant.component.css',
 })
-export class SalarieIndependantComponent implements OnInit {
+export class SalarieIndependantComponent implements OnInit, AfterViewInit {
   formConfig = SALARIE_INDEPENDANT_FORM_CONFIG;
   currentStep = 1;
   totalSteps = 5;
   formSubmitted = false;
   isLoading = false;
+  shouldUseMobileVersion: boolean;
 
   // Variables pour les inputs conditionnels
   showAutreProfil = false;
@@ -38,12 +41,22 @@ export class SalarieIndependantComponent implements OnInit {
   constructor(
     private metaService: MetaService,
     private odooService: OdooService,
-    private toastr: ToastrService
-  ) {}
+    private toastr: ToastrService,
+    private deviceService: DeviceService
+  ) {
+    this.shouldUseMobileVersion = this.deviceService.shouldUseMobileVersion();
+  }
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Salarié Indépendant
     this.metaService.setSalarieIndependantPageMeta();
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      AOS.refresh();
+    }, 150);
   }
 
   scrollToSection(sectionId: string): void {

@@ -1,0 +1,229 @@
+<div class="accueil-mobile-container">
+  <!-- Menu & Header Fixe Optimisé -->
+  <!-- <header class="mobile-header-fixed" [class.scrolled]="isScrolled">
+    <div class="header-content">
+      <div class="logo-section">
+        <img
+          src="assets/img/logo/logoMfinances.png"
+          alt="MFinances"
+          class="logo"
+        />
+      </div>
+      <div class="header-actions">
+        <button class="contact-btn-header" (click)="scrollToContact()">
+          📞 Contact gratuit
+        </button>
+        <button class="menu-toggle" (click)="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header> -->
+
+  <!-- Bloc Hero Optimisé -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="company-badge">
+        <span>MFINANCES EXPERT COMPTABLE À BRUXELLES</span>
+      </div>
+
+      <h1 class="hero-title">
+        Des experts-comptables pour optimiser vos finances, simplement.
+      </h1>
+
+      <div class="hero-cta">
+        <button class="cta-primary" (click)="scrollToContact()">
+          🔴 Demander un appel gratuit
+        </button>
+        <p class="cta-subtitle">📞 Réponse sous 2h - Consultation gratuite</p>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img
+        src="assets/img/bg/Group_header_m.webp"
+        alt="Expert comptable professionnel"
+        class="expert-image"
+      />
+    </div>
+  </section>
+
+  <!-- Profil Type Mobile Section -->
+  <app-profil-type-mobile></app-profil-type-mobile>
+  <!-- Services Optimisés (3 principaux + voir plus) -->
+  <section class="services-section">
+    <div class="section-header">
+      <h2 class="section-title">Nos services</h2>
+      <p class="section-subtitle">Solutions comptables complètes</p>
+    </div>
+
+    <div class="services-featured">
+      <div class="service-card featured">
+        <h3>Création d'entreprise</h3>
+        <p>Accompagnement complet pour lancer votre entreprise</p>
+        <button
+          class="service-btn"
+          onclick="window.location.href='/services/creation-entreprise'"
+        >
+          En savoir plus
+        </button>
+      </div>
+
+      <div class="service-card featured">
+        <h3>Comptabilité</h3>
+        <p>Tenue de livres, déclarations, reporting financier complet</p>
+        <button
+          class="service-btn"
+          onclick="window.location.href='/services/comptabilite'"
+        >
+          En savoir plus
+        </button>
+      </div>
+
+      <div class="service-card featured">
+        <h3>Fiscalité</h3>
+        <p>Optimisation fiscale, TVA, déclarations d'impôts</p>
+        <button
+          class="service-btn"
+          onclick="window.location.href='/services/fiscalite'"
+        >
+          En savoir plus
+        </button>
+      </div>
+    </div>
+
+    <div class="services-expand" *ngIf="!showAllServices">
+      <button class="expand-btn" (click)="toggleServices()">
+        🔽 Voir tous les services ({{ totalServices - 3 }} de plus)
+      </button>
+    </div>
+
+    <div class="services-additional" *ngIf="showAllServices">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <h3>Déclaration d'impot</h3>
+        <p>Préparation et dépôt de vos déclarations fiscales</p>
+        <button
+          class="service-btn"
+          onclick="window.location.href='/services/declaration-impot'"
+        >
+          En savoir plus
+        </button>
+      </div>
+    </div>
+
+    <div class="services-collapse" *ngIf="showAllServices">
+      <button class="collapse-btn" (click)="toggleServices()">
+        🔼 Réduire la liste
+      </button>
+    </div>
+  </section>
+
+  <!-- Pourquoi nous choisir ? Optimisé -->
+  <section class="why-choose-section">
+    <div class="section-header">
+      <h2 class="section-title">Pourquoi nous choisir ?</h2>
+      <p class="section-subtitle">
+        L'expertise comptable qui fait la différence
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Expertise reconnue</h3>
+        <p>20+ ans d'expérience en Belgique</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h3>Réactivité</h3>
+        <p>Réponse sous 2h garantie</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-euro-sign"></i>
+        </div>
+        <h3>Optimisation fiscale</h3>
+        <p>Économies maximisées légalement</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3>Accompagnement</h3>
+        <p>Suivi personnalisé permanent</p>
+      </div>
+    </div>
+
+    <div class="why-choose-cta">
+      <button class="cta-secondary" (click)="scrollToContact()">
+        Devenir client
+      </button>
+    </div>
+  </section>
+
+  <!-- Présentation Expert-Comptable Optimisée -->
+  <section class="ceo-section">
+    <div class="ceo-content">
+      <div class="ceo-image">
+        <img
+          src="assets/img/image/image-MIKA.webp"
+          alt="Mika MUSUNGAYI - Expert-comptable"
+          class="ceo-photo"
+        />
+      </div>
+
+      <div class="ceo-info">
+        <div class="ceo-header">
+          <span class="ceo-badge">NOTRE EXPERT-COMPTABLE</span>
+          <h2 class="ceo-name">Mika MUSUNGAYI</h2>
+          <p class="ceo-title">
+            Fondateur, Expert-comptable, Spécialiste en fiscalité
+          </p>
+        </div>
+
+        <div class="ceo-credentials">
+          <div class="credential-item">
+            <i class="fas fa-graduation-cap"></i>
+            <span>🎓 Diplômé de la Chambre Belge</span>
+          </div>
+          <div class="credential-item">
+            <i class="fas fa-chart-line"></i>
+            <span>📊 Expert en structures économiques</span>
+          </div>
+          <div class="credential-item">
+            <i class="fas fa-rocket"></i>
+            <span>🚀 20+ ans d'expérience en optimisation fiscale</span>
+          </div>
+          <div class="credential-item">
+            <i class="fas fa-cogs"></i>
+            <span>⚙️ Gestion innovante des performances</span>
+          </div>
+        </div>
+
+        <button class="ceo-cta" (click)="scrollToContact()">
+          Parler avec Mika
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <app-zone-contact-mobile></app-zone-contact-mobile>
+  <!-- CTA Fixe en bas -->
+  <!-- <div class="bottom-cta" *ngIf="!formSubmitted">
+    <button class="cta-fixed" (click)="scrollToContact()">
+      📞 Appel gratuit sous 72h
+    </button>
+  </div> -->
+</div>

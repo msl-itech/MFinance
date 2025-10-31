@@ -1,32 +1,40 @@
 <app-header-about></app-header-about>
 <div class="about-page-about-sec sec-padding">
   <div class="container">
-    <div
-      class="row align-items-center"
-      style="display: flex; justify-content: center"
-    >
+    <div class="row align-items-center">
+      <!-- Images - Desktop: 3 images, Mobile: 1 image -->
       <div class="col-md-6">
         <div class="about-page-img-all">
+          <!-- Image principale pour mobile et desktop -->
           <div class="about-page-about-img1 img-border img100">
-            <img src="../../assets/img/image/about-page-img-1.webp" alt="" />
-          </div>
-          <div class="space20"></div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="about-page-img-2 img-border img100">
-                <img
-                  src="../../assets/img/image/about-page-img-2.webp"
-                  alt=""
-                />
-              </div>
+            <img
+              src="../../assets/img/image/about-page-img-1.webp"
+              alt="Expert comptable MFinances"
+            />
+            <!-- Badge overlay pour mobile -->
+            <div class="mobile-badge">
+              <span class="badge-text">🏆 Experts agréés</span>
             </div>
-
-            <div class="col-md-6">
-              <div class="about-page-img-3 img-border img100 space-sm-30">
-                <img
-                  src="../../assets/img/image/about-page-img-3.webp"
-                  alt=""
-                />
+          </div>
+          <!-- Images supplémentaires visibles seulement sur desktop -->
+          <div class="desktop-only">
+            <div class="space20"></div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="about-page-img-2 img-border img100">
+                  <img
+                    src="../../assets/img/image/about-page-img-2.webp"
+                    alt="Bureau comptable Bruxelles"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="about-page-img-3 img-border img100 space-sm-30">
+                  <img
+                    src="../../assets/img/image/about-page-img-3.webp"
+                    alt="Équipe experts comptables"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -36,29 +44,111 @@
       <div class="col-md-6">
         <div class="about-haddings">
           <div class="hadding hadding-p space-sm-30">
-            <p class="text-red">
-              <span class="text-red">Profil</span>
-            </p>
-            <!-- <span class="span">Who we Are</span> -->
-            <h1>
-              Experts-comptables<br />
-              <span
-                style="
-                  color: white;
-                  padding: 8px;
-                  display: flex;
-                  align-items: center;
-                "
-                >agréés à Bruxelles</span
-              >
+            <!-- Tag avec animation pour mobile -->
+            <div class="profil-tag-container">
+              <p class="text-red">
+                <span>Profil</span>
+              </p>
+            </div>
+
+            <h1 class="profil-title">
+              <span class="title-highlight">Experts-comptables</span><br />
+              <span class="location-badge">agréés à Bruxelles</span>
             </h1>
-            <p>
-              Bienvenue chez MFinances Expert Comptable, votre cabinet comptable
-              dédié à la réussite de votre entreprise. Nous offrons une gamme
-              complète de services comptables et financiers conçus pour répondre
-              à tous vos besoins. Notre objectif est de :
-            </p>
-            <div class="check-list-all" style="padding-top: 0px">
+
+            <!-- Texte desktop -->
+            <div class="desktop-text">
+              <p class="intro-text">
+                Bienvenue chez MFinances Expert Comptable, votre cabinet
+                comptable dédié à la réussite de votre entreprise. Nous offrons
+                une gamme complète de services comptables et financiers conçus
+                pour répondre à tous vos besoins. Notre objectif est de :
+              </p>
+            </div>
+
+            <!-- Texte mobile avec stats -->
+            <div class="mobile-text">
+              <div class="mobile-intro">
+                <p class="mobile-tagline">
+                  🎯
+                  <strong
+                    >Votre partenaire comptable de confiance à Bruxelles</strong
+                  >
+                </p>
+                <p class="mobile-subtitle">
+                  Expertise, simplicité et optimisation fiscale pour votre
+                  entreprise
+                </p>
+              </div>
+
+              <!-- Stats mobiles -->
+              <div class="mobile-stats">
+                <div class="stat-item">
+                  <span class="stat-number">15+</span>
+                  <span class="stat-label">ans d'expérience</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">500+</span>
+                  <span class="stat-label">clients satisfaits</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">agréés</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bénéfices avec design amélioré pour mobile -->
+            <div class="check-list-all mobile-benefits">
+              <div class="benefit-item premium">
+                <div class="benefit-icon-container">
+                  <span class="benefit-icon">🎯</span>
+                </div>
+                <div class="benefit-content">
+                  <span class="benefit-title">Évitez les erreurs fiscales</span>
+                  <span class="benefit-subtitle">Préservez vos déductions</span>
+                </div>
+              </div>
+              <div class="benefit-item premium">
+                <div class="benefit-icon-container">
+                  <span class="benefit-icon">🔄</span>
+                </div>
+                <div class="benefit-content">
+                  <span class="benefit-title">Automatisation contrôlée</span>
+                  <span class="benefit-subtitle"
+                    >Efficacité sans perte de maîtrise</span
+                  >
+                </div>
+              </div>
+              <div class="benefit-item premium">
+                <div class="benefit-icon-container">
+                  <span class="benefit-icon">🤝</span>
+                </div>
+                <div class="benefit-content">
+                  <span class="benefit-title">Accompagnement stratégique</span>
+                  <span class="benefit-subtitle"
+                    >Conseil humain personnalisé</span
+                  >
+                </div>
+              </div>
+              <div class="benefit-item premium">
+                <div class="benefit-icon-container">
+                  <span class="benefit-icon">📈</span>
+                </div>
+                <div class="benefit-content">
+                  <span class="benefit-title">Solutions sur mesure</span>
+                  <span class="benefit-subtitle"
+                    >Adaptées à votre situation</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Version desktop des bénéfices -->
+            <div
+              class="check-list-all desktop-benefits"
+              style="padding-top: 0px"
+            >
               <div class="row">
                 <div class="col-md-4">
                   <div class="chek-list">
@@ -71,7 +161,7 @@
                   <div class="chek-list">
                     <p>
                       <img src="assets/img/icons/checkfill.png" alt="" />
-                      Anticiper l’avenir économique
+                      Anticiper l'avenir économique
                     </p>
                   </div>
                 </div>
@@ -86,16 +176,19 @@
                   <div class="chek-list">
                     <p>
                       <img src="assets/img/icons/checkfill.png" alt="" /> Offrir
-                      des services d’optimisation des performaces
+                      des services d'optimisation des performaces
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="home2-btn">
-              <a href="/contact"
-                >Contactez-nous <i class="fa-solid fa-arrow-right"></i
-              ></a>
+
+            <div class="home2-btn mobile-cta-button">
+              <a href="/contact" class="contact-btn-enhanced">
+                <span class="btn-icon">📞</span>
+                <span class="btn-text">Contactez-nous</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -103,12 +196,23 @@
     </div>
   </div>
 </div>
+
+<!-- Bouton CTA mobile au milieu de la page avec design amélioré -->
+<div class="mobile-cta-middle">
+  <div class="cta-content">
+    <h3 class="cta-title">Prêt à optimiser vos finances ?</h3>
+    <a href="/contact" class="btn-cta-mobile enhanced">
+      📞 Prendre un rendez-vous gratuit
+      <span class="cta-subtitle">Consultation sous 72h</span>
+    </a>
+  </div>
+</div>
+
 <div class="about-choose sec-padding">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6">
         <div class="hadding about-page-hadding hadding-p">
-          <!-- <span class="span">Why Choose Us</span> -->
           <p class="text-red">
             <span class="text-red">Pourquoi nous choisir?</span>
           </p>
@@ -116,24 +220,36 @@
             L'excellence comptable <br />
             pour votre <span class="font-red"> réussite.</span>
           </h1>
-          <p class="text-white">
-            Chez MFinances Expert Comptable nous vous apportons un soutien
-            administratif pour pallier d'éventuelles omissions dans votre
-            comptabilité, qui peuvent entraîner la perte de la déductibilité de
-            certaines dépenses.
-          </p>
-          <div class="space20"></div>
-          <p class="text-white">
-            Nous vous aidons à éviter des dépenses injustifiées, imputées au
-            compte courant du gestionnaire, qui devraient autrement être
-            remboursées. Notre équipe est déterminée à offrir des solutions sur
-            mesure qui favorisant la croissance et l'efficacité de votre
-            entreprise.
-          </p>
+
+          <!-- Texte desktop -->
+          <div class="desktop-text">
+            <p class="text-white">
+              Chez MFinances Expert Comptable nous vous apportons un soutien
+              administratif pour pallier d'éventuelles omissions dans votre
+              comptabilité, qui peuvent entraîner la perte de la déductibilité
+              de certaines dépenses.
+            </p>
+            <div class="space20"></div>
+            <p class="text-white">
+              Nous vous aidons à éviter des dépenses injustifiées, imputées au
+              compte courant du gestionnaire, qui devraient autrement être
+              remboursées. Notre équipe est déterminée à offrir des solutions
+              sur mesure qui favorisant la croissance et l'efficacité de votre
+              entreprise.
+            </p>
+          </div>
+
+          <!-- Texte mobile simplifié -->
+          <div class="mobile-text">
+            <p class="text-white mobile-short-text">
+              Évitez les erreurs comptables coûteuses.
+            </p>
+            <p class="text-white mobile-short-text">
+              Solutions personnalisées pour votre croissance.
+            </p>
+          </div>
+
           <div class="space30"></div>
-          <!-- <div class="header-btn-1 button btn-after home1-button">
-            <a href="#">Explore More About Us</a>
-          </div> -->
         </div>
       </div>
       <div class="col-md-6 space-sm-50">
@@ -143,7 +259,12 @@
           </div>
           <div class="hadding hadding-p">
             <h4>Assistance en gestion comptable</h4>
-            <p>Correction des omissions pour préserver la déductibilité.</p>
+            <p class="desktop-text">
+              Correction des omissions pour préserver la déductibilité.
+            </p>
+            <p class="mobile-text mobile-short-text">
+              Évitez les erreurs fiscales
+            </p>
           </div>
         </div>
 
@@ -153,7 +274,10 @@
           </div>
           <div class="hadding hadding-p">
             <h4>Prévention des dépenses injustifiées</h4>
-            <p>Éviter les erreurs liées au compte courant.</p>
+            <p class="desktop-text">
+              Éviter les erreurs liées au compte courant.
+            </p>
+            <p class="mobile-text mobile-short-text">Optimisez vos dépenses</p>
           </div>
         </div>
 
@@ -163,7 +287,10 @@
           </div>
           <div class="hadding hadding-p">
             <h4>Solutions personnalisées</h4>
-            <p>Approches adaptées à vos besoins.</p>
+            <p class="desktop-text">Approches adaptées à vos besoins.</p>
+            <p class="mobile-text mobile-short-text">
+              Accompagnement sur mesure
+            </p>
           </div>
         </div>
 
@@ -173,7 +300,12 @@
           </div>
           <div class="hadding hadding-p">
             <h4>Soutien à la croissance</h4>
-            <p>Optimisation pour développer votre activité.</p>
+            <p class="desktop-text">
+              Optimisation pour développer votre activité.
+            </p>
+            <p class="mobile-text mobile-short-text">
+              Développez votre activité
+            </p>
           </div>
         </div>
       </div>
@@ -189,14 +321,21 @@
           <p class="text-red">
             <span class="text-red">Notre Vision</span>
           </p>
-          <h1>
+          <!-- Titre desktop -->
+          <h1 class="desktop-text">
             Allier Automatisation Intelligente et Expertise Humaine pour des
             Décisions
             <span class="font-red text-white"> Pertinentes et Durables </span>
           </h1>
+          <!-- Titre mobile simplifié -->
+          <h1 class="mobile-text">
+            Des décisions durables pour votre succès fiscal.
+          </h1>
         </div>
       </div>
       <div class="space-30"></div>
+
+      <!-- Réduction à 3 bénéfices principaux sur mobile -->
       <div class="row">
         <div class="col-md-6 col-lg-3 text-center">
           <div class="about-vision-box box-after">
@@ -205,15 +344,19 @@
             </div>
             <div class="space20"></div>
             <div class="hadding hadding-p">
-              <h4>
+              <h4 class="desktop-text">
                 Un accompagnement stratégique <br />
                 pour tous
               </h4>
+              <h4 class="mobile-text">Accompagnement stratégique</h4>
               <div class="space10"></div>
-              <p>
+              <p class="desktop-text">
                 Chaque entreprise, quelle que soit sa taille, mérite un soutien
                 adapté à ses ambitions. Nous vous aidons à bâtir un avenir
                 stable, prospère et maîtrisé
+              </p>
+              <p class="mobile-text mobile-short-text">
+                Soutien adapté à vos ambitions pour un avenir prospère.
               </p>
             </div>
           </div>
@@ -226,12 +369,18 @@
             </div>
             <div class="space20"></div>
             <div class="hadding hadding-p">
-              <h4>Des décisions éclairées pour renforcer votre solidité</h4>
+              <h4 class="desktop-text">
+                Des décisions éclairées pour renforcer votre solidité
+              </h4>
+              <h4 class="mobile-text">Décisions éclairées</h4>
               <div class="space10"></div>
-              <p>
+              <p class="desktop-text">
                 Des outils accessibles et des analyses précises pour piloter
                 votre entreprise efficacement. Chaque choix stratégique devient
                 une opportunité de croissance durable.
+              </p>
+              <p class="mobile-text mobile-short-text">
+                Outils et analyses pour piloter efficacement votre entreprise.
               </p>
             </div>
           </div>
@@ -244,18 +393,25 @@
             </div>
             <div class="space20"></div>
             <div class="hadding hadding-p">
-              <h4>Automatisation intelligente et expertise humaine</h4>
+              <h4 class="desktop-text">
+                Automatisation intelligente et expertise humaine
+              </h4>
+              <h4 class="mobile-text">Automatisation & expertise</h4>
               <div class="space10"></div>
-              <p>
+              <p class="desktop-text">
                 Nous trouvons le juste équilibre entre automatisation et
                 intervention humaine. Pour une gestion simplifiée et des
                 analyses pertinentes, à forte valeur ajoutée
+              </p>
+              <p class="mobile-text mobile-short-text">
+                Équilibre parfait entre technologie et expertise humaine.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 text-center">
+        <!-- Masquer le 4ème bloc sur mobile -->
+        <div class="col-md-6 col-lg-3 text-center desktop-only">
           <div class="about-vision-box box-after">
             <div class="about-vision-img">
               <img src="assets/img/image/about-vision-icon-4.webp" alt="" />
@@ -267,13 +423,28 @@
               <p>
                 Simplifier la complexité et optimiser vos ressources sont nos
                 priorités. Nous vous aidons à innover, développer votre activité
-                et préparer l’avenir sereinement.
+                et préparer l'avenir sereinement.
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Bouton "Voir nos services" -->
+    <div class="text-center services-cta">
+      <a href="/services" class="btn-services-cta"
+        >Découvrir notre accompagnement</a
+      >
+    </div>
   </div>
 </div>
+
+<!-- Bouton de contact fixe mobile -->
+<div class="mobile-contact-fixed">
+  <a href="/contact" class="btn-fixed-mobile"
+    >📞 Consultation gratuite sous 72h</a
+  >
+</div>
+
 <app-zone-contact></app-zone-contact>

@@ -1,0 +1,220 @@
+<section class="contact-mobile">
+  <!-- Header -->
+  <div class="contact-header">
+    <div class="badge">📞 CONSULTATION GRATUITE</div>
+    <h2>En 2 minutes, on vous rappelle sous 72h !</h2>
+    <p>Diagnostic gratuit de votre situation comptable</p>
+  </div>
+
+  <!-- Progress Steps -->
+  <div class="steps-progress">
+    <div class="step" [class.active]="currentStep === 1" [class.completed]="currentStep > 1">
+      <div class="step-circle">1</div>
+      <span>Situation</span>
+    </div>
+    <div class="step" [class.active]="currentStep === 2" [class.completed]="currentStep > 2">
+      <div class="step-circle">2</div>
+      <span>Contact</span>
+    </div>
+    <div class="step" [class.active]="currentStep === 3" [class.completed]="currentStep > 3">
+      <div class="step-circle">3</div>
+      <span>Préférences</span>
+    </div>
+    <div class="step" [class.active]="currentStep === 4" [class.completed]="currentStep > 4">
+      <div class="step-circle">4</div>
+      <span>Besoins</span>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <form class="contact-form" *ngIf="!formSubmitted" (ngSubmit)="onSubmit()">
+    <!-- Step 1: Situation -->
+    <div class="form-step" *ngIf="currentStep === 1">
+      <h3>Quelle est votre situation actuelle ?</h3>
+
+      <div class="cards-grid">
+        <label
+          *ngFor="let option of situationOptions"
+          class="card-option"
+          [class.selected]="formData.situation === option.value">
+          <input
+            type="radio"
+            name="situation"
+            [value]="option.value"
+            [(ngModel)]="formData.situation"
+            (change)="onSituationChange(option.value)">
+          <div class="card-content">
+            <div class="card-icon" [innerHTML]="option.icon"></div>
+            <div class="card-title">{{ option.title }}</div>
+          </div>
+          <div class="card-check">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </label>
+      </div>
+
+      <div class="input-field" *ngIf="formData.situation === 'autre'">
+        <label>Précisez votre situation</label>
+        <input
+          type="text"
+          [(ngModel)]="formData.situationAutre"
+          name="situationAutre"
+          placeholder="Décrivez brièvement...">
+      </div>
+    </div>
+
+    <!-- Step 2: Contact -->
+    <div class="form-step" *ngIf="currentStep === 2">
+      <h3>Vos coordonnées</h3>
+
+      <div class="input-field">
+        <label><i class="fas fa-user"></i> Nom complet</label>
+        <input
+          type="text"
+          [(ngModel)]="formData.nom"
+          name="nom"
+          placeholder="Votre nom et prénom"
+          required>
+      </div>
+
+      <div class="input-field">
+        <label><i class="fas fa-envelope"></i> Email</label>
+        <input
+          type="email"
+          [(ngModel)]="formData.email"
+          name="email"
+          placeholder="votre@email.com"
+          required>
+      </div>
+
+      <div class="input-field">
+        <label><i class="fas fa-phone"></i> Téléphone</label>
+        <input
+          type="tel"
+          [(ngModel)]="formData.telephone"
+          name="telephone"
+          placeholder="+32 XXX XX XX XX"
+          required>
+      </div>
+
+      <div class="info-box">
+        <i class="fas fa-info-circle"></i>
+        <span>Un conseiller vous appellera sous 72h. Gratuit et sans engagement.</span>
+      </div>
+    </div>
+
+    <!-- Step 3: Préférences -->
+    <div class="form-step" *ngIf="currentStep === 3">
+      <h3>Quand préférez-vous être contacté ?</h3>
+
+      <div class="cards-grid">
+        <label
+          *ngFor="let creneau of creneauOptions"
+          class="card-option checkbox-card"
+          [class.selected]="formData.creneauHoraire.includes(creneau.value)">
+          <input
+            type="checkbox"
+            [checked]="formData.creneauHoraire.includes(creneau.value)"
+            (change)="onCreneauChange(creneau.value, $any($event.target).checked)"
+            name="creneau-{{creneau.value}}">
+          <div class="card-content">
+            <div class="card-icon"><i class="fas fa-clock"></i></div>
+            <div class="card-title">{{ creneau.label }}</div>
+          </div>
+          <div class="card-check">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </label>
+      </div>
+
+      <div class="input-field">
+        <label><i class="fas fa-calendar"></i> Jour préféré (optionnel)</label>
+        <input
+          type="text"
+          [(ngModel)]="formData.jourPrefere"
+          name="jourPrefere"
+          placeholder="Ex: Lundi matin...">
+      </div>
+    </div>
+
+    <!-- Step 4: Besoins -->
+    <div class="form-step" *ngIf="currentStep === 4">
+      <h3>Vos 2 sujets prioritaires</h3>
+
+      <div class="alert-warning" *ngIf="formData.sujetsImportants.length >= 2">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>Maximum 2 sujets sélectionnés</span>
+      </div>
+
+      <div *ngFor="let category of sujetsOptions" class="category-section">
+        <h4 class="category-title">{{ category.category }}</h4>
+
+        <div class="cards-grid compact">
+          <label
+            *ngFor="let item of category.items"
+            class="card-option checkbox-card compact"
+            [class.selected]="formData.sujetsImportants.includes(item.value)"
+            [class.disabled]="!formData.sujetsImportants.includes(item.value) && formData.sujetsImportants.length >= 2">
+            <input
+              type="checkbox"
+              [checked]="formData.sujetsImportants.includes(item.value)"
+              [disabled]="!formData.sujetsImportants.includes(item.value) && formData.sujetsImportants.length >= 2"
+              (change)="onSujetChange(item.value, $any($event.target).checked)"
+              name="sujet-{{item.value}}">
+            <div class="card-content">
+              <div class="card-title">{{ item.label }}</div>
+            </div>
+            <div class="card-check">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="info-box success" *ngIf="formData.sujetsImportants.length > 0">
+        <i class="fas fa-check"></i>
+        <span>{{ formData.sujetsImportants.length }}/2 sujets sélectionnés</span>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="form-actions">
+      <button
+        type="button"
+        class="btn-prev"
+        *ngIf="currentStep > 1"
+        (click)="previousStep()">
+        <i class="fas fa-arrow-left"></i> Précédent
+      </button>
+
+      <button
+        type="button"
+        class="btn-next"
+        *ngIf="currentStep < 4"
+        (click)="nextStep()"
+        [disabled]="!isStepValid">
+        Suivant <i class="fas fa-arrow-right"></i>
+      </button>
+
+      <button
+        type="submit"
+        class="btn-submit"
+        *ngIf="currentStep === 4"
+        [disabled]="!isFormValid">
+        <i class="fas fa-phone"></i> Demander mon appel gratuit
+      </button>
+    </div>
+  </form>
+
+  <!-- Success Message -->
+  <div class="success-message" *ngIf="formSubmitted">
+    <div class="success-icon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <h3>🎉 Merci !</h3>
+    <p>Votre demande a été envoyée. Nous vous rappelons sous 72h.</p>
+    <button class="btn-reset" (click)="resetForm()">
+      <i class="fas fa-redo"></i> Nouvelle demande
+    </button>
+  </div>
+</section>

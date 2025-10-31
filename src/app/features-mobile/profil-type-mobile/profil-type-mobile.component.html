@@ -1,0 +1,95 @@
+<div class="profil-type-mobile-container">
+  <!-- Section Header -->
+  <div class="section-header">
+    <div class="section-badge">
+      <span>PROFIL</span>
+    </div>
+    <h2 class="section-title">Secteur d'activité</h2>
+    <p class="section-subtitle">
+      Trouvez l'expertise comptable adaptée à votre secteur
+    </p>
+  </div>
+
+  <!-- Slider Container -->
+  <div class="slider-container" #sliderContainer>
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+      <div class="progress-bar">
+        <div
+          class="progress-fill"
+          [style.width.%]="getProgressPercentage()"
+        ></div>
+      </div>
+      <span class="progress-text">
+        {{ currentIndex + 1 }} / {{ items.length }}
+      </span>
+    </div>
+
+    <!-- Cards Slider -->
+    <div class="cards-wrapper">
+      <div class="cards-slider" [style.transform]="getTransform()">
+        <div
+          class="profile-card"
+          *ngFor="let item of items; let i = index"
+          [class.active]="i === currentIndex"
+          (click)="navigateToProfile(item.route)"
+        >
+          <!-- Card Image -->
+          <div class="card-image">
+            <img [src]="item.image" [alt]="item.title" class="profile-image" />
+            <div class="card-overlay"></div>
+          </div>
+
+          <!-- Card Content -->
+          <div class="card-content">
+            <h3 class="card-title">{{ item.title }}</h3>
+            <p class="card-description">
+              {{ getShortDescription(item.description) }}
+            </p>
+
+            <div class="card-action">
+              <span class="action-text">En savoir plus</span>
+              <i class="fas fa-arrow-right action-icon"></i>
+            </div>
+          </div>
+
+          <!-- Card Badge -->
+          <div class="card-badge">
+            <span class="badge-number">{{ i + 1 }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="navigation-controls">
+      <button
+        class="nav-btn prev"
+        (click)="prevSlide()"
+        [disabled]="currentIndex === 0"
+        aria-label="Profil précédent"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <!-- Dots Navigation -->
+      <div class="dots-navigation">
+        <span
+          class="dot"
+          *ngFor="let item of items; let i = index"
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)"
+        ></span>
+      </div>
+
+      <button
+        class="nav-btn next"
+        (click)="nextSlide()"
+        [disabled]="currentIndex === items.length - 1"
+        aria-label="Profil suivant"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

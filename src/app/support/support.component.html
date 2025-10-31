@@ -1,4 +1,8 @@
-<div class="support-header">
+<!-- Version mobile -->
+<app-support-mobile *ngIf="shouldUseMobileVersion"></app-support-mobile>
+
+<!-- Version desktop -->
+<div class="support-header" *ngIf="!shouldUseMobileVersion">
   <div class="container">
     <div class="row">
       <div class="mt-5 col-md-12 text-center">
@@ -420,4 +424,39 @@
   </div>
 </div>
 
-<app-zone-contact></app-zone-contact>
+<app-zone-contact *ngIf="!shouldUseMobileVersion"></app-zone-contact>
+
+<!-- Popup flottant de téléchargement rapide -->
+<div class="floating-download-popup" *ngIf="!shouldUseMobileVersion && showFloatingPopup">
+  <div class="floating-popup-header">
+    <button class="close-popup-btn" (click)="closeFloatingPopup()">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="popup-icon">
+      <i class="fas fa-download"></i>
+    </div>
+    <h4>Téléchargement rapide</h4>
+    <p>AnyDesk pour l'assistance à distance</p>
+  </div>
+  
+  <div class="floating-popup-buttons">
+    <a href="https://get.anydesk.com/dzQb9eHl/AnyDesk_Custom_Client.exe" 
+       class="btn-floating-download windows" 
+       target="_blank"
+       (click)="trackDownload('windows')">
+      <i class="fab fa-windows"></i>
+      <span>Windows</span>
+    </a>
+    <a href="https://get.anydesk.com/U2eK2Jqz/AnyDesk_Custom_Client.dmg" 
+       class="btn-floating-download mac" 
+       target="_blank"
+       (click)="trackDownload('mac')">
+      <i class="fab fa-apple"></i>
+      <span>Mac OS</span>
+    </a>
+  </div>
+  
+  <div class="floating-popup-footer">
+    <small><i class="fas fa-shield-alt"></i> Connexion sécurisée</small>
+  </div>
+</div>

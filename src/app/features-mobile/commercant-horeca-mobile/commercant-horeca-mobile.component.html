@@ -1,0 +1,724 @@
+<div class="commercant-horeca-mobile-container">
+  <!-- Section Hero Optimisée -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <img
+        src="assets/img/webp/horeca.webp"
+        alt="Commerçants et HORECA Background"
+        class="hero-bg-image"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Commerçants & HORECA
+      </h1>
+      <p class="hero-subtitle">
+        Des solutions comptables pensées pour vos marges et vos contraintes de terrain.
+      </p>
+
+      <!-- Bouton d'accès rapide mobile -->
+      <div class="quick-access">
+        <button
+          class="quick-access-btn primary"
+          (click)="scrollToSection('services')"
+        >
+          💡 Découvrez ce que vous gagnerez
+        </button>
+        <button
+          class="quick-access-btn secondary"
+          (click)="scrollToSection('formulaire-evaluation')"
+        >
+          🧭 Évaluez votre établissement (2 min)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Mobile Navigation -->
+  <app-sidebar-mobile></app-sidebar-mobile>
+
+  <!-- Section Introduction Simplifiée -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <h2 class="intro-title">Maîtrisez vos finances pour garantir la pérennité de votre activité</h2>
+
+      <!-- Texte mobile simplifié -->
+      <div class="intro-text">
+        <p>
+          En tant que commerçant ou acteur <strong>HORECA</strong>, vous jonglez avec de
+          <strong>multiples responsabilités</strong>. Chez MFINANCES, nous comprenons vos besoins spécifiques et proposons un
+          <strong>accompagnement personnalisé</strong> pour simplifier vos finances.
+        </p>
+
+        <div class="intro-expand" *ngIf="!showFullIntro">
+          <button class="expand-btn" (click)="toggleIntro()">
+            + En savoir plus
+          </button>
+        </div>
+
+        <div class="intro-expanded" *ngIf="showFullIntro">
+          <p>
+            Simplifiez la gestion de vos finances, optimisez vos marges, digitalisez vos
+            processus et garantissez votre conformité légale avec nos solutions sur mesure.
+          </p>
+          <p>
+            <strong>Objectif :</strong> Vous permettre de vous concentrer sur votre cœur de métier
+            pendant que nous gérons l'administratif.
+          </p>
+          <button class="expand-btn" (click)="toggleIntro()">- Réduire</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA bouton rouge stratégique -->
+    <div class="section-cta">
+      <button class="cta-primary" (click)="scrollToContact()">
+        📞 Prendre un rendez-vous gratuit
+      </button>
+      <p class="cta-subtitle">Consultation sous 72h - Gratuit</p>
+    </div>
+  </section>
+
+  <!-- Section Transition numérique -->
+  <section class="transition-section" id="services">
+    <div class="section-header">
+      <h2 class="section-title">Transition numérique</h2>
+      <p class="section-subtitle">
+        Digitalisez vos processus pour un service client fluide
+      </p>
+    </div>
+
+    <div class="transition-content">
+      <div class="transition-card">
+        <div class="transition-icon">🌐</div>
+        <h3>Stratégies omnicanales</h3>
+        <div class="transition-details">
+          <p>
+            ✅ <strong>Points de contact connectés :</strong> expérience cohérente physique et numérique
+          </p>
+          <p>
+            ✅ <strong>Synchronisation temps réel :</strong> stocks et prix unifiés sur tous canaux
+          </p>
+        </div>
+      </div>
+
+      <div class="transition-card">
+        <div class="transition-icon">🛠️</div>
+        <h3>Outils technologiques</h3>
+        <div class="transition-details">
+          <p>
+            ✅ <strong>Systèmes ERP intégrés :</strong> gestion stocks, commandes et clients
+          </p>
+          <p>
+            ✅ <strong>CRM personnalisé :</strong> fidélisation client renforcée
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Optimisation trésorerie -->
+  <section class="tresorerie-section">
+    <div class="section-header">
+      <h2 class="section-title">Optimisation de la trésorerie</h2>
+      <p class="section-subtitle">
+        Gardez le contrôle sur vos finances
+      </p>
+    </div>
+
+    <div class="tresorerie-content">
+      <!-- Mini calculateur intégré -->
+      <div class="tresorerie-calculator">
+        <div class="calculator-header">
+          <h4>💰 Estimez vos économies potentielles</h4>
+        </div>
+        <div class="calculator-content">
+          <div class="calculator-input">
+            <label>Charges mensuelles actuelles :</label>
+            <input
+              type="number"
+              [(ngModel)]="chargesMensuelles"
+              placeholder="ex: 5000€"
+              (input)="calculateEconomies()"
+            />
+          </div>
+          <div class="calculator-result" *ngIf="economiesEstimees > 0">
+            <div class="result-highlight">
+              <span class="result-amount">{{ economiesEstimees }}€</span>
+              <span class="result-label">d'optimisation possible/mois</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tresorerie-cards">
+        <div class="tresorerie-card">
+          <div class="tresorerie-icon">📊</div>
+          <h3>Prévisions et planification</h3>
+          <div class="tresorerie-list">
+            <p>✅ Scénarios financiers pour anticiper vos besoins</p>
+            <p>✅ Analyse des flux pour réduire les coûts superflus</p>
+          </div>
+        </div>
+
+        <div class="tresorerie-card">
+          <div class="tresorerie-icon">💳</div>
+          <h3>Solutions de financement adaptées</h3>
+          <div class="tresorerie-list">
+            <p>✅ <strong>Prêts bancaires :</strong> projets long terme</p>
+            <p>✅ <strong>Leasing :</strong> équipements sans grever la trésorerie</p>
+            <p>✅ <strong>Franchise capital :</strong> préservation des liquidités</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Gestion des stocks simplifiée -->
+  <section class="stocks-section">
+    <div class="section-header">
+      <h2 class="section-title">Gestion des stocks</h2>
+      <p class="section-subtitle">
+        Libérez des liquidités et évitez les pertes
+      </p>
+    </div>
+
+    <div class="stocks-content">
+      <div class="stocks-intro">
+        <p>
+          Un stock mal géré immobilise vos fonds et génère des pertes. 
+          Une gestion efficace transforme vos stocks en liquidités.
+        </p>
+      </div>
+
+      <div class="stocks-grid">
+        <div class="stock-card">
+          <div class="stock-icon">⚡</div>
+          <h3>Stratégies efficaces</h3>
+          <div class="stock-list">
+            <p>• Produits à forte rotation prioritaires</p>
+            <p>• Promotions pour écouler les invendus</p>
+            <p>• Suivi temps réel avec logiciels dédiés</p>
+          </div>
+        </div>
+
+        <div class="stock-card">
+          <div class="stock-icon">🔄</div>
+          <h3>Méthodes adaptées</h3>
+          <div class="stock-list">
+            <p>• <strong>FIFO :</strong> minimise pertes produits périssables</p>
+            <p>• <strong>JIT :</strong> commandes selon besoins immédiats</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Défis spécifiques optimisée -->
+  <section class="defis-section">
+    <div class="section-header">
+      <h2 class="section-title">Les défis spécifiques de votre secteur</h2>
+      <p class="section-subtitle">
+        Nous comprenons les enjeux uniques du commerce et de l'HORECA
+      </p>
+    </div>
+
+    <div class="defis-grid">
+      <div class="defi-card">
+        <div class="defi-icon" aria-hidden="true">💰</div>
+        <div class="defi-body">
+          <h3>Marges serrées</h3>
+          <div class="defi-content">
+            <p>Optimisation nécessaire de chaque euro dépensé pour maintenir la rentabilité</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="defi-card">
+        <div class="defi-icon" aria-hidden="true">📊</div>
+        <div class="defi-body">
+          <h3>Gestion TVA complexe</h3>
+          <div class="defi-content">
+            <p>Taux différents selon services (vente à emporter, sur place, hébergement)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="defi-card">
+        <div class="defi-icon" aria-hidden="true">🏃‍♂️</div>
+        <div class="defi-body">
+          <h3>Rythme opérationnel intense</h3>
+          <div class="defi-content">
+            <p>Peu de temps pour l'administratif, besoin d'automatisation</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="defi-card">
+        <div class="defi-icon" aria-hidden="true">📦</div>
+        <div class="defi-body">
+          <h3>Gestion stocks périssables</h3>
+          <div class="defi-content">
+            <p>Éviter les pertes tout en assurant la disponibilité produits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Solutions MFINANCES avec espacement amélioré -->
+  <section class="solutions-section">
+    <div class="section-header">
+      <h2 class="section-title">Les solutions MFINANCES pour votre activité</h2>
+      <p class="section-subtitle">
+        Accompagnement spécialisé pour commerçants et HORECA
+      </p>
+    </div>
+
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <div class="solution-icon">📋</div>
+        <h3>Accompagnement comptable et fiscal personnalisé</h3>
+        <div class="solution-content">
+          <p>Gestion complète de votre comptabilité et respect des obligations légales</p>
+          <p><strong>Spécialité :</strong> Calcul et optimisation TVA selon prestations</p>
+        </div>
+        <button class="solution-btn" (click)="openServiceContact('comptable')">
+          Je suis intéressé
+        </button>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-icon">📈</div>
+        <h3>Analyse des coûts et des performances</h3>
+        <div class="solution-content">
+          <p>Calcul détaillé des coûts alimentaires et prix de revient par produit</p>
+          <p><strong>Plus :</strong> Identification opportunités réduction coûts</p>
+        </div>
+        <button class="solution-btn" (click)="openServiceContact('analyse')">
+          Je suis intéressé
+        </button>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-icon">💻</div>
+        <h3>Outils digitaux pour une gestion simplifiée</h3>
+        <div class="solution-content">
+          <p>Intégration système de caisse avec logiciel comptable</p>
+          <p><strong>Résultat :</strong> Automatisation rapports sans erreurs</p>
+        </div>
+        <button class="solution-btn" (click)="openServiceContact('digital')">
+          Je suis intéressé
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi MFINANCES avec amélioration lisibilité -->
+  <section class="why-choose-section">
+    <div class="section-header">
+      <div class="why-badge">🎯 Ce qui nous distingue</div>
+      <h2 class="section-title">Pourquoi choisir MFINANCES ?</h2>
+    </div>
+
+    <div class="why-choose-grid">
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <h3>Expertise sectorielle reconnue</h3>
+        <p>
+          Solutions adaptées aux réalités du secteur HORECA et commerce en Belgique
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🛠️</div>
+        <h3>Outils clé en main</h3>
+        <p>Logiciels, tableaux de bord et systèmes de suivi adaptés à votre activité</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h3>Partenaire de confiance</h3>
+        <p>Suivi proactif et conseils sur mesure pour sécuriser vos marges</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Études de cas avec carrousel mobile -->
+  <section class="case-studies-section">
+    <div class="section-header">
+      <h2 class="section-title">Exemples concrets : Résultats tangibles</h2>
+      <p class="section-subtitle">
+        Découvrez comment nous avons transformé leur gestion
+      </p>
+    </div>
+
+    <!-- Carrousel études de cas -->
+    <div class="case-studies-carousel">
+      <div class="case-slides-container">
+        <!-- Slide Restaurant -->
+        <div class="case-slide" *ngIf="currentCaseSlide === 0">
+          <div class="slide-icon">🍽️</div>
+          <h3>Restaurant HORECA</h3>
+          <div class="slide-content">
+            <p><strong>Problème :</strong> Stockage excessif, coûts élevés, invendus fréquents</p>
+            <p><strong>Solution :</strong> Gestion en flux tendu ajustée aux besoins réels</p>
+            <p><strong>Résultat :</strong> <span class="result-highlight">-30% coûts stockage</span></p>
+          </div>
+        </div>
+
+        <!-- Slide Magasin -->
+        <div class="case-slide" *ngIf="currentCaseSlide === 1">
+          <div class="slide-icon">👕</div>
+          <h3>Magasin de vêtements</h3>
+          <div class="slide-content">
+            <p><strong>Problème :</strong> Accumulation stocks à faible rotation</p>
+            <p><strong>Solution :</strong> Analyse ventes + promotions stocks dormants</p>
+            <p><strong>Résultat :</strong> <span class="result-highlight">+15% rotation, +20% liquidités</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation slides -->
+      <div class="case-navigation">
+        <button
+          class="case-nav-btn prev"
+          (click)="prevCaseSlide()"
+          [disabled]="currentCaseSlide === 0"
+        >
+          ←
+        </button>
+
+        <div class="case-indicators">
+          <span
+            class="case-indicator"
+            *ngFor="let slide of caseSlides; let i = index"
+            [class.active]="i === currentCaseSlide"
+            (click)="goToCaseSlide(i)"
+            >{{ i + 1 }}</span
+          >
+        </div>
+
+        <button
+          class="case-nav-btn next"
+          (click)="nextCaseSlide()"
+          [disabled]="currentCaseSlide === caseSlides.length - 1"
+        >
+          →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Optimisée -->
+  <section class="faq-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        ❓ Questions fréquentes Commerce & HORECA
+      </h2>
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <span class="faq-icon" *ngIf="faq.priority">🧠</span>
+          <h3>{{ faq.question }}</h3>
+          <span class="faq-toggle" [class.open]="faq.isOpen">
+            {{ faq.isOpen ? "−" : "+" }}
+          </span>
+        </div>
+        <div class="faq-answer" [class.open]="faq.isOpen">
+          <div [innerHTML]="faq.answer"></div>
+        </div>
+      </div>
+
+      <div class="faq-contact">
+        <p>Contactez-nous si vous avez d'autres questions</p>
+        <button class="faq-contact-btn" (click)="scrollToContact()">
+          💬 Poser une question
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact spécifique optimisé -->
+  <section class="contact-section" id="contact">
+    <div class="contact-header">
+      <div class="contact-badge">
+        <span>📞 CONTACT COMMERCE & HORECA</span>
+      </div>
+      <h2 class="contact-title">
+        Prêt à optimiser la gestion de votre établissement ?
+      </h2>
+      <p class="contact-subtitle">
+        Contactez-nous dès aujourd'hui pour une consultation gratuite !
+      </p>
+    </div>
+
+    <div class="contact-actions">
+      <div class="contact-method" (click)="callNow()">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">
+          <span class="contact-label">Appelez-nous directement</span>
+          <span class="contact-value">+32 2 542 04 32</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="emailNow()">
+        <div class="contact-icon">📧</div>
+        <div class="contact-info">
+          <span class="contact-label">Envoyez-nous un email</span>
+          <span class="contact-value">info&#64;mfinances.be</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="scheduleAppointment()">
+        <div class="contact-icon">📅</div>
+        <div class="contact-info">
+          <span class="contact-label">Réservez un créneau</span>
+          <span class="contact-value">Prendre RDV en ligne</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-cta-horeca">
+      <button class="cta-horeca-btn" (click)="openHorecaContact()">
+        📆 Prendre un rendez-vous HORECA/Commerce
+      </button>
+    </div>
+  </section>
+
+  <!-- Formulaire d'évaluation avec stepper visuel -->
+  <section class="evaluation-section" id="formulaire-evaluation">
+    <div class="evaluation-header">
+      <div class="evaluation-badge">
+        <span>🧭 ÉVALUATION GRATUITE</span>
+      </div>
+      <h2 class="evaluation-title">Évaluez votre établissement en 2 minutes</h2>
+      <p class="evaluation-subtitle">
+        Recevez un mini-diagnostic personnalisé, puis un appel gratuit sous 72h
+      </p>
+    </div>
+
+    <div class="evaluation-form">
+      <!-- Stepper visuel amélioré -->
+      <div class="form-stepper">
+        <div class="stepper-container">
+          <div
+            class="stepper-step"
+            *ngFor="let step of formSteps; let i = index"
+            [class.active]="i + 1 === currentFormStep"
+            [class.completed]="i + 1 < currentFormStep"
+          >
+            <div class="step-circle">
+              <span *ngIf="i + 1 < currentFormStep">✅</span>
+              <span *ngIf="i + 1 >= currentFormStep">{{ i + 1 }}</span>
+            </div>
+            <span class="step-label">{{ step.label }}</span>
+          </div>
+        </div>
+        <div class="stepper-progress">
+          <div
+            class="progress-fill"
+            [style.width.%]="(currentFormStep / totalFormSteps) * 100"
+          ></div>
+        </div>
+      </div>
+
+      <form
+        class="form-content"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="horecaForm"
+      >
+        <!-- Étape 1: Type d'établissement -->
+        <div class="form-step" *ngIf="currentFormStep === 1">
+          <h3>Quel est votre type d'établissement ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let type of etablissementTypes"
+              [class.selected]="
+                horecaForm.get('typeEtablissement')?.value === type.value
+              "
+            >
+              <input
+                type="radio"
+                name="typeEtablissement"
+                [value]="type.value"
+                formControlName="typeEtablissement"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ type.icon }}</div>
+                <span class="option-label">{{ type.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="
+                    horecaForm.get('typeEtablissement')?.value === type.value
+                  "
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 2: Chiffre d'affaires -->
+        <div class="form-step" *ngIf="currentFormStep === 2">
+          <h3>Quel est votre chiffre d'affaires annuel ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let ca of chiffreAffaires"
+              [class.selected]="
+                horecaForm.get('chiffreAffaires')?.value === ca.value
+              "
+            >
+              <input
+                type="radio"
+                name="chiffreAffaires"
+                [value]="ca.value"
+                formControlName="chiffreAffaires"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ ca.icon }}</div>
+                <span class="option-label">{{ ca.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="
+                    horecaForm.get('chiffreAffaires')?.value === ca.value
+                  "
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 3: Besoins spécifiques -->
+        <div class="form-step" *ngIf="currentFormStep === 3">
+          <h3>Quels sont vos besoins actuels ?</h3>
+          <p class="step-subtitle">Plusieurs choix possibles</p>
+          <div class="options-grid">
+            <label
+              class="option-card checkbox-card"
+              *ngFor="let besoin of besoinsOptions"
+              [class.selected]="
+                horecaForm.get('besoin_' + besoin.value)?.value
+              "
+            >
+              <input
+                type="checkbox"
+                [formControlName]="'besoin_' + besoin.value"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ besoin.icon }}</div>
+                <span class="option-label">{{ besoin.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="horecaForm.get('besoin_' + besoin.value)?.value"
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 4: Coordonnées -->
+        <div class="form-step" *ngIf="currentFormStep === 4">
+          <h3>Vos coordonnées</h3>
+          <p class="step-subtitle">
+            Pour être recontacté(e) par un conseiller et recevoir votre
+            diagnostic :
+          </p>
+          <div class="input-group">
+            <div class="input-field">
+              <label for="nom">Nom *</label>
+              <input
+                id="nom"
+                type="text"
+                formControlName="nom"
+                placeholder="Votre nom complet"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="email">Email *</label>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="votre@email.com"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="telephone">Téléphone *</label>
+              <input
+                id="telephone"
+                type="tel"
+                formControlName="telephone"
+                placeholder="+32 4XX XX XX XX"
+                required
+              />
+            </div>
+          </div>
+          <div class="contact-info">
+            📞 Un conseiller vous appellera sous 72h pour un échange gratuit
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button
+            type="button"
+            class="btn-prev"
+            *ngIf="currentFormStep > 1"
+            (click)="previousFormStep()"
+          >
+            ← Précédent
+          </button>
+          <button
+            type="button"
+            class="btn-next"
+            *ngIf="currentFormStep < totalFormSteps"
+            (click)="nextFormStep()"
+            [disabled]="!isFormStepValid()"
+          >
+            Suivant →
+          </button>
+          <button
+            type="submit"
+            class="btn-submit"
+            *ngIf="currentFormStep === totalFormSteps"
+            [disabled]="!isFormValid()"
+          >
+            📞 Demander mon diagnostic gratuit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Message de succès -->
+    <div class="success-message" *ngIf="formSubmitted">
+      <div class="success-icon">✅</div>
+      <h3>🎉 Merci !</h3>
+      <p>
+        Votre évaluation a été envoyée. Nous vous rappelons sous 72h avec votre
+        diagnostic personnalisé.
+      </p>
+      <button class="btn-reset" (click)="resetForm()">
+        Nouvelle évaluation
+      </button>
+    </div>
+  </section>
+
+  <!-- Bouton sticky flottant -->
+  <div
+    class="sticky-contact"
+    *ngIf="!formSubmitted"
+    (click)="scrollToContact()"
+  >
+    📞 Prendre contact
+  </div>
+</div>

@@ -1,0 +1,653 @@
+<div class="management-patrimoniale-mobile-container">
+  <!-- Section Hero Optimisée -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <img
+        src="assets/img/webp/47.webp"
+        alt="Société de Management Patrimoniale Background"
+        class="hero-bg-image"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Société de Management Patrimoniale :</h1>
+      <p class="hero-subtitle">Pilotez vos actifs avec stratégie</p>
+
+      <!-- Bouton d'accès rapide mobile -->
+      <div class="quick-access">
+        <button
+          class="quick-access-btn primary"
+          (click)="scrollToSection('services')"
+        >
+          💡 Découvrez ce que vous gagnerez
+        </button>
+        <button
+          class="quick-access-btn secondary"
+          (click)="scrollToSection('formulaire-evaluation')"
+        >
+          🎁 Évaluez votre situation (2 min)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Mobile Navigation -->
+  <app-sidebar-mobile></app-sidebar-mobile>
+
+  <!-- Section Introduction Simplifiée -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <h2 class="intro-title">
+        Qu'est-ce qu'une Société de Management Patrimoniale ?
+      </h2>
+
+      <!-- Texte mobile simplifié -->
+      <div class="intro-text">
+        <p>
+          Face à une <strong>fiscalité lourde</strong> et des revenus
+          sous-optimisés, la Société de Management Patrimoniale offre une
+          <strong>solution stratégique</strong>
+          pour structurer vos finances.
+        </p>
+
+        <div class="intro-expand" *ngIf="!showFullIntro">
+          <button class="expand-btn" (click)="toggleIntro()">
+            + En savoir plus
+          </button>
+        </div>
+
+        <div class="intro-expanded" *ngIf="showFullIntro">
+          <p>
+            Elle permet au dirigeant d'entreprise de
+            <strong>facturer ses prestations</strong>
+            à sa société d'exploitation tout en optimisant la gestion et la
+            valorisation de son patrimoine personnel.
+          </p>
+          <p>
+            En évitant les modes de rémunération classiques (taxés jusqu'à 55%),
+            elle offre une alternative pour
+            <strong>accroître la richesse patrimoniale</strong>.
+          </p>
+          <button class="expand-btn" (click)="toggleIntro()">- Réduire</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA bouton rouge stratégique -->
+    <div class="section-cta">
+      <button class="cta-primary" (click)="scrollToContact()">
+        📞 Prendre un rendez-vous gratuit
+      </button>
+      <p class="cta-subtitle">Consultation sous 72h - Gratuit</p>
+    </div>
+  </section>
+
+  <!-- Menu secteurs d'activité (carrousel horizontal) -->
+  <!-- <section class="secteurs-section">
+    <div class="section-header">
+      <h2 class="section-title">Secteurs d'activité</h2>
+    </div>
+
+    <div class="secteurs-carousel">
+      <div class="carousel-container" #carouselContainer>
+        <div class="carousel-track" [style.transform]="getCarouselTransform()">
+          <div 
+            class="secteur-card" 
+            *ngFor="let secteur of secteurs; let i = index"
+            [class.active]="activeSecteurIndex === i"
+            (click)="selectSecteur(i)"
+          >
+            <div class="secteur-icon">{{ secteur.icon }}</div>
+            <h3 class="secteur-title">{{ secteur.title }}</h3>
+            <p class="secteur-description">{{ secteur.description }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-navigation">
+        <button 
+          class="nav-btn prev" 
+          (click)="prevSecteur()"
+          [disabled]="currentCarouselIndex === 0"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="carousel-indicators">
+          <span 
+            class="indicator"
+            *ngFor="let secteur of secteurs; let i = index"
+            [class.active]="i === currentCarouselIndex"
+            (click)="goToSecteur(i)"
+          ></span>
+        </div>
+        <button 
+          class="nav-btn next" 
+          (click)="nextSecteur()"
+          [disabled]="currentCarouselIndex >= secteurs.length - 3"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Section Besoins spécifiques - 3 cartes scrollables -->
+  <section class="besoins-section" id="services">
+    <div class="section-header">
+      <h2 class="section-title">
+        Besoins spécifiques des Sociétés de Management Patrimoniales
+      </h2>
+      <p class="section-subtitle">
+        Voici les 3 piliers concrets d'une structure patrimoniale bien pensée
+      </p>
+    </div>
+
+    <div class="besoins-container">
+      <div class="besoin-card">
+        <div class="besoin-icon">✅</div>
+        <h3>Planification fiscale continue</h3>
+        <div class="besoin-details">
+          <p>
+            💸 <strong>Fiscale proactive :</strong> ajustements légaux &
+            économiques
+          </p>
+          <p>
+            📈 <strong>Maximisation des déductions :</strong> réduire base
+            taxable
+          </p>
+        </div>
+      </div>
+
+      <div class="besoin-card">
+        <div class="besoin-icon">🔍</div>
+        <h3>Surveillance des investissements patrimoniaux</h3>
+        <div class="besoin-details">
+          <p>
+            📊 <strong>Suivi des actifs :</strong> tableaux de bord financiers
+          </p>
+          <p>
+            🎯 <strong>Évaluation continue :</strong> maximiser le rendement
+          </p>
+        </div>
+      </div>
+
+      <div class="besoin-card">
+        <div class="besoin-icon">📂</div>
+        <h3>Documentation des management fees</h3>
+        <div class="besoin-details">
+          <p>
+            📝 <strong>Justification & conformité :</strong> rapports &
+            documents clairs
+          </p>
+          <p>
+            🔐 <strong>Conformité fiscale :</strong> conservation rigoureuse
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Fonctions clés (3 cartes) -->
+  <section class="fonctions-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        Les fonctions clés d'une société de management
+      </h2>
+      <p class="section-subtitle">
+        Voici les 3 piliers concrets d'une structure patrimoniale bien pensée
+      </p>
+    </div>
+
+    <div class="fonctions-grid">
+      <div class="fonction-card">
+        <div class="fonction-icon">💼</div>
+        <h3>Facturer des prestations</h3>
+        <p>
+          Services de gestion facturés sous forme de management fees déductibles
+        </p>
+      </div>
+
+      <div class="fonction-card">
+        <div class="fonction-icon">🏠</div>
+        <h3>Accroître le patrimoine</h3>
+        <p>
+          Revenus réinvestis dans des projets immobiliers ou financiers long
+          terme
+        </p>
+      </div>
+
+      <div class="fonction-card">
+        <div class="fonction-icon">🛡️</div>
+        <h3>Séparer les risques</h3>
+        <p>
+          Protection du patrimoine personnel contre les aléas professionnels
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Processus MFINANCES - Version simplifiée -->
+  <section class="optimization-section">
+    <div class="section-header">
+      <h2 class="section-title">Comment MFINANCES optimise votre structure</h2>
+      <p class="section-subtitle">Notre processus en 4 étapes claires</p>
+    </div>
+
+    <div class="optimization-steps">
+      <div class="step-card">
+        <div class="step-badge">01</div>
+        <h3>Création de la structure</h3>
+        <ul>
+          <li>✅ Mise en place de la société de management</li>
+          <li>📋 Rédaction des contrats et statuts</li>
+          <li>🔧 Configuration fiscale optimale</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <div class="step-badge">02</div>
+        <h3>Optimisation fiscale</h3>
+        <ul>
+          <li>💰 Structuration des management fees</li>
+          <li>📊 Planification fiscale personnalisée</li>
+          <li>⚖️ Conformité juridique assurée</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <div class="step-badge">03</div>
+        <h3>Acquisition immobilière</h3>
+        <ul>
+          <li>🏠 Investissement immobilier stratégique</li>
+          <li>💎 Diversification du patrimoine</li>
+          <li>📈 Optimisation des revenus locatifs</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <div class="step-badge">04</div>
+        <h3>Transmission</h3>
+        <ul>
+          <li>👨‍👩‍👧‍👦 Planification successorale</li>
+          <li>🎯 Transmission optimisée du patrimoine</li>
+          <li>⚡ Réduction des droits de succession</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Résultat concret -->
+    <div class="result-highlight">
+      <div class="result-icon">🏆</div>
+      <div class="result-text">
+        <h4>Résultat concret : –25% d'impôts en 5 ans</h4>
+        <p>+ 1,2M€ de patrimoine constitué</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi choisir MFINANCES (2 cartes) -->
+  <section class="why-choose-section">
+    <div class="section-header">
+      <h2 class="section-title">Pourquoi choisir MFINANCES ?</h2>
+    </div>
+
+    <div class="why-choose-grid">
+      <div class="why-card">
+        <div class="why-icon">💼</div>
+        <h3>Expertise adaptée à vos besoins</h3>
+        <div class="why-details">
+          <p>✅ <strong>Structuration fiscale</strong> et comptable complète</p>
+          <p>🏠 <strong>Gestion patrimoniale</strong> intégrée sur mesure</p>
+          <p>👨‍👩‍👧‍👦 <strong>Planification successorale</strong> personnalisée</p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">🧰</div>
+        <h3>Solution clé en main</h3>
+        <div class="why-details">
+          <p>
+            🔧 <strong>Création et gestion</strong> de votre société de
+            management
+          </p>
+          <p>📊 <strong>Tableaux de bord</strong> personnalisés</p>
+          <p>🤝 <strong>Accompagnement fiscal</strong> à chaque étape</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section CTA Transformation revenus -->
+  <section class="transformation-section">
+    <div class="transformation-card">
+      <div class="transformation-icon">📈</div>
+      <div class="transformation-content">
+        <h2>
+          Passez de revenus taxés à un patrimoine durable et transmissible
+        </h2>
+        <p>
+          Transformez vos revenus professionnels en richesse patrimoniale avec
+          MFINANCES
+        </p>
+        <button class="transformation-btn" (click)="scrollToContact()">
+          🚀 Commencer ma transformation
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Optimisée -->
+  <section class="faq-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        ❓ Vos questions fréquentes sur la société de management patrimoniale
+      </h2>
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <span class="faq-icon" *ngIf="faq.priority">🧠</span>
+          <h3>{{ faq.question }}</h3>
+          <span class="faq-toggle" [class.open]="faq.isOpen">
+            {{ faq.isOpen ? "−" : "+" }}
+          </span>
+        </div>
+        <div class="faq-answer" [class.open]="faq.isOpen">
+          <div [innerHTML]="faq.answer"></div>
+        </div>
+      </div>
+
+      <div class="faq-contact">
+        <p>Contactez-nous si vous avez d'autres questions</p>
+        <button class="faq-contact-btn" (click)="scrollToContact()">
+          💬 Poser une question
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact spécifique optimisé -->
+  <section class="contact-section" id="contact">
+    <div class="contact-header">
+      <div class="contact-badge">
+        <span>📞 CONTACT MANAGEMENT PATRIMONIAL</span>
+      </div>
+      <h2 class="contact-title">
+        Prêt à optimiser votre gestion patrimoniale ?
+      </h2>
+      <p class="contact-subtitle">
+        Contactez-nous dès aujourd'hui pour une consultation gratuite !
+      </p>
+    </div>
+
+    <div class="contact-actions">
+      <div class="contact-method" (click)="callNow()">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">
+          <span class="contact-label">Appelez-nous directement</span>
+          <span class="contact-value">+32 2 542 04 32</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="emailNow()">
+        <div class="contact-icon">📧</div>
+        <div class="contact-info">
+          <span class="contact-label">Envoyez-nous un email</span>
+          <span class="contact-value">info&#64;mfinances.be</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="scheduleAppointment()">
+        <div class="contact-icon">📅</div>
+        <div class="contact-info">
+          <span class="contact-label">Réservez un créneau</span>
+          <span class="contact-value">Prendre RDV en ligne</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-cta-management">
+      <button class="cta-management-btn" (click)="openManagementContact()">
+        📆 Prendre un rendez-vous Management
+      </button>
+      <button class="maps-btn" (click)="openMaps()">
+        📍 Voir sur Google Maps
+      </button>
+    </div>
+  </section>
+
+  <!-- Formulaire d'évaluation avec stepper visuel -->
+  <section class="evaluation-section" id="formulaire-evaluation">
+    <div class="evaluation-header">
+      <div class="evaluation-badge">
+        <span>🧭 ÉVALUATION GRATUITE</span>
+      </div>
+      <h2 class="evaluation-title">Évaluez votre situation patrimoniale</h2>
+      <p class="evaluation-subtitle">
+        En 2 minutes, identifiez vos priorités et recevez un mini-diagnostic
+        personnalisé sous 72h
+      </p>
+    </div>
+
+    <div class="evaluation-form">
+      <!-- Stepper visuel amélioré -->
+      <div class="form-stepper">
+        <div class="stepper-container">
+          <div
+            class="stepper-step"
+            *ngFor="let step of formSteps; let i = index"
+            [class.active]="i + 1 === currentFormStep"
+            [class.completed]="i + 1 < currentFormStep"
+          >
+            <div class="step-circle">
+              <span *ngIf="i + 1 < currentFormStep">✅</span>
+              <span *ngIf="i + 1 >= currentFormStep">{{ i + 1 }}</span>
+            </div>
+            <span class="step-label">{{ step.label }}</span>
+          </div>
+        </div>
+        <div class="stepper-progress">
+          <div
+            class="progress-fill"
+            [style.width.%]="(currentFormStep / totalFormSteps) * 100"
+          ></div>
+        </div>
+      </div>
+
+      <form
+        class="form-content"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="managementForm"
+      >
+        <!-- Étape 1: Type de société -->
+        <div class="form-step" *ngIf="currentFormStep === 1">
+          <h3>Quel est le type de votre société ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let type of societeTypes"
+              [class.selected]="
+                managementForm.get('typeSociete')?.value === type.value
+              "
+            >
+              <input
+                type="radio"
+                name="typeSociete"
+                [value]="type.value"
+                formControlName="typeSociete"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ type.icon }}</div>
+                <span class="option-label">{{ type.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="
+                    managementForm.get('typeSociete')?.value === type.value
+                  "
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 2: Chiffre d'affaires -->
+        <div class="form-step" *ngIf="currentFormStep === 2">
+          <h3>Quel est votre chiffre d'affaires annuel moyen ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let ca of chiffreAffairesOptions"
+              [class.selected]="
+                managementForm.get('chiffreAffaires')?.value === ca.value
+              "
+            >
+              <input
+                type="radio"
+                name="chiffreAffaires"
+                [value]="ca.value"
+                formControlName="chiffreAffaires"
+              />
+              <div class="option-content">
+                <div class="option-icon">💰</div>
+                <span class="option-label">{{ ca.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="
+                    managementForm.get('chiffreAffaires')?.value === ca.value
+                  "
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 3: Besoins spécifiques -->
+        <div class="form-step" *ngIf="currentFormStep === 3">
+          <h3>Quels sont vos besoins actuels ?</h3>
+          <p class="step-subtitle">Plusieurs choix possibles</p>
+          <div class="options-grid">
+            <label
+              class="option-card checkbox-card"
+              *ngFor="let besoin of besoinsOptions"
+              [class.selected]="
+                managementForm.get('besoin_' + besoin.value)?.value
+              "
+            >
+              <input
+                type="checkbox"
+                [formControlName]="'besoin_' + besoin.value"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ besoin.icon }}</div>
+                <span class="option-label">{{ besoin.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="managementForm.get('besoin_' + besoin.value)?.value"
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 4: Coordonnées -->
+        <div class="form-step" *ngIf="currentFormStep === 4">
+          <h3>Vos coordonnées</h3>
+          <p class="step-subtitle">
+            Pour être recontacté(e) par un conseiller et recevoir votre
+            diagnostic :
+          </p>
+          <div class="input-group">
+            <div class="input-field">
+              <label for="nom">Nom *</label>
+              <input
+                id="nom"
+                type="text"
+                formControlName="nom"
+                placeholder="Votre nom complet"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="email">Email *</label>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="votre@email.com"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="telephone">Téléphone *</label>
+              <input
+                id="telephone"
+                type="tel"
+                formControlName="telephone"
+                placeholder="+32 4XX XX XX XX"
+                required
+              />
+            </div>
+          </div>
+          <div class="contact-info">
+            📞 Un conseiller vous appellera sous 72h pour un échange gratuit
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button
+            type="button"
+            class="btn-prev"
+            *ngIf="currentFormStep > 1"
+            (click)="previousFormStep()"
+          >
+            ← Précédent
+          </button>
+          <button
+            type="button"
+            class="btn-next"
+            *ngIf="currentFormStep < totalFormSteps"
+            (click)="nextFormStep()"
+            [disabled]="!isFormStepValid()"
+          >
+            Suivant →
+          </button>
+          <button
+            type="submit"
+            class="btn-submit"
+            *ngIf="currentFormStep === totalFormSteps"
+            [disabled]="!isFormValid()"
+          >
+            📞 Demander mon diagnostic gratuit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Message de succès -->
+    <div class="success-message" *ngIf="formSubmitted">
+      <div class="success-icon">✅</div>
+      <h3>🎉 Merci !</h3>
+      <p>
+        Votre évaluation a été envoyée. Nous vous rappelons sous 72h avec votre
+        diagnostic personnalisé.
+      </p>
+      <button class="btn-reset" (click)="resetForm()">
+        Nouvelle évaluation
+      </button>
+    </div>
+  </section>
+
+  <!-- Bouton sticky flottant -->
+  <div
+    class="sticky-contact"
+    *ngIf="!formSubmitted"
+    (click)="scrollToContact()"
+  >
+    📞 Prendre contact
+  </div>
+</div>

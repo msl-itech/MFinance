@@ -1,0 +1,166 @@
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Témoignages clients</h2>
+      <p class="section-subtitle">Découvrez ce que nos clients pensent de nos services</p>
+    </div>
+
+    <div class="testimonials-wrapper" *ngIf="!loading && !error">
+      <div class="testimonials-container">
+        <div class="testimonial-card"
+             *ngFor="let testimonial of visibleTestimonials"
+             [ngClass]="['testimonial-' + testimonial.testimonial_type]">
+          
+          <!-- Type badge -->
+          <div class="type-badge">
+            <span class="type-icon" [ngSwitch]="testimonial.testimonial_type">
+              <i *ngSwitchCase="'text'" class="icon-text">📝</i>
+              <i *ngSwitchCase="'audio'" class="icon-audio">🎵</i>
+              <i *ngSwitchCase="'video'" class="icon-video">🎬</i>
+            </span>
+          </div>
+
+          <!-- En-tête du témoignage -->
+          <div class="testimonial-header">
+            <div class="client-avatar">
+              <img 
+                *ngIf="testimonial.image_url && testimonial.testimonial_type !== 'video'" 
+                [src]="testimonial.image_url" 
+                [alt]="testimonial.client_name"
+                class="avatar-image">
+              <div 
+                *ngIf="!testimonial.image_url || testimonial.testimonial_type === 'video'" 
+                class="avatar-initials">
+                {{ getInitials(testimonial.client_name) }}
+              </div>
+            </div>
+            <div class="client-info">
+              <h4 class="client-name">{{ testimonial.client_name }}</h4>
+              <p class="client-company" *ngIf="testimonial.client_company">
+                {{ testimonial.client_company }}
+              </p>
+              <!-- Notes étoiles dans l'en-tête -->
+              <div class="rating">
+                <span 
+                  *ngFor="let star of getStarArray(testimonial.rating)" 
+                  class="star" 
+                  [class.filled]="star === 1">
+                  ★
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contenu principal du témoignage -->
+          <div class="testimonial-main-content">
+            
+            <!-- Témoignage texte -->
+            <div *ngIf="testimonial.testimonial_type === 'text'" class="content-wrapper text-content">
+              <div class="quote-icon">"</div>
+              <p class="testimonial-text">{{ testimonial.content }}</p>
+            </div>
+
+            <!-- Témoignage audio -->
+            <div *ngIf="testimonial.testimonial_type === 'audio'" class="content-wrapper audio-content">
+              <div class="media-container">
+                <div class="audio-visual">
+                  <div class="audio-icon">🎵</div>
+                  <div class="audio-waves">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <audio 
+                  controls 
+                  preload="metadata"
+                  [src]="testimonial.media_url"
+                  class="audio-player">
+                  Votre navigateur ne supporte pas l'élément audio.
+                </audio>
+              </div>
+              <p *ngIf="testimonial.content" class="media-description">
+                {{ testimonial.content }}
+              </p>
+            </div>
+
+            <!-- Témoignage vidéo -->
+            <div *ngIf="testimonial.testimonial_type === 'video'" class="content-wrapper video-content">
+              <div class="video-container">
+                <video 
+                  controls 
+                  preload="metadata"
+                  [src]="testimonial.media_url"
+                  class="video-player"
+                  [poster]="testimonial.image_url">
+                  Votre navigateur ne supporte pas l'élément vidéo.
+                </video>
+                <div class="video-overlay">
+                  <div class="play-button">▶</div>
+                </div>
+              </div>
+              <p *ngIf="testimonial.content" class="media-description">
+                {{ testimonial.content }}
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Footer de la carte -->
+          <div class="testimonial-footer">
+            <div class="testimonial-date">
+              <span class="date-icon">📅</span>
+              {{ testimonial.created_at | date:'dd/MM/yyyy' }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="testimonials-navigation" *ngIf="testimonials.length > itemsPerPage">
+        <button 
+          class="nav-btn prev-btn" 
+          [disabled]="!canGoPrevious"
+          (click)="previousSlide()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        
+        <div class="pagination-dots">
+          <button 
+            *ngFor="let dot of [].constructor(totalSlides); let i = index"
+            class="dot"
+            [class.active]="currentIndex === i * itemsPerPage"
+            (click)="goToSlide(i)">
+            <span class="dot-inner"></span>
+          </button>
+        </div>
+        
+        <button 
+          class="nav-btn next-btn" 
+          [disabled]="!canGoNext"
+          (click)="nextSlide()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- État de chargement -->
+    <div class="loading-state" *ngIf="loading">
+      <div class="spinner"></div>
+      <p>Chargement des témoignages...</p>
+    </div>
+
+    <!-- État d'erreur -->
+    <div class="error-state" *ngIf="error">
+      <p class="error-message">{{ error }}</p>
+      <button class="retry-btn" (click)="loadTestimonials()">Réessayer</button>
+    </div>
+
+    <!-- État vide -->
+    <div class="empty-state" *ngIf="!loading && !error && testimonials.length === 0">
+      <p>Aucun témoignage disponible pour le moment.</p>
+    </div>
+  </div>
+</section>

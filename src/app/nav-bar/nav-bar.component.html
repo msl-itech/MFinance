@@ -5,7 +5,7 @@
     <div class="container">
       <div class="header-elements">
         <div class="site-logo">
-          <a href="/accueil">
+          <a routerLink="/accueil">
             <img
               src="../../assets/img/logo/logoMfinances.png"
               alt="Logo"
@@ -16,91 +16,146 @@
         </div>
         <div class="main-menu-ex">
           <ul>
-            <li><a href="/about">À propos</a></li>
+            <li><a routerLink="/about">À propos</a></li>
             <li>
-              <a href="/services"
+              <a routerLink="/services"
                 >Services <i class="fa-solid fa-angle-down"></i
               ></a>
               <ul>
                 <li>
-                  <a href="/services/creation-entreprise"
+                  <a routerLink="/services/creation-entreprise"
                     >Création d'entreprise</a
                   >
                 </li>
-                <li><a href="/services/comptabilite">Comptabilité</a></li>
-                <li><a href="/services/fiscalite">Fiscalité</a></li>
+                <li><a routerLink="/services/comptabilite">Comptabilité</a></li>
+                <li><a routerLink="/services/fiscalite">Fiscalité</a></li>
                 <li>
-                  <a href="/services/declaration-impot">Déclaration d'impot</a>
+                  <a routerLink="/services/declaration-impot"
+                    >Déclaration d'impot</a
+                  >
                 </li>
               </ul>
             </li>
-            <li><a href="/tarif">Nos Tarifs</a></li>
             <li>
-              <a href="/vente/"
+              <a routerLink="/societe-management-patrimoniale"
+                >Secteur d'activité <i class="fa-solid fa-angle-down"></i
+              ></a>
+              <ul>
+                <li>
+                  <a routerLink="/asbl">Asbl</a>
+                </li>
+                <li>
+                  <a routerLink="/profil-independant">Indépendant</a>
+                </li>
+                <li>
+                  <a routerLink="/societe-moyen">Société de moyen</a>
+                </li>
+                <li>
+                  <a routerLink="/societe-exploitation"
+                    >Société d'exploitation</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="/societe-management-patrimoniale"
+                    >Société de management patrimonial</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="/commercant-horeca">Commerçant HORECA</a>
+                </li>
+                <li>
+                  <a routerLink="/professionel-sante">Professionnel de santé</a>
+                </li>
+                <li>
+                  <a routerLink="/grande-entreprise">Grande entreprise</a>
+                </li>
+                <li>
+                  <a routerLink="/promoteur-immobilier">Promoteur immobilier</a>
+                </li>
+              </ul>
+            </li>
+            <li><a routerLink="/tarif">Nos Tarifs</a></li>
+            <li>
+              <a
+                routerLink="/calculatrice"
+                class="red-link"
+                style="color: ff4d4d"
+                >Calculatrice</a
+              >
+            </li>
+            <li>
+              <a routerLink="/vente/"
                 >Boostez votre entreprise <i class="fa-solid fa-angle-down"></i
               ></a>
               <ul>
                 <li>
-                  <a href="/vente/salarie-independant"
+                  <a routerLink="/vente/salarie-independant"
                     >Salarié et indépendants</a
                   >
                 </li>
                 <li>
-                  <a href="/vente/passage-en-societe">Passage en societe</a>
+                  <a routerLink="/vente/passage-en-societe"
+                    >Passage en societe</a
+                  >
                 </li>
                 <li>
-                  <a href="/vente/compte-courant"
+                  <a routerLink="/vente/compte-courant"
                     >Compte Courant administrateur</a
                   >
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/tresorerie/"
+              <a routerLink="/tresorerie/"
                 >Trésorerie <i class="fa-solid fa-angle-down"></i
               ></a>
               <ul>
                 <li>
-                  <a href="/tresorerie/tresorerie-benefice"
+                  <a routerLink="/tresorerie/tresorerie-benefice"
                     >Trésorerie vs Bénéfices</a
                   >
                 </li>
                 <li>
-                  <a href="/tresorerie/investir-tresorerie"
+                  <a routerLink="/tresorerie/investir-tresorerie"
                     >Investir sans risquer</a
                   >
                 </li>
                 <li>
-                  <a href="/tresorerie/optimiser-stock">Optimisez vos Stocks</a>
+                  <a routerLink="/tresorerie/optimiser-stock"
+                    >Optimisez vos Stocks</a
+                  >
                 </li>
                 <li>
-                  <a href="/tresorerie/alerte-tresorerie">Alerte concurrence</a>
+                  <a routerLink="/tresorerie/alerte-tresorerie"
+                    >Alerte concurrence</a
+                  >
                 </li>
                 <li>
-                  <a href="/tresorerie/proteger-sa-tresorerie"
+                  <a routerLink="/tresorerie/proteger-sa-tresorerie"
                     >Protégez Votre Trésorerie</a
                   >
                 </li>
                 <li>
-                  <a href="/tresorerie/anticiper-sa-tresorerie"
+                  <a routerLink="/tresorerie/anticiper-sa-tresorerie"
                     >Anticipez vos Finances</a
                   >
                 </li>
               </ul>
             </li>
-            <li><a href="/support">Support</a></li>
+
+            <li><a routerLink="/support">Support</a></li>
             <!-- <li>
-              <a href="/support">Support </a>
+              <a routerLink="/support">Support </a>
                <ul>
                 <li>
                   <a
-                    href="https://my.anydesk.com/download/dzQb9eHl/AnyDesk_Custom_Client.exe"
+                    routerLink="https://my.anydesk.com/download/dzQb9eHl/AnyDesk_Custom_Client.exe"
                     >Support pour Windows</a
                   >
                 </li>
                 <li>
                   <a
-                    href="https://my.anydesk.com/download/U2eK2Jqz/AnyDesk_Custom_Client.dmg"
+                    routerLink="https://my.anydesk.com/download/U2eK2Jqz/AnyDesk_Custom_Client.dmg"
                     >Support pour Mac</a
                   >
                 </li>
@@ -109,9 +164,7 @@
           </ul>
         </div>
         <div class="header-btn">
-          <a href="/contact" class="btn-red"
-            >Nos contacts <i class="fa-solid fa-arrow-right"></i
-          ></a>
+          <a routerLink="/contact" class="btn-red">Consultation gratuite</a>
         </div>
       </div>
     </div>
@@ -121,7 +174,7 @@
   <div class="mobile-header d-block d-lg-none">
     <div class="mobile-header-elements">
       <div class="mobile-logo">
-        <a href="/accueil">
+        <a routerLink="/accueil">
           <img
             src="assets/img/logo/logoMfinances.png"
             alt="Logo"
@@ -134,6 +187,8 @@
         <i class="fas fa-bars"></i>
       </div>
     </div>
+    <!-- Bouton de contact fixe mobile -->
+    <!-- <a routerLink="/contact" class="mobile-contact-btn"> 📞 Consultation gratuite </a> -->
   </div>
 
   <!-- Mobile Sidebar -->
@@ -143,69 +198,120 @@
     </div>
     <div class="mobile-nav">
       <ul class="mobile-nav-list">
-        <li><a href="/about">À propos</a></li>
-        <li>
-          <a href="/services" class="has-submenu"
-            >Services <i class="fa-solid fa-angle-down"></i
+        <li><a routerLink="/about">À propos</a></li>
+        <li class="has-submenu">
+          <a routerLink="services"
+            >Services <i class="fas fa-chevron-down"></i
           ></a>
           <ul class="sub-menu">
             <li>
-              <a href="/services/creation-entreprise">Création d'entreprise</a>
+              <a routerLink="/services/creation-entreprise"
+                >Création d'entreprise</a
+              >
             </li>
-            <li><a href="/services/comptabilite">Comptabilité</a></li>
-            <li><a href="/services/fiscalite">Fiscalité des entreprises</a></li>
+            <li><a routerLink="/services/comptabilite">Comptabilité</a></li>
+            <li><a routerLink="/services/fiscalite">Fiscalité</a></li>
             <li>
-              <a href="/services/declaration-impot">Déclaration d'impot</a>
+              <a routerLink="/services/declaration-impot"
+                >Déclaration d'impot</a
+              >
             </li>
           </ul>
         </li>
-        <li><a href="/tarif">Nos Tarifs</a></li>
+        <li class="has-submenu">
+          <a routerLink="/societe-management-patrimoniale"
+            >Secteur d'activité <i class="fas fa-chevron-down"></i
+          ></a>
+          <ul class="sub-menu">
+            <li>
+              <a routerLink="/asbl">Asbl</a>
+            </li>
+            <li>
+              <a routerLink="/profil-independant">Indépendant</a>
+            </li>
+            <li>
+              <a routerLink="/societe-moyen">Société de moyen</a>
+            </li>
+            <li>
+              <a routerLink="/societe-exploitation">Société d'exploitation</a>
+            </li>
+            <li>
+              <a routerLink="/societe-management-patrimoniale"
+                >Société de management patrimonial</a
+              >
+            </li>
+            <li>
+              <a routerLink="/commercant-horeca">Commerçant HORECA</a>
+            </li>
+            <li>
+              <a routerLink="/professionel-sante">Professionnel de santé</a>
+            </li>
+            <li>
+              <a routerLink="/grande-entreprise">Grande entreprise</a>
+            </li>
+            <li>
+              <a routerLink="/promoteur-immobilier">Promoteur immobilier</a>
+            </li>
+          </ul>
+        </li>
+        <li><a routerLink="/tarif">Nos Tarifs</a></li>
+        <li><a routerLink="/calculatrice" class="red-link">Calculatrice</a></li>
         <li>
-          <a href="/vente" class="has-submenu"
+          <a routerLink="/vente" class="has-submenu"
             >Boostez votre entreprise <i class="fa-solid fa-angle-down"></i
           ></a>
           <ul class="sub-menu">
             <li>
-              <a href="/vente/salarie-independant">Salarié et indépendants</a>
-            </li>
-            <li><a href="/vente/passage-en-societe">Passage en societe</a></li>
-            <li>
-              <a href="/vente/compte-courant">Compte Courant administrateur</a>
+              <a routerLink="/vente/salarie-independant"
+                >Salarié et indépendants</a
+              >
             </li>
             <li>
-              <a href="/tresorerie" class="has-submenu"
+              <a routerLink="/vente/passage-en-societe">Passage en societe</a>
+            </li>
+            <li>
+              <a routerLink="/vente/compte-courant"
+                >Compte Courant administrateur</a
+              >
+            </li>
+            <li>
+              <a routerLink="/tresorerie" class="has-submenu"
                 >Trésorerie Transformez le Stress en Succès
                 <i class="fa-solid fa-angle-down"></i
               ></a>
               <ul class="sub-menu">
                 <li>
-                  <a href="/tresorerie/tresorerie-benefice"
+                  <a routerLink="/tresorerie/tresorerie-benefice"
                     >Trésorerie vs Bénéfices</a
                   >
                 </li>
                 <li>
-                  <a href="/tresorerie/investir-tresorerie"
+                  <a routerLink="/tresorerie/investir-tresorerie"
                     >Investir sans risquer</a
                   >
                 </li>
                 <li>
-                  <a href="/tresorerie/optimiser-stock">Optimisez vos Stocks</a>
+                  <a routerLink="/tresorerie/optimiser-stock"
+                    >Optimisez vos Stocks</a
+                  >
                 </li>
                 <li>
-                  <a href="/tresorerie/alerte-tresorerie">Alerte trésorerie</a>
+                  <a routerLink="/tresorerie/alerte-tresorerie"
+                    >Alerte trésorerie</a
+                  >
                 </li>
                 <li>
-                  <a href="/tresorerie/proteger-sa-tresorerie"
+                  <a routerLink="/tresorerie/proteger-sa-tresorerie"
                     >Protégez Votre Trésorerie</a
                   >
                 </li>
                 <li>
-                  <a href="/tresorerie/anticiper-sa-tresorerie"
+                  <a routerLink="/tresorerie/anticiper-sa-tresorerie"
                     >Anticipez vos Finances</a
                   >
                 </li>
                 <li>
-                  <a href="/tresorerie/accompagnement"
+                  <a routerLink="/tresorerie/accompagnement"
                     >Service d'accompagnement</a
                   >
                 </li>
@@ -213,52 +319,53 @@
             </li>
           </ul>
         </li>
-        <li><a href="/support">Support</a></li>
+
+        <li><a routerLink="/support">Support</a></li>
         <!-- <li>
-          <a href="/tresorerie/" class="has-submenu"
+          <a routerLink="/tresorerie/" class="has-submenu"
             >Trésorerie <i class="fa-solid fa-angle-down"></i
           ></a>
           <ul class="sub-menu">
             <li>
-              <a href="/tresorerie/tresorerie-benefice"
+              <a routerLink="/tresorerie/tresorerie-benefice"
                 >Trésorerie vs Bénéfices</a
               >
             </li>
             <li>
-              <a href="/tresorerie/investir-tresorerie"
+              <a routerLink="/tresorerie/investir-tresorerie"
                 >Investir sans risquer</a
               >
             </li>
             <li>
-              <a href="/tresorerie/optimiser-stock">Optimisez vos Stocks</a>
+              <a routerLink="/tresorerie/optimiser-stock">Optimisez vos Stocks</a>
             </li>
             <li>
-              <a href="/tresorerie/alerte-tresorerie">Alerte trésorerie</a>
+              <a routerLink="/tresorerie/alerte-tresorerie">Alerte trésorerie</a>
             </li>
             <li>
-              <a href="/tresorerie/proteger-sa-tresorerie"
+              <a routerLink="/tresorerie/proteger-sa-tresorerie"
                 >Protégez Votre Trésorerie</a
               >
             </li>
             <li>
-              <a href="/tresorerie/anticiper-sa-tresorerie"
+              <a routerLink="/tresorerie/anticiper-sa-tresorerie"
                 >Anticipez vos Finances</a
               >
             </li>
           </ul>
         </li> -->
         <!-- <li>
-          <a href="/support">Support</a>
+          <a routerLink="/support">Support</a>
           <ul class="sub-menu">
             <li>
               <a
-                href="https://get.anydesk.com/dzQb9eHl/AnyDesk_Custom_Client.exe"
+                routerLink="https://get.anydesk.com/dzQb9eHl/AnyDesk_Custom_Client.exe"
                 >Support pour Windows</a
               >
             </li>
             <li>
               <a
-                href="https://get.anydesk.com/U2eK2Jqz/AnyDesk_Custom_Client.dmg"
+                routerLink="https://get.anydesk.com/U2eK2Jqz/AnyDesk_Custom_Client.dmg"
                 >Support pour Mac</a
               >
             </li>
@@ -266,7 +373,7 @@
         </li> -->
       </ul>
       <div class="header-btn">
-        <a href="/contact" class="btn-red"
+        <a routerLink="/contact" class="btn-red"
           >Nos contacts <i class="fas fa-arrow-right"></i
         ></a>
       </div>

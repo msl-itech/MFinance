@@ -1,0 +1,567 @@
+<div class="independant-mobile-container">
+  <!-- Section Hero Optimisée avec image de fond réduite -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <img
+        src="assets/img/bg/bg_about.webp"
+        alt="Indépendants Background"
+        class="hero-bg-image"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <nav class="breadcrumb-mobile">
+        <span>Accueil > Indépendants et Starter</span>
+      </nav>
+
+      <h1 class="hero-title">Indépendants & Starter</h1>
+
+      <p class="hero-subtitle">
+        Lancez votre projet avec succès : accompagnement personnalisé pour
+        indépendants
+      </p>
+
+      <!-- Bouton d'accès rapide mobile -->
+      <div class="quick-access">
+        <button class="quick-access-btn" (click)="scrollToSection('services')">
+          ⚡ Accéder directement à l'essentiel
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Mobile Navigation -->
+  <app-sidebar-mobile></app-sidebar-mobile>
+
+  <!-- Section Introduction Simplifiée -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <h2 class="intro-title">Devenir indépendant en Belgique</h2>
+
+      <!-- Texte mobile simplifié -->
+      <div class="intro-text">
+        <p>
+          <strong>Devenir indépendant</strong>, c'est bien plus qu'un simple
+          changement de statut. C'est une
+          <strong>aventure passionnante</strong> vers la
+          <strong>liberté professionnelle</strong> et l'opportunité de
+          concrétiser vos idées.
+        </p>
+
+        <div class="intro-expand" *ngIf="!showFullIntro">
+          <button class="expand-btn" (click)="toggleIntro()">
+            + En savoir plus
+          </button>
+        </div>
+
+        <div class="intro-expanded" *ngIf="showFullIntro">
+          <p>
+            Que vous soyez en début de carrière ou en pleine réorientation, le
+            statut d'indépendant vous permet de bâtir un projet sur mesure.
+            Cependant, chaque aventure présente des défis : démarches
+            administratives, gestion financière, périodes de creux...
+          </p>
+          <p>
+            Fort de plus de 20 ans d'expérience, MFINANCES accompagne les
+            entrepreneurs dans la gestion de ces obstacles grâce à des méthodes
+            éprouvées.
+          </p>
+          <button class="expand-btn" (click)="toggleIntro()">- Réduire</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA bouton rouge stratégique -->
+    <div class="section-cta">
+      <button class="cta-primary" (click)="scrollToContact()">
+        🔴 Obtenez un diagnostic personnalisé
+      </button>
+      <p class="cta-subtitle">Consultation sous 72h - Gratuit</p>
+    </div>
+  </section>
+
+  <!-- Section Défis avec cartes visuelles -->
+  <section class="defis-section">
+    <div class="section-header">
+      <h2 class="section-title">Les défis des indépendants</h2>
+    </div>
+
+    <div class="defis-grid">
+      <div class="defi-item">
+        <div class="defi-emoji">💼</div>
+        <div class="defi-content">
+          <h3 class="defi-title">Travail intensif</h3>
+          <p class="defi-description">
+            Semaines pouvant dépasser 35 heures, surtout lors des phases de
+            démarrage. L'absence de congés payés nécessite une planification
+            rigoureuse.
+          </p>
+        </div>
+      </div>
+
+      <div class="defi-item">
+        <div class="defi-emoji">💸</div>
+        <div class="defi-content">
+          <h3 class="defi-title">Risques financiers</h3>
+          <p class="defi-description">
+            Dépendance excessive à quelques clients, retards de paiement. Les
+            périodes de faible activité exigent une épargne de sécurité.
+          </p>
+        </div>
+      </div>
+
+      <div class="defi-item">
+        <div class="defi-emoji">🚫</div>
+        <div class="defi-content">
+          <h3 class="defi-title">Protection sociale limitée</h3>
+          <p class="defi-description">
+            Ni congés payés ni couverture chômage. Des solutions alternatives
+            comme des assurances spécifiques sont essentielles.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi choisir le statut avec slider/cartes -->
+  <section class="benefits-section">
+    <div class="section-header">
+      <h2 class="section-title">Pourquoi choisir le statut d'indépendant ?</h2>
+    </div>
+
+    <div class="benefits-container">
+      <div class="benefit-card">
+        <div class="benefit-icon">✅</div>
+        <h3>Liberté professionnelle</h3>
+        <p>Définissez vos projets, horaires et priorités selon vos besoins</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">✅</div>
+        <h3>Développement personnel</h3>
+        <p>Transformez vos passions en activité rentable et épanouissante</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">✅</div>
+        <h3>Flexibilité juridique</h3>
+        <p>Évoluez vers une société selon la croissance de votre activité</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">✅</div>
+        <h3>Opportunités financières</h3>
+        <p>Profitez des aides Tremplin-Indépendants et subsides régionaux</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Comment devenir indépendant - Étapes slider -->
+  <section class="steps-section" id="services">
+    <div class="section-header">
+      <h2 class="section-title">Comment devenir indépendant ?</h2>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="steps-progress">
+      <div class="progress-bar">
+        <div
+          class="progress-fill"
+          [style.width.%]="((currentStepIndex + 1) / steps.length) * 100"
+        ></div>
+      </div>
+      <span class="progress-text">
+        {{ currentStepIndex + 1 }}/{{ steps.length }} -
+        {{ steps[currentStepIndex].title }}
+      </span>
+    </div>
+
+    <!-- Étapes slider - Une seule étape visible -->
+    <div class="steps-container">
+      <div class="step-card active">
+        <div class="step-number">{{ currentStepIndex + 1 }}</div>
+        <h3 class="step-title">{{ steps[currentStepIndex].title }}</h3>
+        <p class="step-description">{{ steps[currentStepIndex].description }}</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="steps-navigation">
+      <button
+        class="nav-btn prev"
+        (click)="previousStep()"
+        [disabled]="currentStepIndex === 0"
+        *ngIf="currentStepIndex > 0"
+      >
+        ← Précédent
+      </button>
+      <div *ngIf="currentStepIndex === 0" class="nav-spacer"></div>
+      
+      <button
+        class="nav-btn next"
+        (click)="nextStep()"
+        [disabled]="currentStepIndex === steps.length - 1"
+        *ngIf="currentStepIndex < steps.length - 1"
+      >
+        Suivant →
+      </button>
+      
+      <!-- Points de navigation visuelle -->
+      <div class="steps-dots" *ngIf="currentStepIndex === steps.length - 1">
+        <span 
+          class="dot" 
+          *ngFor="let step of steps; let i = index"
+          [class.active]="i === currentStepIndex"
+          (click)="goToStep(i)"
+        ></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Nos points distinctifs -->
+  <section class="distinctifs-section">
+    <div class="section-header">
+      <h2 class="section-title">Nos points distinctifs</h2>
+    </div>
+
+    <div class="distinctifs-grid">
+      <div class="distinctif-card">
+        <div class="distinctif-icon">⏱️</div>
+        <h3>Gain de temps</h3>
+        <p>
+          Déléguez les démarches complexes pour vous concentrer sur l'essentiel
+        </p>
+      </div>
+
+      <div class="distinctif-card">
+        <div class="distinctif-icon">🎯</div>
+        <h3>20 ans d'expertise</h3>
+        <p>
+          Nos bonnes pratiques garantissent un démarrage solide et une gestion
+          efficace
+        </p>
+      </div>
+
+      <div class="distinctif-card">
+        <div class="distinctif-icon">🤝</div>
+        <h3>Accompagnement sur mesure</h3>
+        <p>
+          Solutions adaptées à vos besoins, que vous soyez débutant ou en
+          croissance
+        </p>
+      </div>
+
+      <div class="distinctif-card">
+        <div class="distinctif-icon">📈</div>
+        <h3>Optimisation des résultats</h3>
+        <p>
+          Maximisez vos revenus et sécurisez votre avenir avec des stratégies
+          sur mesure
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Optimisée avec sommaire -->
+  <section class="faq-section">
+    <div class="section-header">
+      <h2 class="section-title">Questions fréquentes - Indépendants</h2>
+    </div>
+
+
+    <div class="faq-content">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <span class="faq-priority" *ngIf="faq.priority">💡</span>
+          <h3>{{ faq.question }}</h3>
+          <span class="faq-toggle" [class.open]="faq.isOpen">
+            {{ faq.isOpen ? "−" : "+" }}
+          </span>
+        </div>
+        <div class="faq-answer" [class.open]="faq.isOpen">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+
+      <div class="faq-contact">
+        <p>Contactez-nous si vous avez d'autres questions</p>
+        <button class="faq-contact-btn" (click)="scrollToContact()">
+          💬 Poser une question
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Indépendant spécifique optimisé -->
+  <!-- <section class="contact-section" id="contact">
+    <div class="contact-header">
+      <div class="contact-badge">
+        <span>📞 CONTACT INDÉPENDANT</span>
+      </div>
+      <h2 class="contact-title">
+        Prêt à lancer votre activité d'indépendant ?
+      </h2>
+      <p class="contact-subtitle">
+        Contactez-nous dès aujourd'hui pour une consultation gratuite !
+      </p>
+    </div>
+
+    <div class="contact-actions">
+      <div class="contact-method" (click)="callNow()">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">
+          <span class="contact-label">Appelez-nous directement</span>
+          <span class="contact-value">+32 2 542 04 32</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="emailNow()">
+        <div class="contact-icon">📧</div>
+        <div class="contact-info">
+          <span class="contact-label">Envoyez-nous un email</span>
+          <span class="contact-value">info&#64;mfinances.be</span>
+        </div>
+      </div>
+
+      <div class="contact-method" (click)="scheduleAppointment()">
+        <div class="contact-icon">📅</div>
+        <div class="contact-info">
+          <span class="contact-label">Réservez un créneau</span>
+          <span class="contact-value">Prendre RDV en ligne</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-cta-independant">
+      <button class="cta-independant-btn" (click)="openIndependantContact()">
+        📆 Prendre un rendez-vous Indépendant
+      </button>
+      <button class="maps-btn" (click)="openMaps()">
+        📍 Voir sur Google Maps
+      </button>
+    </div>
+  </section> -->
+
+  <!-- Formulaire d'évaluation optimisé avec améliorations -->
+  <section class="evaluation-section" id="formulaire-evaluation">
+    <div class="evaluation-header">
+      <div class="evaluation-badge">
+        <span>🧭 ÉVALUATION GRATUITE</span>
+      </div>
+      <h2 class="evaluation-title">Optimisez votre activité indépendante</h2>
+      <p class="evaluation-subtitle">
+        En 2 minutes, identifiez vos priorités et recevez un mini-diagnostic
+        personnalisé sous 72h
+      </p>
+    </div>
+
+    <div class="evaluation-form">
+      <!-- Stepper visuel -->
+      <div class="form-stepper">
+        <div class="stepper-container">
+          <div
+            class="stepper-step"
+            *ngFor="let step of formSteps; let i = index"
+            [class.active]="i + 1 === currentFormStep"
+            [class.completed]="i + 1 < currentFormStep"
+          >
+            <div class="step-circle">
+              <span *ngIf="i + 1 < currentFormStep">✅</span>
+              <span *ngIf="i + 1 >= currentFormStep">{{ i + 1 }}</span>
+            </div>
+            <span class="step-label">{{ step.label }}</span>
+          </div>
+        </div>
+        <div class="stepper-progress">
+          <div
+            class="progress-fill"
+            [style.width.%]="(currentFormStep / totalFormSteps) * 100"
+          ></div>
+        </div>
+      </div>
+
+      <form
+        class="form-content"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="independantForm"
+      >
+        <!-- Étape 1: Statut professionnel -->
+        <div class="form-step" *ngIf="currentFormStep === 1">
+          <h3>Quel est votre statut professionnel actuel ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let statut of statutOptions"
+              [class.selected]="
+                independantForm.get('statut')?.value === statut.value
+              "
+            >
+              <input
+                type="radio"
+                name="statut"
+                [value]="statut.value"
+                formControlName="statut"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ statut.icon }}</div>
+                <span class="option-label">{{ statut.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="independantForm.get('statut')?.value === statut.value"
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 2: Revenus annuels -->
+        <div class="form-step" *ngIf="currentFormStep === 2">
+          <h3>Quel est votre chiffre d'affaires annuel estimé ?</h3>
+          <div class="options-grid">
+            <label
+              class="option-card"
+              *ngFor="let revenu of revenuOptions"
+              [class.selected]="
+                independantForm.get('revenuAnnuel')?.value === revenu.value
+              "
+            >
+              <input
+                type="radio"
+                name="revenuAnnuel"
+                [value]="revenu.value"
+                formControlName="revenuAnnuel"
+              />
+              <div class="option-content">
+                <div class="option-icon">💰</div>
+                <span class="option-label">{{ revenu.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="
+                    independantForm.get('revenuAnnuel')?.value === revenu.value
+                  "
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 3: Besoins spécifiques -->
+        <div class="form-step" *ngIf="currentFormStep === 3">
+          <h3>Quels sont vos besoins actuels ?</h3>
+          <p class="step-subtitle">Plusieurs choix possibles</p>
+          <div class="options-grid">
+            <label
+              class="option-card checkbox-card"
+              *ngFor="let besoin of besoinsOptions"
+              [class.selected]="
+                independantForm.get('besoin_' + besoin.value)?.value
+              "
+            >
+              <input
+                type="checkbox"
+                [formControlName]="'besoin_' + besoin.value"
+              />
+              <div class="option-content">
+                <div class="option-icon">{{ besoin.icon }}</div>
+                <span class="option-label">{{ besoin.label }}</span>
+                <span
+                  class="option-check"
+                  *ngIf="independantForm.get('besoin_' + besoin.value)?.value"
+                  >✅</span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Étape 4: Coordonnées -->
+        <div class="form-step" *ngIf="currentFormStep === 4">
+          <h3>Vos coordonnées</h3>
+          <p class="step-subtitle">
+            Pour être recontacté(e) par un conseiller et recevoir votre
+            diagnostic :
+          </p>
+          <div class="input-group">
+            <div class="input-field">
+              <label for="nom">Nom *</label>
+              <input
+                id="nom"
+                type="text"
+                formControlName="nom"
+                placeholder="Votre nom complet"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="email">Email *</label>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="votre@email.com"
+                required
+              />
+            </div>
+            <div class="input-field">
+              <label for="telephone">Téléphone *</label>
+              <input
+                id="telephone"
+                type="tel"
+                formControlName="telephone"
+                placeholder="+32 4XX XX XX XX"
+                required
+              />
+            </div>
+          </div>
+          <div class="contact-info">
+            📞 Un conseiller vous appellera sous 72h pour un échange gratuit
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button
+            type="button"
+            class="btn-prev"
+            *ngIf="currentFormStep > 1"
+            (click)="previousFormStep()"
+          >
+            ← Précédent
+          </button>
+          <button
+            type="button"
+            class="btn-next"
+            *ngIf="currentFormStep < totalFormSteps"
+            (click)="nextFormStep()"
+            [disabled]="!isFormStepValid()"
+          >
+            Suivant →
+          </button>
+          <button
+            type="submit"
+            class="btn-submit"
+            *ngIf="currentFormStep === totalFormSteps"
+            [disabled]="!isFormValid()"
+          >
+            📞 Demander mon diagnostic gratuit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Message de succès -->
+    <div class="success-message" *ngIf="formSubmitted">
+      <div class="success-icon">✅</div>
+      <h3>🎉 Merci !</h3>
+      <p>
+        Votre évaluation a été envoyée. Nous vous rappelons sous 72h avec votre
+        diagnostic personnalisé.
+      </p>
+      <button class="btn-reset" (click)="resetForm()">
+        Nouvelle évaluation
+      </button>
+    </div>
+  </section>
+</div>

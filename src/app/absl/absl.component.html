@@ -2,7 +2,7 @@
   .section-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #25335b;
+    color: #1a2c51;
   }
 
   .highlighted {
@@ -15,7 +15,7 @@
   .section-content h5 {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #25335b;
+    color: #1a2c51;
   }
 
   .flex-content {
@@ -71,7 +71,7 @@
   }
 
   .bg-custom--primary {
-    background-color: #25335b;
+    background-color: #1a2c51;
   }
 
   .bg-custom--primary p,
@@ -135,62 +135,540 @@
     transition: width 0.6s ease;
   }
 
-  .animate__fadeIn {
-    animation-name: fadeIn;
-    animation-duration: 0.5s;
+  .custom-image-size {
+    width: 80%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
+    height: auto; /* Maintient le ratio d'aspect */
+    max-width: 350px; /* Limite la taille maximale */
+    object-fit: contain; /* Préserve les proportions */
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Améliorations pour la section CTA finale */
+  .cta-final-section {
+    min-height: 300px;
   }
 
-  .form-control:focus {
-    border-color: #ff3333;
-    box-shadow: 0 0 0 0.2rem rgba(255, 51, 51, 0.25);
+  .cta-final-section .row {
+    min-height: 250px;
   }
 
-  .btn-danger {
-    background-color: #ff3333;
-    border-color: #ff3333;
+  /* Améliorations UX Mobile selon audit */
+
+  /* 1. Header réduit sur mobile */
+  .header {
+    position: relative;
+    background: linear-gradient(rgba(37, 51, 91, 0.9), rgba(37, 51, 91, 0.9)),
+      url("../../assets/img/webp/57.avif") no-repeat center center;
+    background-size: cover;
+    padding: 60px 0 40px;
+    color: white;
   }
 
-  .btn-danger:hover {
-    background-color: #e62e2e;
-    border-color: #e62e2e;
+  .header-overlay {
+    position: relative;
+    z-index: 2;
   }
 
-  .card {
-    border: none;
+  /* Bouton d'accès rapide mobile */
+  .quick-access-mobile {
+    display: none;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    margin-top: -10px;
+    position: relative;
+    z-index: 3;
   }
 
-  .card-header.bg-custom--primary {
-    background-color: #25335b !important;
+  .quick-access-btn {
+    background: linear-gradient(135deg, #ff4d4d, #ff3333);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
   }
 
-  .text-primary {
-    color: #25335b !important;
+  .quick-access-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.4);
   }
 
-  /* Animation pour les cartes d'options */
-  .option-card:active {
-    transform: scale(0.98);
+  /* 2. Introduction simplifiée mobile */
+  .intro-mobile {
+    display: none;
   }
 
-  /* Responsive adjustments */
+  .intro-toggle {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .intro-expanded {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  /* 3. Boutons CTA flottants mobile */
+  .mobile-cta-floating {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+  }
+
+  .floating-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .floating-btn {
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .floating-btn-primary {
+    background: linear-gradient(135deg, #ff4d4d, #ff3333);
+    color: white;
+  }
+
+  .floating-btn-secondary {
+    background: transparent;
+    color: #ff4d4d;
+    border: 2px solid #ff4d4d;
+  }
+
+  /* 4. Défis avec emojis et ordre amélioré */
+  .defis-mobile {
+    display: none;
+  }
+
+  .defi-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #ff4d4d;
+  }
+
+  .defi-emoji {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+
+  .defi-content {
+    flex: 1;
+  }
+
+  .defi-title {
+    font-weight: 600;
+    color: #1a2c51;
+    margin-bottom: 0.5rem;
+  }
+
+  .defi-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* 5. Contact ASBL spécifique */
+  .contact-asbl-cta {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9ff, #fff);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  .contact-asbl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #1a2c51, #3d4a73);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .contact-asbl-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 51, 91, 0.3);
+  }
+
+  .maps-link {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
   @media (max-width: 768px) {
+    /* 1. Header réduit */
+    .header {
+      padding: 40px 0 20px;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .quick-access-mobile {
+      display: block;
+    }
+
+    /* 2. Introduction mobile simplifiée */
+    .intro-desktop {
+      display: none;
+    }
+
+    .intro-mobile {
+      display: block;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #f8f9ff, #fff);
+      border-radius: 15px;
+      margin-bottom: 2rem;
+    }
+
+    /* 3. CTA flottants */
+    .mobile-cta-floating {
+      display: block;
+    }
+
+    .button-container .home2-btn {
+      display: none; /* Masquer les boutons fixes sur mobile */
+    }
+
+    /* 4. Défis version mobile */
+    .defis.row {
+      display: none; /* Masquer version desktop */
+    }
+
+    .defis-mobile {
+      display: block;
+      margin: 2rem 0;
+    }
+
+    /* 5. Sidebar masquée sur mobile - remplacée par le carrousel en bas */
+    .col-lg-4 {
+      display: none;
+    }
+
+    .col-lg-8 {
+      width: 100%;
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+
+    /* Styles généraux mobile */
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .contact-text h1 {
+      font-size: 2rem;
+    }
+
+    .button-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .button-container .btn {
+      margin-bottom: 1rem;
+      margin-right: 0 !important;
+    }
+
+    .single-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .single-content h4 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .single-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
     .step-content {
       min-height: 350px;
     }
 
     .col-md-6 .option-card {
       margin-bottom: 1rem;
+    }
+
+    .custom-image-size {
+      width: 60%;
+      max-width: 200px;
+    }
+
+    .cta-final-section {
+      min-height: 200px;
+    }
+
+    .cta-final-section .row {
+      min-height: 150px;
+    }
+  }
+
+  /* Très petits écrans */
+  @media (max-width: 480px) {
+    .floating-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .floating-btn {
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .mobile-cta-floating {
+      left: 10px;
+      right: 10px;
+      transform: none;
+      width: calc(100% - 20px);
+    }
+
+    .defi-item {
+      padding: 0.8rem;
+    }
+
+    .defi-emoji {
+      font-size: 1.3rem;
+    }
+  }
+
+  /* Améliorations pour les tablettes */
+  @media (max-width: 991px) {
+    .works-img-gallery {
+      margin-top: 2rem;
+    }
+
+    .contact-text {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .work-item {
+      margin-bottom: 2rem;
+    }
+
+    .defis .col-md-8 {
+      margin-top: 1rem;
+    }
+  }
+
+  /* Améliorations pour les très petits écrans */
+  @media (max-width: 576px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+    }
+
+    .contact-text h1 {
+      font-size: 1.75rem;
+    }
+
+    .contact-text p {
+      font-size: 1rem;
+    }
+
+    .btn {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .step-content {
+      min-height: 300px;
+    }
+
+    .option-card {
+      margin-bottom: 0.75rem;
+    }
+
+    .form-control {
+      font-size: 1rem;
+    }
+
+    .alert {
+      font-size: 0.9rem;
+    }
+
+    .single-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .single-content h4 {
+      font-size: 1.25rem;
+    }
+
+    .single-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .chek-list p {
+      font-size: 0.9rem;
+    }
+
+    .accordion-body {
+      font-size: 0.9rem;
+    }
+
+    /* Corrections spécifiques pour les images et FAQ */
+    .about-img {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .service-details-img {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .service-faq .container {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+
+  /* Améliorations pour les images */
+  .works-img-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .main-image {
+    max-height: 300px;
+  }
+
+  .secondary-image {
+    max-height: 200px;
+  }
+
+  /* Améliorations pour l'image "Pourquoi collaborer avec nous" */
+  .about-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+  }
+
+  /* Améliorations pour l'image FAQ */
+  .service-details-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 350px;
+  }
+
+  @media (max-width: 768px) {
+    .main-image,
+    .secondary-image {
+      max-height: 250px;
+    }
+
+    .about-img img {
+      max-height: 300px;
+    }
+
+    .service-details-img img {
+      max-height: 250px;
+    }
+  }
+
+  /* Améliorations pour le formulaire */
+  .form-check-card {
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .form-check-card .card {
+      min-height: 100px;
+    }
+
+    .form-check-card .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .form-check-card i {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  /* Améliorations pour les boutons */
+  .home2-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .home2-btn {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .btn-red,
+  .btn-outline-danger {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 576px) {
+    .btn-red,
+    .btn-outline-danger {
+      white-space: normal;
+      text-align: center;
     }
   }
 
@@ -289,6 +767,7 @@
     }
   }
 </style>
+
 <header class="header">
   <div class="header-overlay">
     <div class="container">
@@ -297,6 +776,13 @@
     </div>
   </div>
 </header>
+
+<!-- Bouton d'accès rapide mobile -->
+<div class="quick-access-mobile">
+  <a href="#targetSection" class="quick-access-btn">
+    ⚡ Accéder directement à l'info
+  </a>
+</div>
 
 <!-- Service single start -->
 <section class="service-single pt-120 pb-130">
@@ -313,35 +799,60 @@
           <h4>
             Accompagnement pour les ASBL : Donnez vie à votre mission sociale
           </h4>
-          <p>
-            Les Associations Sans But Lucratif (ASBL) en Belgique sont des
-            structures incontournables pour porter des projets sociaux,
-            culturels, éducatifs ou environnementaux. Si leur fonctionnement
-            repose sur des valeurs d'entraide et d'engagement, leur gestion
-            implique également des défis administratifs, financiers et
-            organisationnels.
-          </p>
-          <p>
-            Chez MFINANCES, nous comprenons les réalités des ASBL belges et
-            offrons un accompagnement sur mesure pour simplifier votre gestion
-            et maximiser l'impact de votre mission.
-          </p>
+
+          <!-- Version desktop -->
+          <div class="intro-desktop">
+            <p>
+              Les Associations Sans But Lucratif (ASBL) en Belgique sont des
+              structures incontournables pour porter des projets sociaux,
+              culturels, éducatifs ou environnementaux. Si leur fonctionnement
+              repose sur des valeurs d'entraide et d'engagement, leur gestion
+              implique également des défis administratifs, financiers et
+              organisationnels.
+            </p>
+            <p>
+              Chez MFINANCES, nous comprenons les réalités des ASBL belges et
+              offrons un accompagnement sur mesure pour simplifier votre gestion
+              et maximiser l'impact de votre mission.
+            </p>
+          </div>
+
+          <!-- Version mobile simplifiée -->
+          <div class="intro-mobile">
+            <p>
+              <strong>Enjeux administratifs</strong> complexes pour votre ASBL ?
+              Chez MFINANCES, nous offrons un
+              <strong>accompagnement sur mesure</strong> pour une
+              <strong>gestion simplifiée</strong> de votre association.
+            </p>
+            <a class="intro-toggle" onclick="toggleIntroExpanded()"
+              >+ En savoir plus</a
+            >
+            <div id="introExpanded" class="intro-expanded">
+              <p>
+                Les ASBL belges portent des projets sociaux, culturels,
+                éducatifs ou environnementaux essentiels. Mais leur gestion
+                implique des défis administratifs, financiers et
+                organisationnels que nous maîtrisons parfaitement.
+              </p>
+            </div>
+          </div>
 
           <div class="button-container">
-            <div class="home2-btn mb-4" style="margin-left: 8px">
+            <div class="home2-btn mb-4">
               <button
                 (click)="scrollToSection('targetSection')"
-                class="btn-red me-3"
+                class="btn-red"
               >
                 Découvrez ce que vous gagnerez avec nous
-                <i class="fa-solid fa-arrow-right"></i>
+                <i class="fa-solid fa-arrow-right ms-2"></i>
               </button>
               <button
                 (click)="scrollToSection('formulaire-evaluation')"
                 class="btn btn-outline-danger"
               >
                 🧭 Évaluez votre ASBL (2 min)
-                <i class="fa-solid fa-arrow-down"></i>
+                <i class="fa-solid fa-arrow-down ms-2"></i>
               </button>
             </div>
           </div>
@@ -350,20 +861,20 @@
             <img src="../../assets/img/webp/58.avif" alt="" class="rounded-4" />
           </div>
         </div>
-        <!-- Challenges Section -->
+
+        <!-- Challenges Section Desktop -->
         <h3>Les défis majeurs auxquels font face les ASBL</h3>
         <div class="defis row align-items-center mt-10">
           <!-- Image -->
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-6 mx-auto">
             <img
               src="../../assets/img/webp/asbl_mini.webp"
               alt="Défis ASBL"
-              class="img-fluid"
-              style="border-radius: 16"
+              class="img-fluid rounded-4"
             />
           </div>
           <!-- Content -->
-          <div class="col-md-8 mt-30">
+          <div class="col-md-8 mt-30 mt-md-0">
             <ul class="single-content-list list-unstyled pl-25">
               <li>
                 <i
@@ -402,11 +913,98 @@
             </ul>
           </div>
         </div>
+
+        <!-- Version mobile des défis avec emojis -->
+        <div class="defis-mobile">
+          <h3 style="text-align: center; margin-bottom: 2rem">
+            Les défis majeurs de votre ASBL
+          </h3>
+
+          <div class="defi-item">
+            <div class="defi-emoji">📑</div>
+            <div class="defi-content">
+              <div class="defi-title">Respect des obligations légales</div>
+              <div class="defi-description">
+                Assemblées générales, rapports annuels, dépôt des comptes : la
+                gestion administrative chronophage.
+              </div>
+            </div>
+          </div>
+
+          <div class="defi-item">
+            <div class="defi-emoji">💰</div>
+            <div class="defi-content">
+              <div class="defi-title">Subsides : gestion rigoureuse</div>
+              <div class="defi-description">
+                Justification précise des coûts et respect des critères stricts
+                imposés par les financeurs.
+              </div>
+            </div>
+          </div>
+
+          <div class="defi-item">
+            <div class="defi-emoji">👥</div>
+            <div class="defi-content">
+              <div class="defi-title">Gestion des bénévoles & ressources</div>
+              <div class="defi-description">
+                Encadrement, répartition des frais entre projets et sécurisation
+                de la trésorerie.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact ASBL spécifique -->
+        <div class="contact-asbl-cta">
+          <a href="/contact" class="contact-asbl-btn">
+            📆 Prendre un rendez-vous ASBL
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <br />
+          <a
+            href="https://maps.google.com/?q=20+Rue+de+la+Magnanerie,+1180+Uccle"
+            target="_blank"
+            class="maps-link"
+          >
+            📍 Voir sur Google Maps
+          </a>
+        </div>
       </div>
       <!-- End Main Content -->
     </div>
   </div>
 </section>
+
+<!-- CTA flottants mobile -->
+<div class="mobile-cta-floating">
+  <div class="floating-buttons">
+    <a href="#targetSection" class="floating-btn floating-btn-primary">
+      💰 Nos services
+    </a>
+    <a
+      href="#formulaire-evaluation"
+      class="floating-btn floating-btn-secondary"
+    >
+      🧭 Évaluation
+    </a>
+  </div>
+</div>
+
+<!-- Fonction JavaScript pour le toggle -->
+<script>
+  function toggleIntroExpanded() {
+    const expanded = document.getElementById("introExpanded");
+    const toggle = document.querySelector(".intro-toggle");
+
+    if (expanded.style.display === "none" || expanded.style.display === "") {
+      expanded.style.display = "block";
+      toggle.textContent = "- Réduire";
+    } else {
+      expanded.style.display = "none";
+      toggle.textContent = "+ En savoir plus";
+    }
+  }
+</script>
 
 <section class="bg-custom--primary" #serviceSection>
   <div class="works sec-padding">
@@ -628,26 +1226,26 @@
           data-aos-duration="1000"
         >
           <div class="works-img-gallery space-sm-50 img-border">
-            <div class="row g-3">
-              <div class="col-12 mb-3">
+            <div class="row g-2 g-md-3">
+              <div class="col-12">
                 <img
                   src="../../assets/img/webp/56.avif"
                   alt="Image principale des services ASBL"
-                  class="img-fluid w-100 main-image"
+                  class="img-fluid w-100 main-image rounded-3"
                 />
               </div>
-              <div class="col-12">
+              <div class="col-6">
                 <img
                   src="../../assets/img/webp/5.webp"
                   alt="Image secondaire 1"
-                  class="img-fluid w-100 secondary-image"
+                  class="img-fluid w-100 secondary-image rounded-3"
                 />
               </div>
-              <div class="col-12">
+              <div class="col-6">
                 <img
                   src="../../assets/img/webp/4.webp"
                   alt="Image secondaire 2"
-                  class="img-fluid w-100 secondary-image"
+                  class="img-fluid w-100 secondary-image rounded-3"
                 />
               </div>
             </div>
@@ -657,14 +1255,23 @@
     </div>
   </div>
 </section>
+
 <section>
   <!--=====about-start=======-->
   <div class="about sec-padding" id="targetSection">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-6" data-aos="fade-right" data-aos-duration="800">
+        <div
+          class="col-md-6 mb-4 mb-md-0"
+          data-aos="fade-right"
+          data-aos-duration="800"
+        >
           <div class="about-img img-border">
-            <img src="../../assets/img/webp/8.webp" alt="" />
+            <img
+              src="../../assets/img/webp/8.webp"
+              alt="Pourquoi collaborer avec nous"
+              class="img-fluid rounded-4"
+            />
           </div>
         </div>
         <div
@@ -748,13 +1355,18 @@
       </div>
       <div class="space40"></div>
       <div class="row align-items-center">
-        <div class="col-md-6">
+        <div class="col-md-6 mb-4 mb-md-0">
           <div class="service-details-img img-border">
-            <img src="../../assets/img/webp/57.avif" alt="" appOptimizeImage />
+            <img
+              src="../../assets/img/webp/57.avif"
+              alt="FAQ ASBL"
+              appOptimizeImage
+              class="img-fluid rounded-4"
+            />
           </div>
         </div>
         <div class="col-md-6">
-          <div class="hadding hadding-p space-sm-30">
+          <div class="hadding hadding-p space-sm-30 px-3 px-md-0">
             <h2 class="text-white">
               L'ASBL peut-elle exercer une activité commerciale ?
             </h2>
@@ -766,7 +1378,7 @@
           </div>
           <div class="space20"></div>
 
-          <div class="accordion" id="accordionExample">
+          <div class="accordion px-3 px-md-0" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header active-header" id="headingOne">
                 <button
@@ -867,25 +1479,27 @@
 </section>
 
 <section class="container my-5">
-  <div class="rounded-4 bg-custom--primary text-white px-4">
-    <div class="row align-items-center">
+  <div class="rounded-4 bg-custom--primary text-white px-4 cta-final-section">
+    <div class="row align-items-center h-100">
       <!-- Image visible uniquement à partir du md (desktop) -->
       <div
-        class="col-md-6 d-none d-md-flex justify-content-center align-items-end"
+        class="col-md-6 justify-content-center align-items-end"
         data-aos="fade-left"
         data-aos-delay="200"
       >
-        <img
-          src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
-          alt="Personne souriante"
-          class="img-fluid custom-image-size"
-          style="z-index: 2; position: relative"
-        />
+        <div class="text-center">
+          <img
+            src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
+            alt="Personne souriante"
+            class="img-fluid custom-image-size"
+            style="z-index: 2; position: relative"
+          />
+        </div>
       </div>
 
       <!-- Texte et bouton, centrés sur mobile/tablette -->
       <div
-        class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
+        class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0 py-4"
         data-aos="fade-right"
         data-aos-delay="400"
       >
@@ -943,8 +1557,8 @@
         Quel est le domaine principal de votre ASBL ?
       </p>
 
-      <div class="row g-3">
-        <div class="col-md-6" *ngFor="let type of asblTypes">
+      <div class="row g-2 g-md-3">
+        <div class="col-sm-6 col-md-6" *ngFor="let type of asblTypes">
           <label class="form-check-card">
             <input
               type="radio"
@@ -988,8 +1602,8 @@
         Quel est le budget annuel moyen de votre ASBL ?
       </p>
 
-      <div class="row g-3">
-        <div class="col-md-6" *ngFor="let budget of budgetRanges">
+      <div class="row g-2 g-md-3">
+        <div class="col-sm-6 col-md-6" *ngFor="let budget of budgetRanges">
           <label class="form-check-card">
             <input
               type="radio"
@@ -1021,7 +1635,7 @@
       </p>
 
       <div class="row g-3">
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <label class="form-label"
             >Nom <span class="text-danger">*</span></label
           >
@@ -1038,7 +1652,7 @@
             Le nom est requis
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <label class="form-label"
             >Prénom <span class="text-danger">*</span></label
           >
@@ -1057,7 +1671,7 @@
             Le prénom est requis
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <label class="form-label"
             >Email <span class="text-danger">*</span></label
           >
@@ -1081,7 +1695,7 @@
             >
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <label class="form-label"
             >Téléphone <span class="text-danger">*</span></label
           >
@@ -1162,8 +1776,8 @@
         Quels sont vos besoins les plus urgents ? (Plusieurs choix possibles)
       </p>
 
-      <div class="row g-3">
-        <div class="col-md-6" *ngFor="let priorite of priorites">
+      <div class="row g-2 g-md-3">
+        <div class="col-sm-6 col-md-6" *ngFor="let priorite of priorites">
           <label class="form-check-card">
             <input
               type="checkbox"

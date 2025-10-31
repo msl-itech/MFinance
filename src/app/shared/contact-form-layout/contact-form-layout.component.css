@@ -268,12 +268,12 @@
 
 .btn-outline-primary {
   background: transparent;
-  color: #3b82f6;
-  border: 2px solid #3b82f6;
+  color: #f34947;
+  border: 2px solid #f34947;
 }
 
 .btn-outline-primary:hover {
-  background: #3b82f6;
+  background: #f34947;
   color: white;
 }
 
@@ -322,11 +322,11 @@
 }
 
 .text-info {
-  color: #3b82f6 !important;
+  color: #f34947 !important;
 }
 
 .text-primary {
-  color: #3b82f6 !important;
+  color: #f34947 !important;
 }
 
 .text-secondary {

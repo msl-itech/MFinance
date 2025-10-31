@@ -1,78 +1,46 @@
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component';
-import { AbslComponent } from './absl/absl.component';
-import { AvisGoogleComponent } from './avis-google/avis-google.component';
-import { ContactComponent } from './contact/contact.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { ProfessionelSanteComponent } from './professionel-sante/professionel-sante.component';
-import { ProfilCommercantHorecaComponent } from './profil-commercant-horeca/profil-commercant-horeca.component';
-import { ProfilGrandeEntrepriseComponent } from './profil-grande-entreprise/profil-grande-entreprise.component';
-import { ProfilIndependantComponent } from './profil-independant/profil-independant.component';
-import { ProfilPromoteurImmobilierComponent } from './profil-promoteur-immobilier/profil-promoteur-immobilier.component';
-import { ProfilSocieteExploitationComponent } from './profil-societe-exploitation/profil-societe-exploitation.component';
-import { ProfilSocieteManagementPatrimonialeComponent } from './profil-societe-management-patrimoniale/profil-societe-management-patrimoniale.component';
-import { ProfilSocieteMoyenComponent } from './profil-societe-moyen/profil-societe-moyen.component';
-import { SupportComponent } from './support/support.component';
-import { TarifComponent } from './tarif/tarif.component';
+import { DeviceService } from './core/device.service';
+import { DESKTOP_ROUTES } from './routing/routes.desktop';
+import { MOBILE_ROUTES } from './routing/routes.mobile';
+import { CalculatriceComponent } from './calculatrice/calculatrice.component';
+
+// Fonction pour obtenir les routes appropriées selon l'appareil
+function getRoutes(): Routes {
+  const deviceService = inject(DeviceService);
+  return deviceService.shouldUseMobileVersion()
+    ? MOBILE_ROUTES
+    : DESKTOP_ROUTES;
+}
 
 const routes: Routes = [
-  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   {
-    path: 'accueil',
-    loadChildren: () =>
-      import('./module-accueil/module-accueil.module').then(
-        (m) => m.ModuleAccueilModule
-      ),
-  },
-  { path: 'support', component: SupportComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'tarif', component: TarifComponent },
-  { path: 'absl', component: AbslComponent },
-  { path: 'avis-google', component: AvisGoogleComponent },
-  { path: 'profil-independant', component: ProfilIndependantComponent },
-  {
-    path: 'societe-management-patrimoniale',
-    component: ProfilSocieteManagementPatrimonialeComponent,
-  },
-  { path: 'societe-moyen', component: ProfilSocieteMoyenComponent },
-  {
-    path: 'societe-exploitation',
-    component: ProfilSocieteExploitationComponent,
-  },
-  { path: 'commercant-horeca', component: ProfilCommercantHorecaComponent },
-  { path: 'professionel-sante', component: ProfessionelSanteComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'grande-entreprise', component: ProfilGrandeEntrepriseComponent },
-  {
-    path: 'promoteur-immobilier',
-    component: ProfilPromoteurImmobilierComponent,
+    path: '',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return !deviceService.shouldUseMobileVersion();
+      },
+    ],
+    children: DESKTOP_ROUTES,
   },
   {
-    path: 'services',
-    loadChildren: () =>
-      import('./ServiceModules/services.module').then((m) => m.ServicesModule),
+    path: '',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return deviceService.shouldUseMobileVersion();
+      },
+    ],
+    children: MOBILE_ROUTES,
   },
-  {
-    path: 'vente',
-    loadChildren: () =>
-      import('./venteModule/vente/vente.module').then((m) => m.VenteModule),
-  },
-  {
-    path: 'tresorerie',
-    loadChildren: () =>
-      import('./TresorerieModule/tresorire/tresorire.module').then(
-        (m) => m.TresorireModule
-      ),
-  },
-  // Route wildcard pour la page 404
-  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
       scrollPositionRestoration: 'enabled',
+      onSameUrlNavigation: 'reload',
     }),
   ],
   exports: [RouterModule],
