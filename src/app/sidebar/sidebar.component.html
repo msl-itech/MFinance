@@ -4,7 +4,7 @@
     <ul class="widget-category list-unstyled d-flex flex-column gap-2">
       <!-- Affichage dynamique des catégories -->
       <li *ngFor="let category of categories.slice(0, maxVisibleCategories)">
-        <a [href]="category.route" hrefActive="active">
+        <a [routerLink]="category.route" hrefActive="active">
           {{ category.name }}
           <span><img src="assets/img/icon/arrow_up.svg" alt="" /></span>
         </a>

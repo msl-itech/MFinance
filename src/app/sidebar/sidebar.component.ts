@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
   categories = [
     { name: 'Independant et Startup', route: '/profil-independant' },
-    { name: 'ASBL', route: '/absl' },
+    { name: 'ASBL', route: '/asbl' },
     {
       name: 'Sociétés d’exploitation commerciale ou civile',
       route: '/societe-exploitation',
