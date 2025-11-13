@@ -40,7 +40,7 @@ export class ZoneContactComponent {
       'Vous avez une question, un projet, une urgence comptable ou fiscale ?<br/>Prenez 2 minutes pour nous décrire votre situation.<br/>🎁 Vous serez rappelé(e) sous 72h pour un premier échange gratuit, confidentiel et personnalisé.',
     phoneButton: '+32 2 886 05 50',
     contactButton: 'Contactez-nous',
-    formTitle: '🧭 Introduction engageante',
+    formTitle: 'Complétez le formulaire',
     formDescription:
       'Remplissez le formulaire, et notre expert-comptable vous répondra rapidement.',
     badge: 'Consultation gratuite sous 72h',

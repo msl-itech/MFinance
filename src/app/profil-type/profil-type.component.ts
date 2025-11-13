@@ -1,13 +1,16 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-profil-type',
   templateUrl: './profil-type.component.html',
   styleUrl: './profil-type.component.css'
 })
-export class ProfilTypeComponent {
+export class ProfilTypeComponent implements OnDestroy {
   currentIndex = 0;
   visibleCards = 4; // Nombre de cartes visibles. Ajustez selon votre mise en page.
+  private autoSlideInterval: any;
+  private autoSlideDelay = 3000; // Défilement automatique toutes les 3 secondes
+  private isUserInteracting = false;
 
   @ViewChild('sliderContainer') sliderContainer!: ElementRef;
 
@@ -20,7 +23,7 @@ export class ProfilTypeComponent {
 
 
   items = [
-    { image: '../../assets/img/webp/57.avif', title: 'ASBL', description: 'Les Associations Sans But Lucratif en Belgique sont des structures incontournables pour porter des projets sociaux, culturels, éducatifs ou environnementaux...',route: '/absl' },
+    { image: '../../assets/img/webp/57.avif', title: 'ASBL', description: 'Les Associations Sans But Lucratif en Belgique sont des structures incontournables pour porter des projets sociaux, culturels, éducatifs ou environnementaux...',route: '/asbl' },
     { image: '../../assets/img/webp/6.webp', title: 'Indépendant et Startup', description: 'Devenir indépendant, c’est plus qu’un simple changement de statut. C’est une aventure excitante, un saut vers la liberté professionnelle ...',route: '/profil-independant' },
     { image: '../../assets/img/webp/patrimonial.webp', title: 'Société de Management Patrimoniale', description: 'La Société de Management Patrimoniale permet au dirigeant d’entreprise de facturer ses prestations à sa société d’exploitation tout en optimisant ... ',route: '/societe-management-patrimoniale' },
     { image: '../../assets/img/webp/21.webp', title: 'Personnel de sante', description: 'Médecins, dentistes, vétérinaires ou kinésithérapeutes, votre quotidien oscille entre la prise en charge des patients et la gestion de vos obligations comptables...',route: '/professionel-sante' },
@@ -34,6 +37,7 @@ export class ProfilTypeComponent {
   prevSlide() {
     if (this.currentIndex > 0) {
       this.currentIndex--;
+      this.pauseAutoSlide();
     }
   }
 
@@ -42,10 +46,59 @@ export class ProfilTypeComponent {
   ngOnInit() {
     this.setItemsPerView();
     window.addEventListener('resize', () => this.setItemsPerView());
+    this.startAutoSlide();
   }
-  
+
   ngOnDestroy() {
     window.removeEventListener('resize', () => this.setItemsPerView());
+    this.stopAutoSlide();
+  }
+
+  // Démarrer le défilement automatique
+  startAutoSlide() {
+    this.stopAutoSlide(); // Nettoyer tout intervalle existant
+    this.autoSlideInterval = setInterval(() => {
+      if (!this.isUserInteracting) {
+        this.autoNextSlide();
+      }
+    }, this.autoSlideDelay);
+  }
+
+  // Arrêter le défilement automatique
+  stopAutoSlide() {
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+      this.autoSlideInterval = null;
+    }
+  }
+
+  // Défilement automatique avec retour au début
+  autoNextSlide() {
+    if (this.currentIndex < this.items.length - this.itemsPerView) {
+      this.currentIndex++;
+    } else {
+      // Retour au début quand on arrive à la fin
+      this.currentIndex = 0;
+    }
+  }
+
+  // Mettre en pause lors de l'interaction utilisateur
+  pauseAutoSlide() {
+    this.isUserInteracting = true;
+    // Reprendre après 5 secondes d'inactivité
+    setTimeout(() => {
+      this.isUserInteracting = false;
+    }, 5000);
+  }
+
+  // Pause au survol
+  onMouseEnter() {
+    this.isUserInteracting = true;
+  }
+
+  // Reprendre au départ du survol
+  onMouseLeave() {
+    this.isUserInteracting = false;
   }
   
   setItemsPerView() {
@@ -84,6 +137,7 @@ export class ProfilTypeComponent {
   nextSlide() {
     if (this.currentIndex < this.items.length - this.itemsPerView) {
       this.currentIndex++;
+      this.pauseAutoSlide();
     }
   }
   

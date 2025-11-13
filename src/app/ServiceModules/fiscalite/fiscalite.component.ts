@@ -21,4 +21,18 @@ export class FiscaliteComponent implements OnInit, AfterViewInit {
       AOS.refresh();
     }, 150);
   }
+
+  scrollToContact(): void {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const headerOffset = 80;
+      const elementPosition = contactSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
 }
