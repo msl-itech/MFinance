@@ -9667,7 +9667,7 @@ var Rt = class a {
       [1, "social-icons"],
       [
         "href",
-        "https://www.facebook.com/mfinancessrl/",
+        "https://www.facebook.com/profile.php?id=61575798073143&_rdc=1&_rdr#",
         1,
         "social-link",
         "facebook",
@@ -9675,7 +9675,7 @@ var Rt = class a {
       [1, "fab", "fa-facebook-f"],
       [
         "href",
-        "https://www.linkedin.com/in/mfinances-cabinet-expertise-comptable-l-bruxelles-4b0b9798/",
+        "https://www.linkedin.com/company/mfinancessrl/?originalSubdomain=be",
         1,
         "social-link",
         "linkedin",
@@ -13611,11 +13611,11 @@ var Ut = class a {
       [1, "social-section"],
       [1, "mb-0", "me-2"],
       [1, "social-icons", "d-flex"],
-      ["href", "https://www.facebook.com/mfinancessrl/", 1, "text-white"],
+      ["href", "https://www.facebook.com/profile.php?id=61575798073143&_rdc=1&_rdr#", 1, "text-white"],
       [1, "fab", "fa-facebook"],
       [
         "href",
-        "https://www.linkedin.com/in/mfinances-cabinet-expertise-comptable-l-bruxelles-4b0b9798/",
+        "https://www.linkedin.com/company/mfinancessrl/?originalSubdomain=be",
         1,
         "text-white",
       ],
@@ -13950,14 +13950,14 @@ var $t = class a {
       [1, "social-links"],
       [
         "href",
-        "https://www.facebook.com/mfinancessrl/",
+        "https://www.facebook.com/profile.php?id=61575798073143&_rdc=1&_rdr#",
         "aria-label",
         "Facebook",
       ],
       [1, "fab", "fa-facebook-f"],
       [
         "href",
-        "https://www.linkedin.com/in/mfinances-cabinet-expertise-comptable-l-bruxelles-4b0b9798/",
+        "https://www.linkedin.com/company/mfinancessrl/?originalSubdomain=be",
         "aria-label",
         "LinkedIn",
       ],
