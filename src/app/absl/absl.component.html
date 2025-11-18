@@ -956,7 +956,7 @@
 
         <!-- Contact ASBL spécifique -->
         <div class="contact-asbl-cta">
-          <a  routerLink="/contact" class="contact-asbl-btn">
+          <a (click)="scrollToSection('formulaire-asbl')" class="contact-asbl-btn" style="cursor: pointer;">
             📆 Prendre un rendez-vous ASBL
             <i class="fas fa-arrow-right"></i>
           </a>
@@ -1226,7 +1226,7 @@
                 class="btn btn-danger btn-lg px-4 py-3"
                 style="border-radius: 8px; font-weight: 600; text-decoration: none;"
               >
-                <i class="fa-solid fa-comments me-2"></i>
+                <i class="fa-solid fa-comments me-2" style="color:white"></i>
                 Parlez à un expert
               </a>
             </div>
@@ -1342,9 +1342,9 @@
               </div>
             </div>
             <div class="home2-btn mt-4">
-              <a  routerLink="/contact"
+              <button (click)="scrollToSection('formulaire-asbl')" class="btn-red"
                 >Contactez-nous <i class="fa-solid fa-arrow-right"></i
-              ></a>
+              ></button>
             </div>
           </div>
         </div>
@@ -1527,14 +1527,14 @@
           Contactez-nous dès aujourd'hui pour une consultation gratuite !
           Demander un devis personnalisé
         </p>
-        <a
-           routerLink="/contact"
+        <button
+          (click)="scrollToSection('formulaire-asbl')"
           class="btn btn-danger btn-sm px-3 py-2 me-3"
           data-aos="zoom-in"
           data-aos-delay="800"
         >
           Contactez-nous <i class="fas fa-arrow-right"></i>
-        </a>
+        </button>
         <!-- <button
           (click)="scrollToSection('formulaire-evaluation')"
           class="btn btn-outline-light btn-sm px-3 py-2"
@@ -1548,6 +1548,7 @@
   </div>
 </section>
 <app-contact-form-layout
+  id="formulaire-asbl"
   [config]="formConfig"
   [currentStep]="currentStep"
   [totalSteps]="totalSteps"
@@ -1566,7 +1567,7 @@
       *ngIf="currentStep === 1"
       class="step-content animate__animated animate__fadeIn"
     >
-      <h5 class="mb-4 text-center fw-bold text-primary">1. Type d'ASBL</h5>
+      <h5 class="mb-4 text-center fw-bold text-red">1. Type d'ASBL</h5>
       <p class="text-center mb-4">
         Quel est le domaine principal de votre ASBL ?
       </p>
@@ -1611,7 +1612,7 @@
       *ngIf="currentStep === 2"
       class="step-content animate__animated animate__fadeIn"
     >
-      <h5 class="mb-4 text-center fw-bold text-primary">2. Revenus annuels</h5>
+      <h5 class="mb-4 text-center fw-bold text-red">2. Revenus annuels</h5>
       <p class="text-center mb-4">
         Quel est le budget annuel moyen de votre ASBL ?
       </p>
@@ -1643,7 +1644,7 @@
       *ngIf="currentStep === 3"
       class="step-content animate__animated animate__fadeIn"
     >
-      <h5 class="mb-4 text-center fw-bold text-primary">3. Vos coordonnées</h5>
+      <h5 class="mb-4 text-center fw-bold text-red">3. Vos coordonnées</h5>
       <p class="text-center mb-4">
         Pour être recontacté(e) par un conseiller et recevoir votre diagnostic :
       </p>
@@ -1732,7 +1733,7 @@
       </div>
 
       <div class="alert alert-info mt-4">
-        <i class="fas fa-phone text-primary me-2"></i>
+        <i class="fas fa-phone text-red me-2"></i>
         <strong>Un conseiller vous appellera sous 72h</strong>
         pour un échange gratuit. À l'issue de cet échange, vous recevrez votre
         mini-diagnostic personnalisé par courriel.
@@ -1744,7 +1745,7 @@
       *ngIf="currentStep === 4"
       class="step-content animate__animated animate__fadeIn"
     >
-      <h5 class="mb-4 text-center fw-bold text-primary">
+      <h5 class="mb-4 text-center fw-bold text-red">
         4. Tenue de la comptabilité
       </h5>
       <p class="text-center mb-4">
@@ -1763,7 +1764,7 @@
             <div class="card border-2 option-card">
               <div class="card-body py-3">
                 <div class="d-flex align-items-center">
-                  <i [class]="option.icon" class="fa-2x text-primary me-3"></i>
+                  <i [class]="option.icon" class="fa-2x text-red me-3"></i>
                   <div>
                     <h6 class="card-title mb-0">
                       {{ option.label }}
@@ -1783,7 +1784,7 @@
       *ngIf="currentStep === 5"
       class="step-content animate__animated animate__fadeIn"
     >
-      <h5 class="mb-4 text-center fw-bold text-primary">
+      <h5 class="mb-4 text-center fw-bold text-red">
         5. Vos priorités actuelles
       </h5>
       <p class="text-center mb-4">

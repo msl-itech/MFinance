@@ -508,11 +508,9 @@
               </div>
               <div class="mt-4 text-center" data-aos="fade-up" data-aos-duration="1200">
             <a
-              href="https://calendly.com/mfinances/rdv-client-en-teleconference"
-              target="_blank"
-              rel="noopener noreferrer"
+              (click)="scrollToSection('contactSection')"
               class="btn btn-danger btn-lg px-4 py-3"
-              style="border-radius: 8px; font-weight: 600; text-decoration: none;"
+              style="border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer;"
             >
               Parlez à un expert
             </a>
@@ -647,6 +645,52 @@
           >
             03
           </span>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="mt-5 text-center position-relative overflow-hidden"
+             data-aos="fade-up"
+             data-aos-duration="1000"
+             style="background: linear-gradient(135deg, #ff3333 0%, #d32f2f 100%);
+                    border-radius: 20px;
+                    padding: 60px 40px;
+                    box-shadow: 0 10px 40px rgba(255, 51, 51, 0.2);">
+
+          <!-- Decorative circles -->
+          <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px;
+                      background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+          <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px;
+                      background: rgba(255, 255, 255, 0.1); border-radius: 50%;"></div>
+
+          <div class="position-relative" style="z-index: 1;">
+            <div class="mb-3">
+              <i class="fa-solid fa-rocket" style="font-size: 3rem; color: white; opacity: 0.9;"></i>
+            </div>
+            <h4 class="fw-bold mb-3" style="color: white; font-size: 1.8rem;">
+              Prêt à optimiser la gestion financière de votre entreprise ?
+            </h4>
+            <p class="mb-4" style="color: rgba(255, 255, 255, 0.95); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+              Découvrez comment nos solutions peuvent transformer vos processus et maximiser votre rentabilité.
+            </p>
+            <a
+              (click)="scrollToSection('contactSection')"
+              class="btn btn-lg px-5 py-3"
+              style="background: white;
+                     color: #d32f2f;
+                     border: none;
+                     border-radius: 50px;
+                     font-weight: 700;
+                     font-size: 1.1rem;
+                     cursor: pointer;
+                     transition: all 0.3s ease;
+                     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);"
+              onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.3)'"
+              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0, 0, 0, 0.2)'"
+            >
+              <i class="fa-solid fa-chart-line me-2"></i>
+              Demandez un diagnostic personnalisé
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -854,10 +898,11 @@
           votre trésorerie, et accélérer votre croissance.
         </p>
         <a
-           routerLink="/contact"
+          (click)="scrollToSection('contactSection')"
           class="btn btn-danger btn-sm px-3 py-2"
           data-aos="zoom-in"
           data-aos-delay="800"
+          style="cursor: pointer"
         >
           Contactez-nous <i class="fas fa-arrow-right"></i>
         </a>

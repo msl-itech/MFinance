@@ -44,6 +44,25 @@
           mauvaises habitudes perdurent, et les conversations cruciales sont
           évitées. Rejoignez-moi pour résoudre ce mystère financier.
         </p>
+
+        <div class="mt-4">
+          <div class="d-flex flex-column flex-md-row gap-3">
+            <button
+              (click)="scrollToSection('contactSection')"
+              class="btn btn-danger btn-lg px-4 py-3"
+              style="border-radius: 10px; font-weight: 600;">
+              <i class="fas fa-search-dollar me-2"></i>
+              Auditer mon compte courant
+            </button>
+            <!-- <button
+              (click)="scrollToSection('consequences')"
+              class="btn btn-outline-danger btn-lg px-4 py-3"
+              style="border-radius: 10px; font-weight: 600;">
+              <i class="fas fa-exclamation-triangle me-2"></i>
+              Voir les risques
+            </button> -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -221,7 +240,8 @@
     <!-- Image side -->
   </div>
 </div>
-<div class="business-section">
+
+<div class="business-section" id="consequences">
   <div class="container2">
     <!-- Contenu textuel -->
     <div class="content-side">
@@ -367,6 +387,92 @@
     </div>
   </div>
 </div>
+
+<!-- CTA avant services -->
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12 text-center">
+      <div class="solution-cta-box">
+        <h3 class="solution-title">Prêt à assainir votre compte courant ?</h3>
+        <p class="solution-description">Découvrez comment nos experts peuvent vous aider à restaurer la santé financière de votre entreprise.</p>
+        <button
+          (click)="scrollToSection('contactSection')"
+          class="btn-solution-cta">
+          <i class="fas fa-heartbeat me-2"></i>
+          Démarrer mon redressement
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .solution-cta-box {
+    background: linear-gradient(135deg, #1a2544 0%, #2d3e5f 100%);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .solution-title {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .solution-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-solution-cta {
+    background: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 1.3rem 3rem;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(255, 75, 75, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-solution-cta:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 75, 75, 0.5);
+    background: #ff3131;
+  }
+
+  @media (max-width: 768px) {
+    .solution-cta-box {
+      padding: 2rem 1.5rem;
+    }
+
+    .solution-title {
+      font-size: 1.6rem;
+    }
+
+    .solution-description {
+      font-size: 1.05rem;
+    }
+
+    .btn-solution-cta {
+      width: 100%;
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+    }
+  }
+</style>
 
 <section class="services-section">
   <div class="container">

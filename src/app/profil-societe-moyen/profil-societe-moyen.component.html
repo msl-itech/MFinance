@@ -343,14 +343,20 @@
 
               <!-- Bouton CTA -->
               <div class="mt-4" data-aos="fade-up" data-aos-duration="1000">
+            
                 <a
-                  href="https://calendly.com/mfinances/rdv-client-en-teleconference"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  (click)="scrollToSection('contactSection')"
                   class="btn-red btn-lg px-4 py-3"
-                  style="border-radius: 8px; font-weight: 600; text-decoration: none; color:white"
+                  style="
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    color: white;
+                    cursor:pointer;
+                  "
                 >
-                  Parlez à un expert
+                  <i class="fa-solid fa-comments me-2" style="color:white"></i>
+                  En savoir plus
                 </a>
               </div>
             </div>
@@ -703,15 +709,29 @@
           data-aos-duration="1000"
         >
           <div class="works-img space-sm-50 img-border">
-            <img src="../../assets/img/webp/societe_moyen2.webp" alt="" class="img-fluid" />
+            <img
+              src="../../assets/img/webp/societe_moyen2.webp"
+              alt=""
+              class="img-fluid"
+            />
           </div>
 
           <!-- Bouton CTA sous l'image -->
-          <div class="mt-4 text-center" data-aos="fade-up" data-aos-duration="1200">
+          <div
+            class="mt-4 text-center"
+            data-aos="fade-up"
+            data-aos-duration="1200"
+          >
             <a
-              routerLink="/vente/booste-entreprise"
-              class="btn btn-danger btn-lg px-4 py-3"
-              style="border-radius: 8px; font-weight: 600; text-decoration: none;"
+              (click)="scrollToSection('contactSection')"
+              class="btn-red btn-lg px-4 py-3"
+              style="
+                border-radius: 8px;
+                font-weight: 600;
+                text-decoration: none;
+                color: white;
+                cursor:pointer;
+              "
             >
               <i class="fa-solid fa-rocket me-2"></i>
               Boostez votre gestion
@@ -818,9 +838,9 @@
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-danger btn-lg px-4 py-3"
-        style="border-radius: 8px; font-weight: 600; text-decoration: none;"
+        style="border-radius: 8px; font-weight: 600; text-decoration: none"
       >
-        <i class="fa-solid fa-comments me-2"></i>
+        <i class="fa-solid fa-comments me-2" style="color:white"></i>
         Parlez à un expert
       </a>
     </div>
@@ -911,7 +931,7 @@
               </div>
             </div>
             <div class="home2-btn mt-4">
-              <a  routerLink="/contact"
+              <a (click)="scrollToSection('contactSection')" style="cursor:pointer color:white" class="btn-red"
                 >Contactez-nous <i class="fa-solid fa-arrow-right"></i
               ></a>
             </div>
@@ -1423,10 +1443,11 @@
           Contactez MFINANCES dès aujourd'hui pour une consultation gratuite.
         </p>
         <a
-           routerLink="/contact"
+          (click)="scrollToSection('contactSection')"
           class="btn btn-danger btn-sm px-3 py-2"
           data-aos="zoom-in"
           data-aos-delay="800"
+          style="cursor: pointer"
         >
           Contactez-nous <i class="fas fa-arrow-right"></i>
         </a>

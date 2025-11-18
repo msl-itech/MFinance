@@ -67,6 +67,13 @@ export class TarifComponent implements OnInit {
     }
   }
 
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   // Méthodes pour gérer le tooltip et modal Excellence
   openExcellenceModal() {
     this.showExcellenceTooltip = false;

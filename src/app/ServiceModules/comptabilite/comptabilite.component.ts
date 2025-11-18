@@ -24,4 +24,11 @@ export class ComptabiliteComponent implements OnInit, AfterViewInit {
       AOS.refresh();
     }, 150);
   }
+
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

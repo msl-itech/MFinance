@@ -79,6 +79,26 @@
             client optimisé sur vos résultats financiers.
           </span>
         </div>
+
+        <!-- CTA après la liste -->
+        <div class="mt-4" data-aos="fade-up" data-aos-duration="1000">
+          <div class="d-flex flex-column flex-md-row gap-3">
+            <button
+              (click)="scrollToSection('contactSection')"
+              class="btn btn-danger btn-lg px-4 py-3"
+              style="border-radius: 10px; font-weight: 600;">
+              <i class="fas fa-heart me-2"></i>
+              Tester ma stratégie de fidélisation
+            </button>
+            <!-- <button
+              (click)="scrollToSection('contactSection')"
+              class="btn btn-outline-danger btn-lg px-4 py-3"
+              style="border-radius: 10px; font-weight: 600;">
+              <i class="fas fa-phone-alt me-2"></i>
+              Parler à un expert
+            </button> -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -118,10 +138,26 @@
                   >Découvrez son parcours dans notre vidéo storytelling
                 </strong>
               </p>
-              <!-- <a href="#" class="cta-button">
-                En savoir plus
-                <i class="fas fa-arrow-right"></i>
-              </a> -->
+
+              <!-- CTA dans la section Marianne -->
+              <div class="mt-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="p-4" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 12px; border: 2px solid rgba(255, 255, 255, 0.2);">
+                  <h4 class="text-white mb-3" style="font-weight: 700;">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    Évitez la guerre des prix !
+                  </h4>
+                  <p class="text-white mb-3" style="opacity: 0.9;">
+                    Découvrez comment fidéliser vos clients et protéger vos marges grâce à notre diagnostic gratuit.
+                  </p>
+                  <button
+                    (click)="scrollToSection('contactSection')"
+                    class="btn btn-light px-4 py-2"
+                    style="border-radius: 8px; font-weight: 600; color: #ff4b4b;">
+                    <i class="fas fa-chart-line me-2"></i>
+                    Analyser ma fidélisation
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -148,6 +184,38 @@
   </div>
 </div>
 <app-block-fidelisation></app-block-fidelisation>
+
+<!-- CTA entre les blocs -->
+<div class="container my-5" data-aos="fade-up" data-aos-duration="1000">
+  <div class="text-center p-5" style="background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%); border-radius: 16px; box-shadow: 0 8px 30px rgba(255, 75, 75, 0.3);">
+    <h3 class="text-white mb-3" style="font-weight: 700; font-size: 28px;">
+      <i class="fas fa-users me-2"></i>
+      Prêt à fidéliser et protéger votre trésorerie ?
+    </h3>
+    <p class="text-white mb-4" style="font-size: 18px; opacity: 0.95;">
+      Évaluez votre stratégie de fidélisation en 3 minutes et recevez des recommandations personnalisées.
+    </p>
+    <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+      <button
+        (click)="scrollToSection('contactSection')"
+        class="btn btn-light btn-lg px-5 py-3"
+        style="border-radius: 10px; font-weight: 700; color: #ff4b4b;">
+        <i class="fas fa-clipboard-check me-2"></i>
+        Commencer le diagnostic
+      </button>
+      <a
+        href="https://calendly.com/mfinances/rdv-client-en-teleconference"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-outline-light btn-lg px-5 py-3"
+        style="border-radius: 10px; font-weight: 700; border: 2px solid white; text-decoration: none;">
+        <i class="fas fa-calendar-alt me-2"></i>
+        Réserver un appel
+      </a>
+    </div>
+  </div>
+</div>
+
 <app-block-surveillance></app-block-surveillance>
 <section>
   <div class="service-faq sec-padding">
@@ -503,6 +571,30 @@
   </div>
 </section>
 
+<!-- CTA final avant le formulaire -->
+<div class="container my-5" data-aos="fade-up" data-aos-duration="1000">
+  <div class="row align-items-center p-4" style="background: linear-gradient(135deg, rgba(255, 75, 75, 0.1) 0%, rgba(255, 75, 75, 0.05) 100%); border-radius: 16px; border: 2px solid rgba(255, 75, 75, 0.2);">
+    <div class="col-lg-8 col-md-12 mb-3 mb-lg-0">
+      <h4 style="color: #ff4b4b; font-weight: 700; margin-bottom: 12px;">
+        <i class="fas fa-question-circle me-2"></i>
+        Encore des questions sur la fidélisation ?
+      </h4>
+      <p style="color: #333; margin-bottom: 0;">
+        Nos experts sont là pour vous accompagner. Évaluez gratuitement votre stratégie de fidélisation ou contactez-nous directement.
+      </p>
+    </div>
+    <div class="col-lg-4 col-md-12 text-lg-end">
+      <button
+        (click)="scrollToSection('contactSection')"
+        class="btn btn-danger btn-lg px-4 py-3 w-100 w-lg-auto"
+        style="border-radius: 10px; font-weight: 600;">
+        <i class="fas fa-arrow-down me-2"></i>
+        Commencer maintenant
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- Pop-up de promotion du formulaire -->
 <div *ngIf="showPopup" class="popup-overlay" (click)="closePopup()">
   <div class="popup-content" (click)="$event.stopPropagation()">
@@ -512,7 +604,8 @@
 
     <div class="popup-header">
       <i class="fas fa-shield-alt popup-icon"></i>
-      <h3>🛡️ Fidélisez-vous assez pour éviter les promotions à perte ?</h3>
+      <h3>Fidélisez-vous assez pour éviter les promotions à perte ?
+tic Stock Express</h3>
       <p>
         Évaluez gratuitement votre stratégie de fidélisation et son impact sur
         vos marges.
