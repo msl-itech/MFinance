@@ -46,7 +46,7 @@
                 <i class="fas fa-map-marker-alt"></i> 20 Rue de la Magnanerie,
                 1180 Uccle
               </p>
-              <p><i class="fas fa-phone-alt"></i> +32 2 883 05 50</p>
+              <p><i class="fas fa-phone-alt"></i> +32 2 886 05 50</p>
               <p>
                 <i class="fas fa-envelope"></i>
                 <a href="mailto:info@mfinances.be"> info&#64;mfinances.be</a>
@@ -114,13 +114,22 @@
                   </div>
 
                   <div class="action-container mt-4">
-                    <button
-                      (click)="scrollToSection('conseilsSection')"
-                      class="btn-action"
-                    >
-                      Découvrez nos conseils d'experts
-                      <i class="fas fa-arrow-right"></i>
-                    </button>
+                    <div class="d-flex flex-column flex-md-row gap-3">
+                      <button
+                        (click)="scrollToSection('conseilsSection')"
+                        class="btn-action btn-action-secondary"
+                      >
+                        Découvrez nos conseils d'experts
+                        <i class="fas fa-arrow-right"></i>
+                      </button>
+                      <button
+                        (click)="scrollToSection('contact', $event)"
+                        class="btn-action btn-action-primary"
+                      >
+                        <i class="fas fa-phone me-2"></i>
+                        Contactez-nous
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -220,21 +229,42 @@
           }
 
           .btn-action {
-            background: #ff4b4b;
-            color: white;
             border: none;
             padding: 1rem 2rem;
             border-radius: 10px;
             font-size: 1.1rem;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.8rem;
             transition: all 0.3s ease;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+          }
+
+          .btn-action-primary {
+            background: #ff4b4b;
+            color: white;
             box-shadow: 0 4px 15px rgba(255, 75, 75, 0.2);
           }
 
-          .btn-action:hover {
+          .btn-action-primary:hover {
             background: #ff3131;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
+          }
+
+          .btn-action-secondary {
+            background: white;
+            color: #ff4b4b;
+            border: 2px solid #ff4b4b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          }
+
+          .btn-action-secondary:hover {
+            background: #ff4b4b;
+            color: white;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
           }
@@ -381,14 +411,23 @@
                   réussite.
                 </p>
               </div>
-              <a
-                [routerLink]="['/tarif']"
-                [fragment]="'excellence'"
-                class="btn-discover"
-              >
-                Découvrez l'Offre Excellence
-                <i class="fas fa-arrow-right"></i>
-              </a>
+              <div class="d-flex flex-column gap-2">
+                <a
+                  [routerLink]="['/tarif']"
+                  [fragment]="'excellence'"
+                  class="btn-discover"
+                >
+                  Découvrez l'Offre Excellence
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+                <button
+                  (click)="scrollToSection('contact', $event)"
+                  class="btn-discover btn-discover-outline"
+                >
+                  <i class="fas fa-comments me-2"></i>
+                  Parlez à un expert
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -562,12 +601,26 @@
       font-weight: 500;
       gap: 0.5rem;
       transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
 
     .btn-discover:hover {
       background: #ff3131;
       transform: translateY(-2px);
       color: white;
+    }
+
+    .btn-discover-outline {
+      background: white;
+      color: #ff4b4b;
+      border: 2px solid #ff4b4b;
+    }
+
+    .btn-discover-outline:hover {
+      background: #ff4b4b;
+      color: white;
+      border-color: #ff4b4b;
     }
 
     @media (max-width: 768px) {
@@ -789,11 +842,110 @@
         </a>
       </div>
     </div>
+
+    <!-- CTA Section -->
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <div class="cta-box" data-aos="fade-up">
+          <h3 class="cta-title">Besoin d'aide pour améliorer votre trésorerie ?</h3>
+          <p class="cta-description">Nos experts sont là pour vous accompagner dans la gestion et l'optimisation de votre trésorerie.</p>
+          <div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-4">
+            <!-- <button
+              (click)="scrollToSection('contact', $event)"
+              class="btn-cta btn-cta-primary">
+              <i class="fas fa-phone-alt me-2"></i>
+              Demander un rendez-vous
+            </button> -->
+            <a
+              [routerLink]="['/tarif']"
+              [fragment]="'excellence'"
+              class="btn-cta btn-cta-secondary">
+              <i class="fas fa-star me-2"></i>
+              Découvrir l'Offre Excellence
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <style>
     .articles-tresorerie {
       background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: 0 10px 30px rgba(255, 75, 75, 0.2);
+    }
+
+    .cta-title {
+      color: white;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .cta-description {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+
+    .btn-cta {
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      min-width: 250px;
+    }
+
+    .btn-cta-primary {
+      background: white;
+      color: #ff4b4b;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-cta-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      background: #f8f9fa;
+    }
+
+    .btn-cta-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-cta-secondary:hover {
+      background: white;
+      color: #ff4b4b;
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+      .cta-box {
+        padding: 2rem 1.5rem;
+      }
+
+      .cta-title {
+        font-size: 1.5rem;
+      }
+
+      .btn-cta {
+        width: 100%;
+        min-width: auto;
+      }
     }
 
     .section-title {
@@ -996,11 +1148,73 @@
         </div>
       </div>
     </div>
+
+    <!-- CTA après les thématiques -->
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <div class="themes-cta" data-aos="fade-up">
+          <p class="themes-cta-text">Vous voulez aller plus loin ? Nos experts sont à votre écoute.</p>
+          <button
+            (click)="scrollToSection('contact', $event)"
+            class="btn-themes-cta">
+            <i class="fas fa-rocket me-2"></i>
+            Booster mon entreprise maintenant
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <style>
     .themes-section {
       background-color: #fff;
+    }
+
+    .themes-cta {
+      padding: 2rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 16px;
+      border: 2px dashed #ff4b4b;
+    }
+
+    .themes-cta-text {
+      font-size: 1.3rem;
+      color: #2d3436;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .btn-themes-cta {
+      background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%);
+      color: white;
+      border: none;
+      padding: 1.2rem 2.5rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
+    }
+
+    .btn-themes-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 75, 75, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .themes-cta-text {
+        font-size: 1.1rem;
+      }
+
+      .btn-themes-cta {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+      }
     }
 
     .section-title {
@@ -1211,9 +1425,111 @@
         </div>
       </div>
     </div>
+
+    <!-- CTA Section dans conseils -->
+    <!-- <div class="row mt-5">
+      <div class="col-12 text-center">
+        <div class="conseil-cta-box" data-aos="zoom-in">
+          <div class="conseil-cta-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 class="conseil-cta-title">Prêt à transformer votre entreprise ?</h3>
+          <p class="conseil-cta-description">Nos experts vous accompagnent pour mettre en place ces stratégies adaptées à votre situation.</p>
+          <button
+            (click)="scrollToSection('contact', $event)"
+            class="btn-conseil-cta">
+            <i class="fas fa-calendar-check me-2"></i>
+            Réserver mon rendez-vous gratuit
+          </button>
+        </div>
+      </div>
+    </div> -->
   </div>
 
   <style>
+    .conseil-cta-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .conseil-cta-icon {
+      width: 80px;
+      height: 80px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .conseil-cta-icon i {
+      font-size: 2.5rem;
+      color: #ff4b4b;
+    }
+
+    .conseil-cta-title {
+      color: white;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .conseil-cta-description {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-conseil-cta {
+      background: white;
+      color: #ff4b4b;
+      border: none;
+      padding: 1.2rem 2.5rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-conseil-cta:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      background: #f8f9fa;
+    }
+
+    @media (max-width: 768px) {
+      .conseil-cta-box {
+        padding: 2rem 1.5rem;
+      }
+
+      .conseil-cta-title {
+        font-size: 1.6rem;
+      }
+
+      .conseil-cta-description {
+        font-size: 1.1rem;
+      }
+
+      .btn-conseil-cta {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+      }
+    }
+
     .conseil-header {
       position: relative;
     }
@@ -1510,7 +1826,7 @@
               </div>
             </div>
             <div class="home2-btn mt-4">
-              <a  routerLink="/contact"
+              <a (click)="scrollToSection('contact', $event)" style="cursor: pointer;"
                 >Contactez-nous <i class="fa-solid fa-arrow-right"></i
               ></a>
             </div>
@@ -1687,10 +2003,11 @@
           votre avenir financier : Vous le construisez.
         </p>
         <a
-           routerLink="/contact"
+          (click)="scrollToSection('contact', $event)"
           class="btn btn-danger btn-sm px-3 py-2"
           data-aos="zoom-in"
           data-aos-delay="800"
+          style="cursor: pointer;"
         >
           Je demande mon premier rendez-vous gratuit
           <i class="fas fa-arrow-right"></i>
@@ -1699,4 +2016,4 @@
     </div>
   </div>
 </section>
-<app-zone-contact></app-zone-contact>
+<app-zone-contact id="contact"></app-zone-contact>

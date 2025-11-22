@@ -91,7 +91,7 @@
                 <i class="fas fa-map-marker-alt"></i> 20 Rue de la Magnanerie,
                 1180 Uccle
               </p>
-              <p><i class="fas fa-phone-alt"></i> +32 2 883 05 50</p>
+              <p><i class="fas fa-phone-alt"></i> +32 2 886 05 50</p>
               <p>
                 <i class="fas fa-envelope"></i>
                 <a href="mailto:info@mfinances.be"> info&#64;mfinances.be</a>
@@ -389,6 +389,31 @@
             >
               Découvrir le Programme Excellence
               <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA après la section bénéfices -->
+    <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
+      <div class="col-12">
+        <div class="text-center p-5" style="background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%); border-radius: 16px; box-shadow: 0 8px 30px rgba(255, 75, 75, 0.3);">
+          <h3 class="text-white mb-3" style="font-weight: 700; font-size: 28px;">
+            <i class="fas fa-rocket me-2"></i>
+            Prêt à maîtriser votre trésorerie ?
+          </h3>
+          <p class="text-white mb-4" style="font-size: 18px; opacity: 0.95;">
+            Bénéficiez d'un diagnostic gratuit et découvrez comment optimiser vos flux financiers.
+          </p>
+          <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+            <button (click)="scrollToSection('contact-button')" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; color: #ff4b4b;">
+              <i class="fas fa-clipboard-check me-2"></i>
+              Diagnostic gratuit
+            </button>
+            <a href="https://calendly.com/mfinances/rdv-client-en-teleconference" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; border: 2px solid white; text-decoration: none;">
+              <i class="fas fa-calendar-alt me-2"></i>
+              Prendre rendez-vous
             </a>
           </div>
         </div>
@@ -828,6 +853,31 @@
         </a>
       </div>
     </div>
+
+    <!-- CTA après la liste d'articles -->
+    <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
+      <div class="col-12">
+        <div class="p-4" style="background: rgba(255, 75, 75, 0.05); border-radius: 16px; border: 2px solid rgba(255, 75, 75, 0.2);">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h4 class="mb-2" style="color: #ff4b4b; font-weight: 700;">
+                <i class="fas fa-lightbulb me-2"></i>
+                Besoin d'un accompagnement personnalisé ?
+              </h4>
+              <p class="mb-0" style="color: #2d3436; font-size: 1.1rem;">
+                Nos experts analysent votre situation et vous proposent des solutions concrètes adaptées à vos enjeux.
+              </p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+              <button (click)="scrollToSection('contact-button')" class="btn btn-danger btn-lg px-4 py-3" style="border-radius: 10px; font-weight: 600; width: 100%;">
+                <i class="fas fa-phone-alt me-2"></i>
+                Contactez-nous
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <style>
@@ -1004,10 +1054,10 @@
           vous accompagner.
         </p>
 
-        <a  routerLink="/contact" class="cta-button" id="contact-button">
+        <button (click)="scrollToSection('contactSection')" class="cta-button" id="contact-button">
           Demandez votre diagnostic gratuit
           <i class="fas fa-arrow-right"></i>
-        </a>
+        </button>
       </div>
     </div>
 

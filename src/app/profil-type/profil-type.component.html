@@ -9,7 +9,7 @@
       </div>
     </div>
   </div>
-  <div class="slider-wrapper">
+  <div class="slider-wrapper" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     <div
       class="slider"
       [style.transform]="getTransform()"

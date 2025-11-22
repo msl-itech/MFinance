@@ -64,10 +64,31 @@
             simples.
           </span>
         </div>
+
+        <div class="mt-4">
+          <div class="d-flex flex-column flex-md-row gap-3">
+            <button
+              (click)="openFormFromPopup()"
+              class="btn btn-danger btn-lg px-4 py-3"
+              style="border-radius: 10px; font-weight: 600;">
+              <i class="fas fa-chart-bar me-2"></i>
+              Diagnostic investissement gratuit
+            </button>
+            
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  .btn-outline-danger:hover {
+    background: #ff4b4b !important;
+    color: white !important;
+    border-color: #ff4b4b !important;
+  }
+</style>
 
 <div class="video-promotion-section">
   <div class="content-container">
@@ -98,6 +119,13 @@
             trésorerie est vidée, et elle ne peut plus faire face à ses dépenses
             courantes.
           </span>
+          <button
+              (click)="scrollToSection('solutions')"
+              class="btn btn-outline-danger btn-lg px-4 py-3"
+              style="border-radius: 10px; font-weight: 600;">
+              <i class="fas fa-hand-holding-usd me-2"></i>
+              Voir les solutions
+            </button>
         </div>
       </div>
     </div>

@@ -52,20 +52,29 @@
         </p>
 
         <div class="mt-4">
-          <button
-            (click)="scrollToSection('contactSection')"
-            class="btn btn-danger btn-lg px-4 py-2"
-          >
-            🧭 Clarifiez vos objectifs (2 min)
-            <i class="fa-solid fa-arrow-right ms-2"></i>
-          </button>
+          <div class="d-flex flex-column flex-md-row gap-3">
+            <!-- <button
+              (click)="scrollToSection('contactSection')"
+              class="btn btn-danger btn-lg px-4 py-2"
+            >
+              🧭 Clarifiez vos objectifs (2 min)
+              <i class="fa-solid fa-arrow-right ms-2"></i>
+            </button> -->
+            <button
+              (click)="scrollToSection('comparison-section')"
+              class="btn btn-outline-danger btn-lg px-4 py-2"
+            >
+              <i class="fas fa-balance-scale me-2"></i>
+              Voir la comparaison
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<section class="comparison-section">
+<section class="comparison-section" id="comparison-section">
   <div class="grid-background"></div>
   <div class="container">
     <h2 class="text-center title text-white">
@@ -146,8 +155,123 @@
         </div>
       </div>
     </div>
+
+    <!-- CTA après comparaison -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="comparison-cta-box text-center">
+          <h3 class="cta-title">Besoin d'aide pour faire le bon choix ?</h3>
+          <p class="cta-description">Nos experts vous accompagnent dans votre réflexion pour choisir le statut le plus adapté à votre situation.</p>
+          <div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-4">
+            <button
+              (click)="scrollToSection('contactSection')"
+              class="btn-cta-white">
+              <i class="fas fa-phone-alt me-2"></i>
+              Être rappelé par un expert
+            </button>
+            <button
+              (click)="scrollToSection('decision-section')"
+              class="btn-cta-outline">
+              <i class="fas fa-compass me-2"></i>
+              Continuer la lecture
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+  .comparison-cta-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .cta-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .cta-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-cta-white {
+    background: white;
+    color: #ff4b4b;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-cta-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: #f8f9fa;
+  }
+
+  .btn-cta-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 250px;
+  }
+
+  .btn-cta-outline:hover {
+    background: white;
+    color: #1a2544;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 768px) {
+    .comparison-cta-box {
+      padding: 2rem 1.5rem;
+    }
+
+    .cta-title {
+      font-size: 1.5rem;
+    }
+
+    .cta-description {
+      font-size: 1rem;
+    }
+
+    .btn-cta-white,
+    .btn-cta-outline {
+      width: 100%;
+      min-width: auto;
+    }
+  }
+</style>
 
 <div class="home2-about sec-padding">
   <div class="container gap-4">
@@ -293,10 +417,77 @@
           </p>
         </div>
         <div class="space10"></div>
+
+        <!-- CTA après frais professionnels -->
+        <!-- <div class="mt-5">
+          <div class="info-cta-box">
+            <div class="d-flex align-items-center gap-3">
+              <div class="cta-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h5 class="mb-2">Vous voulez optimiser vos déductions fiscales ?</h5>
+                <p class="mb-0">Découvrez comment maximiser votre pouvoir d'achat en tant qu'indépendant.</p>
+              </div>
+              <button
+                (click)="scrollToSection('contactSection')"
+                class="btn btn-danger btn-lg px-4 py-2 flex-shrink-0">
+                <i class="fas fa-comments me-2"></i>
+                Parler à un expert
+              </button>
+            </div>
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  .info-cta-box {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+    border: 2px solid #ff4b4b;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(255, 75, 75, 0.1);
+  }
+
+  .cta-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cta-icon i {
+    color: white;
+    font-size: 1.8rem;
+  }
+
+  .info-cta-box h5 {
+    color: #1a2544;
+    font-weight: 700;
+  }
+
+  .info-cta-box p {
+    color: #4a5568;
+  }
+
+  @media (max-width: 768px) {
+    .info-cta-box .d-flex {
+      flex-direction: column !important;
+      text-align: center;
+    }
+
+    .info-cta-box .btn {
+      width: 100%;
+    }
+  }
+</style>
 
 <section class="pension-section">
   <div class="container">
@@ -391,10 +582,143 @@
         </div>
       </div>
     </div>
+
+    <!-- CTA après pension -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="pension-cta-box text-center">
+          <div class="pension-cta-icon">
+            <i class="fas fa-piggy-bank"></i>
+          </div>
+          <h3 class="pension-cta-title">Planifiez dès maintenant votre retraite</h3>
+          <p class="pension-cta-description">Que vous soyez salarié ou indépendant, une bonne stratégie de retraite commence aujourd'hui. Nos experts vous aident à maximiser votre épargne.</p>
+          <div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-4">
+            <button
+              (click)="scrollToSection('contactSection')"
+              class="btn-pension-primary">
+              <i class="fas fa-calendar-check me-2"></i>
+              Planifier ma retraite
+            </button>
+            <button
+              (click)="scrollToSection('decision-section')"
+              class="btn-pension-secondary">
+              <i class="fas fa-arrow-down me-2"></i>
+              Continuer à explorer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="decision-section">
+<style>
+  .pension-cta-box {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .pension-cta-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
+  }
+
+  .pension-cta-icon i {
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  .pension-cta-title {
+    color: #1a2544;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .pension-cta-description {
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-pension-primary {
+    background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 250px;
+    box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
+  }
+
+  .btn-pension-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 75, 75, 0.4);
+  }
+
+  .btn-pension-secondary {
+    background: white;
+    color: #ff4b4b;
+    border: 2px solid #ff4b4b;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 250px;
+  }
+
+  .btn-pension-secondary:hover {
+    background: #ff4b4b;
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 768px) {
+    .pension-cta-box {
+      padding: 2rem 1.5rem;
+    }
+
+    .pension-cta-title {
+      font-size: 1.5rem;
+    }
+
+    .pension-cta-description {
+      font-size: 1rem;
+    }
+
+    .btn-pension-primary,
+    .btn-pension-secondary {
+      width: 100%;
+      min-width: auto;
+    }
+  }
+</style>
+
+<section class="decision-section" id="decision-section">
   <div class="grid-pattern"></div>
   <div class="container">
     <div class="section-title">
@@ -485,8 +809,98 @@
         </ul>
       </div>
     </div>
+
+    <!-- CTA final avant FAQ -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="final-decision-cta">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <h3 class="final-cta-title">Vous avez fait votre choix ?</h3>
+                <p class="final-cta-text">Nos experts vous accompagnent dans toutes les démarches pour démarrer sereinement votre nouvelle activité.</p>
+              </div>
+              <div class="col-md-4 text-md-end text-center mt-3 mt-md-0">
+                <button
+                  (click)="scrollToSection('contactSection')"
+                  class="btn-final-cta">
+                  <i class="fas fa-rocket me-2"></i>
+                  Je me lance !
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+  .final-decision-cta {
+    background: linear-gradient(135deg, rgba(255, 75, 75, 0.1) 0%, rgba(255, 107, 107, 0.05) 100%);
+    border: 2px dashed #ff4b4b;
+    border-radius: 20px;
+    padding: 2.5rem;
+  }
+
+  .final-cta-title {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .final-cta-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  .btn-final-cta {
+    background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%);
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(255, 75, 75, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-final-cta:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 75, 75, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .final-decision-cta {
+      padding: 2rem 1.5rem;
+    }
+
+    .final-cta-title {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .final-cta-text {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .btn-final-cta {
+      width: 100%;
+    }
+  }
+</style>
+
 <section>
   <div class="service-faq sec-padding">
     <div class="container">

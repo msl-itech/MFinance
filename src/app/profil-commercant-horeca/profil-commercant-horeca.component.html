@@ -40,10 +40,10 @@
   }
 
   .custom-image-size {
-    width: 70%; 
-    height: auto; 
+    width: 70%;
+    height: auto;
   }
-  
+
   .second-card {
     position: relative;
   }
@@ -307,6 +307,22 @@
                   interactions personnalisées.
                 </li>
               </ul>
+              <div class="mt-4" data-aos="fade-up" data-aos-duration="1000">
+                <a
+                  (click)="scrollToSection('contactSection')"
+                  class="btn-red btn-lg px-4 py-3"
+                  style="
+                    border-radius: 8px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    color: white;
+                    cursor: pointer;
+                  "
+                >
+                  <i class="fa-solid fa-comments me-2" style="color:white"></i>
+                  En savoir plus
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -495,7 +511,7 @@
             </div>
 
             <div class="home2-btn mt-4">
-              <a  routerLink="/contact"
+              <a (click)="scrollToSection('contactSection')" style="cursor: pointer; color:white"
                 >Contactez-nous <i class="fa-solid fa-arrow-right"></i
               ></a>
             </div>
@@ -663,6 +679,26 @@
         </div>
       </div>
     </div>
+
+    <!-- Call to Action -->
+    <div class="row mt-5">
+      <div class="col-12 text-center" data-aos="fade-up" data-aos-duration="1000">
+        <h3 class="mb-4">
+          Prêt à optimiser la gestion de votre établissement ?
+        </h3>
+        <p class="mb-4 text-muted">
+          Découvrez comment nos solutions peuvent transformer votre activité HORECA ou commerce.
+        </p>
+        <a
+          (click)="scrollToSection('contactSection')"
+          class="btn btn-danger btn-lg px-5 py-3"
+          style="border-radius: 8px; font-weight: 600; cursor: pointer;"
+        >
+          <i class="fa-solid fa-calendar-check me-2"></i>
+          Demandez votre diagnostic gratuit
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -784,7 +820,7 @@
               </div>
             </div>
             <div class="home2-btn mt-4">
-              <a  routerLink="/contact"
+              <a (click)="scrollToSection('contactSection')" style="cursor: pointer; color:white"
                 >Contactez-nous <i class="fa-solid fa-arrow-right"></i
               ></a>
             </div>
@@ -837,10 +873,11 @@
           processus et libérer votre trésorerie.
         </p>
         <a
-           routerLink="/contact"
+          (click)="scrollToSection('contactSection')"
           class="btn btn-danger btn-sm px-3 py-2"
           data-aos="zoom-in"
           data-aos-delay="800"
+          style="cursor: pointer; color:white"
         >
           Contactez-nous <i class="fas fa-arrow-right"></i>
         </a>

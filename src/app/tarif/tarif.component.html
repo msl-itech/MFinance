@@ -1329,6 +1329,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -1361,7 +1362,7 @@
                 <li><i class="fas fa-check"></i> Rapport semestriel</li>
               </ul>
             </div>
-            <a  routerLink="/contact" class="btn-tarif">Commencer</a>
+            <button (click)="scrollToSection('contactSection')" class="btn-tarif">Commencer</button>
           </div>
         </div>
 
@@ -1426,7 +1427,7 @@
                 <li><i class="fas fa-check"></i> Support prioritaire</li>
               </ul>
             </div>
-            <a  routerLink="/contact" class="btn-tarif premium">Démarrer maintenant</a>
+            <button (click)="scrollToSection('contactSection')" class="btn-tarif premium">Démarrer maintenant</button>
           </div>
         </div>
 
@@ -1497,10 +1498,26 @@
                 </li>
               </ul>
             </div>
-            <a  routerLink="/contact" class="btn-tarif excellence">Contactez-nous</a>
+            <button (click)="scrollToSection('contactSection')" class="btn-tarif excellence">Contactez-nous</button>
           </div>
         </div>
       </div>
+
+      <!-- Mini CTA après les cartes de tarifs -->
+      <!-- <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="col-12">
+          <div class="text-center">
+            <p style="font-size: 1.2rem; color: white; margin-bottom: 1rem;">
+              <i class="fas fa-question-circle me-2"></i>
+              Vous hésitez entre plusieurs formules ?
+            </p>
+            <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; color: #1a2c51;">
+              <i class="fas fa-phone-alt me-2"></i>
+              Contactez-nous pour un conseil personnalisé
+            </button>
+          </div>
+        </div>
+      </div> -->
     </div>
   </section>
 
@@ -1590,6 +1607,31 @@
                   <h4>Excellence</h4>
                   <span class="formule-price">650€<small>/mois</small></span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA après la vidéo -->
+      <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="col-12">
+          <div class="p-4" style="background: rgba(243, 73, 71, 0.05); border-radius: 16px; border: 2px solid rgba(243, 73, 71, 0.2);">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <h4 class="mb-2" style="color: #f34947; font-weight: 700;">
+                  <i class="fas fa-calendar-check me-2"></i>
+                  Planifiez votre succès dès maintenant
+                </h4>
+                <p class="mb-0" style="color: #1a2c51; font-size: 1.1rem;">
+                  Prenez rendez-vous avec nos experts pour un diagnostic gratuit et personnalisé de votre situation.
+                </p>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <a href="https://calendly.com/mfinances/rdv-client-en-teleconference" target="_blank" rel="noopener noreferrer" class="btn btn-lg px-4 py-3" style="background: #f34947; color: white; border-radius: 10px; font-weight: 600; width: 100%; text-decoration: none;">
+                  <i class="fas fa-calendar-alt me-2" style="color:white" ></i>
+                  Prendre RDV
+                </a>
               </div>
             </div>
           </div>
@@ -2071,6 +2113,31 @@
           </tbody>
         </table>
       </div>
+
+      <!-- CTA après le tableau des prix -->
+      <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="col-12">
+          <div class="text-center p-5" style="background: linear-gradient(135deg, #1a2c51 0%, #2d5a87 100%); border-radius: 16px; box-shadow: 0 8px 30px rgba(26, 44, 81, 0.3);">
+            <h3 class="text-white mb-3" style="font-weight: 700; font-size: 28px;">
+              <i class="fas fa-star me-2"></i>
+              Chaque formule inclut nos garanties qualité
+            </h3>
+            <p class="text-white mb-4" style="font-size: 18px; opacity: 0.95;">
+              Situations intermédiaires régulières, suivi administratif optimisé et accompagnement personnalisé pour tous nos clients.
+            </p>
+            <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+              <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; color: #1a2c51;">
+                <i class="fas fa-rocket me-2"></i>
+                Commencer maintenant
+              </button>
+              <a href="https://calendly.com/mfinances/rdv-client-en-teleconference" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; border: 2px solid white; text-decoration: none;">
+                <i class="fas fa-video me-2" styler="color:red"></i>
+                Consultation gratuite
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2170,6 +2237,22 @@
           </div>
         </div>
       </div>
+
+      <!-- CTA après Excellence -->
+      <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="col-12">
+          <div class="text-center">
+            <p style="font-size: 1.2rem; color: white; margin-bottom: 1rem;">
+              <i class="fas fa-trophy me-2"></i>
+              L'Excellence vous intéresse ?
+            </p>
+            <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; color: #1a2c51;">
+              <i class="fas fa-paper-plane me-2" style="color:red"></i>
+              Demandez votre devis personnalisé
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2221,6 +2304,27 @@
           <i class="fas fa-arrow-right"></i> Avec Mfinances, vous devenez
           l'acteur de votre succès, pas la victime des imprévus.
         </p>
+      </div>
+
+      <!-- CTA après les cas d'étude -->
+      <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
+        <div class="col-12">
+          <div class="p-5" style="background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%); border-radius: 16px; box-shadow: 0 8px 30px rgba(255, 75, 75, 0.3);">
+            <div class="text-center">
+              <h3 class="text-white mb-3" style="font-weight: 700; font-size: 28px;">
+                <i class="fas fa-shield-alt me-2"></i>
+                Ne laissez plus rien au hasard
+              </h3>
+              <p class="text-white mb-4" style="font-size: 18px; opacity: 0.95;">
+                Rejoignez les entrepreneurs qui pilotent leur entreprise avec sérénité et anticipation.
+              </p>
+              <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; color: #ff4b4b;">
+                <i class="fas fa-handshake me-2"></i>
+                Rejoindre Mfinances
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
