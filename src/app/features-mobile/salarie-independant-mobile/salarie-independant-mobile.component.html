@@ -11,13 +11,43 @@
       </p>
       <p class="hero-question">Quel statut est fait pour vous ?</p>
 
+      <div class="video-wrapper">
+        <div class="video-thumbnail" *ngIf="!showVideo">
+          <img
+            src="https://img.youtube.com/vi/xZ1K4crKW-Q/maxresdefault.jpg"
+            alt="Vidéo explicative Salarié vs Indépendant"
+          />
+        </div>
+
+        <!-- <iframe
+          *ngIf="showVideo"
+          [src]="videoUrl"
+          frameborder="0"
+          allowfullscreen
+          class="video-iframe"
+        >
+        </iframe> -->
+      </div>
+
       <button class="cta-primary" (click)="playVideo()">
         <i class="fas fa-play cta-icon"></i>
         <span class="cta-text">Regarder la vidéo explicative</span>
       </button>
     </div>
   </section>
-
+<div class="video-modal" *ngIf="showVideo" (click)="playVideo()">
+    <div class="video-modal-content" (click)="$event.stopPropagation()">
+      <button class="close-video" (click)="playVideo()">
+        <i class="fas fa-times"></i>
+      </button>
+      <iframe
+        src="https://www.youtube.com/embed/xZ1K4crKW-Q"
+        title="Pourquoi passer en société ?"
+        allowfullscreen
+        class="video-frame"
+      ></iframe>
+    </div>
+  </div>
   <!-- Section Comparatif des Statuts -->
   <section class="comparison-section" id="comparison">
     <div class="section-header">

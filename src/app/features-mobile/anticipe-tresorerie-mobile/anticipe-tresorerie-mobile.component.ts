@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
@@ -31,6 +32,12 @@ export class AnticipeTresorerieMobileComponent implements OnInit {
   // Variables pour la FAQ
   expandedFaq: number | null = null;
   showAllFaq = false;
+
+  // Variables pour les vidéos
+  showPodcastVideo = false;
+  showMainVideo = false;
+  podcastVideoUrl: SafeResourceUrl;
+  mainVideoUrl: SafeResourceUrl;
 
   // Configuration du formulaire
   formConfig: ContactFormConfig = {
@@ -63,7 +70,15 @@ export class AnticipeTresorerieMobileComponent implements OnInit {
     telephone: ''
   };
 
-  constructor() {}
+  constructor(private sanitizer: DomSanitizer) {
+    // URLs sécurisées pour les vidéos
+    this.podcastVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://www.youtube.com/embed/FTykk4hcRio'
+    );
+    this.mainVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://www.youtube.com/embed/NRztTXg7Jzc'
+    );
+  }
 
   ngOnInit(): void {
     // Initialisation du composant
@@ -79,13 +94,11 @@ export class AnticipeTresorerieMobileComponent implements OnInit {
 
   // Méthodes pour les médias
   playPodcast(): void {
-    // Logique pour lancer le podcast
-    console.log('Lecture du podcast');
+    this.showPodcastVideo = !this.showPodcastVideo;
   }
 
   playVideo(): void {
-    // Logique pour lancer la vidéo
-    console.log('Lecture de la vidéo');
+    this.showMainVideo = !this.showMainVideo;
   }
 
   // Méthodes pour la FAQ

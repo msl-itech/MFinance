@@ -28,6 +28,7 @@ export class CompteCourantAdministrateurMobileComponent implements OnInit {
   totalSteps = 3;
   formSubmitted = false;
   isLoading = false;
+  showVideo = false;
 
   // Variables pour la FAQ
   expandedFaq: number | null = null;
@@ -82,6 +83,13 @@ export class CompteCourantAdministrateurMobileComponent implements OnInit {
   playVideo(): void {
     // Cette méthode peut être implémentée pour ouvrir une modal vidéo
     // ou rediriger vers une page de lecture vidéo
+    
+    this.showVideo = !this.showVideo;
+    if (this.showVideo) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
     console.log('Lecture de la vidéo');
   }
 

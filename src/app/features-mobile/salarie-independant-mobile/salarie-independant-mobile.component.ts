@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { ZoneContactMobileComponent } from "../../zone-contact-mobile/zone-contact-mobile.component";
 
@@ -13,6 +14,10 @@ import { ZoneContactMobileComponent } from "../../zone-contact-mobile/zone-conta
 })
 export class SalarieIndependantMobileComponent implements OnInit {
   activeFaq: number | null = null;
+
+  // Variables pour la vidéo
+  showVideo = false;
+  videoUrl: SafeResourceUrl;
 
   faqItems = [
     {
@@ -33,14 +38,26 @@ export class SalarieIndependantMobileComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private sanitizer: DomSanitizer
+  ) {
+    // URL sécurisée pour la vidéo
+    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://www.youtube.com/embed/xZ1K4crKW-Q'
+    );
+  }
 
   ngOnInit(): void {
   }
 
   playVideo(): void {
-    // Logique pour lancer la vidéo explicative
-    console.log('Lecture de la vidéo explicative');
+      this.showVideo = !this.showVideo;
+        if (this.showVideo) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'auto';
+        }
   }
 
   toggleFaq(index: number): void {

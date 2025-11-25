@@ -19,7 +19,19 @@
       </button>
     </div>
   </section>
-
+  <div class="video-modal" *ngIf="showVideo" (click)="playVideo()">
+    <div class="video-modal-content" (click)="$event.stopPropagation()">
+      <button class="close-video" (click)="playVideo()">
+        <i class="fas fa-times"></i>
+      </button>
+      <iframe
+        src="https://www.youtube.com/embed/gZe8kkK2Ddc"
+        title="Pourquoi passer en société ?"
+        allowfullscreen
+        class="video-frame"
+      ></iframe>
+    </div>
+  </div>
   <!-- Section Intro -->
   <section class="intro-section" id="intro">
     <div class="section-header">

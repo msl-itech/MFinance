@@ -14,7 +14,7 @@
       </p>
 
       <button class="cta-primary" (click)="scrollToSection('contactSection')">
-        <i class="fas fa-chart-line cta-icon"></i>
+        <!-- <i class="fas fa-chart-line cta-icon"></i> -->
         <span class="cta-text">🔴 Faire mon diagnostic trésorerie</span>
       </button>
     </div>
@@ -76,22 +76,40 @@
     <div class="podcast-content">
       <div class="podcast-info">
         <p class="podcast-intro">Mika Musungayi partage :</p>
-        
+
         <div class="podcast-points">
           <div class="point-item">
             <i class="fas fa-check-circle"></i>
             <span>✔ Les clés pour anticiper vos besoins financiers</span>
           </div>
-          
+
           <div class="point-item">
             <i class="fas fa-check-circle"></i>
             <span>✔ Pourquoi un tableau prévisionnel est essentiel</span>
           </div>
-          
+
           <div class="point-item">
             <i class="fas fa-check-circle"></i>
             <span>✔ Comment moderniser votre gestion avec Odoo</span>
           </div>
+        </div>
+
+        <div class="video-wrapper" (click)="playPodcast()">
+          <div class="video-thumbnail" *ngIf="!showPodcastVideo">
+            <img
+              src="https://img.youtube.com/vi/FTykk4hcRio/maxresdefault.jpg"
+              alt="Vidéo Podcast Trésorerie"
+            />
+          </div>
+
+          <iframe
+            *ngIf="showPodcastVideo"
+            [src]="podcastVideoUrl"
+            frameborder="0"
+            allowfullscreen
+            class="video-iframe"
+          >
+          </iframe>
         </div>
 
         <button class="cta-podcast" (click)="playPodcast()">
@@ -205,6 +223,24 @@
 
       <div class="result-box">
         <p><strong>👉 Résultat :</strong> Marianne gère son entreprise avec sérénité.</p>
+      </div>
+
+      <div class="video-wrapper" (click)="playVideo()">
+        <div class="video-thumbnail" *ngIf="!showMainVideo">
+          <img
+            src="https://img.youtube.com/vi/NRztTXg7Jzc/maxresdefault.jpg"
+            alt="Vidéo Marianne Transformation"
+          />
+        </div>
+
+        <iframe
+          *ngIf="showMainVideo"
+          [src]="mainVideoUrl"
+          frameborder="0"
+          allowfullscreen
+          class="video-iframe"
+        >
+        </iframe>
       </div>
 
       <button class="cta-video" (click)="playVideo()">
