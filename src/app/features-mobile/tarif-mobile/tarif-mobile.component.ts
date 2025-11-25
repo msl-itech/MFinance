@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 
 @Component({
   selector: 'app-tarif-mobile',
   standalone: true,
-  imports: [CommonModule, RouterLink, ShardeModuleModule],
+  imports: [CommonModule, ShardeModuleModule],
   templateUrl: './tarif-mobile.component.html',
   styleUrls: ['./tarif-mobile.component.scss'],
 })
@@ -21,7 +21,10 @@ export class TarifMobileComponent implements OnInit {
   // Variables pour les modales et tooltips
   showContactModal = false;
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(
+    private sanitizer: DomSanitizer,
+    private router: Router
+  ) {
     // URLs sécurisées pour les vidéos
     this.excellenceVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       'https://www.youtube.com/embed/XJrFJicX7S0'
@@ -50,7 +53,7 @@ export class TarifMobileComponent implements OnInit {
   // Méthode pour naviguer vers la page de contact
   goToContact(): void {
     // Navigation vers la page de contact
-    window.location.href = '/contact';
+    this.router.navigate(['/contact']);
   }
 
   // Méthode pour le scroll vers une section
