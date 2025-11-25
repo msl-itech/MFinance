@@ -316,13 +316,13 @@ import { filter, takeUntil } from 'rxjs/operators';
                     >Anticipez vos Finances</a
                   >
                 </li>
-                <li>
+                <!-- <li>
                   <a
                     routerLink="/tresorerie/accompagnement"
                     (click)="closeMobileMenu()"
                     >Service d'accompagnement</a
                   >
-                </li>
+                </li> -->
               </ul>
             </li>
 

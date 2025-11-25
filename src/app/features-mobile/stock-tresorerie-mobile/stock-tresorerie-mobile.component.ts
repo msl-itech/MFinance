@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
@@ -54,7 +56,11 @@ export class StockTresorerieMobileComponent implements OnInit {
     telephone: ''
   };
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     // Initialisation du composant
@@ -115,12 +121,50 @@ export class StockTresorerieMobileComponent implements OnInit {
   onSubmit(): void {
     if (this.isFormValid) {
       this.isLoading = true;
-      // Simulation d'envoi du formulaire
-      setTimeout(() => {
-        this.formSubmitted = true;
-        this.isLoading = false;
-        console.log('Formulaire stock-trésorerie soumis:', this.formData);
-      }, 2000);
+
+      // Labels pour les valeurs sélectionnées
+      const gereStockLabels: { [key: string]: string } = {
+        'oui-important': 'Oui, nous avons un stock important',
+        'oui-limite': 'Oui, mais il est limité',
+        'non': 'Non, pas de stock concerné'
+      };
+
+      const defiLabels: { [key: string]: string } = {
+        'liquidites-bloquees': 'Liquidités bloquées dans le stock',
+        'produits-dormants': 'Produits dormants ou invendables',
+        'couts-stockage': 'Coûts de stockage trop élevés',
+        'gestion-manuelle': 'Gestion manuelle chronophage'
+      };
+
+      const gereStockLabel = gereStockLabels[this.formData.gere_stock] || this.formData.gere_stock;
+      const defiLabel = defiLabels[this.formData.defi_principal] || this.formData.defi_principal;
+
+      const descriptionParts = [
+        `<h3>Diagnostic Stock</h3>`,
+        `<p><strong>Gestion de stock:</strong> ${gereStockLabel}</p>`,
+        `<p><strong>Principal défi:</strong> ${defiLabel}</p>`,
+        `<p><strong>Source:</strong> Formulaire mobile Stock-Trésorerie</p>`,
+      ];
+
+      const leadData = {
+        name: this.formData.nom,
+        phone: this.formData.telephone,
+        email_from: this.formData.email,
+        description: descriptionParts.join('\n'),
+      };
+
+      this.odooService.createLead(leadData).subscribe({
+        next: () => {
+          this.formSubmitted = true;
+          this.isLoading = false;
+          this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+        },
+        error: (error) => {
+          this.isLoading = false;
+          this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+          console.error('Erreur:', error);
+        },
+      });
     }
   }
 

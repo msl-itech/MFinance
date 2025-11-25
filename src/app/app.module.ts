@@ -6,7 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { AccompagnementComponent } from './TresorerieModule/accompagnement/accompagnement.component';
 import { AlerteTresorerieComponent } from './TresorerieModule/alerte-tresorerie/alerte-tresorerie.component';
 import { AboutComponent } from './about/about.component';
 import { AbslComponent } from './absl/absl.component';
@@ -91,7 +90,6 @@ import { CalculatriceComponent } from './calculatrice/calculatrice.component';
     TarifComponent,
     EconomieAnalysieComponent,
     AlerteTresorerieComponent,
-    AccompagnementComponent,
     FooterComponent,
     PromoBannerComponent,
     NotFoundComponent,

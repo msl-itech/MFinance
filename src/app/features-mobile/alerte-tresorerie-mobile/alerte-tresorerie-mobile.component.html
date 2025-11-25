@@ -28,7 +28,7 @@
   </section>
 
   <!-- Section 1 — SOS Trésorerie -->
-  <section class="sos-section" id="videoSection">
+  <section class="sos-section" >
     <div class="section-header">
       <h2 class="section-title">
         <i class="fas fa-exclamation-triangle title-icon"></i>
@@ -87,6 +87,15 @@
           <strong>Problème :</strong> Ce ne sont pas des solutions durables.
         </div>
       </div>
+
+      <div class="video-container mt-4" id="videoSection">
+        <iframe
+          src="https://www.youtube.com/embed/4mdGlHXP3oA"
+          allowfullscreen
+          class="border-0"
+          style="width: 100%; aspect-ratio: 16/9; border-radius: 12px;"
+        ></iframe>
+      </div>
     </div>
   </section>
 
@@ -128,21 +137,26 @@
         <div class="histoire-text">
           <h4>Histoire :</h4>
           <p>
-            Marianne, propriétaire de "Jolies Chaussures à ton Pied", voit un concurrent 
+            Marianne, propriétaire de "Jolies Chaussures à ton Pied", voit un concurrent
             s'installer juste en face… et appeler sa boutique "Très, Très Jolies Chaussures à ton Pied" !
           </p>
         </div>
       </div>
 
-      <button class="video-cta" (click)="scrollToSection('strategiesSection')">
-        <i class="fas fa-play-circle"></i>
-        <span>Voir la vidéo</span>
-      </button>
+      <div class="video-container mt-4"  id="strategiesSection">
+        <iframe
+          src="https://www.youtube.com/embed/tMKhxLCW0SA"
+          title="Affrontez la concurrence avec stratégie"
+          allowfullscreen
+          class="border-0"
+          style="width: 100%; aspect-ratio: 16/9; border-radius: 12px;"
+        ></iframe>
+      </div>
     </div>
   </section>
 
   <!-- Section Guide Pratique -->
-  <section class="strategies-section" id="strategiesSection">
+  <section class="strategies-section">
     <div class="section-header">
       <span class="section-tag">GUIDE PRATIQUE</span>
       <h2 class="section-title">3 Stratégies</h2>

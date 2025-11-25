@@ -1,6 +1,7 @@
 import { NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DeviceService } from '../../core/device.service';
+import { AccompagnementMobileComponent } from '../../features-mobile/accompagnement-mobile/accompagnement-mobile.component';
 import { AlerteTresorerieMobileComponent } from '../../features-mobile/alerte-tresorerie-mobile/alerte-tresorerie-mobile.component';
 import { AnticipeTresorerieMobileComponent } from '../../features-mobile/anticipe-tresorerie-mobile/anticipe-tresorerie-mobile.component';
 import { InvestirTresorerieMobileComponent } from '../../features-mobile/investir-tresorerie-mobile/investir-tresorerie-mobile.component';
@@ -141,7 +142,26 @@ const routes: Routes = [
     ],
     component: AnticipeTresorerieMobileComponent,
   },
-  { path: 'accompagnement', component: AccompagnementComponent },
+  {
+    path: 'accompagnement',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return !deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: AccompagnementComponent,
+  },
+  {
+    path: 'accompagnement',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: AccompagnementMobileComponent,
+  },
 ];
 
 @NgModule({

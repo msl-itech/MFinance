@@ -1,0 +1,321 @@
+<div class="accompagnement-mobile-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>ACCOMPAGNEMENT MFINANCES</span>
+      </div>
+      <h1 class="hero-title">
+        Gagnez en Sécurité Financière
+      </h1>
+      <p class="hero-subtitle">
+        Transformez vos défis financiers en opportunités de croissance
+      </p>
+
+      <button class="cta-primary" (click)="scrollToSection('contactSection')">
+        <i class="fas fa-rocket cta-icon"></i>
+        <span class="cta-text">Démarrer mon accompagnement</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Section Vidéo Principale -->
+  <section class="video-section" id="videoSection">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-user-tie title-icon"></i>
+        Le Héros de l'Entreprise
+      </h2>
+    </div>
+
+    <div class="video-content">
+      <p class="video-intro">
+        Vous avez une vision ambitieuse pour votre entreprise, mais vous faites face à des défis majeurs de trésorerie qui limitent vos ambitions ?
+      </p>
+
+      <div class="video-wrapper" (click)="playMainVideo()">
+        <div class="video-thumbnail" *ngIf="!showMainVideo">
+          <img
+            src="https://img.youtube.com/vi/ddEWZUHRObM/maxresdefault.jpg"
+            alt="Vidéo Accompagnement MFinances"
+          />
+        </div>
+
+        <iframe
+          *ngIf="showMainVideo"
+          [src]="mainVideoUrl"
+          frameborder="0"
+          allowfullscreen
+          class="video-iframe"
+        >
+        </iframe>
+      </div>
+
+      <div class="problemes-list">
+        <div class="probleme-item">
+          <i class="fas fa-question-circle"></i>
+          <span>Difficulté à prévoir la situation future de votre trésorerie ?</span>
+        </div>
+        <div class="probleme-item">
+          <i class="fas fa-question-circle"></i>
+          <span>Comment financer votre croissance efficacement ?</span>
+        </div>
+        <div class="probleme-item">
+          <i class="fas fa-question-circle"></i>
+          <span>Comment gérer efficacement votre stock ?</span>
+        </div>
+        <div class="probleme-item">
+          <i class="fas fa-question-circle"></i>
+          <span>La concurrence vous pousse à trouver des solutions rapides ?</span>
+        </div>
+      </div>
+
+      <p class="solution-text">
+        Chez <strong>MFinances et MSL-iTECH</strong>, nous comprenons que chaque entreprise est unique.
+        Nous transformons vos défis en opportunités grâce à des solutions sur mesure.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section Pourquoi Optimiser -->
+  <section class="optimisation-section" id="optimisation">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-lightbulb title-icon"></i>
+        Pourquoi l'optimisation de votre trésorerie est cruciale ?
+      </h2>
+    </div>
+
+    <div class="optimisation-content">
+      <div class="optimisation-card">
+        <div class="card-icon">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="card-text">
+          <p>
+            Votre trésorerie est le cœur battant de votre entreprise. Une gestion inadéquate
+            peut non seulement compromettre vos opérations quotidiennes, mais aussi limiter
+            vos opportunités de croissance.
+          </p>
+        </div>
+      </div>
+
+      <div class="vision-box">
+        <h3>🎯 Imaginez une situation où :</h3>
+        <div class="vision-points">
+          <div class="vision-point">
+            <i class="fas fa-check-circle"></i>
+            <span>Chaque euro est maximisé</span>
+          </div>
+          <div class="vision-point">
+            <i class="fas fa-check-circle"></i>
+            <span>Vous anticipez chaque dépense</span>
+          </div>
+          <div class="vision-point">
+            <i class="fas fa-check-circle"></i>
+            <span>Chaque rentrée d'argent est fluide et prévisible</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Défis Courants -->
+  <section class="defis-section" id="defis">
+    <div class="section-header">
+      <h2 class="section-title text-white">
+        <i class="fas fa-exclamation-triangle title-icon"></i>
+        Identifiez-vous à ces défis courants ?
+      </h2>
+    </div>
+
+    <div class="defis-content">
+      <div class="defi-card">
+        <div class="defi-icon">
+          <i class="fas fa-money-bill-wave"></i>
+        </div>
+        <h3 class="defi-title">Tensions de trésorerie récurrentes</h3>
+        <p>Des difficultés fréquentes à couvrir vos charges fixes et variables.</p>
+      </div>
+
+      <div class="defi-card">
+        <div class="defi-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h3 class="defi-title">Retards de paiement clients</h3>
+        <p>Un impact direct sur votre flux de trésorerie.</p>
+      </div>
+
+      <div class="defi-card">
+        <div class="defi-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="defi-title">Croissance difficile à financer</h3>
+        <p>Vos ambitions limitées par des ressources financières insuffisantes.</p>
+      </div>
+
+      <div class="defi-card">
+        <div class="defi-icon">
+          <i class="fas fa-boxes"></i>
+        </div>
+        <h3 class="defi-title">Gestion de stock inefficace</h3>
+        <p>Immobilisation de liquidités dans des stocks non optimisés.</p>
+      </div>
+
+      <div class="defi-card">
+        <div class="defi-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="defi-title">Pression concurrentielle</h3>
+        <p>Besoin de solutions stratégiques pour rester compétitif.</p>
+      </div>
+
+      <div class="defi-card">
+        <div class="defi-icon">
+          <i class="fas fa-eye-slash"></i>
+        </div>
+        <h3 class="defi-title">Manque de visibilité financière</h3>
+        <p>Absence de tableaux de bord clairs pour piloter votre activité.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Accompagnement -->
+  <section class="accompagnement-section" id="accompagnement">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="fas fa-handshake title-icon"></i>
+        Notre proposition d'accompagnement
+      </h2>
+      <h3 class="section-subtitle">MFinances et MSL-iTECH</h3>
+      <p class="section-description">
+        Nous vous accompagnons avec un plan stratégique pour revitaliser votre entreprise.
+      </p>
+    </div>
+
+    <div class="etapes-container">
+      <!-- Étape 1 -->
+      <div class="etape-card">
+        <div class="etape-number">1️⃣</div>
+        <div class="etape-image">
+          <img
+            src="../../../assets/img/webp/Etape3.webp"
+            alt="Échange Diagnostic"
+          />
+        </div>
+        <div class="etape-content">
+          <h3>L'échange Diagnostic</h3>
+          <p>
+            Initiez votre parcours vers une meilleure gestion financière par un
+            rendez-vous en visioconférence. Au cours de cette session, vous
+            partagerez avec nous les détails de votre métier, votre mode de
+            fonctionnement, vos principales difficultés.
+          </p>
+          <div class="etape-result">
+            <i class="fas fa-arrow-right"></i>
+            <span>Liste d'éléments comptables et financiers à transmettre</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="etape-card">
+        <div class="etape-number">2️⃣</div>
+        <div class="etape-image">
+          <img
+            src="../../../assets/img/webp/Etape1.webp"
+            alt="Analyse approfondie"
+          />
+        </div>
+        <div class="etape-content">
+          <h3>L'analyse approfondie</h3>
+          <p>
+            Une fois vos documents en main, nous procédons à une analyse
+            rigoureuse de votre gestion de trésorerie actuelle. Nous vous
+            présentons ensuite un schéma clair de votre fonctionnement, en
+            identifiant les dysfonctionnements et leurs causes.
+          </p>
+          <div class="etape-result">
+            <i class="fas fa-arrow-right"></i>
+            <span>Recommandations précises sur les points à améliorer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="etape-card">
+        <div class="etape-number">3️⃣</div>
+        <div class="etape-image">
+          <img
+            src="../../../assets/img/webp/Etape2.webp"
+            alt="Recommandations et Automatisation"
+          />
+        </div>
+        <div class="etape-content">
+          <h3>Recommandations et Automatisation</h3>
+          <p>
+            À cette étape, notre objectif est de vous proposer des solutions
+            pour automatiser la création de votre tableau de trésorerie
+            prévisionnel. Nous analysons d'abord votre entreprise, ses workflows
+            spécifiques et la manière dont elle fonctionne.
+          </p>
+          <div class="etape-highlight">
+            <i class="fas fa-cogs"></i>
+            <div>
+              <strong>Solution Odoo</strong>
+              <p>Suite de logiciels personnalisables pour répondre aux besoins spécifiques de votre entreprise</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section CTA Final -->
+  <section class="cta-final-section" id="ctaFinal">
+    <div class="cta-final-card">
+      <div class="cta-final-header">
+        <h2 class="cta-final-title">
+          <i class="fas fa-rocket"></i>
+          Prêt à transformer votre gestion financière ?
+        </h2>
+      </div>
+
+      <div class="cta-final-content">
+        <h3>👉 Ne laissez pas la trésorerie freiner votre succès</h3>
+        <p>Contactez-nous dès aujourd'hui pour un diagnostic gratuit et personnalisé.</p>
+
+        <div class="cta-final-info">
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <span>Réponse sous 24h</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-gift"></i>
+            <span>Diagnostic gratuit</span>
+          </div>
+        </div>
+
+        <button class="cta-final-button" (click)="scrollToSection('contactSection')">
+          <span>🔴 Démarrer mon accompagnement</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section formulaire de contact -->
+  <section id="contactSection" class="contact-section">
+    <app-form-code-promo id="targetSection"></app-form-code-promo>
+  </section>
+
+  <!-- CTA fixe bas de page -->
+  <div class="fixed-cta">
+    <button class="cta-fixed" (click)="scrollToSection('contactSection')">
+      <i class="fas fa-phone-alt"></i>
+      <span>Nous contacter</span>
+    </button>
+  </div>
+</div>

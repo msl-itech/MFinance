@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { MobileProfileNavigationComponent } from '../../shared/mobile-profile-navigation/mobile-profile-navigation.component';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
@@ -105,7 +107,11 @@ export class InvestirTresorerieMobileComponent implements OnInit {
     activite_autre: ''
   };
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     // Initialisation du composant
@@ -213,12 +219,69 @@ export class InvestirTresorerieMobileComponent implements OnInit {
   onSubmit(): void {
     if (this.isFormValid) {
       this.isLoading = true;
-      // Simulation d'envoi du formulaire
-      setTimeout(() => {
-        this.formSubmitted = true;
-        this.isLoading = false;
-        console.log('Formulaire soumis:', this.formData);
-      }, 2000);
+
+      // Labels pour les valeurs sélectionnées
+      const souhaiteInvestirLabels: { [key: string]: string } = {
+        'oui': 'Oui, j\'ai un projet d\'investissement en cours',
+        'non': 'Non, pas de projet pour le moment'
+      };
+
+      const freinLabels: { [key: string]: string } = {
+        'manque-tresorerie': 'Manque de trésorerie',
+        'doutes-rentabilite': 'Doutes sur la rentabilité',
+        'pas-plan-financement': 'Pas de plan de financement',
+        'autre': this.formData.frein_autre || 'Autre'
+      };
+
+      const chiffreAffairesLabels: { [key: string]: string } = {
+        'moins-100k': 'Moins de 100K €/an',
+        '100k-200k': '100K à 200K €/an',
+        '200k-500k': '200K à 500K €/an',
+        'plus-500k': 'Plus de 500K €/an'
+      };
+
+      const activiteLabels: { [key: string]: string } = {
+        'horeca': 'Horeca (restaurant, café, bar, hôtel)',
+        'commerce-detail': 'Commerce de détail',
+        'commerce-gros': 'Commerce de gros',
+        'services': 'Services',
+        'sante': 'Santé (médecin, dentiste, pharmacie)',
+        'autre': this.formData.activite_autre || 'Autre'
+      };
+
+      const souhaiteInvestirLabel = souhaiteInvestirLabels[this.formData.souhaite_investir] || this.formData.souhaite_investir;
+      const freinLabel = freinLabels[this.formData.frein_principal] || this.formData.frein_principal;
+      const chiffreAffairesLabel = chiffreAffairesLabels[this.formData.chiffre_affaires] || this.formData.chiffre_affaires;
+      const activiteLabel = activiteLabels[this.formData.type_activite] || this.formData.type_activite;
+
+      const descriptionParts = [
+        `<h3>Diagnostic Investissement</h3>`,
+        `<p><strong>Souhaite investir prochainement:</strong> ${souhaiteInvestirLabel}</p>`,
+        `<p><strong>Frein principal:</strong> ${freinLabel}</p>`,
+        `<p><strong>Chiffre d'affaires annuel:</strong> ${chiffreAffairesLabel}</p>`,
+        `<p><strong>Type d'activité:</strong> ${activiteLabel}</p>`,
+        `<p><strong>Source:</strong> Formulaire mobile Investir-Trésorerie</p>`,
+      ];
+
+      const leadData = {
+        name: this.formData.nom,
+        phone: this.formData.telephone,
+        email_from: this.formData.email,
+        description: descriptionParts.join('\n'),
+      };
+
+      this.odooService.createLead(leadData).subscribe({
+        next: () => {
+          this.formSubmitted = true;
+          this.isLoading = false;
+          this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+        },
+        error: (error) => {
+          this.isLoading = false;
+          this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+          console.error('Erreur:', error);
+        },
+      });
     }
   }
 

@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
@@ -60,7 +62,11 @@ export class AlerteTresorerieMobileComponent implements OnInit {
     telephone: ''
   };
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     // Initialisation du composant
@@ -107,12 +113,51 @@ export class AlerteTresorerieMobileComponent implements OnInit {
   onSubmit(): void {
     if (this.isFormValid) {
       this.isLoading = true;
-      // Simulation d'envoi du formulaire
-      setTimeout(() => {
-        this.formSubmitted = true;
-        this.isLoading = false;
-        console.log('Formulaire soumis:', this.formData);
-      }, 2000);
+
+      // Labels pour les valeurs sélectionnées
+      const perduClientsLabels: { [key: string]: string } = {
+        'oui-clairement': 'Oui, clairement (impact visible sur le CA)',
+        'un-peu-resiste': 'Un peu, mais je résiste',
+        'non-connaissance': 'Non, pas à ma connaissance',
+        'ne-sais-pas': 'Je ne sais pas'
+      };
+
+      const reactionLabels: { [key: string]: string } = {
+        'baisse-prix': 'J\'ai baissé mes prix',
+        'reduit-depenses': 'J\'ai réduit mes dépenses',
+        'attendu-voir': 'J\'ai attendu de voir',
+        'ameliore-communication': 'J\'ai amélioré ma communication'
+      };
+
+      const perduClientsLabel = perduClientsLabels[this.formData.perdu_clients] || this.formData.perdu_clients;
+      const reactionLabel = reactionLabels[this.formData.reaction_concurrence] || this.formData.reaction_concurrence;
+
+      const descriptionParts = [
+        `<h3>Test de Résistance Trésorerie</h3>`,
+        `<p><strong>Perdu des clients récemment:</strong> ${perduClientsLabel}</p>`,
+        `<p><strong>Réaction face à la concurrence:</strong> ${reactionLabel}</p>`,
+        `<p><strong>Source:</strong> Formulaire mobile Alerte-Trésorerie</p>`,
+      ];
+
+      const leadData = {
+        name: this.formData.nom,
+        phone: this.formData.telephone,
+        email_from: this.formData.email,
+        description: descriptionParts.join('\n'),
+      };
+
+      this.odooService.createLead(leadData).subscribe({
+        next: () => {
+          this.formSubmitted = true;
+          this.isLoading = false;
+          this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+        },
+        error: (error) => {
+          this.isLoading = false;
+          this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+          console.error('Erreur:', error);
+        },
+      });
     }
   }
 

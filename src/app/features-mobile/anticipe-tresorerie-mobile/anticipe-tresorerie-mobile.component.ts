@@ -5,6 +5,8 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
+import { OdooService } from '../../services/odoo.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-anticipe-tresorerie-mobile',
@@ -70,7 +72,11 @@ export class AnticipeTresorerieMobileComponent implements OnInit {
     telephone: ''
   };
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(
+    private sanitizer: DomSanitizer,
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {
     // URLs sécurisées pour les vidéos
     this.podcastVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       'https://www.youtube.com/embed/FTykk4hcRio'
@@ -137,15 +143,39 @@ export class AnticipeTresorerieMobileComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.isFormValid) {
-      this.isLoading = true;
-      // Simulation d'envoi du formulaire
-      setTimeout(() => {
+    if (!this.isFormValid) {
+      this.toastr.error('Veuillez remplir tous les champs requis', 'Erreur');
+      return;
+    }
+
+    this.isLoading = true;
+
+    const descriptionParts = [
+      `<h3>Diagnostic anticipation trésorerie</h3>`,
+      `<p><strong>Tableau de trésorerie:</strong> ${this.getTableauTresorerieLabel()}</p>`,
+      `<p><strong>Défi principal:</strong> ${this.getDefiPrincipalLabel()}</p>`,
+      `<p><strong>Source:</strong> Formulaire mobile Anticipation trésorerie</p>`,
+    ];
+
+    const leadData = {
+      name: this.formData.nom,
+      phone: this.formData.telephone,
+      email_from: this.formData.email,
+      description: descriptionParts.join('\n'),
+    };
+
+    this.odooService.createLead(leadData).subscribe({
+      next: () => {
         this.formSubmitted = true;
         this.isLoading = false;
-        console.log('Formulaire soumis:', this.formData);
-      }, 2000);
-    }
+        this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+        console.error('Erreur:', error);
+      },
+    });
   }
 
   onReset(): void {
@@ -158,5 +188,26 @@ export class AnticipeTresorerieMobileComponent implements OnInit {
       email: '',
       telephone: ''
     };
+    this.isLoading = false;
+  }
+
+  private getTableauTresorerieLabel(): string {
+    const options = {
+      'oui-regulier': 'Oui, je le mets à jour régulièrement',
+      'oui-pas-jour': "Oui, mais il n'est pas toujours à jour",
+      'non-jour-jour': 'Non, je fais au jour le jour',
+      'non-sais-pas': "Non, je ne sais même pas ce que c'est",
+    };
+    return options[this.formData.tableauTresorerie as keyof typeof options] || this.formData.tableauTresorerie;
+  }
+
+  private getDefiPrincipalLabel(): string {
+    const options = {
+      'manque-visibilite': 'Manque de visibilité sur les flux à venir',
+      'depenses-imprevues': 'Trop de dépenses imprévues',
+      'prioriser-paiements': 'Difficultés à prioriser les paiements',
+      'aucun-outil': 'Aucun outil automatisé',
+    };
+    return options[this.formData.defiPrincipal as keyof typeof options] || this.formData.defiPrincipal;
   }
 }

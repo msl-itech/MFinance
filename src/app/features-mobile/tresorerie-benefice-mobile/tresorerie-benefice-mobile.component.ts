@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { OdooService } from '../../services/odoo.service';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
 
@@ -40,12 +42,12 @@ export class TresorerieBeneficeMobileComponent implements OnInit {
     description: 'Découvrez comment optimiser votre trésorerie et éviter les crises de liquidité.',
     phoneButton: 'Appelez-nous',
     contactButton: 'Contactez-nous',
-    
+
     // En-tête du formulaire
     formTitle: 'Diagnostic trésorerie personnalisé',
     formDescription: 'En 3 minutes, évaluez votre situation. Nous vous rappelons sous 72h.',
     badge: 'GRATUIT ET SANS ENGAGEMENT',
-    
+
     // Boutons et messages
     submitButton: 'Recevoir mon diagnostic gratuit',
     successTitle: '🎉 Merci pour votre demande !',
@@ -53,6 +55,11 @@ export class TresorerieBeneficeMobileComponent implements OnInit {
     successNote: 'Nous vous contactons sous 72h pour planifier votre analyse personnalisée.',
     resetButton: 'Faire une nouvelle demande'
   };
+
+  constructor(
+    private odooService: OdooService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     // Initialisation du composant
@@ -100,16 +107,49 @@ export class TresorerieBeneficeMobileComponent implements OnInit {
   onSubmit(): void {
     if (this.isFormValid && !this.isLoading) {
       this.isLoading = true;
-      
-      // Simulation d'envoi du formulaire
-      setTimeout(() => {
-        console.log('Données du formulaire trésorerie-bénéfice:', this.formData);
-        this.formSubmitted = true;
-        this.isLoading = false;
-        
-        // Ici vous pouvez ajouter la logique d'envoi vers votre API
-        this.sendFormData();
-      }, 2000);
+
+      // Labels pour les valeurs sélectionnées
+      const situationLabels: { [key: string]: string } = {
+        'benefices-sans-cash': 'Bénéfices sans cash',
+        'clients-retards': 'Clients en retard de paiement',
+        'pas-de-visibilite': 'Pas de visibilité sur la trésorerie'
+      };
+
+      const chiffreAffairesLabels: { [key: string]: string } = {
+        'moins-100k': 'Moins de 100k €',
+        '100k-500k': '100k à 500k €',
+        'plus-500k': 'Plus de 500k €'
+      };
+
+      const situationLabel = situationLabels[this.formData.situationTresorerie] || this.formData.situationTresorerie;
+      const chiffreAffairesLabel = chiffreAffairesLabels[this.formData.chiffreAffaires] || this.formData.chiffreAffaires;
+
+      const descriptionParts = [
+        `<h3>Diagnostic Trésorerie</h3>`,
+        `<p><strong>Situation de trésorerie:</strong> ${situationLabel}</p>`,
+        `<p><strong>Chiffre d'affaires annuel:</strong> ${chiffreAffairesLabel}</p>`,
+        `<p><strong>Source:</strong> Formulaire mobile Trésorerie-Bénéfice</p>`,
+      ];
+
+      const leadData = {
+        name: this.formData.nom,
+        phone: this.formData.telephone,
+        email_from: this.formData.email,
+        description: descriptionParts.join('\n'),
+      };
+
+      this.odooService.createLead(leadData).subscribe({
+        next: () => {
+          this.formSubmitted = true;
+          this.isLoading = false;
+          this.toastr.success('Votre demande a été envoyée avec succès!', 'Succès');
+        },
+        error: (error) => {
+          this.isLoading = false;
+          this.toastr.error("Une erreur est survenue lors de l'envoi.", 'Erreur');
+          console.error('Erreur:', error);
+        },
+      });
     }
   }
 
@@ -124,18 +164,6 @@ export class TresorerieBeneficeMobileComponent implements OnInit {
       email: '',
       telephone: '',
     };
-  }
-
-  private sendFormData(): void {
-    // Logique d'envoi des données vers l'API
-    const formDataToSend = {
-      ...this.formData,
-      source: 'tresorerie-benefice-mobile',
-      timestamp: new Date().toISOString(),
-    };
-    
-    console.log('Envoi des données:', formDataToSend);
-    // Ici, vous pouvez implémenter l'appel à votre service
   }
 
   scrollToSection(sectionId: string): void {
