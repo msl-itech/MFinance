@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import * as AOS from 'aos';
 import { Observable } from 'rxjs';
-import { distinctUntilChanged, filter, map, startWith } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, skip, startWith } from 'rxjs/operators';
 import { DeviceService } from './core/device.service';
 import { MetaService } from './services/meta.service';
 
@@ -56,10 +56,16 @@ export class AppComponent implements OnInit {
       });
 
     // Re-matcher les routes lorsqu'on change de breakpoint (mobile <-> desktop)
-    this.shouldUseMobileVersion$.pipe(distinctUntilChanged()).subscribe(() => {
-      // Re-navigation sur la même URL pour déclencher canMatch
-      this.router.navigateByUrl(this.router.url, { replaceUrl: true });
-    });
+    // skip(1) pour ignorer la première émission lors de l'initialisation
+    this.shouldUseMobileVersion$
+      .pipe(
+        distinctUntilChanged(),
+        skip(1) // Ignorer la première valeur (initialisation)
+      )
+      .subscribe(() => {
+        // Re-navigation sur la même URL pour déclencher canMatch
+        this.router.navigateByUrl(this.router.url, { replaceUrl: true });
+      });
   }
 
   /**

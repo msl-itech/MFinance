@@ -14,6 +14,7 @@ function getRoutes(): Routes {
 }
 
 const routes: Routes = [
+  // Routes desktop
   {
     path: '',
     canMatch: [
@@ -24,6 +25,7 @@ const routes: Routes = [
     ],
     children: DESKTOP_ROUTES,
   },
+  // Routes mobile
   {
     path: '',
     canMatch: [
