@@ -178,12 +178,19 @@
               <i class="fas fa-calendar"></i>
               Avez-vous un jour préféré ?
             </label>
-            <input
-              type="text"
+            <select
               class="form-control custom-input"
-              placeholder="Ex: Lundi, Mardi matin, Vendredi après-midi..."
               [(ngModel)]="formData.jourPrefere"
-            />
+            >
+              <option value="">Sélectionnez un jour</option>
+              <option value="Lundi">Lundi</option>
+              <option value="Mardi">Mardi</option>
+              <option value="Mercredi">Mercredi</option>
+              <option value="Jeudi">Jeudi</option>
+              <option value="Vendredi">Vendredi</option>
+              <option value="Samedi">Samedi</option>
+              <option value="Dimanche">Dimanche</option>
+            </select>
           </div>
         </div>
       </div>
