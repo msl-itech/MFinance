@@ -1,0 +1,408 @@
+/* ========================================
+   INTRODUCTION SECTION - PREMIUM WHITE
+   ======================================== */
+
+.intro-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section Badge */
+.section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(243, 73, 71, 0.1) 0%, rgba(243, 73, 71, 0.05) 100%);
+    color: #f34947;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(243, 73, 71, 0.2);
+}
+
+.section-badge i {
+    font-size: 0.75rem;
+}
+
+/* Main Title */
+.intro-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.text-highlight {
+    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Subtitle */
+.intro-subtitle {
+    font-size: 1.15rem;
+    color: #64748b;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.benefit-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(243, 73, 71, 0.2);
+}
+
+.benefit-icon i {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.benefit-content {
+    flex: 1;
+}
+
+.benefit-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.benefit-text {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.benefit-card:hover {
+    transform: translateX(8px);
+    border-color: rgba(243, 73, 71, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Odoo Highlight Card */
+.odoo-highlight-card {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.15);
+}
+
+.odoo-highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #f34947 0%, #ff6b6a 100%);
+}
+
+.odoo-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    background: rgba(243, 73, 71, 0.15);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.odoo-icon-wrapper i {
+    font-size: 1.5rem;
+    color: #f34947;
+}
+
+.odoo-content {
+    flex: 1;
+}
+
+.odoo-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.odoo-text {
+    font-size: 0.925rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========================================
+   IMAGE SECTION
+   ======================================== */
+
+.intro-image-wrapper {
+    position: relative;
+    padding: 40px 0;
+}
+
+/* Decorative Circles */
+.deco-circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.deco-1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(243, 73, 71, 0.08) 0%, transparent 70%);
+    top: -50px;
+    right: -50px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.deco-2 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(243, 73, 71, 0.05) 0%, transparent 70%);
+    bottom: -30px;
+    left: -30px;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+/* Image Container */
+.image-container {
+    position: relative;
+    z-index: 1;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(15, 23, 42, 0.05);
+    transition: transform 0.4s ease;
+}
+
+.main-image:hover {
+    transform: scale(1.02);
+}
+
+/* Floating Badges */
+.floating-badge {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(15, 23, 42, 0.05);
+    animation: floatBadge 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+.badge-1 {
+    top: 20px;
+    right: -20px;
+}
+
+.badge-2 {
+    bottom: 40px;
+    left: -20px;
+    animation-delay: 1.5s;
+}
+
+.badge-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.badge-icon i {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.badge-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.badge-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-value {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes floatBadge {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 992px) {
+    .intro-section {
+        padding: 80px 0;
+    }
+
+    .intro-title {
+        font-size: 2.5rem;
+    }
+
+    .floating-badge {
+        padding: 12px 16px;
+    }
+
+    .badge-1 {
+        right: 0;
+    }
+
+    .badge-2 {
+        left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        padding: 60px 0;
+    }
+
+    .intro-title {
+        font-size: 2rem;
+    }
+
+    .intro-subtitle {
+        font-size: 1rem;
+    }
+
+    .benefits-grid {
+        gap: 12px;
+    }
+
+    .benefit-card {
+        padding: 16px;
+    }
+
+    .benefit-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .benefit-icon i {
+        font-size: 1.1rem;
+    }
+
+    .odoo-highlight-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .intro-image-wrapper {
+        padding: 20px 0;
+    }
+
+    .deco-1,
+    .deco-2 {
+        display: none;
+    }
+
+    .floating-badge {
+        position: static;
+        margin-bottom: 16px;
+    }
+
+    .badge-2 {
+        margin-bottom: 0;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .intro-title {
+        font-size: 1.75rem;
+    }
+
+    .section-badge {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+}
