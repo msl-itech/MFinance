@@ -14,6 +14,7 @@ import { PageServiceComponent } from './page-service/page-service.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { ServicesRoutingModule } from './services-routing.module';
 import { TabsComponent } from './tabs/tabs.component';
+import { CommentCaMarcheComponent } from './comment-ca-marche/comment-ca-marche.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TabsComponent } from './tabs/tabs.component';
     DeclarationImpotComponent,
     PricingComponent,
     TabsComponent,
+    CommentCaMarcheComponent,
   ],
   imports: [
     CommonModule,

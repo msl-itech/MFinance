@@ -1,0 +1,189 @@
+/* ========================================
+   PROCESS SECTION - HORIZONTAL COMPACT
+   ======================================== */
+
+.process-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section Header */
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Horizontal Steps Container */
+.process-steps-horizontal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Individual Step Item */
+.step-item {
+    position: relative;
+    padding: 30px 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Step Number Badge */
+.step-number {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 12px rgba(243, 73, 71, 0.3);
+    z-index: 2;
+}
+
+/* Step Icon */
+.step-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(243, 73, 71, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.step-icon i {
+    font-size: 1.5rem;
+    color: #f34947;
+}
+
+/* Step Title */
+.step-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+}
+
+/* Step Description */
+.step-desc {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Hover Effects */
+.step-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    border-color: rgba(243, 73, 71, 0.2);
+}
+
+.step-item:hover .step-icon {
+    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    transform: scale(1.1);
+}
+
+.step-item:hover .step-icon i {
+    color: #ffffff;
+}
+
+.step-item:hover .step-title {
+    color: #f34947;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .process-steps-horizontal {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .process-section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .process-steps-horizontal {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .step-item {
+        padding: 24px 20px;
+    }
+
+    .step-title {
+        font-size: 1.1rem;
+    }
+
+    .step-desc {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation Enhancement */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step-item[data-aos="fade-up"] {
+    animation: fadeInUp 0.5s ease-out;
+}
