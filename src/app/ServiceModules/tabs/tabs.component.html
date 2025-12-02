@@ -1,132 +1,275 @@
-<section class="section-padding position-relative overflow-hidden" style="background: #ffffff;">
-  <!-- Élément de fond abstrait -->
-  <div class="bg-decoration-circle"></div>
+<section class="services-tabs-section">
+    <div class="container">
 
-  <div class="container position-relative z-2">
-    <div class="row gy-5 align-items-start">
-      
-      <!-- COLONNE GAUCHE : Services (Checklist Verticale) -->
-      <div class="col-lg-5" data-aos="fade-right">
-        <div class="sticky-wrapper"> <!-- Rend le titre collant au scroll -->
-          <h2 class="display-5 fw-bold mb-4" style="color: #0f172a;">
-            Nos Services <br><span class="text-gradient">Comptables</span>
-          </h2>
-          <p class="mb-5" style="color: #64748b; font-size: 1.1rem; line-height: 1.7;">
-            Nous proposons un accompagnement complet, adapté à vos besoins et à vos outils (notamment Odoo) :
-          </p>
-
-          <!-- Liste transformée en éléments interactifs -->
-          <div class="service-list-container">
-            <!-- Item 1 -->
-            <div class="service-item">
-              <div class="icon-check"><i class="fas fa-check"></i></div>
-              <span class="text">Tenue de la comptabilité générale et analytique</span>
+        <!-- Section Header -->
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <div class="header-badge mb-3">
+                <i class="fas fa-briefcase me-2"></i>
+                <span>Notre Expertise</span>
             </div>
-            <!-- Item 2 -->
-            <div class="service-item">
-              <div class="icon-check"><i class="fas fa-check"></i></div>
-              <span class="text">Encodage automatisé ou simplifié des documents</span>
-            </div>
-            <!-- Item 3 -->
-            <div class="service-item">
-              <div class="icon-check"><i class="fas fa-check"></i></div>
-              <span class="text">Déclarations TVA, bilans, comptes annuels, ISOC, IPP</span>
-            </div>
-            <!-- Item 4 -->
-            <div class="service-item">
-              <div class="icon-check"><i class="fas fa-check"></i></div>
-              <span class="text">Suivi régulier avec tableaux de bord financiers</span>
-            </div>
-            <!-- Item 5 -->
-            <div class="service-item">
-              <div class="icon-check"><i class="fas fa-check"></i></div>
-              <span class="text">Trésorerie prévisionnelle dynamique</span>
-            </div>
-            <!-- Item 6 -->
-            <div class="service-item">
-              <div class="icon-check"><i class="fas fa-check"></i></div>
-              <span class="text">Mise en place de budgets stratégiques</span>
-            </div>
-            <!-- Item 7 -->
-            <div class="service-item">
-              <div class="icon-check"><i class="fas fa-check"></i></div>
-              <span class="text">Conseil fiscal tout au long de l'année</span>
-            </div>
-            <!-- Item 8 -->
-            <div class="service-item highlight">
-              <div class="icon-check"><i class="fas fa-star"></i></div>
-              <span class="text">Intégration comptable dans Odoo</span>
-            </div>
-            <!-- Item 9 -->
-            <div class="service-item highlight">
-              <div class="icon-check"><i class="fas fa-cog"></i></div>
-              <span class="text">Configuration d'Odoo : plan comptable belge, TVA, relances</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- COLONNE DROITE : Différenciation (Grille & Odoo) -->
-      <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
-
-        <!-- Carte Odoo mise en avant -->
-        <div class="odoo-feature-card mb-5">
-          <div class="glow-border"></div>
-          <div class="content">
-            <div class="d-flex align-items-start">
-              <div class="icon-box-lg me-4">
-                <i class="fas fa-sync-alt fa-spin-hover"></i>
-              </div>
-              <div>
-                <h4 class="fw-bold mb-3" style="color: #0f172a; font-size: 1.5rem;">La Puissance Odoo</h4>
-                <p class="mb-0" style="color: #475569; font-size: 1.05rem; line-height: 1.7;">
-                  Votre comptabilité est connectée à vos modules de gestion : e-commerce, point de vente, stock, facturation… Vous avez une vision en temps réel de la santé financière de votre entreprise.
-                </p>
-              </div>
-            </div>
-          </div>
+            <h2 class="section-title mb-3">
+                Nos Services <span class="text-highlight">Comptables</span>
+            </h2>
+            <p class="section-subtitle">
+                Un accompagnement complet, adapté à vos besoins et à vos outils (notamment Odoo)
+            </p>
         </div>
 
-        <div class="separator-line mb-5"></div>
-
-        <h3 class="fw-bold mb-3" style="color: #0f172a; font-size: 1.75rem;">Ce qui nous différencie</h3>
-        <p class="mb-5" style="color: #64748b; font-size: 1.05rem; line-height: 1.7;">
-          Chez MFinances, nous ne faisons pas que tenir la comptabilité. Nous vous aidons à comprendre vos chiffres, à automatiser vos processus, et à prendre de meilleures décisions.
-        </p>
-
-        <!-- Transformation de la 2ème liste en Grille (Grid) -->
-        <div class="differentiation-grid">
-          <div class="diff-card">
-            <i class="fas fa-comments text-red mb-3"></i>
-            <span class="small fw-bold d-block">Communication claire, sans jargon</span>
-          </div>
-          <div class="diff-card">
-            <i class="fas fa-tags text-red mb-3"></i>
-            <span class="small fw-bold d-block">Tarifs transparents et adaptés</span>
-          </div>
-          <div class="diff-card">
-            <i class="fas fa-user-shield text-red mb-3"></i>
-            <span class="small fw-bold d-block">Accompagnement humain et réactif</span>
-          </div>
-          <div class="diff-card span-2"> <!-- Carte large -->
-            <i class="fas fa-laptop-code text-red mb-3"></i>
-            <span class=" small fw-bold d-block">Spécialisation Odoo : intervention directe dans votre ERP</span>
-          </div>
-          <div class="diff-card">
-            <i class="fas fa-briefcase text-red mb-3"></i>
-            <span class="small fw-bold d-block">Expérience sectorielle variée</span>
-          </div>
-          <div class="diff-card">
-            <i class="fas fa-award text-red mb-3"></i>
-            <span class="small fw-bold d-block">Expertise Odoo reconnue en Belgique</span>
-          </div>
-          <div class="diff-card span-2"> <!-- Carte large -->
-            <i class="fas fa-chart-pie text-red mb-3"></i>
-            <span class="small fw-bold d-block">Outils de pilotage pour décisions éclairées</span>
-          </div>
+        <!-- Tabs Navigation -->
+        <div class="tabs-nav-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <div class="tabs-nav">
+                <button class="tab-btn" [class.active]="activeTab === 'services'" (click)="switchTab('services')">
+                    <i class="fas fa-list-check"></i>
+                    <span>Nos Services</span>
+                </button>
+                <button class="tab-btn" [class.active]="activeTab === 'odoo'" (click)="switchTab('odoo')">
+                    <i class="fas fa-cubes"></i>
+                    <span>Expertise Odoo</span>
+                </button>
+                <button class="tab-btn" [class.active]="activeTab === 'difference'" (click)="switchTab('difference')">
+                    <i class="fas fa-star"></i>
+                    <span>Notre Différence</span>
+                </button>
+            </div>
         </div>
 
-      </div>
+        <!-- Tabs Content -->
+        <div class="tabs-content-wrapper">
+
+            <!-- Tab 1: Nos Services -->
+            <div class="tab-content" *ngIf="activeTab === 'services'" data-aos="fade-up" data-aos-delay="200">
+                <div class="row g-4">
+
+                    <!-- Service Card 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h5 class="service-title">Comptabilité Générale & Analytique</h5>
+                            <p class="service-desc">Tenue complète de votre comptabilité avec <br> analyse détaillée</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h5 class="service-title">Encodage Automatisé</h5>
+                            <p class="service-desc">Simplification et automatisation de <br>l'encodage des documents</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-file-invoice"></i>
+                            </div>
+                            <h5 class="service-title">Déclarations Fiscales</h5>
+                            <p class="service-desc">TVA, bilans, comptes annuels, ISOC, IPP</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h5 class="service-title">Tableaux de Bord</h5>
+                            <p class="service-desc">Suivi régulier avec reporting <br>financier personnalisé</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <h5 class="service-title">Trésorerie Prévisionnelle</h5>
+                            <p class="service-desc">Gestion dynamique de votre trésorerie</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 6 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h5 class="service-title">Budgets Stratégiques</h5>
+                            <p class="service-desc">Mise en place et suivi de vos<br> objectifs financiers</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 7 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h5 class="service-title">Conseil Fiscal</h5>
+                            <p class="service-desc">Accompagnement fiscal tout au<br> long de l'année</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 8 - Highlighted -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card featured">
+                            <div class="featured-badge">Odoo</div>
+                            <div class="service-icon">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <h5 class="service-title">Intégration Odoo</h5>
+                            <p class="service-desc">Intégration comptable complète dans Odoo</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 9 - Highlighted -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card featured">
+                            <div class="featured-badge">Odoo</div>
+                            <div class="service-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h5 class="service-title">Configuration Odoo</h5>
+                            <p class="service-desc">Plan comptable belge, TVA,<br> relances personnalisées</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tab 2: Expertise Odoo -->
+            <div class="tab-content" *ngIf="activeTab === 'odoo'">
+                <div class="odoo-expertise-content">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-6">
+                            <div class="odoo-visual">
+                                <div class="odoo-icon-large">
+                                    <i class="fas fa-cubes"></i>
+                                </div>
+                                <div class="odoo-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">100%</span>
+                                        <span class="stat-label">Intégration</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">v15-v18</span>
+                                        <span class="stat-label">Compatible</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">24/7</span>
+                                        <span class="stat-label">Support</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="odoo-title mb-4">La Puissance d'Odoo</h3>
+                            <p class="odoo-description mb-4">
+                                Votre comptabilité est connectée à vos modules de gestion : e-commerce, point de vente,
+                                stock, facturation… Vous avez une vision en temps réel de la santé financière de votre
+                                entreprise.
+                            </p>
+
+                            <div class="odoo-benefits">
+                                <div class="odoo-benefit-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Synchronisation automatique des données</span>
+                                </div>
+                                <div class="odoo-benefit-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Vision temps réel de votre trésorerie</span>
+                                </div>
+                                <div class="odoo-benefit-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Élimination des doublons et erreurs</span>
+                                </div>
+                                <div class="odoo-benefit-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Reporting automatisé et personnalisé</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Notre Différence -->
+            <div class="tab-content" *ngIf="activeTab === 'difference'">
+                <div class="difference-intro text-center mb-5">
+                    <h3 class="difference-title mb-3">Ce qui nous différencie</h3>
+                    <p class="difference-subtitle">
+                        Chez MFinances, nous ne faisons pas que tenir la comptabilité. Nous vous aidons à comprendre vos
+                        chiffres, à automatiser vos processus, et à prendre de meilleures décisions.
+                    </p>
+                </div>
+
+                <div class="difference-grid">
+                    <div class="difference-card">
+                        <div class="diff-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h6 class="diff-title">Communication Claire</h6>
+                        <p class="diff-desc">Sans jargon technique, accessible à tous</p>
+                    </div>
+
+                    <div class="difference-card">
+                        <div class="diff-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h6 class="diff-title">Tarifs Transparents</h6>
+                        <p class="diff-desc">Adaptés à votre structure et volume</p>
+                    </div>
+
+                    <div class="difference-card">
+                        <div class="diff-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h6 class="diff-title">Accompagnement Humain</h6>
+                        <p class="diff-desc">Réactif et personnalisé</p>
+                    </div>
+
+                    <div class="difference-card featured">
+                        <div class="diff-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h6 class="diff-title">Spécialisation Odoo</h6>
+                        <p class="diff-desc">Intervention directe dans votre ERP</p>
+                    </div>
+
+                    <div class="difference-card">
+                        <div class="diff-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h6 class="diff-title">Expérience Sectorielle</h6>
+                        <p class="diff-desc">Variée et approfondie</p>
+                    </div>
+
+                    <div class="difference-card">
+                        <div class="diff-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h6 class="diff-title">Expertise Reconnue</h6>
+                        <p class="diff-desc">Cabinet Odoo certifié en Belgique</p>
+                    </div>
+
+                    <div class="difference-card featured">
+                        <div class="diff-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h6 class="diff-title">Outils de Pilotage</h6>
+                        <p class="diff-desc">Pour des décisions éclairées</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-  </div>
 </section>

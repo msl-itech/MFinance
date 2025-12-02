@@ -1,267 +1,586 @@
-/* --- Variables & Structure --- */
-.bg-decoration-circle {
-  position: absolute;
-  top: 10%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(243, 73, 71, 0.08), transparent 70%);
-  filter: blur(100px);
-  z-index: 1;
-  pointer-events: none;
+/* ========================================
+   SERVICES TABS SECTION - PREMIUM DESIGN
+   ======================================== */
+
+.services-tabs-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
 }
 
-.sticky-wrapper {
-  position: sticky;
-  top: 100px;
-  padding-right: 2rem;
+/* ========================================
+   SECTION HEADER
+   ======================================== */
+
+.section-header {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* --- Colonne Gauche : Service List --- */
-.service-list-container {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(243, 73, 71, 0.1) 0%, rgba(243, 73, 71, 0.05) 100%);
+    color: #f34947;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(243, 73, 71, 0.2);
 }
 
-.service-item {
-  display: flex;
-  align-items: center;
-  padding: 18px 20px;
-  border-radius: 14px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0f172a;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
 }
 
-.service-item:hover {
-  background: #ffffff;
-  transform: translateX(8px);
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.text-highlight {
+    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.service-item .icon-check {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(16, 185, 129, 0.15);
-  color: #10b981;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  margin-right: 16px;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
+.section-subtitle {
+    font-size: 1.15rem;
+    color: #64748b;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.service-item:hover .icon-check {
-  background: rgba(16, 185, 129, 0.25);
-  transform: scale(1.1);
+/* ========================================
+   TABS NAVIGATION
+   ======================================== */
+
+.tabs-nav-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
 }
 
-.service-item .text {
-  color: #334155;
-  font-size: 1.02rem;
-  line-height: 1.5;
-  font-weight: 500;
+.tabs-nav {
+    display: inline-flex;
+    gap: 12px;
+    background: #f8fafc;
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
-/* Highlight items (Odoo specific) */
-.service-item.highlight {
-  background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
-  border-color: rgba(243, 73, 71, 0.3);
-  box-shadow: 0 2px 8px rgba(243, 73, 71, 0.1);
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-.service-item.highlight:hover {
-  border-color: rgba(243, 73, 71, 0.5);
-  box-shadow: 0 6px 16px rgba(243, 73, 71, 0.15);
+.tab-btn i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
 }
 
-.service-item.highlight .icon-check {
-  background: #f34947;
-  color: white;
-  box-shadow: 0 2px 8px rgba(243, 73, 71, 0.3);
+.tab-btn:hover {
+    color: #0f172a;
+    background: rgba(255, 255, 255, 0.5);
 }
 
-.service-item.highlight .text {
-  color: #1e293b;
-  font-weight: 600;
+.tab-btn:hover i {
+    transform: scale(1.1);
 }
 
-/* --- Colonne Droite : Odoo Card --- */
-.odoo-feature-card {
-  position: relative;
-  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-  border-radius: 24px;
-  padding: 3px;
-  overflow: hidden;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.4s ease;
+.tab-btn.active {
+    background: #ffffff;
+    color: #f34947;
+    box-shadow: 0 4px 12px rgba(243, 73, 71, 0.15);
 }
 
-.odoo-feature-card:hover {
-  box-shadow: 0 8px 32px rgba(243, 73, 71, 0.12);
-  transform: translateY(-4px);
+.tab-btn.active i {
+    transform: scale(1.1);
 }
 
-.glow-border {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(243, 73, 71, 0.1), transparent 60%);
-  opacity: 0.6;
-  z-index: 0;
-  border-radius: 24px;
-  transition: opacity 0.4s ease;
+/* ========================================
+   TABS CONTENT
+   ======================================== */
+
+.tabs-content-wrapper {
+    position: relative;
+    min-height: 500px;
 }
 
-.odoo-feature-card:hover .glow-border {
-  opacity: 1;
+.tab-content {
+    animation: fadeIn 0.5s ease;
 }
 
-.odoo-feature-card .content {
-  position: relative;
-  z-index: 1;
-  background: #ffffff;
-  border-radius: 21px;
-  padding: 36px;
+.tab-content.active {
+    display: block;
 }
 
-.icon-box-lg {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, rgba(243, 73, 71, 0.15), rgba(243, 73, 71, 0.08));
-  color: #f34947;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(243, 73, 71, 0.15);
-  transition: all 0.4s ease;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.odoo-feature-card:hover .icon-box-lg {
-  box-shadow: 0 6px 20px rgba(243, 73, 71, 0.25);
-  transform: scale(1.05);
+/* ========================================
+   SERVICE CARDS (TAB 1)
+   ======================================== */
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 32px 28px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
-.fa-spin-hover {
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.odoo-feature-card:hover .fa-spin-hover {
-  transform: rotate(180deg);
-}
-
-.separator-line {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
-  width: 100%;
-}
-
-/* --- Colonne Droite : Grid Différenciation --- */
-.differentiation-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f34947 0%, #ff6b6a 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
 }
 
-.diff-card {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  padding: 28px 24px;
-  border-radius: 18px;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+.service-card:hover::before {
+    transform: scaleX(1);
 }
 
-.diff-card:hover {
-  background: #ffffff;
-  transform: translateY(-6px);
-  border-color: #cbd5e1;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(243, 73, 71, 0.3);
 }
 
-.diff-card i {
-  font-size: 1.75rem;
-  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.service-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(243, 73, 71, 0.1) 0%, rgba(243, 73, 71, 0.05) 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
 }
 
-.diff-card:hover i {
-  transform: scale(1.15) rotate(5deg);
+.service-icon i {
+    font-size: 1.75rem;
+    color: #f34947;
 }
 
-.diff-card span {
-  color: #1e293b;
-  font-size: 1rem;
-  line-height: 1.5;
+.service-card:hover .service-icon {
+    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    transform: scale(1.1) rotate(5deg);
 }
 
-/* Item large pour casser la grille */
-.diff-card.span-2 {
-  grid-column: span 2;
-  flex-direction: row;
-  align-items: center;
-  padding: 24px 28px;
+.service-card:hover .service-icon i {
+    color: #ffffff;
 }
 
-.diff-card.span-2 i {
-  margin-bottom: 0 !important;
-  margin-right: 20px;
-  font-size: 2rem;
+.service-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+    font-family: 'Outfit', sans-serif;
 }
 
-.diff-card.span-2 span {
-  font-size: 1.05rem;
+.service-desc {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .sticky-wrapper {
-    position: static;
-    padding-right: 0;
-  }
-  .differentiation-grid {
-    grid-template-columns: 1fr;
-  }
-  .diff-card.span-2 {
-    grid-column: auto;
+/* Featured Service Cards (Odoo) */
+.service-card.featured {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+    border-color: rgba(243, 73, 71, 0.3);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(243, 73, 71, 0.3);
+}
+
+/* ========================================
+   ODOO EXPERTISE TAB (TAB 2)
+   ======================================== */
+
+.odoo-expertise-content {
+    padding: 40px 0;
+}
+
+.odoo-visual {
+    position: relative;
+    padding: 40px;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.odoo-icon-large {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    box-shadow: 0 12px 32px rgba(243, 73, 71, 0.25);
+    animation: float 3s ease-in-out infinite;
+}
+
+.odoo-icon-large i {
+    font-size: 3.5rem;
+    color: #ffffff;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.odoo-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    flex: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #f34947;
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.odoo-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    font-family: 'Outfit', sans-serif;
+}
+
+.odoo-description {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+.odoo-benefits {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-  }
-  .diff-card.span-2 i {
-    margin-bottom: 12px !important;
-    margin-right: 0;
-  }
-  .service-item {
-    padding: 16px 18px;
-  }
-  .odoo-feature-card .content {
-    padding: 24px;
-  }
-  .icon-box-lg {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-  }
+    gap: 16px;
 }
 
-/* Section padding ajusté */
-.section-padding {
-  padding: 7rem 0;
+.odoo-benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.odoo-benefit-item:hover {
+    background: #ffffff;
+    transform: translateX(8px);
+    border-color: rgba(243, 73, 71, 0.3);
+}
+
+.odoo-benefit-item i {
+    font-size: 1.25rem;
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+.odoo-benefit-item span {
+    font-size: 1rem;
+    color: #334155;
+    font-weight: 500;
+}
+
+/* ========================================
+   DIFFERENCE TAB (TAB 3)
+   ======================================== */
+
+.difference-intro {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.difference-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    font-family: 'Outfit', sans-serif;
+}
+
+.difference-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+.difference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.difference-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 32px 28px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.difference-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(243, 73, 71, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.difference-card:hover::before {
+    opacity: 1;
+}
+
+.difference-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(243, 73, 71, 0.3);
+}
+
+.diff-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, rgba(243, 73, 71, 0.1) 0%, rgba(243, 73, 71, 0.05) 100%);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: all 0.3s ease;
+}
+
+.diff-icon i {
+    font-size: 2rem;
+    color: #f34947;
+    transition: transform 0.3s ease;
+}
+
+.difference-card:hover .diff-icon {
+    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.difference-card:hover .diff-icon i {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.diff-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.diff-desc {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.difference-card.featured {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+    border-color: rgba(243, 73, 71, 0.3);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 992px) {
+    .services-tabs-section {
+        padding: 80px 0;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .tabs-nav {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .tab-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .odoo-stats {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 768px) {
-  .section-padding {
-    padding: 4rem 0;
-  }
+    .services-tabs-section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .tabs-nav-wrapper {
+        margin-bottom: 40px;
+    }
+
+    .tab-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .service-card {
+        padding: 24px 20px;
+    }
+
+    .odoo-visual {
+        padding: 30px 20px;
+    }
+
+    .odoo-icon-large {
+        width: 100px;
+        height: 100px;
+    }
+
+    .odoo-icon-large i {
+        font-size: 3rem;
+    }
+
+    .odoo-title {
+        font-size: 1.75rem;
+    }
+
+    .odoo-description {
+        font-size: 1rem;
+    }
+
+    .difference-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .header-badge {
+        font-size: 0.8rem;
+        padding: 6px 16px;
+    }
+
+    .tabs-nav {
+        padding: 6px;
+    }
+
+    .service-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .service-icon i {
+        font-size: 1.5rem;
+    }
 }

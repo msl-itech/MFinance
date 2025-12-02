@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './tabs.component.css'
 })
 export class TabsComponent {
+  activeTab: string = 'services';
 
+  switchTab(tabName: string): void {
+    this.activeTab = tabName;
+  }
 }
