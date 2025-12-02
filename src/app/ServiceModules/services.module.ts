@@ -13,6 +13,7 @@ import { FiscaliteComponent } from './fiscalite/fiscalite.component';
 import { PageServiceComponent } from './page-service/page-service.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { ServicesRoutingModule } from './services-routing.module';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ServicesRoutingModule } from './services-routing.module';
     CreationEntrepriseComponent,
     DeclarationImpotComponent,
     PricingComponent,
+    TabsComponent,
   ],
   imports: [
     CommonModule,

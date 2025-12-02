@@ -5,10 +5,10 @@ import * as AOS from 'aos';
 @Component({
   selector: 'app-comptabilite',
   templateUrl: './comptabilite.component.html',
-  styleUrl: './comptabilite.component.css',
+  styleUrl: './comptabilite.component.scss',
 })
 export class ComptabiliteComponent implements OnInit, AfterViewInit {
-  constructor(private metaService: MetaService) {}
+  constructor(private metaService: MetaService) { }
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Comptabilité

@@ -1,0 +1,181 @@
+/* --- Variables & Structure --- */
+.bg-decoration-circle {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(243, 73, 71, 0.15), transparent 70%);
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sticky-wrapper {
+  position: sticky;
+  top: 100px; /* Ajustez selon la hauteur de votre navbar */
+}
+
+/* --- Colonne Gauche : Service List --- */
+.service-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.service-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(10px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.service-item .icon-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.2); /* Vert subtil */
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.service-item .text {
+  color: #cbd5e1; /* Text blanc cassé */
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Highlight items (Odoo specific) */
+.service-item.highlight {
+  background: rgba(243, 73, 71, 0.1);
+  border-color: rgba(243, 73, 71, 0.3);
+}
+
+.service-item.highlight .icon-check {
+  background: #f34947;
+  color: white;
+}
+
+.service-item.highlight .text {
+  color: white;
+  font-weight: 500;
+}
+
+/* --- Colonne Droite : Odoo Card --- */
+.odoo-feature-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+  border-radius: 20px;
+  padding: 2px; /* Pour la bordure gradient */
+  overflow: hidden;
+}
+
+.glow-border {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(45deg, var(--accent-red), transparent 60%);
+  opacity: 0.5;
+  z-index: 0;
+  border-radius: 20px;
+}
+
+.odoo-feature-card .content {
+  position: relative;
+  z-index: 1;
+  background: #0f172a; /* Match background color */
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.icon-box-lg {
+  width: 50px;
+  height: 50px;
+  background: rgba(243, 73, 71, 0.2);
+  color: var(--accent-red);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.fa-spin-hover {
+  transition: transform 0.8s ease;
+}
+.odoo-feature-card:hover .fa-spin-hover {
+  transform: rotate(180deg);
+}
+
+.separator-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  width: 100%;
+}
+
+/* --- Colonne Droite : Grid Différenciation --- */
+.differentiation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.diff-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.diff-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.diff-card i {
+  font-size: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.diff-card:hover i {
+  transform: scale(1.2);
+}
+
+/* Item large pour casser la grille */
+.diff-card.span-2 {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+}
+
+.diff-card.span-2 i {
+  margin-bottom: 0 !important;
+  margin-right: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sticky-wrapper { position: static; }
+  .differentiation-grid { grid-template-columns: 1fr; }
+  .diff-card.span-2 { grid-column: auto; }
+}
