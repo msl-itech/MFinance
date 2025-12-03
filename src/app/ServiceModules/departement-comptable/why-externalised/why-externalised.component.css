@@ -1,0 +1,574 @@
+/* --- Global Section --- */
+.dilemma-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #1a2c51 0%, #0f1a2e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de fond subtil */
+.dilemma-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(243, 73, 71, 0.1) 0%, transparent 70%);
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f34947;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #f34947, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Grid & Layout --- */
+.dilemma-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-header {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Cards Design --- */
+.dilemma-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px;
+    flex: 1;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet Hover sur la carte */
+.dilemma-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(243, 73, 71, 0.2);
+    border-color: rgba(243, 73, 71, 0.3);
+}
+
+/* Bandeau coloré discret en haut de la carte au survol */
+.dilemma-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f34947, #ff6b6b);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.dilemma-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* --- Card Content --- */
+.card-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(243, 73, 71, 0.15);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #f34947;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dilemma-card:hover .card-icon-wrapper {
+    background: linear-gradient(135deg, #f34947, #ff6b6b);
+    color: #fff;
+}
+
+.dilemma-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.card-intro {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+}
+
+/* --- List of Pain Points --- */
+.pain-points-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pain-points-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+}
+
+.pain-points-list li i {
+    color: #f34947;
+    margin-right: 15px;
+    margin-top: 4px;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.pain-points-list strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* --- VS Badge (Centre) --- */
+.vs-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    border: 4px solid #1a2c51;
+}
+
+/* --- Conclusion --- */
+.dilemma-conclusion {
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.dilemma-conclusion p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.btn-gradient {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #f34947, #ff6b6b);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(243, 73, 71, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(243, 73, 71, 0.6);
+    background: linear-gradient(135deg, #ff6b6b, #f34947);
+}
+
+/* --- Responsive --- */
+@media (max-width: 991px) {
+    .dilemma-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .dilemma-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .vs-badge {
+        top: 48%;
+    }
+}
+
+@media (max-width: 768px) {
+    .dilemma-section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .dilemma-card {
+        padding: 30px;
+    }
+
+    .btn-gradient {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+}
+
+/* ============================================
+   MODAL OVERLAY & ANIMATION
+   ============================================ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    padding: 20px;
+}
+
+.modal-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Wrapper & Content --- */
+.modal-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+}
+
+.modal-overlay.is-visible .modal-wrapper {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: row;
+    min-height: 600px;
+}
+
+/* --- Bouton Fermer --- */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    color: #6b7280;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+    color: #111;
+}
+
+/* --- Colonne Gauche (Visuelle) --- */
+.modal-visual {
+    flex: 0 0 35%;
+    background: linear-gradient(135deg, #f34947, #ff6b6b);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.visual-content {
+    position: relative;
+    z-index: 2;
+}
+
+.visual-content i {
+    font-size: 60px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.visual-content h3 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* Cercles décoratifs animés */
+.circle-1,
+.circle-2 {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+}
+
+.circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: -50px;
+}
+
+/* --- Colonne Droite (Texte) --- */
+.modal-text {
+    flex: 1;
+    padding: 40px 50px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(243, 73, 71, 0.1);
+    color: #f34947;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.modal-text h2 {
+    font-size: 28px;
+    color: #111;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.modal-description {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* --- Liste des avantages --- */
+.solution-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.solution-features li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    background: #f3f4f6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f34947;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.solution-features strong {
+    display: block;
+    color: #1f2937;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.solution-features span {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* --- Highlight Box --- */
+.modal-highlight {
+    background: linear-gradient(135deg, rgba(243, 73, 71, 0.08), rgba(255, 107, 107, 0.08));
+    border-left: 4px solid #f34947;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.modal-highlight i {
+    color: #f34947;
+    font-size: 24px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.modal-highlight p {
+    margin: 0;
+    color: #1f2937;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+/* --- Bouton CTA dans le modal --- */
+.modal-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 30px;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.modal-cta:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.modal-cta i {
+    margin-left: 10px;
+}
+
+/* --- Responsive Mobile Modal --- */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+    }
+
+    .modal-visual {
+        padding: 30px;
+        flex: 0 0 auto;
+    }
+
+    .modal-visual h3 {
+        font-size: 24px;
+    }
+
+    .modal-text {
+        padding: 30px 20px;
+        max-height: 60vh;
+    }
+
+    .modal-text h2 {
+        font-size: 20px;
+    }
+
+    .modal-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .solution-features li {
+        margin-bottom: 14px;
+    }
+
+    .solution-features strong {
+        font-size: 14px;
+    }
+
+    .solution-features span {
+        font-size: 12px;
+    }
+
+    .modal-highlight {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .modal-highlight i {
+        font-size: 20px;
+    }
+
+    .modal-highlight p {
+        font-size: 13px;
+    }
+}

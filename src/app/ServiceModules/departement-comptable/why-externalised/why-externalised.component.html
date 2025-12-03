@@ -1,0 +1,172 @@
+<section class="dilemma-section">
+    <div class="container p-4">
+        <!-- En-tête -->
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-label">Le Constat</span>
+            <h2 class="section-title">
+                Pourquoi externaliser votre <br><span class="text-gradient">département comptable</span> ?
+            </h2>
+            <p class="section-subtitle">
+                Entre internalisation complexe et sous-traitance distante, le choix est souvent difficile.
+            </p>
+        </div>
+
+        <div class="dilemma-grid">
+            <!-- Option A : Internalisation -->
+            <div class="dilemma-card" data-aos="fade-right">
+                <div class="card-icon-wrapper">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>L'Internalisation Complète</h3>
+                <p class="card-intro">Le choix de la gestion interne</p>
+                
+                <ul class="pain-points-list">
+                    <li>
+                        <i class="fas fa-times-circle"></i>
+                        <span><strong>Coûts élevés</strong> : Recrutement d’experts et charges salariales lourdes.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-times-circle"></i>
+                        <span><strong>Gestion RH complexe</strong> : Turnover, absences, formation continue.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-times-circle"></i>
+                        <span><strong>Mise en place lourde</strong> : Création technique d’un pôle structuré.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-times-circle"></i>
+                        <span><strong>Manque de supervision</strong> : Risques d'erreurs sans manager financier senior.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- VS Badge (Optionnel, purement esthétique) -->
+            <div class="vs-badge">OU</div>
+
+            <!-- Option B : Cabinet Classique -->
+            <div class="dilemma-card" data-aos="fade-left">
+                <div class="card-icon-wrapper">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Le Cabinet Classique</h3>
+                <p class="card-intro">Le choix de la sous-traitance standard</p>
+                
+                <ul class="pain-points-list">
+                    <li>
+                        <i class="fas fa-times-circle"></i>
+                        <span><strong>Manque de disponibilité</strong> : Délais de réponse souvent longs.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-times-circle"></i>
+                        <span><strong>Peu de personnalisation</strong> : Approche standardisée, non "sur-mesure".</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-times-circle"></i>
+                        <span><strong>Rupture d’information</strong> : Données souvent déconnectées de la réalité opérationnelle.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-times-circle"></i>
+                        <span><strong>Faible intégration</strong> : Outils peu connectés à votre écosystème métier.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conclusion / Transition vers votre solution -->
+        <div class="dilemma-conclusion text-center" data-aos="fade-up" data-aos-delay="300">
+            <p>Il existe une troisième voie.</p>
+            <button (click)="openModal()" class="btn-gradient">Découvrir notre approche hybride</button>
+        </div>
+    </div>
+</section>
+
+<!-- Structure du Pop-up Solution -->
+<div class="modal-overlay" [class.is-visible]="isModalVisible" (click)="closeModal()">
+    <div class="modal-wrapper" (click)="$event.stopPropagation()">
+        <button class="modal-close" (click)="closeModal()">&times;</button>
+
+        <div class="modal-content">
+            <!-- Colonne Visuelle (Gauche) -->
+            <div class="modal-visual">
+                <div class="visual-content">
+                    <i class="fas fa-handshake"></i>
+                    <h3>La Solution<br>Hybride</h3>
+                    <p>Le meilleur des deux mondes</p>
+                </div>
+                <!-- Formes décoratives -->
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+            </div>
+
+            <!-- Colonne Texte (Droite) -->
+            <div class="modal-text">
+                <span class="modal-tag">Innovation</span>
+                <h2>Notre solution hybride : le meilleur des deux mondes</h2>
+                <p class="modal-description">
+                    Nous vous proposons un service externalisé, mais entièrement intégré à votre entreprise, avec :
+                </p>
+
+                <ul class="solution-features">
+                    <li>
+                        <div class="icon-box"><i class="fas fa-users"></i></div>
+                        <div>
+                            <strong>Collaborateurs dédiés</strong>
+                            <span>1 à plusieurs collaborateurs dédiés à 100 % à votre société</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box"><i class="fas fa-desktop"></i></div>
+                        <div>
+                            <strong>Intégration Odoo</strong>
+                            <span>Une intégration directe dans votre environnement Odoo</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                        <div>
+                            <strong>Pilotage en temps réel</strong>
+                            <span>Un pilotage comptable en temps réel</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box"><i class="fas fa-comments"></i></div>
+                        <div>
+                            <strong>Communication directe</strong>
+                            <span>Une communication directe, fluide et régulière avec vos équipes internes</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box"><i class="fas fa-file-invoice"></i></div>
+                        <div>
+                            <strong>Obligations fiscales</strong>
+                            <span>Une prise en charge complète des obligations fiscales, TVA, bilans, ISOC</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <strong>Sécurité & conformité</strong>
+                            <span>Un niveau de confidentialité, de sécurité et de conformité élevé</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-box"><i class="fas fa-search"></i></div>
+                        <div>
+                            <strong>Accompagnement stratégique</strong>
+                            <span>Un suivi proactif, des reportings périodiques, et un accompagnement stratégique</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="modal-highlight">
+                    <i class="fas fa-lightbulb"></i>
+                    <p>Vous gardez la réactivité d'un service en interne, tout en bénéficiant de l'expertise, des outils, de la stabilité et des garanties d'un cabinet comptable spécialisé.</p>
+                </div>
+
+                <a href="#contact-final" class="modal-cta" (click)="closeModal()">
+                    Discuter de mon besoin <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
