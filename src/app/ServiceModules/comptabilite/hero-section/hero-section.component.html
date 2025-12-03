@@ -1,0 +1,80 @@
+<style>
+    .hero-section {
+        padding: 32px;
+        margin-top: 40px;
+    }
+</style>
+<header class="hero-section">
+    <!-- Élément décoratif d'arrière-plan -->
+    <div class="glow-bg top-right"></div>
+    <div class="glow-bg bottom-left"></div>
+
+    <!-- ✨ ANIMATION SLIDER ODOO - Ligne supérieure ✨ -->
+    <div class="odoo-slider-wrapper top-slider">
+        <div class="odoo-slider-track">
+            <div class="odoo-logo-item" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+                <img src="../../../../assets/img/logo/odoo_logo.png" alt="Odoo" class="odoo-floating-logo">
+                <span class="odoo-version-badge">v{{ 15 + (i % 4) }}</span>
+            </div>
+        </div>
+        <!-- Duplication pour l'effet infini -->
+        <div class="odoo-slider-track" aria-hidden="true">
+            <div class="odoo-logo-item" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+                <img src="../../../../assets/img/logo/odoo_logo.png" alt="Odoo" class="odoo-floating-logo">
+                <span class="odoo-version-badge">v{{ 15 + (i % 4) }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✨ ANIMATION SLIDER ODOO - Ligne inférieure (sens inverse) ✨ -->
+    <div class="odoo-slider-wrapper bottom-slider">
+        <div class="odoo-slider-track reverse">
+            <div class="odoo-logo-item" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+                <img src="../../../../assets/img/logo/odoo_logo.png" alt="Odoo" class="odoo-floating-logo">
+                <span class="odoo-version-badge">v{{ 15 + (i % 4) }}</span>
+            </div>
+        </div>
+        <!-- Duplication pour l'effet infini -->
+        <div class="odoo-slider-track reverse" aria-hidden="true">
+            <div class="odoo-logo-item" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+                <img src="../../../../assets/img/logo/odoo_logo.png" alt="Odoo" class="odoo-floating-logo">
+                <span class="odoo-version-badge">v{{ 15 + (i % 4) }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="container position-relative z-2 h-100 d-flex flex-column justify-content-center align-items-center text-center">
+        <div class="badge-pill mb-4" data-aos="fade-down">
+            <span class="badge-dot"></span> Compatible Odoo v15 à v18
+        </div>
+
+        <h1 data-aos="zoom-in" class="hero-title text-white mb-4">
+            Comptabilité Claire, <br>
+            <span class="text-gradient">Proactive & Sans Stress.</span>
+        </h1>
+
+        <p class="hero-subtitle text-white-80 mb-5" data-aos="fade-up" data-aos-delay="100">
+            En tant qu'indépendant ou dirigeant de PME, vous n'avez pas le temps (ni toujours l'envie) de plonger dans
+            les
+            chiffres. Chez MFinances, nous vous proposons une comptabilité qui vous permet de gagner du temps, prendre
+            de
+            meilleures décisions et respecter vos obligations fiscales sans stress.
+        </p>
+
+        <div class="d-flex gap-3 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <button (click)="scrollToSection('contactSection')" class="btn-awwwards btn-primary-glow">
+                <span>Demander un appel gratuit</span>
+                <i class="fas fa-arrow-right ms-2"></i>
+            </button>
+            <button (click)="scrollToSection('services')" class="btn-awwwards btn-glass">
+                <span>Découvrir</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <!-- <div class="scroll-indicator">
+        <div class="mouse"></div>
+    </div> -->
+</header>

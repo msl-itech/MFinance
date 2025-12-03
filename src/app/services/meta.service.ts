@@ -5,7 +5,7 @@ import { Meta, Title } from '@angular/platform-browser';
   providedIn: 'root',
 })
 export class MetaService {
-  constructor(private meta: Meta, private title: Title) {}
+  constructor(private meta: Meta, private title: Title) { }
 
   /**
    * Définit les meta-données pour une page spécifique
@@ -215,9 +215,9 @@ export class MetaService {
    */
   setComptabilitePageMeta(): void {
     this.updateMetaTags(
-      'Services de comptabilité pour entreprises - MFinances',
-      'MFinances propose des services de comptabilité professionnels pour entreprises et indépendants à Bruxelles. Tenue comptable, bilan, reporting et conseil.',
-      'comptabilité, tenue comptable, bilan, reporting financier, Bruxelles'
+      'Expert-comptable Odoo Belgique – Comptabilité en temps réel pour PME, ASBL, promoteurs, Horeca | MFinances',
+      'Expert-comptable spécialisé Odoo. Comptabilité en temps réel, tableaux de bord financiers, suivi fiscal intégré à votre ERP. MFinances accompagne indépendants, PME, ASBL et promoteurs. Demandez un appel gratuit.',
+      'comptabilité, expert-comptable odoo, odoo belgique, comptabilité pme, comptabilité asbl, comptabilité promoteur immobilier'
     );
   }
 

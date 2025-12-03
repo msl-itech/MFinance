@@ -16,6 +16,12 @@ import { ServicesRoutingModule } from './services-routing.module';
 import { TabsComponent } from './tabs/tabs.component';
 import { CommentCaMarcheComponent } from './comment-ca-marche/comment-ca-marche.component';
 import { IntroductionComptabiliteComponent } from './introduction-comptabilite/introduction-comptabilite.component';
+import { OdooLogoSliderComponent } from './comptabilite/odoo-logo-slider/odoo-logo-slider.component';
+import { HeroSectionComponent } from './comptabilite/hero-section/hero-section.component';
+import { DepartementComptableComponent } from './departement-comptable/departement-comptable.component';
+import { ServiceDepartementComponent } from './departement-comptable/service-departement/service-departement.component';
+import { WhyExternalisedComponent } from './departement-comptable/why-externalised/why-externalised.component';
+import { AvantagesComponent } from './departement-comptable/avantages/avantages.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +34,12 @@ import { IntroductionComptabiliteComponent } from './introduction-comptabilite/i
     TabsComponent,
     CommentCaMarcheComponent,
     IntroductionComptabiliteComponent,
+    OdooLogoSliderComponent,
+    HeroSectionComponent,
+    DepartementComptableComponent,
+    ServiceDepartementComponent,
+    WhyExternalisedComponent,
+    AvantagesComponent,
   ],
   imports: [
     CommonModule,
@@ -39,4 +51,4 @@ import { IntroductionComptabiliteComponent } from './introduction-comptabilite/i
     ComptabiliteMobileComponent,
   ],
 })
-export class ServicesModule {}
+export class ServicesModule { }

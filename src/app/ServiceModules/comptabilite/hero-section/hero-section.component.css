@@ -1,0 +1,381 @@
+/* Typography Enhancements */
+h1,
+h2,
+h3,
+h4,
+h5,
+.display-4,
+.display-5 {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #fff 0%, #f34947 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-red-glow {
+    color: #f34947;
+    text-shadow: 0 0 20px rgba(243, 73, 71, 0.4);
+}
+
+.text-white-60 {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.text-white-80 {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* HERO SECTION */
+.hero-section {
+    min-height: 90vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #0B1120;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glow-bg {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.top-right {
+    top: -200px;
+    right: -200px;
+    background: radial-gradient(circle, #f34947, transparent);
+}
+
+.bottom-left {
+    bottom: -200px;
+    left: -200px;
+    background: radial-gradient(circle, #1a2c51, transparent);
+}
+
+/* ✨ ODOO LOGO SLIDER ANIMATION - HYPER MOTION ✨ */
+.odoo-slider-wrapper {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+    /* Ajout d'un léger motion blur pour effet de vitesse */
+    filter: blur(0.3px);
+}
+
+.top-slider {
+    top: 15%;
+    transform: rotate(-5deg);
+}
+
+.bottom-slider {
+    bottom: 15%;
+    transform: rotate(5deg);
+}
+
+.odoo-slider-track {
+    display: flex;
+    gap: 60px;
+    /* Réduit de 80px à 60px pour plus de densité */
+    animation: scroll-left 15s linear infinite;
+    /* Accéléré de 40s à 15s */
+    will-change: transform;
+    /* Optimisation GPU pour fluidité maximale */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.odoo-slider-track.reverse {
+    animation: scroll-right 15s linear infinite;
+    /* Accéléré de 40s à 15s */
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0) translateZ(0);
+    }
+
+    100% {
+        transform: translateX(-50%) translateZ(0);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%) translateZ(0);
+    }
+
+    100% {
+        transform: translateX(0) translateZ(0);
+    }
+}
+
+.odoo-logo-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 24px;
+    /* Réduit pour un look plus compact */
+    background: rgba(139, 0, 139, 0.08);
+    /* Légèrement plus visible */
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(139, 0, 139, 0.2);
+    min-width: 160px;
+    /* Réduit de 180px à 160px */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Transition plus rapide */
+    /* Optimisation GPU */
+    transform: translateZ(0);
+    will-change: transform, opacity;
+}
+
+.odoo-logo-item:hover {
+    background: rgba(139, 0, 139, 0.15);
+    border-color: rgba(139, 0, 139, 0.4);
+    transform: scale(1.08) translateY(-8px) translateZ(0);
+    box-shadow: 0 12px 35px rgba(139, 0, 139, 0.25);
+}
+
+.odoo-floating-logo {
+    height: 45px;
+    /* Réduit de 50px à 45px pour plus de vitesse visuelle */
+    width: auto;
+    opacity: 0.5;
+    /* Augmenté de 0.4 à 0.5 pour meilleure visibilité */
+    filter: drop-shadow(0 4px 12px rgba(139, 0, 139, 0.4));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Anti-aliasing pour fluidité */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+.odoo-logo-item:hover .odoo-floating-logo {
+    opacity: 0.9;
+    /* Augmenté de 0.8 à 0.9 */
+    transform: scale(1.15) rotate(3deg);
+    /* Ajout d'une légère rotation */
+}
+
+.odoo-version-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    /* Plus bold pour meilleure lisibilité */
+    color: rgba(255, 255, 255, 0.7);
+    /* Plus visible */
+    background: rgba(139, 0, 139, 0.25);
+    padding: 4px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(139, 0, 139, 0.35);
+    letter-spacing: 0.8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    /* Pour un look plus tech */
+}
+
+.odoo-logo-item:hover .odoo-version-badge {
+    background: rgba(139, 0, 139, 0.5);
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(139, 0, 139, 0.6);
+    transform: scale(1.05);
+}
+
+/* Pause animation on hover */
+.odoo-slider-wrapper:hover .odoo-slider-track {
+    animation-play-state: paused;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.badge-pill {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    color: #fff;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 10px #10b981;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+/* BUTTONS AWWWARDS STYLE */
+.btn-awwwards {
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.btn-primary-glow {
+    background: #f34947;
+    color: white;
+    box-shadow: 0 10px 30px rgba(243, 73, 71, 0.3);
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(243, 73, 71, 0.5);
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.mouse {
+    width: 26px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+    animation: scroll-down 2s infinite;
+}
+
+@keyframes scroll-down {
+
+    0%,
+    100% {
+        opacity: 0;
+        top: 8px;
+    }
+
+    50% {
+        opacity: 1;
+        top: 16px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .odoo-slider-wrapper {
+        display: none;
+        /* Masquer sur tablette/mobile pour éviter la surcharge */
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 80vh;
+        padding: 24px 16px;
+    }
+
+    .btn-awwwards {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+    }
+
+    .d-flex.gap-3 {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-awwwards {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .badge-pill {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
