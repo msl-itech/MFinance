@@ -1,426 +1,70 @@
-<!-- Import des polices modernes -->
-<!-- <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"> -->
-<style>
-  .hero-section {
-    padding: 32px;
-    margin-top: 40px;
-  }
-</style>
-<!-- <header class="hero-section">
-  <div class="glow-bg top-right"></div>
-  <div class="glow-bg bottom-left"></div>
-
-  <div
-    class="container position-relative z-2 h-100 d-flex flex-column justify-content-center align-items-center text-center">
-    <div class="badge-pill mb-4" data-aos="fade-down">
-      <span class="badge-dot"></span> Compatible Odoo v15 à v18
-    </div>
-
-    <h1 data-aos="zoom-in" class="hero-title text-white mb-4">
-      Comptabilité Claire, <br>
-      <span class="text-gradient">Proactive & Sans Stress.</span>
-    </h1>
-
-    <p class="hero-subtitle text-white-80 mb-5" data-aos="fade-up" data-aos-delay="100">
-      En tant qu'indépendant ou dirigeant de PME, vous n'avez pas le temps (ni toujours l'envie) de plonger dans les
-      chiffres. Chez MFinances, nous vous proposons une comptabilité qui vous permet de gagner du temps, prendre de
-      meilleures décisions et respecter vos obligations fiscales sans stress.
-    </p>
-
-    <div class="d-flex gap-3 justify-content-center" data-aos="fade-up" data-aos-delay="200">
-      <button (click)="scrollToSection('contactSection')" class="btn-awwwards btn-primary-glow">
-        <span>Demander un appel gratuit</span>
-        <i class="fas fa-arrow-right ms-2"></i>
-      </button>
-      <button (click)="scrollToSection('services')" class="btn-awwwards btn-glass">
-        <span>Découvrir</span>
-      </button>
-    </div>
-  </div>
-
-  <div class="scroll-indicator">
-    <div class="mouse"></div>
-  </div>
-</header> -->
 <app-hero-section></app-hero-section>
 
-<!-- Introduction / Split Screen -->
-<!-- <section class="section-padding bg-darker position-relative overflow-hidden" id="services">
-  <div class="container">
-    <div class="row align-items-center gy-5">
-      <div class="col-lg-6" data-aos="fade-right">
-        <h2 class="display-5 fw-bold mb-4">Comptabilité <span class="text-red-glow">Claire & Efficace.</span></h2>
-        <p class="text-lg mb-4">
-          Chez MFinances, nous vous proposons une comptabilité claire, conforme et proactive, qui vous permet de :
-        </p>
-
-        <div class="feature-grid mb-5">
-          <div class="feature-item">
-            <i class="fas fa-clock text-red mb-2"></i>
-            <h6>Gagner du temps</h6>
-          </div>
-          <div class="feature-item">
-            <i class="fas fa-chart-line text-red mb-2"></i>
-            <h6>Meilleures décisions</h6>
-          </div>
-          <div class="feature-item">
-            <i class="fas fa-shield-alt text-red mb-2"></i>
-            <h6>Obligations fiscales</h6>
-          </div>
-        </div>
-
-        <div class="glass-card-sm d-flex align-items-center p-3 border-start-red">
-          <div class="icon-box me-3">
-            <i class="fas fa-cubes text-white"></i>
-          </div>
-          <div>
-            <h6 class="mb-1 fw-bold">Vous utilisez Odoo comme outil de gestion ?</h6>
-            <p class="mb-0 small">Nous maîtrisons parfaitement la comptabilité intégrée dans Odoo : accompagnement
-              fluide, sans doublon ni perte d'information, avec une vision à jour de vos finances.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6 position-relative" data-aos="fade-left">
-        <div class="blob-bg"></div>
-        <div class="img-frame float-animation">
-          <img src="../../assets/img/services/image_service_compta_page_mfinances.png.png" alt="Odoo Dashboard"
-            class="img-fluid rounded-4 shadow-2xl">
-        
-        </div>
-      </div>
-    </div>
-  </div>
- </section> -->
 <app-introduction-comptabilite></app-introduction-comptabilite>
-<app-odoo-logo-slider></app-odoo-logo-slider>
-<!-- Bento Grid: Pour qui est-ce ? -->
-<section class="section-padding bg-dark-blue position-relative">
-  <div class="container">
-    <div class="text-center mb-6" data-aos="fade-up">
-      <h2 class="display-5 fw-bold text-white">Pour qui est-ce ?</h2>
-      <p class="text-white-50 mt-3">Chez MFinances, nous accompagnons des structures de toutes tailles et de tous
-        secteurs, avec une approche personnalisée selon votre activité, votre volume, vos obligations et vos outils.</p>
-    </div>
 
-    <!-- Le Bento Grid Layout -->
-    <div class="bento-grid">
-      <!-- Card 1 -->
-      <div class="bento-card" data-aos="fade-up">
-        <i class="fas fa-user-tie fa-2x text-red mb-3"></i>
-        <h5 class="text-white">Indépendants</h5>
-        <p class="text-white-50 small">Personnes physiques ou en société</p>
-      </div>
+<app-profil></app-profil>
 
-      <!-- Card 2 -->
-      <div class="bento-card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fas fa-building fa-2x text-red mb-3"></i>
-        <h5 class="text-white">PME & Sociétés</h5>
-        <p class="text-white-50 small">Sociétés commerciales</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bento-card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fas fa-user-md fa-2x text-red mb-3"></i>
-        <h5 class="text-white">Professions Libérales</h5>
-        <p class="text-white-50 small">Médecins, kinés, avocats, architectes, consultants</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="bento-card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fas fa-rocket fa-2x text-red mb-3"></i>
-        <h5 class="text-white">Startups</h5>
-        <p class="text-white-50 small">Jeunes entreprises digitalisées</p>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="bento-card" data-aos="fade-up" data-aos-delay="400">
-        <i class="fas fa-briefcase fa-2x text-red mb-3"></i>
-        <h5 class="text-white">Holdings</h5>
-        <p class="text-white-50 small">Sociétés patrimoniales et holdings familiales</p>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="bento-card" data-aos="fade-up" data-aos-delay="500">
-        <i class="fas fa-hands-helping fa-2x text-red mb-3"></i>
-        <h5 class="text-white">ASBL</h5>
-        <p class="text-white-50 small">Comptabilité adaptée au secteur associatif</p>
-      </div>
-
-      <!-- Card 7: Large -->
-      <div class="bento-card span-2 bg-gradient-red" data-aos="fade-up" data-aos-delay="600">
-        <div class="bento-content text-white">
-          <i class="fas fa-city fa-2x mb-3"></i>
-          <h4 class="text-white">Grandes Entreprises</h4>
-          <p class="text-white-80 small">Besoins complexes, reporting avancé, stratégie</p>
-        </div>
-      </div>
-
-      <!-- Card 8 -->
-      <div class="bento-card" data-aos="fade-up" data-aos-delay="700">
-        <i class="fas fa-hard-hat fa-2x text-red mb-3"></i>
-        <h5 class="text-white">Promoteurs Immobiliers</h5>
-        <p class="text-white-50 small">Suivi opérations, TVA sur marge, multi-sociétés</p>
-      </div>
-
-      <!-- Card 9 -->
-      <div class="bento-card" data-aos="fade-up" data-aos-delay="800">
-        <i class="fas fa-utensils fa-2x text-red mb-3"></i>
-        <h5 class="text-white">Commerçants & Horeca</h5>
-        <p class="text-white-50 small">Gestion des flux, stocks et rentabilité</p>
-      </div>
-
-      <!-- Card 10 -->
-      <div class="bento-card" data-aos="fade-up" data-aos-delay="900">
-        <i class="fas fa-cubes fa-2x text-red mb-3"></i>
-        <h5 class="text-white">Entreprises avec ERP</h5>
-        <p class="text-white-50 small">Utilisant Odoo ou autre ERP : intégration sans ressaisie</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- <section class="section-padding">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
-        <h2 class="display-5 fw-bold  mb-4">Nos Services <br><span class="text-red">Comptables</span></h2>
-        <p class=" mb-4">
-          Nous proposons un accompagnement complet, adapté à vos besoins et à vos outils (notamment Odoo) :
-        </p>
-
-        <ul class="modern-list mt-4">
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Tenue de la comptabilité générale et analytique</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Encodage automatisé ou simplifié des documents</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Déclarations TVA, bilans, comptes annuels, ISOC, IPP</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Suivi régulier avec tableaux de bord financiers</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Trésorerie prévisionnelle dynamique</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Mise en place de budgets stratégiques</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Conseil fiscal tout au long de l'année</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Intégration comptable dans Odoo</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Configuration d'Odoo : plan comptable belge, TVA, relances</span>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-7" data-aos="fade-left">
-        <div class="glass-card-sm p-4 mb-4">
-          <p>
-            <i class="fas fa-tools text-red me-2"></i>
-            <strong>Grâce à Odoo</strong>, votre comptabilité est connectée à vos modules de gestion : e-commerce, point
-            de vente, stock, facturation… Vous avez une vision en temps réel de la santé financière de votre entreprise.
-          </p>
-        </div>
-
-        <h3 class="fw-bold mb-3">Ce qui nous différencie</h3>
-        <p class="mb-4">
-          Chez MFinances, nous ne faisons pas que tenir la comptabilité. Nous vous aidons à comprendre vos chiffres, à
-          automatiser vos processus, et à prendre de meilleures décisions.
-        </p>
-
-        <ul class="modern-list">
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Communication claire, sans jargon</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Tarifs transparents et adaptés</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Accompagnement humain, disponible et réactif</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Spécialisation Odoo : intervention directe dans votre ERP</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Expérience sectorielle variée</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Cabinet d'expertise comptable Odoo reconnu en Belgique</span>
-          </li>
-          <li>
-            <span class="check-icon"><i class="fas fa-check"></i></span>
-            <span>Outils de pilotage pour décisions éclairées</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section> -->
 <app-tabs></app-tabs>
 
-<!-- Tarification Minimaliste -->
+<!-- Section Formules - Concise -->
 <section class="section-padding bg-dark-blue text-white">
   <div class="container">
-    <div class="text-center mb-6" data-aos="fade-up">
+    <div class="text-center mb-5" data-aos="fade-up">
       <h2 class="display-6 fw-bold">Nos Formules de Comptabilité</h2>
       <p class="text-white-50 mt-3">Nous proposons 3 formules simples et évolutives</p>
     </div>
 
-    <div class="pricing-grid" style="
-    margin-top: 42px;
-">
-      <!-- Base -->
-      <div class="price-card" data-aos="flip-left">
-        <div class="price-header">
-          <h4>Formule Base</h4>
-          <span class="subtitle">Indépendants avec peu de volume</span>
+    <div class="row g-4 mb-5">
+      <!-- Formule Base -->
+      <div class="col-lg-4" data-aos="fade-up">
+        <div class="formula-card">
+          <div class="formula-icon">
+            <i class="fas fa-file-invoice"></i>
+          </div>
+          <h4 class="formula-title">Formule Base</h4>
+          <p class="formula-subtitle">Indépendants avec peu de volume</p>
         </div>
-        <div class="price-body">
-          <ul class="price-list">
-            <li>Tenue comptable de base</li>
-            <li>Déclarations TVA</li>
-            <li>Clôture annuelle</li>
-            <li>Support Email</li>
-          </ul>
-        </div>
-        <button (click)="scrollToSection('contactSection')" class="btn-outline">Voir les tarifs</button>
       </div>
 
-      <!-- Premium (Highlighted) -->
-      <div class="price-card featured" data-aos="flip-left" data-aos-delay="100">
-        <div class="featured-tag">Recommandé</div>
-        <div class="price-header">
-          <h4>Formule Premium</h4>
-          <span class="subtitle">Sociétés actives ou PME en croissance</span>
+      <!-- Formule Premium -->
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="formula-card formula-featured">
+          <div class="formula-badge">Recommandé</div>
+          <div class="formula-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h4 class="formula-title">Formule Premium</h4>
+          <p class="formula-subtitle">Sociétés actives ou PME en croissance</p>
         </div>
-        <div class="price-body">
-          <ul class="price-list">
-            <li>Tout du pack Base</li>
-            <li><strong class="text-white">Suivi mensuel/trimestriel</strong></li>
-            <li>Tableaux de bord financiers</li>
-            <li>Optimisation Fiscale</li>
-            <li>Trésorerie prévisionnelle</li>
-            <li>Accès Odoo Compta</li>
-          </ul>
-        </div>
-        <button (click)="scrollToSection('contactSection')" class="btn-full-red">Voir les tarifs</button>
       </div>
 
-      <!-- Excellence -->
-      <div class="price-card" data-aos="flip-left" data-aos-delay="200">
-        <div class="price-header">
-          <h4>Formule Excellence</h4>
-          <span class="subtitle">Structures complexes, groupes ou utilisateurs avancés Odoo</span>
+      <!-- Formule Excellence -->
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="formula-card">
+          <div class="formula-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <h4 class="formula-title">Formule Excellence</h4>
+          <p class="formula-subtitle">Structures complexes, groupes ou utilisateurs avancés Odoo</p>
         </div>
-        <div class="price-body">
-          <ul class="price-list">
-            <li>Tout du pack Premium</li>
-            <li>Reporting Mensuel détaillé</li>
-            <li>Analytique Avancée multi-sociétés</li>
-            <li>Réunions Stratégiques régulières</li>
-            <li>Accompagnement prioritaire</li>
-          </ul>
-        </div>
-        <button (click)="scrollToSection('contactSection')" class="btn-outline">Voir les tarifs</button>
       </div>
+    </div>
+
+    <!-- CTA vers page tarifs -->
+    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+      <a routerLink="/tarif" class="btn btn-custom-red btn-lg px-5 py-3 d-inline-flex align-items-center pulse-button">
+        <span>Voir nos tarifs détaillés</span>
+        <i class="fas fa-arrow-right ms-2"></i>
+      </a>
+      <p class="text-white-50 mt-3 mb-0">
+        <small>Tarifs transparents et adaptés à vos besoins</small>
+      </p>
     </div>
   </div>
 </section>
 
-<!-- Comment ça fonctionne ? -->
-<!-- <section class="section-padding">
-  <div class="container">
-    <div class="text-center mb-6" data-aos="fade-up">
-      <h2 class="display-6 fw-bold ">Comment ça fonctionne ?</h2>
-    </div>
-
-    <div class="row gy-4">
-      <div class="col-lg-4" data-aos="fade-up">
-        <div class="glass-card-sm p-4 h-100 text-center">
-          <div class="mb-3">
-            <i class="fas fa-comments fa-3x text-red"></i>
-          </div>
-          <h5 class="fw-bold mb-3">1. Premier contact gratuit</h5>
-          <p>Pour comprendre votre activité et vos besoins</p>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="glass-card-sm p-4 h-100 text-center">
-          <div class="mb-3">
-            <i class="fas fa-search fa-3x text-red"></i>
-          </div>
-          <h5 class=" fw-bold mb-3">2. Analyse de vos besoins</h5>
-          <p>Volume, outils (notamment Odoo) et calendrier</p>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="glass-card-sm p-4 h-100 text-center">
-          <div class="mb-3">
-            <i class="fas fa-rocket fa-3x text-red"></i>
-          </div>
-          <h5 class=" fw-bold mb-3">3. Mise en place</h5>
-          <p>Configuration des accès, outils et calendrier de suivi</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mt-4 gy-4">
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="glass-card-sm p-4 h-100 text-center">
-          <div class="mb-3">
-            <i class="fas fa-calendar-check fa-3x text-red"></i>
-          </div>
-          <h5 class=" fw-bold mb-3">4. Suivi comptable</h5>
-          <p>Mensuel, trimestriel ou annuel selon vos besoins</p>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="glass-card-sm p-4 h-100 text-center">
-          <div class="mb-3">
-            <i class="fas fa-chart-line fa-3x text-red"></i>
-          </div>
-          <h5 class="fw-bold mb-3">5. Trésorerie prévisionnelle</h5>
-          <p>Pour piloter vos finances dynamiquement</p>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
-        <div class="glass-card-sm p-4 h-100 text-center">
-          <div class="mb-3">
-            <i class="fas fa-user-friends fa-3x text-red"></i>
-          </div>
-          <h5 class="fw-bold mb-3">6. Conseils & accompagnement</h5>
-          <p>Conseils fiscaux et accompagnement continu</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 <app-comment-ca-marche></app-comment-ca-marche>
+
 <!-- Témoignages clients -->
 <section class="section-padding bg-dark-blue">
   <div class="container">
@@ -484,23 +128,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Call to Action (Footer style) -->
-<section class="cta-section">
-  <div class="cta-content text-center">
-    <h2 class="display-4 fw-bold mb-4 text-white" data-aos="zoom-in">Prendre Contact</h2>
-    <p class="lead mb-5 opacity-75 text-white-50">Envie d'un accompagnement comptable clair, efficace et compatible avec
-      vos outils ?<br>
-      Prenons 15 minutes pour en parler :</p>
-    <a href="https://calendly.com/mfinances/rdv-client-en-teleconference" target="_blank"
-      class="btn-awwwards btn-white-glow">
-      <i class="fas fa-calendar-check me-2"></i> Réserver un appel gratuit
-    </a>
-    <p class="mt-4 text-white-60">
-      <small>Ou contactez-nous via notre formulaire ci-dessous pour recevoir une offre personnalisée.</small>
-    </p>
   </div>
 </section>
 
