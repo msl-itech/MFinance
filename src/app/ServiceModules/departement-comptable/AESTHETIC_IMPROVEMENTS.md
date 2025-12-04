@@ -31,7 +31,7 @@ color: #1a2c51
 color: #4b5563
 
 /* Labels en rouge */
-color: #f34947
+color: #ff3333
 ```
 
 ### 3. **Image Professionnelle Ajoutée**
@@ -77,8 +77,8 @@ Remplacé la grande solution box par :
 - **Light White**: `rgba(255, 255, 255, 0.7)`
 
 ### Accents
-- **Primary Red**: `#f34947`
-- **Gradient Red**: `linear-gradient(135deg, #f34947, #ff6b6b)`
+- **Primary Red**: `#ff3333`
+- **Gradient Red**: `linear-gradient(135deg, #ff3333, #ff6b6b)`
 
 ## 📊 Ordre des Sections
 

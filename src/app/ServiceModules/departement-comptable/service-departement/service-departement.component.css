@@ -30,7 +30,7 @@
     display: inline-block;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #f34947;
+    color: #ff3333;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 16px;
@@ -39,15 +39,15 @@
 .section-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
-    color: #1a2c51;
+    color: #0a2463;
     margin-bottom: 20px;
-    font-family: 'Outfit', sans-serif;
+
     letter-spacing: -0.02em;
     line-height: 1.2;
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, #f34947, #ff6b6b);
+    background: linear-gradient(135deg, #ff3333, #ff6b6b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -144,7 +144,7 @@
 .service-item:hover,
 .service-item.active {
     opacity: 1;
-    border-left-color: #f34947;
+    border-left-color: #ff3333;
     background: linear-gradient(90deg, rgba(243, 73, 71, 0.05) 0%, transparent 100%);
     padding-left: 48px;
 }
@@ -163,7 +163,7 @@
 .service-num {
     font-size: 0.9rem;
     font-weight: 700;
-    color: #f34947;
+    color: #ff3333;
     font-family: 'Courier New', monospace;
     min-width: 40px;
     padding: 6px 14px;
@@ -174,7 +174,7 @@
 }
 
 .service-item.active .service-num {
-    background: linear-gradient(135deg, #f34947, #ff6b6b);
+    background: linear-gradient(135deg, #ff3333, #ff6b6b);
     color: white;
     transform: scale(1.1);
 }
@@ -190,13 +190,13 @@
 
 .service-item:hover h3,
 .service-item.active h3 {
-    color: #f34947;
+    color: #ff3333;
     transform: translateX(8px);
 }
 
 .arrow-icon {
     font-size: 1.3rem;
-    color: #f34947;
+    color: #ff3333;
     opacity: 0;
     transform: translateX(-10px) rotate(-45deg);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -337,9 +337,9 @@
     position: absolute;
     inset: -2px;
     background: linear-gradient(45deg,
-            #f34947,
+            #ff3333,
             #ff6b6b,
-            #f34947);
+            #ff3333);
     border-radius: 24px;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -406,7 +406,7 @@
     .service-item.active {
         padding-left: 24px;
         border-left: none;
-        border-top-color: #f34947;
+        border-top-color: #ff3333;
     }
 
     .service-body {

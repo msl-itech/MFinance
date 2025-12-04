@@ -17,9 +17,9 @@
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #0f172a;
+    color: #0a2463;
     margin-bottom: 12px;
-    font-family: 'Outfit', sans-serif;
+
     letter-spacing: -0.02em;
 }
 
@@ -59,7 +59,7 @@
     left: 24px;
     width: 32px;
     height: 32px;
-    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    background: linear-gradient(135deg, #ff3333 0%, #ff6b6a 100%);
     color: #ffffff;
     border-radius: 50%;
     display: flex;
@@ -86,16 +86,16 @@
 
 .step-icon i {
     font-size: 1.5rem;
-    color: #f34947;
+    color: #ff3333;
 }
 
 /* Step Title */
 .step-title {
     font-size: 1.15rem;
     font-weight: 700;
-    color: #0f172a;
+    color: #1a2c51;
     margin-bottom: 10px;
-    font-family: 'Outfit', sans-serif;
+
     letter-spacing: -0.01em;
     line-height: 1.4;
 }
@@ -116,7 +116,7 @@
 }
 
 .step-item:hover .step-icon {
-    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    background: linear-gradient(135deg, #ff3333 0%, #ff6b6a 100%);
     transform: scale(1.1);
 }
 
@@ -125,7 +125,7 @@
 }
 
 .step-item:hover .step-title {
-    color: #f34947;
+    color: #ff3333;
 }
 
 /* Responsive Design */

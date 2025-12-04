@@ -29,14 +29,14 @@
             <!-- Titre Principal avec Animation -->
             <h1 class="hero-title" data-aos="zoom-in" data-aos-delay="100">
                 Externalisez votre
-                <span class="title-highlight">Département Comptable</span>
+                <span class="title-highlight">Département Comptable sur Odoo</span>
                 <span class="title-subtitle">tout en gardant un service dédié</span>
             </h1>
 
             <!-- Description -->
             <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
-                Le meilleur des deux mondes : la qualité d'un service interne avec l'expertise
-                d'un cabinet spécialisé Odoo. Sans les contraintes RH ni les charges fixes.
+                Le meilleur des deux mondes : L’expertise comptable Odoo, comme en interne. Sans recrutement.
+                Vous restez sur votre cœur de métier. Nous sur le nôtre : vos chiffres.
             </p>
 
             <!-- CTA Buttons -->
@@ -98,6 +98,7 @@
 <section class="intro-section">
     <div class="container">
         <div class="row align-items-center g-5">
+            <!-- Colonne Gauche : Accordéon -->
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="intro-content">
                     <span class="section-label">Le Défi</span>
@@ -112,57 +113,125 @@
                         indispensable pour la conformité, la transparence financière et la prise de décision.
                     </p>
 
-                    <!-- Pain Points Cards -->
-                    <div class="pain-points">
-                        <div class="pain-card">
-                            <i class="fas fa-euro-sign"></i>
-                            <span>Coûts élevés de recrutement</span>
+                    <!-- Accordéon Élégant -->
+                    <div class="accordion-elegant">
+                        <!-- Accordion Item 1: Notre Solution -->
+                        <div class="accordion-item" [class.active]="activeAccordionItem === 1">
+                            <div class="accordion-header" (click)="toggleAccordion(1)">
+                                <div class="accordion-header-content">
+                                    <div class="accordion-icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <h3>Notre Solution Hybride</h3>
+                                </div>
+                                <div class="accordion-toggle">
+                                    <i class="fas" [class.fa-chevron-down]="activeAccordionItem !== 1"
+                                        [class.fa-chevron-up]="activeAccordionItem === 1"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content" [@slideDown]="activeAccordionItem === 1 ? 'open' : 'closed'">
+                                <div class="accordion-body">
+                                    <p class="accordion-text">
+                                        Chez MFinances, nous avons développé un service unique : l'externalisation
+                                        complète de votre
+                                        département comptable, totalement intégré à votre structure et opéré directement
+                                        dans votre
+                                        environnement Odoo.
+                                    </p>
+                                    <div class="accordion-highlight">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Une équipe dédiée qui travaille comme si elle faisait partie de votre
+                                            entreprise</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pain-card">
-                            <i class="fas fa-user-times"></i>
-                            <span>Gestion RH complexe</span>
+
+                        <!-- Accordion Item 2: Notre Engagement -->
+                        <div class="accordion-item" [class.active]="activeAccordionItem === 2">
+                            <div class="accordion-header" (click)="toggleAccordion(2)">
+                                <div class="accordion-header-content">
+                                    <div class="accordion-icon">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <h3>Notre Engagement</h3>
+                                </div>
+                                <div class="accordion-toggle">
+                                    <i class="fas" [class.fa-chevron-down]="activeAccordionItem !== 2"
+                                        [class.fa-chevron-up]="activeAccordionItem === 2"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content" [@slideDown]="activeAccordionItem === 2 ? 'open' : 'closed'">
+                                <div class="accordion-body">
+                                    <p class="accordion-text">
+                                        <strong>Vous offrir la qualité, la réactivité et la personnalisation d'un
+                                            service interne,</strong>
+                                        avec le niveau d'exigence d'un cabinet d'expertise comptable en formation
+                                        continue.
+                                    </p>
+                                    <p class="accordion-text">
+                                        Vous bénéficiez ainsi d'une équipe dédiée, toujours à jour, stable et
+                                        performante — sans
+                                        avoir à recruter, former ou superviser en interne.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pain-card">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <span>Risques de compétence</span>
-                        </div>
-                        <div class="pain-card">
-                            <i class="fas fa-cogs"></i>
-                            <span>Mise en place technique</span>
+
+                        <!-- Accordion Item 3: Notre Promesse -->
+                        <div class="accordion-item" [class.active]="activeAccordionItem === 3">
+                            <div class="accordion-header" (click)="toggleAccordion(3)">
+                                <div class="accordion-header-content">
+                                    <div class="accordion-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <h3>Notre Promesse</h3>
+                                </div>
+                                <div class="accordion-toggle">
+                                    <i class="fas" [class.fa-chevron-down]="activeAccordionItem !== 3"
+                                        [class.fa-chevron-up]="activeAccordionItem === 3"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content" [@slideDown]="activeAccordionItem === 3 ? 'open' : 'closed'">
+                                <div class="accordion-body">
+                                    <p class="accordion-text">
+                                        Un service comptable sur mesure, opéré par des experts constamment formés,
+                                        intégrés à
+                                        votre structure Odoo — sans les contraintes RH, sans les risques de compétence,
+                                        et avec
+                                        une charge fixe parfaitement maîtrisée.
+                                    </p>
+                                    <div class="accordion-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-times-circle"></i>
+                                            <span>Sans contraintes RH</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <span>Sans risques de compétence</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-euro-sign"></i>
+                                            <span>Charge fixe maîtrisée</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Colonne Droite : Image uniquement -->
             <div class="col-lg-6" data-aos="fade-left">
                 <!-- Image Section -->
                 <div class="image-container">
-                    <img src="../../../assets/img/services/image_service_compta_page_mfinances.png.png"
+                    <img src="../../../assets/img/webp/44.webp"
                         alt="Département Comptable Externalisé" class="img-fluid rounded-4 shadow-lg">
                     <div class="image-overlay">
                         <div class="overlay-badge">
                             <i class="fas fa-cubes"></i>
                             <span>Intégration Odoo Complète</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solution Box Below Image -->
-                <div class="solution-box-compact">
-                    <div class="solution-header-compact">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>Notre Solution Hybride</h4>
-                    </div>
-                    <p class="solution-text-compact">
-                        Chez MFinances, nous avons développé un service unique d'<strong>externalisation complète</strong> de votre département comptable, totalement intégré à votre structure, basé sur l'ERP Odoo.
-                    </p>
-                    <div class="solution-objective">
-                        <div class="objective-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <div class="objective-content">
-                            <strong>Notre objectif :</strong>
-                            <p>Vous offrir la qualité, la réactivité et la personnalisation d'un service interne, sans les charges fixes, ni les contraintes RH, ni les risques de compétence.</p>
                         </div>
                     </div>
                 </div>

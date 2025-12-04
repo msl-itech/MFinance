@@ -73,7 +73,7 @@ animation: float-orb 20s ease-in-out infinite;
 
 #### Text Gradient
 ```css
-background: linear-gradient(135deg, #f34947, #ff6b6b);
+background: linear-gradient(135deg, #ff3333, #ff6b6b);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 ```
@@ -100,10 +100,10 @@ box-shadow: 0 20px 40px rgba(243, 73, 71, 0.2);
 
 ### 🎨 Palette de Couleurs
 
-- **Primary Red**: `#f34947`
+- **Primary Red**: `#ff3333`
 - **Dark BG**: `#0B1120`
 - **Dark Blue**: `#1a2c51`
-- **Gradient Red**: `linear-gradient(135deg, #f34947, #ff6b6b)`
+- **Gradient Red**: `linear-gradient(135deg, #ff3333, #ff6b6b)`
 - **Gradient Purple**: `linear-gradient(135deg, rgba(139, 0, 139, 0.3), rgba(75, 0, 130, 0.3))`
 
 ### ⚡ Performance

@@ -15,7 +15,7 @@
     align-items: center;
     gap: 8px;
     background: linear-gradient(135deg, rgba(243, 73, 71, 0.1) 0%, rgba(243, 73, 71, 0.05) 100%);
-    color: #f34947;
+    color: #ff3333;
     padding: 10px 20px;
     border-radius: 50px;
     font-size: 0.875rem;
@@ -32,14 +32,14 @@
 .intro-title {
     font-size: 3rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #0a2463;
     line-height: 1.2;
-    font-family: 'Outfit', sans-serif;
+
     letter-spacing: -0.02em;
 }
 
 .text-highlight {
-    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    background: linear-gradient(135deg, #ff3333 0%, #ff6b6a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -74,7 +74,7 @@
 .benefit-icon {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    background: linear-gradient(135deg, #ff3333 0%, #ff6b6a 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -95,9 +95,9 @@
 .benefit-title {
     font-size: 1rem;
     font-weight: 700;
-    color: #0f172a;
+    color: #1a2c51;
     margin-bottom: 4px;
-    font-family: 'Outfit', sans-serif;
+
 }
 
 .benefit-text {
@@ -117,7 +117,7 @@
     display: flex;
     gap: 20px;
     padding: 24px;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, #1a2c51 0%, #1e293b 100%);
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -131,7 +131,7 @@
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(180deg, #f34947 0%, #ff6b6a 100%);
+    background: linear-gradient(180deg, #ff3333 0%, #ff6b6a 100%);
 }
 
 .odoo-icon-wrapper {
@@ -147,7 +147,7 @@
 
 .odoo-icon-wrapper i {
     font-size: 1.5rem;
-    color: #f34947;
+    color: #ff3333;
 }
 
 .odoo-content {
@@ -159,7 +159,7 @@
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 8px;
-    font-family: 'Outfit', sans-serif;
+
 }
 
 .odoo-text {
@@ -253,7 +253,7 @@
 .badge-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #f34947 0%, #ff6b6a 100%);
+    background: linear-gradient(135deg, #ff3333 0%, #ff6b6a 100%);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -283,8 +283,8 @@
 .badge-value {
     font-size: 1.25rem;
     font-weight: 800;
-    color: #0f172a;
-    font-family: 'Outfit', sans-serif;
+    color: #1a2c51;
+
 }
 
 /* ========================================

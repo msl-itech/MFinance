@@ -22,6 +22,7 @@ import { DepartementComptableComponent } from './departement-comptable/departeme
 import { ServiceDepartementComponent } from './departement-comptable/service-departement/service-departement.component';
 import { WhyExternalisedComponent } from './departement-comptable/why-externalised/why-externalised.component';
 import { AvantagesComponent } from './departement-comptable/avantages/avantages.component';
+import { ProfilComponent } from './comptabilite/profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AvantagesComponent } from './departement-comptable/avantages/avantages.
     ServiceDepartementComponent,
     WhyExternalisedComponent,
     AvantagesComponent,
+    ProfilComponent,
   ],
   imports: [
     CommonModule,

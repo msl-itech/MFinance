@@ -1,6 +1,5 @@
 .header {
-  background: url("../../../assets/img/services/Background_Compta.png")
-    no-repeat center center/cover;
+  background: url("../../../assets/img/services/Background_Compta.png") no-repeat center center/cover;
   min-height: 400px;
   position: relative;
   display: flex;
@@ -23,9 +22,11 @@
 a {
   text-decoration: none;
 }
+
 h1 {
   padding: 0;
 }
+
 .home2-hadding h1,
 .home2-hadding p,
 .home2-hadding li {
@@ -33,11 +34,13 @@ h1 {
 }
 
 .expert-text {
-  font-size: 1em; /* Ajustez la taille selon vos besoins */
+  font-size: 1em;
+  /* Ajustez la taille selon vos besoins */
 }
 
 .text-red {
-  color: #f34947; /* Rouge vif */
+  color: #ff3333;
+  /* Rouge vif */
   font-style: italic;
 }
 
@@ -46,19 +49,22 @@ h1 {
 }
 
 .font-red {
-  background-color: #f34947;
+  background-color: #ff3333;
   border-radius: 8px;
   padding: 2px;
 }
+
 .text-custom {
-  color: #f34947;
+  color: #ff3333;
 }
+
 .btn-custom-red {
   background-color: #ff2424;
   border-color: #ff2424;
   color: white;
   transition: all 0.3s ease;
 }
+
 .btn-custom-red:hover {
   background-color: #e60000;
   border-color: #e60000;
@@ -123,11 +129,9 @@ h1 {
 .shape-overlay {
   width: 400px;
   height: 400px;
-  background: radial-gradient(
-    circle,
-    rgba(74, 144, 226, 0.1) 0%,
-    rgba(74, 144, 226, 0) 70%
-  );
+  background: radial-gradient(circle,
+      rgba(74, 144, 226, 0.1) 0%,
+      rgba(74, 144, 226, 0) 70%);
   bottom: -200px;
   right: -200px;
   border-radius: 50%;
