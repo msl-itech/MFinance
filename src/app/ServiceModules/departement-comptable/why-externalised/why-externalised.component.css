@@ -5,7 +5,9 @@
     position: relative;
     overflow: hidden;
 }
-
+strong{
+    color: #0a2463 !important;
+}
 /* Effet de fond subtil */
 .dilemma-section::before {
     content: '';

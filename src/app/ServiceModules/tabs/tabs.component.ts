@@ -11,4 +11,11 @@ export class TabsComponent {
   switchTab(tabName: string): void {
     this.activeTab = tabName;
   }
+
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

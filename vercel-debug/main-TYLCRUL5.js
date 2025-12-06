@@ -113,10 +113,10 @@ var Xi = No((ct, zn) => {
     typeof ct == "object" && typeof zn == "object"
       ? (zn.exports = o())
       : typeof define == "function" && define.amd
-      ? define([], o)
-      : typeof ct == "object"
-      ? (ct.AOS = o())
-      : (a.AOS = o());
+        ? define([], o)
+        : typeof ct == "object"
+          ? (ct.AOS = o())
+          : (a.AOS = o());
   })(ct, function () {
     return (function (a) {
       function o(s) {
@@ -135,16 +135,16 @@ var Xi = No((ct, zn) => {
           return M && M.__esModule ? M : { default: M };
         }
         var r =
-            Object.assign ||
-            function (M) {
-              for (var X = 1; X < arguments.length; X++) {
-                var de = arguments[X];
-                for (var xe in de)
-                  Object.prototype.hasOwnProperty.call(de, xe) &&
-                    (M[xe] = de[xe]);
-              }
-              return M;
-            },
+          Object.assign ||
+          function (M) {
+            for (var X = 1; X < arguments.length; X++) {
+              var de = arguments[X];
+              for (var xe in de)
+                Object.prototype.hasOwnProperty.call(de, xe) &&
+                  (M[xe] = de[xe]);
+            }
+            return M;
+          },
           c = i(1),
           d = (s(c), i(6)),
           u = s(d),
@@ -206,8 +206,8 @@ var Xi = No((ct, zn) => {
             return _(D.disable) || X
               ? y()
               : (D.disableMutationObserver ||
-                  g.default.isSupported() ||
-                  (console.info(`
+                g.default.isSupported() ||
+                (console.info(`
       aos: MutationObserver is not supported on this browser,
       code mutations observing has been disabled.
       You may have to call "refreshHard()" by yourself.
@@ -223,13 +223,13 @@ var Xi = No((ct, zn) => {
                   .querySelector("body")
                   .setAttribute("data-aos-delay", D.delay),
                 D.startEvent === "DOMContentLoaded" &&
-                ["complete", "interactive"].indexOf(document.readyState) > -1
+                  ["complete", "interactive"].indexOf(document.readyState) > -1
                   ? L(!0)
                   : D.startEvent === "load"
-                  ? window.addEventListener(D.startEvent, function () {
+                    ? window.addEventListener(D.startEvent, function () {
                       L(!0);
                     })
-                  : document.addEventListener(D.startEvent, function () {
+                    : document.addEventListener(D.startEvent, function () {
                       L(!0);
                     }),
                 window.addEventListener(
@@ -251,7 +251,7 @@ var Xi = No((ct, zn) => {
           };
         a.exports = { init: N, refresh: L, refreshHard: W };
       },
-      function (a, o) {},
+      function (a, o) { },
       ,
       ,
       ,
@@ -317,7 +317,7 @@ var Xi = No((ct, zn) => {
             return (
               (N = m(N) || 0),
               c(M) &&
-                ((J = !!M.leading),
+              ((J = !!M.leading),
                 (ue = "maxWait" in M),
                 (k = ue ? L(m(M.maxWait) || 0, N) : k),
                 (j = "trailing" in M ? !!M.trailing : j)),
@@ -332,7 +332,7 @@ var Xi = No((ct, zn) => {
             if (typeof _ != "function") throw new TypeError(f);
             return (
               c(M) &&
-                ((X = "leading" in M ? !!M.leading : X),
+              ((X = "leading" in M ? !!M.leading : X),
                 (de = "trailing" in M ? !!M.trailing : de)),
               s(_, N, { leading: X, maxWait: N, trailing: de })
             );
@@ -363,22 +363,22 @@ var Xi = No((ct, zn) => {
             return M || R.test(_)
               ? U(_.slice(2), M ? 2 : 8)
               : v.test(_)
-              ? g
-              : +_;
+                ? g
+                : +_;
           }
           var p =
-              typeof Symbol == "function" && typeof Symbol.iterator == "symbol"
-                ? function (_) {
-                    return typeof _;
-                  }
-                : function (_) {
-                    return _ &&
-                      typeof Symbol == "function" &&
-                      _.constructor === Symbol &&
-                      _ !== Symbol.prototype
-                      ? "symbol"
-                      : typeof _;
-                  },
+            typeof Symbol == "function" && typeof Symbol.iterator == "symbol"
+              ? function (_) {
+                return typeof _;
+              }
+              : function (_) {
+                return _ &&
+                  typeof Symbol == "function" &&
+                  _.constructor === Symbol &&
+                  _ !== Symbol.prototype
+                  ? "symbol"
+                  : typeof _;
+              },
             f = "Expected a function",
             g = NaN,
             h = "[object Symbol]",
@@ -474,7 +474,7 @@ var Xi = No((ct, zn) => {
             return (
               (_ = u(_) || 0),
               r(N) &&
-                ((ce = !!N.leading),
+              ((ce = !!N.leading),
                 (J = "maxWait" in N),
                 (re = J ? D(u(N.maxWait) || 0, _) : re),
                 (ue = "trailing" in N ? !!N.trailing : ue)),
@@ -509,22 +509,22 @@ var Xi = No((ct, zn) => {
             return N || C.test(y)
               ? R(y.slice(2), N ? 2 : 8)
               : x.test(y)
-              ? f
-              : +y;
+                ? f
+                : +y;
           }
           var m =
-              typeof Symbol == "function" && typeof Symbol.iterator == "symbol"
-                ? function (y) {
-                    return typeof y;
-                  }
-                : function (y) {
-                    return y &&
-                      typeof Symbol == "function" &&
-                      y.constructor === Symbol &&
-                      y !== Symbol.prototype
-                      ? "symbol"
-                      : typeof y;
-                  },
+            typeof Symbol == "function" && typeof Symbol.iterator == "symbol"
+              ? function (y) {
+                return typeof y;
+              }
+              : function (y) {
+                return y &&
+                  typeof Symbol == "function" &&
+                  y.constructor === Symbol &&
+                  y !== Symbol.prototype
+                  ? "symbol"
+                  : typeof y;
+              },
             p = "Expected a function",
             f = NaN,
             g = "[object Symbol]",
@@ -568,7 +568,7 @@ var Xi = No((ct, zn) => {
           for (p = 0; p < m.length; p += 1)
             if (
               ((f = m[p]),
-              (f.dataset && f.dataset.aos) || (g = f.children && i(f.children)))
+                (f.dataset && f.dataset.aos) || (g = f.children && i(f.children)))
             )
               return !0;
           return !1;
@@ -604,7 +604,7 @@ var Xi = No((ct, zn) => {
             });
         }
         Object.defineProperty(o, "__esModule", { value: !0 });
-        var u = function () {};
+        var u = function () { };
         o.default = { isSupported: r, ready: c };
       },
       function (a, o) {
@@ -618,19 +618,19 @@ var Xi = No((ct, zn) => {
         }
         Object.defineProperty(o, "__esModule", { value: !0 });
         var r = (function () {
-            function f(g, h) {
-              for (var x = 0; x < h.length; x++) {
-                var v = h[x];
-                (v.enumerable = v.enumerable || !1),
-                  (v.configurable = !0),
-                  "value" in v && (v.writable = !0),
-                  Object.defineProperty(g, v.key, v);
-              }
+          function f(g, h) {
+            for (var x = 0; x < h.length; x++) {
+              var v = h[x];
+              (v.enumerable = v.enumerable || !1),
+                (v.configurable = !0),
+                "value" in v && (v.writable = !0),
+                Object.defineProperty(g, v.key, v);
             }
-            return function (g, h, x) {
-              return h && f(g.prototype, h), x && f(g, x), g;
-            };
-          })(),
+          }
+          return function (g, h, x) {
+            return h && f(g.prototype, h), x && f(g, x), g;
+          };
+        })(),
           c =
             /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i,
           d =
@@ -675,13 +675,13 @@ var Xi = No((ct, zn) => {
         "use strict";
         Object.defineProperty(o, "__esModule", { value: !0 });
         var i = function (r, c, d) {
-            var u = r.node.getAttribute("data-aos-once");
-            c > r.position
-              ? r.node.classList.add("aos-animate")
-              : typeof u < "u" &&
-                (u === "false" || (!d && u !== "true")) &&
-                r.node.classList.remove("aos-animate");
-          },
+          var u = r.node.getAttribute("data-aos-once");
+          c > r.position
+            ? r.node.classList.add("aos-animate")
+            : typeof u < "u" &&
+            (u === "false" || (!d && u !== "true")) &&
+            r.node.classList.remove("aos-animate");
+        },
           s = function (r, c) {
             var d = window.pageYOffset,
               u = window.innerHeight;
@@ -728,10 +728,10 @@ var Xi = No((ct, zn) => {
                 anchorPlacement: u.getAttribute("data-aos-anchor-placement"),
               };
             switch (
-              (h.offset && !isNaN(h.offset) && (f = parseInt(h.offset)),
+            (h.offset && !isNaN(h.offset) && (f = parseInt(h.offset)),
               h.anchor &&
-                document.querySelectorAll(h.anchor) &&
-                (u = document.querySelectorAll(h.anchor)[0]),
+              document.querySelectorAll(h.anchor) &&
+              (u = document.querySelectorAll(h.anchor)[0]),
               (p = (0, c.default)(u).top),
               h.anchorPlacement)
             ) {
@@ -814,11 +814,11 @@ var Mt = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1"),
-        n(4, "A propos"),
-        e(),
-        t(5, "p"),
-        n(6, "Accueil > A propos"),
-        e()()()());
+          n(4, "A propos"),
+          e(),
+          t(5, "p"),
+          n(6, "Accueil > A propos"),
+          e()()()());
     },
     styles: [
       '.header[_ngcontent-%COMP%]{background:url("./media/bg_about-AWPUCD7F.webp") no-repeat center center/cover;height:300px;position:relative;display:flex;align-items:center;justify-content:center}.header-overlay[_ngcontent-%COMP%]{height:100%;display:flex;align-items:center;justify-content:flex-start;color:#fff}.container[_ngcontent-%COMP%]{margin-left:20px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{margin:0;font-size:2.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{margin:5px 0 0;font-size:1em;opacity:.8}@media (max-width: 768px){.header[_ngcontent-%COMP%]{height:150px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:2em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.9em}}@media (max-width: 480px){.header[_ngcontent-%COMP%]{height:120px}.container[_ngcontent-%COMP%]{margin-left:10px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:1.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.8em}}',
@@ -916,207 +916,207 @@ var wt = class a {
     template: function (i, s) {
       i & 1 &&
         (l(0, "app-header-about"),
-        t(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "div", 3)(5, "div", 4)(
-          6,
-          "div",
-          5
-        ),
-        l(7, "img", 6),
-        e(),
-        l(8, "div", 7),
-        t(9, "div", 8)(10, "div", 3)(11, "div", 9),
-        l(12, "img", 10),
-        e()(),
-        t(13, "div", 3)(14, "div", 11),
-        l(15, "img", 12),
-        e()()()()(),
-        t(16, "div", 3)(17, "div", 13)(18, "div", 14)(19, "p", 15)(
-          20,
-          "span",
-          15
-        ),
-        n(21, "Profil"),
-        e()(),
-        t(22, "h1"),
-        n(23, "Experts-comptables"),
-        l(24, "br"),
-        t(25, "span", 16),
-        n(26, "agr\xE9\xE9s \xE0 Bruxelles"),
-        e()(),
-        t(27, "p"),
-        n(
-          28,
-          "Bienvenue chez MFinances Expert Comptable, votre cabinet comptable d\xE9di\xE9 \xE0 la r\xE9ussite de votre entreprise. Nous offrons une gamme compl\xE8te de services comptables et financiers con\xE7us pour r\xE9pondre \xE0 tous vos besoins. Notre objectif est de :"
-        ),
-        e(),
-        t(29, "div", 17)(30, "div", 8)(31, "div", 18)(32, "div", 19)(33, "p"),
-        l(34, "img", 20),
-        n(35, " Aider \xE0 la prise de d\xE9cision"),
-        e()(),
-        l(36, "div", 7),
-        t(37, "div", 19)(38, "p"),
-        l(39, "img", 20),
-        n(40, " Anticiper l\u2019avenir \xE9conomique"),
-        e()()(),
-        t(41, "div", 3)(42, "div", 19)(43, "p"),
-        l(44, "img", 20),
-        n(45, " Mettre en place des leviers simples et efficaces"),
-        e()(),
-        l(46, "div", 7),
-        t(47, "div", 19)(48, "p"),
-        l(49, "img", 20),
-        n(50, " Offrir des services d\u2019optimisation des performaces"),
-        e()()()()(),
-        t(51, "div", 21)(52, "a", 22),
-        n(53, "Contactez-nous "),
-        l(54, "i", 23),
-        e()()()()()()()(),
-        t(55, "div", 24)(56, "div", 1)(57, "div", 25)(58, "div", 3)(
-          59,
-          "div",
-          26
-        )(60, "p", 15)(61, "span", 15),
-        n(62, "Pourquoi nous choisir?"),
-        e()(),
-        t(63, "h1", 27),
-        n(64, "L'excellence comptable "),
-        l(65, "br"),
-        n(66, " pour votre "),
-        t(67, "span", 28),
-        n(68, " r\xE9ussite."),
-        e()(),
-        t(69, "p", 27),
-        n(
-          70,
-          "Chez MFinances Expert Comptable nous vous apportons un soutien administratif pour pallier d'\xE9ventuelles omissions dans votre comptabilit\xE9, qui peuvent entra\xEEner la perte de la d\xE9ductibilit\xE9 de certaines d\xE9penses."
-        ),
-        e(),
-        l(71, "div", 7),
-        t(72, "p", 27),
-        n(
-          73,
-          " Nous vous aidons \xE0 \xE9viter des d\xE9penses injustifi\xE9es, imput\xE9es au compte courant du gestionnaire, qui devraient autrement \xEAtre rembours\xE9es. Notre \xE9quipe est d\xE9termin\xE9e \xE0 offrir des solutions sur mesure qui favorisant la croissance et l'efficacit\xE9 de votre entreprise."
-        ),
-        e(),
-        l(74, "div", 29),
-        e()(),
-        t(75, "div", 30)(76, "div", 31)(77, "div", 32),
-        l(78, "img", 33),
-        e(),
-        t(79, "div", 34)(80, "h4")(81, "a", 35),
-        n(82, "Assistance en gestion comptable"),
-        e()(),
-        t(83, "p"),
-        n(
-          84,
-          "Correction des omissions pour pr\xE9server la d\xE9ductibilit\xE9."
-        ),
-        e()()(),
-        t(85, "div", 31)(86, "div", 32),
-        l(87, "img", 36),
-        e(),
-        t(88, "div", 34)(89, "h4")(90, "a", 35),
-        n(91, "Pr\xE9vention des d\xE9penses injustifi\xE9es"),
-        e()(),
-        t(92, "p"),
-        n(93, "\xC9viter les erreurs li\xE9es au compte courant."),
-        e()()(),
-        t(94, "div", 31)(95, "div", 32),
-        l(96, "img", 37),
-        e(),
-        t(97, "div", 34)(98, "h4")(99, "a", 35),
-        n(100, "Solutions personnalis\xE9es"),
-        e()(),
-        t(101, "p"),
-        n(102, "Approches adapt\xE9es \xE0 vos besoins."),
-        e()()(),
-        t(103, "div", 31)(104, "div", 32),
-        l(105, "img", 38),
-        e(),
-        t(106, "div", 34)(107, "h4")(108, "a", 35),
-        n(109, "Soutien \xE0 la croissance"),
-        e()(),
-        t(110, "p"),
-        n(111, "Optimisation pour d\xE9velopper votre activit\xE9."),
-        e()()()()()()(),
-        t(112, "div", 39)(113, "div", 1)(114, "div", 8)(115, "div", 40)(
-          116,
-          "div",
-          41
-        )(117, "p", 15)(118, "span", 15),
-        n(119, "Notre Vision"),
-        e()(),
-        t(120, "h1"),
-        n(
-          121,
-          "Allier Automatisation Intelligente et Expertise Humaine pour des D\xE9cisions "
-        ),
-        t(122, "span", 42),
-        n(123, " Pertinentes et Durables "),
-        e()()()(),
-        l(124, "div", 43),
-        t(125, "div", 8)(126, "div", 44)(127, "div", 45)(128, "div", 46),
-        l(129, "img", 47),
-        e(),
-        l(130, "div", 7),
-        t(131, "div", 34)(132, "h4")(133, "a", 35),
-        n(134, "Un accompagnement strat\xE9gique "),
-        l(135, "br"),
-        n(136, " pour tous"),
-        e()(),
-        l(137, "div", 48),
-        t(138, "p"),
-        n(
-          139,
-          "Chaque entreprise, quelle que soit sa taille, m\xE9rite un soutien adapt\xE9 \xE0 ses ambitions. Nous vous aidons \xE0 b\xE2tir un avenir stable, prosp\xE8re et ma\xEEtris\xE9"
-        ),
-        e()()()(),
-        t(140, "div", 44)(141, "div", 45)(142, "div", 46),
-        l(143, "img", 49),
-        e(),
-        l(144, "div", 7),
-        t(145, "div", 34)(146, "h4")(147, "a", 35),
-        n(
-          148,
-          "Des d\xE9cisions \xE9clair\xE9es pour renforcer votre solidit\xE9"
-        ),
-        e()(),
-        l(149, "div", 48),
-        t(150, "p"),
-        n(
-          151,
-          "Des outils accessibles et des analyses pr\xE9cises pour piloter votre entreprise efficacement. Chaque choix strat\xE9gique devient une opportunit\xE9 de croissance durable. "
-        ),
-        e()()()(),
-        t(152, "div", 44)(153, "div", 45)(154, "div", 46),
-        l(155, "img", 50),
-        e(),
-        l(156, "div", 7),
-        t(157, "div", 34)(158, "h4")(159, "a", 35),
-        n(160, "Automatisation intelligente et expertise humaine"),
-        e()(),
-        l(161, "div", 48),
-        t(162, "p"),
-        n(
-          163,
-          "Nous trouvons le juste \xE9quilibre entre automatisation et intervention humaine. Pour une gestion simplifi\xE9e et des analyses pertinentes, \xE0 forte valeur ajout\xE9e"
-        ),
-        e()()()(),
-        t(164, "div", 44)(165, "div", 45)(166, "div", 46),
-        l(167, "img", 51),
-        e(),
-        l(168, "div", 7),
-        t(169, "div", 34)(170, "h4")(171, "a", 35),
-        n(172, "Un partenaire engag\xE9 pour votre r\xE9ussite"),
-        e()(),
-        l(173, "div", 48),
-        t(174, "p"),
-        n(
-          175,
-          "Simplifier la complexit\xE9 et optimiser vos ressources sont nos priorit\xE9s. Nous vous aidons \xE0 innover, d\xE9velopper votre activit\xE9 et pr\xE9parer l\u2019avenir sereinement."
-        ),
-        e()()()()()()()(),
-        l(176, "app-zone-contact"));
+          t(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "div", 3)(5, "div", 4)(
+            6,
+            "div",
+            5
+          ),
+          l(7, "img", 6),
+          e(),
+          l(8, "div", 7),
+          t(9, "div", 8)(10, "div", 3)(11, "div", 9),
+          l(12, "img", 10),
+          e()(),
+          t(13, "div", 3)(14, "div", 11),
+          l(15, "img", 12),
+          e()()()()(),
+          t(16, "div", 3)(17, "div", 13)(18, "div", 14)(19, "p", 15)(
+            20,
+            "span",
+            15
+          ),
+          n(21, "Profil"),
+          e()(),
+          t(22, "h1"),
+          n(23, "Experts-comptables"),
+          l(24, "br"),
+          t(25, "span", 16),
+          n(26, "agr\xE9\xE9s \xE0 Bruxelles"),
+          e()(),
+          t(27, "p"),
+          n(
+            28,
+            "Bienvenue chez MFinances Expert Comptable, votre cabinet comptable d\xE9di\xE9 \xE0 la r\xE9ussite de votre entreprise. Nous offrons une gamme compl\xE8te de services comptables et financiers con\xE7us pour r\xE9pondre \xE0 tous vos besoins. Notre objectif est de :"
+          ),
+          e(),
+          t(29, "div", 17)(30, "div", 8)(31, "div", 18)(32, "div", 19)(33, "p"),
+          l(34, "img", 20),
+          n(35, " Aider \xE0 la prise de d\xE9cision"),
+          e()(),
+          l(36, "div", 7),
+          t(37, "div", 19)(38, "p"),
+          l(39, "img", 20),
+          n(40, " Anticiper l\u2019avenir \xE9conomique"),
+          e()()(),
+          t(41, "div", 3)(42, "div", 19)(43, "p"),
+          l(44, "img", 20),
+          n(45, " Mettre en place des leviers simples et efficaces"),
+          e()(),
+          l(46, "div", 7),
+          t(47, "div", 19)(48, "p"),
+          l(49, "img", 20),
+          n(50, " Offrir des services d\u2019optimisation des performaces"),
+          e()()()()(),
+          t(51, "div", 21)(52, "a", 22),
+          n(53, "Contactez-nous "),
+          l(54, "i", 23),
+          e()()()()()()()(),
+          t(55, "div", 24)(56, "div", 1)(57, "div", 25)(58, "div", 3)(
+            59,
+            "div",
+            26
+          )(60, "p", 15)(61, "span", 15),
+          n(62, "Pourquoi nous choisir?"),
+          e()(),
+          t(63, "h1", 27),
+          n(64, "L'excellence comptable "),
+          l(65, "br"),
+          n(66, " pour votre "),
+          t(67, "span", 28),
+          n(68, " r\xE9ussite."),
+          e()(),
+          t(69, "p", 27),
+          n(
+            70,
+            "Chez MFinances Expert Comptable nous vous apportons un soutien administratif pour pallier d'\xE9ventuelles omissions dans votre comptabilit\xE9, qui peuvent entra\xEEner la perte de la d\xE9ductibilit\xE9 de certaines d\xE9penses."
+          ),
+          e(),
+          l(71, "div", 7),
+          t(72, "p", 27),
+          n(
+            73,
+            " Nous vous aidons \xE0 \xE9viter des d\xE9penses injustifi\xE9es, imput\xE9es au compte courant du gestionnaire, qui devraient autrement \xEAtre rembours\xE9es. Notre \xE9quipe est d\xE9termin\xE9e \xE0 offrir des solutions sur mesure qui favorisant la croissance et l'efficacit\xE9 de votre entreprise."
+          ),
+          e(),
+          l(74, "div", 29),
+          e()(),
+          t(75, "div", 30)(76, "div", 31)(77, "div", 32),
+          l(78, "img", 33),
+          e(),
+          t(79, "div", 34)(80, "h4")(81, "a", 35),
+          n(82, "Assistance en gestion comptable"),
+          e()(),
+          t(83, "p"),
+          n(
+            84,
+            "Correction des omissions pour pr\xE9server la d\xE9ductibilit\xE9."
+          ),
+          e()()(),
+          t(85, "div", 31)(86, "div", 32),
+          l(87, "img", 36),
+          e(),
+          t(88, "div", 34)(89, "h4")(90, "a", 35),
+          n(91, "Pr\xE9vention des d\xE9penses injustifi\xE9es"),
+          e()(),
+          t(92, "p"),
+          n(93, "\xC9viter les erreurs li\xE9es au compte courant."),
+          e()()(),
+          t(94, "div", 31)(95, "div", 32),
+          l(96, "img", 37),
+          e(),
+          t(97, "div", 34)(98, "h4")(99, "a", 35),
+          n(100, "Solutions personnalis\xE9es"),
+          e()(),
+          t(101, "p"),
+          n(102, "Approches adapt\xE9es \xE0 vos besoins."),
+          e()()(),
+          t(103, "div", 31)(104, "div", 32),
+          l(105, "img", 38),
+          e(),
+          t(106, "div", 34)(107, "h4")(108, "a", 35),
+          n(109, "Soutien \xE0 la croissance"),
+          e()(),
+          t(110, "p"),
+          n(111, "Optimisation pour d\xE9velopper votre activit\xE9."),
+          e()()()()()()(),
+          t(112, "div", 39)(113, "div", 1)(114, "div", 8)(115, "div", 40)(
+            116,
+            "div",
+            41
+          )(117, "p", 15)(118, "span", 15),
+          n(119, "Notre Vision"),
+          e()(),
+          t(120, "h1"),
+          n(
+            121,
+            "Allier Automatisation Intelligente et Expertise Humaine pour des D\xE9cisions "
+          ),
+          t(122, "span", 42),
+          n(123, " Pertinentes et Durables "),
+          e()()()(),
+          l(124, "div", 43),
+          t(125, "div", 8)(126, "div", 44)(127, "div", 45)(128, "div", 46),
+          l(129, "img", 47),
+          e(),
+          l(130, "div", 7),
+          t(131, "div", 34)(132, "h4")(133, "a", 35),
+          n(134, "Un accompagnement strat\xE9gique "),
+          l(135, "br"),
+          n(136, " pour tous"),
+          e()(),
+          l(137, "div", 48),
+          t(138, "p"),
+          n(
+            139,
+            "Chaque entreprise, quelle que soit sa taille, m\xE9rite un soutien adapt\xE9 \xE0 ses ambitions. Nous vous aidons \xE0 b\xE2tir un avenir stable, prosp\xE8re et ma\xEEtris\xE9"
+          ),
+          e()()()(),
+          t(140, "div", 44)(141, "div", 45)(142, "div", 46),
+          l(143, "img", 49),
+          e(),
+          l(144, "div", 7),
+          t(145, "div", 34)(146, "h4")(147, "a", 35),
+          n(
+            148,
+            "Des d\xE9cisions \xE9clair\xE9es pour renforcer votre solidit\xE9"
+          ),
+          e()(),
+          l(149, "div", 48),
+          t(150, "p"),
+          n(
+            151,
+            "Des outils accessibles et des analyses pr\xE9cises pour piloter votre entreprise efficacement. Chaque choix strat\xE9gique devient une opportunit\xE9 de croissance durable. "
+          ),
+          e()()()(),
+          t(152, "div", 44)(153, "div", 45)(154, "div", 46),
+          l(155, "img", 50),
+          e(),
+          l(156, "div", 7),
+          t(157, "div", 34)(158, "h4")(159, "a", 35),
+          n(160, "Automatisation intelligente et expertise humaine"),
+          e()(),
+          l(161, "div", 48),
+          t(162, "p"),
+          n(
+            163,
+            "Nous trouvons le juste \xE9quilibre entre automatisation et intervention humaine. Pour une gestion simplifi\xE9e et des analyses pertinentes, \xE0 forte valeur ajout\xE9e"
+          ),
+          e()()()(),
+          t(164, "div", 44)(165, "div", 45)(166, "div", 46),
+          l(167, "img", 51),
+          e(),
+          l(168, "div", 7),
+          t(169, "div", 34)(170, "h4")(171, "a", 35),
+          n(172, "Un partenaire engag\xE9 pour votre r\xE9ussite"),
+          e()(),
+          l(173, "div", 48),
+          t(174, "p"),
+          n(
+            175,
+            "Simplifier la complexit\xE9 et optimiser vos ressources sont nos priorit\xE9s. Nous vous aidons \xE0 innover, d\xE9velopper votre activit\xE9 et pr\xE9parer l\u2019avenir sereinement."
+          ),
+          e()()()()()()()(),
+          l(176, "app-zone-contact"));
     },
     dependencies: [Ke, Mt],
     styles: [
@@ -1128,17 +1128,17 @@ function Ro(a, o) {
   if (
     (a & 1 &&
       (t(0, "div", 11),
-      l(1, "img", 12),
-      t(2, "div", 13)(3, "h3"),
-      n(4),
-      e(),
-      t(5, "p"),
-      n(6),
-      e(),
-      t(7, "a", 14),
-      n(8, "En savoir plus \u2192"),
-      e()()()),
-    a & 2)
+        l(1, "img", 12),
+        t(2, "div", 13)(3, "h3"),
+        n(4),
+        e(),
+        t(5, "p"),
+        n(6),
+        e(),
+        t(7, "a", 14),
+        n(8, "En savoir plus \u2192"),
+        e()()()),
+      a & 2)
   ) {
     let i = o.$implicit,
       s = o.index;
@@ -1275,28 +1275,28 @@ var oe = class a {
           "span",
           4
         ),
-        n(6, " Voir plus de profil"),
-        e()(),
-        t(7, "h1"),
-        n(8, "Consulter nos autres profil"),
-        e()()()(),
-        t(9, "div", 5),
-        pe(10, Ro, 9, 6, "div", 6),
-        e(),
-        t(11, "div", 7)(12, "button", 8),
-        O("click", function () {
-          return s.prevSlide();
-        }),
-        l(13, "i", 9),
-        e(),
-        t(14, "button", 8),
-        O("click", function () {
-          return s.nextSlide();
-        }),
-        l(15, "i", 10),
-        e()()()),
+          n(6, " Voir plus de profil"),
+          e()(),
+          t(7, "h1"),
+          n(8, "Consulter nos autres profil"),
+          e()()()(),
+          t(9, "div", 5),
+          pe(10, Ro, 9, 6, "div", 6),
+          e(),
+          t(11, "div", 7)(12, "button", 8),
+          O("click", function () {
+            return s.prevSlide();
+          }),
+          l(13, "i", 9),
+          e(),
+          t(14, "button", 8),
+          O("click", function () {
+            return s.nextSlide();
+          }),
+          l(15, "i", 10),
+          e()()()),
         i & 2 &&
-          (ie(9),
+        (ie(9),
           Sn("transform", s.getTransform()),
           ie(),
           le("ngForOf", s.filteredItems),
@@ -1315,7 +1315,7 @@ function Bo(a, o) {
   if (
     (a & 1 &&
       (t(0, "li")(1, "a", 11), n(2), t(3, "span"), l(4, "img", 12), e()()()),
-    a & 2)
+      a & 2)
   ) {
     let i = o.$implicit;
     ie(), le("href", i.route, nt), ie(), at(" ", i.name, " ");
@@ -1384,38 +1384,38 @@ var se = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "div", 0)(1, "div", 1)(2, "h2"),
-        n(3, "Secteur d'activit\xE9"),
-        e(),
-        t(4, "ul", 2),
-        pe(5, Bo, 5, 2, "li", 3),
-        e(),
-        pe(6, zo, 3, 0, "div", 4),
-        e(),
-        t(7, "div", 5)(8, "h2"),
-        n(9, "Contact"),
-        e(),
-        t(10, "div", 6)(11, "p"),
-        l(12, "i", 7),
-        n(13, " 20 Rue de la Magnanerie, 1180 Uccle"),
-        e(),
-        t(14, "p"),
-        l(15, "i", 8),
-        n(16, " +32 2 886 05 50 "),
-        e(),
-        t(17, "p"),
-        l(18, "i", 9),
-        t(19, "a", 10),
-        n(20, " info@mfinances.be"),
-        e()()()()()),
+          n(3, "Secteur d'activit\xE9"),
+          e(),
+          t(4, "ul", 2),
+          pe(5, Bo, 5, 2, "li", 3),
+          e(),
+          pe(6, zo, 3, 0, "div", 4),
+          e(),
+          t(7, "div", 5)(8, "h2"),
+          n(9, "Contact"),
+          e(),
+          t(10, "div", 6)(11, "p"),
+          l(12, "i", 7),
+          n(13, " 20 Rue de la Magnanerie, 1180 Uccle"),
+          e(),
+          t(14, "p"),
+          l(15, "i", 8),
+          n(16, " +32 2 886 05 50 "),
+          e(),
+          t(17, "p"),
+          l(18, "i", 9),
+          t(19, "a", 10),
+          n(20, " info@mfinances.be"),
+          e()()()()()),
         i & 2 &&
-          (ie(5),
+        (ie(5),
           le("ngForOf", s.categories.slice(0, s.maxVisibleCategories)),
           ie(),
           le("ngIf", s.maxVisibleCategories < s.categories.length));
     },
     dependencies: [xt, We],
     styles: [
-      '.header[_ngcontent-%COMP%]{background:url("./media/bg_about-AWPUCD7F.webp") no-repeat center center/cover;height:300px;position:relative;display:flex;align-items:center;justify-content:center}.header-overlay[_ngcontent-%COMP%]{height:100%;width:100%;display:flex;align-items:center;color:#fff}.container[_ngcontent-%COMP%]{max-width:1200px;margin:0 auto;text-align:left}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{margin:0;font-size:2.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{margin:5px 0 0;font-size:1em;opacity:.8}@media (max-width: 768px){.header[_ngcontent-%COMP%]{height:150px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:2em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.9em}}@media (max-width: 480px){.header[_ngcontent-%COMP%]{height:120px}.container[_ngcontent-%COMP%]{margin-left:10px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:1.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.8em}}.service-single[_ngcontent-%COMP%]{display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:60px 20px;box-sizing:border-box;width:100%}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]{background-color:#edf3f5;padding:30px 40px;border-radius:20px;margin-bottom:50px}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-size:24px;color:#0f172a;margin-bottom:25px}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:space-between;font-size:18px;color:#787b84;background-color:#fff;padding:17px 20px;border-radius:10px;transition:background-color .3s,color .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover, .sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%]{background-color:#f34947;color:#fff}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{margin-bottom:20px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{background-color:#fff;display:block;text-align:center;padding:20px 10px;border-radius:10px;transition:box-shadow .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{box-shadow:0 10px 20px #0000001a}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:50px;height:50px;display:flex;align-items:center;justify-content:center;background-color:#f34947;margin:0 auto 15px;border-radius:50%}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:16px;line-height:22px;margin-bottom:15px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--size[_ngcontent-%COMP%]{color:#787b84;font-size:14px;border-top:1px solid #EDF3F5;padding-top:4px}.widget-banner[_ngcontent-%COMP%]{padding:50px 40px;color:#fff}.widget-banner[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:28px;line-height:40px;margin-bottom:40px}.single-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-weight:700;margin-bottom:25px;font-size:32px}.single-content[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:24px;margin-bottom:30px}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:20px;line-height:32px;color:#020203;margin-bottom:30px}.single-content__feature[_ngcontent-%COMP%]{display:flex;flex-wrap:wrap;margin:0 -15px 50px}.single-content-feature[_ngcontent-%COMP%]{width:50%;padding:0 15px;box-sizing:border-box}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]{background-color:#fff;border:1px solid #EDF3F5;padding:30px 25px;border-radius:10px;display:flex;align-items:center;margin-bottom:30px;transition:box-shadow .3s;position:relative}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:before{content:"";position:absolute;top:50%;left:0;width:4px;height:47px;background-color:#f34947;transform:translateY(-50%)}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-2[_ngcontent-%COMP%]:before{background-color:#1496f8}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-3[_ngcontent-%COMP%]:before{background-color:#0c9}single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-4[_ngcontent-%COMP%]:before{background-color:#ffbd0f}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:hover{box-shadow:0 21px 32px #cedce33b}.single-content-feature[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:81px;height:47px;border-radius:50%;background-color:#fe6c3f1a;display:flex;align-items:center;justify-content:center;margin-right:15px}.single-content-feature[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:20px;font-weight:600;margin:0}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:20px;align-items:center;margin-bottom:17px}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{margin-right:10px}@media (max-width: 767px){.single-content-feature[_ngcontent-%COMP%]{width:100%;padding:0}}li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{text-decoration:none}p[_ngcontent-%COMP%]{color:#020203}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:16px}.service[_ngcontent-%COMP%]{background-color:#1a2c51}.rectangle-red[_ngcontent-%COMP%]{background-color:#f33;border-radius:8px;padding:6px}.hadding[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{color:#0e1124;font-size:36px;font-weight:700;line-height:48px;padding-bottom:18px}a[_ngcontent-%COMP%]{text-decoration:none}.service-faq[_ngcontent-%COMP%]{background-color:#1a2c51}.contact-info[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{color:#f33}.contact-info[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{color:#0e1124}.defis[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:16px;color:#020203!important}.sticky-container[_ngcontent-%COMP%]{position:relative}.sliding-image[_ngcontent-%COMP%]{position:sticky;top:10px}',
+      '.header[_ngcontent-%COMP%]{background:url("./media/bg_about-AWPUCD7F.webp") no-repeat center center/cover;height:300px;position:relative;display:flex;align-items:center;justify-content:center}.header-overlay[_ngcontent-%COMP%]{height:100%;width:100%;display:flex;align-items:center;color:#fff}.container[_ngcontent-%COMP%]{max-width:1200px;margin:0 auto;text-align:left}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{margin:0;font-size:2.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{margin:5px 0 0;font-size:1em;opacity:.8}@media (max-width: 768px){.header[_ngcontent-%COMP%]{height:150px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:2em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.9em}}@media (max-width: 480px){.header[_ngcontent-%COMP%]{height:120px}.container[_ngcontent-%COMP%]{margin-left:10px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:1.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.8em}}.service-single[_ngcontent-%COMP%]{display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:60px 20px;box-sizing:border-box;width:100%}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]{background-color:#edf3f5;padding:30px 40px;border-radius:20px;margin-bottom:50px}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-size:24px;color:#0f172a;margin-bottom:25px}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:space-between;font-size:18px;color:#03143c;background-color:#fff;padding:17px 20px;border-radius:10px;transition:background-color .3s,color .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover, .sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%]{background-color:#f34947;color:#fff}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{margin-bottom:20px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{background-color:#fff;display:block;text-align:center;padding:20px 10px;border-radius:10px;transition:box-shadow .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{box-shadow:0 10px 20px #0000001a}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:50px;height:50px;display:flex;align-items:center;justify-content:center;background-color:#f34947;margin:0 auto 15px;border-radius:50%}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:16px;line-height:22px;margin-bottom:15px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--size[_ngcontent-%COMP%]{color:#03143c;font-size:14px;border-top:1px solid #EDF3F5;padding-top:4px}.widget-banner[_ngcontent-%COMP%]{padding:50px 40px;color:#fff}.widget-banner[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:28px;line-height:40px;margin-bottom:40px}.single-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-weight:700;margin-bottom:25px;font-size:32px}.single-content[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:24px;margin-bottom:30px}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:20px;line-height:32px;color:#020203;margin-bottom:30px}.single-content__feature[_ngcontent-%COMP%]{display:flex;flex-wrap:wrap;margin:0 -15px 50px}.single-content-feature[_ngcontent-%COMP%]{width:50%;padding:0 15px;box-sizing:border-box}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]{background-color:#fff;border:1px solid #EDF3F5;padding:30px 25px;border-radius:10px;display:flex;align-items:center;margin-bottom:30px;transition:box-shadow .3s;position:relative}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:before{content:"";position:absolute;top:50%;left:0;width:4px;height:47px;background-color:#f34947;transform:translateY(-50%)}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-2[_ngcontent-%COMP%]:before{background-color:#1496f8}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-3[_ngcontent-%COMP%]:before{background-color:#0c9}single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-4[_ngcontent-%COMP%]:before{background-color:#ffbd0f}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:hover{box-shadow:0 21px 32px #cedce33b}.single-content-feature[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:81px;height:47px;border-radius:50%;background-color:#fe6c3f1a;display:flex;align-items:center;justify-content:center;margin-right:15px}.single-content-feature[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:20px;font-weight:600;margin:0}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:20px;align-items:center;margin-bottom:17px}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{margin-right:10px}@media (max-width: 767px){.single-content-feature[_ngcontent-%COMP%]{width:100%;padding:0}}li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{text-decoration:none}p[_ngcontent-%COMP%]{color:#020203}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:16px}.service[_ngcontent-%COMP%]{background-color:#1a2c51}.rectangle-red[_ngcontent-%COMP%]{background-color:#f33;border-radius:8px;padding:6px}.hadding[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{color:#0e1124;font-size:36px;font-weight:700;line-height:48px;padding-bottom:18px}a[_ngcontent-%COMP%]{text-decoration:none}.service-faq[_ngcontent-%COMP%]{background-color:#1a2c51}.contact-info[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{color:#f33}.contact-info[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{color:#0e1124}.defis[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:16px;color:#020203!important}.sticky-container[_ngcontent-%COMP%]{position:relative}.sliding-image[_ngcontent-%COMP%]{position:sticky;top:10px}',
     ],
   });
 };
@@ -1472,9 +1472,9 @@ var Lo = ["serviceSection"],
       } else
         o < i
           ? (this.serviceImage.nativeElement.style.transform =
-              "translateY(0px)")
+            "translateY(0px)")
           : o > s &&
-            (this.serviceImage.nativeElement.style.transform = `translateY(${this.maxTranslateY}px)`);
+          (this.serviceImage.nativeElement.style.transform = `translateY(${this.maxTranslateY}px)`);
     }
     static ɵfac = function (i) {
       return new (i || a)(I(H));
@@ -2231,7 +2231,7 @@ var Lo = ["serviceSection"],
       },
       dependencies: [oe, se],
       styles: [
-        '.header[_ngcontent-%COMP%]{background:url("./media/bg_about-AWPUCD7F.webp") no-repeat center center/cover;height:300px;position:relative;display:flex;align-items:center;justify-content:center}.header-overlay[_ngcontent-%COMP%]{height:100%;width:100%;display:flex;align-items:center;color:#fff}.single-img[_ngcontent-%COMP%]{height:50vh;width:80vh;position:relative}.single-img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{position:absolute;width:100%;height:100%;object-fit:cover}.container[_ngcontent-%COMP%]{max-width:1200px;margin:0 auto;text-align:left}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{margin:0;font-size:2.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{margin:5px 0 0;font-size:1em;opacity:.8}@media (max-width: 768px){.header[_ngcontent-%COMP%]{height:150px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:2em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.9em}}@media (max-width: 480px){.header[_ngcontent-%COMP%]{height:120px}.container[_ngcontent-%COMP%]{margin-left:10px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:1.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.8em}}.service-single[_ngcontent-%COMP%]{display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:60px 20px;box-sizing:border-box;width:100%}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]{background-color:#edf3f5;padding:30px 40px;border-radius:20px;margin-bottom:50px}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-size:24px;color:#0f172a;margin-bottom:25px}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:space-between;font-size:18px;color:#787b84;background-color:#fff;padding:17px 20px;border-radius:10px;transition:background-color .3s,color .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover, .sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%]{background-color:#f34947;color:#fff}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{margin-bottom:20px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{background-color:#fff;display:block;text-align:center;padding:20px 10px;border-radius:10px;transition:box-shadow .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{box-shadow:0 10px 20px #0000001a}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:50px;height:50px;display:flex;align-items:center;justify-content:center;background-color:#f34947;margin:0 auto 15px;border-radius:50%}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:16px;line-height:22px;margin-bottom:15px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--size[_ngcontent-%COMP%]{color:#787b84;font-size:14px;border-top:1px solid #EDF3F5;padding-top:4px}.widget-banner[_ngcontent-%COMP%]{padding:50px 40px;color:#fff}.widget-banner[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:28px;line-height:40px;margin-bottom:40px}.single-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-weight:700;margin-bottom:25px;font-size:32px}.single-content[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:24px;margin-bottom:30px}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:20px;line-height:32px;color:#020203;margin-bottom:30px}.single-content__feature[_ngcontent-%COMP%]{display:flex;flex-wrap:wrap;margin:0 -15px 50px}.single-content-feature[_ngcontent-%COMP%]{width:50%;padding:0 15px;box-sizing:border-box}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]{background-color:#fff;border:1px solid #EDF3F5;padding:30px 25px;border-radius:10px;display:flex;align-items:center;margin-bottom:30px;transition:box-shadow .3s;position:relative}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:before{content:"";position:absolute;top:50%;left:0;width:4px;height:47px;background-color:#f34947;transform:translateY(-50%)}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-2[_ngcontent-%COMP%]:before{background-color:#1496f8}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-3[_ngcontent-%COMP%]:before{background-color:#0c9}single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-4[_ngcontent-%COMP%]:before{background-color:#ffbd0f}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:hover{box-shadow:0 21px 32px #cedce33b}.single-content-feature[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:81px;height:47px;border-radius:50%;background-color:#fe6c3f1a;display:flex;align-items:center;justify-content:center;margin-right:15px}.single-content-feature[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:20px;font-weight:600;margin:0}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:20px;align-items:center;margin-bottom:17px}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{margin-right:10px}@media (max-width: 767px){.single-content-feature[_ngcontent-%COMP%]{width:100%;padding:0}}li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{text-decoration:none}p[_ngcontent-%COMP%]{color:#020203}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:16px}.service[_ngcontent-%COMP%]{background-color:#1a2c51}.rectangle-red[_ngcontent-%COMP%]{background-color:#f33;border-radius:8px;padding:6px}.hadding[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{color:#0e1124;font-size:36px;font-weight:700;line-height:48px;padding-bottom:18px}a[_ngcontent-%COMP%]{text-decoration:none}.service-faq[_ngcontent-%COMP%]{background-color:#1a2c51}.contact-info[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{color:#f33}.contact-info[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{color:#0e1124}.defis[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:16px;color:#020203!important}.sticky-container[_ngcontent-%COMP%]{position:relative}.sliding-image[_ngcontent-%COMP%]{position:sticky;top:10px}.button-container[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;margin-top:20px}',
+        '.header[_ngcontent-%COMP%]{background:url("./media/bg_about-AWPUCD7F.webp") no-repeat center center/cover;height:300px;position:relative;display:flex;align-items:center;justify-content:center}.header-overlay[_ngcontent-%COMP%]{height:100%;width:100%;display:flex;align-items:center;color:#fff}.single-img[_ngcontent-%COMP%]{height:50vh;width:80vh;position:relative}.single-img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{position:absolute;width:100%;height:100%;object-fit:cover}.container[_ngcontent-%COMP%]{max-width:1200px;margin:0 auto;text-align:left}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{margin:0;font-size:2.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{margin:5px 0 0;font-size:1em;opacity:.8}@media (max-width: 768px){.header[_ngcontent-%COMP%]{height:150px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:2em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.9em}}@media (max-width: 480px){.header[_ngcontent-%COMP%]{height:120px}.container[_ngcontent-%COMP%]{margin-left:10px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:1.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.8em}}.service-single[_ngcontent-%COMP%]{display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:60px 20px;box-sizing:border-box;width:100%}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]{background-color:#edf3f5;padding:30px 40px;border-radius:20px;margin-bottom:50px}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-size:24px;color:#0f172a;margin-bottom:25px}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:space-between;font-size:18px;color:#03143c;background-color:#fff;padding:17px 20px;border-radius:10px;transition:background-color .3s,color .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover, .sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%]{background-color:#f34947;color:#fff}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{margin-bottom:20px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{background-color:#fff;display:block;text-align:center;padding:20px 10px;border-radius:10px;transition:box-shadow .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{box-shadow:0 10px 20px #0000001a}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:50px;height:50px;display:flex;align-items:center;justify-content:center;background-color:#f34947;margin:0 auto 15px;border-radius:50%}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:16px;line-height:22px;margin-bottom:15px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--size[_ngcontent-%COMP%]{color:#03143c;font-size:14px;border-top:1px solid #EDF3F5;padding-top:4px}.widget-banner[_ngcontent-%COMP%]{padding:50px 40px;color:#fff}.widget-banner[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:28px;line-height:40px;margin-bottom:40px}.single-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-weight:700;margin-bottom:25px;font-size:32px}.single-content[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:24px;margin-bottom:30px}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:20px;line-height:32px;color:#020203;margin-bottom:30px}.single-content__feature[_ngcontent-%COMP%]{display:flex;flex-wrap:wrap;margin:0 -15px 50px}.single-content-feature[_ngcontent-%COMP%]{width:50%;padding:0 15px;box-sizing:border-box}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]{background-color:#fff;border:1px solid #EDF3F5;padding:30px 25px;border-radius:10px;display:flex;align-items:center;margin-bottom:30px;transition:box-shadow .3s;position:relative}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:before{content:"";position:absolute;top:50%;left:0;width:4px;height:47px;background-color:#f34947;transform:translateY(-50%)}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-2[_ngcontent-%COMP%]:before{background-color:#1496f8}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-3[_ngcontent-%COMP%]:before{background-color:#0c9}single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-4[_ngcontent-%COMP%]:before{background-color:#ffbd0f}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:hover{box-shadow:0 21px 32px #cedce33b}.single-content-feature[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:81px;height:47px;border-radius:50%;background-color:#fe6c3f1a;display:flex;align-items:center;justify-content:center;margin-right:15px}.single-content-feature[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:20px;font-weight:600;margin:0}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:20px;align-items:center;margin-bottom:17px}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{margin-right:10px}@media (max-width: 767px){.single-content-feature[_ngcontent-%COMP%]{width:100%;padding:0}}li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{text-decoration:none}p[_ngcontent-%COMP%]{color:#020203}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:16px}.service[_ngcontent-%COMP%]{background-color:#1a2c51}.rectangle-red[_ngcontent-%COMP%]{background-color:#f33;border-radius:8px;padding:6px}.hadding[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{color:#0e1124;font-size:36px;font-weight:700;line-height:48px;padding-bottom:18px}a[_ngcontent-%COMP%]{text-decoration:none}.service-faq[_ngcontent-%COMP%]{background-color:#1a2c51}.contact-info[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{color:#f33}.contact-info[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{color:#0e1124}.defis[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:16px;color:#020203!important}.sticky-container[_ngcontent-%COMP%]{position:relative}.sliding-image[_ngcontent-%COMP%]{position:sticky;top:10px}.button-container[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;margin-top:20px}',
         `.section-title[_ngcontent-%COMP%] {
         font-size: 2rem;
         font-weight: bold;
@@ -2427,66 +2427,66 @@ var Pt = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "section", 0)(1, "div", 1)(2, "div", 2)(3, "h1", 3),
-        n(4, " Comment devenir ind\xE9pendant "),
-        t(5, "span", 4),
-        n(6, "en Belgique ? "),
-        e()()(),
-        t(7, "div", 5)(8, "p", 6),
-        n(9, " Voici les \xE9tapes essentielles pour vous lancer : "),
-        e()(),
-        t(10, "div", 7),
-        l(11, "div", 8),
-        t(12, "div", 9)(13, "div", 10)(14, "div", 11),
-        n(15, "01"),
-        e(),
-        l(16, "div", 12),
-        t(17, "div", 13)(18, "strong"),
-        n(19, "Pr\xE9parer un business plan et un plan financier :"),
-        e(),
-        n(
-          20,
-          " Ces documents structurent votre projet et attirent les financements. "
-        ),
-        e()(),
-        t(21, "div", 14)(22, "div", 11),
-        n(23, "02"),
-        e(),
-        l(24, "div", 12),
-        t(25, "div", 13)(26, "strong"),
-        n(27, "Ouvrir un compte bancaire professionnel :"),
-        e(),
-        n(
-          28,
-          " Cela garantit une gestion claire et transparente de vos finances. "
-        ),
-        e()(),
-        t(29, "div", 15)(30, "div", 11),
-        n(31, "03"),
-        e(),
-        l(32, "div", 12),
-        t(33, "div", 13)(34, "strong"),
-        n(35, "S\u2019enregistrer \xE0 la BCE :"),
-        e(),
-        n(
-          36,
-          " Obtenez votre num\xE9ro d\u2019entreprise pour lancer officiellement votre activit\xE9. "
-        ),
-        e()(),
-        t(37, "div", 16)(38, "div", 11),
-        n(39, "04"),
-        e(),
-        l(40, "div", 12),
-        t(41, "div", 13)(42, "strong"),
-        n(43, "Activer votre num\xE9ro de TVA :"),
-        e(),
-        n(44, " Obligatoire pour facturer et d\xE9clarer la TVA. "),
-        e()()()(),
-        t(45, "div", 17)(46, "div", 18)(47, "p", 19),
-        n(
-          48,
-          " Astuce : MFINANCES vous accompagne dans toutes ces d\xE9marches pour un d\xE9marrage simplifi\xE9 et rapide. "
-        ),
-        e()()()()());
+          n(4, " Comment devenir ind\xE9pendant "),
+          t(5, "span", 4),
+          n(6, "en Belgique ? "),
+          e()()(),
+          t(7, "div", 5)(8, "p", 6),
+          n(9, " Voici les \xE9tapes essentielles pour vous lancer : "),
+          e()(),
+          t(10, "div", 7),
+          l(11, "div", 8),
+          t(12, "div", 9)(13, "div", 10)(14, "div", 11),
+          n(15, "01"),
+          e(),
+          l(16, "div", 12),
+          t(17, "div", 13)(18, "strong"),
+          n(19, "Pr\xE9parer un business plan et un plan financier :"),
+          e(),
+          n(
+            20,
+            " Ces documents structurent votre projet et attirent les financements. "
+          ),
+          e()(),
+          t(21, "div", 14)(22, "div", 11),
+          n(23, "02"),
+          e(),
+          l(24, "div", 12),
+          t(25, "div", 13)(26, "strong"),
+          n(27, "Ouvrir un compte bancaire professionnel :"),
+          e(),
+          n(
+            28,
+            " Cela garantit une gestion claire et transparente de vos finances. "
+          ),
+          e()(),
+          t(29, "div", 15)(30, "div", 11),
+          n(31, "03"),
+          e(),
+          l(32, "div", 12),
+          t(33, "div", 13)(34, "strong"),
+          n(35, "S\u2019enregistrer \xE0 la BCE :"),
+          e(),
+          n(
+            36,
+            " Obtenez votre num\xE9ro d\u2019entreprise pour lancer officiellement votre activit\xE9. "
+          ),
+          e()(),
+          t(37, "div", 16)(38, "div", 11),
+          n(39, "04"),
+          e(),
+          l(40, "div", 12),
+          t(41, "div", 13)(42, "strong"),
+          n(43, "Activer votre num\xE9ro de TVA :"),
+          e(),
+          n(44, " Obligatoire pour facturer et d\xE9clarer la TVA. "),
+          e()()()(),
+          t(45, "div", 17)(46, "div", 18)(47, "p", 19),
+          n(
+            48,
+            " Astuce : MFINANCES vous accompagne dans toutes ces d\xE9marches pour un d\xE9marrage simplifi\xE9 et rapide. "
+          ),
+          e()()()()());
     },
     styles: [
       `body[_ngcontent-%COMP%] {
@@ -3220,583 +3220,583 @@ var Tt = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1"),
-        n(4, "Ind\xE9pendants et Starter"),
-        e(),
-        t(5, "p", 3),
-        n(6, "Accueil > Ind\xE9pendants et Starter"),
-        e()()()(),
-        t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
-        l(11, "app-sidebar"),
-        e(),
-        t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
-        n(15, " Devenir ind\xE9pendant en Belgique: Lancez votre projet"),
-        l(16, "br"),
-        t(17, "span", 10),
-        n(18, " avec succ\xE8s"),
-        e()(),
-        t(19, "div")(20, "p"),
-        n(
-          21,
-          "Devenir ind\xE9pendant, c\u2019est bien plus qu\u2019un simple changement de statut. C\u2019est une aventure passionnante, un saut vers la libert\xE9 professionnelle et une occasion unique de concr\xE9tiser vos id\xE9es."
-        ),
-        e(),
-        t(22, "p"),
-        n(
-          23,
-          "Que vous soyez en d\xE9but de carri\xE8re ou en pleine r\xE9orientation, le statut d\u2019ind\xE9pendant vous permet de b\xE2tir un projet sur mesure, parfaitement adapt\xE9 \xE0 vos aspirations."
-        ),
-        e(),
-        t(24, "p"),
-        n(
-          25,
-          "Cependant, chaque aventure pr\xE9sente des d\xE9fis : d\xE9marches administratives, gestion financi\xE8re, p\xE9riodes de creux\u2026 Fort de plus de 20 ans d\u2019exp\xE9rience, MFINANCES accompagne les entrepreneurs dans la gestion de ces obstacles gr\xE2ce \xE0 des m\xE9thodes \xE9prouv\xE9es et un savoir-faire unique."
-        ),
-        e()(),
-        t(26, "div", 11)(27, "div", 12)(28, "button", 13),
-        O("click", function () {
-          return s.scrollToSection("targetSection");
-        }),
-        n(29, "D\xE9couvrez ce que vous gagnerez avec nous "),
-        l(30, "i", 14),
-        e()()(),
-        t(31, "div", 15),
-        l(32, "img", 16),
-        e(),
-        t(33, "div", 17)(34, "h1"),
-        n(35, "Les d\xE9fis des ind\xE9pendants : un statut exigeant "),
-        e(),
-        t(36, "p"),
-        n(
-          37,
-          "Si devenir ind\xE9pendant offre une libert\xE9 unique, il comporte \xE9galement des d\xE9fis majeurs : "
-        ),
-        e(),
-        t(38, "div", 18),
-        l(39, "img", 19),
-        e(),
-        t(40, "div", 20)(41, "ul", 21)(42, "li"),
-        l(43, "i", 22),
-        t(44, "strong"),
-        n(45, "Un investissement personnel important :"),
-        e(),
-        l(46, "br"),
-        n(47, " Les semaines de travail peuvent d\xE9passer "),
-        t(48, "strong"),
-        n(49, "35 heures"),
-        e(),
-        n(
-          50,
-          ", surtout lors des phases de d\xE9marrage ou de croissance. L'absence de cong\xE9s pay\xE9s n\xE9cessite une planification rigoureuse. "
-        ),
-        e(),
-        t(51, "li"),
-        l(52, "i", 22),
-        t(53, "strong"),
-        n(54, "Des risques financiers \xE0 g\xE9rer :"),
-        e(),
-        l(55, "br"),
-        n(
-          56,
-          " Une d\xE9pendance excessive \xE0 quelques clients peut fragiliser votre tr\xE9sorerie. Les retards de paiement ou les p\xE9riodes de faible activit\xE9 exigent une gestion proactive et une \xE9pargne de s\xE9curit\xE9. "
-        ),
-        e(),
-        t(57, "li"),
-        l(58, "i", 22),
-        t(59, "strong"),
-        n(60, "Une protection sociale limit\xE9e :"),
-        e(),
-        l(61, "br"),
-        n(
-          62,
-          " Contrairement \xE0 un salari\xE9, un ind\xE9pendant ne b\xE9n\xE9ficie ni de cong\xE9s pay\xE9s ni de couverture ch\xF4mage. Des solutions alternatives, telles que des assurances sp\xE9cifiques ou une \xE9pargne personnelle, sont essentielles. "
-        ),
-        e()()()()()()()()(),
-        t(63, "section", 23)(64, "div", 24)(65, "div", 2)(66, "div", 25)(
-          67,
-          "div",
-          26
-        )(68, "div", 27)(
-          69,
-          "div",
-          28
-        )(70, "h1"),
-        n(71, "Pourquoi choisir le "),
-        l(72, "br"),
-        t(73, "span", 29),
-        n(74, " statut d\u2019ind\xE9pendant ?"),
-        e()()(),
-        l(75, "div", 30),
-        t(76, "div", 31)(77, "div", 32)(78, "div", 33)(79, "div", 34),
-        l(80, "img", 35),
-        e()(),
-        t(81, "div", 36)(82, "h2"),
-        n(83, "Libert\xE9 professionnelle"),
-        e(),
-        t(84, "ul")(85, "li"),
-        n(86, "D\xE9finissez vos projets, vos horaires et vos priorit\xE9s. "),
-        e(),
-        t(87, "li"),
-        n(
-          88,
-          "Une autonomie qui vous permet de concilier travail et vie personnelle selon vos besoins. "
-        ),
-        e()()()(),
-        t(89, "div", 37)(90, "div", 33)(91, "div", 38),
-        l(92, "img", 39),
-        e()(),
-        t(93, "div", 36)(94, "h2"),
-        n(95, "D\xE9veloppement personnel et professionnel : "),
-        e(),
-        t(96, "ul")(97, "li"),
-        n(
-          98,
-          "Transformez vos passions en une activit\xE9 rentable et \xE9panouissante. "
-        ),
-        e(),
-        t(99, "li"),
-        n(
-          100,
-          "Relevez des d\xE9fis motivants et d\xE9veloppez des comp\xE9tences essentielles en gestion, vente et leadership. "
-        ),
-        e()()()(),
-        t(101, "div", 40)(102, "div", 33)(103, "div", 38),
-        l(104, "img", 41),
-        e()(),
-        t(105, "div", 36)(106, "h2"),
-        n(107, "Opportunit\xE9s financi\xE8res et aides disponibles : "),
-        e(),
-        t(108, "ul")(109, "li"),
-        n(
-          110,
-          "Vos revenus d\xE9pendent de vos efforts et des performances de votre activit\xE9."
-        ),
-        e(),
-        t(111, "li"),
-        n(
-          112,
-          "Profitez des aides telles que Tremplin-Ind\xE9pendants, des subsides r\xE9gionaux et des microcr\xE9dits pour soutenir votre projet."
-        ),
-        e()()()(),
-        t(113, "div", 40)(114, "div", 33)(115, "div", 38),
-        l(116, "img", 42),
-        e()(),
-        t(117, "div", 36)(118, "h2"),
-        n(119, "Flexibilit\xE9 dans les choix juridiques : "),
-        e(),
-        t(120, "ul")(121, "li"),
-        n(
-          122,
-          "Commencez en tant qu\u2019ind\xE9pendant principal ou compl\xE9mentaire, selon vos besoins "
-        ),
-        e(),
-        t(123, "li"),
-        n(
-          124,
-          "Faites \xE9voluer votre activit\xE9 vers une soci\xE9t\xE9 (SRL, SA) pour accompagner sa croissance. "
-        ),
-        e()()()(),
-        t(125, "div", 40)(126, "div", 33)(127, "div", 38),
-        l(128, "img", 41),
-        e()(),
-        t(129, "div", 36)(130, "h2"),
-        n(131, "Un r\xE9seau professionnel en constante \xE9volution : "),
-        e(),
-        t(132, "ul")(133, "li"),
-        n(
-          134,
-          "Collaborez avec des clients, fournisseurs et partenaires pour \xE9largir vos opportunit\xE9s et renforcer votre position sur le march\xE9. "
-        ),
-        e()()()()()()(),
-        t(135, "div", 43)(136, "div", 44),
-        l(137, "img", 45),
-        e()()()()()(),
-        t(138, "section")(139, "div", 46)(140, "div", 2)(141, "div", 25)(
-          142,
-          "div",
-          47
-        )(143, "div", 48),
-        l(144, "img", 49),
-        e()(),
-        t(145, "div", 50)(146, "div", 51)(147, "div", 36)(148, "h3"),
-        n(149, "Comment MFINANCES vous aide \xE0 relever ces d\xE9fis ?"),
-        e(),
-        t(150, "p"),
-        n(
-          151,
-          "Avec MFINANCES, ces obstacles se transforment en opportunit\xE9s : "
-        ),
-        e()(),
-        t(152, "div", 52)(153, "div", 5)(154, "div")(155, "div", 53)(156, "p"),
-        l(157, "img", 54),
-        t(158, "strong"),
-        n(159, "Une planification proactive :"),
-        e(),
-        n(
-          160,
-          " Nous structurons votre activit\xE9 pour anticiper les risques financiers et personnels."
-        ),
-        e()(),
-        l(161, "div", 30),
-        t(162, "div", 53)(163, "p"),
-        l(164, "img", 54),
-        t(165, "strong"),
-        n(166, "Des solutions sur mesure : "),
-        e(),
-        n(
-          167,
-          " Diversifiez vos revenus, optimisez votre tr\xE9sorerie, et choisissez les meilleures protections sociales."
-        ),
-        e()(),
-        l(168, "div", 30),
-        e(),
-        t(169, "div")(170, "div", 53)(171, "p"),
-        l(172, "img", 54),
-        t(173, "strong"),
-        n(174, "Un suivi continu :"),
-        e(),
-        n(
-          175,
-          " Avec notre accompagnement r\xE9gulier, vous pouvez vous concentrer sur la croissance de votre activit\xE9 en toute s\xE9r\xE9nit\xE9."
-        ),
-        e()()()()(),
-        t(176, "div", 55)(177, "a", 56),
-        n(178, "Contactez-nous "),
-        l(179, "i", 14),
-        e()()()()()()()(),
-        l(180, "app-timeline-independant"),
-        t(181, "section", 57)(182, "div", 2)(183, "div", 25)(184, "div", 58)(
-          185,
-          "h2",
-          59
-        ),
-        n(186, " Nos Points "),
-        l(187, "br"),
-        t(188, "span", 60),
-        n(189, " Distinctif ? "),
-        e()()(),
-        t(190, "div", 61)(191, "div", 62)(192, "div", 63),
-        l(193, "img", 64),
-        e(),
-        t(194, "div")(195, "h5", 65),
-        n(196, "20 ans d\u2019expertise \xE9prouv\xE9e"),
-        e(),
-        t(197, "p", 66),
-        n(
-          198,
-          "Nos bonnes pratiques garantissent un d\xE9marrage solide et une gestion efficace. "
-        ),
-        e()()(),
-        t(199, "div", 67)(200, "div", 63),
-        l(201, "img", 68),
-        e(),
-        t(202, "div")(203, "h5", 65),
-        n(204, "Accompagnement sur mesure"),
-        e(),
-        t(205, "p", 66),
-        n(
-          206,
-          "Nos solutions sont adapt\xE9es \xE0 vos besoins sp\xE9cifiques, que vous soyez d\xE9butant ou en pleine croissance."
-        ),
-        e()()(),
-        t(207, "div", 69)(208, "div", 63),
-        l(209, "img", 70),
-        e(),
-        t(210, "div")(211, "h5", 65),
-        n(212, "Gain de temps et d\u2019efficacit\xE9"),
-        e(),
-        t(213, "p", 66),
-        n(
-          214,
-          "D\xE9l\xE9guez les d\xE9marches complexes pour vous concentrer sur l\u2019essentiel. "
-        ),
-        e()()(),
-        t(215, "div", 69)(216, "div", 63),
-        l(217, "img", 70),
-        e(),
-        t(218, "div")(219, "h5", 65),
-        n(220, "Optimisation des r\xE9sultats"),
-        e(),
-        t(221, "p", 66),
-        n(
-          222,
-          "Maximisez vos revenus et s\xE9curisez votre avenir avec des strat\xE9gies sur mesure. "
-        ),
-        e()()()()()()(),
-        t(223, "section")(224, "div", 71)(225, "div", 2)(226, "div", 5)(
-          227,
-          "div",
-          72
-        )(228, "div", 73)(229, "h1", 3),
-        n(230, "Foire Aux Questions (FAQ) pour "),
-        l(231, "br"),
-        t(232, "span", 29),
-        n(233, "Devenir Ind\xE9pendant en Belgique"),
-        e()()()()(),
-        l(234, "div", 74),
-        t(235, "div", 25)(236, "div")(237, "div", 75)(238, "div", 76)(
-          239,
-          "h2",
-          77
-        )(240, "button", 78),
-        n(
-          241,
-          " Quels sont les principaux avantages de devenir ind\xE9pendant ? "
-        ),
-        e()(),
-        t(242, "div", 79)(243, "div", 80),
-        n(244, " Devenir ind\xE9pendant vous permet de : "),
-        t(245, "ul")(246, "li"),
-        n(247, "\xCAtre votre propre patron et g\xE9rer vos horaires."),
-        e(),
-        t(248, "li"),
-        n(249, "Transformer vos passions en m\xE9tier."),
-        e(),
-        t(250, "li"),
-        n(
-          251,
-          "Acc\xE9der \xE0 des aides financi\xE8res pour les starters (comme Tremplin-Ind\xE9pendants ou les primes r\xE9gionales)."
-        ),
-        e()()()()(),
-        t(252, "div", 76)(253, "h2", 81)(254, "button", 82),
-        n(255, " Quels d\xE9fis dois-je anticiper avant de me lancer ? "),
-        e()(),
-        t(256, "div", 83)(257, "div", 80),
-        n(258, " Les principaux d\xE9fis incluent : "),
-        t(259, "ul")(260, "li"),
-        n(
-          261,
-          "Une charge de travail importante, souvent au-del\xE0 des 35 heures hebdomadaires."
-        ),
-        e(),
-        t(262, "li"),
-        n(263, "Des revenus variables, parfois impr\xE9visibles."),
-        e(),
-        t(264, "li"),
-        n(
-          265,
-          "L'absence de cong\xE9s pay\xE9s ou de ch\xF4mage en cas d'arr\xEAt d'activit\xE9."
-        ),
-        e()(),
-        n(
-          266,
-          " Chez MFINANCES, nous vous aidons \xE0 structurer votre projet et \xE0 anticiper ces d\xE9fis avec des strat\xE9gies adapt\xE9es. "
-        ),
-        e()()(),
-        t(267, "div", 76)(268, "h2", 84)(269, "button", 85),
-        n(
-          270,
-          " Quelles sont les \xE9tapes administratives pour devenir ind\xE9pendant ? "
-        ),
-        e()(),
-        t(271, "div", 86)(272, "div", 80),
-        n(273, " Les \xE9tapes cl\xE9s sont : "),
-        t(274, "ul")(275, "li"),
-        n(276, "Pr\xE9parer un business plan et un plan financier."),
-        e(),
-        t(277, "li"),
-        n(278, "Ouvrir un compte bancaire professionnel."),
-        e(),
-        t(279, "li"),
-        n(
-          280,
-          "S\u2019enregistrer \xE0 la Banque-Carrefour des Entreprises (BCE)."
-        ),
-        e(),
-        t(281, "li"),
-        n(282, "Activer un num\xE9ro de TVA, si n\xE9cessaire."),
-        e(),
-        t(283, "li"),
-        n(
-          284,
-          "S'affilier \xE0 une caisse d'assurances sociales pour travailleurs ind\xE9pendants."
-        ),
-        e()(),
-        n(
-          285,
-          " Nous proposons un accompagnement personnalis\xE9 pour faciliter toutes ces d\xE9marches. "
-        ),
-        e()()(),
-        t(286, "div", 76)(287, "h2", 87)(288, "button", 88),
-        n(
-          289,
-          " Comment choisir entre le statut d\u2019ind\xE9pendant et celui de soci\xE9t\xE9 ? "
-        ),
-        e()(),
-        t(290, "div", 89)(291, "div", 80),
-        n(292, " Le choix d\xE9pend de votre situation : "),
-        t(293, "ul")(294, "li"),
-        n(
-          295,
-          "Une entreprise individuelle est id\xE9ale pour un d\xE9marrage rapide et flexible."
-        ),
-        e(),
-        t(296, "li"),
-        n(
-          297,
-          "Une soci\xE9t\xE9 (SRL, SA) est pr\xE9f\xE9rable pour limiter votre responsabilit\xE9 financi\xE8re et g\xE9rer une croissance importante."
-        ),
-        e()()()()(),
-        t(298, "div", 76)(299, "h2", 90)(300, "button", 91),
-        n(
-          301,
-          " Quelles sont les obligations fiscales et comptables d\u2019un ind\xE9pendant ? "
-        ),
-        e()(),
-        t(302, "div", 92)(303, "div", 80),
-        n(304, " Les obligations incluent : "),
-        t(305, "ul")(306, "li"),
-        n(307, "D\xE9clarer vos revenus aupr\xE8s du SPF Finances."),
-        e(),
-        t(308, "li"),
-        n(
-          309,
-          "Tenir une comptabilit\xE9 simplifi\xE9e ou en partie double, selon votre chiffre d'affaires."
-        ),
-        e(),
-        t(310, "li"),
-        n(
-          311,
-          "Effectuer des d\xE9clarations TVA, si vous y \xEAtes assujetti."
-        ),
-        e()()()()(),
-        t(312, "div", 76)(313, "h2", 93)(314, "button", 94),
-        n(
-          315,
-          " Existe-t-il des aides financi\xE8res pour les ind\xE9pendants ? "
-        ),
-        e()(),
-        t(316, "div", 95)(317, "div", 80),
-        n(318, " Oui, notamment : "),
-        t(319, "ul")(320, "li"),
-        n(
-          321,
-          "Tremplin-Ind\xE9pendants pour r\xE9duire les cotisations sociales."
-        ),
-        e(),
-        t(322, "li"),
-        n(323, "Subsides r\xE9gionaux pour le lancement d\u2019activit\xE9."),
-        e(),
-        t(324, "li"),
-        n(325, "Microcr\xE9dits pour financer vos premiers investissements."),
-        e()()()()(),
-        t(326, "div", 76)(327, "h2", 96)(328, "button", 97),
-        n(
-          329,
-          " Comment g\xE9rer les p\xE9riodes de creux dans mon activit\xE9 ? "
-        ),
-        e()(),
-        t(330, "div", 98)(331, "div", 80),
-        n(332, " Voici quelques solutions : "),
-        t(333, "ul")(334, "li"),
-        n(
-          335,
-          "Constituer une \xE9pargne de s\xE9curit\xE9 pour couvrir vos besoins."
-        ),
-        e(),
-        t(336, "li"),
-        n(
-          337,
-          "Diversifier vos revenus pour limiter la d\xE9pendance \xE0 un seul client."
-        ),
-        e(),
-        t(338, "li"),
-        n(
-          339,
-          "Fid\xE9liser vos clients existants pour assurer des revenus r\xE9currents."
-        ),
-        e()()()()(),
-        t(340, "div", 76)(341, "h2", 99)(342, "button", 100),
-        n(
-          343,
-          " Quel est le co\xFBt des d\xE9marches administratives pour devenir ind\xE9pendant ? "
-        ),
-        e()(),
-        t(344, "div", 101)(345, "div", 80),
-        n(
-          346,
-          " Le co\xFBt d'inscription \xE0 la BCE est d'environ 105,50 euros, avec un suppl\xE9ment pour chaque unit\xE9 d\u2019\xE9tablissement. Certaines d\xE9marches suppl\xE9mentaires (comme l\u2019affiliation \xE0 un secr\xE9tariat social) peuvent \xE9galement engendrer des frais. "
-        ),
-        e()()(),
-        t(347, "div", 76)(348, "h2", 102)(349, "button", 103),
-        n(
-          350,
-          " Quelles assurances dois-je pr\xE9voir en tant qu\u2019ind\xE9pendant ? "
-        ),
-        e()(),
-        t(351, "div", 104)(352, "div", 80),
-        n(353, " Certaines assurances sont obligatoires : "),
-        t(354, "ul")(355, "li"),
-        n(356, "Assurance responsabilit\xE9 civile professionnelle."),
-        e(),
-        t(357, "li"),
-        n(
-          358,
-          "Assurance accidents du travail (si vous engagez du personnel)."
-        ),
-        e()(),
-        n(359, " D'autres sont recommand\xE9es : "),
-        t(360, "ul")(361, "li"),
-        n(362, "Assurance maladie et invalidit\xE9."),
-        e(),
-        t(363, "li"),
-        n(364, "Assurance revenu garanti."),
-        e()()()()(),
-        t(365, "div", 76)(366, "h2", 105)(367, "button", 106),
-        n(368, " Pourquoi choisir MFINANCES pour m\u2019accompagner ? "),
-        e()(),
-        t(369, "div", 107)(370, "div", 80),
-        n(
-          371,
-          " Avec plus de 20 ans d\u2019exp\xE9rience, nous vous aidons \xE0 : "
-        ),
-        t(372, "ul")(373, "li"),
-        n(
-          374,
-          "Structurer votre activit\xE9 pour \xE9viter les erreurs co\xFBteuses."
-        ),
-        e(),
-        t(375, "li"),
-        n(
-          376,
-          "Maximiser vos revenus gr\xE2ce \xE0 des strat\xE9gies \xE9prouv\xE9es."
-        ),
-        e(),
-        t(377, "li"),
-        n(
-          378,
-          "Vous concentrer sur le d\xE9veloppement de votre activit\xE9 en d\xE9l\xE9guant les d\xE9marches administratives complexes."
-        ),
-        e()()()()()()()()()()(),
-        t(379, "section", 108)(380, "div", 109)(381, "div", 25)(
-          382,
-          "div",
-          110
-        ),
-        l(383, "img", 111),
-        e(),
-        t(384, "div", 112)(385, "h2", 113),
-        n(386, " Vous avez une"),
-        l(387, "br"),
-        t(388, "span", 114),
-        n(389, "question sp\xE9cifique ?"),
-        e(),
-        n(390, ". "),
-        e(),
-        t(391, "p", 115),
-        n(
-          392,
-          " Contactez MFINANCES d\xE8s aujourd\u2019hui pour une consultation gratuite. "
-        ),
-        e(),
-        t(393, "a", 116),
-        n(394, " Contactez-nous "),
-        l(395, "i", 117),
-        e()()()()(),
-        l(396, "app-recommandation-profil"));
+          n(4, "Ind\xE9pendants et Starter"),
+          e(),
+          t(5, "p", 3),
+          n(6, "Accueil > Ind\xE9pendants et Starter"),
+          e()()()(),
+          t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
+          l(11, "app-sidebar"),
+          e(),
+          t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
+          n(15, " Devenir ind\xE9pendant en Belgique: Lancez votre projet"),
+          l(16, "br"),
+          t(17, "span", 10),
+          n(18, " avec succ\xE8s"),
+          e()(),
+          t(19, "div")(20, "p"),
+          n(
+            21,
+            "Devenir ind\xE9pendant, c\u2019est bien plus qu\u2019un simple changement de statut. C\u2019est une aventure passionnante, un saut vers la libert\xE9 professionnelle et une occasion unique de concr\xE9tiser vos id\xE9es."
+          ),
+          e(),
+          t(22, "p"),
+          n(
+            23,
+            "Que vous soyez en d\xE9but de carri\xE8re ou en pleine r\xE9orientation, le statut d\u2019ind\xE9pendant vous permet de b\xE2tir un projet sur mesure, parfaitement adapt\xE9 \xE0 vos aspirations."
+          ),
+          e(),
+          t(24, "p"),
+          n(
+            25,
+            "Cependant, chaque aventure pr\xE9sente des d\xE9fis : d\xE9marches administratives, gestion financi\xE8re, p\xE9riodes de creux\u2026 Fort de plus de 20 ans d\u2019exp\xE9rience, MFINANCES accompagne les entrepreneurs dans la gestion de ces obstacles gr\xE2ce \xE0 des m\xE9thodes \xE9prouv\xE9es et un savoir-faire unique."
+          ),
+          e()(),
+          t(26, "div", 11)(27, "div", 12)(28, "button", 13),
+          O("click", function () {
+            return s.scrollToSection("targetSection");
+          }),
+          n(29, "D\xE9couvrez ce que vous gagnerez avec nous "),
+          l(30, "i", 14),
+          e()()(),
+          t(31, "div", 15),
+          l(32, "img", 16),
+          e(),
+          t(33, "div", 17)(34, "h1"),
+          n(35, "Les d\xE9fis des ind\xE9pendants : un statut exigeant "),
+          e(),
+          t(36, "p"),
+          n(
+            37,
+            "Si devenir ind\xE9pendant offre une libert\xE9 unique, il comporte \xE9galement des d\xE9fis majeurs : "
+          ),
+          e(),
+          t(38, "div", 18),
+          l(39, "img", 19),
+          e(),
+          t(40, "div", 20)(41, "ul", 21)(42, "li"),
+          l(43, "i", 22),
+          t(44, "strong"),
+          n(45, "Un investissement personnel important :"),
+          e(),
+          l(46, "br"),
+          n(47, " Les semaines de travail peuvent d\xE9passer "),
+          t(48, "strong"),
+          n(49, "35 heures"),
+          e(),
+          n(
+            50,
+            ", surtout lors des phases de d\xE9marrage ou de croissance. L'absence de cong\xE9s pay\xE9s n\xE9cessite une planification rigoureuse. "
+          ),
+          e(),
+          t(51, "li"),
+          l(52, "i", 22),
+          t(53, "strong"),
+          n(54, "Des risques financiers \xE0 g\xE9rer :"),
+          e(),
+          l(55, "br"),
+          n(
+            56,
+            " Une d\xE9pendance excessive \xE0 quelques clients peut fragiliser votre tr\xE9sorerie. Les retards de paiement ou les p\xE9riodes de faible activit\xE9 exigent une gestion proactive et une \xE9pargne de s\xE9curit\xE9. "
+          ),
+          e(),
+          t(57, "li"),
+          l(58, "i", 22),
+          t(59, "strong"),
+          n(60, "Une protection sociale limit\xE9e :"),
+          e(),
+          l(61, "br"),
+          n(
+            62,
+            " Contrairement \xE0 un salari\xE9, un ind\xE9pendant ne b\xE9n\xE9ficie ni de cong\xE9s pay\xE9s ni de couverture ch\xF4mage. Des solutions alternatives, telles que des assurances sp\xE9cifiques ou une \xE9pargne personnelle, sont essentielles. "
+          ),
+          e()()()()()()()()(),
+          t(63, "section", 23)(64, "div", 24)(65, "div", 2)(66, "div", 25)(
+            67,
+            "div",
+            26
+          )(68, "div", 27)(
+            69,
+            "div",
+            28
+          )(70, "h1"),
+          n(71, "Pourquoi choisir le "),
+          l(72, "br"),
+          t(73, "span", 29),
+          n(74, " statut d\u2019ind\xE9pendant ?"),
+          e()()(),
+          l(75, "div", 30),
+          t(76, "div", 31)(77, "div", 32)(78, "div", 33)(79, "div", 34),
+          l(80, "img", 35),
+          e()(),
+          t(81, "div", 36)(82, "h2"),
+          n(83, "Libert\xE9 professionnelle"),
+          e(),
+          t(84, "ul")(85, "li"),
+          n(86, "D\xE9finissez vos projets, vos horaires et vos priorit\xE9s. "),
+          e(),
+          t(87, "li"),
+          n(
+            88,
+            "Une autonomie qui vous permet de concilier travail et vie personnelle selon vos besoins. "
+          ),
+          e()()()(),
+          t(89, "div", 37)(90, "div", 33)(91, "div", 38),
+          l(92, "img", 39),
+          e()(),
+          t(93, "div", 36)(94, "h2"),
+          n(95, "D\xE9veloppement personnel et professionnel : "),
+          e(),
+          t(96, "ul")(97, "li"),
+          n(
+            98,
+            "Transformez vos passions en une activit\xE9 rentable et \xE9panouissante. "
+          ),
+          e(),
+          t(99, "li"),
+          n(
+            100,
+            "Relevez des d\xE9fis motivants et d\xE9veloppez des comp\xE9tences essentielles en gestion, vente et leadership. "
+          ),
+          e()()()(),
+          t(101, "div", 40)(102, "div", 33)(103, "div", 38),
+          l(104, "img", 41),
+          e()(),
+          t(105, "div", 36)(106, "h2"),
+          n(107, "Opportunit\xE9s financi\xE8res et aides disponibles : "),
+          e(),
+          t(108, "ul")(109, "li"),
+          n(
+            110,
+            "Vos revenus d\xE9pendent de vos efforts et des performances de votre activit\xE9."
+          ),
+          e(),
+          t(111, "li"),
+          n(
+            112,
+            "Profitez des aides telles que Tremplin-Ind\xE9pendants, des subsides r\xE9gionaux et des microcr\xE9dits pour soutenir votre projet."
+          ),
+          e()()()(),
+          t(113, "div", 40)(114, "div", 33)(115, "div", 38),
+          l(116, "img", 42),
+          e()(),
+          t(117, "div", 36)(118, "h2"),
+          n(119, "Flexibilit\xE9 dans les choix juridiques : "),
+          e(),
+          t(120, "ul")(121, "li"),
+          n(
+            122,
+            "Commencez en tant qu\u2019ind\xE9pendant principal ou compl\xE9mentaire, selon vos besoins "
+          ),
+          e(),
+          t(123, "li"),
+          n(
+            124,
+            "Faites \xE9voluer votre activit\xE9 vers une soci\xE9t\xE9 (SRL, SA) pour accompagner sa croissance. "
+          ),
+          e()()()(),
+          t(125, "div", 40)(126, "div", 33)(127, "div", 38),
+          l(128, "img", 41),
+          e()(),
+          t(129, "div", 36)(130, "h2"),
+          n(131, "Un r\xE9seau professionnel en constante \xE9volution : "),
+          e(),
+          t(132, "ul")(133, "li"),
+          n(
+            134,
+            "Collaborez avec des clients, fournisseurs et partenaires pour \xE9largir vos opportunit\xE9s et renforcer votre position sur le march\xE9. "
+          ),
+          e()()()()()()(),
+          t(135, "div", 43)(136, "div", 44),
+          l(137, "img", 45),
+          e()()()()()(),
+          t(138, "section")(139, "div", 46)(140, "div", 2)(141, "div", 25)(
+            142,
+            "div",
+            47
+          )(143, "div", 48),
+          l(144, "img", 49),
+          e()(),
+          t(145, "div", 50)(146, "div", 51)(147, "div", 36)(148, "h3"),
+          n(149, "Comment MFINANCES vous aide \xE0 relever ces d\xE9fis ?"),
+          e(),
+          t(150, "p"),
+          n(
+            151,
+            "Avec MFINANCES, ces obstacles se transforment en opportunit\xE9s : "
+          ),
+          e()(),
+          t(152, "div", 52)(153, "div", 5)(154, "div")(155, "div", 53)(156, "p"),
+          l(157, "img", 54),
+          t(158, "strong"),
+          n(159, "Une planification proactive :"),
+          e(),
+          n(
+            160,
+            " Nous structurons votre activit\xE9 pour anticiper les risques financiers et personnels."
+          ),
+          e()(),
+          l(161, "div", 30),
+          t(162, "div", 53)(163, "p"),
+          l(164, "img", 54),
+          t(165, "strong"),
+          n(166, "Des solutions sur mesure : "),
+          e(),
+          n(
+            167,
+            " Diversifiez vos revenus, optimisez votre tr\xE9sorerie, et choisissez les meilleures protections sociales."
+          ),
+          e()(),
+          l(168, "div", 30),
+          e(),
+          t(169, "div")(170, "div", 53)(171, "p"),
+          l(172, "img", 54),
+          t(173, "strong"),
+          n(174, "Un suivi continu :"),
+          e(),
+          n(
+            175,
+            " Avec notre accompagnement r\xE9gulier, vous pouvez vous concentrer sur la croissance de votre activit\xE9 en toute s\xE9r\xE9nit\xE9."
+          ),
+          e()()()()(),
+          t(176, "div", 55)(177, "a", 56),
+          n(178, "Contactez-nous "),
+          l(179, "i", 14),
+          e()()()()()()()(),
+          l(180, "app-timeline-independant"),
+          t(181, "section", 57)(182, "div", 2)(183, "div", 25)(184, "div", 58)(
+            185,
+            "h2",
+            59
+          ),
+          n(186, " Nos Points "),
+          l(187, "br"),
+          t(188, "span", 60),
+          n(189, " Distinctif ? "),
+          e()()(),
+          t(190, "div", 61)(191, "div", 62)(192, "div", 63),
+          l(193, "img", 64),
+          e(),
+          t(194, "div")(195, "h5", 65),
+          n(196, "20 ans d\u2019expertise \xE9prouv\xE9e"),
+          e(),
+          t(197, "p", 66),
+          n(
+            198,
+            "Nos bonnes pratiques garantissent un d\xE9marrage solide et une gestion efficace. "
+          ),
+          e()()(),
+          t(199, "div", 67)(200, "div", 63),
+          l(201, "img", 68),
+          e(),
+          t(202, "div")(203, "h5", 65),
+          n(204, "Accompagnement sur mesure"),
+          e(),
+          t(205, "p", 66),
+          n(
+            206,
+            "Nos solutions sont adapt\xE9es \xE0 vos besoins sp\xE9cifiques, que vous soyez d\xE9butant ou en pleine croissance."
+          ),
+          e()()(),
+          t(207, "div", 69)(208, "div", 63),
+          l(209, "img", 70),
+          e(),
+          t(210, "div")(211, "h5", 65),
+          n(212, "Gain de temps et d\u2019efficacit\xE9"),
+          e(),
+          t(213, "p", 66),
+          n(
+            214,
+            "D\xE9l\xE9guez les d\xE9marches complexes pour vous concentrer sur l\u2019essentiel. "
+          ),
+          e()()(),
+          t(215, "div", 69)(216, "div", 63),
+          l(217, "img", 70),
+          e(),
+          t(218, "div")(219, "h5", 65),
+          n(220, "Optimisation des r\xE9sultats"),
+          e(),
+          t(221, "p", 66),
+          n(
+            222,
+            "Maximisez vos revenus et s\xE9curisez votre avenir avec des strat\xE9gies sur mesure. "
+          ),
+          e()()()()()()(),
+          t(223, "section")(224, "div", 71)(225, "div", 2)(226, "div", 5)(
+            227,
+            "div",
+            72
+          )(228, "div", 73)(229, "h1", 3),
+          n(230, "Foire Aux Questions (FAQ) pour "),
+          l(231, "br"),
+          t(232, "span", 29),
+          n(233, "Devenir Ind\xE9pendant en Belgique"),
+          e()()()()(),
+          l(234, "div", 74),
+          t(235, "div", 25)(236, "div")(237, "div", 75)(238, "div", 76)(
+            239,
+            "h2",
+            77
+          )(240, "button", 78),
+          n(
+            241,
+            " Quels sont les principaux avantages de devenir ind\xE9pendant ? "
+          ),
+          e()(),
+          t(242, "div", 79)(243, "div", 80),
+          n(244, " Devenir ind\xE9pendant vous permet de : "),
+          t(245, "ul")(246, "li"),
+          n(247, "\xCAtre votre propre patron et g\xE9rer vos horaires."),
+          e(),
+          t(248, "li"),
+          n(249, "Transformer vos passions en m\xE9tier."),
+          e(),
+          t(250, "li"),
+          n(
+            251,
+            "Acc\xE9der \xE0 des aides financi\xE8res pour les starters (comme Tremplin-Ind\xE9pendants ou les primes r\xE9gionales)."
+          ),
+          e()()()()(),
+          t(252, "div", 76)(253, "h2", 81)(254, "button", 82),
+          n(255, " Quels d\xE9fis dois-je anticiper avant de me lancer ? "),
+          e()(),
+          t(256, "div", 83)(257, "div", 80),
+          n(258, " Les principaux d\xE9fis incluent : "),
+          t(259, "ul")(260, "li"),
+          n(
+            261,
+            "Une charge de travail importante, souvent au-del\xE0 des 35 heures hebdomadaires."
+          ),
+          e(),
+          t(262, "li"),
+          n(263, "Des revenus variables, parfois impr\xE9visibles."),
+          e(),
+          t(264, "li"),
+          n(
+            265,
+            "L'absence de cong\xE9s pay\xE9s ou de ch\xF4mage en cas d'arr\xEAt d'activit\xE9."
+          ),
+          e()(),
+          n(
+            266,
+            " Chez MFINANCES, nous vous aidons \xE0 structurer votre projet et \xE0 anticiper ces d\xE9fis avec des strat\xE9gies adapt\xE9es. "
+          ),
+          e()()(),
+          t(267, "div", 76)(268, "h2", 84)(269, "button", 85),
+          n(
+            270,
+            " Quelles sont les \xE9tapes administratives pour devenir ind\xE9pendant ? "
+          ),
+          e()(),
+          t(271, "div", 86)(272, "div", 80),
+          n(273, " Les \xE9tapes cl\xE9s sont : "),
+          t(274, "ul")(275, "li"),
+          n(276, "Pr\xE9parer un business plan et un plan financier."),
+          e(),
+          t(277, "li"),
+          n(278, "Ouvrir un compte bancaire professionnel."),
+          e(),
+          t(279, "li"),
+          n(
+            280,
+            "S\u2019enregistrer \xE0 la Banque-Carrefour des Entreprises (BCE)."
+          ),
+          e(),
+          t(281, "li"),
+          n(282, "Activer un num\xE9ro de TVA, si n\xE9cessaire."),
+          e(),
+          t(283, "li"),
+          n(
+            284,
+            "S'affilier \xE0 une caisse d'assurances sociales pour travailleurs ind\xE9pendants."
+          ),
+          e()(),
+          n(
+            285,
+            " Nous proposons un accompagnement personnalis\xE9 pour faciliter toutes ces d\xE9marches. "
+          ),
+          e()()(),
+          t(286, "div", 76)(287, "h2", 87)(288, "button", 88),
+          n(
+            289,
+            " Comment choisir entre le statut d\u2019ind\xE9pendant et celui de soci\xE9t\xE9 ? "
+          ),
+          e()(),
+          t(290, "div", 89)(291, "div", 80),
+          n(292, " Le choix d\xE9pend de votre situation : "),
+          t(293, "ul")(294, "li"),
+          n(
+            295,
+            "Une entreprise individuelle est id\xE9ale pour un d\xE9marrage rapide et flexible."
+          ),
+          e(),
+          t(296, "li"),
+          n(
+            297,
+            "Une soci\xE9t\xE9 (SRL, SA) est pr\xE9f\xE9rable pour limiter votre responsabilit\xE9 financi\xE8re et g\xE9rer une croissance importante."
+          ),
+          e()()()()(),
+          t(298, "div", 76)(299, "h2", 90)(300, "button", 91),
+          n(
+            301,
+            " Quelles sont les obligations fiscales et comptables d\u2019un ind\xE9pendant ? "
+          ),
+          e()(),
+          t(302, "div", 92)(303, "div", 80),
+          n(304, " Les obligations incluent : "),
+          t(305, "ul")(306, "li"),
+          n(307, "D\xE9clarer vos revenus aupr\xE8s du SPF Finances."),
+          e(),
+          t(308, "li"),
+          n(
+            309,
+            "Tenir une comptabilit\xE9 simplifi\xE9e ou en partie double, selon votre chiffre d'affaires."
+          ),
+          e(),
+          t(310, "li"),
+          n(
+            311,
+            "Effectuer des d\xE9clarations TVA, si vous y \xEAtes assujetti."
+          ),
+          e()()()()(),
+          t(312, "div", 76)(313, "h2", 93)(314, "button", 94),
+          n(
+            315,
+            " Existe-t-il des aides financi\xE8res pour les ind\xE9pendants ? "
+          ),
+          e()(),
+          t(316, "div", 95)(317, "div", 80),
+          n(318, " Oui, notamment : "),
+          t(319, "ul")(320, "li"),
+          n(
+            321,
+            "Tremplin-Ind\xE9pendants pour r\xE9duire les cotisations sociales."
+          ),
+          e(),
+          t(322, "li"),
+          n(323, "Subsides r\xE9gionaux pour le lancement d\u2019activit\xE9."),
+          e(),
+          t(324, "li"),
+          n(325, "Microcr\xE9dits pour financer vos premiers investissements."),
+          e()()()()(),
+          t(326, "div", 76)(327, "h2", 96)(328, "button", 97),
+          n(
+            329,
+            " Comment g\xE9rer les p\xE9riodes de creux dans mon activit\xE9 ? "
+          ),
+          e()(),
+          t(330, "div", 98)(331, "div", 80),
+          n(332, " Voici quelques solutions : "),
+          t(333, "ul")(334, "li"),
+          n(
+            335,
+            "Constituer une \xE9pargne de s\xE9curit\xE9 pour couvrir vos besoins."
+          ),
+          e(),
+          t(336, "li"),
+          n(
+            337,
+            "Diversifier vos revenus pour limiter la d\xE9pendance \xE0 un seul client."
+          ),
+          e(),
+          t(338, "li"),
+          n(
+            339,
+            "Fid\xE9liser vos clients existants pour assurer des revenus r\xE9currents."
+          ),
+          e()()()()(),
+          t(340, "div", 76)(341, "h2", 99)(342, "button", 100),
+          n(
+            343,
+            " Quel est le co\xFBt des d\xE9marches administratives pour devenir ind\xE9pendant ? "
+          ),
+          e()(),
+          t(344, "div", 101)(345, "div", 80),
+          n(
+            346,
+            " Le co\xFBt d'inscription \xE0 la BCE est d'environ 105,50 euros, avec un suppl\xE9ment pour chaque unit\xE9 d\u2019\xE9tablissement. Certaines d\xE9marches suppl\xE9mentaires (comme l\u2019affiliation \xE0 un secr\xE9tariat social) peuvent \xE9galement engendrer des frais. "
+          ),
+          e()()(),
+          t(347, "div", 76)(348, "h2", 102)(349, "button", 103),
+          n(
+            350,
+            " Quelles assurances dois-je pr\xE9voir en tant qu\u2019ind\xE9pendant ? "
+          ),
+          e()(),
+          t(351, "div", 104)(352, "div", 80),
+          n(353, " Certaines assurances sont obligatoires : "),
+          t(354, "ul")(355, "li"),
+          n(356, "Assurance responsabilit\xE9 civile professionnelle."),
+          e(),
+          t(357, "li"),
+          n(
+            358,
+            "Assurance accidents du travail (si vous engagez du personnel)."
+          ),
+          e()(),
+          n(359, " D'autres sont recommand\xE9es : "),
+          t(360, "ul")(361, "li"),
+          n(362, "Assurance maladie et invalidit\xE9."),
+          e(),
+          t(363, "li"),
+          n(364, "Assurance revenu garanti."),
+          e()()()()(),
+          t(365, "div", 76)(366, "h2", 105)(367, "button", 106),
+          n(368, " Pourquoi choisir MFINANCES pour m\u2019accompagner ? "),
+          e()(),
+          t(369, "div", 107)(370, "div", 80),
+          n(
+            371,
+            " Avec plus de 20 ans d\u2019exp\xE9rience, nous vous aidons \xE0 : "
+          ),
+          t(372, "ul")(373, "li"),
+          n(
+            374,
+            "Structurer votre activit\xE9 pour \xE9viter les erreurs co\xFBteuses."
+          ),
+          e(),
+          t(375, "li"),
+          n(
+            376,
+            "Maximiser vos revenus gr\xE2ce \xE0 des strat\xE9gies \xE9prouv\xE9es."
+          ),
+          e(),
+          t(377, "li"),
+          n(
+            378,
+            "Vous concentrer sur le d\xE9veloppement de votre activit\xE9 en d\xE9l\xE9guant les d\xE9marches administratives complexes."
+          ),
+          e()()()()()()()()()()(),
+          t(379, "section", 108)(380, "div", 109)(381, "div", 25)(
+            382,
+            "div",
+            110
+          ),
+          l(383, "img", 111),
+          e(),
+          t(384, "div", 112)(385, "h2", 113),
+          n(386, " Vous avez une"),
+          l(387, "br"),
+          t(388, "span", 114),
+          n(389, "question sp\xE9cifique ?"),
+          e(),
+          n(390, ". "),
+          e(),
+          t(391, "p", 115),
+          n(
+            392,
+            " Contactez MFINANCES d\xE8s aujourd\u2019hui pour une consultation gratuite. "
+          ),
+          e(),
+          t(393, "a", 116),
+          n(394, " Contactez-nous "),
+          l(395, "i", 117),
+          e()()()()(),
+          l(396, "app-recommandation-profil"));
     },
     dependencies: [oe, se, Pt],
     styles: [
-      '.header[_ngcontent-%COMP%]{background:url("./media/bg_about-AWPUCD7F.webp") no-repeat center center/cover;height:300px;position:relative;display:flex;align-items:center;justify-content:center}.header-overlay[_ngcontent-%COMP%]{height:100%;width:100%;display:flex;align-items:center;color:#fff}.container[_ngcontent-%COMP%]{max-width:1200px;margin:0 auto;text-align:left}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{margin:0;font-size:2.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{margin:5px 0 0;font-size:1em;opacity:.8}@media (max-width: 768px){.header[_ngcontent-%COMP%]{height:150px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:2em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.9em}}@media (max-width: 480px){.header[_ngcontent-%COMP%]{height:120px}.container[_ngcontent-%COMP%]{margin-left:10px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:1.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.8em}}.service-single[_ngcontent-%COMP%]{display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:60px 20px;box-sizing:border-box;width:100%}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]{background-color:#edf3f5;padding:30px 40px;border-radius:20px;margin-bottom:50px}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-size:24px;color:#0f172a;margin-bottom:25px}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:space-between;font-size:18px;color:#787b84;background-color:#fff;padding:17px 20px;border-radius:10px;transition:background-color .3s,color .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover, .sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%]{background-color:#f34947;color:#fff}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{margin-bottom:20px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{background-color:#fff;display:block;text-align:center;padding:20px 10px;border-radius:10px;transition:box-shadow .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{box-shadow:0 10px 20px #0000001a}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:50px;height:50px;display:flex;align-items:center;justify-content:center;background-color:#f34947;margin:0 auto 15px;border-radius:50%}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:16px;line-height:22px;margin-bottom:15px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--size[_ngcontent-%COMP%]{color:#787b84;font-size:14px;border-top:1px solid #EDF3F5;padding-top:4px}.widget-banner[_ngcontent-%COMP%]{padding:50px 40px;color:#fff}.widget-banner[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:28px;line-height:40px;margin-bottom:40px}.single-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-weight:700;margin-bottom:25px;font-size:32px}.single-content[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:24px;margin-bottom:30px}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:20px;line-height:32px;color:#020203;margin-bottom:30px}.single-content__feature[_ngcontent-%COMP%]{display:flex;flex-wrap:wrap;margin:0 -15px 50px}.single-content-feature[_ngcontent-%COMP%]{width:50%;padding:0 15px;box-sizing:border-box}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]{background-color:#fff;border:1px solid #EDF3F5;padding:30px 25px;border-radius:10px;display:flex;align-items:center;margin-bottom:30px;transition:box-shadow .3s;position:relative}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:before{content:"";position:absolute;top:50%;left:0;width:4px;height:47px;background-color:#f34947;transform:translateY(-50%)}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-2[_ngcontent-%COMP%]:before{background-color:#1496f8}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-3[_ngcontent-%COMP%]:before{background-color:#0c9}single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-4[_ngcontent-%COMP%]:before{background-color:#ffbd0f}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:hover{box-shadow:0 21px 32px #cedce33b}.single-content-feature[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:81px;height:47px;border-radius:50%;background-color:#fe6c3f1a;display:flex;align-items:center;justify-content:center;margin-right:15px}.single-content-feature[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:20px;font-weight:600;margin:0}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:20px;align-items:center;margin-bottom:17px}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{margin-right:10px}@media (max-width: 767px){.single-content-feature[_ngcontent-%COMP%]{width:100%;padding:0}}li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{text-decoration:none}p[_ngcontent-%COMP%]{color:#020203}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:16px}.service[_ngcontent-%COMP%]{background-color:#1a2c51}.rectangle-red[_ngcontent-%COMP%]{background-color:#f33;border-radius:8px;padding:6px}.hadding[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{color:#0e1124;font-size:36px;font-weight:700;line-height:48px;padding-bottom:18px}a[_ngcontent-%COMP%]{text-decoration:none}.service-faq[_ngcontent-%COMP%]{background-color:#1a2c51}.contact-info[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{color:#f33}.contact-info[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{color:#0e1124}.defis[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:16px;color:#020203!important}.sticky-container[_ngcontent-%COMP%]{position:relative}.sliding-image[_ngcontent-%COMP%]{position:sticky;top:10px}.bg-custom--primary[_ngcontent-%COMP%]{background-color:#1a2c51}.bg-custom--primary[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], .bg-custom--primary[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%], .bg-custom--primary[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], .bg-custom--primary[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%]{color:#fff}',
+      '.header[_ngcontent-%COMP%]{background:url("./media/bg_about-AWPUCD7F.webp") no-repeat center center/cover;height:300px;position:relative;display:flex;align-items:center;justify-content:center}.header-overlay[_ngcontent-%COMP%]{height:100%;width:100%;display:flex;align-items:center;color:#fff}.container[_ngcontent-%COMP%]{max-width:1200px;margin:0 auto;text-align:left}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{margin:0;font-size:2.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{margin:5px 0 0;font-size:1em;opacity:.8}@media (max-width: 768px){.header[_ngcontent-%COMP%]{height:150px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:2em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.9em}}@media (max-width: 480px){.header[_ngcontent-%COMP%]{height:120px}.container[_ngcontent-%COMP%]{margin-left:10px}.container[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%]{font-size:1.5em}.container[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:.8em}}.service-single[_ngcontent-%COMP%]{display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:60px 20px;box-sizing:border-box;width:100%}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]{background-color:#edf3f5;padding:30px 40px;border-radius:20px;margin-bottom:50px}.sidebar-widget[_ngcontent-%COMP%]   .widget[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-size:24px;color:#0f172a;margin-bottom:25px}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:space-between;font-size:18px;color:#03143c;background-color:#fff;padding:17px 20px;border-radius:10px;transition:background-color .3s,color .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover, .sidebar-widget[_ngcontent-%COMP%]   .widget-category[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a.active[_ngcontent-%COMP%]{background-color:#f34947;color:#fff}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{margin-bottom:20px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{background-color:#fff;display:block;text-align:center;padding:20px 10px;border-radius:10px;transition:box-shadow .3s}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{box-shadow:0 10px 20px #0000001a}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:50px;height:50px;display:flex;align-items:center;justify-content:center;background-color:#f34947;margin:0 auto 15px;border-radius:50%}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:16px;line-height:22px;margin-bottom:15px}.sidebar-widget[_ngcontent-%COMP%]   .widget-download[_ngcontent-%COMP%]   .xb-item--size[_ngcontent-%COMP%]{color:#03143c;font-size:14px;border-top:1px solid #EDF3F5;padding-top:4px}.widget-banner[_ngcontent-%COMP%]{padding:50px 40px;color:#fff}.widget-banner[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:28px;line-height:40px;margin-bottom:40px}.single-content[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font-weight:700;margin-bottom:25px;font-size:32px}.single-content[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%]{font-size:24px;margin-bottom:30px}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:20px;line-height:32px;color:#020203;margin-bottom:30px}.single-content__feature[_ngcontent-%COMP%]{display:flex;flex-wrap:wrap;margin:0 -15px 50px}.single-content-feature[_ngcontent-%COMP%]{width:50%;padding:0 15px;box-sizing:border-box}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]{background-color:#fff;border:1px solid #EDF3F5;padding:30px 25px;border-radius:10px;display:flex;align-items:center;margin-bottom:30px;transition:box-shadow .3s;position:relative}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:before{content:"";position:absolute;top:50%;left:0;width:4px;height:47px;background-color:#f34947;transform:translateY(-50%)}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-2[_ngcontent-%COMP%]:before{background-color:#1496f8}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-3[_ngcontent-%COMP%]:before{background-color:#0c9}single-content-feature[_ngcontent-%COMP%]   .xb-item--inner.color-4[_ngcontent-%COMP%]:before{background-color:#ffbd0f}.single-content-feature[_ngcontent-%COMP%]   .xb-item--inner[_ngcontent-%COMP%]:hover{box-shadow:0 21px 32px #cedce33b}.single-content-feature[_ngcontent-%COMP%]   .xb-item--icon[_ngcontent-%COMP%]{width:81px;height:47px;border-radius:50%;background-color:#fe6c3f1a;display:flex;align-items:center;justify-content:center;margin-right:15px}.single-content-feature[_ngcontent-%COMP%]   .xb-item--title[_ngcontent-%COMP%]{font-size:20px;font-weight:600;margin:0}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:20px;align-items:center;margin-bottom:17px}.single-content-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{margin-right:10px}@media (max-width: 767px){.single-content-feature[_ngcontent-%COMP%]{width:100%;padding:0}}li[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{text-decoration:none}p[_ngcontent-%COMP%]{color:#020203}.single-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{font-size:16px}.service[_ngcontent-%COMP%]{background-color:#1a2c51}.rectangle-red[_ngcontent-%COMP%]{background-color:#f33;border-radius:8px;padding:6px}.hadding[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{color:#0e1124;font-size:36px;font-weight:700;line-height:48px;padding-bottom:18px}a[_ngcontent-%COMP%]{text-decoration:none}.service-faq[_ngcontent-%COMP%]{background-color:#1a2c51}.contact-info[_ngcontent-%COMP%]   i[_ngcontent-%COMP%]{color:#f33}.contact-info[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{color:#0e1124}.defis[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{font-size:16px;color:#020203!important}.sticky-container[_ngcontent-%COMP%]{position:relative}.sliding-image[_ngcontent-%COMP%]{position:sticky;top:10px}.bg-custom--primary[_ngcontent-%COMP%]{background-color:#1a2c51}.bg-custom--primary[_ngcontent-%COMP%]   p[_ngcontent-%COMP%], .bg-custom--primary[_ngcontent-%COMP%]   ul[_ngcontent-%COMP%], .bg-custom--primary[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%], .bg-custom--primary[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%]{color:#fff}',
       `.custom-card[_ngcontent-%COMP%] {
   border: 2px solid #e6e9f1;
   border-radius: 12px;
@@ -4070,68 +4070,68 @@ var Dt = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "section", 0)(1, "div", 1)(2, "div", 2)(3, "h1", 3),
-        n(4, " Comment MFINANCES optimise votre Soci\xE9t\xE9 "),
-        t(5, "span", 4),
-        n(6, "de Management Patrimoniale"),
-        e()()(),
-        t(7, "div", 5)(8, "p", 6),
-        n(
-          9,
-          " Un dirigeant d\u2019une PME dans le secteur de la technologie cherchait \xE0 r\xE9duire sa pression fiscale et \xE0 d\xE9velopper un portefeuille immobilier. Avec MFINANCES, nous avons: "
-        ),
-        e()(),
-        t(10, "div", 7),
-        l(11, "div", 8),
-        t(12, "div", 9)(13, "div", 10)(14, "div", 11),
-        n(15, "01"),
-        e(),
-        l(16, "div", 12),
-        t(17, "div", 13),
-        n(
-          18,
-          " Cr\xE9\xE9 une Soci\xE9t\xE9 de Management Patrimoniale pour facturer ses services \xE0 la soci\xE9t\xE9 d'exploitation. "
-        ),
-        e()(),
-        t(19, "div", 14)(20, "div", 11),
-        n(21, "02"),
-        e(),
-        l(22, "div", 12),
-        t(23, "div", 13),
-        n(
-          24,
-          " Optimis\xE9 les management fees en respectant les normes fiscales. "
-        ),
-        e()(),
-        t(25, "div", 15)(26, "div", 11),
-        n(27, "03"),
-        e(),
-        l(28, "div", 12),
-        t(29, "div", 13),
-        n(
-          30,
-          " Utilis\xE9 ces revenus pour financer des biens immobiliers amortis int\xE9gralement dans la structure. "
-        ),
-        e()(),
-        t(31, "div", 16)(32, "div", 11),
-        n(33, "04"),
-        e(),
-        l(34, "div", 12),
-        t(35, "div", 13),
-        n(
-          36,
-          " \xC9labor\xE9 un plan successoral pour transmettre les actifs \xE0 un co\xFBt fiscal minimal. "
-        ),
-        e()()()(),
-        t(37, "div", 17)(38, "div", 18)(39, "p", 19),
-        n(40, " R\xE9sultat : R\xE9duction de "),
-        t(41, "span"),
-        n(42, "25%"),
-        e(),
-        n(
-          43,
-          " des charges fiscales et un patrimoine valoris\xE9 \xE0 1,2 million d'euros en 5 ans. "
-        ),
-        e()()()()());
+          n(4, " Comment MFINANCES optimise votre Soci\xE9t\xE9 "),
+          t(5, "span", 4),
+          n(6, "de Management Patrimoniale"),
+          e()()(),
+          t(7, "div", 5)(8, "p", 6),
+          n(
+            9,
+            " Un dirigeant d\u2019une PME dans le secteur de la technologie cherchait \xE0 r\xE9duire sa pression fiscale et \xE0 d\xE9velopper un portefeuille immobilier. Avec MFINANCES, nous avons: "
+          ),
+          e()(),
+          t(10, "div", 7),
+          l(11, "div", 8),
+          t(12, "div", 9)(13, "div", 10)(14, "div", 11),
+          n(15, "01"),
+          e(),
+          l(16, "div", 12),
+          t(17, "div", 13),
+          n(
+            18,
+            " Cr\xE9\xE9 une Soci\xE9t\xE9 de Management Patrimoniale pour facturer ses services \xE0 la soci\xE9t\xE9 d'exploitation. "
+          ),
+          e()(),
+          t(19, "div", 14)(20, "div", 11),
+          n(21, "02"),
+          e(),
+          l(22, "div", 12),
+          t(23, "div", 13),
+          n(
+            24,
+            " Optimis\xE9 les management fees en respectant les normes fiscales. "
+          ),
+          e()(),
+          t(25, "div", 15)(26, "div", 11),
+          n(27, "03"),
+          e(),
+          l(28, "div", 12),
+          t(29, "div", 13),
+          n(
+            30,
+            " Utilis\xE9 ces revenus pour financer des biens immobiliers amortis int\xE9gralement dans la structure. "
+          ),
+          e()(),
+          t(31, "div", 16)(32, "div", 11),
+          n(33, "04"),
+          e(),
+          l(34, "div", 12),
+          t(35, "div", 13),
+          n(
+            36,
+            " \xC9labor\xE9 un plan successoral pour transmettre les actifs \xE0 un co\xFBt fiscal minimal. "
+          ),
+          e()()()(),
+          t(37, "div", 17)(38, "div", 18)(39, "p", 19),
+          n(40, " R\xE9sultat : R\xE9duction de "),
+          t(41, "span"),
+          n(42, "25%"),
+          e(),
+          n(
+            43,
+            " des charges fiscales et un patrimoine valoris\xE9 \xE0 1,2 million d'euros en 5 ans. "
+          ),
+          e()()()()());
     },
     styles: [
       "body[_ngcontent-%COMP%]{background-color:#001f3f;color:#fff;font-family:Arial,sans-serif;margin:0;padding:0}.highlighted[_ngcontent-%COMP%]{background-color:#ff4136;color:#fff;padding:.2rem .5rem;border-radius:.25rem}.steps-container[_ngcontent-%COMP%]{position:relative;margin-top:4rem;margin-bottom:4rem}.steps-line[_ngcontent-%COMP%]{position:absolute;top:50%;left:0;right:0;border-top:2px dashed #fff;opacity:.5;z-index:1;transform:translateY(-50%)}.step[_ngcontent-%COMP%]{text-align:center;position:relative;z-index:2;padding:2rem 0}.step-number[_ngcontent-%COMP%]{font-size:3rem;font-weight:700;line-height:1;margin-bottom:1rem}.step-dot[_ngcontent-%COMP%]{width:12px;height:12px;background:#ff4136;border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2}.step-text[_ngcontent-%COMP%]{font-size:.9rem;max-width:200px;margin:2rem auto 0;padding-top:32px}.result-custom[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{color:#ff4136;font-weight:700}@media (max-width: 767px){.steps-line[_ngcontent-%COMP%]{display:none}.step-dot[_ngcontent-%COMP%]{position:relative;top:auto;left:auto;transform:none;margin:1rem auto}.step-text[_ngcontent-%COMP%]{margin-top:2rem}}.bg-custom--primary[_ngcontent-%COMP%]{background-color:#1a2c51;color:#fff}.result-section[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;margin-top:2rem}.result-border[_ngcontent-%COMP%]{border-left:4px solid #ff4136;padding-left:1rem}.result-text[_ngcontent-%COMP%]{font-size:1rem;font-weight:500}.result-text[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{color:#ff4136;font-weight:700}",
@@ -4481,322 +4481,322 @@ var kt = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1"),
-        n(4, "Soci\xE9t\xE9 de Management Patrimoniale"),
-        e(),
-        t(5, "p", 3),
-        n(6, "Accueil > Soci\xE9t\xE9 de Management Patrimoniale"),
-        e()()()(),
-        t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
-        l(11, "app-sidebar"),
-        e(),
-        t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
-        n(15, " Qu\u2019est-ce qu\u2019une Soci\xE9t\xE9 de"),
-        l(16, "br"),
-        t(17, "span", 10),
-        n(18, " Management Patrimoniale\u202F?"),
-        e()(),
-        t(19, "div")(20, "p"),
-        n(
-          21,
-          "Face \xE0 une fiscalit\xE9 lourde et des revenus souvent sous-optimis\xE9s, les dirigeants d\u2019entreprise cherchent des solutions innovantes pour structurer leurs finances. La Soci\xE9t\xE9 de Management Patrimoniale r\xE9pond \xE0 ces enjeux en combinant optimisation fiscale et valorisation du patrimoine."
-        ),
-        e(),
-        t(22, "p"),
-        n(
-          23,
-          "La Soci\xE9t\xE9 de Management Patrimoniale permet au dirigeant d\u2019entreprise de facturer ses prestations \xE0 sa soci\xE9t\xE9 d\u2019exploitation tout en optimisant la gestion et la valorisation de son patrimoine personnel."
-        ),
-        e(),
-        t(24, "p"),
-        n(
-          25,
-          "En \xE9vitant les modes de r\xE9mun\xE9ration classiques, souvent tax\xE9s jusqu\u2019\xE0 55\u202F% (imp\xF4ts et cotisations sociales incluses), elle offre une solution strat\xE9gique pour :"
-        ),
-        e()(),
-        t(26, "div", 11)(27, "div", 12)(28, "button", 13),
-        O("click", function () {
-          return s.scrollToSection("targetSection");
-        }),
-        n(29, "D\xE9couvrez ce que vous gagnerez avec nous "),
-        l(30, "i", 14),
-        e()()(),
-        t(31, "div", 15),
-        l(32, "img", 16),
-        e(),
-        t(33, "div", 17)(34, "div", 18),
-        l(35, "img", 19),
-        e(),
-        t(36, "div", 20)(37, "p"),
-        n(
-          38,
-          "En \xE9vitant les modes de r\xE9mun\xE9ration classiques, souvent tax\xE9s jusqu\u2019\xE0 55\u202F% (imp\xF4ts et cotisations sociales incluses), elle offre une solution strat\xE9gique pour :"
-        ),
-        e(),
-        t(39, "div", 21)(40, "div", 22),
-        l(41, "i", 23),
-        t(42, "p", 24)(43, "strong", 25),
-        n(44, "Optimiser la r\xE9mun\xE9ration"),
-        e(),
-        n(45, " du dirigeant par des management fees d\xE9ductibles."),
-        e()(),
-        t(46, "div", 26),
-        l(47, "i", 23),
-        t(48, "p", 24)(49, "strong", 25),
-        n(50, "Accro\xEEtre la richesse patrimoniale"),
-        e(),
-        n(
-          51,
-          ", en r\xE9investissant ces revenus dans des actifs durables (immobilier, placements financiers, etc.)."
-        ),
-        e()()(),
-        t(52, "div")(53, "p"),
-        n(
-          54,
-          "En d\u2019autres termes, cette structure vous permet de \u201Csortir votre pion de l\u2019\xE9chiquier\u201D de l\u2019activit\xE9 commerciale pour l\u2019utiliser dans des projets personnels ou patrimoniaux.\xA0"
-        ),
-        e()()()()()()()()(),
-        t(55, "section", 27)(56, "div", 28)(57, "div", 2)(58, "div", 29)(
-          59,
-          "div",
-          30
-        )(60, "div", 31)(
-          61,
-          "div",
-          32
-        )(62, "h1"),
-        n(63, "Les Besoins sp\xE9cifiques des Soci\xE9t\xE9s de Management"),
-        l(64, "br"),
-        t(65, "span", 33),
-        n(66, "Patrimoniales"),
-        e()()(),
-        l(67, "div", 34),
-        t(68, "div", 35)(69, "div", 36)(70, "div", 37)(71, "div", 38),
-        l(72, "img", 39),
-        e()(),
-        t(73, "div", 40)(74, "h2"),
-        n(75, "Planification fiscale continue"),
-        e(),
-        t(76, "ul")(77, "li")(78, "strong"),
-        n(79, "Fiscale proactive\u202F:"),
-        e(),
-        n(
-          80,
-          " Int\xE9gration des ajustements n\xE9cessaires pour s\u2019adapter aux \xE9volutions l\xE9gales et \xE9conomiques."
-        ),
-        e(),
-        t(81, "li")(82, "strong"),
-        n(83, "Maximisation des d\xE9ductions fiscales\u202F:"),
-        e(),
-        n(
-          84,
-          " R\xE9duction strat\xE9gique de la base imposable pour pr\xE9server la tr\xE9sorerie."
-        ),
-        e()()()(),
-        t(85, "div", 41)(86, "div", 37)(87, "div", 42),
-        l(88, "img", 43),
-        e()(),
-        t(89, "div", 40)(90, "h2"),
-        n(
-          91,
-          "Surveillance de la rentabilit\xE9 des investissements patrimoniaux"
-        ),
-        e(),
-        t(92, "ul")(93, "li")(94, "strong"),
-        n(95, "\xC9valuation continue\u202F:"),
-        e(),
-        n(
-          96,
-          " Suivi des performances des actifs patrimoniaux pour en maximiser le rendement."
-        ),
-        e(),
-        t(97, "li")(98, "strong"),
-        n(99, "Tableaux de bord financiers\u202F:"),
-        e(),
-        n(
-          100,
-          " Analyse en temps r\xE9el pour identifier les opportunit\xE9s de diversification."
-        ),
-        e()()()(),
-        t(101, "div", 44)(102, "div", 37)(103, "div", 42),
-        l(104, "img", 45),
-        e()(),
-        t(105, "div", 40)(106, "h2"),
-        n(
-          107,
-          "Documentation des management fees pour garantir leur d\xE9ductibilit\xE9"
-        ),
-        e(),
-        t(108, "ul")(109, "li")(110, "strong"),
-        n(111, "Justification des prestations\u202F:"),
-        e(),
-        n(
-          112,
-          " Contrats, rapports et factures claires d\xE9montrant l\u2019utilit\xE9 des services rendus."
-        ),
-        e(),
-        t(113, "li")(114, "strong"),
-        n(115, "Conformit\xE9 fiscale\u202F:"),
-        e(),
-        n(
-          116,
-          " Conservation rigoureuse des documents pour les contr\xF4les \xE9ventuels."
-        ),
-        e()()()(),
-        t(117, "div", 44)(118, "div", 37)(119, "div", 42),
-        l(120, "img", 46),
-        e()(),
-        t(121, "div", 40)(122, "h2"),
-        n(123, "Une gestion comptable et financi\xE8re rigoureuse"),
-        e(),
-        t(124, "ul")(125, "li")(126, "strong"),
-        n(127, "Bilans interm\xE9diaires\u202F:"),
-        e(),
-        n(
-          128,
-          " Suivi pr\xE9cis de l\u2019\xE9volution financi\xE8re pour justifier la solidit\xE9 de la structure."
-        ),
-        e(),
-        t(129, "li")(130, "strong"),
-        n(131, "Conformit\xE9 fiscale\u202F:"),
-        e(),
-        n(
-          132,
-          " Conservation rigoureuse des documents pour r\xE9pondre aux contr\xF4les."
-        ),
-        e()()()()()()(),
-        t(133, "div", 47)(134, "div", 48),
-        l(135, "img", 49),
-        e()()()()()(),
-        t(136, "section", 50)(137, "div", 2)(138, "div", 29)(139, "div", 51)(
-          140,
-          "h2",
-          52
-        ),
-        n(141, " Les fonctions cl\xE9s de la"),
-        l(142, "br"),
-        n(143, " Soci\xE9t\xE9 de Management "),
-        t(144, "span", 53),
-        n(145, "Patrimoniale"),
-        e()(),
-        t(146, "p", 54),
-        n(147, "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
-        e()(),
-        t(148, "div", 55)(149, "div", 56)(150, "div", 57),
-        l(151, "img", 58),
-        e(),
-        t(152, "div")(153, "h5", 59),
-        n(
-          154,
-          "Facturer des prestations \xE0 la soci\xE9t\xE9 d\u2019exploitation"
-        ),
-        e(),
-        t(155, "p", 60),
-        n(
-          156,
-          "Services de gestion ou de conseil strat\xE9gique factur\xE9s sous forme de management fees d\xE9ductibles."
-        ),
-        e()()(),
-        t(157, "div", 61)(158, "div", 57),
-        l(159, "img", 62),
-        e(),
-        t(160, "div")(161, "h5", 59),
-        n(162, "Accro\xEEtre et prot\xE9ger le patrimoine personnel"),
-        e(),
-        t(163, "p", 60),
-        n(
-          164,
-          "Revenus r\xE9investis dans des projets immobiliers ou financiers \xE0 long terme."
-        ),
-        e()()(),
-        t(165, "div", 63)(166, "div", 57),
-        l(167, "img", 64),
-        e(),
-        t(168, "div")(169, "h5", 59),
-        n(170, "S\xE9parer les risques"),
-        e(),
-        t(171, "p", 60),
-        n(
-          172,
-          "Protection du patrimoine personnel contre les al\xE9as de l\u2019activit\xE9 professionnelle."
-        ),
-        e()()()()()()(),
-        l(173, "app-timeline-patrimoniale"),
-        t(174, "div", 65)(175, "div", 66)(176, "h1", 67),
-        n(177, " Pourquoi choisir "),
-        t(178, "span", 68),
-        n(179, "MFINANCES"),
-        e(),
-        n(180, " pour votre"),
-        l(181, "br"),
-        n(182, " Soci\xE9t\xE9 de Management Patrimoniale ? "),
-        e()(),
-        t(183, "div", 69)(184, "div", 70)(185, "h5"),
-        n(186, "Une expertise adapt\xE9e \xE0 vos besoins"),
-        e(),
-        t(187, "ul")(188, "li", 71),
-        l(189, "i", 72),
-        t(190, "span"),
-        n(191, "Structuration fiscale et comptable."),
-        e()(),
-        t(192, "li", 73),
-        l(193, "i", 72),
-        t(194, "span"),
-        n(195, "Gestion patrimoniale int\xE9gr\xE9e."),
-        e()(),
-        t(196, "li", 74),
-        l(197, "i", 72),
-        t(198, "span"),
-        n(199, "Planification successorale sur mesure."),
-        e()()()(),
-        t(200, "div", 75),
-        l(201, "div", 76),
-        e(),
-        t(202, "div", 77)(203, "div")(204, "h5"),
-        n(205, "Une solution cl\xE9 en main"),
-        e(),
-        t(206, "ul")(207, "li", 71),
-        l(208, "i", 72),
-        t(209, "span"),
-        n(
-          210,
-          "Cr\xE9ation et gestion de votre Soci\xE9t\xE9 de Management Patrimoniale."
-        ),
-        e()(),
-        t(211, "li", 73),
-        l(212, "i", 72),
-        t(213, "span"),
-        n(214, "Mise en place de tableaux de bord personnalis\xE9s."),
-        e()(),
-        t(215, "li", 74),
-        l(216, "i", 72),
-        t(217, "span"),
-        n(218, "Accompagnement fiscal et patrimonial \xE0 chaque \xE9tape."),
-        e()()()()()()(),
-        t(219, "section", 78)(220, "div", 79)(221, "div", 29)(222, "div", 80),
-        l(223, "img", 81),
-        e(),
-        t(224, "div", 82)(225, "h2", 83),
-        n(
-          226,
-          " Transformez vos revenus professionnels en patrimoine durable gr\xE2ce \xE0 une Soci\xE9t\xE9 de "
-        ),
-        l(227, "br"),
-        t(228, "span", 84),
-        n(229, "Management Patrimoniale"),
-        e(),
-        n(230, ". "),
-        e(),
-        t(231, "p", 85),
-        n(
-          232,
-          " Contactez MFINANCES d\xE8s aujourd\u2019hui pour b\xE9n\xE9ficier d\u2019un accompagnement sur mesure et d\xE9couvrir comment r\xE9duire vos charges fiscales d\xE8s maintenant. "
-        ),
-        e(),
-        t(233, "a", 86),
-        n(234, " Contactez-nous "),
-        l(235, "i", 87),
-        e()()()()(),
-        l(236, "app-recommandation-profil"));
+          n(4, "Soci\xE9t\xE9 de Management Patrimoniale"),
+          e(),
+          t(5, "p", 3),
+          n(6, "Accueil > Soci\xE9t\xE9 de Management Patrimoniale"),
+          e()()()(),
+          t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
+          l(11, "app-sidebar"),
+          e(),
+          t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
+          n(15, " Qu\u2019est-ce qu\u2019une Soci\xE9t\xE9 de"),
+          l(16, "br"),
+          t(17, "span", 10),
+          n(18, " Management Patrimoniale\u202F?"),
+          e()(),
+          t(19, "div")(20, "p"),
+          n(
+            21,
+            "Face \xE0 une fiscalit\xE9 lourde et des revenus souvent sous-optimis\xE9s, les dirigeants d\u2019entreprise cherchent des solutions innovantes pour structurer leurs finances. La Soci\xE9t\xE9 de Management Patrimoniale r\xE9pond \xE0 ces enjeux en combinant optimisation fiscale et valorisation du patrimoine."
+          ),
+          e(),
+          t(22, "p"),
+          n(
+            23,
+            "La Soci\xE9t\xE9 de Management Patrimoniale permet au dirigeant d\u2019entreprise de facturer ses prestations \xE0 sa soci\xE9t\xE9 d\u2019exploitation tout en optimisant la gestion et la valorisation de son patrimoine personnel."
+          ),
+          e(),
+          t(24, "p"),
+          n(
+            25,
+            "En \xE9vitant les modes de r\xE9mun\xE9ration classiques, souvent tax\xE9s jusqu\u2019\xE0 55\u202F% (imp\xF4ts et cotisations sociales incluses), elle offre une solution strat\xE9gique pour :"
+          ),
+          e()(),
+          t(26, "div", 11)(27, "div", 12)(28, "button", 13),
+          O("click", function () {
+            return s.scrollToSection("targetSection");
+          }),
+          n(29, "D\xE9couvrez ce que vous gagnerez avec nous "),
+          l(30, "i", 14),
+          e()()(),
+          t(31, "div", 15),
+          l(32, "img", 16),
+          e(),
+          t(33, "div", 17)(34, "div", 18),
+          l(35, "img", 19),
+          e(),
+          t(36, "div", 20)(37, "p"),
+          n(
+            38,
+            "En \xE9vitant les modes de r\xE9mun\xE9ration classiques, souvent tax\xE9s jusqu\u2019\xE0 55\u202F% (imp\xF4ts et cotisations sociales incluses), elle offre une solution strat\xE9gique pour :"
+          ),
+          e(),
+          t(39, "div", 21)(40, "div", 22),
+          l(41, "i", 23),
+          t(42, "p", 24)(43, "strong", 25),
+          n(44, "Optimiser la r\xE9mun\xE9ration"),
+          e(),
+          n(45, " du dirigeant par des management fees d\xE9ductibles."),
+          e()(),
+          t(46, "div", 26),
+          l(47, "i", 23),
+          t(48, "p", 24)(49, "strong", 25),
+          n(50, "Accro\xEEtre la richesse patrimoniale"),
+          e(),
+          n(
+            51,
+            ", en r\xE9investissant ces revenus dans des actifs durables (immobilier, placements financiers, etc.)."
+          ),
+          e()()(),
+          t(52, "div")(53, "p"),
+          n(
+            54,
+            "En d\u2019autres termes, cette structure vous permet de \u201Csortir votre pion de l\u2019\xE9chiquier\u201D de l\u2019activit\xE9 commerciale pour l\u2019utiliser dans des projets personnels ou patrimoniaux.\xA0"
+          ),
+          e()()()()()()()()(),
+          t(55, "section", 27)(56, "div", 28)(57, "div", 2)(58, "div", 29)(
+            59,
+            "div",
+            30
+          )(60, "div", 31)(
+            61,
+            "div",
+            32
+          )(62, "h1"),
+          n(63, "Les Besoins sp\xE9cifiques des Soci\xE9t\xE9s de Management"),
+          l(64, "br"),
+          t(65, "span", 33),
+          n(66, "Patrimoniales"),
+          e()()(),
+          l(67, "div", 34),
+          t(68, "div", 35)(69, "div", 36)(70, "div", 37)(71, "div", 38),
+          l(72, "img", 39),
+          e()(),
+          t(73, "div", 40)(74, "h2"),
+          n(75, "Planification fiscale continue"),
+          e(),
+          t(76, "ul")(77, "li")(78, "strong"),
+          n(79, "Fiscale proactive\u202F:"),
+          e(),
+          n(
+            80,
+            " Int\xE9gration des ajustements n\xE9cessaires pour s\u2019adapter aux \xE9volutions l\xE9gales et \xE9conomiques."
+          ),
+          e(),
+          t(81, "li")(82, "strong"),
+          n(83, "Maximisation des d\xE9ductions fiscales\u202F:"),
+          e(),
+          n(
+            84,
+            " R\xE9duction strat\xE9gique de la base imposable pour pr\xE9server la tr\xE9sorerie."
+          ),
+          e()()()(),
+          t(85, "div", 41)(86, "div", 37)(87, "div", 42),
+          l(88, "img", 43),
+          e()(),
+          t(89, "div", 40)(90, "h2"),
+          n(
+            91,
+            "Surveillance de la rentabilit\xE9 des investissements patrimoniaux"
+          ),
+          e(),
+          t(92, "ul")(93, "li")(94, "strong"),
+          n(95, "\xC9valuation continue\u202F:"),
+          e(),
+          n(
+            96,
+            " Suivi des performances des actifs patrimoniaux pour en maximiser le rendement."
+          ),
+          e(),
+          t(97, "li")(98, "strong"),
+          n(99, "Tableaux de bord financiers\u202F:"),
+          e(),
+          n(
+            100,
+            " Analyse en temps r\xE9el pour identifier les opportunit\xE9s de diversification."
+          ),
+          e()()()(),
+          t(101, "div", 44)(102, "div", 37)(103, "div", 42),
+          l(104, "img", 45),
+          e()(),
+          t(105, "div", 40)(106, "h2"),
+          n(
+            107,
+            "Documentation des management fees pour garantir leur d\xE9ductibilit\xE9"
+          ),
+          e(),
+          t(108, "ul")(109, "li")(110, "strong"),
+          n(111, "Justification des prestations\u202F:"),
+          e(),
+          n(
+            112,
+            " Contrats, rapports et factures claires d\xE9montrant l\u2019utilit\xE9 des services rendus."
+          ),
+          e(),
+          t(113, "li")(114, "strong"),
+          n(115, "Conformit\xE9 fiscale\u202F:"),
+          e(),
+          n(
+            116,
+            " Conservation rigoureuse des documents pour les contr\xF4les \xE9ventuels."
+          ),
+          e()()()(),
+          t(117, "div", 44)(118, "div", 37)(119, "div", 42),
+          l(120, "img", 46),
+          e()(),
+          t(121, "div", 40)(122, "h2"),
+          n(123, "Une gestion comptable et financi\xE8re rigoureuse"),
+          e(),
+          t(124, "ul")(125, "li")(126, "strong"),
+          n(127, "Bilans interm\xE9diaires\u202F:"),
+          e(),
+          n(
+            128,
+            " Suivi pr\xE9cis de l\u2019\xE9volution financi\xE8re pour justifier la solidit\xE9 de la structure."
+          ),
+          e(),
+          t(129, "li")(130, "strong"),
+          n(131, "Conformit\xE9 fiscale\u202F:"),
+          e(),
+          n(
+            132,
+            " Conservation rigoureuse des documents pour r\xE9pondre aux contr\xF4les."
+          ),
+          e()()()()()()(),
+          t(133, "div", 47)(134, "div", 48),
+          l(135, "img", 49),
+          e()()()()()(),
+          t(136, "section", 50)(137, "div", 2)(138, "div", 29)(139, "div", 51)(
+            140,
+            "h2",
+            52
+          ),
+          n(141, " Les fonctions cl\xE9s de la"),
+          l(142, "br"),
+          n(143, " Soci\xE9t\xE9 de Management "),
+          t(144, "span", 53),
+          n(145, "Patrimoniale"),
+          e()(),
+          t(146, "p", 54),
+          n(147, "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+          e()(),
+          t(148, "div", 55)(149, "div", 56)(150, "div", 57),
+          l(151, "img", 58),
+          e(),
+          t(152, "div")(153, "h5", 59),
+          n(
+            154,
+            "Facturer des prestations \xE0 la soci\xE9t\xE9 d\u2019exploitation"
+          ),
+          e(),
+          t(155, "p", 60),
+          n(
+            156,
+            "Services de gestion ou de conseil strat\xE9gique factur\xE9s sous forme de management fees d\xE9ductibles."
+          ),
+          e()()(),
+          t(157, "div", 61)(158, "div", 57),
+          l(159, "img", 62),
+          e(),
+          t(160, "div")(161, "h5", 59),
+          n(162, "Accro\xEEtre et prot\xE9ger le patrimoine personnel"),
+          e(),
+          t(163, "p", 60),
+          n(
+            164,
+            "Revenus r\xE9investis dans des projets immobiliers ou financiers \xE0 long terme."
+          ),
+          e()()(),
+          t(165, "div", 63)(166, "div", 57),
+          l(167, "img", 64),
+          e(),
+          t(168, "div")(169, "h5", 59),
+          n(170, "S\xE9parer les risques"),
+          e(),
+          t(171, "p", 60),
+          n(
+            172,
+            "Protection du patrimoine personnel contre les al\xE9as de l\u2019activit\xE9 professionnelle."
+          ),
+          e()()()()()()(),
+          l(173, "app-timeline-patrimoniale"),
+          t(174, "div", 65)(175, "div", 66)(176, "h1", 67),
+          n(177, " Pourquoi choisir "),
+          t(178, "span", 68),
+          n(179, "MFINANCES"),
+          e(),
+          n(180, " pour votre"),
+          l(181, "br"),
+          n(182, " Soci\xE9t\xE9 de Management Patrimoniale ? "),
+          e()(),
+          t(183, "div", 69)(184, "div", 70)(185, "h5"),
+          n(186, "Une expertise adapt\xE9e \xE0 vos besoins"),
+          e(),
+          t(187, "ul")(188, "li", 71),
+          l(189, "i", 72),
+          t(190, "span"),
+          n(191, "Structuration fiscale et comptable."),
+          e()(),
+          t(192, "li", 73),
+          l(193, "i", 72),
+          t(194, "span"),
+          n(195, "Gestion patrimoniale int\xE9gr\xE9e."),
+          e()(),
+          t(196, "li", 74),
+          l(197, "i", 72),
+          t(198, "span"),
+          n(199, "Planification successorale sur mesure."),
+          e()()()(),
+          t(200, "div", 75),
+          l(201, "div", 76),
+          e(),
+          t(202, "div", 77)(203, "div")(204, "h5"),
+          n(205, "Une solution cl\xE9 en main"),
+          e(),
+          t(206, "ul")(207, "li", 71),
+          l(208, "i", 72),
+          t(209, "span"),
+          n(
+            210,
+            "Cr\xE9ation et gestion de votre Soci\xE9t\xE9 de Management Patrimoniale."
+          ),
+          e()(),
+          t(211, "li", 73),
+          l(212, "i", 72),
+          t(213, "span"),
+          n(214, "Mise en place de tableaux de bord personnalis\xE9s."),
+          e()(),
+          t(215, "li", 74),
+          l(216, "i", 72),
+          t(217, "span"),
+          n(218, "Accompagnement fiscal et patrimonial \xE0 chaque \xE9tape."),
+          e()()()()()()(),
+          t(219, "section", 78)(220, "div", 79)(221, "div", 29)(222, "div", 80),
+          l(223, "img", 81),
+          e(),
+          t(224, "div", 82)(225, "h2", 83),
+          n(
+            226,
+            " Transformez vos revenus professionnels en patrimoine durable gr\xE2ce \xE0 une Soci\xE9t\xE9 de "
+          ),
+          l(227, "br"),
+          t(228, "span", 84),
+          n(229, "Management Patrimoniale"),
+          e(),
+          n(230, ". "),
+          e(),
+          t(231, "p", 85),
+          n(
+            232,
+            " Contactez MFINANCES d\xE8s aujourd\u2019hui pour b\xE9n\xE9ficier d\u2019un accompagnement sur mesure et d\xE9couvrir comment r\xE9duire vos charges fiscales d\xE8s maintenant. "
+          ),
+          e(),
+          t(233, "a", 86),
+          n(234, " Contactez-nous "),
+          l(235, "i", 87),
+          e()()()()(),
+          l(236, "app-recommandation-profil"));
     },
     dependencies: [Dt, oe, se],
     styles: [
@@ -5543,812 +5543,812 @@ var Nt = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1"),
-        n(4, "Soci\xE9t\xE9s de Moyens"),
-        e(),
-        t(5, "p", 3),
-        n(6, "Accueil > Soci\xE9t\xE9s de Moyens"),
-        e()()()(),
-        t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
-        l(11, "app-sidebar"),
-        e(),
-        t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
-        n(15, " Qu\u2019est-ce qu\u2019une "),
-        l(16, "br"),
-        t(17, "span", 10),
-        n(18, " soci\xE9t\xE9 de moyens\u202F?"),
-        e()(),
-        t(19, "div")(20, "p"),
-        n(
-          21,
-          "Une soci\xE9t\xE9 de moyens est une structure juridique con\xE7ue pour mutualiser certains moyens mat\xE9riels, financiers ou humains entre plusieurs professionnels, sans que ceux-ci n\u2019exercent directement leur activit\xE9 au sein de cette structure. "
-        ),
-        e()(),
-        t(22, "div", 11)(23, "div", 12)(24, "button", 13),
-        O("click", function () {
-          return s.scrollToSection("targetSection");
-        }),
-        n(25, "D\xE9couvrez ce que vous gagnerez avec nous "),
-        l(26, "i", 14),
-        e()()(),
-        t(27, "div", 15)(28, "h1"),
-        n(29, "Les avantages cl\xE9s d\u2019une soci\xE9t\xE9 de moyens : "),
-        e(),
-        t(30, "div", 16),
-        l(31, "img", 17),
-        e(),
-        t(32, "div", 18)(33, "ul", 19)(34, "li"),
-        l(35, "i", 20),
-        t(36, "strong"),
-        n(37, "R\xE9duction des co\xFBts : "),
-        e(),
-        l(38, "br"),
-        n(
-          39,
-          " Partage des frais communs et n\xE9gociations group\xE9es avec les fournisseurs. "
-        ),
-        e(),
-        t(40, "li"),
-        l(41, "i", 20),
-        t(42, "strong"),
-        n(43, "Autonomie professionnelle pr\xE9serv\xE9e : "),
-        e(),
-        l(44, "br"),
-        n(45, " Chaque membre reste ind\xE9pendant dans son activit\xE9. "),
-        e(),
-        t(46, "li"),
-        l(47, "i", 20),
-        t(48, "strong"),
-        n(49, "Gestion structur\xE9e et transparente :"),
-        e(),
-        l(50, "br"),
-        n(
-          51,
-          " Des r\xE8gles claires pour \xE9viter les tensions entre associ\xE9s. "
-        ),
-        e()()()(),
-        t(52, "div", 21)(53, "h1"),
-        n(
-          54,
-          "Fonctionnement et objectifs d\u2019une soci\xE9t\xE9 de moyens "
-        ),
-        e(),
-        t(55, "div", 18)(56, "strong"),
-        n(57, "Comment cela fonctionne ? "),
-        e(),
-        l(58, "p"),
-        t(59, "ul", 19)(60, "li"),
-        l(61, "i", 20),
-        t(62, "strong"),
-        n(63, "Mutualisation des moyens mat\xE9riels et financiers : "),
-        e(),
-        l(64, "br"),
-        n(
-          65,
-          " Mise en commun des locaux, \xE9quipements, et abonnements n\xE9cessaires \xE0 l\u2019activit\xE9 professionnelle. Partage des frais communs comme les charges d\u2019\xE9lectricit\xE9, les fournitures de bureau ou les frais d\u2019entretien. "
-        ),
-        e(),
-        t(66, "li"),
-        l(67, "i", 20),
-        t(68, "strong"),
-        n(69, "R\xE9duction des co\xFBts :"),
-        e(),
-        l(70, "br"),
-        n(
-          71,
-          " En centralisant les achats, la SCM b\xE9n\xE9ficie d\u2019une puissance de n\xE9gociation accrue aupr\xE8s des fournisseurs, obtenant ainsi des tarifs pr\xE9f\xE9rentiels pour ses adh\xE9rents. "
-        ),
-        e(),
-        t(72, "li"),
-        l(73, "i", 20),
-        t(74, "strong"),
-        n(75, "Facturation aux adh\xE9rents : "),
-        e(),
-        l(76, "br"),
-        n(
-          77,
-          " Les frais engag\xE9s par la SCM sont r\xE9partis \xE9quitablement entre les membres. Cette contribution constitue la principale source de revenus de la soci\xE9t\xE9 de moyens. "
-        ),
-        e()()(),
-        t(78, "div", 16),
-        l(79, "img", 22),
-        e()()()()()()(),
-        t(80, "section", 23)(81, "div", 24)(82, "div", 2)(83, "div", 25)(
-          84,
-          "div",
-          26
-        )(85, "div", 27)(
-          86,
-          "div",
-          28
-        )(87, "h1"),
-        n(88, "Besoins sp\xE9cifiques des "),
-        l(89, "br"),
-        t(90, "span", 29),
-        n(91, " Soci\xE9t\xE9s de Moyens "),
-        e()()(),
-        l(92, "div", 30),
-        t(93, "div", 31)(94, "div", 32)(95, "div", 33)(96, "div", 34),
-        l(97, "img", 35),
-        e()(),
-        t(98, "div", 36)(99, "h2"),
-        n(100, "R\xE9partition \xE9quitable des charges "),
-        e(),
-        t(101, "ul")(102, "li"),
-        n(
-          103,
-          "Mise en place d\u2019un syst\xE8me comptable permettant de r\xE9partir les co\xFBts en fonction de l\u2019usage r\xE9el des ressources par chaque membre. "
-        ),
-        e(),
-        t(104, "li"),
-        n(
-          105,
-          "Transparence des flux financiers pour \xE9viter les tensions entre associ\xE9s. "
-        ),
-        e()()()(),
-        t(106, "div", 37)(107, "div", 33)(108, "div", 38),
-        l(109, "img", 39),
-        e()(),
-        t(110, "div", 36)(111, "h2"),
-        n(112, "Gestion comptable et fiscale rigoureuse "),
-        e(),
-        t(113, "ul")(114, "li"),
-        n(115, "Suivi pr\xE9cis des d\xE9penses et des recettes. "),
-        e(),
-        t(116, "li"),
-        n(
-          117,
-          "Respect des obligations fiscales et des d\xE9clarations sp\xE9cifiques \xE0 la SCM. "
-        ),
-        e(),
-        t(118, "li"),
-        n(
-          119,
-          "Pr\xE9paration des documents financiers n\xE9cessaires pour justifier la r\xE9partition des charges entre les membres. "
-        ),
-        e()()()(),
-        t(120, "div", 40)(121, "div", 33)(122, "div", 38),
-        l(123, "img", 41),
-        e()(),
-        t(124, "div", 36)(125, "h2"),
-        n(
-          126,
-          "Planification des achats et n\xE9gociation avec les fournisseurs "
-        ),
-        e(),
-        t(127, "ul")(128, "li"),
-        n(
-          129,
-          "Centralisation des commandes pour b\xE9n\xE9ficier de remises importantes gr\xE2ce \xE0 des volumes d\u2019achat \xE9lev\xE9s. "
-        ),
-        e(),
-        t(130, "li"),
-        n(
-          131,
-          "Planification des achats pour anticiper les besoins des membres et \xE9viter des d\xE9penses impr\xE9vues. "
-        ),
-        e()()()()()()(),
-        t(132, "div", 42)(133, "div", 43),
-        l(134, "img", 44),
-        e()()()()()(),
-        t(135, "section", 45)(136, "div", 2)(137, "div", 46)(138, "div", 47)(
-          139,
-          "h2",
-          48
-        )(140, "span", 49),
-        n(141, "Fonctionnement pratique"),
-        e()()()(),
-        t(142, "div", 50)(143, "div", 51)(144, "div", 52)(145, "div", 53),
-        l(146, "i", 54),
-        e(),
-        t(147, "h3", 55),
-        n(148, "Les actionnaires"),
-        e(),
-        t(149, "p", 56)(150, "strong"),
-        n(151, "Les membres associ\xE9s :"),
-        e(),
-        l(152, "br"),
-        n(153, " \u2022 Apportent un capital \xE0 la soci\xE9t\xE9"),
-        l(154, "br"),
-        n(155, " \u2022 B\xE9n\xE9ficient des ressources mutualis\xE9es"),
-        l(156, "br"),
-        n(
-          157,
-          " \u2022 Ont une responsabilit\xE9 financi\xE8re limit\xE9e au montant de leur apport "
-        ),
-        e()()(),
-        t(158, "div", 51)(159, "div", 52)(160, "div", 53),
-        l(161, "i", 57),
-        e(),
-        t(162, "h3", 55),
-        n(163, "Les administrateurs"),
-        e(),
-        t(164, "p", 56)(165, "strong"),
-        n(166, "Leur r\xF4le :"),
-        e(),
-        l(167, "br"),
-        n(168, " \u2022 G\xE8rent les ressources partag\xE9es selon le mandat"),
-        l(169, "br"),
-        n(170, " \u2022 Sont responsables de l'ex\xE9cution des d\xE9cisions"),
-        l(171, "br"),
-        n(172, " \u2022 Assurent une gestion rigoureuse "),
-        e()()(),
-        t(173, "div", 58)(174, "p", 59),
-        l(175, "i", 60),
-        n(
-          176,
-          " Le mod\xE8le administrateur garantit une gestion efficace des ressources, tout en prot\xE9geant les membres des risques financiers excessifs. "
-        ),
-        e()()()()(),
-        t(177, "section", 23)(178, "div", 24)(179, "div", 2)(180, "div", 25)(
-          181,
-          "div",
-          26
-        )(182, "div", 27)(
-          183,
-          "div",
-          28
-        )(184, "h1"),
-        n(185, "Fonctionnement et objectifs "),
-        l(186, "br"),
-        t(187, "span", 29),
-        n(188, " d'une Soci\xE9t\xE9s de Moyens "),
-        e()()(),
-        l(189, "div", 30),
-        t(190, "div", 31)(191, "div", 32)(192, "div", 33)(193, "div", 34),
-        l(194, "img", 35),
-        e()(),
-        t(195, "div", 36)(196, "h2"),
-        n(197, "Mutualisation des moyens mat\xE9riels et financiers "),
-        e(),
-        t(198, "ul")(199, "li"),
-        n(
-          200,
-          "Mise en commun des locaux, \xE9quipements, abonnements n\xE9cessaires \xE0 l\u2019activit\xE9 professionnelle. "
-        ),
-        e(),
-        t(201, "li"),
-        n(
-          202,
-          "Partage des frais communs (loyer, \xE9lectricit\xE9, fournitures). "
-        ),
-        e()()()(),
-        t(203, "div", 37)(204, "div", 33)(205, "div", 38),
-        l(206, "img", 39),
-        e()(),
-        t(207, "div", 36)(208, "h2"),
-        n(209, "R\xE9duction des co\xFBts"),
-        e(),
-        t(210, "ul")(211, "li"),
-        n(
-          212,
-          "En centralisant les achats, la soci\xE9t\xE9 de moyens n\xE9gocie des tarifs pr\xE9f\xE9rentiels aupr\xE8s des fournisseurs"
-        ),
-        e()()()(),
-        t(213, "div", 40)(214, "div", 33)(215, "div", 38),
-        l(216, "img", 41),
-        e()(),
-        t(217, "div", 36)(218, "h2"),
-        n(219, "Gestion transparente des charges communes"),
-        e(),
-        t(220, "ul")(221, "li"),
-        n(
-          222,
-          "R\xE9partition \xE9quitable des frais entre les membres, d\xE9finie selon des r\xE8gles pr\xE9cises. "
-        ),
-        e()()()(),
-        t(223, "div", 40)(224, "div", 33)(225, "div", 38),
-        l(226, "img", 61),
-        e()(),
-        t(227, "div", 36)(228, "h2"),
-        n(229, "Cash Collecting : Gestion des cotisations des membres "),
-        e(),
-        t(230, "ul")(231, "li"),
-        n(
-          232,
-          "Suivi des paiements des membres : Garantir que chaque adh\xE9rent contribue \xE9quitablement aux frais communs. "
-        ),
-        e(),
-        t(233, "li"),
-        n(
-          234,
-          "Transparence et impartialit\xE9 : En externalisant cette t\xE2che \xE0 MFINANCES, les membres \xE9vitent les tensions potentielles li\xE9es \xE0 la collecte des contributions. "
-        ),
-        e(),
-        t(235, "li"),
-        n(
-          236,
-          "Suivi des paiements des membres : Garantir que chaque adh\xE9rent contribue \xE9quitablement aux frais communs. "
-        ),
-        e()()()()()()(),
-        t(237, "div", 42)(238, "div", 43),
-        l(239, "img", 44),
-        e()()()()()(),
-        t(240, "section", 62)(241, "div", 2)(242, "div", 63)(243, "h2", 64),
-        n(244, "Exemples de mutualisation"),
-        e(),
-        t(245, "p", 65),
-        n(
-          246,
-          "Optimisez vos ressources en partageant intelligemment vos moyens au sein de votre structure professionnelle"
-        ),
-        e()(),
-        t(247, "div", 66)(248, "div", 67)(249, "div", 68)(250, "div", 69),
-        l(251, "div", 70),
-        t(252, "div", 71)(253, "div", 72),
-        l(254, "i", 73),
-        e()(),
-        t(255, "h3", 74),
-        n(256, "Locaux professionnels"),
-        e(),
-        t(257, "ul", 75)(258, "li"),
-        l(259, "i", 76),
-        n(260, "Loyer & charges locatives"),
-        e(),
-        t(261, "li"),
-        l(262, "i", 76),
-        n(263, "Services d'entretien premium"),
-        e(),
-        t(264, "li"),
-        l(265, "i", 76),
-        n(266, "Gestion climatisation & \xE9nergie"),
-        e(),
-        t(267, "li"),
-        l(268, "i", 76),
-        n(269, "Optimisation des espaces"),
-        e()()()(),
-        t(270, "div", 68)(271, "div", 69),
-        l(272, "div", 70),
-        t(273, "div", 71)(274, "div", 72),
-        l(275, "i", 77),
-        e()(),
-        t(276, "h3", 74),
-        n(277, "Mat\xE9riel et fournitures"),
-        e(),
-        t(278, "ul", 75)(279, "li"),
-        l(280, "i", 76),
-        n(281, "\xC9quipements high-tech"),
-        e(),
-        t(282, "li"),
-        l(283, "i", 76),
-        n(284, "Mobilier ergonomique"),
-        e(),
-        t(285, "li"),
-        l(286, "i", 76),
-        n(287, "Outils professionnels"),
-        e(),
-        t(288, "li"),
-        l(289, "i", 76),
-        n(290, "Gestion des stocks"),
-        e()()()(),
-        t(291, "div", 68)(292, "div", 69),
-        l(293, "div", 70),
-        t(294, "div", 71)(295, "div", 72),
-        l(296, "i", 78),
-        e()(),
-        t(297, "h3", 74),
-        n(298, "Services partag\xE9s"),
-        e(),
-        t(299, "ul", 75)(300, "li"),
-        l(301, "i", 76),
-        n(302, "Support administratif d\xE9di\xE9"),
-        e(),
-        t(303, "li"),
-        l(304, "i", 76),
-        n(305, "Solutions cloud innovantes"),
-        e(),
-        t(306, "li"),
-        l(307, "i", 76),
-        n(308, "Services digitaux avanc\xE9s"),
-        e(),
-        t(309, "li"),
-        l(310, "i", 76),
-        n(311, "Secr\xE9tariat personnalis\xE9"),
-        e()()()()()()()(),
-        t(312, "section")(313, "div", 79)(314, "div", 2)(315, "div", 25)(
-          316,
-          "div",
-          80
-        )(317, "div", 81),
-        l(318, "img", 82),
-        e()(),
-        t(319, "div", 83)(320, "div", 84)(321, "div", 36)(322, "h3"),
-        n(323, "Comment MFINANCES peut vous aider\u202F?"),
-        e()(),
-        t(324, "div", 85)(325, "div", 5)(326, "div")(327, "div", 86)(328, "p"),
-        l(329, "img", 87),
-        t(330, "strong"),
-        n(331, "Gestion comptable et financi\xE8re sur mesure :"),
-        e(),
-        n(
-          332,
-          " Suivi d\xE9taill\xE9 des flux financiers pour une r\xE9partition transparente des charges entre les membres. Pr\xE9paration des bilans et des rapports financiers pour garantir la conformit\xE9 aux obligations l\xE9gales et fiscales."
-        ),
-        e()(),
-        l(333, "div", 30),
-        t(334, "div", 86)(335, "p"),
-        l(336, "img", 87),
-        t(337, "strong"),
-        n(338, "Cash Collecting :"),
-        e(),
-        n(
-          339,
-          " Gestion des cotisations des membres de mani\xE8re automatis\xE9e et transparente. Relances r\xE9guli\xE8res en cas de retard de paiement, tout en pr\xE9servant la bonne entente entre les membres."
-        ),
-        e()(),
-        l(340, "div", 30),
-        t(341, "div", 86)(342, "p"),
-        l(343, "img", 87),
-        t(344, "strong"),
-        n(
-          345,
-          "Accompagnement dans les n\xE9gociations avec les fournisseurs :"
-        ),
-        e(),
-        n(
-          346,
-          " Centralisation des achats et gestion des n\xE9gociations pour obtenir des tarifs avantageux pour vos adh\xE9rents. Mise en place de tableaux de bord pour suivre les \xE9conomies r\xE9alis\xE9es."
-        ),
-        e()(),
-        l(347, "div", 30),
-        t(348, "div", 86)(349, "p"),
-        l(350, "img", 87),
-        t(351, "strong"),
-        n(352, "R\xE9daction et optimisation des statuts :"),
-        e(),
-        n(
-          353,
-          " Assistance juridique pour r\xE9diger des statuts qui d\xE9finissent clairement les modalit\xE9s de fonctionnement de la SCM. Conseil strat\xE9gique pour \xE9viter les litiges entre membres et garantir une gestion efficace."
-        ),
-        e()(),
-        l(354, "div", 30),
-        t(355, "div", 86)(356, "p"),
-        l(357, "img", 87),
-        t(358, "strong"),
-        n(359, "Outils de suivi des performances :"),
-        e(),
-        n(
-          360,
-          " Mise en place d\u2019indicateurs cl\xE9s pour suivre les \xE9conomies g\xE9n\xE9r\xE9es, les contributions des membres, et la rentabilit\xE9 des moyens partag\xE9s. Tableaux de bord personnalis\xE9s pour une vue d\u2019ensemble des finances de la SCM."
-        ),
-        e()()()()(),
-        t(361, "div", 88)(362, "a", 89),
-        n(363, "Contactez-nous "),
-        l(364, "i", 14),
-        e()()()()()()()(),
-        t(365, "section", 90)(366, "section", 91)(367, "div", 2)(
-          368,
-          "div",
-          92
-        )(369, "h2", 93),
-        n(370, "\xC9tude de cas : Cabinet m\xE9dical"),
-        e(),
-        t(371, "p", 94),
-        n(
-          372,
-          "D\xE9couvrez comment MFINANCES a transform\xE9 la gestion d'un cabinet m\xE9dical partag\xE9"
-        ),
-        e()(),
-        t(373, "div", 95),
-        l(374, "div", 96)(375, "div", 97)(376, "div", 98),
-        t(377, "div", 99)(378, "div", 100)(379, "div", 101)(380, "div", 102),
-        l(381, "i", 103),
-        e(),
-        t(382, "h3", 74),
-        n(383, "Situation initiale"),
-        e(),
-        t(384, "p"),
-        n(
-          385,
-          "Un groupe de m\xE9decins partageant un cabinet cherchait \xE0 optimiser leur gestion commune."
-        ),
-        e()()()(),
-        t(386, "div", 99)(387, "div", 104)(388, "div", 101)(389, "div", 102),
-        l(390, "i", 105),
-        e(),
-        t(391, "h3", 74),
-        n(392, "Les d\xE9fis rencontr\xE9s"),
-        e(),
-        t(393, "ul", 106)(394, "li"),
-        l(395, "i", 107),
-        t(396, "span"),
-        n(
-          397,
-          "R\xE9partition \xE9quitable des charges locatives et des frais de personnel"
-        ),
-        e()(),
-        t(398, "li"),
-        l(399, "i", 107),
-        t(400, "span"),
-        n(401, "Centralisation des achats pour r\xE9duire les co\xFBts"),
-        e()(),
-        t(402, "li"),
-        l(403, "i", 107),
-        t(404, "span"),
-        n(405, "Gestion des tensions li\xE9es aux contributions in\xE9gales"),
-        e()()()()()(),
-        t(406, "div", 99)(407, "div", 100)(408, "div", 101)(409, "div", 102),
-        l(410, "i", 108),
-        e(),
-        t(411, "h3", 74),
-        n(412, "Notre approche"),
-        e(),
-        t(413, "ul", 106)(414, "li"),
-        l(415, "i", 76),
-        t(416, "span"),
-        n(
-          417,
-          "Mise en place d'une comptabilit\xE9 transparente bas\xE9e sur l'activit\xE9 r\xE9elle"
-        ),
-        e()(),
-        t(418, "li"),
-        l(419, "i", 76),
-        t(420, "span"),
-        n(421, "N\xE9gociation centralis\xE9e avec les fournisseurs ("),
-        t(422, "span", 109),
-        n(423, "-15%"),
-        e(),
-        n(424, " sur les consommables)"),
-        e()(),
-        t(425, "li"),
-        l(426, "i", 76),
-        t(427, "span"),
-        n(428, "Syst\xE8me automatis\xE9 de gestion des cotisations"),
-        e()()()()()(),
-        t(429, "div", 99)(430, "div", 104)(431, "div", 110)(432, "div", 111),
-        l(433, "i", 112),
-        n(434, " R\xE9sultats obtenus "),
-        e(),
-        t(435, "ul", 113)(436, "li"),
-        l(437, "i", 114),
-        t(438, "span"),
-        n(439, "R\xE9duction significative des charges d'exploitation"),
-        e()(),
-        t(440, "li"),
-        l(441, "i", 78),
-        t(442, "span"),
-        n(443, "Collaboration harmonieuse entre les membres"),
-        e()()()()()()()()()(),
-        t(444, "section", 90)(445, "div", 2)(446, "div", 25)(447, "div", 115)(
-          448,
-          "h2",
-          116
-        ),
-        n(449, " Pourquoi choisir MFINANCES pour votre "),
-        l(450, "br"),
-        t(451, "span", 117),
-        n(452, " soci\xE9t\xE9 de moyens\u202F? "),
-        e()()(),
-        t(453, "div", 118)(454, "div", 119)(455, "div", 120),
-        l(456, "img", 121),
-        e(),
-        t(457, "div")(458, "h5", 122),
-        n(459, "Expertise sp\xE9cifique : "),
-        e(),
-        t(460, "p", 123),
-        n(
-          461,
-          "Une exp\xE9rience approfondie dans la gestion des structures collaboratives. "
-        ),
-        e()()(),
-        t(462, "div", 124)(463, "div", 120),
-        l(464, "img", 125),
-        e(),
-        t(465, "div")(466, "h5", 122),
-        n(467, "Solutions personnalis\xE9es :"),
-        e(),
-        t(468, "p", 123),
-        n(469, "Des outils et services adapt\xE9s aux besoins de votre SCM. "),
-        e()()(),
-        t(470, "div", 126)(471, "div", 120),
-        l(472, "img", 127),
-        e(),
-        t(473, "div")(474, "h5", 122),
-        n(475, "Cash Collecting int\xE9gr\xE9 :"),
-        e(),
-        t(476, "p", 123),
-        n(
-          477,
-          "Une gestion transparente et impartiale des cotisations, pour simplifier les relations entre membres. "
-        ),
-        e()()()()()()(),
-        t(478, "section")(479, "div", 128)(480, "div", 2)(481, "div", 5)(
-          482,
-          "div",
-          129
-        )(483, "div", 130)(484, "h1", 3),
-        n(485, "FAQ : Tout savoir sur les "),
-        l(486, "br"),
-        t(487, "span", 29),
-        n(488, "Soci\xE9t\xE9s de Moyens"),
-        e()()()()(),
-        l(489, "div", 131),
-        t(490, "div", 25)(491, "div")(492, "div", 132)(493, "div", 133)(
-          494,
-          "h2",
-          134
-        )(495, "button", 135),
-        n(496, " Qu\u2019est-ce qu\u2019une soci\xE9t\xE9 de moyens ? "),
-        e()(),
-        t(497, "div", 136)(498, "div", 137),
-        n(
-          499,
-          " Une soci\xE9t\xE9 de moyens est une structure juridique qui permet \xE0 plusieurs professionnels de mutualiser certains moyens mat\xE9riels, financiers ou humains n\xE9cessaires \xE0 leur activit\xE9. Elle ne vise pas \xE0 g\xE9n\xE9rer des b\xE9n\xE9fices ni \xE0 exercer une activit\xE9 professionnelle commune, mais simplement \xE0 g\xE9rer et r\xE9partir les frais li\xE9s aux ressources mutualis\xE9es. "
-        ),
-        e()()(),
-        t(500, "div", 133)(501, "h2", 138)(502, "button", 139),
-        n(
-          503,
-          " Quels sont les principaux avantages d\u2019une soci\xE9t\xE9 de moyens ? "
-        ),
-        e()(),
-        t(504, "div", 140)(505, "div", 137)(506, "ul")(507, "li")(
-          508,
-          "strong"
-        ),
-        n(509, "R\xE9duction des co\xFBts :"),
-        e(),
-        n(
-          510,
-          " En mutualisant les charges d\u2019exploitation (loyer, abonnements, \xE9quipements), chaque membre peut r\xE9aliser d\u2019importantes \xE9conomies."
-        ),
-        e(),
-        t(511, "li")(512, "strong"),
-        n(513, "Conservation de l\u2019autonomie professionnelle :"),
-        e(),
-        n(514, " Chaque associ\xE9 reste ind\xE9pendant dans son activit\xE9."),
-        e(),
-        t(515, "li")(516, "strong"),
-        n(517, "Gestion transparente des charges :"),
-        e(),
-        n(
-          518,
-          " Les frais sont r\xE9partis \xE9quitablement entre les membres selon des r\xE8gles claires d\xE9finies dans les statuts."
-        ),
-        e()()()()(),
-        t(519, "div", 133)(520, "h2", 141)(521, "button", 142),
-        n(
-          522,
-          " Quelle est la diff\xE9rence entre une soci\xE9t\xE9 de moyens et d\u2019autres soci\xE9t\xE9s ? "
-        ),
-        e()(),
-        t(523, "div", 143)(524, "div", 137),
-        n(
-          525,
-          " Contrairement \xE0 une soci\xE9t\xE9 commerciale ou une soci\xE9t\xE9 civile professionnelle, une soci\xE9t\xE9 de moyens ne permet pas \xE0 ses membres d\u2019exercer leur activit\xE9 professionnelle commune au sein de la structure. Elle se limite \xE0 g\xE9rer les \xE9l\xE9ments mutualis\xE9s comme les locaux, le mat\xE9riel ou les abonnements. "
-        ),
-        e()()(),
-        t(526, "div", 133)(527, "h2", 144)(528, "button", 145),
-        n(
-          529,
-          " Comment fonctionne la r\xE9partition des charges dans une soci\xE9t\xE9 de moyens ? "
-        ),
-        e()(),
-        t(530, "div", 146)(531, "div", 137),
-        n(
-          532,
-          " Les charges sont r\xE9parties entre les membres selon des crit\xE8res d\xE9finis dans les statuts de la soci\xE9t\xE9. Cela peut inclure : "
-        ),
-        t(533, "ul")(534, "li"),
-        n(535, "Le temps d\u2019utilisation des locaux ou du mat\xE9riel."),
-        e(),
-        t(536, "li"),
-        n(537, "La part de consommation des ressources."),
-        e(),
-        t(538, "li"),
-        n(539, "Toute autre r\xE8gle convenue collectivement."),
-        e()()()()(),
-        t(540, "div", 133)(541, "h2", 147)(542, "button", 148),
-        n(
-          543,
-          " Quels sont les risques li\xE9s \xE0 une soci\xE9t\xE9 de moyens ? "
-        ),
-        e()(),
-        t(544, "div", 149)(545, "div", 137)(546, "ul")(547, "li")(
-          548,
-          "strong"
-        ),
-        n(549, "Responsabilit\xE9 financi\xE8re :"),
-        e(),
-        n(
-          550,
-          " Les membres sont responsables des dettes de la soci\xE9t\xE9 \xE0 hauteur du capital qu\u2019ils ont apport\xE9."
-        ),
-        e(),
-        t(551, "li")(552, "strong"),
-        n(553, "Conflits internes :"),
-        e(),
-        n(
-          554,
-          " Des tensions peuvent appara\xEEtre si les r\xE8gles de r\xE9partition des charges ne sont pas claires."
-        ),
-        e(),
-        t(555, "li")(556, "strong"),
-        n(557, "Mauvaise gestion :"),
-        e(),
-        n(
-          558,
-          " Une gestion rigoureuse est essentielle pour \xE9viter des d\xE9s\xE9quilibres financiers."
-        ),
-        e(),
-        t(559, "li")(560, "strong"),
-        n(561, "Limites l\xE9gales :"),
-        e(),
-        n(
-          562,
-          " Une soci\xE9t\xE9 de moyens ne peut pas exercer d\u2019activit\xE9 commerciale ni g\xE9n\xE9rer de b\xE9n\xE9fices."
-        ),
-        e()()()()(),
-        t(563, "div", 133)(564, "h2", 150)(565, "button", 151),
-        n(
-          566,
-          " Comment MFINANCES peut vous aider dans la gestion de votre soci\xE9t\xE9 de moyens ? "
-        ),
-        e()(),
-        t(567, "div", 152)(568, "div", 137),
-        n(569, " MFINANCES propose : "),
-        t(570, "ul")(571, "li")(572, "strong"),
-        n(573, "Gestion comptable et fiscale :"),
-        e(),
-        n(574, " Suivi rigoureux des charges et des cotisations."),
-        e(),
-        t(575, "li")(576, "strong"),
-        n(577, "Cash collecting :"),
-        e(),
-        n(
-          578,
-          " Gestion automatis\xE9e des paiements pour \xE9viter les retards."
-        ),
-        e(),
-        t(579, "li")(580, "strong"),
-        n(581, "R\xE9daction des statuts :"),
-        e(),
-        n(
-          582,
-          " D\xE9finition claire des r\xE8gles de fonctionnement pour pr\xE9venir les conflits."
-        ),
-        e(),
-        t(583, "li")(584, "strong"),
-        n(585, "Optimisation des achats :"),
-        e(),
-        n(
-          586,
-          " Centralisation et n\xE9gociation pour r\xE9duire les co\xFBts."
-        ),
-        e(),
-        t(587, "li")(588, "strong"),
-        n(589, "Suivi des performances :"),
-        e(),
-        n(
-          590,
-          " Mise en place de tableaux de bord pour visualiser les \xE9conomies r\xE9alis\xE9es."
-        ),
-        e()()()()()()()()()()(),
-        t(591, "section", 153)(592, "div", 154)(593, "div", 25)(
-          594,
-          "div",
-          155
-        ),
-        l(595, "img", 156),
-        e(),
-        t(596, "div", 157)(597, "h2", 158),
-        n(598, " Vous avez une"),
-        l(599, "br"),
-        t(600, "span", 159),
-        n(601, "question sp\xE9cifique ?"),
-        e(),
-        n(602, ". "),
-        e(),
-        t(603, "p", 160),
-        n(
-          604,
-          " Contactez MFINANCES d\xE8s aujourd\u2019hui pour une consultation gratuite. "
-        ),
-        e(),
-        t(605, "a", 161),
-        n(606, " Contactez-nous "),
-        l(607, "i", 162),
-        e()()()()(),
-        l(608, "app-recommandation-profil"));
+          n(4, "Soci\xE9t\xE9s de Moyens"),
+          e(),
+          t(5, "p", 3),
+          n(6, "Accueil > Soci\xE9t\xE9s de Moyens"),
+          e()()()(),
+          t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
+          l(11, "app-sidebar"),
+          e(),
+          t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
+          n(15, " Qu\u2019est-ce qu\u2019une "),
+          l(16, "br"),
+          t(17, "span", 10),
+          n(18, " soci\xE9t\xE9 de moyens\u202F?"),
+          e()(),
+          t(19, "div")(20, "p"),
+          n(
+            21,
+            "Une soci\xE9t\xE9 de moyens est une structure juridique con\xE7ue pour mutualiser certains moyens mat\xE9riels, financiers ou humains entre plusieurs professionnels, sans que ceux-ci n\u2019exercent directement leur activit\xE9 au sein de cette structure. "
+          ),
+          e()(),
+          t(22, "div", 11)(23, "div", 12)(24, "button", 13),
+          O("click", function () {
+            return s.scrollToSection("targetSection");
+          }),
+          n(25, "D\xE9couvrez ce que vous gagnerez avec nous "),
+          l(26, "i", 14),
+          e()()(),
+          t(27, "div", 15)(28, "h1"),
+          n(29, "Les avantages cl\xE9s d\u2019une soci\xE9t\xE9 de moyens : "),
+          e(),
+          t(30, "div", 16),
+          l(31, "img", 17),
+          e(),
+          t(32, "div", 18)(33, "ul", 19)(34, "li"),
+          l(35, "i", 20),
+          t(36, "strong"),
+          n(37, "R\xE9duction des co\xFBts : "),
+          e(),
+          l(38, "br"),
+          n(
+            39,
+            " Partage des frais communs et n\xE9gociations group\xE9es avec les fournisseurs. "
+          ),
+          e(),
+          t(40, "li"),
+          l(41, "i", 20),
+          t(42, "strong"),
+          n(43, "Autonomie professionnelle pr\xE9serv\xE9e : "),
+          e(),
+          l(44, "br"),
+          n(45, " Chaque membre reste ind\xE9pendant dans son activit\xE9. "),
+          e(),
+          t(46, "li"),
+          l(47, "i", 20),
+          t(48, "strong"),
+          n(49, "Gestion structur\xE9e et transparente :"),
+          e(),
+          l(50, "br"),
+          n(
+            51,
+            " Des r\xE8gles claires pour \xE9viter les tensions entre associ\xE9s. "
+          ),
+          e()()()(),
+          t(52, "div", 21)(53, "h1"),
+          n(
+            54,
+            "Fonctionnement et objectifs d\u2019une soci\xE9t\xE9 de moyens "
+          ),
+          e(),
+          t(55, "div", 18)(56, "strong"),
+          n(57, "Comment cela fonctionne ? "),
+          e(),
+          l(58, "p"),
+          t(59, "ul", 19)(60, "li"),
+          l(61, "i", 20),
+          t(62, "strong"),
+          n(63, "Mutualisation des moyens mat\xE9riels et financiers : "),
+          e(),
+          l(64, "br"),
+          n(
+            65,
+            " Mise en commun des locaux, \xE9quipements, et abonnements n\xE9cessaires \xE0 l\u2019activit\xE9 professionnelle. Partage des frais communs comme les charges d\u2019\xE9lectricit\xE9, les fournitures de bureau ou les frais d\u2019entretien. "
+          ),
+          e(),
+          t(66, "li"),
+          l(67, "i", 20),
+          t(68, "strong"),
+          n(69, "R\xE9duction des co\xFBts :"),
+          e(),
+          l(70, "br"),
+          n(
+            71,
+            " En centralisant les achats, la SCM b\xE9n\xE9ficie d\u2019une puissance de n\xE9gociation accrue aupr\xE8s des fournisseurs, obtenant ainsi des tarifs pr\xE9f\xE9rentiels pour ses adh\xE9rents. "
+          ),
+          e(),
+          t(72, "li"),
+          l(73, "i", 20),
+          t(74, "strong"),
+          n(75, "Facturation aux adh\xE9rents : "),
+          e(),
+          l(76, "br"),
+          n(
+            77,
+            " Les frais engag\xE9s par la SCM sont r\xE9partis \xE9quitablement entre les membres. Cette contribution constitue la principale source de revenus de la soci\xE9t\xE9 de moyens. "
+          ),
+          e()()(),
+          t(78, "div", 16),
+          l(79, "img", 22),
+          e()()()()()()(),
+          t(80, "section", 23)(81, "div", 24)(82, "div", 2)(83, "div", 25)(
+            84,
+            "div",
+            26
+          )(85, "div", 27)(
+            86,
+            "div",
+            28
+          )(87, "h1"),
+          n(88, "Besoins sp\xE9cifiques des "),
+          l(89, "br"),
+          t(90, "span", 29),
+          n(91, " Soci\xE9t\xE9s de Moyens "),
+          e()()(),
+          l(92, "div", 30),
+          t(93, "div", 31)(94, "div", 32)(95, "div", 33)(96, "div", 34),
+          l(97, "img", 35),
+          e()(),
+          t(98, "div", 36)(99, "h2"),
+          n(100, "R\xE9partition \xE9quitable des charges "),
+          e(),
+          t(101, "ul")(102, "li"),
+          n(
+            103,
+            "Mise en place d\u2019un syst\xE8me comptable permettant de r\xE9partir les co\xFBts en fonction de l\u2019usage r\xE9el des ressources par chaque membre. "
+          ),
+          e(),
+          t(104, "li"),
+          n(
+            105,
+            "Transparence des flux financiers pour \xE9viter les tensions entre associ\xE9s. "
+          ),
+          e()()()(),
+          t(106, "div", 37)(107, "div", 33)(108, "div", 38),
+          l(109, "img", 39),
+          e()(),
+          t(110, "div", 36)(111, "h2"),
+          n(112, "Gestion comptable et fiscale rigoureuse "),
+          e(),
+          t(113, "ul")(114, "li"),
+          n(115, "Suivi pr\xE9cis des d\xE9penses et des recettes. "),
+          e(),
+          t(116, "li"),
+          n(
+            117,
+            "Respect des obligations fiscales et des d\xE9clarations sp\xE9cifiques \xE0 la SCM. "
+          ),
+          e(),
+          t(118, "li"),
+          n(
+            119,
+            "Pr\xE9paration des documents financiers n\xE9cessaires pour justifier la r\xE9partition des charges entre les membres. "
+          ),
+          e()()()(),
+          t(120, "div", 40)(121, "div", 33)(122, "div", 38),
+          l(123, "img", 41),
+          e()(),
+          t(124, "div", 36)(125, "h2"),
+          n(
+            126,
+            "Planification des achats et n\xE9gociation avec les fournisseurs "
+          ),
+          e(),
+          t(127, "ul")(128, "li"),
+          n(
+            129,
+            "Centralisation des commandes pour b\xE9n\xE9ficier de remises importantes gr\xE2ce \xE0 des volumes d\u2019achat \xE9lev\xE9s. "
+          ),
+          e(),
+          t(130, "li"),
+          n(
+            131,
+            "Planification des achats pour anticiper les besoins des membres et \xE9viter des d\xE9penses impr\xE9vues. "
+          ),
+          e()()()()()()(),
+          t(132, "div", 42)(133, "div", 43),
+          l(134, "img", 44),
+          e()()()()()(),
+          t(135, "section", 45)(136, "div", 2)(137, "div", 46)(138, "div", 47)(
+            139,
+            "h2",
+            48
+          )(140, "span", 49),
+          n(141, "Fonctionnement pratique"),
+          e()()()(),
+          t(142, "div", 50)(143, "div", 51)(144, "div", 52)(145, "div", 53),
+          l(146, "i", 54),
+          e(),
+          t(147, "h3", 55),
+          n(148, "Les actionnaires"),
+          e(),
+          t(149, "p", 56)(150, "strong"),
+          n(151, "Les membres associ\xE9s :"),
+          e(),
+          l(152, "br"),
+          n(153, " \u2022 Apportent un capital \xE0 la soci\xE9t\xE9"),
+          l(154, "br"),
+          n(155, " \u2022 B\xE9n\xE9ficient des ressources mutualis\xE9es"),
+          l(156, "br"),
+          n(
+            157,
+            " \u2022 Ont une responsabilit\xE9 financi\xE8re limit\xE9e au montant de leur apport "
+          ),
+          e()()(),
+          t(158, "div", 51)(159, "div", 52)(160, "div", 53),
+          l(161, "i", 57),
+          e(),
+          t(162, "h3", 55),
+          n(163, "Les administrateurs"),
+          e(),
+          t(164, "p", 56)(165, "strong"),
+          n(166, "Leur r\xF4le :"),
+          e(),
+          l(167, "br"),
+          n(168, " \u2022 G\xE8rent les ressources partag\xE9es selon le mandat"),
+          l(169, "br"),
+          n(170, " \u2022 Sont responsables de l'ex\xE9cution des d\xE9cisions"),
+          l(171, "br"),
+          n(172, " \u2022 Assurent une gestion rigoureuse "),
+          e()()(),
+          t(173, "div", 58)(174, "p", 59),
+          l(175, "i", 60),
+          n(
+            176,
+            " Le mod\xE8le administrateur garantit une gestion efficace des ressources, tout en prot\xE9geant les membres des risques financiers excessifs. "
+          ),
+          e()()()()(),
+          t(177, "section", 23)(178, "div", 24)(179, "div", 2)(180, "div", 25)(
+            181,
+            "div",
+            26
+          )(182, "div", 27)(
+            183,
+            "div",
+            28
+          )(184, "h1"),
+          n(185, "Fonctionnement et objectifs "),
+          l(186, "br"),
+          t(187, "span", 29),
+          n(188, " d'une Soci\xE9t\xE9s de Moyens "),
+          e()()(),
+          l(189, "div", 30),
+          t(190, "div", 31)(191, "div", 32)(192, "div", 33)(193, "div", 34),
+          l(194, "img", 35),
+          e()(),
+          t(195, "div", 36)(196, "h2"),
+          n(197, "Mutualisation des moyens mat\xE9riels et financiers "),
+          e(),
+          t(198, "ul")(199, "li"),
+          n(
+            200,
+            "Mise en commun des locaux, \xE9quipements, abonnements n\xE9cessaires \xE0 l\u2019activit\xE9 professionnelle. "
+          ),
+          e(),
+          t(201, "li"),
+          n(
+            202,
+            "Partage des frais communs (loyer, \xE9lectricit\xE9, fournitures). "
+          ),
+          e()()()(),
+          t(203, "div", 37)(204, "div", 33)(205, "div", 38),
+          l(206, "img", 39),
+          e()(),
+          t(207, "div", 36)(208, "h2"),
+          n(209, "R\xE9duction des co\xFBts"),
+          e(),
+          t(210, "ul")(211, "li"),
+          n(
+            212,
+            "En centralisant les achats, la soci\xE9t\xE9 de moyens n\xE9gocie des tarifs pr\xE9f\xE9rentiels aupr\xE8s des fournisseurs"
+          ),
+          e()()()(),
+          t(213, "div", 40)(214, "div", 33)(215, "div", 38),
+          l(216, "img", 41),
+          e()(),
+          t(217, "div", 36)(218, "h2"),
+          n(219, "Gestion transparente des charges communes"),
+          e(),
+          t(220, "ul")(221, "li"),
+          n(
+            222,
+            "R\xE9partition \xE9quitable des frais entre les membres, d\xE9finie selon des r\xE8gles pr\xE9cises. "
+          ),
+          e()()()(),
+          t(223, "div", 40)(224, "div", 33)(225, "div", 38),
+          l(226, "img", 61),
+          e()(),
+          t(227, "div", 36)(228, "h2"),
+          n(229, "Cash Collecting : Gestion des cotisations des membres "),
+          e(),
+          t(230, "ul")(231, "li"),
+          n(
+            232,
+            "Suivi des paiements des membres : Garantir que chaque adh\xE9rent contribue \xE9quitablement aux frais communs. "
+          ),
+          e(),
+          t(233, "li"),
+          n(
+            234,
+            "Transparence et impartialit\xE9 : En externalisant cette t\xE2che \xE0 MFINANCES, les membres \xE9vitent les tensions potentielles li\xE9es \xE0 la collecte des contributions. "
+          ),
+          e(),
+          t(235, "li"),
+          n(
+            236,
+            "Suivi des paiements des membres : Garantir que chaque adh\xE9rent contribue \xE9quitablement aux frais communs. "
+          ),
+          e()()()()()()(),
+          t(237, "div", 42)(238, "div", 43),
+          l(239, "img", 44),
+          e()()()()()(),
+          t(240, "section", 62)(241, "div", 2)(242, "div", 63)(243, "h2", 64),
+          n(244, "Exemples de mutualisation"),
+          e(),
+          t(245, "p", 65),
+          n(
+            246,
+            "Optimisez vos ressources en partageant intelligemment vos moyens au sein de votre structure professionnelle"
+          ),
+          e()(),
+          t(247, "div", 66)(248, "div", 67)(249, "div", 68)(250, "div", 69),
+          l(251, "div", 70),
+          t(252, "div", 71)(253, "div", 72),
+          l(254, "i", 73),
+          e()(),
+          t(255, "h3", 74),
+          n(256, "Locaux professionnels"),
+          e(),
+          t(257, "ul", 75)(258, "li"),
+          l(259, "i", 76),
+          n(260, "Loyer & charges locatives"),
+          e(),
+          t(261, "li"),
+          l(262, "i", 76),
+          n(263, "Services d'entretien premium"),
+          e(),
+          t(264, "li"),
+          l(265, "i", 76),
+          n(266, "Gestion climatisation & \xE9nergie"),
+          e(),
+          t(267, "li"),
+          l(268, "i", 76),
+          n(269, "Optimisation des espaces"),
+          e()()()(),
+          t(270, "div", 68)(271, "div", 69),
+          l(272, "div", 70),
+          t(273, "div", 71)(274, "div", 72),
+          l(275, "i", 77),
+          e()(),
+          t(276, "h3", 74),
+          n(277, "Mat\xE9riel et fournitures"),
+          e(),
+          t(278, "ul", 75)(279, "li"),
+          l(280, "i", 76),
+          n(281, "\xC9quipements high-tech"),
+          e(),
+          t(282, "li"),
+          l(283, "i", 76),
+          n(284, "Mobilier ergonomique"),
+          e(),
+          t(285, "li"),
+          l(286, "i", 76),
+          n(287, "Outils professionnels"),
+          e(),
+          t(288, "li"),
+          l(289, "i", 76),
+          n(290, "Gestion des stocks"),
+          e()()()(),
+          t(291, "div", 68)(292, "div", 69),
+          l(293, "div", 70),
+          t(294, "div", 71)(295, "div", 72),
+          l(296, "i", 78),
+          e()(),
+          t(297, "h3", 74),
+          n(298, "Services partag\xE9s"),
+          e(),
+          t(299, "ul", 75)(300, "li"),
+          l(301, "i", 76),
+          n(302, "Support administratif d\xE9di\xE9"),
+          e(),
+          t(303, "li"),
+          l(304, "i", 76),
+          n(305, "Solutions cloud innovantes"),
+          e(),
+          t(306, "li"),
+          l(307, "i", 76),
+          n(308, "Services digitaux avanc\xE9s"),
+          e(),
+          t(309, "li"),
+          l(310, "i", 76),
+          n(311, "Secr\xE9tariat personnalis\xE9"),
+          e()()()()()()()(),
+          t(312, "section")(313, "div", 79)(314, "div", 2)(315, "div", 25)(
+            316,
+            "div",
+            80
+          )(317, "div", 81),
+          l(318, "img", 82),
+          e()(),
+          t(319, "div", 83)(320, "div", 84)(321, "div", 36)(322, "h3"),
+          n(323, "Comment MFINANCES peut vous aider\u202F?"),
+          e()(),
+          t(324, "div", 85)(325, "div", 5)(326, "div")(327, "div", 86)(328, "p"),
+          l(329, "img", 87),
+          t(330, "strong"),
+          n(331, "Gestion comptable et financi\xE8re sur mesure :"),
+          e(),
+          n(
+            332,
+            " Suivi d\xE9taill\xE9 des flux financiers pour une r\xE9partition transparente des charges entre les membres. Pr\xE9paration des bilans et des rapports financiers pour garantir la conformit\xE9 aux obligations l\xE9gales et fiscales."
+          ),
+          e()(),
+          l(333, "div", 30),
+          t(334, "div", 86)(335, "p"),
+          l(336, "img", 87),
+          t(337, "strong"),
+          n(338, "Cash Collecting :"),
+          e(),
+          n(
+            339,
+            " Gestion des cotisations des membres de mani\xE8re automatis\xE9e et transparente. Relances r\xE9guli\xE8res en cas de retard de paiement, tout en pr\xE9servant la bonne entente entre les membres."
+          ),
+          e()(),
+          l(340, "div", 30),
+          t(341, "div", 86)(342, "p"),
+          l(343, "img", 87),
+          t(344, "strong"),
+          n(
+            345,
+            "Accompagnement dans les n\xE9gociations avec les fournisseurs :"
+          ),
+          e(),
+          n(
+            346,
+            " Centralisation des achats et gestion des n\xE9gociations pour obtenir des tarifs avantageux pour vos adh\xE9rents. Mise en place de tableaux de bord pour suivre les \xE9conomies r\xE9alis\xE9es."
+          ),
+          e()(),
+          l(347, "div", 30),
+          t(348, "div", 86)(349, "p"),
+          l(350, "img", 87),
+          t(351, "strong"),
+          n(352, "R\xE9daction et optimisation des statuts :"),
+          e(),
+          n(
+            353,
+            " Assistance juridique pour r\xE9diger des statuts qui d\xE9finissent clairement les modalit\xE9s de fonctionnement de la SCM. Conseil strat\xE9gique pour \xE9viter les litiges entre membres et garantir une gestion efficace."
+          ),
+          e()(),
+          l(354, "div", 30),
+          t(355, "div", 86)(356, "p"),
+          l(357, "img", 87),
+          t(358, "strong"),
+          n(359, "Outils de suivi des performances :"),
+          e(),
+          n(
+            360,
+            " Mise en place d\u2019indicateurs cl\xE9s pour suivre les \xE9conomies g\xE9n\xE9r\xE9es, les contributions des membres, et la rentabilit\xE9 des moyens partag\xE9s. Tableaux de bord personnalis\xE9s pour une vue d\u2019ensemble des finances de la SCM."
+          ),
+          e()()()()(),
+          t(361, "div", 88)(362, "a", 89),
+          n(363, "Contactez-nous "),
+          l(364, "i", 14),
+          e()()()()()()()(),
+          t(365, "section", 90)(366, "section", 91)(367, "div", 2)(
+            368,
+            "div",
+            92
+          )(369, "h2", 93),
+          n(370, "\xC9tude de cas : Cabinet m\xE9dical"),
+          e(),
+          t(371, "p", 94),
+          n(
+            372,
+            "D\xE9couvrez comment MFINANCES a transform\xE9 la gestion d'un cabinet m\xE9dical partag\xE9"
+          ),
+          e()(),
+          t(373, "div", 95),
+          l(374, "div", 96)(375, "div", 97)(376, "div", 98),
+          t(377, "div", 99)(378, "div", 100)(379, "div", 101)(380, "div", 102),
+          l(381, "i", 103),
+          e(),
+          t(382, "h3", 74),
+          n(383, "Situation initiale"),
+          e(),
+          t(384, "p"),
+          n(
+            385,
+            "Un groupe de m\xE9decins partageant un cabinet cherchait \xE0 optimiser leur gestion commune."
+          ),
+          e()()()(),
+          t(386, "div", 99)(387, "div", 104)(388, "div", 101)(389, "div", 102),
+          l(390, "i", 105),
+          e(),
+          t(391, "h3", 74),
+          n(392, "Les d\xE9fis rencontr\xE9s"),
+          e(),
+          t(393, "ul", 106)(394, "li"),
+          l(395, "i", 107),
+          t(396, "span"),
+          n(
+            397,
+            "R\xE9partition \xE9quitable des charges locatives et des frais de personnel"
+          ),
+          e()(),
+          t(398, "li"),
+          l(399, "i", 107),
+          t(400, "span"),
+          n(401, "Centralisation des achats pour r\xE9duire les co\xFBts"),
+          e()(),
+          t(402, "li"),
+          l(403, "i", 107),
+          t(404, "span"),
+          n(405, "Gestion des tensions li\xE9es aux contributions in\xE9gales"),
+          e()()()()()(),
+          t(406, "div", 99)(407, "div", 100)(408, "div", 101)(409, "div", 102),
+          l(410, "i", 108),
+          e(),
+          t(411, "h3", 74),
+          n(412, "Notre approche"),
+          e(),
+          t(413, "ul", 106)(414, "li"),
+          l(415, "i", 76),
+          t(416, "span"),
+          n(
+            417,
+            "Mise en place d'une comptabilit\xE9 transparente bas\xE9e sur l'activit\xE9 r\xE9elle"
+          ),
+          e()(),
+          t(418, "li"),
+          l(419, "i", 76),
+          t(420, "span"),
+          n(421, "N\xE9gociation centralis\xE9e avec les fournisseurs ("),
+          t(422, "span", 109),
+          n(423, "-15%"),
+          e(),
+          n(424, " sur les consommables)"),
+          e()(),
+          t(425, "li"),
+          l(426, "i", 76),
+          t(427, "span"),
+          n(428, "Syst\xE8me automatis\xE9 de gestion des cotisations"),
+          e()()()()()(),
+          t(429, "div", 99)(430, "div", 104)(431, "div", 110)(432, "div", 111),
+          l(433, "i", 112),
+          n(434, " R\xE9sultats obtenus "),
+          e(),
+          t(435, "ul", 113)(436, "li"),
+          l(437, "i", 114),
+          t(438, "span"),
+          n(439, "R\xE9duction significative des charges d'exploitation"),
+          e()(),
+          t(440, "li"),
+          l(441, "i", 78),
+          t(442, "span"),
+          n(443, "Collaboration harmonieuse entre les membres"),
+          e()()()()()()()()()(),
+          t(444, "section", 90)(445, "div", 2)(446, "div", 25)(447, "div", 115)(
+            448,
+            "h2",
+            116
+          ),
+          n(449, " Pourquoi choisir MFINANCES pour votre "),
+          l(450, "br"),
+          t(451, "span", 117),
+          n(452, " soci\xE9t\xE9 de moyens\u202F? "),
+          e()()(),
+          t(453, "div", 118)(454, "div", 119)(455, "div", 120),
+          l(456, "img", 121),
+          e(),
+          t(457, "div")(458, "h5", 122),
+          n(459, "Expertise sp\xE9cifique : "),
+          e(),
+          t(460, "p", 123),
+          n(
+            461,
+            "Une exp\xE9rience approfondie dans la gestion des structures collaboratives. "
+          ),
+          e()()(),
+          t(462, "div", 124)(463, "div", 120),
+          l(464, "img", 125),
+          e(),
+          t(465, "div")(466, "h5", 122),
+          n(467, "Solutions personnalis\xE9es :"),
+          e(),
+          t(468, "p", 123),
+          n(469, "Des outils et services adapt\xE9s aux besoins de votre SCM. "),
+          e()()(),
+          t(470, "div", 126)(471, "div", 120),
+          l(472, "img", 127),
+          e(),
+          t(473, "div")(474, "h5", 122),
+          n(475, "Cash Collecting int\xE9gr\xE9 :"),
+          e(),
+          t(476, "p", 123),
+          n(
+            477,
+            "Une gestion transparente et impartiale des cotisations, pour simplifier les relations entre membres. "
+          ),
+          e()()()()()()(),
+          t(478, "section")(479, "div", 128)(480, "div", 2)(481, "div", 5)(
+            482,
+            "div",
+            129
+          )(483, "div", 130)(484, "h1", 3),
+          n(485, "FAQ : Tout savoir sur les "),
+          l(486, "br"),
+          t(487, "span", 29),
+          n(488, "Soci\xE9t\xE9s de Moyens"),
+          e()()()()(),
+          l(489, "div", 131),
+          t(490, "div", 25)(491, "div")(492, "div", 132)(493, "div", 133)(
+            494,
+            "h2",
+            134
+          )(495, "button", 135),
+          n(496, " Qu\u2019est-ce qu\u2019une soci\xE9t\xE9 de moyens ? "),
+          e()(),
+          t(497, "div", 136)(498, "div", 137),
+          n(
+            499,
+            " Une soci\xE9t\xE9 de moyens est une structure juridique qui permet \xE0 plusieurs professionnels de mutualiser certains moyens mat\xE9riels, financiers ou humains n\xE9cessaires \xE0 leur activit\xE9. Elle ne vise pas \xE0 g\xE9n\xE9rer des b\xE9n\xE9fices ni \xE0 exercer une activit\xE9 professionnelle commune, mais simplement \xE0 g\xE9rer et r\xE9partir les frais li\xE9s aux ressources mutualis\xE9es. "
+          ),
+          e()()(),
+          t(500, "div", 133)(501, "h2", 138)(502, "button", 139),
+          n(
+            503,
+            " Quels sont les principaux avantages d\u2019une soci\xE9t\xE9 de moyens ? "
+          ),
+          e()(),
+          t(504, "div", 140)(505, "div", 137)(506, "ul")(507, "li")(
+            508,
+            "strong"
+          ),
+          n(509, "R\xE9duction des co\xFBts :"),
+          e(),
+          n(
+            510,
+            " En mutualisant les charges d\u2019exploitation (loyer, abonnements, \xE9quipements), chaque membre peut r\xE9aliser d\u2019importantes \xE9conomies."
+          ),
+          e(),
+          t(511, "li")(512, "strong"),
+          n(513, "Conservation de l\u2019autonomie professionnelle :"),
+          e(),
+          n(514, " Chaque associ\xE9 reste ind\xE9pendant dans son activit\xE9."),
+          e(),
+          t(515, "li")(516, "strong"),
+          n(517, "Gestion transparente des charges :"),
+          e(),
+          n(
+            518,
+            " Les frais sont r\xE9partis \xE9quitablement entre les membres selon des r\xE8gles claires d\xE9finies dans les statuts."
+          ),
+          e()()()()(),
+          t(519, "div", 133)(520, "h2", 141)(521, "button", 142),
+          n(
+            522,
+            " Quelle est la diff\xE9rence entre une soci\xE9t\xE9 de moyens et d\u2019autres soci\xE9t\xE9s ? "
+          ),
+          e()(),
+          t(523, "div", 143)(524, "div", 137),
+          n(
+            525,
+            " Contrairement \xE0 une soci\xE9t\xE9 commerciale ou une soci\xE9t\xE9 civile professionnelle, une soci\xE9t\xE9 de moyens ne permet pas \xE0 ses membres d\u2019exercer leur activit\xE9 professionnelle commune au sein de la structure. Elle se limite \xE0 g\xE9rer les \xE9l\xE9ments mutualis\xE9s comme les locaux, le mat\xE9riel ou les abonnements. "
+          ),
+          e()()(),
+          t(526, "div", 133)(527, "h2", 144)(528, "button", 145),
+          n(
+            529,
+            " Comment fonctionne la r\xE9partition des charges dans une soci\xE9t\xE9 de moyens ? "
+          ),
+          e()(),
+          t(530, "div", 146)(531, "div", 137),
+          n(
+            532,
+            " Les charges sont r\xE9parties entre les membres selon des crit\xE8res d\xE9finis dans les statuts de la soci\xE9t\xE9. Cela peut inclure : "
+          ),
+          t(533, "ul")(534, "li"),
+          n(535, "Le temps d\u2019utilisation des locaux ou du mat\xE9riel."),
+          e(),
+          t(536, "li"),
+          n(537, "La part de consommation des ressources."),
+          e(),
+          t(538, "li"),
+          n(539, "Toute autre r\xE8gle convenue collectivement."),
+          e()()()()(),
+          t(540, "div", 133)(541, "h2", 147)(542, "button", 148),
+          n(
+            543,
+            " Quels sont les risques li\xE9s \xE0 une soci\xE9t\xE9 de moyens ? "
+          ),
+          e()(),
+          t(544, "div", 149)(545, "div", 137)(546, "ul")(547, "li")(
+            548,
+            "strong"
+          ),
+          n(549, "Responsabilit\xE9 financi\xE8re :"),
+          e(),
+          n(
+            550,
+            " Les membres sont responsables des dettes de la soci\xE9t\xE9 \xE0 hauteur du capital qu\u2019ils ont apport\xE9."
+          ),
+          e(),
+          t(551, "li")(552, "strong"),
+          n(553, "Conflits internes :"),
+          e(),
+          n(
+            554,
+            " Des tensions peuvent appara\xEEtre si les r\xE8gles de r\xE9partition des charges ne sont pas claires."
+          ),
+          e(),
+          t(555, "li")(556, "strong"),
+          n(557, "Mauvaise gestion :"),
+          e(),
+          n(
+            558,
+            " Une gestion rigoureuse est essentielle pour \xE9viter des d\xE9s\xE9quilibres financiers."
+          ),
+          e(),
+          t(559, "li")(560, "strong"),
+          n(561, "Limites l\xE9gales :"),
+          e(),
+          n(
+            562,
+            " Une soci\xE9t\xE9 de moyens ne peut pas exercer d\u2019activit\xE9 commerciale ni g\xE9n\xE9rer de b\xE9n\xE9fices."
+          ),
+          e()()()()(),
+          t(563, "div", 133)(564, "h2", 150)(565, "button", 151),
+          n(
+            566,
+            " Comment MFINANCES peut vous aider dans la gestion de votre soci\xE9t\xE9 de moyens ? "
+          ),
+          e()(),
+          t(567, "div", 152)(568, "div", 137),
+          n(569, " MFINANCES propose : "),
+          t(570, "ul")(571, "li")(572, "strong"),
+          n(573, "Gestion comptable et fiscale :"),
+          e(),
+          n(574, " Suivi rigoureux des charges et des cotisations."),
+          e(),
+          t(575, "li")(576, "strong"),
+          n(577, "Cash collecting :"),
+          e(),
+          n(
+            578,
+            " Gestion automatis\xE9e des paiements pour \xE9viter les retards."
+          ),
+          e(),
+          t(579, "li")(580, "strong"),
+          n(581, "R\xE9daction des statuts :"),
+          e(),
+          n(
+            582,
+            " D\xE9finition claire des r\xE8gles de fonctionnement pour pr\xE9venir les conflits."
+          ),
+          e(),
+          t(583, "li")(584, "strong"),
+          n(585, "Optimisation des achats :"),
+          e(),
+          n(
+            586,
+            " Centralisation et n\xE9gociation pour r\xE9duire les co\xFBts."
+          ),
+          e(),
+          t(587, "li")(588, "strong"),
+          n(589, "Suivi des performances :"),
+          e(),
+          n(
+            590,
+            " Mise en place de tableaux de bord pour visualiser les \xE9conomies r\xE9alis\xE9es."
+          ),
+          e()()()()()()()()()()(),
+          t(591, "section", 153)(592, "div", 154)(593, "div", 25)(
+            594,
+            "div",
+            155
+          ),
+          l(595, "img", 156),
+          e(),
+          t(596, "div", 157)(597, "h2", 158),
+          n(598, " Vous avez une"),
+          l(599, "br"),
+          t(600, "span", 159),
+          n(601, "question sp\xE9cifique ?"),
+          e(),
+          n(602, ". "),
+          e(),
+          t(603, "p", 160),
+          n(
+            604,
+            " Contactez MFINANCES d\xE8s aujourd\u2019hui pour une consultation gratuite. "
+          ),
+          e(),
+          t(605, "a", 161),
+          n(606, " Contactez-nous "),
+          l(607, "i", 162),
+          e()()()()(),
+          l(608, "app-recommandation-profil"));
     },
     dependencies: [oe, se],
     styles: [
@@ -7024,496 +7024,496 @@ var At = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1"),
-        n(4, "Soci\xE9t\xE9 d'exploitation"),
-        e(),
-        t(5, "p", 3),
-        n(6, "Accueil > Societe d'exploitation"),
-        e()()()(),
-        t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
-        l(11, "app-sidebar"),
-        e(),
-        t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
-        n(15, " Soci\xE9t\xE9 d\u2019exploitation : Le moteur de votre "),
-        t(16, "span", 10),
-        n(17, " activit\xE9 professionnelle"),
-        e()(),
-        t(18, "div")(19, "p"),
-        n(
-          20,
-          "Une soci\xE9t\xE9 d\u2019exploitation constitue le pilier central de votre activit\xE9 professionnelle ou commerciale. Elle se concentre sur la cr\xE9ation de valeur \xE0 travers une activit\xE9 productive, qu\u2019il s\u2019agisse de prestations de services, de production ou d\u2019activit\xE9s intellectuelles dans le cadre d\u2019une profession lib\xE9rale."
-        ),
-        e(),
-        t(21, "p"),
-        n(
-          22,
-          "De plus, une soci\xE9t\xE9 d\u2019exploitation peut \xEAtre associ\xE9e \xE0 une soci\xE9t\xE9 de management ou de patrimoine afin de r\xE9pondre \xE0 des besoins compl\xE9mentaires, tels que l\u2019optimisation de la r\xE9mun\xE9ration du dirigeant ou la gestion d\u2019actifs personnels \xE0 long terme."
-        ),
-        e(),
-        l(23, "br"),
-        e(),
-        t(24, "div", 11)(25, "div", 12)(26, "button", 13),
-        O("click", function () {
-          return s.scrollToSection("targetSection");
-        }),
-        n(27, "D\xE9couvrez ce que vous gagnerez avec nous "),
-        l(28, "i", 14),
-        e()()(),
-        t(29, "div", 15),
-        l(30, "img", 16),
-        e(),
-        t(31, "div", 17)(32, "h1"),
-        n(33, "Ca veut dire quoi? "),
-        e(),
-        t(34, "div", 18),
-        l(35, "img", 19),
-        e(),
-        t(36, "div", 20)(37, "h3"),
-        n(38, "Comment interpr\xE9ter cela ?"),
-        e(),
-        t(39, "ul", 21)(40, "li", 22),
-        l(41, "i", 23),
-        t(42, "strong"),
-        n(43, " Une soci\xE9t\xE9 d\u2019exploitation :"),
-        e(),
-        l(44, "br"),
-        n(
-          45,
-          " Elle repr\xE9sente le c\u0153ur de votre activit\xE9, l\u2019endroit o\xF9 sont concentr\xE9s tous les efforts pour maximiser la rentabilit\xE9 de votre entreprise. "
-        ),
-        e(),
-        t(46, "li"),
-        l(47, "i", 23),
-        t(48, "strong"),
-        n(49, "Une soci\xE9t\xE9 de patrimoine :"),
-        e(),
-        l(50, "br"),
-        n(
-          51,
-          ' Elle vous permet de "sortir un pion de l\u2019\xE9chiquier" de l\u2019activit\xE9 commerciale pour l\u2019utiliser dans des projets personnels ou patrimoniaux, comme la gestion d\u2019actifs personnels \xE0 long terme. '
-        ),
-        e()()()()()()()()(),
-        t(52, "section", 24)(53, "div", 25)(54, "div", 2)(55, "div", 26)(
-          56,
-          "div",
-          27
-        )(57, "div", 28)(
-          58,
-          "div",
-          29
-        )(59, "h1"),
-        n(60, "Besoins sp\xE9cifiques des "),
-        l(61, "br"),
-        t(62, "span", 30),
-        n(63, " Soci\xE9t\xE9s d'Exploitations "),
-        e()()(),
-        l(64, "div", 31),
-        t(65, "div", 32)(66, "div", 33)(67, "div", 34)(68, "div", 35),
-        l(69, "img", 36),
-        e()(),
-        t(70, "div", 37)(71, "h2"),
-        n(72, "Une gestion comptable et financi\xE8re rigoureuse"),
-        e(),
-        t(73, "ul")(74, "li"),
-        n(
-          75,
-          "Une gestion comptable et financi\xE8re rigoureuse les soci\xE9t\xE9s d\u2019exploitation, avec leur volume d\u2019activit\xE9 \xE9lev\xE9 et leurs d\xE9penses vari\xE9es, n\xE9cessitent une gestion comptable pr\xE9cise et proactive."
-        ),
-        e(),
-        t(76, "li")(77, "strong"),
-        n(78, "Bilans et situations financi\xE8res interm\xE9diaires :"),
-        e(),
-        n(
-          79,
-          " Ces documents vous permettent de suivre l\u2019\xE9volution de votre entreprise \xE0 des moments cl\xE9s et de justifier votre sant\xE9 financi\xE8re aupr\xE8s des banques et des investisseurs."
-        ),
-        e(),
-        t(80, "li")(81, "strong"),
-        n(82, "Situations pr\xE9visionnelles : "),
-        e(),
-        n(
-          83,
-          " Anticiper l\u2019avenir devient indispensable. Les projections financi\xE8res vous aident \xE0 planifier vos investissements strat\xE9giques et \xE0 \xE9viter les impr\xE9vus."
-        ),
-        e()()()(),
-        t(84, "div", 38)(85, "div", 34)(86, "div", 39),
-        l(87, "img", 40),
-        e()(),
-        t(88, "div", 37)(89, "h2"),
-        n(90, "Accompagnement strat\xE9gique personnalis\xE9"),
-        e(),
-        t(91, "ul")(92, "li")(93, "strong"),
-        n(94, "Tableaux de bord personnalis\xE9s :"),
-        e(),
-        n(
-          95,
-          " Nos outils sur mesure vous permettent de suivre vos indicateurs cl\xE9s (rentabilit\xE9, co\xFBts, tr\xE9sorerie)."
-        ),
-        e(),
-        t(96, "li")(97, "strong"),
-        n(98, "Conseil strat\xE9gique :"),
-        e(),
-        n(
-          99,
-          " Nous vous accompagnons dans vos d\xE9cisions cruciales, en alignant vos finances avec vos objectifs commerciaux."
-        ),
-        e(),
-        t(100, "li")(101, "strong"),
-        n(102, "Support administratif continu :"),
-        e(),
-        n(
-          103,
-          " Nous collectons et organisons vos pi\xE8ces comptables pour garantir une gestion rigoureuse et \xE9viter toute perte fiscale."
-        ),
-        e()()()(),
-        t(104, "div", 41)(105, "div", 34)(106, "div", 39),
-        l(107, "img", 42),
-        e()(),
-        t(108, "div", 37)(109, "h2"),
-        n(110, "Une optimisation fiscale intelligente"),
-        e(),
-        t(111, "ul")(112, "li")(113, "strong"),
-        n(114, "Imp\xF4t des soci\xE9t\xE9s (ISOC) :"),
-        e(),
-        n(
-          115,
-          " Une gestion proactive est essentielle pour optimiser ces d\xE9penses et pr\xE9server votre tr\xE9sorerie."
-        ),
-        e(),
-        t(116, "li")(117, "strong"),
-        n(118, "Maximisation des d\xE9ductions fiscales :"),
-        e(),
-        n(
-          119,
-          " Profitez des possibilit\xE9s offertes par les management fees, amortissements, et frais professionnels pour r\xE9duire vos imp\xF4ts."
-        ),
-        e(),
-        t(120, "li")(121, "strong"),
-        n(122, "Int\xE9gration des charges fiscales dans vos pr\xE9visions :"),
-        e(),
-        n(
-          123,
-          " Cela vous permet de mieux g\xE9rer vos flux de tr\xE9sorerie."
-        ),
-        e(),
-        t(124, "li")(125, "strong"),
-        n(126, "Avantages fiscaux : "),
-        e(),
-        n(
-          127,
-          " B\xE9n\xE9ficiez d\u2019une strat\xE9gie fiscale sur mesure pour optimiser vos finances \xE0 long terme."
-        ),
-        e()()()()()()(),
-        t(128, "div", 43)(129, "div", 44),
-        l(130, "img", 45),
-        e()()()()()(),
-        t(131, "section")(132, "div", 46)(133, "div", 2)(134, "div", 26)(
-          135,
-          "div",
-          47
-        )(136, "div", 48),
-        l(137, "img", 49),
-        t(138, "div", 50)(139, "div", 51)(140, "p"),
-        n(
-          141,
-          "R\xE9sultat : Une r\xE9duction de 20\u202F% de son ISOC, permettant au client de r\xE9investir ces \xE9conomies dans le d\xE9veloppement de son activit\xE9. "
-        ),
-        e()()()()(),
-        t(142, "div", 52)(143, "div", 53)(144, "h2"),
-        n(145, "Comment MFINANCES optimise la rentabilit\xE9 d\u2019une PME "),
-        e(),
-        t(146, "p"),
-        n(
-          147,
-          "Un de nos clients, dirigeant une PME dans le secteur des services, faisait face \xE0 une fiscalit\xE9 lourde qui freinait sa capacit\xE9 d\u2019investissement. En collaborant avec MFINANCES, nous avons pu :"
-        ),
-        e()(),
-        l(148, "div", 54),
-        t(149, "div", 55)(150, "ul")(151, "li"),
-        l(152, "img", 56),
-        n(
-          153,
-          " Mettre en place une soci\xE9t\xE9 de management et de patrimoine pour structurer et optimiser ses revenus de mani\xE8re efficace. "
-        ),
-        e(),
-        t(154, "li"),
-        l(155, "img", 56),
-        n(
-          156,
-          "Optimiser les d\xE9ductions fiscales, notamment par des amortissements strat\xE9giques et des management fees, permettant ainsi une r\xE9duction de la charge fiscale. "
-        ),
-        e(),
-        t(157, "li"),
-        l(158, "img", 56),
-        n(
-          159,
-          " Ajust\xE9 son plan financier pour anticiper ses charges fiscales et mieux g\xE9rer ses flux de tr\xE9sorerie. "
-        ),
-        e()()(),
-        l(160, "div", 57),
-        t(161, "div", 58)(162, "a", 59),
-        n(163, "Contactez-Nous"),
-        l(164, "i", 60),
-        e()()()()()()(),
-        t(165, "section")(166, "div", 61)(167, "div", 2)(168, "div", 26)(
-          169,
-          "div",
-          62
-        )(170, "div", 63)(
-          171,
-          "div",
-          64
-        )(172, "h2"),
-        n(173, "Nos points distinctif"),
-        e()(),
-        t(174, "div", 65)(175, "div", 5)(176, "div")(177, "div", 66)(178, "p"),
-        l(179, "img", 67),
-        t(180, "strong"),
-        n(181, "Une expertise compl\xE8te :"),
-        e(),
-        n(
-          182,
-          " Comptabilit\xE9, fiscalit\xE9, tr\xE9sorerie et strat\xE9gie. Nous couvrons tous les aspects essentiels pour structurer et optimiser votre activit\xE9."
-        ),
-        e()(),
-        l(183, "div", 31),
-        t(184, "div", 66)(185, "p"),
-        l(186, "img", 67),
-        t(187, "strong"),
-        n(188, "Une vision proactive :"),
-        e(),
-        n(
-          189,
-          " Gr\xE2ce \xE0 nos bilans interm\xE9diaires et projections financi\xE8res, nous vous aidons \xE0 anticiper les \xE9volutions et \xE0 naviguer sereinement dans un environnement en constante mutation."
-        ),
-        e()(),
-        l(190, "div", 31),
-        t(191, "div", 66)(192, "p"),
-        l(193, "img", 67),
-        t(194, "strong"),
-        n(195, "Un accompagnement personnalis\xE9 :"),
-        e(),
-        n(
-          196,
-          "Vous b\xE9n\xE9ficiez d'un interlocuteur d\xE9di\xE9 qui prend le temps de comprendre vos sp\xE9cificit\xE9s et d\u2019adapter nos solutions \xE0 vos besoins."
-        ),
-        e()()()()(),
-        t(197, "div", 68)(198, "a", 69),
-        n(199, "Contactez-nous "),
-        l(200, "i", 14),
-        e()()()(),
-        t(201, "div", 70)(202, "div", 71),
-        l(203, "img", 72),
-        e()()()()()(),
-        t(204, "section")(205, "div", 73)(206, "div", 2)(207, "div", 5)(
-          208,
-          "div",
-          74
-        )(209, "div", 75)(210, "h1", 3),
-        n(211, "FAQ : "),
-        l(212, "br"),
-        t(213, "span", 30),
-        n(214, "Soci\xE9t\xE9 d\u2019exploitation en Belgique"),
-        e()()()()(),
-        l(215, "div", 76),
-        t(216, "div", 26)(217, "div")(218, "div", 77)(219, "div", 78)(
-          220,
-          "h2",
-          79
-        )(221, "button", 80),
-        n(
-          222,
-          " Qu\u2019est-ce qu\u2019une soci\xE9t\xE9 d\u2019exploitation\u202F? "
-        ),
-        e()(),
-        t(223, "div", 81)(224, "div", 82),
-        n(
-          225,
-          " Une soci\xE9t\xE9 d\u2019exploitation est une structure juridique d\xE9di\xE9e \xE0 la gestion et au d\xE9veloppement d\u2019une activit\xE9 professionnelle ou commerciale. Elle regroupe les ressources n\xE9cessaires \xE0 la cr\xE9ation de valeur : personnel, finances, et \xE9quipements. Elle est utilis\xE9e pour des activit\xE9s vari\xE9es comme les prestations de services, la production, ou les professions lib\xE9rales. "
-        ),
-        e()()(),
-        t(226, "div", 78)(227, "h2", 83)(228, "button", 84),
-        n(
-          229,
-          " Quels sont les avantages d\u2019une soci\xE9t\xE9 d\u2019exploitation en Belgique\u202F? "
-        ),
-        e()(),
-        t(230, "div", 85)(231, "div", 82)(232, "ul")(233, "li")(234, "strong"),
-        n(235, "Gestion structur\xE9e :"),
-        e(),
-        n(
-          236,
-          " Encadrement des activit\xE9s principales et s\xE9paration des finances personnelles."
-        ),
-        e(),
-        t(237, "li")(238, "strong"),
-        n(239, "Avantages fiscaux :"),
-        e(),
-        n(
-          240,
-          " R\xE9duction des charges gr\xE2ce aux d\xE9ductions fiscales (management fees, amortissements, frais professionnels)."
-        ),
-        e(),
-        t(241, "li")(242, "strong"),
-        n(243, "Cr\xE9dibilit\xE9 accrue :"),
-        e(),
-        n(
-          244,
-          " La tenue d\u2019une comptabilit\xE9 rigoureuse et le d\xE9p\xF4t des comptes renforcent la confiance des partenaires financiers et commerciaux."
-        ),
-        e()()()()(),
-        t(245, "div", 78)(246, "h2", 86)(247, "button", 87),
-        n(
-          248,
-          " Quelles sont les obligations l\xE9gales et fiscales d\u2019une soci\xE9t\xE9 d\u2019exploitation\u202F? "
-        ),
-        e()(),
-        t(249, "div", 88)(250, "div", 82)(251, "ul")(252, "li")(253, "strong"),
-        n(254, "Comptabilit\xE9 :"),
-        e(),
-        n(
-          255,
-          " Respect du Plan Comptable Minimum Normalis\xE9 (PCMN) et tenue des comptes en partie double."
-        ),
-        e(),
-        t(256, "li")(257, "strong"),
-        n(258, "Fiscalit\xE9 :"),
-        e(),
-        n(
-          259,
-          " D\xE9claration TVA, paiement de l\u2019ISOC (imp\xF4t des soci\xE9t\xE9s), et autres obligations fiscales."
-        ),
-        e(),
-        t(260, "li")(261, "strong"),
-        n(262, "D\xE9p\xF4t des comptes annuels :"),
-        e(),
-        n(
-          263,
-          " Publication obligatoire des comptes aupr\xE8s de la Banque Nationale de Belgique pour garantir transparence et conformit\xE9."
-        ),
-        e()()()()(),
-        t(264, "div", 78)(265, "h2", 89)(266, "button", 90),
-        n(
-          267,
-          " En quoi consiste l\u2019optimisation fiscale d\u2019une soci\xE9t\xE9 d\u2019exploitation\u202F? "
-        ),
-        e()(),
-        t(268, "div", 91)(269, "div", 82)(270, "ul")(271, "li"),
-        n(
-          272,
-          "R\xE9duire vos charges fiscales en maximisant les d\xE9ductions disponibles, comme les management fees et les amortissements."
-        ),
-        e(),
-        t(273, "li"),
-        n(
-          274,
-          "Int\xE9grer les charges fiscales dans vos pr\xE9visions pour mieux g\xE9rer vos flux financiers."
-        ),
-        e(),
-        t(275, "li"),
-        n(
-          276,
-          "Exploiter les r\xE9gimes fiscaux sp\xE9cifiques pour am\xE9liorer votre rentabilit\xE9, tout en respectant strictement les normes l\xE9gales."
-        ),
-        e()()()()(),
-        t(277, "div", 78)(278, "h2", 92)(279, "button", 93),
-        n(
-          280,
-          " Comment une soci\xE9t\xE9 d\u2019exploitation peut-elle anticiper ses performances futures\u202F? "
-        ),
-        e()(),
-        t(281, "div", 94)(282, "div", 82),
-        n(
-          283,
-          " Gr\xE2ce \xE0 des situations pr\xE9visionnelles, qui s\u2019appuient sur : "
-        ),
-        t(284, "ul")(285, "li"),
-        n(
-          286,
-          "L\u2019analyse des bilans interm\xE9diaires pour identifier les tendances financi\xE8res."
-        ),
-        e(),
-        t(287, "li"),
-        n(
-          288,
-          "L\u2019\xE9laboration de projections pr\xE9cises qui anticipent les besoins en tr\xE9sorerie, les investissements, et les risques potentiels."
-        ),
-        e(),
-        t(289, "li"),
-        n(
-          290,
-          "La mise \xE0 jour r\xE9guli\xE8re du plan financier pour refl\xE9ter les \xE9volutions \xE9conomiques et sectorielles."
-        ),
-        e()()()()(),
-        t(291, "div", 78)(292, "h2", 95)(293, "button", 96),
-        n(
-          294,
-          " Quelle est la diff\xE9rence entre une soci\xE9t\xE9 d\u2019exploitation et une soci\xE9t\xE9 de patrimoine\u202F? "
-        ),
-        e()(),
-        t(295, "div", 97)(296, "div", 82),
-        n(
-          297,
-          " Une soci\xE9t\xE9 d\u2019exploitation est d\xE9di\xE9e \xE0 l\u2019activit\xE9 \xE9conomique (production, services), tandis qu\u2019une soci\xE9t\xE9 de patrimoine se concentre sur la gestion d\u2019actifs (immobiliers, placements financiers) et l\u2019optimisation des revenus personnels du dirigeant. "
-        ),
-        e()()(),
-        t(298, "div", 78)(299, "h2", 98)(300, "button", 99),
-        n(
-          301,
-          " Comment MFINANCES peut m\u2019aider avec ma soci\xE9t\xE9 d\u2019exploitation\u202F? "
-        ),
-        e()(),
-        t(302, "div", 100)(303, "div", 82),
-        n(304, " MFINANCES offre un accompagnement sur mesure comprenant : "),
-        t(305, "ul")(306, "li"),
-        n(
-          307,
-          "Gestion comptable rigoureuse et pr\xE9paration des bilans interm\xE9diaires."
-        ),
-        e(),
-        t(308, "li"),
-        n(
-          309,
-          "Projections financi\xE8res fiables pour anticiper les besoins et maximiser les opportunit\xE9s."
-        ),
-        e(),
-        t(310, "li"),
-        n(
-          311,
-          "Optimisation fiscale compl\xE8te pour r\xE9duire vos charges et am\xE9liorer votre tr\xE9sorerie."
-        ),
-        e(),
-        t(312, "li"),
-        n(
-          313,
-          "Conseil strat\xE9gique personnalis\xE9 pour aligner vos finances sur vos objectifs de croissance."
-        ),
-        e()()()()()()()()()()(),
-        t(314, "section", 101)(315, "div", 102)(316, "div", 26)(
-          317,
-          "div",
-          103
-        ),
-        l(318, "img", 104),
-        e(),
-        t(319, "div", 105)(320, "h2", 106),
-        n(321, " Vous avez une"),
-        l(322, "br"),
-        t(323, "span", 107),
-        n(324, "question sp\xE9cifique ?"),
-        e(),
-        n(325, ". "),
-        e(),
-        t(326, "p", 108),
-        n(
-          327,
-          " Contactez MFINANCES d\xE8s aujourd\u2019hui pour une consultation gratuite. "
-        ),
-        e(),
-        t(328, "a", 109),
-        n(329, " Contactez-nous "),
-        l(330, "i", 110),
-        e()()()()(),
-        l(331, "app-recommandation-profil"));
+          n(4, "Soci\xE9t\xE9 d'exploitation"),
+          e(),
+          t(5, "p", 3),
+          n(6, "Accueil > Societe d'exploitation"),
+          e()()()(),
+          t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
+          l(11, "app-sidebar"),
+          e(),
+          t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
+          n(15, " Soci\xE9t\xE9 d\u2019exploitation : Le moteur de votre "),
+          t(16, "span", 10),
+          n(17, " activit\xE9 professionnelle"),
+          e()(),
+          t(18, "div")(19, "p"),
+          n(
+            20,
+            "Une soci\xE9t\xE9 d\u2019exploitation constitue le pilier central de votre activit\xE9 professionnelle ou commerciale. Elle se concentre sur la cr\xE9ation de valeur \xE0 travers une activit\xE9 productive, qu\u2019il s\u2019agisse de prestations de services, de production ou d\u2019activit\xE9s intellectuelles dans le cadre d\u2019une profession lib\xE9rale."
+          ),
+          e(),
+          t(21, "p"),
+          n(
+            22,
+            "De plus, une soci\xE9t\xE9 d\u2019exploitation peut \xEAtre associ\xE9e \xE0 une soci\xE9t\xE9 de management ou de patrimoine afin de r\xE9pondre \xE0 des besoins compl\xE9mentaires, tels que l\u2019optimisation de la r\xE9mun\xE9ration du dirigeant ou la gestion d\u2019actifs personnels \xE0 long terme."
+          ),
+          e(),
+          l(23, "br"),
+          e(),
+          t(24, "div", 11)(25, "div", 12)(26, "button", 13),
+          O("click", function () {
+            return s.scrollToSection("targetSection");
+          }),
+          n(27, "D\xE9couvrez ce que vous gagnerez avec nous "),
+          l(28, "i", 14),
+          e()()(),
+          t(29, "div", 15),
+          l(30, "img", 16),
+          e(),
+          t(31, "div", 17)(32, "h1"),
+          n(33, "Ca veut dire quoi? "),
+          e(),
+          t(34, "div", 18),
+          l(35, "img", 19),
+          e(),
+          t(36, "div", 20)(37, "h3"),
+          n(38, "Comment interpr\xE9ter cela ?"),
+          e(),
+          t(39, "ul", 21)(40, "li", 22),
+          l(41, "i", 23),
+          t(42, "strong"),
+          n(43, " Une soci\xE9t\xE9 d\u2019exploitation :"),
+          e(),
+          l(44, "br"),
+          n(
+            45,
+            " Elle repr\xE9sente le c\u0153ur de votre activit\xE9, l\u2019endroit o\xF9 sont concentr\xE9s tous les efforts pour maximiser la rentabilit\xE9 de votre entreprise. "
+          ),
+          e(),
+          t(46, "li"),
+          l(47, "i", 23),
+          t(48, "strong"),
+          n(49, "Une soci\xE9t\xE9 de patrimoine :"),
+          e(),
+          l(50, "br"),
+          n(
+            51,
+            ' Elle vous permet de "sortir un pion de l\u2019\xE9chiquier" de l\u2019activit\xE9 commerciale pour l\u2019utiliser dans des projets personnels ou patrimoniaux, comme la gestion d\u2019actifs personnels \xE0 long terme. '
+          ),
+          e()()()()()()()()(),
+          t(52, "section", 24)(53, "div", 25)(54, "div", 2)(55, "div", 26)(
+            56,
+            "div",
+            27
+          )(57, "div", 28)(
+            58,
+            "div",
+            29
+          )(59, "h1"),
+          n(60, "Besoins sp\xE9cifiques des "),
+          l(61, "br"),
+          t(62, "span", 30),
+          n(63, " Soci\xE9t\xE9s d'Exploitations "),
+          e()()(),
+          l(64, "div", 31),
+          t(65, "div", 32)(66, "div", 33)(67, "div", 34)(68, "div", 35),
+          l(69, "img", 36),
+          e()(),
+          t(70, "div", 37)(71, "h2"),
+          n(72, "Une gestion comptable et financi\xE8re rigoureuse"),
+          e(),
+          t(73, "ul")(74, "li"),
+          n(
+            75,
+            "Une gestion comptable et financi\xE8re rigoureuse les soci\xE9t\xE9s d\u2019exploitation, avec leur volume d\u2019activit\xE9 \xE9lev\xE9 et leurs d\xE9penses vari\xE9es, n\xE9cessitent une gestion comptable pr\xE9cise et proactive."
+          ),
+          e(),
+          t(76, "li")(77, "strong"),
+          n(78, "Bilans et situations financi\xE8res interm\xE9diaires :"),
+          e(),
+          n(
+            79,
+            " Ces documents vous permettent de suivre l\u2019\xE9volution de votre entreprise \xE0 des moments cl\xE9s et de justifier votre sant\xE9 financi\xE8re aupr\xE8s des banques et des investisseurs."
+          ),
+          e(),
+          t(80, "li")(81, "strong"),
+          n(82, "Situations pr\xE9visionnelles : "),
+          e(),
+          n(
+            83,
+            " Anticiper l\u2019avenir devient indispensable. Les projections financi\xE8res vous aident \xE0 planifier vos investissements strat\xE9giques et \xE0 \xE9viter les impr\xE9vus."
+          ),
+          e()()()(),
+          t(84, "div", 38)(85, "div", 34)(86, "div", 39),
+          l(87, "img", 40),
+          e()(),
+          t(88, "div", 37)(89, "h2"),
+          n(90, "Accompagnement strat\xE9gique personnalis\xE9"),
+          e(),
+          t(91, "ul")(92, "li")(93, "strong"),
+          n(94, "Tableaux de bord personnalis\xE9s :"),
+          e(),
+          n(
+            95,
+            " Nos outils sur mesure vous permettent de suivre vos indicateurs cl\xE9s (rentabilit\xE9, co\xFBts, tr\xE9sorerie)."
+          ),
+          e(),
+          t(96, "li")(97, "strong"),
+          n(98, "Conseil strat\xE9gique :"),
+          e(),
+          n(
+            99,
+            " Nous vous accompagnons dans vos d\xE9cisions cruciales, en alignant vos finances avec vos objectifs commerciaux."
+          ),
+          e(),
+          t(100, "li")(101, "strong"),
+          n(102, "Support administratif continu :"),
+          e(),
+          n(
+            103,
+            " Nous collectons et organisons vos pi\xE8ces comptables pour garantir une gestion rigoureuse et \xE9viter toute perte fiscale."
+          ),
+          e()()()(),
+          t(104, "div", 41)(105, "div", 34)(106, "div", 39),
+          l(107, "img", 42),
+          e()(),
+          t(108, "div", 37)(109, "h2"),
+          n(110, "Une optimisation fiscale intelligente"),
+          e(),
+          t(111, "ul")(112, "li")(113, "strong"),
+          n(114, "Imp\xF4t des soci\xE9t\xE9s (ISOC) :"),
+          e(),
+          n(
+            115,
+            " Une gestion proactive est essentielle pour optimiser ces d\xE9penses et pr\xE9server votre tr\xE9sorerie."
+          ),
+          e(),
+          t(116, "li")(117, "strong"),
+          n(118, "Maximisation des d\xE9ductions fiscales :"),
+          e(),
+          n(
+            119,
+            " Profitez des possibilit\xE9s offertes par les management fees, amortissements, et frais professionnels pour r\xE9duire vos imp\xF4ts."
+          ),
+          e(),
+          t(120, "li")(121, "strong"),
+          n(122, "Int\xE9gration des charges fiscales dans vos pr\xE9visions :"),
+          e(),
+          n(
+            123,
+            " Cela vous permet de mieux g\xE9rer vos flux de tr\xE9sorerie."
+          ),
+          e(),
+          t(124, "li")(125, "strong"),
+          n(126, "Avantages fiscaux : "),
+          e(),
+          n(
+            127,
+            " B\xE9n\xE9ficiez d\u2019une strat\xE9gie fiscale sur mesure pour optimiser vos finances \xE0 long terme."
+          ),
+          e()()()()()()(),
+          t(128, "div", 43)(129, "div", 44),
+          l(130, "img", 45),
+          e()()()()()(),
+          t(131, "section")(132, "div", 46)(133, "div", 2)(134, "div", 26)(
+            135,
+            "div",
+            47
+          )(136, "div", 48),
+          l(137, "img", 49),
+          t(138, "div", 50)(139, "div", 51)(140, "p"),
+          n(
+            141,
+            "R\xE9sultat : Une r\xE9duction de 20\u202F% de son ISOC, permettant au client de r\xE9investir ces \xE9conomies dans le d\xE9veloppement de son activit\xE9. "
+          ),
+          e()()()()(),
+          t(142, "div", 52)(143, "div", 53)(144, "h2"),
+          n(145, "Comment MFINANCES optimise la rentabilit\xE9 d\u2019une PME "),
+          e(),
+          t(146, "p"),
+          n(
+            147,
+            "Un de nos clients, dirigeant une PME dans le secteur des services, faisait face \xE0 une fiscalit\xE9 lourde qui freinait sa capacit\xE9 d\u2019investissement. En collaborant avec MFINANCES, nous avons pu :"
+          ),
+          e()(),
+          l(148, "div", 54),
+          t(149, "div", 55)(150, "ul")(151, "li"),
+          l(152, "img", 56),
+          n(
+            153,
+            " Mettre en place une soci\xE9t\xE9 de management et de patrimoine pour structurer et optimiser ses revenus de mani\xE8re efficace. "
+          ),
+          e(),
+          t(154, "li"),
+          l(155, "img", 56),
+          n(
+            156,
+            "Optimiser les d\xE9ductions fiscales, notamment par des amortissements strat\xE9giques et des management fees, permettant ainsi une r\xE9duction de la charge fiscale. "
+          ),
+          e(),
+          t(157, "li"),
+          l(158, "img", 56),
+          n(
+            159,
+            " Ajust\xE9 son plan financier pour anticiper ses charges fiscales et mieux g\xE9rer ses flux de tr\xE9sorerie. "
+          ),
+          e()()(),
+          l(160, "div", 57),
+          t(161, "div", 58)(162, "a", 59),
+          n(163, "Contactez-Nous"),
+          l(164, "i", 60),
+          e()()()()()()(),
+          t(165, "section")(166, "div", 61)(167, "div", 2)(168, "div", 26)(
+            169,
+            "div",
+            62
+          )(170, "div", 63)(
+            171,
+            "div",
+            64
+          )(172, "h2"),
+          n(173, "Nos points distinctif"),
+          e()(),
+          t(174, "div", 65)(175, "div", 5)(176, "div")(177, "div", 66)(178, "p"),
+          l(179, "img", 67),
+          t(180, "strong"),
+          n(181, "Une expertise compl\xE8te :"),
+          e(),
+          n(
+            182,
+            " Comptabilit\xE9, fiscalit\xE9, tr\xE9sorerie et strat\xE9gie. Nous couvrons tous les aspects essentiels pour structurer et optimiser votre activit\xE9."
+          ),
+          e()(),
+          l(183, "div", 31),
+          t(184, "div", 66)(185, "p"),
+          l(186, "img", 67),
+          t(187, "strong"),
+          n(188, "Une vision proactive :"),
+          e(),
+          n(
+            189,
+            " Gr\xE2ce \xE0 nos bilans interm\xE9diaires et projections financi\xE8res, nous vous aidons \xE0 anticiper les \xE9volutions et \xE0 naviguer sereinement dans un environnement en constante mutation."
+          ),
+          e()(),
+          l(190, "div", 31),
+          t(191, "div", 66)(192, "p"),
+          l(193, "img", 67),
+          t(194, "strong"),
+          n(195, "Un accompagnement personnalis\xE9 :"),
+          e(),
+          n(
+            196,
+            "Vous b\xE9n\xE9ficiez d'un interlocuteur d\xE9di\xE9 qui prend le temps de comprendre vos sp\xE9cificit\xE9s et d\u2019adapter nos solutions \xE0 vos besoins."
+          ),
+          e()()()()(),
+          t(197, "div", 68)(198, "a", 69),
+          n(199, "Contactez-nous "),
+          l(200, "i", 14),
+          e()()()(),
+          t(201, "div", 70)(202, "div", 71),
+          l(203, "img", 72),
+          e()()()()()(),
+          t(204, "section")(205, "div", 73)(206, "div", 2)(207, "div", 5)(
+            208,
+            "div",
+            74
+          )(209, "div", 75)(210, "h1", 3),
+          n(211, "FAQ : "),
+          l(212, "br"),
+          t(213, "span", 30),
+          n(214, "Soci\xE9t\xE9 d\u2019exploitation en Belgique"),
+          e()()()()(),
+          l(215, "div", 76),
+          t(216, "div", 26)(217, "div")(218, "div", 77)(219, "div", 78)(
+            220,
+            "h2",
+            79
+          )(221, "button", 80),
+          n(
+            222,
+            " Qu\u2019est-ce qu\u2019une soci\xE9t\xE9 d\u2019exploitation\u202F? "
+          ),
+          e()(),
+          t(223, "div", 81)(224, "div", 82),
+          n(
+            225,
+            " Une soci\xE9t\xE9 d\u2019exploitation est une structure juridique d\xE9di\xE9e \xE0 la gestion et au d\xE9veloppement d\u2019une activit\xE9 professionnelle ou commerciale. Elle regroupe les ressources n\xE9cessaires \xE0 la cr\xE9ation de valeur : personnel, finances, et \xE9quipements. Elle est utilis\xE9e pour des activit\xE9s vari\xE9es comme les prestations de services, la production, ou les professions lib\xE9rales. "
+          ),
+          e()()(),
+          t(226, "div", 78)(227, "h2", 83)(228, "button", 84),
+          n(
+            229,
+            " Quels sont les avantages d\u2019une soci\xE9t\xE9 d\u2019exploitation en Belgique\u202F? "
+          ),
+          e()(),
+          t(230, "div", 85)(231, "div", 82)(232, "ul")(233, "li")(234, "strong"),
+          n(235, "Gestion structur\xE9e :"),
+          e(),
+          n(
+            236,
+            " Encadrement des activit\xE9s principales et s\xE9paration des finances personnelles."
+          ),
+          e(),
+          t(237, "li")(238, "strong"),
+          n(239, "Avantages fiscaux :"),
+          e(),
+          n(
+            240,
+            " R\xE9duction des charges gr\xE2ce aux d\xE9ductions fiscales (management fees, amortissements, frais professionnels)."
+          ),
+          e(),
+          t(241, "li")(242, "strong"),
+          n(243, "Cr\xE9dibilit\xE9 accrue :"),
+          e(),
+          n(
+            244,
+            " La tenue d\u2019une comptabilit\xE9 rigoureuse et le d\xE9p\xF4t des comptes renforcent la confiance des partenaires financiers et commerciaux."
+          ),
+          e()()()()(),
+          t(245, "div", 78)(246, "h2", 86)(247, "button", 87),
+          n(
+            248,
+            " Quelles sont les obligations l\xE9gales et fiscales d\u2019une soci\xE9t\xE9 d\u2019exploitation\u202F? "
+          ),
+          e()(),
+          t(249, "div", 88)(250, "div", 82)(251, "ul")(252, "li")(253, "strong"),
+          n(254, "Comptabilit\xE9 :"),
+          e(),
+          n(
+            255,
+            " Respect du Plan Comptable Minimum Normalis\xE9 (PCMN) et tenue des comptes en partie double."
+          ),
+          e(),
+          t(256, "li")(257, "strong"),
+          n(258, "Fiscalit\xE9 :"),
+          e(),
+          n(
+            259,
+            " D\xE9claration TVA, paiement de l\u2019ISOC (imp\xF4t des soci\xE9t\xE9s), et autres obligations fiscales."
+          ),
+          e(),
+          t(260, "li")(261, "strong"),
+          n(262, "D\xE9p\xF4t des comptes annuels :"),
+          e(),
+          n(
+            263,
+            " Publication obligatoire des comptes aupr\xE8s de la Banque Nationale de Belgique pour garantir transparence et conformit\xE9."
+          ),
+          e()()()()(),
+          t(264, "div", 78)(265, "h2", 89)(266, "button", 90),
+          n(
+            267,
+            " En quoi consiste l\u2019optimisation fiscale d\u2019une soci\xE9t\xE9 d\u2019exploitation\u202F? "
+          ),
+          e()(),
+          t(268, "div", 91)(269, "div", 82)(270, "ul")(271, "li"),
+          n(
+            272,
+            "R\xE9duire vos charges fiscales en maximisant les d\xE9ductions disponibles, comme les management fees et les amortissements."
+          ),
+          e(),
+          t(273, "li"),
+          n(
+            274,
+            "Int\xE9grer les charges fiscales dans vos pr\xE9visions pour mieux g\xE9rer vos flux financiers."
+          ),
+          e(),
+          t(275, "li"),
+          n(
+            276,
+            "Exploiter les r\xE9gimes fiscaux sp\xE9cifiques pour am\xE9liorer votre rentabilit\xE9, tout en respectant strictement les normes l\xE9gales."
+          ),
+          e()()()()(),
+          t(277, "div", 78)(278, "h2", 92)(279, "button", 93),
+          n(
+            280,
+            " Comment une soci\xE9t\xE9 d\u2019exploitation peut-elle anticiper ses performances futures\u202F? "
+          ),
+          e()(),
+          t(281, "div", 94)(282, "div", 82),
+          n(
+            283,
+            " Gr\xE2ce \xE0 des situations pr\xE9visionnelles, qui s\u2019appuient sur : "
+          ),
+          t(284, "ul")(285, "li"),
+          n(
+            286,
+            "L\u2019analyse des bilans interm\xE9diaires pour identifier les tendances financi\xE8res."
+          ),
+          e(),
+          t(287, "li"),
+          n(
+            288,
+            "L\u2019\xE9laboration de projections pr\xE9cises qui anticipent les besoins en tr\xE9sorerie, les investissements, et les risques potentiels."
+          ),
+          e(),
+          t(289, "li"),
+          n(
+            290,
+            "La mise \xE0 jour r\xE9guli\xE8re du plan financier pour refl\xE9ter les \xE9volutions \xE9conomiques et sectorielles."
+          ),
+          e()()()()(),
+          t(291, "div", 78)(292, "h2", 95)(293, "button", 96),
+          n(
+            294,
+            " Quelle est la diff\xE9rence entre une soci\xE9t\xE9 d\u2019exploitation et une soci\xE9t\xE9 de patrimoine\u202F? "
+          ),
+          e()(),
+          t(295, "div", 97)(296, "div", 82),
+          n(
+            297,
+            " Une soci\xE9t\xE9 d\u2019exploitation est d\xE9di\xE9e \xE0 l\u2019activit\xE9 \xE9conomique (production, services), tandis qu\u2019une soci\xE9t\xE9 de patrimoine se concentre sur la gestion d\u2019actifs (immobiliers, placements financiers) et l\u2019optimisation des revenus personnels du dirigeant. "
+          ),
+          e()()(),
+          t(298, "div", 78)(299, "h2", 98)(300, "button", 99),
+          n(
+            301,
+            " Comment MFINANCES peut m\u2019aider avec ma soci\xE9t\xE9 d\u2019exploitation\u202F? "
+          ),
+          e()(),
+          t(302, "div", 100)(303, "div", 82),
+          n(304, " MFINANCES offre un accompagnement sur mesure comprenant : "),
+          t(305, "ul")(306, "li"),
+          n(
+            307,
+            "Gestion comptable rigoureuse et pr\xE9paration des bilans interm\xE9diaires."
+          ),
+          e(),
+          t(308, "li"),
+          n(
+            309,
+            "Projections financi\xE8res fiables pour anticiper les besoins et maximiser les opportunit\xE9s."
+          ),
+          e(),
+          t(310, "li"),
+          n(
+            311,
+            "Optimisation fiscale compl\xE8te pour r\xE9duire vos charges et am\xE9liorer votre tr\xE9sorerie."
+          ),
+          e(),
+          t(312, "li"),
+          n(
+            313,
+            "Conseil strat\xE9gique personnalis\xE9 pour aligner vos finances sur vos objectifs de croissance."
+          ),
+          e()()()()()()()()()()(),
+          t(314, "section", 101)(315, "div", 102)(316, "div", 26)(
+            317,
+            "div",
+            103
+          ),
+          l(318, "img", 104),
+          e(),
+          t(319, "div", 105)(320, "h2", 106),
+          n(321, " Vous avez une"),
+          l(322, "br"),
+          t(323, "span", 107),
+          n(324, "question sp\xE9cifique ?"),
+          e(),
+          n(325, ". "),
+          e(),
+          t(326, "p", 108),
+          n(
+            327,
+            " Contactez MFINANCES d\xE8s aujourd\u2019hui pour une consultation gratuite. "
+          ),
+          e(),
+          t(328, "a", 109),
+          n(329, " Contactez-nous "),
+          l(330, "i", 110),
+          e()()()()(),
+          l(331, "app-recommandation-profil"));
     },
     dependencies: [oe, se],
     styles: [
@@ -8024,455 +8024,455 @@ var It = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1"),
-        n(4, "Commer\xE7ants & HORECA"),
-        e(),
-        t(5, "p", 3),
-        n(6, "Accueil > Commer\xE7ants & HORECA"),
-        e()()()(),
-        t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
-        l(11, "app-sidebar"),
-        e(),
-        t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
-        n(
-          15,
-          " Ma\xEEtrisez vos finances pour garantir la p\xE9rennit\xE9 de "
-        ),
-        t(16, "span", 10),
-        n(17, " votre activit\xE9 "),
-        e()(),
-        t(18, "div")(19, "p"),
-        n(
-          20,
-          "En tant que commer\xE7ant ou acteur du secteur HORECA (h\xF4tellerie, restauration, caf\xE9s), vous jonglez quotidiennement avec de multiples responsabilit\xE9s : assurer une exp\xE9rience client de qualit\xE9, ma\xEEtriser vos co\xFBts et g\xE9rer vos obligations comptables. Ces d\xE9fis sont d\u2019autant plus complexes que vos marges sont souvent r\xE9duites et que vos op\xE9rations impliquent de nombreuses variables. "
-        ),
-        e(),
-        t(21, "p"),
-        n(
-          22,
-          "Chez MFINANCES, nous comprenons vos besoins sp\xE9cifiques et vous proposons un accompagnement personnalis\xE9 pour simplifier la gestion de vos finances, optimiser vos marges, digitaliser vos processus et garantir votre conformit\xE9 l\xE9gale. "
-        ),
-        e(),
-        l(23, "br"),
-        e(),
-        t(24, "div", 11)(25, "div", 12)(26, "button", 13),
-        O("click", function () {
-          return s.scrollToSection("targetSection");
-        }),
-        n(27, "D\xE9couvrez ce que vous gagnerez avec nous "),
-        l(28, "i", 14),
-        e()()(),
-        t(29, "div", 15),
-        l(30, "img", 16),
-        e(),
-        t(31, "div", 17)(32, "h1"),
-        n(
-          33,
-          "Transition num\xE9rique : Digitalisez vos processus pour un service client fluide"
-        ),
-        e(),
-        t(34, "div", 18),
-        l(35, "img", 19),
-        e(),
-        t(36, "div", 20)(37, "p"),
-        n(
-          38,
-          "\xC0 l\u2019\xE8re du num\xE9rique, offrir une exp\xE9rience client omnicanale et fluide est un facteur cl\xE9 de diff\xE9renciation."
-        ),
-        e(),
-        t(39, "strong"),
-        n(40, "Strat\xE9gies omnicanales :"),
-        e(),
-        t(41, "ul", 21)(42, "li"),
-        l(43, "i", 22),
-        n(
-          44,
-          " Connectez vos points de contact physiques et num\xE9riques pour offrir une exp\xE9rience coh\xE9rente et personnalis\xE9e. "
-        ),
-        e(),
-        t(45, "li"),
-        l(46, "i", 22),
-        n(
-          47,
-          " Synchronisez vos stocks et vos prix sur tous vos canaux pour \xE9viter les incoh\xE9rences et am\xE9liorer la satisfaction client. "
-        ),
-        e()(),
-        t(48, "strong"),
-        n(49, "Outils technologiques :"),
-        e(),
-        t(50, "ul", 21)(51, "li"),
-        l(52, "i", 22),
-        n(
-          53,
-          " Int\xE9grez des syst\xE8mes ERP pour g\xE9rer vos stocks, vos commandes et vos donn\xE9es clients en temps r\xE9el. "
-        ),
-        e(),
-        t(54, "li"),
-        l(55, "i", 22),
-        n(
-          56,
-          " Utilisez des CRM pour renforcer la fid\xE9lit\xE9 client gr\xE2ce \xE0 des interactions personnalis\xE9es. "
-        ),
-        e()()()()()()()()(),
-        t(57, "section", 23)(58, "div", 24)(59, "div", 2)(60, "div", 25)(
-          61,
-          "div",
-          26
-        )(62, "div", 27)(
-          63,
-          "div",
-          28
-        )(64, "h1"),
-        n(65, "Optimisation de la tr\xE9sorerie : Gardez le contr\xF4le sur "),
-        l(66, "br"),
-        t(67, "span", 29),
-        n(68, "vos finances"),
-        e()(),
-        t(69, "p"),
-        n(
-          70,
-          "Une gestion rigoureuse de la tr\xE9sorerie vous permet de r\xE9pondre aux impr\xE9vus et de financer vos projets de d\xE9veloppement sans compromettre votre stabilit\xE9 financi\xE8re. "
-        ),
-        e()(),
-        l(71, "div", 30),
-        t(72, "div", 31)(73, "div", 32)(74, "div", 33)(75, "div", 34),
-        l(76, "img", 35),
-        e()(),
-        t(77, "div", 36)(78, "h2"),
-        n(79, "Pr\xE9visions et planification"),
-        e(),
-        t(80, "ul")(81, "li"),
-        n(
-          82,
-          "\xC9laborez des sc\xE9narios financiers pour anticiper vos besoins et \xE9viter les p\xE9nuries de liquidit\xE9s."
-        ),
-        e(),
-        t(83, "li"),
-        n(
-          84,
-          "Analysez vos flux de tr\xE9sorerie pour identifier les gaspillages et r\xE9duire les co\xFBts superflus."
-        ),
-        e()()()(),
-        t(85, "div", 37)(86, "div", 33)(87, "div", 34),
-        l(88, "img", 38),
-        e()(),
-        t(89, "div", 36)(90, "h2"),
-        n(91, "Solutions de financement adapt\xE9es"),
-        e(),
-        t(92, "ul")(93, "li")(94, "strong"),
-        n(95, "Pr\xEAts bancaires :"),
-        e(),
-        n(
-          96,
-          " Id\xE9al pour financer des projets \xE0 long terme tout en pr\xE9servant votre ind\xE9pendance."
-        ),
-        e(),
-        t(97, "li")(98, "strong"),
-        n(99, "Leasing :"),
-        e(),
-        n(
-          100,
-          " Une option flexible pour acqu\xE9rir des \xE9quipements sans grever votre tr\xE9sorerie."
-        ),
-        e(),
-        t(101, "li")(102, "strong"),
-        n(103, "Franchise en capital :"),
-        e(),
-        n(
-          104,
-          " Payez uniquement les int\xE9r\xEAts pendant une p\xE9riode initiale pour pr\xE9server vos liquidit\xE9s."
-        ),
-        e()()()()()()(),
-        t(105, "div", 39)(106, "div", 40),
-        l(107, "img", 41),
-        e()()()()()(),
-        t(108, "section")(109, "div", 42)(110, "div", 2)(111, "div", 25)(
-          112,
-          "div",
-          43
-        )(113, "div", 44),
-        l(114, "img", 45),
-        e()(),
-        t(115, "div", 46)(116, "div", 47)(117, "div", 36)(118, "h3"),
-        n(
-          119,
-          "Gestion des stocks : Lib\xE9rez des liquidit\xE9s et \xE9vitez les pertes "
-        ),
-        e(),
-        t(120, "p"),
-        n(
-          121,
-          "Un stock mal g\xE9r\xE9 peut rapidement immobiliser des fonds et g\xE9n\xE9rer des pertes. Une gestion efficace vous permet de transformer vos stocks en liquidit\xE9s tout en assurant la satisfaction client. "
-        ),
-        e()(),
-        t(122, "div", 48)(123, "div", 5)(124, "div")(125, "div", 49)(126, "p"),
-        l(127, "img", 50),
-        t(128, "strong"),
-        n(129, "Strat\xE9gies efficaces :"),
-        e()(),
-        t(130, "ul")(131, "li"),
-        n(
-          132,
-          "Favorisez les produits \xE0 forte rotation et lancez des promotions pour \xE9couler les invendus."
-        ),
-        e(),
-        t(133, "li"),
-        n(
-          134,
-          "Utilisez des logiciels de gestion pour suivre vos stocks en temps r\xE9el et anticiper les besoins."
-        ),
-        e()()(),
-        l(135, "div", 30),
-        t(136, "div", 49)(137, "p"),
-        l(138, "img", 50),
-        t(139, "strong"),
-        n(140, "M\xE9thodes adapt\xE9es :"),
-        e()(),
-        t(141, "ul")(142, "li")(143, "strong"),
-        n(144, "FIFO (First-In, First-Out) :"),
-        e(),
-        n(145, " Minimisez les pertes sur les produits p\xE9rissables."),
-        e(),
-        t(146, "li")(147, "strong"),
-        n(148, "JIT (Just-In-Time) :"),
-        e(),
-        n(
-          149,
-          " R\xE9duisez les stocks inutiles en commandant uniquement en fonction des besoins imm\xE9diats."
-        ),
-        e()()()()()(),
-        t(150, "div", 51)(151, "a", 52),
-        n(152, "Contactez-nous "),
-        l(153, "i", 14),
-        e()()()()()()()(),
-        t(154, "section", 53)(155, "div", 2)(156, "div", 25)(157, "div", 54)(
-          158,
-          "h2",
-          55
-        ),
-        n(159, " Les d\xE9fis sp\xE9cifiques de "),
-        l(160, "br"),
-        t(161, "span", 56),
-        n(162, " votre secteur "),
-        e()()(),
-        t(163, "div", 57)(164, "div", 58)(165, "div", 59),
-        l(166, "img", 60),
-        e(),
-        t(167, "div")(168, "h5", 61),
-        n(169, "Expertise sp\xE9cifique : "),
-        e(),
-        t(170, "p", 62),
-        n(
-          171,
-          "Une exp\xE9rience approfondie dans la gestion des structures collaboratives. "
-        ),
-        e()()(),
-        t(172, "div", 63)(173, "div", 59),
-        l(174, "img", 64),
-        e(),
-        t(175, "div")(176, "h5", 61),
-        n(177, "Solutions personnalis\xE9es :"),
-        e(),
-        t(178, "p", 62),
-        n(179, "Des outils et services adapt\xE9s aux besoins de votre SCM. "),
-        e()()(),
-        t(180, "div", 65)(181, "div", 59),
-        l(182, "img", 66),
-        e(),
-        t(183, "div")(184, "h5", 61),
-        n(185, "Cash Collecting int\xE9gr\xE9 :"),
-        e(),
-        t(186, "p", 62),
-        n(
-          187,
-          "Une gestion transparente et impartiale des cotisations, pour simplifier les relations entre membres. "
-        ),
-        e()()()()()()(),
-        t(188, "section", 67)(189, "div", 2)(190, "div", 5)(191, "div", 68)(
-          192,
-          "div"
-        )(193, "h2", 69),
-        n(194, "Les solutions MFINANCES pour votre"),
-        l(195, "br"),
-        t(196, "span", 70),
-        n(197, "activit\xE9"),
-        e()()()(),
-        t(198, "div", 71)(199, "div", 72)(200, "div", 73),
-        l(201, "img", 74)(202, "div", 30),
-        t(203, "h2"),
-        n(204, "Accompagnement comptable et fiscal personnalis\xE9"),
-        e(),
-        t(205, "p"),
-        n(
-          206,
-          " Gestion compl\xE8te de votre comptabilit\xE9 et respect des obligations l\xE9gales. Calcul et optimisation de la TVA en fonction des prestations (vente \xE0 emporter, sur place, h\xE9bergement). "
-        ),
-        e(),
-        l(207, "div", 30),
-        e()()(),
-        t(208, "div", 71)(209, "div", 72)(210, "div", 73),
-        l(211, "img", 75)(212, "div", 30),
-        t(213, "h2"),
-        n(214, "Analyse des co\xFBts et des performances"),
-        e(),
-        t(215, "p"),
-        n(
-          216,
-          " Calcul d\xE9taill\xE9 des co\xFBts alimentaires, des prix de revient et des marges pour chaque produit ou service. Identification des opportunit\xE9s pour r\xE9duire vos co\xFBts fixes et variables. "
-        ),
-        e(),
-        l(217, "div", 30),
-        e()()(),
-        t(218, "div", 76)(219, "div", 72)(220, "div", 73),
-        l(221, "img", 77)(222, "div", 30),
-        t(223, "h2"),
-        n(224, "Outils digitaux pour une gestion simplifi\xE9e"),
-        e(),
-        t(225, "p"),
-        n(
-          226,
-          " Int\xE9gration de votre syst\xE8me de caisse avec un logiciel comptable pour un suivi en temps r\xE9el. Automatisation des rapports financiers pour une gestion simplifi\xE9e et sans erreurs. "
-        ),
-        e(),
-        l(227, "div", 30),
-        e()()()()()(),
-        t(228, "section", 78)(229, "div", 79)(230, "h1", 80),
-        n(231, "Exemples Concrets : R\xE9sultats Tangibles avec MFINANCES"),
-        e(),
-        t(232, "div", 81)(233, "div", 82)(234, "div", 83)(235, "h2", 84),
-        n(236, "Un Restaurant HORECA"),
-        e(),
-        t(237, "p", 85)(238, "strong"),
-        n(239, "Probl\xE8me :"),
-        e(),
-        n(
-          240,
-          " Stockage excessif entra\xEEnant des co\xFBts \xE9lev\xE9s et des invendus fr\xE9quents."
-        ),
-        e(),
-        t(241, "p", 86)(242, "strong"),
-        n(243, "Solution :"),
-        e(),
-        n(
-          244,
-          " Adoption d\u2019une gestion en flux tendu pour ajuster les commandes aux besoins r\xE9els."
-        ),
-        e(),
-        t(245, "p", 87)(246, "strong"),
-        n(247, "R\xE9sultat :"),
-        e(),
-        n(
-          248,
-          " R\xE9duction de 30 % des co\xFBts de stockage et am\xE9lioration significative de la tr\xE9sorerie."
-        ),
-        e()()(),
-        t(249, "div", 82)(250, "div", 83)(251, "h2", 84),
-        n(252, "Un Magasin de V\xEAtements"),
-        e(),
-        t(253, "p", 85)(254, "strong"),
-        n(255, "Probl\xE8me :"),
-        e(),
-        n(
-          256,
-          " Accumulation de stocks sur des produits \xE0 faible rotation."
-        ),
-        e(),
-        t(257, "p", 86)(258, "strong"),
-        n(259, "Solution :"),
-        e(),
-        n(
-          260,
-          " Analyse des ventes pour prioriser les articles populaires et lancement de promotions sur les stocks dormants."
-        ),
-        e(),
-        t(261, "p", 87)(262, "strong"),
-        n(263, "R\xE9sultat :"),
-        e(),
-        n(
-          264,
-          " Augmentation de 15 % du taux de rotation des stocks et 20 % de liquidit\xE9s disponibles suppl\xE9mentaires."
-        ),
-        e()()()()()(),
-        t(265, "section")(266, "div", 42)(267, "div", 2)(268, "div", 25)(
-          269,
-          "div",
-          46
-        )(270, "div", 47)(
-          271,
-          "div",
-          36
-        )(272, "h3"),
-        n(273, "Pourquoi choisir MFINANCES pour votre activit\xE9 ?"),
-        e(),
-        t(274, "p"),
-        n(
-          275,
-          "Des solutions sur mesure pour r\xE9pondre aux d\xE9fis sp\xE9cifiques de votre secteur et accompagner votre croissance."
-        ),
-        e()(),
-        t(276, "div", 48)(277, "div", 5)(278, "div")(279, "div", 49)(280, "p"),
-        l(281, "img", 50),
-        t(282, "strong"),
-        n(283, "Une expertise sectorielle reconnue :"),
-        e()(),
-        t(284, "ul")(285, "li"),
-        n(
-          286,
-          "Des solutions adapt\xE9es aux r\xE9alit\xE9s du secteur HORECA et du commerce en Belgique."
-        ),
-        e()()(),
-        l(287, "div", 30),
-        t(288, "div", 49)(289, "p"),
-        l(290, "img", 50),
-        t(291, "strong"),
-        n(292, "Des outils et un accompagnement cl\xE9 en main :"),
-        e()(),
-        t(293, "ul")(294, "li"),
-        n(
-          295,
-          "Mise en place de logiciels, tableaux de bord et syst\xE8mes de suivi adapt\xE9s \xE0 votre activit\xE9."
-        ),
-        e()()(),
-        l(296, "div", 30),
-        t(297, "div", 49)(298, "p"),
-        l(299, "img", 50),
-        t(300, "strong"),
-        n(301, "Un partenaire de confiance pour votre r\xE9ussite :"),
-        e()(),
-        t(302, "ul")(303, "li"),
-        n(
-          304,
-          "Un suivi proactif et des conseils sur mesure pour s\xE9curiser vos marges et anticiper vos besoins financiers."
-        ),
-        e()()()()()(),
-        t(305, "div", 51)(306, "a", 52),
-        n(307, "Contactez-nous "),
-        l(308, "i", 14),
-        e()()()(),
-        t(309, "div", 43)(310, "div", 44),
-        l(311, "img", 88),
-        e()()()()()(),
-        t(312, "section", 89)(313, "div", 90)(314, "div", 25)(315, "div", 91),
-        l(316, "img", 92),
-        e(),
-        t(317, "div", 93)(318, "h2", 94),
-        n(319, " Transformez vos "),
-        l(320, "br"),
-        t(321, "span", 95),
-        n(322, "d\xE9fis en opportunit\xE9s"),
-        e(),
-        n(323, ". "),
-        e(),
-        t(324, "p", 96),
-        n(
-          325,
-          " Contactez-nous pour un diagnostic gratuit et d\xE9couvrez comment MFINANCES peut vous aider \xE0 optimiser vos marges, digitaliser vos processus et lib\xE9rer votre tr\xE9sorerie. "
-        ),
-        e(),
-        t(326, "a", 97),
-        n(327, " Contactez-nous "),
-        l(328, "i", 98),
-        e()()()()(),
-        l(329, "app-recommandation-profil"));
+          n(4, "Commer\xE7ants & HORECA"),
+          e(),
+          t(5, "p", 3),
+          n(6, "Accueil > Commer\xE7ants & HORECA"),
+          e()()()(),
+          t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
+          l(11, "app-sidebar"),
+          e(),
+          t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
+          n(
+            15,
+            " Ma\xEEtrisez vos finances pour garantir la p\xE9rennit\xE9 de "
+          ),
+          t(16, "span", 10),
+          n(17, " votre activit\xE9 "),
+          e()(),
+          t(18, "div")(19, "p"),
+          n(
+            20,
+            "En tant que commer\xE7ant ou acteur du secteur HORECA (h\xF4tellerie, restauration, caf\xE9s), vous jonglez quotidiennement avec de multiples responsabilit\xE9s : assurer une exp\xE9rience client de qualit\xE9, ma\xEEtriser vos co\xFBts et g\xE9rer vos obligations comptables. Ces d\xE9fis sont d\u2019autant plus complexes que vos marges sont souvent r\xE9duites et que vos op\xE9rations impliquent de nombreuses variables. "
+          ),
+          e(),
+          t(21, "p"),
+          n(
+            22,
+            "Chez MFINANCES, nous comprenons vos besoins sp\xE9cifiques et vous proposons un accompagnement personnalis\xE9 pour simplifier la gestion de vos finances, optimiser vos marges, digitaliser vos processus et garantir votre conformit\xE9 l\xE9gale. "
+          ),
+          e(),
+          l(23, "br"),
+          e(),
+          t(24, "div", 11)(25, "div", 12)(26, "button", 13),
+          O("click", function () {
+            return s.scrollToSection("targetSection");
+          }),
+          n(27, "D\xE9couvrez ce que vous gagnerez avec nous "),
+          l(28, "i", 14),
+          e()()(),
+          t(29, "div", 15),
+          l(30, "img", 16),
+          e(),
+          t(31, "div", 17)(32, "h1"),
+          n(
+            33,
+            "Transition num\xE9rique : Digitalisez vos processus pour un service client fluide"
+          ),
+          e(),
+          t(34, "div", 18),
+          l(35, "img", 19),
+          e(),
+          t(36, "div", 20)(37, "p"),
+          n(
+            38,
+            "\xC0 l\u2019\xE8re du num\xE9rique, offrir une exp\xE9rience client omnicanale et fluide est un facteur cl\xE9 de diff\xE9renciation."
+          ),
+          e(),
+          t(39, "strong"),
+          n(40, "Strat\xE9gies omnicanales :"),
+          e(),
+          t(41, "ul", 21)(42, "li"),
+          l(43, "i", 22),
+          n(
+            44,
+            " Connectez vos points de contact physiques et num\xE9riques pour offrir une exp\xE9rience coh\xE9rente et personnalis\xE9e. "
+          ),
+          e(),
+          t(45, "li"),
+          l(46, "i", 22),
+          n(
+            47,
+            " Synchronisez vos stocks et vos prix sur tous vos canaux pour \xE9viter les incoh\xE9rences et am\xE9liorer la satisfaction client. "
+          ),
+          e()(),
+          t(48, "strong"),
+          n(49, "Outils technologiques :"),
+          e(),
+          t(50, "ul", 21)(51, "li"),
+          l(52, "i", 22),
+          n(
+            53,
+            " Int\xE9grez des syst\xE8mes ERP pour g\xE9rer vos stocks, vos commandes et vos donn\xE9es clients en temps r\xE9el. "
+          ),
+          e(),
+          t(54, "li"),
+          l(55, "i", 22),
+          n(
+            56,
+            " Utilisez des CRM pour renforcer la fid\xE9lit\xE9 client gr\xE2ce \xE0 des interactions personnalis\xE9es. "
+          ),
+          e()()()()()()()()(),
+          t(57, "section", 23)(58, "div", 24)(59, "div", 2)(60, "div", 25)(
+            61,
+            "div",
+            26
+          )(62, "div", 27)(
+            63,
+            "div",
+            28
+          )(64, "h1"),
+          n(65, "Optimisation de la tr\xE9sorerie : Gardez le contr\xF4le sur "),
+          l(66, "br"),
+          t(67, "span", 29),
+          n(68, "vos finances"),
+          e()(),
+          t(69, "p"),
+          n(
+            70,
+            "Une gestion rigoureuse de la tr\xE9sorerie vous permet de r\xE9pondre aux impr\xE9vus et de financer vos projets de d\xE9veloppement sans compromettre votre stabilit\xE9 financi\xE8re. "
+          ),
+          e()(),
+          l(71, "div", 30),
+          t(72, "div", 31)(73, "div", 32)(74, "div", 33)(75, "div", 34),
+          l(76, "img", 35),
+          e()(),
+          t(77, "div", 36)(78, "h2"),
+          n(79, "Pr\xE9visions et planification"),
+          e(),
+          t(80, "ul")(81, "li"),
+          n(
+            82,
+            "\xC9laborez des sc\xE9narios financiers pour anticiper vos besoins et \xE9viter les p\xE9nuries de liquidit\xE9s."
+          ),
+          e(),
+          t(83, "li"),
+          n(
+            84,
+            "Analysez vos flux de tr\xE9sorerie pour identifier les gaspillages et r\xE9duire les co\xFBts superflus."
+          ),
+          e()()()(),
+          t(85, "div", 37)(86, "div", 33)(87, "div", 34),
+          l(88, "img", 38),
+          e()(),
+          t(89, "div", 36)(90, "h2"),
+          n(91, "Solutions de financement adapt\xE9es"),
+          e(),
+          t(92, "ul")(93, "li")(94, "strong"),
+          n(95, "Pr\xEAts bancaires :"),
+          e(),
+          n(
+            96,
+            " Id\xE9al pour financer des projets \xE0 long terme tout en pr\xE9servant votre ind\xE9pendance."
+          ),
+          e(),
+          t(97, "li")(98, "strong"),
+          n(99, "Leasing :"),
+          e(),
+          n(
+            100,
+            " Une option flexible pour acqu\xE9rir des \xE9quipements sans grever votre tr\xE9sorerie."
+          ),
+          e(),
+          t(101, "li")(102, "strong"),
+          n(103, "Franchise en capital :"),
+          e(),
+          n(
+            104,
+            " Payez uniquement les int\xE9r\xEAts pendant une p\xE9riode initiale pour pr\xE9server vos liquidit\xE9s."
+          ),
+          e()()()()()()(),
+          t(105, "div", 39)(106, "div", 40),
+          l(107, "img", 41),
+          e()()()()()(),
+          t(108, "section")(109, "div", 42)(110, "div", 2)(111, "div", 25)(
+            112,
+            "div",
+            43
+          )(113, "div", 44),
+          l(114, "img", 45),
+          e()(),
+          t(115, "div", 46)(116, "div", 47)(117, "div", 36)(118, "h3"),
+          n(
+            119,
+            "Gestion des stocks : Lib\xE9rez des liquidit\xE9s et \xE9vitez les pertes "
+          ),
+          e(),
+          t(120, "p"),
+          n(
+            121,
+            "Un stock mal g\xE9r\xE9 peut rapidement immobiliser des fonds et g\xE9n\xE9rer des pertes. Une gestion efficace vous permet de transformer vos stocks en liquidit\xE9s tout en assurant la satisfaction client. "
+          ),
+          e()(),
+          t(122, "div", 48)(123, "div", 5)(124, "div")(125, "div", 49)(126, "p"),
+          l(127, "img", 50),
+          t(128, "strong"),
+          n(129, "Strat\xE9gies efficaces :"),
+          e()(),
+          t(130, "ul")(131, "li"),
+          n(
+            132,
+            "Favorisez les produits \xE0 forte rotation et lancez des promotions pour \xE9couler les invendus."
+          ),
+          e(),
+          t(133, "li"),
+          n(
+            134,
+            "Utilisez des logiciels de gestion pour suivre vos stocks en temps r\xE9el et anticiper les besoins."
+          ),
+          e()()(),
+          l(135, "div", 30),
+          t(136, "div", 49)(137, "p"),
+          l(138, "img", 50),
+          t(139, "strong"),
+          n(140, "M\xE9thodes adapt\xE9es :"),
+          e()(),
+          t(141, "ul")(142, "li")(143, "strong"),
+          n(144, "FIFO (First-In, First-Out) :"),
+          e(),
+          n(145, " Minimisez les pertes sur les produits p\xE9rissables."),
+          e(),
+          t(146, "li")(147, "strong"),
+          n(148, "JIT (Just-In-Time) :"),
+          e(),
+          n(
+            149,
+            " R\xE9duisez les stocks inutiles en commandant uniquement en fonction des besoins imm\xE9diats."
+          ),
+          e()()()()()(),
+          t(150, "div", 51)(151, "a", 52),
+          n(152, "Contactez-nous "),
+          l(153, "i", 14),
+          e()()()()()()()(),
+          t(154, "section", 53)(155, "div", 2)(156, "div", 25)(157, "div", 54)(
+            158,
+            "h2",
+            55
+          ),
+          n(159, " Les d\xE9fis sp\xE9cifiques de "),
+          l(160, "br"),
+          t(161, "span", 56),
+          n(162, " votre secteur "),
+          e()()(),
+          t(163, "div", 57)(164, "div", 58)(165, "div", 59),
+          l(166, "img", 60),
+          e(),
+          t(167, "div")(168, "h5", 61),
+          n(169, "Expertise sp\xE9cifique : "),
+          e(),
+          t(170, "p", 62),
+          n(
+            171,
+            "Une exp\xE9rience approfondie dans la gestion des structures collaboratives. "
+          ),
+          e()()(),
+          t(172, "div", 63)(173, "div", 59),
+          l(174, "img", 64),
+          e(),
+          t(175, "div")(176, "h5", 61),
+          n(177, "Solutions personnalis\xE9es :"),
+          e(),
+          t(178, "p", 62),
+          n(179, "Des outils et services adapt\xE9s aux besoins de votre SCM. "),
+          e()()(),
+          t(180, "div", 65)(181, "div", 59),
+          l(182, "img", 66),
+          e(),
+          t(183, "div")(184, "h5", 61),
+          n(185, "Cash Collecting int\xE9gr\xE9 :"),
+          e(),
+          t(186, "p", 62),
+          n(
+            187,
+            "Une gestion transparente et impartiale des cotisations, pour simplifier les relations entre membres. "
+          ),
+          e()()()()()()(),
+          t(188, "section", 67)(189, "div", 2)(190, "div", 5)(191, "div", 68)(
+            192,
+            "div"
+          )(193, "h2", 69),
+          n(194, "Les solutions MFINANCES pour votre"),
+          l(195, "br"),
+          t(196, "span", 70),
+          n(197, "activit\xE9"),
+          e()()()(),
+          t(198, "div", 71)(199, "div", 72)(200, "div", 73),
+          l(201, "img", 74)(202, "div", 30),
+          t(203, "h2"),
+          n(204, "Accompagnement comptable et fiscal personnalis\xE9"),
+          e(),
+          t(205, "p"),
+          n(
+            206,
+            " Gestion compl\xE8te de votre comptabilit\xE9 et respect des obligations l\xE9gales. Calcul et optimisation de la TVA en fonction des prestations (vente \xE0 emporter, sur place, h\xE9bergement). "
+          ),
+          e(),
+          l(207, "div", 30),
+          e()()(),
+          t(208, "div", 71)(209, "div", 72)(210, "div", 73),
+          l(211, "img", 75)(212, "div", 30),
+          t(213, "h2"),
+          n(214, "Analyse des co\xFBts et des performances"),
+          e(),
+          t(215, "p"),
+          n(
+            216,
+            " Calcul d\xE9taill\xE9 des co\xFBts alimentaires, des prix de revient et des marges pour chaque produit ou service. Identification des opportunit\xE9s pour r\xE9duire vos co\xFBts fixes et variables. "
+          ),
+          e(),
+          l(217, "div", 30),
+          e()()(),
+          t(218, "div", 76)(219, "div", 72)(220, "div", 73),
+          l(221, "img", 77)(222, "div", 30),
+          t(223, "h2"),
+          n(224, "Outils digitaux pour une gestion simplifi\xE9e"),
+          e(),
+          t(225, "p"),
+          n(
+            226,
+            " Int\xE9gration de votre syst\xE8me de caisse avec un logiciel comptable pour un suivi en temps r\xE9el. Automatisation des rapports financiers pour une gestion simplifi\xE9e et sans erreurs. "
+          ),
+          e(),
+          l(227, "div", 30),
+          e()()()()()(),
+          t(228, "section", 78)(229, "div", 79)(230, "h1", 80),
+          n(231, "Exemples Concrets : R\xE9sultats Tangibles avec MFINANCES"),
+          e(),
+          t(232, "div", 81)(233, "div", 82)(234, "div", 83)(235, "h2", 84),
+          n(236, "Un Restaurant HORECA"),
+          e(),
+          t(237, "p", 85)(238, "strong"),
+          n(239, "Probl\xE8me :"),
+          e(),
+          n(
+            240,
+            " Stockage excessif entra\xEEnant des co\xFBts \xE9lev\xE9s et des invendus fr\xE9quents."
+          ),
+          e(),
+          t(241, "p", 86)(242, "strong"),
+          n(243, "Solution :"),
+          e(),
+          n(
+            244,
+            " Adoption d\u2019une gestion en flux tendu pour ajuster les commandes aux besoins r\xE9els."
+          ),
+          e(),
+          t(245, "p", 87)(246, "strong"),
+          n(247, "R\xE9sultat :"),
+          e(),
+          n(
+            248,
+            " R\xE9duction de 30 % des co\xFBts de stockage et am\xE9lioration significative de la tr\xE9sorerie."
+          ),
+          e()()(),
+          t(249, "div", 82)(250, "div", 83)(251, "h2", 84),
+          n(252, "Un Magasin de V\xEAtements"),
+          e(),
+          t(253, "p", 85)(254, "strong"),
+          n(255, "Probl\xE8me :"),
+          e(),
+          n(
+            256,
+            " Accumulation de stocks sur des produits \xE0 faible rotation."
+          ),
+          e(),
+          t(257, "p", 86)(258, "strong"),
+          n(259, "Solution :"),
+          e(),
+          n(
+            260,
+            " Analyse des ventes pour prioriser les articles populaires et lancement de promotions sur les stocks dormants."
+          ),
+          e(),
+          t(261, "p", 87)(262, "strong"),
+          n(263, "R\xE9sultat :"),
+          e(),
+          n(
+            264,
+            " Augmentation de 15 % du taux de rotation des stocks et 20 % de liquidit\xE9s disponibles suppl\xE9mentaires."
+          ),
+          e()()()()()(),
+          t(265, "section")(266, "div", 42)(267, "div", 2)(268, "div", 25)(
+            269,
+            "div",
+            46
+          )(270, "div", 47)(
+            271,
+            "div",
+            36
+          )(272, "h3"),
+          n(273, "Pourquoi choisir MFINANCES pour votre activit\xE9 ?"),
+          e(),
+          t(274, "p"),
+          n(
+            275,
+            "Des solutions sur mesure pour r\xE9pondre aux d\xE9fis sp\xE9cifiques de votre secteur et accompagner votre croissance."
+          ),
+          e()(),
+          t(276, "div", 48)(277, "div", 5)(278, "div")(279, "div", 49)(280, "p"),
+          l(281, "img", 50),
+          t(282, "strong"),
+          n(283, "Une expertise sectorielle reconnue :"),
+          e()(),
+          t(284, "ul")(285, "li"),
+          n(
+            286,
+            "Des solutions adapt\xE9es aux r\xE9alit\xE9s du secteur HORECA et du commerce en Belgique."
+          ),
+          e()()(),
+          l(287, "div", 30),
+          t(288, "div", 49)(289, "p"),
+          l(290, "img", 50),
+          t(291, "strong"),
+          n(292, "Des outils et un accompagnement cl\xE9 en main :"),
+          e()(),
+          t(293, "ul")(294, "li"),
+          n(
+            295,
+            "Mise en place de logiciels, tableaux de bord et syst\xE8mes de suivi adapt\xE9s \xE0 votre activit\xE9."
+          ),
+          e()()(),
+          l(296, "div", 30),
+          t(297, "div", 49)(298, "p"),
+          l(299, "img", 50),
+          t(300, "strong"),
+          n(301, "Un partenaire de confiance pour votre r\xE9ussite :"),
+          e()(),
+          t(302, "ul")(303, "li"),
+          n(
+            304,
+            "Un suivi proactif et des conseils sur mesure pour s\xE9curiser vos marges et anticiper vos besoins financiers."
+          ),
+          e()()()()()(),
+          t(305, "div", 51)(306, "a", 52),
+          n(307, "Contactez-nous "),
+          l(308, "i", 14),
+          e()()()(),
+          t(309, "div", 43)(310, "div", 44),
+          l(311, "img", 88),
+          e()()()()()(),
+          t(312, "section", 89)(313, "div", 90)(314, "div", 25)(315, "div", 91),
+          l(316, "img", 92),
+          e(),
+          t(317, "div", 93)(318, "h2", 94),
+          n(319, " Transformez vos "),
+          l(320, "br"),
+          t(321, "span", 95),
+          n(322, "d\xE9fis en opportunit\xE9s"),
+          e(),
+          n(323, ". "),
+          e(),
+          t(324, "p", 96),
+          n(
+            325,
+            " Contactez-nous pour un diagnostic gratuit et d\xE9couvrez comment MFINANCES peut vous aider \xE0 optimiser vos marges, digitaliser vos processus et lib\xE9rer votre tr\xE9sorerie. "
+          ),
+          e(),
+          t(326, "a", 97),
+          n(327, " Contactez-nous "),
+          l(328, "i", 98),
+          e()()()()(),
+          l(329, "app-recommandation-profil"));
     },
     dependencies: [oe, se],
     styles: [
@@ -9005,448 +9005,448 @@ var Ft = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1"),
-        n(4, "Professionnels de la sant\xE9"),
-        e(),
-        t(5, "p", 3),
-        n(6, "Accueil > Professionnels de la sant\xE9"),
-        e()()()(),
-        t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
-        l(11, "app-sidebar"),
-        e(),
-        t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
-        n(15, " Des solutions adapt\xE9es \xE0 vos "),
-        t(16, "span", 10),
-        n(17, " d\xE9fis sp\xE9cifiques "),
-        e()(),
-        t(18, "div")(19, "p"),
-        n(
-          20,
-          "M\xE9decins, dentistes, v\xE9t\xE9rinaires ou kin\xE9sith\xE9rapeutes, votre quotidien oscille entre la prise en charge des patients et la gestion de vos obligations comptables et fiscales. Que vous soyez ind\xE9pendant, gestionnaire d\u2019un centre m\xE9dical, membre d\u2019une association ou en situation hybride, MFINANCES est l\xE0 pour vous accompagner avec des solutions sur mesure. "
-        ),
-        e(),
-        l(21, "br"),
-        e(),
-        t(22, "div", 11)(23, "div", 12)(24, "button", 13),
-        O("click", function () {
-          return s.scrollToSection("targetSection");
-        }),
-        n(25, "D\xE9couvrez ce que vous gagnerez avec nous "),
-        l(26, "i", 14),
-        e()()(),
-        t(27, "div", 15),
-        l(28, "img", 16),
-        e()()()()()(),
-        t(29, "section", 17)(30, "div", 18)(31, "div", 2)(32, "div", 19)(
-          33,
-          "div",
-          20
-        )(34, "div", 21)(
-          35,
-          "div",
-          22
-        )(36, "h1"),
-        n(37, "Centres m\xE9dicaux et professionnels de sant\xE9 : "),
-        l(38, "br"),
-        t(39, "span", 23),
-        n(40, "Optimisez votre organisation"),
-        e()(),
-        t(41, "p"),
-        n(
-          42,
-          "Des solutions adapt\xE9es \xE0 chaque structure pour maximiser vos revenus, mutualiser vos frais et simplifier la gestion comptable."
-        ),
-        e()(),
-        l(43, "div", 24),
-        t(44, "div", 25)(45, "div", 26)(46, "div", 27)(47, "div", 28),
-        l(48, "img", 29),
-        e()(),
-        t(49, "div", 30)(50, "h2"),
-        n(51, "Centres m\xE9dicaux"),
-        e(),
-        t(52, "ul")(53, "li"),
-        n(
-          54,
-          "Organisez vos finances collectives avec une tenue comptable transparente."
-        ),
-        e(),
-        t(55, "li"),
-        n(
-          56,
-          "Optimisez la fiscalit\xE9 collective et individuelle gr\xE2ce \xE0 des d\xE9ductions strat\xE9giques."
-        ),
-        e(),
-        t(57, "li"),
-        n(
-          58,
-          "Facilitez les d\xE9cisions strat\xE9giques pour le d\xE9veloppement du centre."
-        ),
-        e()()()(),
-        t(59, "div", 31)(60, "div", 27)(61, "div", 28),
-        l(62, "img", 32),
-        e()(),
-        t(63, "div", 30)(64, "h2"),
-        n(65, "Associations m\xE9dicales"),
-        e(),
-        t(66, "ul")(67, "li"),
-        n(
-          68,
-          "R\xE9duisez les co\xFBts gr\xE2ce \xE0 la mutualisation des charges (loyers, abonnements, etc.)."
-        ),
-        e(),
-        t(69, "li"),
-        n(
-          70,
-          "Assurez une r\xE9partition \xE9quitable et transparente des charges communes."
-        ),
-        e(),
-        t(71, "li"),
-        n(
-          72,
-          "Pr\xE9servez l'ind\xE9pendance de chaque m\xE9decin pour ses revenus et d\xE9cisions professionnelles."
-        ),
-        e()()()(),
-        t(73, "div", 33)(74, "div", 27)(75, "div", 28),
-        l(76, "img", 34),
-        e()(),
-        t(77, "div", 30)(78, "h2"),
-        n(79, "Professionnels ind\xE9pendants"),
-        e(),
-        t(80, "ul")(81, "li"),
-        n(
-          82,
-          "Facturez vos prestations avec des management fees d\xE9ductibles."
-        ),
-        e(),
-        t(83, "li"),
-        n(
-          84,
-          "Optimisez votre patrimoine en r\xE9investissant dans des projets strat\xE9giques."
-        ),
-        e(),
-        t(85, "li"),
-        n(
-          86,
-          "R\xE9duisez vos charges fiscales tout en restant en conformit\xE9 l\xE9gale."
-        ),
-        e()()()(),
-        t(87, "div", 35)(88, "div", 27)(89, "div", 28),
-        l(90, "i", 36),
-        e()(),
-        t(91, "div", 30)(92, "h2"),
-        n(93, "Combinaison : Activit\xE9 mixte"),
-        e(),
-        t(94, "ul")(95, "li"),
-        n(
-          96,
-          "Combinez les avantages des mod\xE8les soci\xE9t\xE9 d\u2019exploitation et soci\xE9t\xE9 de management patrimoniale."
-        ),
-        e(),
-        t(97, "li"),
-        n(
-          98,
-          "Optimisez la gestion fiscale globale pour chaque source de revenus."
-        ),
-        e(),
-        t(99, "li"),
-        n(
-          100,
-          "Simplifiez la gestion comptable avec des outils adapt\xE9s et centralis\xE9s."
-        ),
-        e()()()()()()(),
-        t(101, "div", 37)(102, "div", 38),
-        l(103, "img", 39),
-        e()()()()()(),
-        t(104, "section")(105, "div", 40)(106, "div", 2)(107, "div", 19)(
-          108,
-          "div",
-          41
-        )(109, "div", 42),
-        l(110, "img", 43),
-        t(111, "div", 44)(112, "div", 45)(113, "p"),
-        n(
-          114,
-          "R\xE9sultat : Une rentabilit\xE9 accrue et une s\xE9curit\xE9 financi\xE8re renforc\xE9e pour anticiper sa retraite et transmettre son patrimoine."
-        ),
-        e()()()()(),
-        t(115, "div", 46)(116, "div", 47)(117, "h2"),
-        n(
-          118,
-          "Exemple concret : Maximisez vos avantages fiscaux et patrimoniaux"
-        ),
-        e(),
-        t(119, "p"),
-        n(
-          120,
-          "Un m\xE9decin g\xE9n\xE9raliste, avec un revenu annuel de 120 000 \u20AC, a sollicit\xE9 MFINANCES pour optimiser sa gestion fiscale et patrimoniale. Nos experts ont propos\xE9 une restructuration compl\xE8te :"
-        ),
-        e()(),
-        l(121, "div", 48),
-        t(122, "div", 49)(123, "ul", 50)(124, "li"),
-        l(125, "img", 51),
-        n(
-          126,
-          "Passage en soci\xE9t\xE9 avec une strat\xE9gie de d\xE9veloppement immobilier. "
-        ),
-        e(),
-        t(127, "li"),
-        l(128, "img", 51),
-        n(
-          129,
-          "R\xE9duction des imp\xF4ts annuels de 60 %, soit 36 000 \u20AC \xE9conomis\xE9s. "
-        ),
-        e(),
-        t(130, "li"),
-        l(131, "img", 51),
-        n(
-          132,
-          "Constitution d\u2019un patrimoine immobilier valoris\xE9 \xE0 500 000 \u20AC sur 10 ans. "
-        ),
-        e()()(),
-        l(133, "div", 52),
-        t(134, "div", 53)(135, "a", 54),
-        n(136, "Contactez-Nous"),
-        l(137, "i", 55),
-        e()()()()()()(),
-        t(138, "div", 56)(139, "div", 2)(140, "div", 19)(141, "div", 57)(
-          142,
-          "div",
-          58
-        )(
-          143,
-          "div",
-          59
-        )(144, "h2"),
-        n(
-          145,
-          "TVA et professions m\xE9dicales : Comprendre l\u2019assujettissement mixte"
-        ),
-        e()(),
-        t(146, "div", 60)(147, "div", 5)(148, "div")(149, "div", 61)(150, "p"),
-        l(151, "img", 62),
-        t(152, "strong"),
-        n(153, "Optimisez vos d\xE9ductions :"),
-        e(),
-        n(
-          154,
-          " D\xE9duisez la TVA sur les frais sp\xE9cifiques li\xE9s \xE0 vos prestations taxables."
-        ),
-        e()(),
-        l(155, "div", 24),
-        t(156, "div", 61)(157, "p"),
-        l(158, "img", 62),
-        t(159, "strong"),
-        n(160, "Appliquez un prorata g\xE9n\xE9ral :"),
-        e(),
-        n(
-          161,
-          " G\xE9rez efficacement la TVA sur les frais g\xE9n\xE9raux, en tenant compte du ratio entre vos revenus soumis et non soumis \xE0 TVA."
-        ),
-        e()()()()(),
-        t(162, "p"),
-        n(
-          163,
-          "Une gestion rigoureuse est essentielle pour \xE9viter les erreurs et maximiser vos avantages fiscaux. Contactez un expert MFINANCES d\xE8s aujourd\u2019hui pour clarifier vos obligations et optimiser votre gestion TVA."
-        ),
-        e(),
-        t(164, "div", 63)(165, "a", 64),
-        n(166, "Contactez-nous "),
-        l(167, "i", 14),
-        e()()()(),
-        t(168, "div", 65)(169, "div", 66),
-        l(170, "img", 67),
-        e()()()()(),
-        t(171, "section", 68)(172, "div", 18)(173, "div", 2)(174, "div", 19)(
-          175,
-          "div",
-          37
-        )(176, "div", 38),
-        l(177, "img", 69),
-        e()(),
-        t(178, "div", 20)(179, "div", 21)(180, "div", 22)(181, "h1"),
-        n(
-          182,
-          "Les services de MFINANCES pour les professionnels de la sant\xE9 : "
-        ),
-        l(183, "br"),
-        t(184, "span", 23),
-        n(185, "Un accompagnement complet et sur mesure"),
-        e()()(),
-        l(186, "div", 24),
-        t(187, "div", 25)(188, "div", 26)(189, "div", 27)(190, "div", 28),
-        l(191, "img", 29),
-        e()(),
-        t(192, "div", 30)(193, "h2"),
-        n(194, "D\xE9velopper et structurer votre activit\xE9 m\xE9dicale"),
-        e(),
-        t(195, "ul")(196, "li"),
-        n(
-          197,
-          "Passage en soci\xE9t\xE9 : Optimisez vos revenus et votre fiscalit\xE9 gr\xE2ce \xE0 des structures adapt\xE9es et bien con\xE7ues."
-        ),
-        e(),
-        t(198, "li"),
-        n(
-          199,
-          "Investissements strat\xE9giques : Planifiez vos acquisitions, comme du mat\xE9riel m\xE9dical ou des locaux, pour maximiser leur rentabilit\xE9 et r\xE9duire votre charge fiscale."
-        ),
-        e(),
-        t(200, "li"),
-        n(
-          201,
-          "Gestion immobili\xE8re proactive : Transformez vos d\xE9penses en un patrimoine immobilier solide pour assurer votre s\xE9curit\xE9 financi\xE8re \xE0 long terme et pr\xE9parer une transmission optimale."
-        ),
-        e(),
-        t(202, "li"),
-        n(
-          203,
-          "Optimisation des ressources professionnelles : Profitez d\u2019avantages fiscaux tels que le choix optimal entre indemnit\xE9s kilom\xE9triques ou v\xE9hicule de soci\xE9t\xE9."
-        ),
-        e()()()(),
-        t(204, "div", 31)(205, "div", 27)(206, "div", 28),
-        l(207, "img", 32),
-        e()(),
-        t(208, "div", 30)(209, "h2"),
-        n(
-          210,
-          "Pr\xE9parer l\u2019avenir : S\xE9curisez votre patrimoine et votre succession"
-        ),
-        e(),
-        t(211, "ul")(212, "li"),
-        n(
-          213,
-          "Transmission ou cession de patient\xE8le : Maximisez la valeur de votre activit\xE9 gr\xE2ce \xE0 une strat\xE9gie de cession bien structur\xE9e."
-        ),
-        e(),
-        t(214, "li"),
-        n(
-          215,
-          "Pr\xE9paration de la retraite : Identifiez et mettez en \u0153uvre des dispositifs d\u2019\xE9pargne et d\u2019investissement qui s\xE9curisent vos revenus futurs."
-        ),
-        e(),
-        t(216, "li"),
-        n(
-          217,
-          "Optimisation fiscale en fin de carri\xE8re : R\xE9duisez vos charges fiscales gr\xE2ce \xE0 des strat\xE9gies adapt\xE9es \xE0 votre situation personnelle et professionnelle."
-        ),
-        e()()()(),
-        t(218, "div", 33)(219, "div", 27)(220, "div", 28),
-        l(221, "img", 34),
-        e()(),
-        t(222, "div", 30)(223, "h2"),
-        n(224, "Cr\xE9er votre entreprise dans le secteur m\xE9dical"),
-        e(),
-        t(225, "ul")(226, "li"),
-        n(
-          227,
-          "Choix du statut juridique : Adaptez votre structure \xE0 vos ambitions, qu\u2019il s\u2019agisse d\u2019exercer seul ou en groupe."
-        ),
-        e(),
-        t(228, "li"),
-        n(
-          229,
-          "Planification strat\xE9gique : \xC9laboration d\u2019un plan financier \xE0 plusieurs ann\xE9es pour d\xE9finir des objectifs clairs et garantir une croissance durable."
-        ),
-        e(),
-        t(230, "li"),
-        n(
-          231,
-          "Support administratif complet : Simplifiez vos d\xE9marches l\xE9gales et assurez la conformit\xE9 de votre entreprise d\xE8s sa cr\xE9ation."
-        ),
-        e()()()(),
-        t(232, "div", 35)(233, "div", 27)(234, "div", 28),
-        l(235, "i", 36),
-        e()(),
-        t(236, "div", 30)(237, "h2"),
-        n(238, "Simplifier la gestion de votre activit\xE9"),
-        e(),
-        t(239, "ul")(240, "li"),
-        n(
-          241,
-          "Gestion comptable compl\xE8te : Comptes annuels, d\xE9clarations fiscales, gestion des notes de frais, factures clients et fournisseurs."
-        ),
-        e(),
-        t(242, "li"),
-        n(
-          243,
-          "Suivi des indicateurs cl\xE9s : Analyse de votre rentabilit\xE9, de vos flux de tr\xE9sorerie et de vos performances financi\xE8res pour une ma\xEEtrise totale de votre activit\xE9."
-        ),
-        e(),
-        t(244, "li"),
-        n(
-          245,
-          "Conseils quotidiens : R\xE9solution rapide de vos probl\xE9matiques administratives et financi\xE8res gr\xE2ce \xE0 nos experts d\xE9di\xE9s."
-        ),
-        e()()()()()()()()()()(),
-        t(246, "section", 70)(247, "div", 2)(248, "div", 19)(249, "div", 71)(
-          250,
-          "h2",
-          72
-        ),
-        n(251, " Pourquoi choisir "),
-        l(252, "br"),
-        t(253, "span", 73),
-        n(254, "MFINANCES"),
-        e(),
-        n(255, " pour vous accompagner\u202F? "),
-        e()(),
-        t(256, "div", 74)(257, "div", 75)(258, "div", 76),
-        l(259, "img", 77),
-        e(),
-        t(260, "div")(261, "h5", 78),
-        n(262, "Une expertise cibl\xE9e :"),
-        e(),
-        t(263, "p", 79),
-        n(
-          264,
-          "Nos sp\xE9cialistes ma\xEEtrisent les sp\xE9cificit\xE9s du secteur m\xE9dical et param\xE9dical."
-        ),
-        e()()(),
-        t(265, "div", 80)(266, "div", 76),
-        l(267, "img", 81),
-        e(),
-        t(268, "div")(269, "h5", 78),
-        n(270, "Un accompagnement global :"),
-        e(),
-        t(271, "p", 79),
-        n(
-          272,
-          "De la cr\xE9ation de votre structure \xE0 la transmission de votre activit\xE9, nous sommes \xE0 vos c\xF4t\xE9s \xE0 chaque \xE9tape."
-        ),
-        e()()(),
-        t(273, "div", 82)(274, "div", 76),
-        l(275, "img", 83),
-        e(),
-        t(276, "div")(277, "h5", 78),
-        n(278, "Des solutions personnalis\xE9es :"),
-        e(),
-        t(279, "p", 79),
-        n(
-          280,
-          "Adapt\xE9es \xE0 vos besoins, pour optimiser vos finances et faciliter votre quotidien."
-        ),
-        e()()()()()()(),
-        t(281, "section", 84)(282, "div", 85)(283, "div", 19)(284, "div", 86),
-        l(285, "img", 87),
-        e(),
-        t(286, "div", 88)(287, "h2", 89),
-        n(288, " Confiez votre activit\xE9 \xE0"),
-        l(289, "br"),
-        t(290, "span", 90),
-        n(291, "des experts"),
-        e(),
-        n(292, ". "),
-        e(),
-        t(293, "p", 91),
-        n(
-          294,
-          " Prenez rendez-vous d\xE8s aujourd\u2019hui avec un conseiller MFINANCES pour b\xE9n\xE9ficier d\u2019une analyse personnalis\xE9e et d\u2019un accompagnement complet. Transformez vos d\xE9fis financiers en opportunit\xE9s de croissance. "
-        ),
-        e(),
-        t(295, "a", 92),
-        n(296, " Contactez-nous "),
-        l(297, "i", 93),
-        e()()()()(),
-        l(298, "app-recommandation-profil"));
+          n(4, "Professionnels de la sant\xE9"),
+          e(),
+          t(5, "p", 3),
+          n(6, "Accueil > Professionnels de la sant\xE9"),
+          e()()()(),
+          t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
+          l(11, "app-sidebar"),
+          e(),
+          t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
+          n(15, " Des solutions adapt\xE9es \xE0 vos "),
+          t(16, "span", 10),
+          n(17, " d\xE9fis sp\xE9cifiques "),
+          e()(),
+          t(18, "div")(19, "p"),
+          n(
+            20,
+            "M\xE9decins, dentistes, v\xE9t\xE9rinaires ou kin\xE9sith\xE9rapeutes, votre quotidien oscille entre la prise en charge des patients et la gestion de vos obligations comptables et fiscales. Que vous soyez ind\xE9pendant, gestionnaire d\u2019un centre m\xE9dical, membre d\u2019une association ou en situation hybride, MFINANCES est l\xE0 pour vous accompagner avec des solutions sur mesure. "
+          ),
+          e(),
+          l(21, "br"),
+          e(),
+          t(22, "div", 11)(23, "div", 12)(24, "button", 13),
+          O("click", function () {
+            return s.scrollToSection("targetSection");
+          }),
+          n(25, "D\xE9couvrez ce que vous gagnerez avec nous "),
+          l(26, "i", 14),
+          e()()(),
+          t(27, "div", 15),
+          l(28, "img", 16),
+          e()()()()()(),
+          t(29, "section", 17)(30, "div", 18)(31, "div", 2)(32, "div", 19)(
+            33,
+            "div",
+            20
+          )(34, "div", 21)(
+            35,
+            "div",
+            22
+          )(36, "h1"),
+          n(37, "Centres m\xE9dicaux et professionnels de sant\xE9 : "),
+          l(38, "br"),
+          t(39, "span", 23),
+          n(40, "Optimisez votre organisation"),
+          e()(),
+          t(41, "p"),
+          n(
+            42,
+            "Des solutions adapt\xE9es \xE0 chaque structure pour maximiser vos revenus, mutualiser vos frais et simplifier la gestion comptable."
+          ),
+          e()(),
+          l(43, "div", 24),
+          t(44, "div", 25)(45, "div", 26)(46, "div", 27)(47, "div", 28),
+          l(48, "img", 29),
+          e()(),
+          t(49, "div", 30)(50, "h2"),
+          n(51, "Centres m\xE9dicaux"),
+          e(),
+          t(52, "ul")(53, "li"),
+          n(
+            54,
+            "Organisez vos finances collectives avec une tenue comptable transparente."
+          ),
+          e(),
+          t(55, "li"),
+          n(
+            56,
+            "Optimisez la fiscalit\xE9 collective et individuelle gr\xE2ce \xE0 des d\xE9ductions strat\xE9giques."
+          ),
+          e(),
+          t(57, "li"),
+          n(
+            58,
+            "Facilitez les d\xE9cisions strat\xE9giques pour le d\xE9veloppement du centre."
+          ),
+          e()()()(),
+          t(59, "div", 31)(60, "div", 27)(61, "div", 28),
+          l(62, "img", 32),
+          e()(),
+          t(63, "div", 30)(64, "h2"),
+          n(65, "Associations m\xE9dicales"),
+          e(),
+          t(66, "ul")(67, "li"),
+          n(
+            68,
+            "R\xE9duisez les co\xFBts gr\xE2ce \xE0 la mutualisation des charges (loyers, abonnements, etc.)."
+          ),
+          e(),
+          t(69, "li"),
+          n(
+            70,
+            "Assurez une r\xE9partition \xE9quitable et transparente des charges communes."
+          ),
+          e(),
+          t(71, "li"),
+          n(
+            72,
+            "Pr\xE9servez l'ind\xE9pendance de chaque m\xE9decin pour ses revenus et d\xE9cisions professionnelles."
+          ),
+          e()()()(),
+          t(73, "div", 33)(74, "div", 27)(75, "div", 28),
+          l(76, "img", 34),
+          e()(),
+          t(77, "div", 30)(78, "h2"),
+          n(79, "Professionnels ind\xE9pendants"),
+          e(),
+          t(80, "ul")(81, "li"),
+          n(
+            82,
+            "Facturez vos prestations avec des management fees d\xE9ductibles."
+          ),
+          e(),
+          t(83, "li"),
+          n(
+            84,
+            "Optimisez votre patrimoine en r\xE9investissant dans des projets strat\xE9giques."
+          ),
+          e(),
+          t(85, "li"),
+          n(
+            86,
+            "R\xE9duisez vos charges fiscales tout en restant en conformit\xE9 l\xE9gale."
+          ),
+          e()()()(),
+          t(87, "div", 35)(88, "div", 27)(89, "div", 28),
+          l(90, "i", 36),
+          e()(),
+          t(91, "div", 30)(92, "h2"),
+          n(93, "Combinaison : Activit\xE9 mixte"),
+          e(),
+          t(94, "ul")(95, "li"),
+          n(
+            96,
+            "Combinez les avantages des mod\xE8les soci\xE9t\xE9 d\u2019exploitation et soci\xE9t\xE9 de management patrimoniale."
+          ),
+          e(),
+          t(97, "li"),
+          n(
+            98,
+            "Optimisez la gestion fiscale globale pour chaque source de revenus."
+          ),
+          e(),
+          t(99, "li"),
+          n(
+            100,
+            "Simplifiez la gestion comptable avec des outils adapt\xE9s et centralis\xE9s."
+          ),
+          e()()()()()()(),
+          t(101, "div", 37)(102, "div", 38),
+          l(103, "img", 39),
+          e()()()()()(),
+          t(104, "section")(105, "div", 40)(106, "div", 2)(107, "div", 19)(
+            108,
+            "div",
+            41
+          )(109, "div", 42),
+          l(110, "img", 43),
+          t(111, "div", 44)(112, "div", 45)(113, "p"),
+          n(
+            114,
+            "R\xE9sultat : Une rentabilit\xE9 accrue et une s\xE9curit\xE9 financi\xE8re renforc\xE9e pour anticiper sa retraite et transmettre son patrimoine."
+          ),
+          e()()()()(),
+          t(115, "div", 46)(116, "div", 47)(117, "h2"),
+          n(
+            118,
+            "Exemple concret : Maximisez vos avantages fiscaux et patrimoniaux"
+          ),
+          e(),
+          t(119, "p"),
+          n(
+            120,
+            "Un m\xE9decin g\xE9n\xE9raliste, avec un revenu annuel de 120 000 \u20AC, a sollicit\xE9 MFINANCES pour optimiser sa gestion fiscale et patrimoniale. Nos experts ont propos\xE9 une restructuration compl\xE8te :"
+          ),
+          e()(),
+          l(121, "div", 48),
+          t(122, "div", 49)(123, "ul", 50)(124, "li"),
+          l(125, "img", 51),
+          n(
+            126,
+            "Passage en soci\xE9t\xE9 avec une strat\xE9gie de d\xE9veloppement immobilier. "
+          ),
+          e(),
+          t(127, "li"),
+          l(128, "img", 51),
+          n(
+            129,
+            "R\xE9duction des imp\xF4ts annuels de 60 %, soit 36 000 \u20AC \xE9conomis\xE9s. "
+          ),
+          e(),
+          t(130, "li"),
+          l(131, "img", 51),
+          n(
+            132,
+            "Constitution d\u2019un patrimoine immobilier valoris\xE9 \xE0 500 000 \u20AC sur 10 ans. "
+          ),
+          e()()(),
+          l(133, "div", 52),
+          t(134, "div", 53)(135, "a", 54),
+          n(136, "Contactez-Nous"),
+          l(137, "i", 55),
+          e()()()()()()(),
+          t(138, "div", 56)(139, "div", 2)(140, "div", 19)(141, "div", 57)(
+            142,
+            "div",
+            58
+          )(
+            143,
+            "div",
+            59
+          )(144, "h2"),
+          n(
+            145,
+            "TVA et professions m\xE9dicales : Comprendre l\u2019assujettissement mixte"
+          ),
+          e()(),
+          t(146, "div", 60)(147, "div", 5)(148, "div")(149, "div", 61)(150, "p"),
+          l(151, "img", 62),
+          t(152, "strong"),
+          n(153, "Optimisez vos d\xE9ductions :"),
+          e(),
+          n(
+            154,
+            " D\xE9duisez la TVA sur les frais sp\xE9cifiques li\xE9s \xE0 vos prestations taxables."
+          ),
+          e()(),
+          l(155, "div", 24),
+          t(156, "div", 61)(157, "p"),
+          l(158, "img", 62),
+          t(159, "strong"),
+          n(160, "Appliquez un prorata g\xE9n\xE9ral :"),
+          e(),
+          n(
+            161,
+            " G\xE9rez efficacement la TVA sur les frais g\xE9n\xE9raux, en tenant compte du ratio entre vos revenus soumis et non soumis \xE0 TVA."
+          ),
+          e()()()()(),
+          t(162, "p"),
+          n(
+            163,
+            "Une gestion rigoureuse est essentielle pour \xE9viter les erreurs et maximiser vos avantages fiscaux. Contactez un expert MFINANCES d\xE8s aujourd\u2019hui pour clarifier vos obligations et optimiser votre gestion TVA."
+          ),
+          e(),
+          t(164, "div", 63)(165, "a", 64),
+          n(166, "Contactez-nous "),
+          l(167, "i", 14),
+          e()()()(),
+          t(168, "div", 65)(169, "div", 66),
+          l(170, "img", 67),
+          e()()()()(),
+          t(171, "section", 68)(172, "div", 18)(173, "div", 2)(174, "div", 19)(
+            175,
+            "div",
+            37
+          )(176, "div", 38),
+          l(177, "img", 69),
+          e()(),
+          t(178, "div", 20)(179, "div", 21)(180, "div", 22)(181, "h1"),
+          n(
+            182,
+            "Les services de MFINANCES pour les professionnels de la sant\xE9 : "
+          ),
+          l(183, "br"),
+          t(184, "span", 23),
+          n(185, "Un accompagnement complet et sur mesure"),
+          e()()(),
+          l(186, "div", 24),
+          t(187, "div", 25)(188, "div", 26)(189, "div", 27)(190, "div", 28),
+          l(191, "img", 29),
+          e()(),
+          t(192, "div", 30)(193, "h2"),
+          n(194, "D\xE9velopper et structurer votre activit\xE9 m\xE9dicale"),
+          e(),
+          t(195, "ul")(196, "li"),
+          n(
+            197,
+            "Passage en soci\xE9t\xE9 : Optimisez vos revenus et votre fiscalit\xE9 gr\xE2ce \xE0 des structures adapt\xE9es et bien con\xE7ues."
+          ),
+          e(),
+          t(198, "li"),
+          n(
+            199,
+            "Investissements strat\xE9giques : Planifiez vos acquisitions, comme du mat\xE9riel m\xE9dical ou des locaux, pour maximiser leur rentabilit\xE9 et r\xE9duire votre charge fiscale."
+          ),
+          e(),
+          t(200, "li"),
+          n(
+            201,
+            "Gestion immobili\xE8re proactive : Transformez vos d\xE9penses en un patrimoine immobilier solide pour assurer votre s\xE9curit\xE9 financi\xE8re \xE0 long terme et pr\xE9parer une transmission optimale."
+          ),
+          e(),
+          t(202, "li"),
+          n(
+            203,
+            "Optimisation des ressources professionnelles : Profitez d\u2019avantages fiscaux tels que le choix optimal entre indemnit\xE9s kilom\xE9triques ou v\xE9hicule de soci\xE9t\xE9."
+          ),
+          e()()()(),
+          t(204, "div", 31)(205, "div", 27)(206, "div", 28),
+          l(207, "img", 32),
+          e()(),
+          t(208, "div", 30)(209, "h2"),
+          n(
+            210,
+            "Pr\xE9parer l\u2019avenir : S\xE9curisez votre patrimoine et votre succession"
+          ),
+          e(),
+          t(211, "ul")(212, "li"),
+          n(
+            213,
+            "Transmission ou cession de patient\xE8le : Maximisez la valeur de votre activit\xE9 gr\xE2ce \xE0 une strat\xE9gie de cession bien structur\xE9e."
+          ),
+          e(),
+          t(214, "li"),
+          n(
+            215,
+            "Pr\xE9paration de la retraite : Identifiez et mettez en \u0153uvre des dispositifs d\u2019\xE9pargne et d\u2019investissement qui s\xE9curisent vos revenus futurs."
+          ),
+          e(),
+          t(216, "li"),
+          n(
+            217,
+            "Optimisation fiscale en fin de carri\xE8re : R\xE9duisez vos charges fiscales gr\xE2ce \xE0 des strat\xE9gies adapt\xE9es \xE0 votre situation personnelle et professionnelle."
+          ),
+          e()()()(),
+          t(218, "div", 33)(219, "div", 27)(220, "div", 28),
+          l(221, "img", 34),
+          e()(),
+          t(222, "div", 30)(223, "h2"),
+          n(224, "Cr\xE9er votre entreprise dans le secteur m\xE9dical"),
+          e(),
+          t(225, "ul")(226, "li"),
+          n(
+            227,
+            "Choix du statut juridique : Adaptez votre structure \xE0 vos ambitions, qu\u2019il s\u2019agisse d\u2019exercer seul ou en groupe."
+          ),
+          e(),
+          t(228, "li"),
+          n(
+            229,
+            "Planification strat\xE9gique : \xC9laboration d\u2019un plan financier \xE0 plusieurs ann\xE9es pour d\xE9finir des objectifs clairs et garantir une croissance durable."
+          ),
+          e(),
+          t(230, "li"),
+          n(
+            231,
+            "Support administratif complet : Simplifiez vos d\xE9marches l\xE9gales et assurez la conformit\xE9 de votre entreprise d\xE8s sa cr\xE9ation."
+          ),
+          e()()()(),
+          t(232, "div", 35)(233, "div", 27)(234, "div", 28),
+          l(235, "i", 36),
+          e()(),
+          t(236, "div", 30)(237, "h2"),
+          n(238, "Simplifier la gestion de votre activit\xE9"),
+          e(),
+          t(239, "ul")(240, "li"),
+          n(
+            241,
+            "Gestion comptable compl\xE8te : Comptes annuels, d\xE9clarations fiscales, gestion des notes de frais, factures clients et fournisseurs."
+          ),
+          e(),
+          t(242, "li"),
+          n(
+            243,
+            "Suivi des indicateurs cl\xE9s : Analyse de votre rentabilit\xE9, de vos flux de tr\xE9sorerie et de vos performances financi\xE8res pour une ma\xEEtrise totale de votre activit\xE9."
+          ),
+          e(),
+          t(244, "li"),
+          n(
+            245,
+            "Conseils quotidiens : R\xE9solution rapide de vos probl\xE9matiques administratives et financi\xE8res gr\xE2ce \xE0 nos experts d\xE9di\xE9s."
+          ),
+          e()()()()()()()()()()(),
+          t(246, "section", 70)(247, "div", 2)(248, "div", 19)(249, "div", 71)(
+            250,
+            "h2",
+            72
+          ),
+          n(251, " Pourquoi choisir "),
+          l(252, "br"),
+          t(253, "span", 73),
+          n(254, "MFINANCES"),
+          e(),
+          n(255, " pour vous accompagner\u202F? "),
+          e()(),
+          t(256, "div", 74)(257, "div", 75)(258, "div", 76),
+          l(259, "img", 77),
+          e(),
+          t(260, "div")(261, "h5", 78),
+          n(262, "Une expertise cibl\xE9e :"),
+          e(),
+          t(263, "p", 79),
+          n(
+            264,
+            "Nos sp\xE9cialistes ma\xEEtrisent les sp\xE9cificit\xE9s du secteur m\xE9dical et param\xE9dical."
+          ),
+          e()()(),
+          t(265, "div", 80)(266, "div", 76),
+          l(267, "img", 81),
+          e(),
+          t(268, "div")(269, "h5", 78),
+          n(270, "Un accompagnement global :"),
+          e(),
+          t(271, "p", 79),
+          n(
+            272,
+            "De la cr\xE9ation de votre structure \xE0 la transmission de votre activit\xE9, nous sommes \xE0 vos c\xF4t\xE9s \xE0 chaque \xE9tape."
+          ),
+          e()()(),
+          t(273, "div", 82)(274, "div", 76),
+          l(275, "img", 83),
+          e(),
+          t(276, "div")(277, "h5", 78),
+          n(278, "Des solutions personnalis\xE9es :"),
+          e(),
+          t(279, "p", 79),
+          n(
+            280,
+            "Adapt\xE9es \xE0 vos besoins, pour optimiser vos finances et faciliter votre quotidien."
+          ),
+          e()()()()()()(),
+          t(281, "section", 84)(282, "div", 85)(283, "div", 19)(284, "div", 86),
+          l(285, "img", 87),
+          e(),
+          t(286, "div", 88)(287, "h2", 89),
+          n(288, " Confiez votre activit\xE9 \xE0"),
+          l(289, "br"),
+          t(290, "span", 90),
+          n(291, "des experts"),
+          e(),
+          n(292, ". "),
+          e(),
+          t(293, "p", 91),
+          n(
+            294,
+            " Prenez rendez-vous d\xE8s aujourd\u2019hui avec un conseiller MFINANCES pour b\xE9n\xE9ficier d\u2019une analyse personnalis\xE9e et d\u2019un accompagnement complet. Transformez vos d\xE9fis financiers en opportunit\xE9s de croissance. "
+          ),
+          e(),
+          t(295, "a", 92),
+          n(296, " Contactez-nous "),
+          l(297, "i", 93),
+          e()()()()(),
+          l(298, "app-recommandation-profil"));
     },
     dependencies: [oe, se],
     styles: [
@@ -9693,61 +9693,61 @@ var Rt = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1", 3),
-        n(4, "Contactez nous"),
-        e(),
-        t(5, "p", 3),
-        n(
-          6,
-          " Chez Mfinances, votre r\xE9ussite est notre mission. Pour toutes vos questions et besoins en conseil comptable"
-        ),
-        l(7, "br"),
-        n(
-          8,
-          " et fiscal, contactez-nous pour discuter de votre projet d'entreprise. Notre \xE9quipe est \xE0 votre \xE9coute. "
-        ),
-        e()()()(),
-        t(9, "div", 4)(10, "div", 5)(11, "div", 6)(12, "div", 7),
-        l(13, "i", 8),
-        e(),
-        t(14, "h3"),
-        n(15, "Bureau"),
-        e(),
-        t(16, "p"),
-        n(17, "20 Rue de la Magnanerie \xE0"),
-        l(18, "br"),
-        n(19, "1180 Uccle"),
-        e()(),
-        t(20, "div", 6)(21, "div", 7),
-        l(22, "i", 9),
-        e(),
-        t(23, "h3"),
-        n(24, "Appelez-Nous"),
-        e(),
-        t(25, "p"),
-        n(26, "+32 2 886 05 50"),
-        e()(),
-        t(27, "div", 6)(28, "div", 7),
-        l(29, "i", 10),
-        e(),
-        t(30, "h3"),
-        n(31, "Email"),
-        e(),
-        t(32, "p"),
-        n(33, "info@mfinances.be"),
-        e()()(),
-        t(34, "div", 11)(35, "span", 12),
-        n(36, "Suivez nous"),
-        e(),
-        t(37, "div", 13)(38, "a", 14),
-        l(39, "i", 15),
-        e(),
-        t(40, "a", 16),
-        l(41, "i", 17),
-        e(),
-        t(42, "a", 18),
-        l(43, "i", 19),
-        e()()()(),
-        l(44, "app-zone-contact"));
+          n(4, "Contactez nous"),
+          e(),
+          t(5, "p", 3),
+          n(
+            6,
+            " Chez Mfinances, votre r\xE9ussite est notre mission. Pour toutes vos questions et besoins en conseil comptable"
+          ),
+          l(7, "br"),
+          n(
+            8,
+            " et fiscal, contactez-nous pour discuter de votre projet d'entreprise. Notre \xE9quipe est \xE0 votre \xE9coute. "
+          ),
+          e()()()(),
+          t(9, "div", 4)(10, "div", 5)(11, "div", 6)(12, "div", 7),
+          l(13, "i", 8),
+          e(),
+          t(14, "h3"),
+          n(15, "Bureau"),
+          e(),
+          t(16, "p"),
+          n(17, "20 Rue de la Magnanerie \xE0"),
+          l(18, "br"),
+          n(19, "1180 Uccle"),
+          e()(),
+          t(20, "div", 6)(21, "div", 7),
+          l(22, "i", 9),
+          e(),
+          t(23, "h3"),
+          n(24, "Appelez-Nous"),
+          e(),
+          t(25, "p"),
+          n(26, "+32 2 886 05 50"),
+          e()(),
+          t(27, "div", 6)(28, "div", 7),
+          l(29, "i", 10),
+          e(),
+          t(30, "h3"),
+          n(31, "Email"),
+          e(),
+          t(32, "p"),
+          n(33, "info@mfinances.be"),
+          e()()(),
+          t(34, "div", 11)(35, "span", 12),
+          n(36, "Suivez nous"),
+          e(),
+          t(37, "div", 13)(38, "a", 14),
+          l(39, "i", 15),
+          e(),
+          t(40, "a", 16),
+          l(41, "i", 17),
+          e(),
+          t(42, "a", 18),
+          l(43, "i", 19),
+          e()()()(),
+          l(44, "app-zone-contact"));
     },
     dependencies: [Ke],
     styles: [
@@ -10159,443 +10159,443 @@ var Bt = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1"),
-        n(4, "Grande Entreprise"),
-        e(),
-        t(5, "p", 3),
-        n(6, "Accueil > Grande Entreprise"),
-        e()()()(),
-        t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
-        l(11, "app-sidebar"),
-        e(),
-        t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
-        n(15, " Anticipez, g\xE9rez et innovez pour maximiser "),
-        t(16, "span", 10),
-        n(17, " votre rentabilit\xE9 "),
-        e()(),
-        t(18, "div")(19, "p"),
-        n(
-          20,
-          "Les grandes entreprises \xE9voluent dans un environnement complexe o\xF9 une gestion rigoureuse des finances est essentielle pour garantir leur comp\xE9titivit\xE9. Entre le pilotage strat\xE9gique, la gestion des flux de tr\xE9sorerie, et l\u2019optimisation des ressources, il est crucial de disposer d\u2019outils adapt\xE9s et d\u2019un accompagnement expert. "
-        ),
-        e(),
-        t(21, "p"),
-        n(
-          22,
-          "Chez MFINANCES, nous proposons des solutions sur mesure, int\xE9grant des budgets pr\xE9visionnels, des situations mensuelles d\xE9taill\xE9es, et un syst\xE8me de cash collecting optimis\xE9"
-        ),
-        e(),
-        l(23, "br"),
-        e(),
-        t(24, "div", 11)(25, "div", 12)(26, "button", 13),
-        O("click", function () {
-          return s.scrollToSection("targetSection");
-        }),
-        n(27, "D\xE9couvrez ce que vous gagnerez avec nous "),
-        l(28, "i", 14),
-        e()()(),
-        t(29, "div", 15),
-        l(30, "img", 16),
-        e()(),
-        t(31, "div", 17)(32, "div", 18),
-        l(33, "img", 19),
-        e(),
-        t(34, "div", 20)(35, "p"),
-        n(
-          36,
-          "Gr\xE2ce \xE0 l\u2019intervention d\u2019un contr\xF4leur de gestion et d\u2019un directeur financier (DAF) \xE0 temps partiel, vous b\xE9n\xE9ficiez d\u2019un pilotage financier pr\xE9cis et accessible, avec des b\xE9n\xE9fices imm\xE9diats :"
-        ),
-        e(),
-        t(37, "ul", 21)(38, "li"),
-        l(39, "i", 22),
-        n(40, " R\xE9duction des co\xFBts op\xE9rationnels "),
-        e(),
-        t(41, "li"),
-        l(42, "i", 22),
-        n(43, " Meilleure allocation des ressources "),
-        e(),
-        t(44, "li"),
-        l(45, "i", 22),
-        n(46, " Capacit\xE9 accrue \xE0 investir dans l\u2019innovation "),
-        e()()()()()()()(),
-        t(47, "section", 23)(48, "div", 24)(49, "div", 2)(50, "div", 25)(
-          51,
-          "div",
-          26
-        )(52, "div", 27)(
-          53,
-          "div",
-          28
-        )(54, "h1"),
-        n(55, "Besoins sp\xE9cifiques des grandes entreprises : "),
-        l(56, "br"),
-        t(57, "span", 29),
-        n(58, "Une gestion sur mesure pour des r\xE9sultats concrets"),
-        e()()(),
-        l(59, "div", 30),
-        t(60, "div", 31)(61, "div", 32)(62, "div", 33)(63, "div", 34),
-        l(64, "img", 35),
-        e()(),
-        t(65, "div", 36)(66, "h2"),
-        n(67, "Budgets pr\xE9visionnels dynamiques :"),
-        e(),
-        t(68, "ul")(69, "li"),
-        n(
-          70,
-          "Le budget pr\xE9visionnel projette vos recettes et d\xE9penses pour une planification strat\xE9gique."
-        ),
-        e(),
-        t(71, "li"),
-        n(
-          72,
-          "Anticipez vos besoins financiers et r\xE9\xE9valuez vos priorit\xE9s strat\xE9giques."
-        ),
-        e()(),
-        t(73, "p")(74, "b"),
-        n(75, "R\xE9sultat :"),
-        e(),
-        n(
-          76,
-          " Une prise de d\xE9cision \xE9clair\xE9e et une r\xE9duction des impr\xE9vus financiers."
-        ),
-        e()()(),
-        t(77, "div", 37)(78, "div", 33)(79, "div", 34),
-        l(80, "img", 38),
-        e()(),
-        t(81, "div", 36)(82, "h2"),
-        n(83, "Gestion proactive de la tr\xE9sorerie :"),
-        e(),
-        t(84, "ul")(85, "li"),
-        n(
-          86,
-          "Identifiez \xE0 l\u2019avance les p\xE9riodes critiques pour \xE9viter les d\xE9couverts co\xFBteux."
-        ),
-        e(),
-        t(87, "li"),
-        n(
-          88,
-          "Optimisez vos flux financiers et r\xE9duisez les d\xE9lais de paiement clients."
-        ),
-        e()(),
-        t(89, "p")(90, "b"),
-        n(91, "R\xE9sultat :"),
-        e(),
-        n(
-          92,
-          " Une meilleure capacit\xE9 d\u2019investissement et une visibilit\xE9 renforc\xE9e."
-        ),
-        e()()(),
-        t(93, "div", 39)(94, "div", 33)(95, "div", 34),
-        l(96, "img", 40),
-        e()(),
-        t(97, "div", 36)(98, "h2"),
-        n(99, "Contr\xF4le de gestion avanc\xE9 :"),
-        e(),
-        t(100, "ul")(101, "li"),
-        n(
-          102,
-          "Mise en place de tableaux de bord personnalis\xE9s pour suivre vos indicateurs cl\xE9s."
-        ),
-        e(),
-        t(103, "li"),
-        n(
-          104,
-          "Analyse proactive des \xE9carts entre le pr\xE9visionnel et le r\xE9alis\xE9 pour ajustements rapides."
-        ),
-        e()(),
-        t(105, "p")(106, "b"),
-        n(107, "R\xE9sultat :"),
-        e(),
-        n(
-          108,
-          " Une allocation optimis\xE9e des ressources et une performance accrue."
-        ),
-        e()()(),
-        t(109, "div", 41)(110, "div", 33)(111, "div", 34),
-        l(112, "i", 42),
-        e()(),
-        t(113, "div", 36)(114, "h2"),
-        n(115, "Flexibilit\xE9 avec un DAF \xE0 temps partiel :"),
-        e(),
-        t(116, "ul")(117, "li"),
-        n(
-          118,
-          "\xC9laboration de business plans et supervision des projets complexes."
-        ),
-        e(),
-        t(119, "li"),
-        n(
-          120,
-          "Gestion de la tr\xE9sorerie et optimisation des fonctions financi\xE8res et juridiques."
-        ),
-        e()(),
-        t(121, "p")(122, "b"),
-        n(123, "R\xE9sultat :"),
-        e(),
-        n(
-          124,
-          " Une expertise de haut niveau accessible \xE0 co\xFBt r\xE9duit."
-        ),
-        e()()(),
-        t(125, "div", 43)(126, "div", 33)(127, "div", 34),
-        l(128, "i", 44),
-        e()(),
-        t(129, "div", 36)(130, "h2"),
-        n(131, "Digitalisation et automatisation des processus :"),
-        e(),
-        t(132, "ul")(133, "li"),
-        n(
-          134,
-          "Int\xE9grez des outils ERP et CRM pour centraliser vos donn\xE9es financi\xE8res et commerciales."
-        ),
-        e(),
-        t(135, "li"),
-        n(
-          136,
-          "Automatisez vos reportings pour une r\xE9duction des erreurs et un suivi en temps r\xE9el."
-        ),
-        e()(),
-        t(137, "p")(138, "b"),
-        n(139, "R\xE9sultat :"),
-        e(),
-        n(140, " Une productivit\xE9 accrue et des analyses plus fiables."),
-        e()()()()()(),
-        t(141, "div", 45)(142, "div", 46)(143, "div", 47)(144, "div", 48),
-        l(145, "img", 49),
-        e(),
-        t(146, "div", 50),
-        l(147, "img", 51),
-        e(),
-        t(148, "div", 50),
-        l(149, "img", 52),
-        e()()()()()()()(),
-        t(150, "section", 53)(151, "div", 2)(152, "div", 54)(153, "div", 55)(
-          154,
-          "h2",
-          56
-        ),
-        n(155, " Pratiques compl\xE9mentaires pour une gestion optimis\xE9e "),
-        e(),
-        t(156, "p", 57),
-        n(157, " Les pratiques pour une gestion efficace "),
-        e()(),
-        t(158, "div", 58)(159, "div", 59)(160, "span", 60),
-        n(161, " Etape "),
-        e(),
-        t(162, "h5", 61),
-        n(163, "Situations mensuelles interm\xE9diaires"),
-        e(),
-        t(164, "p", 62),
-        n(
-          165,
-          " Produisez des rapports r\xE9guliers pour analyser les \xE9carts et ajuster les strat\xE9gies en cours. Identifiez rapidement les anomalies pour garantir un pilotage pr\xE9cis. "
-        ),
-        e(),
-        t(166, "p", 63),
-        n(
-          167,
-          " Avantage client : Une r\xE9activit\xE9 accrue face aux impr\xE9vus,"
-        ),
-        l(168, "br"),
-        n(169, " \xE9vitant des pertes op\xE9rationnelles. "),
-        e(),
-        t(170, "span", 64),
-        n(171, " 01 "),
-        e()(),
-        t(172, "div", 59)(173, "span", 60),
-        n(174, " Etape "),
-        e(),
-        t(175, "h5", 61),
-        n(176, "Analyse approfondie des indicateurs financiers"),
-        e(),
-        t(177, "p", 62),
-        n(
-          178,
-          " Ratio de tr\xE9sorerie, d\xE9lai moyen de paiement clients (DSO), marge brute et rentabilit\xE9 par projet. "
-        ),
-        e(),
-        t(179, "p", 63),
-        n(
-          180,
-          " Avantage client : Une vision claire pour prioriser les actions"
-        ),
-        l(181, "br"),
-        n(182, " et allouer les budgets efficacement. "),
-        e(),
-        t(183, "span", 64),
-        n(184, " 02 "),
-        e()(),
-        t(185, "div", 59)(186, "span", 60),
-        n(187, " Etape "),
-        e(),
-        t(188, "h5", 61),
-        n(189, "Automatisation des t\xE2ches et outils de suivi"),
-        e(),
-        t(190, "p", 62),
-        n(
-          191,
-          " Impl\xE9mentez des logiciels adapt\xE9s pour r\xE9duire le temps pass\xE9 sur les t\xE2ches administratives. "
-        ),
-        e(),
-        t(192, "p", 63),
-        n(
-          193,
-          " Avantage client : Moins de ressources immobilis\xE9es sur des t\xE2ches r\xE9p\xE9titives,"
-        ),
-        l(194, "br"),
-        n(
-          195,
-          " et davantage consacr\xE9es \xE0 l\u2019innovation et \xE0 la strat\xE9gie. "
-        ),
-        e(),
-        t(196, "span", 64),
-        n(197, " 03 "),
-        e()()()()()(),
-        t(198, "section", 65)(199, "div", 66)(200, "h1", 67),
-        n(201, "Exemples Concrets : R\xE9sultats obtenus avec MFINANCES"),
-        e(),
-        t(202, "div", 68)(203, "div", 69)(204, "div", 70)(205, "h2", 71),
-        n(206, "Entreprise industrielle multi-sites"),
-        e(),
-        t(207, "p", 72)(208, "strong"),
-        n(209, "Probl\xE8me :"),
-        e(),
-        n(
-          210,
-          " Manque de visibilit\xE9 sur les flux financiers et tensions fr\xE9quentes sur la tr\xE9sorerie."
-        ),
-        e(),
-        t(211, "p", 73)(212, "strong"),
-        n(213, "Solution :"),
-        e()(),
-        t(214, "ul", 74)(215, "li"),
-        n(216, "Situations mensuelles interm\xE9diaires."),
-        e(),
-        t(217, "li"),
-        n(
-          218,
-          "Tableaux de tr\xE9sorerie pr\xE9visionnels actualis\xE9s chaque semaine."
-        ),
-        e(),
-        t(219, "li"),
-        n(220, "Syst\xE8me de cash collecting centralis\xE9."),
-        e()(),
-        t(221, "p", 75)(222, "strong"),
-        n(223, "R\xE9sultat :"),
-        e()(),
-        t(224, "ul", 74)(225, "li"),
-        n(226, "R\xE9duction des retards de paiement de 40 %."),
-        e(),
-        t(227, "li"),
-        n(
-          228,
-          "Projections financi\xE8res fiables sur 12 mois, permettant une planification optimis\xE9e."
-        ),
-        e()()()(),
-        t(229, "div", 69)(230, "div", 70)(231, "h2", 71),
-        n(232, "Groupe technologique en pleine croissance"),
-        e(),
-        t(233, "p", 72)(234, "strong"),
-        n(235, "Probl\xE8me :"),
-        e(),
-        n(
-          236,
-          " Retards dans les encaissements clients, entra\xEEnant des difficult\xE9s \xE0 financer l\u2019innovation."
-        ),
-        e(),
-        t(237, "p", 73)(238, "strong"),
-        n(239, "Solution :"),
-        e()(),
-        t(240, "ul", 74)(241, "li"),
-        n(
-          242,
-          "Mise en place de budgets pr\xE9visionnels dynamiques et tableaux de tr\xE9sorerie."
-        ),
-        e(),
-        t(243, "li"),
-        n(244, "Formation des \xE9quipes au cash collecting."),
-        e()(),
-        t(245, "p", 75)(246, "strong"),
-        n(247, "R\xE9sultat :"),
-        e()(),
-        t(248, "ul", 74)(249, "li"),
-        n(250, "Diminution des d\xE9lais de paiement clients de 20 jours."),
-        e(),
-        t(251, "li"),
-        n(
-          252,
-          "Augmentation des liquidit\xE9s, permettant de financer un projet strat\xE9gique en R&D."
-        ),
-        e()()()()()()(),
-        t(253, "section", 76)(254, "div", 2)(255, "div", 54)(256, "div", 77)(
-          257,
-          "h2",
-          78
-        ),
-        n(258, " Pourquoi choisir "),
-        l(259, "br"),
-        t(260, "span", 79),
-        n(261, "MFINANCES"),
-        e(),
-        n(262, " pour vous accompagner\u202F? "),
-        e()(),
-        t(263, "div", 80)(264, "div", 81)(265, "div", 82),
-        l(266, "img", 83),
-        e(),
-        t(267, "div")(268, "h5", 61),
-        n(269, "Un accompagnement strat\xE9gique et personnalis\xE9 "),
-        e(),
-        t(270, "p", 84),
-        n(
-          271,
-          "Nos contr\xF4leurs de gestion et DAF apportent des solutions sp\xE9cifiques \xE0 vos d\xE9fis. "
-        ),
-        e()()(),
-        t(272, "div", 85)(273, "div", 82),
-        l(274, "img", 86),
-        e(),
-        t(275, "div")(276, "h5", 61),
-        n(277, "Des outils modernes et flexibles"),
-        e(),
-        t(278, "p", 84),
-        n(
-          279,
-          "Int\xE9gration de tableaux de bord, ERP, et CRM pour un pilotage pr\xE9cis. "
-        ),
-        e()()(),
-        t(280, "div", 87)(281, "div", 82),
-        l(282, "img", 88),
-        e(),
-        t(283, "div")(284, "h5", 61),
-        n(285, "Des r\xE9sultats concrets et mesurables"),
-        e(),
-        t(286, "p", 84),
-        n(
-          287,
-          "R\xE9duction des co\xFBts op\xE9rationnels, am\xE9lioration des liquidit\xE9s, et croissance durable. "
-        ),
-        e()()()()()()(),
-        t(288, "section", 89)(289, "div", 90)(290, "div", 54)(291, "div", 91),
-        l(292, "img", 92),
-        e(),
-        t(293, "div", 93)(294, "h2", 94),
-        n(295, " Transformez vos d\xE9fis "),
-        l(296, "br"),
-        t(297, "span", 95),
-        n(298, "en opportunit\xE9s"),
-        e(),
-        n(299, ". "),
-        e(),
-        t(300, "p", 96),
-        n(
-          301,
-          " Contactez-nous d\xE8s aujourd\u2019hui pour un diagnostic gratuit et d\xE9couvrez comment MFINANCES peut optimiser vos processus financiers, am\xE9liorer votre tr\xE9sorerie, et acc\xE9l\xE9rer votre croissance. "
-        ),
-        e(),
-        t(302, "a", 97),
-        n(303, " Contactez-nous "),
-        l(304, "i", 98),
-        e()()()()(),
-        l(305, "app-recommandation-profil"));
+          n(4, "Grande Entreprise"),
+          e(),
+          t(5, "p", 3),
+          n(6, "Accueil > Grande Entreprise"),
+          e()()()(),
+          t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
+          l(11, "app-sidebar"),
+          e(),
+          t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
+          n(15, " Anticipez, g\xE9rez et innovez pour maximiser "),
+          t(16, "span", 10),
+          n(17, " votre rentabilit\xE9 "),
+          e()(),
+          t(18, "div")(19, "p"),
+          n(
+            20,
+            "Les grandes entreprises \xE9voluent dans un environnement complexe o\xF9 une gestion rigoureuse des finances est essentielle pour garantir leur comp\xE9titivit\xE9. Entre le pilotage strat\xE9gique, la gestion des flux de tr\xE9sorerie, et l\u2019optimisation des ressources, il est crucial de disposer d\u2019outils adapt\xE9s et d\u2019un accompagnement expert. "
+          ),
+          e(),
+          t(21, "p"),
+          n(
+            22,
+            "Chez MFINANCES, nous proposons des solutions sur mesure, int\xE9grant des budgets pr\xE9visionnels, des situations mensuelles d\xE9taill\xE9es, et un syst\xE8me de cash collecting optimis\xE9"
+          ),
+          e(),
+          l(23, "br"),
+          e(),
+          t(24, "div", 11)(25, "div", 12)(26, "button", 13),
+          O("click", function () {
+            return s.scrollToSection("targetSection");
+          }),
+          n(27, "D\xE9couvrez ce que vous gagnerez avec nous "),
+          l(28, "i", 14),
+          e()()(),
+          t(29, "div", 15),
+          l(30, "img", 16),
+          e()(),
+          t(31, "div", 17)(32, "div", 18),
+          l(33, "img", 19),
+          e(),
+          t(34, "div", 20)(35, "p"),
+          n(
+            36,
+            "Gr\xE2ce \xE0 l\u2019intervention d\u2019un contr\xF4leur de gestion et d\u2019un directeur financier (DAF) \xE0 temps partiel, vous b\xE9n\xE9ficiez d\u2019un pilotage financier pr\xE9cis et accessible, avec des b\xE9n\xE9fices imm\xE9diats :"
+          ),
+          e(),
+          t(37, "ul", 21)(38, "li"),
+          l(39, "i", 22),
+          n(40, " R\xE9duction des co\xFBts op\xE9rationnels "),
+          e(),
+          t(41, "li"),
+          l(42, "i", 22),
+          n(43, " Meilleure allocation des ressources "),
+          e(),
+          t(44, "li"),
+          l(45, "i", 22),
+          n(46, " Capacit\xE9 accrue \xE0 investir dans l\u2019innovation "),
+          e()()()()()()()(),
+          t(47, "section", 23)(48, "div", 24)(49, "div", 2)(50, "div", 25)(
+            51,
+            "div",
+            26
+          )(52, "div", 27)(
+            53,
+            "div",
+            28
+          )(54, "h1"),
+          n(55, "Besoins sp\xE9cifiques des grandes entreprises : "),
+          l(56, "br"),
+          t(57, "span", 29),
+          n(58, "Une gestion sur mesure pour des r\xE9sultats concrets"),
+          e()()(),
+          l(59, "div", 30),
+          t(60, "div", 31)(61, "div", 32)(62, "div", 33)(63, "div", 34),
+          l(64, "img", 35),
+          e()(),
+          t(65, "div", 36)(66, "h2"),
+          n(67, "Budgets pr\xE9visionnels dynamiques :"),
+          e(),
+          t(68, "ul")(69, "li"),
+          n(
+            70,
+            "Le budget pr\xE9visionnel projette vos recettes et d\xE9penses pour une planification strat\xE9gique."
+          ),
+          e(),
+          t(71, "li"),
+          n(
+            72,
+            "Anticipez vos besoins financiers et r\xE9\xE9valuez vos priorit\xE9s strat\xE9giques."
+          ),
+          e()(),
+          t(73, "p")(74, "b"),
+          n(75, "R\xE9sultat :"),
+          e(),
+          n(
+            76,
+            " Une prise de d\xE9cision \xE9clair\xE9e et une r\xE9duction des impr\xE9vus financiers."
+          ),
+          e()()(),
+          t(77, "div", 37)(78, "div", 33)(79, "div", 34),
+          l(80, "img", 38),
+          e()(),
+          t(81, "div", 36)(82, "h2"),
+          n(83, "Gestion proactive de la tr\xE9sorerie :"),
+          e(),
+          t(84, "ul")(85, "li"),
+          n(
+            86,
+            "Identifiez \xE0 l\u2019avance les p\xE9riodes critiques pour \xE9viter les d\xE9couverts co\xFBteux."
+          ),
+          e(),
+          t(87, "li"),
+          n(
+            88,
+            "Optimisez vos flux financiers et r\xE9duisez les d\xE9lais de paiement clients."
+          ),
+          e()(),
+          t(89, "p")(90, "b"),
+          n(91, "R\xE9sultat :"),
+          e(),
+          n(
+            92,
+            " Une meilleure capacit\xE9 d\u2019investissement et une visibilit\xE9 renforc\xE9e."
+          ),
+          e()()(),
+          t(93, "div", 39)(94, "div", 33)(95, "div", 34),
+          l(96, "img", 40),
+          e()(),
+          t(97, "div", 36)(98, "h2"),
+          n(99, "Contr\xF4le de gestion avanc\xE9 :"),
+          e(),
+          t(100, "ul")(101, "li"),
+          n(
+            102,
+            "Mise en place de tableaux de bord personnalis\xE9s pour suivre vos indicateurs cl\xE9s."
+          ),
+          e(),
+          t(103, "li"),
+          n(
+            104,
+            "Analyse proactive des \xE9carts entre le pr\xE9visionnel et le r\xE9alis\xE9 pour ajustements rapides."
+          ),
+          e()(),
+          t(105, "p")(106, "b"),
+          n(107, "R\xE9sultat :"),
+          e(),
+          n(
+            108,
+            " Une allocation optimis\xE9e des ressources et une performance accrue."
+          ),
+          e()()(),
+          t(109, "div", 41)(110, "div", 33)(111, "div", 34),
+          l(112, "i", 42),
+          e()(),
+          t(113, "div", 36)(114, "h2"),
+          n(115, "Flexibilit\xE9 avec un DAF \xE0 temps partiel :"),
+          e(),
+          t(116, "ul")(117, "li"),
+          n(
+            118,
+            "\xC9laboration de business plans et supervision des projets complexes."
+          ),
+          e(),
+          t(119, "li"),
+          n(
+            120,
+            "Gestion de la tr\xE9sorerie et optimisation des fonctions financi\xE8res et juridiques."
+          ),
+          e()(),
+          t(121, "p")(122, "b"),
+          n(123, "R\xE9sultat :"),
+          e(),
+          n(
+            124,
+            " Une expertise de haut niveau accessible \xE0 co\xFBt r\xE9duit."
+          ),
+          e()()(),
+          t(125, "div", 43)(126, "div", 33)(127, "div", 34),
+          l(128, "i", 44),
+          e()(),
+          t(129, "div", 36)(130, "h2"),
+          n(131, "Digitalisation et automatisation des processus :"),
+          e(),
+          t(132, "ul")(133, "li"),
+          n(
+            134,
+            "Int\xE9grez des outils ERP et CRM pour centraliser vos donn\xE9es financi\xE8res et commerciales."
+          ),
+          e(),
+          t(135, "li"),
+          n(
+            136,
+            "Automatisez vos reportings pour une r\xE9duction des erreurs et un suivi en temps r\xE9el."
+          ),
+          e()(),
+          t(137, "p")(138, "b"),
+          n(139, "R\xE9sultat :"),
+          e(),
+          n(140, " Une productivit\xE9 accrue et des analyses plus fiables."),
+          e()()()()()(),
+          t(141, "div", 45)(142, "div", 46)(143, "div", 47)(144, "div", 48),
+          l(145, "img", 49),
+          e(),
+          t(146, "div", 50),
+          l(147, "img", 51),
+          e(),
+          t(148, "div", 50),
+          l(149, "img", 52),
+          e()()()()()()()(),
+          t(150, "section", 53)(151, "div", 2)(152, "div", 54)(153, "div", 55)(
+            154,
+            "h2",
+            56
+          ),
+          n(155, " Pratiques compl\xE9mentaires pour une gestion optimis\xE9e "),
+          e(),
+          t(156, "p", 57),
+          n(157, " Les pratiques pour une gestion efficace "),
+          e()(),
+          t(158, "div", 58)(159, "div", 59)(160, "span", 60),
+          n(161, " Etape "),
+          e(),
+          t(162, "h5", 61),
+          n(163, "Situations mensuelles interm\xE9diaires"),
+          e(),
+          t(164, "p", 62),
+          n(
+            165,
+            " Produisez des rapports r\xE9guliers pour analyser les \xE9carts et ajuster les strat\xE9gies en cours. Identifiez rapidement les anomalies pour garantir un pilotage pr\xE9cis. "
+          ),
+          e(),
+          t(166, "p", 63),
+          n(
+            167,
+            " Avantage client : Une r\xE9activit\xE9 accrue face aux impr\xE9vus,"
+          ),
+          l(168, "br"),
+          n(169, " \xE9vitant des pertes op\xE9rationnelles. "),
+          e(),
+          t(170, "span", 64),
+          n(171, " 01 "),
+          e()(),
+          t(172, "div", 59)(173, "span", 60),
+          n(174, " Etape "),
+          e(),
+          t(175, "h5", 61),
+          n(176, "Analyse approfondie des indicateurs financiers"),
+          e(),
+          t(177, "p", 62),
+          n(
+            178,
+            " Ratio de tr\xE9sorerie, d\xE9lai moyen de paiement clients (DSO), marge brute et rentabilit\xE9 par projet. "
+          ),
+          e(),
+          t(179, "p", 63),
+          n(
+            180,
+            " Avantage client : Une vision claire pour prioriser les actions"
+          ),
+          l(181, "br"),
+          n(182, " et allouer les budgets efficacement. "),
+          e(),
+          t(183, "span", 64),
+          n(184, " 02 "),
+          e()(),
+          t(185, "div", 59)(186, "span", 60),
+          n(187, " Etape "),
+          e(),
+          t(188, "h5", 61),
+          n(189, "Automatisation des t\xE2ches et outils de suivi"),
+          e(),
+          t(190, "p", 62),
+          n(
+            191,
+            " Impl\xE9mentez des logiciels adapt\xE9s pour r\xE9duire le temps pass\xE9 sur les t\xE2ches administratives. "
+          ),
+          e(),
+          t(192, "p", 63),
+          n(
+            193,
+            " Avantage client : Moins de ressources immobilis\xE9es sur des t\xE2ches r\xE9p\xE9titives,"
+          ),
+          l(194, "br"),
+          n(
+            195,
+            " et davantage consacr\xE9es \xE0 l\u2019innovation et \xE0 la strat\xE9gie. "
+          ),
+          e(),
+          t(196, "span", 64),
+          n(197, " 03 "),
+          e()()()()()(),
+          t(198, "section", 65)(199, "div", 66)(200, "h1", 67),
+          n(201, "Exemples Concrets : R\xE9sultats obtenus avec MFINANCES"),
+          e(),
+          t(202, "div", 68)(203, "div", 69)(204, "div", 70)(205, "h2", 71),
+          n(206, "Entreprise industrielle multi-sites"),
+          e(),
+          t(207, "p", 72)(208, "strong"),
+          n(209, "Probl\xE8me :"),
+          e(),
+          n(
+            210,
+            " Manque de visibilit\xE9 sur les flux financiers et tensions fr\xE9quentes sur la tr\xE9sorerie."
+          ),
+          e(),
+          t(211, "p", 73)(212, "strong"),
+          n(213, "Solution :"),
+          e()(),
+          t(214, "ul", 74)(215, "li"),
+          n(216, "Situations mensuelles interm\xE9diaires."),
+          e(),
+          t(217, "li"),
+          n(
+            218,
+            "Tableaux de tr\xE9sorerie pr\xE9visionnels actualis\xE9s chaque semaine."
+          ),
+          e(),
+          t(219, "li"),
+          n(220, "Syst\xE8me de cash collecting centralis\xE9."),
+          e()(),
+          t(221, "p", 75)(222, "strong"),
+          n(223, "R\xE9sultat :"),
+          e()(),
+          t(224, "ul", 74)(225, "li"),
+          n(226, "R\xE9duction des retards de paiement de 40 %."),
+          e(),
+          t(227, "li"),
+          n(
+            228,
+            "Projections financi\xE8res fiables sur 12 mois, permettant une planification optimis\xE9e."
+          ),
+          e()()()(),
+          t(229, "div", 69)(230, "div", 70)(231, "h2", 71),
+          n(232, "Groupe technologique en pleine croissance"),
+          e(),
+          t(233, "p", 72)(234, "strong"),
+          n(235, "Probl\xE8me :"),
+          e(),
+          n(
+            236,
+            " Retards dans les encaissements clients, entra\xEEnant des difficult\xE9s \xE0 financer l\u2019innovation."
+          ),
+          e(),
+          t(237, "p", 73)(238, "strong"),
+          n(239, "Solution :"),
+          e()(),
+          t(240, "ul", 74)(241, "li"),
+          n(
+            242,
+            "Mise en place de budgets pr\xE9visionnels dynamiques et tableaux de tr\xE9sorerie."
+          ),
+          e(),
+          t(243, "li"),
+          n(244, "Formation des \xE9quipes au cash collecting."),
+          e()(),
+          t(245, "p", 75)(246, "strong"),
+          n(247, "R\xE9sultat :"),
+          e()(),
+          t(248, "ul", 74)(249, "li"),
+          n(250, "Diminution des d\xE9lais de paiement clients de 20 jours."),
+          e(),
+          t(251, "li"),
+          n(
+            252,
+            "Augmentation des liquidit\xE9s, permettant de financer un projet strat\xE9gique en R&D."
+          ),
+          e()()()()()()(),
+          t(253, "section", 76)(254, "div", 2)(255, "div", 54)(256, "div", 77)(
+            257,
+            "h2",
+            78
+          ),
+          n(258, " Pourquoi choisir "),
+          l(259, "br"),
+          t(260, "span", 79),
+          n(261, "MFINANCES"),
+          e(),
+          n(262, " pour vous accompagner\u202F? "),
+          e()(),
+          t(263, "div", 80)(264, "div", 81)(265, "div", 82),
+          l(266, "img", 83),
+          e(),
+          t(267, "div")(268, "h5", 61),
+          n(269, "Un accompagnement strat\xE9gique et personnalis\xE9 "),
+          e(),
+          t(270, "p", 84),
+          n(
+            271,
+            "Nos contr\xF4leurs de gestion et DAF apportent des solutions sp\xE9cifiques \xE0 vos d\xE9fis. "
+          ),
+          e()()(),
+          t(272, "div", 85)(273, "div", 82),
+          l(274, "img", 86),
+          e(),
+          t(275, "div")(276, "h5", 61),
+          n(277, "Des outils modernes et flexibles"),
+          e(),
+          t(278, "p", 84),
+          n(
+            279,
+            "Int\xE9gration de tableaux de bord, ERP, et CRM pour un pilotage pr\xE9cis. "
+          ),
+          e()()(),
+          t(280, "div", 87)(281, "div", 82),
+          l(282, "img", 88),
+          e(),
+          t(283, "div")(284, "h5", 61),
+          n(285, "Des r\xE9sultats concrets et mesurables"),
+          e(),
+          t(286, "p", 84),
+          n(
+            287,
+            "R\xE9duction des co\xFBts op\xE9rationnels, am\xE9lioration des liquidit\xE9s, et croissance durable. "
+          ),
+          e()()()()()()(),
+          t(288, "section", 89)(289, "div", 90)(290, "div", 54)(291, "div", 91),
+          l(292, "img", 92),
+          e(),
+          t(293, "div", 93)(294, "h2", 94),
+          n(295, " Transformez vos d\xE9fis "),
+          l(296, "br"),
+          t(297, "span", 95),
+          n(298, "en opportunit\xE9s"),
+          e(),
+          n(299, ". "),
+          e(),
+          t(300, "p", 96),
+          n(
+            301,
+            " Contactez-nous d\xE8s aujourd\u2019hui pour un diagnostic gratuit et d\xE9couvrez comment MFINANCES peut optimiser vos processus financiers, am\xE9liorer votre tr\xE9sorerie, et acc\xE9l\xE9rer votre croissance. "
+          ),
+          e(),
+          t(302, "a", 97),
+          n(303, " Contactez-nous "),
+          l(304, "i", 98),
+          e()()()()(),
+          l(305, "app-recommandation-profil"));
     },
     dependencies: [oe, se],
     styles: [
@@ -11139,485 +11139,485 @@ var zt = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1"),
-        n(4, "Promoteur Immobilier"),
-        e(),
-        t(5, "p", 3),
-        n(6, "Accueil > Promoteur Immobilier"),
-        e()()()(),
-        t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
-        l(11, "app-sidebar"),
-        e(),
-        t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
-        n(15, " Anticipez, g\xE9rez et innovez pour maximiser "),
-        t(16, "span", 10),
-        n(17, " votre rentabilit\xE9 "),
-        e()(),
-        t(18, "div")(19, "p"),
-        n(
-          20,
-          "La promotion immobili\xE8re est une activit\xE9 complexe qui exige une gestion rigoureuse des finances, de la fiscalit\xE9, et des flux de tr\xE9sorerie."
-        ),
-        e(),
-        t(21, "p"),
-        n(
-          22,
-          "Chez MFINANCES, nous proposons des solutions sur mesure, int\xE9grant des budgets pr\xE9visionnels, des situations mensuelles d\xE9taill\xE9es, et un syst\xE8me de cash collecting optimis\xE9"
-        ),
-        e(),
-        l(23, "br"),
-        e(),
-        t(24, "div", 11)(25, "div", 12)(26, "button", 13),
-        O("click", function () {
-          return s.scrollToSection("targetSection");
-        }),
-        n(27, "D\xE9couvrez ce que vous gagnerez avec nous "),
-        l(28, "i", 14),
-        e()()(),
-        t(29, "div", 15),
-        l(30, "img", 16),
-        e()(),
-        t(31, "div", 17)(32, "div", 18),
-        l(33, "img", 19),
-        e(),
-        t(34, "div", 20)(35, "p"),
-        n(
-          36,
-          "En tant qu\u2019acteurs cl\xE9s du d\xE9veloppement immobilier, les promoteurs doivent relever plusieurs d\xE9fis sp\xE9cifiques : "
-        ),
-        e(),
-        t(37, "ul", 21)(38, "li"),
-        l(39, "i", 22),
-        t(40, "strong"),
-        n(41, "Budgets cons\xE9quents et marges serr\xE9es"),
-        e(),
-        n(42, " n\xE9cessitant une planification financi\xE8re pr\xE9cise. "),
-        e(),
-        t(43, "li"),
-        l(44, "i", 22),
-        t(45, "strong"),
-        n(46, "R\xE8gles TVA complexes "),
-        e(),
-        n(
-          47,
-          " qui varient selon la finalit\xE9 des immeubles (revente, location, r\xE9novation). "
-        ),
-        e(),
-        t(48, "li"),
-        l(49, "i", 22),
-        t(50, "strong"),
-        n(51, "Analyse d\xE9taill\xE9e des co\xFBts par projet"),
-        e(),
-        n(52, " essentielle pour optimiser la rentabilit\xE9. "),
-        e()()()()()()()(),
-        t(53, "section", 23)(54, "div", 24)(55, "div", 2)(56, "div", 25)(
-          57,
-          "div",
-          26
-        )(58, "div", 27)(
-          59,
-          "div",
-          28
-        )(60, "h1"),
-        n(61, "Besoins sp\xE9cifiques des Promoteurs Immobiliers"),
-        e()(),
-        l(62, "div", 29),
-        t(63, "div", 30)(64, "div", 31)(65, "div", 32)(66, "div", 33),
-        l(67, "i", 34),
-        e()(),
-        t(68, "div", 35)(69, "h2"),
-        n(
-          70,
-          "Planification financi\xE8re pr\xE9cise et pr\xE9visions budg\xE9taires"
-        ),
-        e(),
-        t(71, "ul")(72, "li"),
-        n(
-          73,
-          "Budgets d\xE9taill\xE9s : Pr\xE9voir les co\xFBts li\xE9s \xE0 l\u2019acquisition, la construction, et la commercialisation."
-        ),
-        e(),
-        t(74, "li"),
-        n(
-          75,
-          "Analyse des besoins en financement : Planifier les apports n\xE9cessaires pour \xE9viter les tensions de tr\xE9sorerie."
-        ),
-        e(),
-        t(76, "li"),
-        n(
-          77,
-          "Projection des flux de tr\xE9sorerie : Pr\xE9voir les entr\xE9es (ventes ou locations) et les sorties (charges fixes et impr\xE9vus) pour \xE9quilibrer vos finances."
-        ),
-        e()()()(),
-        t(78, "div", 36)(79, "div", 32)(80, "div", 33),
-        l(81, "i", 37),
-        e()(),
-        t(82, "div", 35)(83, "h2"),
-        n(
-          84,
-          "Suivi rigoureux des co\xFBts et reporting financier transparent"
-        ),
-        e(),
-        t(85, "ul")(86, "li"),
-        n(
-          87,
-          "Gestion des postes budg\xE9taires : Contr\xF4ler les co\xFBts de construction, les taxes, et les charges administratives."
-        ),
-        e(),
-        t(88, "li"),
-        n(
-          89,
-          "Reporting financier : Offrir une vue claire et synth\xE9tique des revenus et d\xE9penses, facilitant une prise de d\xE9cision \xE9clair\xE9e."
-        ),
-        e(),
-        t(90, "li"),
-        n(
-          91,
-          "Digitalisation des processus : Automatiser le suivi des flux financiers pour une visibilit\xE9 en temps r\xE9el et une gestion optimale des ressources."
-        ),
-        e()()()(),
-        t(92, "div", 38)(93, "div", 32)(94, "div", 33),
-        l(95, "i", 39),
-        e()(),
-        t(96, "div", 35)(97, "h2"),
-        n(98, "TVA : Entre opportunit\xE9 et complexit\xE9"),
-        e(),
-        t(99, "ul")(100, "li"),
-        n(
-          101,
-          "Immeuble neuf destin\xE9 \xE0 la revente : TVA de 21 % d\xE9ductible."
-        ),
-        e(),
-        t(102, "li"),
-        n(
-          103,
-          "Immeuble neuf destin\xE9 \xE0 la location : TVA de 21 % non d\xE9ductible."
-        ),
-        e(),
-        t(104, "li"),
-        n(
-          105,
-          "Immeuble ancien (plus de 10 ans) destin\xE9 \xE0 l\u2019habitation : TVA r\xE9duite \xE0 6 %, non d\xE9ductible."
-        ),
-        e(),
-        t(106, "li"),
-        n(
-          107,
-          "R\xE9gime d\u2019autoliquidation : N\xE9cessite un suivi rigoureux pour \xE9viter les erreurs co\xFBteuses."
-        ),
-        e(),
-        t(108, "li"),
-        n(
-          109,
-          "Calcul du prorata de d\xE9ductibilit\xE9 : Frais g\xE9n\xE9raux d\xE9ductibles au prorata du chiffre d\u2019affaires TVA."
-        ),
-        e()()()(),
-        t(110, "div", 40)(111, "div", 32)(112, "div", 33),
-        l(113, "i", 41),
-        e()(),
-        t(114, "div", 35)(115, "h2"),
-        n(116, "Comptabilit\xE9 analytique pour optimiser la rentabilit\xE9"),
-        e(),
-        t(117, "ul")(118, "li"),
-        n(
-          119,
-          "Zoom sur la structure des co\xFBts : Segmentation des d\xE9penses par projet ou service."
-        ),
-        e(),
-        t(120, "li"),
-        n(
-          121,
-          "Identification des co\xFBts par projet : Analyse fine des postes les plus co\xFBteux."
-        ),
-        e(),
-        t(122, "li"),
-        n(
-          123,
-          "Prise de d\xE9cisions \xE9clair\xE9es : Revoir les mod\xE8les \xE9conomiques pour optimiser la rentabilit\xE9."
-        ),
-        e()()()(),
-        t(124, "div", 42)(125, "div", 32)(126, "div", 33),
-        l(127, "i", 43),
-        e()(),
-        t(128, "div", 35)(129, "h2"),
-        n(130, "Collaboration \xE9troite et accompagnement strat\xE9gique"),
-        e(),
-        t(131, "ul")(132, "li"),
-        n(
-          133,
-          "Compr\xE9hension des objectifs : Identifier les priorit\xE9s et ajuster les strat\xE9gies."
-        ),
-        e(),
-        t(134, "li"),
-        n(
-          135,
-          "Leviers de rentabilit\xE9 : Proposer des solutions concr\xE8tes pour am\xE9liorer les marges."
-        ),
-        e(),
-        t(136, "li"),
-        n(
-          137,
-          "Conseils strat\xE9giques : Vous accompagner dans toutes les \xE9tapes, de l\u2019acquisition \xE0 la commercialisation."
-        ),
-        e()()()()()()(),
-        t(138, "div", 44)(139, "div", 45),
-        l(140, "img", 46),
-        e()()()()()(),
-        t(141, "section", 47)(142, "h2", 48),
-        n(143, "Comment MFINANCES transforme vos projets immobiliers ?"),
-        e(),
-        t(144, "div", 49)(145, "div", 50)(146, "h2"),
-        n(147, "01"),
-        e(),
-        t(148, "h3"),
-        n(149, "Gestion comptable et analytique d\xE9di\xE9e"),
-        e(),
-        t(150, "p"),
-        l(151, "i", 22),
-        n(
-          152,
-          " Comptabilit\xE9 analytique par projet pour une tra\xE7abilit\xE9 optimale des flux financiers."
-        ),
-        e(),
-        t(153, "p"),
-        l(154, "i", 22),
-        n(155, "Suivi pr\xE9cis des marges \xE0 chaque phase du projet."),
-        e(),
-        t(156, "p"),
-        l(157, "i", 22),
-        n(
-          158,
-          "\xC9laboration de bilans interm\xE9diaires pour ajuster les strat\xE9gies en temps r\xE9el."
-        ),
-        e()(),
-        t(159, "div", 50)(160, "h2"),
-        n(161, "02"),
-        e(),
-        t(162, "h3"),
-        n(163, "Optimisation fiscale et TVA"),
-        e(),
-        t(164, "p"),
-        l(165, "i", 22),
-        n(
-          166,
-          " R\xE9cup\xE9ration de la TVA sur les travaux et acquisitions."
-        ),
-        e(),
-        t(167, "p"),
-        l(168, "i", 22),
-        n(
-          169,
-          "Calcul pr\xE9cis du prorata pour optimiser les d\xE9ductions fiscales."
-        ),
-        e(),
-        t(170, "p"),
-        l(171, "i", 22),
-        n(
-          172,
-          "Strat\xE9gies fiscales adapt\xE9es, comme la m\xE9thode \xE0 l\u2019ach\xE8vement, pour r\xE9duire les charges."
-        ),
-        e()(),
-        t(173, "div", 50)(174, "h2"),
-        n(175, "03"),
-        e(),
-        t(176, "h3"),
-        n(177, "Outils digitaux et reporting avanc\xE9"),
-        e(),
-        t(178, "p"),
-        l(179, "i", 22),
-        n(
-          180,
-          " Tableaux de bord personnalis\xE9s pour surveiller les co\xFBts, marges, et flux financiers en temps r\xE9el."
-        ),
-        e(),
-        t(181, "p"),
-        l(182, "i", 22),
-        n(
-          183,
-          " Automatisation des rapports comptables et fiscaux pour une gestion rapide et sans erreur."
-        ),
-        e(),
-        t(184, "p"),
-        l(185, "i", 22),
-        n(
-          186,
-          " Pr\xE9visions financi\xE8res pour anticiper les besoins en tr\xE9sorerie et ajuster vos strat\xE9gies."
-        ),
-        e()()()(),
-        t(187, "section", 51)(188, "div", 52)(189, "h1", 53),
-        n(
-          190,
-          "Exemple concret : MFINANCES optimise la rentabilit\xE9 et la tr\xE9sorerie d\u2019un projet r\xE9sidentiel"
-        ),
-        e(),
-        t(191, "div", 54)(192, "div", 55),
-        l(193, "img", 56),
-        e(),
-        t(194, "div", 57)(195, "h2", 58),
-        n(196, "Contexte :"),
-        e(),
-        t(197, "ul")(198, "li"),
-        n(
-          199,
-          "Un promoteur immobilier g\xE9rait plusieurs projets r\xE9sidentiels avec des ventes concentr\xE9es en fin de projet. Les principaux d\xE9fis incluaient :"
-        ),
-        e(),
-        t(200, "li"),
-        n(
-          201,
-          "Une gestion complexe des co\xFBts par unit\xE9, impactant les marges globales."
-        ),
-        e(),
-        t(202, "li"),
-        n(
-          203,
-          "La n\xE9cessit\xE9 de lisser les flux financiers pour \xE9viter des tensions de tr\xE9sorerie."
-        ),
-        e(),
-        t(204, "li"),
-        n(
-          205,
-          "L\u2019annualit\xE9 de l\u2019imp\xF4t, rendant certaines ventes d\xE9favorables d\u2019un point de vue fiscal."
-        ),
-        e()(),
-        t(206, "h2", 58),
-        n(207, "Solutions apport\xE9es par MFINANCES :"),
-        e(),
-        t(208, "ul")(209, "li")(210, "strong"),
-        n(211, "Comptabilit\xE9 analytique d\xE9taill\xE9e :"),
-        e(),
-        n(
-          212,
-          " Ventilation des co\xFBts par projet et par unit\xE9 pour mieux \xE9valuer la rentabilit\xE9."
-        ),
-        e(),
-        t(213, "li")(214, "strong"),
-        n(215, "Suivi budg\xE9taire rigoureux :"),
-        e(),
-        n(
-          216,
-          " Analyse des sc\xE9narios de vente et des implications fiscales pour optimiser la tr\xE9sorerie."
-        ),
-        e(),
-        t(217, "li")(218, "strong"),
-        n(219, "Strat\xE9gie d\u2019ajustement des ventes :"),
-        e(),
-        n(
-          220,
-          " Report strat\xE9gique de la vente de certaines unit\xE9s pour les faire co\xEFncider avec le lancement de nouveaux projets, r\xE9duisant ainsi l\u2019impact fiscal."
-        ),
-        e()(),
-        t(221, "h2", 58),
-        n(222, "R\xE9sultats :"),
-        e(),
-        t(223, "ul")(224, "li"),
-        n(
-          225,
-          "Une rentabilit\xE9 globale accrue, avec une augmentation de 12 \xE0 20 % selon les projets."
-        ),
-        e(),
-        t(226, "li"),
-        n(
-          227,
-          "Une tr\xE9sorerie renforc\xE9e gr\xE2ce \xE0 des flux financiers \xE9quilibr\xE9s, permettant d\u2019initier un nouveau projet sans financement externe."
-        ),
-        e(),
-        t(228, "li"),
-        n(
-          229,
-          "Une gestion fiscale optimis\xE9e, r\xE9duisant les charges li\xE9es \xE0 l\u2019annualit\xE9 de l\u2019imp\xF4t."
-        ),
-        e()()()()()(),
-        t(230, "section", 59)(231, "div", 2)(232, "div", 25)(233, "div", 60)(
-          234,
-          "h2",
-          61
-        ),
-        n(235, " Pourquoi choisir "),
-        l(236, "br"),
-        t(237, "span", 62),
-        n(238, "MFINANCES"),
-        e(),
-        n(239, " pour vos projets immobiliers ? "),
-        e()(),
-        t(240, "div", 63)(241, "div", 64)(242, "div", 65),
-        l(243, "img", 66),
-        e(),
-        t(244, "div")(245, "h5", 67),
-        n(246, "Une expertise sectorielle \xE9prouv\xE9e"),
-        e(),
-        t(247, "p", 68),
-        n(
-          248,
-          "Une ma\xEEtrise approfondie des sp\xE9cificit\xE9s fiscales, comptables, et financi\xE8res des promoteurs immobiliers."
-        ),
-        e(),
-        t(249, "p", 68),
-        n(
-          250,
-          "Des solutions sur mesure pour r\xE9pondre aux besoins de chaque projet."
-        ),
-        e()()(),
-        t(251, "div", 69)(252, "div", 65),
-        l(253, "img", 70),
-        e(),
-        t(254, "div")(255, "h5", 67),
-        n(256, "Des outils et strat\xE9gies adapt\xE9s"),
-        e(),
-        t(257, "p", 68),
-        n(
-          258,
-          "Automatisation et digitalisation pour un pilotage efficace et en temps r\xE9el."
-        ),
-        e(),
-        t(259, "p", 68),
-        n(
-          260,
-          "Conseils strat\xE9giques pour maximiser la rentabilit\xE9 \xE0 chaque \xE9tape."
-        ),
-        e()()(),
-        t(261, "div", 71)(262, "div", 65),
-        l(263, "img", 72),
-        e(),
-        t(264, "div")(265, "h5", 67),
-        n(266, "Un suivi avanc\xE9 pour des r\xE9sultats durables"),
-        e(),
-        t(267, "p", 68),
-        n(
-          268,
-          "Pr\xE9visions financi\xE8res claires pour lisser les revenus et anticiper les besoins en tr\xE9sorerie."
-        ),
-        e(),
-        t(269, "p", 68),
-        n(
-          270,
-          "Analyses d\xE9taill\xE9es pour ajuster rapidement vos strat\xE9gies et s\xE9curiser vos marges."
-        ),
-        e()()()()()()(),
-        t(271, "section", 73)(272, "div", 74)(273, "div", 25)(274, "div", 75),
-        l(275, "img", 76),
-        e(),
-        t(276, "div", 77)(277, "h2", 78),
-        n(
-          278,
-          " Pilotez vos projets immobiliers avec MFINANCES et transformez vos d\xE9fis "
-        ),
-        l(279, "br"),
-        t(280, "span", 79),
-        n(281, "en opportunit\xE9s"),
-        e(),
-        n(282, ". "),
-        e(),
-        t(283, "p", 80),
-        n(
-          284,
-          " Contactez-nous d\xE8s aujourd\u2019hui pour un diagnostic fiscal et financier personnalis\xE9. "
-        ),
-        e(),
-        t(285, "a", 81),
-        n(286, " Contactez-nous "),
-        l(287, "i", 82),
-        e()()()()(),
-        l(288, "app-recommandation-profil"));
+          n(4, "Promoteur Immobilier"),
+          e(),
+          t(5, "p", 3),
+          n(6, "Accueil > Promoteur Immobilier"),
+          e()()()(),
+          t(7, "section", 4)(8, "div", 2)(9, "div", 5)(10, "div", 6),
+          l(11, "app-sidebar"),
+          e(),
+          t(12, "div", 7)(13, "div", 8)(14, "h2", 9),
+          n(15, " Anticipez, g\xE9rez et innovez pour maximiser "),
+          t(16, "span", 10),
+          n(17, " votre rentabilit\xE9 "),
+          e()(),
+          t(18, "div")(19, "p"),
+          n(
+            20,
+            "La promotion immobili\xE8re est une activit\xE9 complexe qui exige une gestion rigoureuse des finances, de la fiscalit\xE9, et des flux de tr\xE9sorerie."
+          ),
+          e(),
+          t(21, "p"),
+          n(
+            22,
+            "Chez MFINANCES, nous proposons des solutions sur mesure, int\xE9grant des budgets pr\xE9visionnels, des situations mensuelles d\xE9taill\xE9es, et un syst\xE8me de cash collecting optimis\xE9"
+          ),
+          e(),
+          l(23, "br"),
+          e(),
+          t(24, "div", 11)(25, "div", 12)(26, "button", 13),
+          O("click", function () {
+            return s.scrollToSection("targetSection");
+          }),
+          n(27, "D\xE9couvrez ce que vous gagnerez avec nous "),
+          l(28, "i", 14),
+          e()()(),
+          t(29, "div", 15),
+          l(30, "img", 16),
+          e()(),
+          t(31, "div", 17)(32, "div", 18),
+          l(33, "img", 19),
+          e(),
+          t(34, "div", 20)(35, "p"),
+          n(
+            36,
+            "En tant qu\u2019acteurs cl\xE9s du d\xE9veloppement immobilier, les promoteurs doivent relever plusieurs d\xE9fis sp\xE9cifiques : "
+          ),
+          e(),
+          t(37, "ul", 21)(38, "li"),
+          l(39, "i", 22),
+          t(40, "strong"),
+          n(41, "Budgets cons\xE9quents et marges serr\xE9es"),
+          e(),
+          n(42, " n\xE9cessitant une planification financi\xE8re pr\xE9cise. "),
+          e(),
+          t(43, "li"),
+          l(44, "i", 22),
+          t(45, "strong"),
+          n(46, "R\xE8gles TVA complexes "),
+          e(),
+          n(
+            47,
+            " qui varient selon la finalit\xE9 des immeubles (revente, location, r\xE9novation). "
+          ),
+          e(),
+          t(48, "li"),
+          l(49, "i", 22),
+          t(50, "strong"),
+          n(51, "Analyse d\xE9taill\xE9e des co\xFBts par projet"),
+          e(),
+          n(52, " essentielle pour optimiser la rentabilit\xE9. "),
+          e()()()()()()()(),
+          t(53, "section", 23)(54, "div", 24)(55, "div", 2)(56, "div", 25)(
+            57,
+            "div",
+            26
+          )(58, "div", 27)(
+            59,
+            "div",
+            28
+          )(60, "h1"),
+          n(61, "Besoins sp\xE9cifiques des Promoteurs Immobiliers"),
+          e()(),
+          l(62, "div", 29),
+          t(63, "div", 30)(64, "div", 31)(65, "div", 32)(66, "div", 33),
+          l(67, "i", 34),
+          e()(),
+          t(68, "div", 35)(69, "h2"),
+          n(
+            70,
+            "Planification financi\xE8re pr\xE9cise et pr\xE9visions budg\xE9taires"
+          ),
+          e(),
+          t(71, "ul")(72, "li"),
+          n(
+            73,
+            "Budgets d\xE9taill\xE9s : Pr\xE9voir les co\xFBts li\xE9s \xE0 l\u2019acquisition, la construction, et la commercialisation."
+          ),
+          e(),
+          t(74, "li"),
+          n(
+            75,
+            "Analyse des besoins en financement : Planifier les apports n\xE9cessaires pour \xE9viter les tensions de tr\xE9sorerie."
+          ),
+          e(),
+          t(76, "li"),
+          n(
+            77,
+            "Projection des flux de tr\xE9sorerie : Pr\xE9voir les entr\xE9es (ventes ou locations) et les sorties (charges fixes et impr\xE9vus) pour \xE9quilibrer vos finances."
+          ),
+          e()()()(),
+          t(78, "div", 36)(79, "div", 32)(80, "div", 33),
+          l(81, "i", 37),
+          e()(),
+          t(82, "div", 35)(83, "h2"),
+          n(
+            84,
+            "Suivi rigoureux des co\xFBts et reporting financier transparent"
+          ),
+          e(),
+          t(85, "ul")(86, "li"),
+          n(
+            87,
+            "Gestion des postes budg\xE9taires : Contr\xF4ler les co\xFBts de construction, les taxes, et les charges administratives."
+          ),
+          e(),
+          t(88, "li"),
+          n(
+            89,
+            "Reporting financier : Offrir une vue claire et synth\xE9tique des revenus et d\xE9penses, facilitant une prise de d\xE9cision \xE9clair\xE9e."
+          ),
+          e(),
+          t(90, "li"),
+          n(
+            91,
+            "Digitalisation des processus : Automatiser le suivi des flux financiers pour une visibilit\xE9 en temps r\xE9el et une gestion optimale des ressources."
+          ),
+          e()()()(),
+          t(92, "div", 38)(93, "div", 32)(94, "div", 33),
+          l(95, "i", 39),
+          e()(),
+          t(96, "div", 35)(97, "h2"),
+          n(98, "TVA : Entre opportunit\xE9 et complexit\xE9"),
+          e(),
+          t(99, "ul")(100, "li"),
+          n(
+            101,
+            "Immeuble neuf destin\xE9 \xE0 la revente : TVA de 21 % d\xE9ductible."
+          ),
+          e(),
+          t(102, "li"),
+          n(
+            103,
+            "Immeuble neuf destin\xE9 \xE0 la location : TVA de 21 % non d\xE9ductible."
+          ),
+          e(),
+          t(104, "li"),
+          n(
+            105,
+            "Immeuble ancien (plus de 10 ans) destin\xE9 \xE0 l\u2019habitation : TVA r\xE9duite \xE0 6 %, non d\xE9ductible."
+          ),
+          e(),
+          t(106, "li"),
+          n(
+            107,
+            "R\xE9gime d\u2019autoliquidation : N\xE9cessite un suivi rigoureux pour \xE9viter les erreurs co\xFBteuses."
+          ),
+          e(),
+          t(108, "li"),
+          n(
+            109,
+            "Calcul du prorata de d\xE9ductibilit\xE9 : Frais g\xE9n\xE9raux d\xE9ductibles au prorata du chiffre d\u2019affaires TVA."
+          ),
+          e()()()(),
+          t(110, "div", 40)(111, "div", 32)(112, "div", 33),
+          l(113, "i", 41),
+          e()(),
+          t(114, "div", 35)(115, "h2"),
+          n(116, "Comptabilit\xE9 analytique pour optimiser la rentabilit\xE9"),
+          e(),
+          t(117, "ul")(118, "li"),
+          n(
+            119,
+            "Zoom sur la structure des co\xFBts : Segmentation des d\xE9penses par projet ou service."
+          ),
+          e(),
+          t(120, "li"),
+          n(
+            121,
+            "Identification des co\xFBts par projet : Analyse fine des postes les plus co\xFBteux."
+          ),
+          e(),
+          t(122, "li"),
+          n(
+            123,
+            "Prise de d\xE9cisions \xE9clair\xE9es : Revoir les mod\xE8les \xE9conomiques pour optimiser la rentabilit\xE9."
+          ),
+          e()()()(),
+          t(124, "div", 42)(125, "div", 32)(126, "div", 33),
+          l(127, "i", 43),
+          e()(),
+          t(128, "div", 35)(129, "h2"),
+          n(130, "Collaboration \xE9troite et accompagnement strat\xE9gique"),
+          e(),
+          t(131, "ul")(132, "li"),
+          n(
+            133,
+            "Compr\xE9hension des objectifs : Identifier les priorit\xE9s et ajuster les strat\xE9gies."
+          ),
+          e(),
+          t(134, "li"),
+          n(
+            135,
+            "Leviers de rentabilit\xE9 : Proposer des solutions concr\xE8tes pour am\xE9liorer les marges."
+          ),
+          e(),
+          t(136, "li"),
+          n(
+            137,
+            "Conseils strat\xE9giques : Vous accompagner dans toutes les \xE9tapes, de l\u2019acquisition \xE0 la commercialisation."
+          ),
+          e()()()()()()(),
+          t(138, "div", 44)(139, "div", 45),
+          l(140, "img", 46),
+          e()()()()()(),
+          t(141, "section", 47)(142, "h2", 48),
+          n(143, "Comment MFINANCES transforme vos projets immobiliers ?"),
+          e(),
+          t(144, "div", 49)(145, "div", 50)(146, "h2"),
+          n(147, "01"),
+          e(),
+          t(148, "h3"),
+          n(149, "Gestion comptable et analytique d\xE9di\xE9e"),
+          e(),
+          t(150, "p"),
+          l(151, "i", 22),
+          n(
+            152,
+            " Comptabilit\xE9 analytique par projet pour une tra\xE7abilit\xE9 optimale des flux financiers."
+          ),
+          e(),
+          t(153, "p"),
+          l(154, "i", 22),
+          n(155, "Suivi pr\xE9cis des marges \xE0 chaque phase du projet."),
+          e(),
+          t(156, "p"),
+          l(157, "i", 22),
+          n(
+            158,
+            "\xC9laboration de bilans interm\xE9diaires pour ajuster les strat\xE9gies en temps r\xE9el."
+          ),
+          e()(),
+          t(159, "div", 50)(160, "h2"),
+          n(161, "02"),
+          e(),
+          t(162, "h3"),
+          n(163, "Optimisation fiscale et TVA"),
+          e(),
+          t(164, "p"),
+          l(165, "i", 22),
+          n(
+            166,
+            " R\xE9cup\xE9ration de la TVA sur les travaux et acquisitions."
+          ),
+          e(),
+          t(167, "p"),
+          l(168, "i", 22),
+          n(
+            169,
+            "Calcul pr\xE9cis du prorata pour optimiser les d\xE9ductions fiscales."
+          ),
+          e(),
+          t(170, "p"),
+          l(171, "i", 22),
+          n(
+            172,
+            "Strat\xE9gies fiscales adapt\xE9es, comme la m\xE9thode \xE0 l\u2019ach\xE8vement, pour r\xE9duire les charges."
+          ),
+          e()(),
+          t(173, "div", 50)(174, "h2"),
+          n(175, "03"),
+          e(),
+          t(176, "h3"),
+          n(177, "Outils digitaux et reporting avanc\xE9"),
+          e(),
+          t(178, "p"),
+          l(179, "i", 22),
+          n(
+            180,
+            " Tableaux de bord personnalis\xE9s pour surveiller les co\xFBts, marges, et flux financiers en temps r\xE9el."
+          ),
+          e(),
+          t(181, "p"),
+          l(182, "i", 22),
+          n(
+            183,
+            " Automatisation des rapports comptables et fiscaux pour une gestion rapide et sans erreur."
+          ),
+          e(),
+          t(184, "p"),
+          l(185, "i", 22),
+          n(
+            186,
+            " Pr\xE9visions financi\xE8res pour anticiper les besoins en tr\xE9sorerie et ajuster vos strat\xE9gies."
+          ),
+          e()()()(),
+          t(187, "section", 51)(188, "div", 52)(189, "h1", 53),
+          n(
+            190,
+            "Exemple concret : MFINANCES optimise la rentabilit\xE9 et la tr\xE9sorerie d\u2019un projet r\xE9sidentiel"
+          ),
+          e(),
+          t(191, "div", 54)(192, "div", 55),
+          l(193, "img", 56),
+          e(),
+          t(194, "div", 57)(195, "h2", 58),
+          n(196, "Contexte :"),
+          e(),
+          t(197, "ul")(198, "li"),
+          n(
+            199,
+            "Un promoteur immobilier g\xE9rait plusieurs projets r\xE9sidentiels avec des ventes concentr\xE9es en fin de projet. Les principaux d\xE9fis incluaient :"
+          ),
+          e(),
+          t(200, "li"),
+          n(
+            201,
+            "Une gestion complexe des co\xFBts par unit\xE9, impactant les marges globales."
+          ),
+          e(),
+          t(202, "li"),
+          n(
+            203,
+            "La n\xE9cessit\xE9 de lisser les flux financiers pour \xE9viter des tensions de tr\xE9sorerie."
+          ),
+          e(),
+          t(204, "li"),
+          n(
+            205,
+            "L\u2019annualit\xE9 de l\u2019imp\xF4t, rendant certaines ventes d\xE9favorables d\u2019un point de vue fiscal."
+          ),
+          e()(),
+          t(206, "h2", 58),
+          n(207, "Solutions apport\xE9es par MFINANCES :"),
+          e(),
+          t(208, "ul")(209, "li")(210, "strong"),
+          n(211, "Comptabilit\xE9 analytique d\xE9taill\xE9e :"),
+          e(),
+          n(
+            212,
+            " Ventilation des co\xFBts par projet et par unit\xE9 pour mieux \xE9valuer la rentabilit\xE9."
+          ),
+          e(),
+          t(213, "li")(214, "strong"),
+          n(215, "Suivi budg\xE9taire rigoureux :"),
+          e(),
+          n(
+            216,
+            " Analyse des sc\xE9narios de vente et des implications fiscales pour optimiser la tr\xE9sorerie."
+          ),
+          e(),
+          t(217, "li")(218, "strong"),
+          n(219, "Strat\xE9gie d\u2019ajustement des ventes :"),
+          e(),
+          n(
+            220,
+            " Report strat\xE9gique de la vente de certaines unit\xE9s pour les faire co\xEFncider avec le lancement de nouveaux projets, r\xE9duisant ainsi l\u2019impact fiscal."
+          ),
+          e()(),
+          t(221, "h2", 58),
+          n(222, "R\xE9sultats :"),
+          e(),
+          t(223, "ul")(224, "li"),
+          n(
+            225,
+            "Une rentabilit\xE9 globale accrue, avec une augmentation de 12 \xE0 20 % selon les projets."
+          ),
+          e(),
+          t(226, "li"),
+          n(
+            227,
+            "Une tr\xE9sorerie renforc\xE9e gr\xE2ce \xE0 des flux financiers \xE9quilibr\xE9s, permettant d\u2019initier un nouveau projet sans financement externe."
+          ),
+          e(),
+          t(228, "li"),
+          n(
+            229,
+            "Une gestion fiscale optimis\xE9e, r\xE9duisant les charges li\xE9es \xE0 l\u2019annualit\xE9 de l\u2019imp\xF4t."
+          ),
+          e()()()()()(),
+          t(230, "section", 59)(231, "div", 2)(232, "div", 25)(233, "div", 60)(
+            234,
+            "h2",
+            61
+          ),
+          n(235, " Pourquoi choisir "),
+          l(236, "br"),
+          t(237, "span", 62),
+          n(238, "MFINANCES"),
+          e(),
+          n(239, " pour vos projets immobiliers ? "),
+          e()(),
+          t(240, "div", 63)(241, "div", 64)(242, "div", 65),
+          l(243, "img", 66),
+          e(),
+          t(244, "div")(245, "h5", 67),
+          n(246, "Une expertise sectorielle \xE9prouv\xE9e"),
+          e(),
+          t(247, "p", 68),
+          n(
+            248,
+            "Une ma\xEEtrise approfondie des sp\xE9cificit\xE9s fiscales, comptables, et financi\xE8res des promoteurs immobiliers."
+          ),
+          e(),
+          t(249, "p", 68),
+          n(
+            250,
+            "Des solutions sur mesure pour r\xE9pondre aux besoins de chaque projet."
+          ),
+          e()()(),
+          t(251, "div", 69)(252, "div", 65),
+          l(253, "img", 70),
+          e(),
+          t(254, "div")(255, "h5", 67),
+          n(256, "Des outils et strat\xE9gies adapt\xE9s"),
+          e(),
+          t(257, "p", 68),
+          n(
+            258,
+            "Automatisation et digitalisation pour un pilotage efficace et en temps r\xE9el."
+          ),
+          e(),
+          t(259, "p", 68),
+          n(
+            260,
+            "Conseils strat\xE9giques pour maximiser la rentabilit\xE9 \xE0 chaque \xE9tape."
+          ),
+          e()()(),
+          t(261, "div", 71)(262, "div", 65),
+          l(263, "img", 72),
+          e(),
+          t(264, "div")(265, "h5", 67),
+          n(266, "Un suivi avanc\xE9 pour des r\xE9sultats durables"),
+          e(),
+          t(267, "p", 68),
+          n(
+            268,
+            "Pr\xE9visions financi\xE8res claires pour lisser les revenus et anticiper les besoins en tr\xE9sorerie."
+          ),
+          e(),
+          t(269, "p", 68),
+          n(
+            270,
+            "Analyses d\xE9taill\xE9es pour ajuster rapidement vos strat\xE9gies et s\xE9curiser vos marges."
+          ),
+          e()()()()()()(),
+          t(271, "section", 73)(272, "div", 74)(273, "div", 25)(274, "div", 75),
+          l(275, "img", 76),
+          e(),
+          t(276, "div", 77)(277, "h2", 78),
+          n(
+            278,
+            " Pilotez vos projets immobiliers avec MFINANCES et transformez vos d\xE9fis "
+          ),
+          l(279, "br"),
+          t(280, "span", 79),
+          n(281, "en opportunit\xE9s"),
+          e(),
+          n(282, ". "),
+          e(),
+          t(283, "p", 80),
+          n(
+            284,
+            " Contactez-nous d\xE8s aujourd\u2019hui pour un diagnostic fiscal et financier personnalis\xE9. "
+          ),
+          e(),
+          t(285, "a", 81),
+          n(286, " Contactez-nous "),
+          l(287, "i", 82),
+          e()()()()(),
+          l(288, "app-recommandation-profil"));
     },
     dependencies: [oe, se],
     styles: [
@@ -11827,7 +11827,7 @@ var Qi = { animation: !0, transitionTimerDelayMs: 5 },
   })();
 function Wo(a) {
   let { transitionDelay: o, transitionDuration: i } =
-      window.getComputedStyle(a),
+    window.getComputedStyle(a),
     s = parseFloat(o),
     r = parseFloat(i);
   return (s + r) * 1e3;
@@ -11853,7 +11853,7 @@ function Ko(a) {
       return o.subscribe({ next: s, error: r, complete: c });
     });
 }
-var Yo = () => {},
+var Yo = () => { },
   { transitionTimerDelayMs: Jo } = Qi,
   Lt = new Map(),
   Be = (a, o, i, s) => {
@@ -11888,9 +11888,9 @@ var Yo = () => {},
     return (
       a.runOutsideAngular(() => {
         let g = ye(o, "transitionend").pipe(
-            fe(p),
-            Ie(({ target: x }) => x === o)
-          ),
+          fe(p),
+          Ie(({ target: x }) => x === o)
+        ),
           h = vi(f + Jo).pipe(fe(p));
         Ei(h, g, m)
           .pipe(fe(p))
@@ -11906,10 +11906,10 @@ var Yo = () => {},
   };
 var ml = (() => {
   let a = () =>
-      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-      (/Macintosh/.test(navigator.userAgent) &&
-        navigator.maxTouchPoints &&
-        navigator.maxTouchPoints > 2),
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (/Macintosh/.test(navigator.userAgent) &&
+      navigator.maxTouchPoints &&
+      navigator.maxTouchPoints > 2),
     o = () => /Android/.test(navigator.userAgent);
   return typeof navigator < "u" ? !!navigator.userAgent && (a() || o()) : !1;
 })();
@@ -11944,13 +11944,13 @@ var Xo = (a, o, i, s = !1) => {
           d === m && !c.shiftKey && (u.focus(), c.preventDefault());
       }),
       s &&
-        ye(o, "click")
-          .pipe(
-            fe(i),
-            fn(r),
-            mn((c) => c[1])
-          )
-          .subscribe((c) => c.focus());
+      ye(o, "click")
+        .pipe(
+          fe(i),
+          fn(r),
+          mn((c) => c[1])
+        )
+        .subscribe((c) => c.focus());
   });
 };
 var pl = new Date(1882, 10, 12),
@@ -11962,69 +11962,69 @@ var Bn = 1080,
   hl = 29 * es + ts,
   _l = 11 * Bn + 204;
 var ns = (() => {
-    class a {
-      constructor() {
-        (this._ngbConfig = ae($o)),
-          (this.backdrop = !0),
-          (this.fullscreen = !1),
-          (this.keyboard = !0);
-      }
-      get animation() {
-        return this._animation ?? this._ngbConfig.animation;
-      }
-      set animation(i) {
-        this._animation = i;
-      }
-      static {
-        this.ɵfac = function (s) {
-          return new (s || a)();
-        };
-      }
-      static {
-        this.ɵprov = Me({ token: a, factory: a.ɵfac, providedIn: "root" });
-      }
+  class a {
+    constructor() {
+      (this._ngbConfig = ae($o)),
+        (this.backdrop = !0),
+        (this.fullscreen = !1),
+        (this.keyboard = !0);
     }
-    return a;
-  })(),
+    get animation() {
+      return this._animation ?? this._ngbConfig.animation;
+    }
+    set animation(i) {
+      this._animation = i;
+    }
+    static {
+      this.ɵfac = function (s) {
+        return new (s || a)();
+      };
+    }
+    static {
+      this.ɵprov = Me({ token: a, factory: a.ɵfac, providedIn: "root" });
+    }
+  }
+  return a;
+})(),
   Ye = class {
     constructor(o, i, s) {
       (this.nodes = o), (this.viewRef = i), (this.componentRef = s);
     }
   };
 var is = (() => {
-    class a {
-      constructor() {
-        this._document = ae($e);
-      }
-      hide() {
-        let i = Math.abs(
-            window.innerWidth - this._document.documentElement.clientWidth
-          ),
-          s = this._document.body,
-          r = s.style,
-          { overflow: c, paddingRight: d } = r;
-        if (i > 0) {
-          let u = parseFloat(window.getComputedStyle(s).paddingRight);
-          r.paddingRight = `${u + i}px`;
-        }
-        return (
-          (r.overflow = "hidden"),
-          () => {
-            i > 0 && (r.paddingRight = d), (r.overflow = c);
-          }
-        );
-      }
-      static {
-        this.ɵfac = function (s) {
-          return new (s || a)();
-        };
-      }
-      static {
-        this.ɵprov = Me({ token: a, factory: a.ɵfac, providedIn: "root" });
-      }
+  class a {
+    constructor() {
+      this._document = ae($e);
     }
-    return a;
-  })(),
+    hide() {
+      let i = Math.abs(
+        window.innerWidth - this._document.documentElement.clientWidth
+      ),
+        s = this._document.body,
+        r = s.style,
+        { overflow: c, paddingRight: d } = r;
+      if (i > 0) {
+        let u = parseFloat(window.getComputedStyle(s).paddingRight);
+        r.paddingRight = `${u + i}px`;
+      }
+      return (
+        (r.overflow = "hidden"),
+        () => {
+          i > 0 && (r.paddingRight = d), (r.overflow = c);
+        }
+      );
+    }
+    static {
+      this.ɵfac = function (s) {
+        return new (s || a)();
+      };
+    }
+    static {
+      this.ɵprov = Me({ token: a, factory: a.ɵfac, providedIn: "root" });
+    }
+  }
+  return a;
+})(),
   os = (() => {
     class a {
       constructor() {
@@ -12069,16 +12069,16 @@ var is = (() => {
             s & 2 &&
               (bt(
                 "modal-backdrop" +
-                  (r.backdropClass ? " " + r.backdropClass : "")
+                (r.backdropClass ? " " + r.backdropClass : "")
               ),
-              Cn("show", !r.animation)("fade", r.animation));
+                Cn("show", !r.animation)("fade", r.animation));
           },
           inputs: { animation: "animation", backdropClass: "backdropClass" },
           standalone: !0,
           features: [On],
           decls: 0,
           vars: 0,
-          template: function (s, r) {},
+          template: function (s, r) { },
           encapsulation: 2,
         });
       }
@@ -12086,9 +12086,9 @@ var is = (() => {
     return a;
   })(),
   jt = class {
-    update(o) {}
-    close(o) {}
-    dismiss(o) {}
+    update(o) { }
+    close(o) { }
+    dismiss(o) { }
   },
   ss = [
     "animation",
@@ -12118,8 +12118,8 @@ var is = (() => {
     update(o) {
       this._applyWindowOptions(this._windowCmptRef.instance, o),
         this._backdropCmptRef &&
-          this._backdropCmptRef.instance &&
-          this._applyBackdropOptions(this._backdropCmptRef.instance, o);
+        this._backdropCmptRef.instance &&
+        this._applyBackdropOptions(this._backdropCmptRef.instance, o);
     }
     get componentInstance() {
       if (this._contentRef && this._contentRef.componentRef)
@@ -12151,7 +12151,7 @@ var is = (() => {
         (this.result = new Promise((c, d) => {
           (this._resolve = c), (this._reject = d);
         })),
-        this.result.then(null, () => {});
+        this.result.then(null, () => { });
     }
     close(o) {
       this._windowCmptRef &&
@@ -12167,11 +12167,11 @@ var is = (() => {
           let i = this._beforeDismiss();
           Qo(i)
             ? i.then(
-                (s) => {
-                  s !== !1 && this._dismiss(o);
-                },
-                () => {}
-              )
+              (s) => {
+                s !== !1 && this._dismiss(o);
+              },
+              () => { }
+            )
             : i !== !1 && this._dismiss(o);
         }
     }
@@ -12227,8 +12227,8 @@ var is = (() => {
         return this.fullscreen === !0
           ? " modal-fullscreen"
           : Ki(this.fullscreen)
-          ? ` modal-fullscreen-${this.fullscreen}-down`
-          : "";
+            ? ` modal-fullscreen-${this.fullscreen}-down`
+            : "";
       }
       dismiss(i) {
         this.dismissEvent.emit(i);
@@ -12247,7 +12247,7 @@ var is = (() => {
         let { nativeElement: i } = this._elRef,
           s = { animation: this.animation, runningTransition: "stop" },
           r = Be(this._zone, i, () => i.classList.remove("show"), s),
-          c = Be(this._zone, this._dialogEl.nativeElement, () => {}, s),
+          c = Be(this._zone, this._dialogEl.nativeElement, () => { }, s),
           d = ht(r, c);
         return (
           d.subscribe(() => {
@@ -12268,7 +12268,7 @@ var is = (() => {
             },
             i
           ),
-          r = Be(this._zone, this._dialogEl.nativeElement, () => {}, i);
+          r = Be(this._zone, this._dialogEl.nativeElement, () => { }, i);
         ht(s, r).subscribe(() => {
           this.shown.next(), this.shown.complete();
         }),
@@ -12286,9 +12286,9 @@ var is = (() => {
             .subscribe((r) => {
               this.keyboard
                 ? requestAnimationFrame(() => {
-                    r.defaultPrevented ||
-                      this._zone.run(() => this.dismiss(Rn.ESC));
-                  })
+                  r.defaultPrevented ||
+                    this._zone.run(() => this.dismiss(Rn.ESC));
+                })
                 : this.backdrop === "static" && this._bumpBackdrop();
             });
           let s = !1;
@@ -12309,8 +12309,8 @@ var is = (() => {
                   (this.backdrop === "static"
                     ? this._bumpBackdrop()
                     : this.backdrop === !0 &&
-                      !s &&
-                      this._zone.run(() => this.dismiss(Rn.BACKDROP_CLICK))),
+                    !s &&
+                    this._zone.run(() => this.dismiss(Rn.BACKDROP_CLICK))),
                   (s = !1);
               });
         });
@@ -12369,8 +12369,8 @@ var is = (() => {
                 "aria-describedby",
                 r.ariaDescribedBy
               ),
-              bt("modal d-block" + (r.windowClass ? " " + r.windowClass : "")),
-              Cn("fade", r.animation));
+                bt("modal d-block" + (r.windowClass ? " " + r.windowClass : "")),
+                Cn("fade", r.animation));
           },
           inputs: {
             animation: "animation",
@@ -12399,14 +12399,14 @@ var is = (() => {
           template: function (s, r) {
             s & 1 && (ki(), t(0, "div", 1, 0)(2, "div", 2), Ni(3), e()()),
               s & 2 &&
-                bt(
-                  "modal-dialog" +
-                    (r.size ? " modal-" + r.size : "") +
-                    (r.centered ? " modal-dialog-centered" : "") +
-                    r.fullscreenClass +
-                    (r.scrollable ? " modal-dialog-scrollable" : "") +
-                    (r.modalDialogClass ? " " + r.modalDialogClass : "")
-                );
+              bt(
+                "modal-dialog" +
+                (r.size ? " modal-" + r.size : "") +
+                (r.centered ? " modal-dialog-centered" : "") +
+                r.fullscreenClass +
+                (r.scrollable ? " modal-dialog-scrollable" : "") +
+                (r.modalDialogClass ? " " + r.modalDialogClass : "")
+              );
           },
           styles: [
             `ngb-modal-window .component-host-scrollable{display:flex;flex-direction:column;overflow:hidden}
@@ -12455,12 +12455,11 @@ var is = (() => {
           r.container instanceof HTMLElement
             ? r.container
             : In(r.container)
-            ? this._document.querySelector(r.container)
-            : this._document.body;
+              ? this._document.querySelector(r.container)
+              : this._document.body;
         if (!c)
           throw new Error(
-            `The specified modal container "${
-              r.container || "body"
+            `The specified modal container "${r.container || "body"
             }" was not found in the DOM.`
           );
         this._hideScrollBar();
@@ -12478,8 +12477,8 @@ var is = (() => {
             Promise.resolve(!0).then(() => {
               this._modalRefs.length ||
                 (this._document.body.classList.remove("modal-open"),
-                this._restoreScrollBar(),
-                this._revertAriaHidden());
+                  this._restoreScrollBar(),
+                  this._revertAriaHidden());
             })
           ),
           (d.close = (h) => {
@@ -12493,7 +12492,7 @@ var is = (() => {
           }),
           g.update(r),
           this._modalRefs.length === 1 &&
-            this._document.body.classList.add("modal-open"),
+          this._document.body.classList.add("modal-open"),
           p && p.instance && p.changeDetectorRef.detectChanges(),
           f.changeDetectorRef.detectChanges(),
           g
@@ -12536,20 +12535,20 @@ var is = (() => {
           ? r instanceof Oi
             ? this._createFromTemplateRef(r, c)
             : Ki(r)
-            ? this._createFromString(r)
-            : this._createFromComponent(i, s, r, c, d)
+              ? this._createFromString(r)
+              : this._createFromComponent(i, s, r, c, d)
           : new Ye([]);
       }
       _createFromTemplateRef(i, s) {
         let r = {
-            $implicit: s,
-            close(d) {
-              s.close(d);
-            },
-            dismiss(d) {
-              s.dismiss(d);
-            },
+          $implicit: s,
+          close(d) {
+            s.close(d);
           },
+          dismiss(d) {
+            s.dismiss(d);
+          },
+        },
           c = i.createEmbeddedView(r);
         return this._applicationRef.attachView(c), new Ye([c.rootNodes], c);
       }
@@ -12559,9 +12558,9 @@ var is = (() => {
       }
       _createFromComponent(i, s, r, c, d) {
         let u = Ve.create({
-            providers: [{ provide: jt, useValue: c }],
-            parent: i,
-          }),
+          providers: [{ provide: jt, useValue: c }],
+          parent: i,
+        }),
           m = Et(r, { environmentInjector: s, elementInjector: u }),
           p = m.location.nativeElement;
         return (
@@ -12578,9 +12577,9 @@ var is = (() => {
             r !== i &&
               r.nodeName !== "SCRIPT" &&
               (this._ariaHiddenValues.set(r, r.getAttribute("aria-hidden")),
-              r.setAttribute("aria-hidden", "true"));
+                r.setAttribute("aria-hidden", "true"));
           }),
-          this._setAriaHidden(s));
+            this._setAriaHidden(s));
       }
       _revertAriaHidden() {
         this._ariaHiddenValues.forEach((i, s) => {
@@ -12595,7 +12594,7 @@ var is = (() => {
           let r = this._modalRefs.indexOf(i);
           r > -1 &&
             (this._modalRefs.splice(r, 1),
-            this._activeInstances.emit(this._modalRefs));
+              this._activeInstances.emit(this._modalRefs));
         };
         this._modalRefs.push(i),
           this._activeInstances.emit(this._modalRefs),
@@ -12608,7 +12607,7 @@ var is = (() => {
             let s = this._windowCmpts.indexOf(i);
             s > -1 &&
               (this._windowCmpts.splice(s, 1),
-              this._activeWindowCmptHasChanged.next());
+                this._activeWindowCmptHasChanged.next());
           });
       }
       static {
@@ -12956,8 +12955,8 @@ var qt = class a {
     o === "situation"
       ? (this.isAccordionOpenSituation = !this.isAccordionOpenSituation)
       : o === "anticipation"
-      ? (this.isAccordionOpenAnticipation = !this.isAccordionOpenAnticipation)
-      : o === "services" &&
+        ? (this.isAccordionOpenAnticipation = !this.isAccordionOpenAnticipation)
+        : o === "services" &&
         (this.isAccordionOpenServices = !this.isAccordionOpenServices);
   }
   open(o) {
@@ -13447,9 +13446,9 @@ var qt = class a {
       }
       i & 2 &&
         (ie(170),
-        le("src", s.videoUrl, En),
-        ie(41),
-        le("src", s.videoUrl2, En));
+          le("src", s.videoUrl, En),
+          ie(41),
+          le("src", s.videoUrl2, En));
     },
     dependencies: [Ke],
     styles: [
@@ -13458,40 +13457,40 @@ var qt = class a {
   });
 };
 var gs = [
-    { path: "", redirectTo: "accueil", pathMatch: "full" },
-    {
-      path: "accueil",
-      loadChildren: () =>
-        import("./chunk-26LUXNNN.js").then((a) => a.ModuleAccueilModule),
-    },
-    { path: "about", component: wt },
-    { path: "tarif", component: qt },
-    { path: "absl", component: Ot },
-    { path: "profil-independant", component: Tt },
-    { path: "societe-management-patrimoniale", component: kt },
-    { path: "societe-moyen", component: Nt },
-    { path: "societe-exploitation", component: At },
-    { path: "commercant-horeca", component: It },
-    { path: "professionel-sante", component: Ft },
-    { path: "contact", component: Rt },
-    { path: "grande-entreprise", component: Bt },
-    { path: "promoteur-immobilier", component: zt },
-    {
-      path: "services",
-      loadChildren: () =>
-        import("./chunk-SRVUGPQK.js").then((a) => a.ServicesModule),
-    },
-    {
-      path: "vente",
-      loadChildren: () =>
-        import("./chunk-YMMOMWXX.js").then((a) => a.VenteModule),
-    },
-    {
-      path: "tresorerie",
-      loadChildren: () =>
-        import("./chunk-3ML6VQ32.js").then((a) => a.TresorireModule),
-    },
-  ],
+  { path: "", redirectTo: "accueil", pathMatch: "full" },
+  {
+    path: "accueil",
+    loadChildren: () =>
+      import("./chunk-26LUXNNN.js").then((a) => a.ModuleAccueilModule),
+  },
+  { path: "about", component: wt },
+  { path: "tarif", component: qt },
+  { path: "absl", component: Ot },
+  { path: "profil-independant", component: Tt },
+  { path: "societe-management-patrimoniale", component: kt },
+  { path: "societe-moyen", component: Nt },
+  { path: "societe-exploitation", component: At },
+  { path: "commercant-horeca", component: It },
+  { path: "professionel-sante", component: Ft },
+  { path: "contact", component: Rt },
+  { path: "grande-entreprise", component: Bt },
+  { path: "promoteur-immobilier", component: zt },
+  {
+    path: "services",
+    loadChildren: () =>
+      import("./chunk-SRVUGPQK.js").then((a) => a.ServicesModule),
+  },
+  {
+    path: "vente",
+    loadChildren: () =>
+      import("./chunk-YMMOMWXX.js").then((a) => a.VenteModule),
+  },
+  {
+    path: "tresorerie",
+    loadChildren: () =>
+      import("./chunk-3ML6VQ32.js").then((a) => a.TresorireModule),
+  },
+],
   Ht = class a {
     static ɵfac = function (i) {
       return new (i || a)();
@@ -13632,27 +13631,27 @@ var Ut = class a {
     template: function (i, s) {
       i & 1 &&
         (l(0, "app-promo-banner"),
-        t(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "p", 3),
-        n(5, "Suivez-nous sur:"),
-        e(),
-        t(6, "div", 4)(7, "a", 5),
-        l(8, "i", 6),
-        e(),
-        t(9, "a", 7),
-        l(10, "i", 8),
-        e(),
-        t(11, "a", 9),
-        l(12, "i", 10),
-        e()()(),
-        t(13, "div", 11)(14, "span", 12),
-        l(15, "i", 13),
-        n(16, " 20 Rue de la Magnanerie, 1180 Uccle "),
-        e(),
-        t(17, "span", 14),
-        l(18, "i", 15),
-        t(19, "a", 16),
-        n(20, "info@mfinances.be"),
-        e()()()()());
+          t(1, "div", 0)(2, "div", 1)(3, "div", 2)(4, "p", 3),
+          n(5, "Suivez-nous sur:"),
+          e(),
+          t(6, "div", 4)(7, "a", 5),
+          l(8, "i", 6),
+          e(),
+          t(9, "a", 7),
+          l(10, "i", 8),
+          e(),
+          t(11, "a", 9),
+          l(12, "i", 10),
+          e()()(),
+          t(13, "div", 11)(14, "span", 12),
+          l(15, "i", 13),
+          n(16, " 20 Rue de la Magnanerie, 1180 Uccle "),
+          e(),
+          t(17, "span", 14),
+          l(18, "i", 15),
+          t(19, "a", 16),
+          n(20, "info@mfinances.be"),
+          e()()()()());
     },
     dependencies: [Vt],
     styles: [
@@ -13755,172 +13754,172 @@ var Gt = class a {
     template: function (i, s) {
       i & 1 &&
         (l(0, "app-top-bar"),
-        t(1, "header", 0)(2, "div", 1)(3, "div", 2)(4, "div", 3)(5, "div", 4)(
-          6,
-          "a",
-          5
-        ),
-        l(7, "img", 6),
-        e()(),
-        t(8, "div", 7)(9, "ul")(10, "li")(11, "a", 8),
-        n(12, "\xC0 propos"),
-        e()(),
-        t(13, "li")(14, "a", 9),
-        n(15, "Services "),
-        l(16, "i", 10),
-        e(),
-        t(17, "ul")(18, "li")(19, "a", 11),
-        n(20, "Cr\xE9ation d'entreprise"),
-        e()(),
-        t(21, "li")(22, "a", 12),
-        n(23, "Comptabilit\xE9"),
-        e()(),
-        t(24, "li")(25, "a", 13),
-        n(26, "Fiscalit\xE9"),
-        e()(),
-        t(27, "li")(28, "a", 14),
-        n(29, "D\xE9claration d'impot"),
-        e()()()(),
-        t(30, "li")(31, "a", 15),
-        n(32, "Nos Tarifs"),
-        e()(),
-        t(33, "li")(34, "a", 16),
-        n(35, "Boostez votre entreprise "),
-        l(36, "i", 10),
-        e(),
-        t(37, "ul")(38, "li")(39, "a", 17),
-        n(40, "Salari\xE9 et ind\xE9pendants"),
-        e()(),
-        t(41, "li")(42, "a", 18),
-        n(43, "Passage en societe"),
-        e()(),
-        t(44, "li")(45, "a", 19),
-        n(46, "Compte Courant administrateur"),
-        e()(),
-        t(47, "li")(48, "a", 20),
-        n(49, " Tr\xE9sorerie Transformez le Stress en Succ\xE8s "),
-        l(50, "i", 21),
-        e(),
-        t(51, "ul")(52, "li")(53, "a", 22),
-        n(54, "Tr\xE9sorerie vs B\xE9n\xE9fices"),
-        e()(),
-        t(55, "li")(56, "a", 23),
-        n(57, "Investir sans risquer"),
-        e()(),
-        t(58, "li")(59, "a", 24),
-        n(60, "Optimisez vos Stocks"),
-        e()(),
-        t(61, "li")(62, "a", 25),
-        n(63, "Alerte tr\xE9sorerie"),
-        e()(),
-        t(64, "li")(65, "a", 20),
-        n(66, "Prot\xE9gez Votre Tr\xE9sorerie"),
-        e()(),
-        t(67, "li")(68, "a", 26),
-        n(69, "Anticipez vos Finances"),
-        e()(),
-        t(70, "li")(71, "a", 27),
-        n(72, "Service d'accompagnement"),
-        e()()()()()(),
-        t(73, "li")(74, "a", 16),
-        n(75, "Support "),
-        l(76, "i", 10),
-        e(),
-        t(77, "ul")(78, "li")(79, "a", 28),
-        n(80, "Support pour Windows"),
-        e()(),
-        t(81, "li")(82, "a", 29),
-        n(83, "Support pour Mac"),
-        e()()()()()(),
-        t(84, "div", 30)(85, "a", 31),
-        n(86, "Nos contacts "),
-        l(87, "i", 32),
-        e()()()()(),
-        t(88, "div", 33)(89, "div", 34)(90, "div", 35)(91, "a", 5),
-        l(92, "img", 36),
-        e()(),
-        t(93, "div", 37),
-        l(94, "i", 38),
-        e()()(),
-        t(95, "div", 39)(96, "div", 40),
-        l(97, "i", 41),
-        e(),
-        t(98, "div", 42)(99, "ul", 43)(100, "li")(101, "a", 8),
-        n(102, "\xC0 propos"),
-        e()(),
-        t(103, "li")(104, "a", 44),
-        n(105, "Services "),
-        l(106, "i", 10),
-        e(),
-        t(107, "ul", 45)(108, "li")(109, "a", 11),
-        n(110, "Cr\xE9ation d'entreprise"),
-        e()(),
-        t(111, "li")(112, "a", 12),
-        n(113, "Comptabilit\xE9"),
-        e()(),
-        t(114, "li")(115, "a", 13),
-        n(116, "Fiscalit\xE9 des entreprises"),
-        e()(),
-        t(117, "li")(118, "a", 14),
-        n(119, "D\xE9claration d'impot"),
-        e()()()(),
-        t(120, "li")(121, "a", 15),
-        n(122, "Nos Tarifs"),
-        e()(),
-        t(123, "li")(124, "a", 44),
-        n(125, "Boostez votre entreprise "),
-        l(126, "i", 10),
-        e(),
-        t(127, "ul", 45)(128, "li")(129, "a", 17),
-        n(130, "Salari\xE9 et ind\xE9pendants"),
-        e()(),
-        t(131, "li")(132, "a", 18),
-        n(133, "Passage en societe"),
-        e()(),
-        t(134, "li")(135, "a", 19),
-        n(136, "Compte Courant administrateur"),
-        e()(),
-        t(137, "li")(138, "a", 44),
-        n(139, "Tr\xE9sorerie Transformez le Stress en Succ\xE8s "),
-        l(140, "i", 10),
-        e(),
-        t(141, "ul", 45)(142, "li")(143, "a", 22),
-        n(144, "Tr\xE9sorerie vs B\xE9n\xE9fices"),
-        e()(),
-        t(145, "li")(146, "a", 23),
-        n(147, "Investir sans risquer"),
-        e()(),
-        t(148, "li")(149, "a", 24),
-        n(150, "Optimisez vos Stocks"),
-        e()(),
-        t(151, "li")(152, "a", 25),
-        n(153, "Alerte tr\xE9sorerie"),
-        e()(),
-        t(154, "li")(155, "a", 20),
-        n(156, "Prot\xE9gez Votre Tr\xE9sorerie"),
-        e()(),
-        t(157, "li")(158, "a", 26),
-        n(159, "Anticipez vos Finances"),
-        e()(),
-        t(160, "li")(161, "a", 27),
-        n(162, "Service d'accompagnement"),
-        e()()()()()(),
-        t(163, "li")(164, "a", 44),
-        n(165, "Support "),
-        l(166, "i", 10),
-        e(),
-        t(167, "ul", 45)(168, "li")(169, "a", 28),
-        n(170, "Support pour Windows"),
-        e()(),
-        t(171, "li")(172, "a", 29),
-        n(173, "Support pour Mac"),
-        e()()()()(),
-        t(174, "div", 30)(175, "a", 31),
-        n(176, "Nos contacts "),
-        l(177, "i", 46),
-        e()()()(),
-        l(178, "div", 47),
-        e());
+          t(1, "header", 0)(2, "div", 1)(3, "div", 2)(4, "div", 3)(5, "div", 4)(
+            6,
+            "a",
+            5
+          ),
+          l(7, "img", 6),
+          e()(),
+          t(8, "div", 7)(9, "ul")(10, "li")(11, "a", 8),
+          n(12, "\xC0 propos"),
+          e()(),
+          t(13, "li")(14, "a", 9),
+          n(15, "Services "),
+          l(16, "i", 10),
+          e(),
+          t(17, "ul")(18, "li")(19, "a", 11),
+          n(20, "Cr\xE9ation d'entreprise"),
+          e()(),
+          t(21, "li")(22, "a", 12),
+          n(23, "Comptabilit\xE9"),
+          e()(),
+          t(24, "li")(25, "a", 13),
+          n(26, "Fiscalit\xE9"),
+          e()(),
+          t(27, "li")(28, "a", 14),
+          n(29, "D\xE9claration d'impot"),
+          e()()()(),
+          t(30, "li")(31, "a", 15),
+          n(32, "Nos Tarifs"),
+          e()(),
+          t(33, "li")(34, "a", 16),
+          n(35, "Boostez votre entreprise "),
+          l(36, "i", 10),
+          e(),
+          t(37, "ul")(38, "li")(39, "a", 17),
+          n(40, "Salari\xE9 et ind\xE9pendants"),
+          e()(),
+          t(41, "li")(42, "a", 18),
+          n(43, "Passage en societe"),
+          e()(),
+          t(44, "li")(45, "a", 19),
+          n(46, "Compte Courant administrateur"),
+          e()(),
+          t(47, "li")(48, "a", 20),
+          n(49, " Tr\xE9sorerie Transformez le Stress en Succ\xE8s "),
+          l(50, "i", 21),
+          e(),
+          t(51, "ul")(52, "li")(53, "a", 22),
+          n(54, "Tr\xE9sorerie vs B\xE9n\xE9fices"),
+          e()(),
+          t(55, "li")(56, "a", 23),
+          n(57, "Investir sans risquer"),
+          e()(),
+          t(58, "li")(59, "a", 24),
+          n(60, "Optimisez vos Stocks"),
+          e()(),
+          t(61, "li")(62, "a", 25),
+          n(63, "Alerte tr\xE9sorerie"),
+          e()(),
+          t(64, "li")(65, "a", 20),
+          n(66, "Prot\xE9gez Votre Tr\xE9sorerie"),
+          e()(),
+          t(67, "li")(68, "a", 26),
+          n(69, "Anticipez vos Finances"),
+          e()(),
+          t(70, "li")(71, "a", 27),
+          n(72, "Service d'accompagnement"),
+          e()()()()()(),
+          t(73, "li")(74, "a", 16),
+          n(75, "Support "),
+          l(76, "i", 10),
+          e(),
+          t(77, "ul")(78, "li")(79, "a", 28),
+          n(80, "Support pour Windows"),
+          e()(),
+          t(81, "li")(82, "a", 29),
+          n(83, "Support pour Mac"),
+          e()()()()()(),
+          t(84, "div", 30)(85, "a", 31),
+          n(86, "Nos contacts "),
+          l(87, "i", 32),
+          e()()()()(),
+          t(88, "div", 33)(89, "div", 34)(90, "div", 35)(91, "a", 5),
+          l(92, "img", 36),
+          e()(),
+          t(93, "div", 37),
+          l(94, "i", 38),
+          e()()(),
+          t(95, "div", 39)(96, "div", 40),
+          l(97, "i", 41),
+          e(),
+          t(98, "div", 42)(99, "ul", 43)(100, "li")(101, "a", 8),
+          n(102, "\xC0 propos"),
+          e()(),
+          t(103, "li")(104, "a", 44),
+          n(105, "Services "),
+          l(106, "i", 10),
+          e(),
+          t(107, "ul", 45)(108, "li")(109, "a", 11),
+          n(110, "Cr\xE9ation d'entreprise"),
+          e()(),
+          t(111, "li")(112, "a", 12),
+          n(113, "Comptabilit\xE9"),
+          e()(),
+          t(114, "li")(115, "a", 13),
+          n(116, "Fiscalit\xE9 des entreprises"),
+          e()(),
+          t(117, "li")(118, "a", 14),
+          n(119, "D\xE9claration d'impot"),
+          e()()()(),
+          t(120, "li")(121, "a", 15),
+          n(122, "Nos Tarifs"),
+          e()(),
+          t(123, "li")(124, "a", 44),
+          n(125, "Boostez votre entreprise "),
+          l(126, "i", 10),
+          e(),
+          t(127, "ul", 45)(128, "li")(129, "a", 17),
+          n(130, "Salari\xE9 et ind\xE9pendants"),
+          e()(),
+          t(131, "li")(132, "a", 18),
+          n(133, "Passage en societe"),
+          e()(),
+          t(134, "li")(135, "a", 19),
+          n(136, "Compte Courant administrateur"),
+          e()(),
+          t(137, "li")(138, "a", 44),
+          n(139, "Tr\xE9sorerie Transformez le Stress en Succ\xE8s "),
+          l(140, "i", 10),
+          e(),
+          t(141, "ul", 45)(142, "li")(143, "a", 22),
+          n(144, "Tr\xE9sorerie vs B\xE9n\xE9fices"),
+          e()(),
+          t(145, "li")(146, "a", 23),
+          n(147, "Investir sans risquer"),
+          e()(),
+          t(148, "li")(149, "a", 24),
+          n(150, "Optimisez vos Stocks"),
+          e()(),
+          t(151, "li")(152, "a", 25),
+          n(153, "Alerte tr\xE9sorerie"),
+          e()(),
+          t(154, "li")(155, "a", 20),
+          n(156, "Prot\xE9gez Votre Tr\xE9sorerie"),
+          e()(),
+          t(157, "li")(158, "a", 26),
+          n(159, "Anticipez vos Finances"),
+          e()(),
+          t(160, "li")(161, "a", 27),
+          n(162, "Service d'accompagnement"),
+          e()()()()()(),
+          t(163, "li")(164, "a", 44),
+          n(165, "Support "),
+          l(166, "i", 10),
+          e(),
+          t(167, "ul", 45)(168, "li")(169, "a", 28),
+          n(170, "Support pour Windows"),
+          e()(),
+          t(171, "li")(172, "a", 29),
+          n(173, "Support pour Mac"),
+          e()()()()(),
+          t(174, "div", 30)(175, "a", 31),
+          n(176, "Nos contacts "),
+          l(177, "i", 46),
+          e()()()(),
+          l(178, "div", 47),
+          e());
     },
     dependencies: [Ut],
     styles: [
@@ -14006,89 +14005,89 @@ var $t = class a {
     template: function (i, s) {
       i & 1 &&
         (t(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "p"),
-        l(4, "i", 3),
-        n(5, " 20 Rue de la Magnanerie"),
-        e(),
-        t(6, "p"),
-        n(7, "\xE0 1180 Uccle"),
-        e(),
-        t(8, "p", 4),
-        l(9, "i", 5),
-        t(10, "a", 6),
-        n(11, "+32 2 886 05 50"),
-        e()(),
-        t(12, "p", 4),
-        l(13, "i", 7),
-        t(14, "a", 8),
-        n(15, "info@mfinances.be"),
-        e()(),
-        t(16, "div", 9)(17, "a", 10),
-        l(18, "i", 11),
-        e(),
-        t(19, "a", 12),
-        l(20, "i", 13),
-        e(),
-        t(21, "a", 14),
-        l(22, "i", 15),
-        e(),
-        t(23, "a", 16),
-        l(24, "i", 17),
-        e(),
-        t(25, "a", 18),
-        l(26, "i", 19),
-        e(),
-        t(27, "a", 20),
-        l(28, "i", 21),
-        e()()(),
-        t(29, "div", 22)(30, "h3", 23),
-        n(31, "\xC0 PROPOS"),
-        e(),
-        t(32, "ul", 24)(33, "li")(34, "a", 25),
-        n(35, "\xC0 propos"),
-        e()(),
-        t(36, "li")(37, "a", 26),
-        n(38, "Nos services"),
-        e()(),
-        t(39, "li")(40, "a", 27),
-        n(41, "Nos tarifs"),
-        e()()()(),
-        t(42, "div", 28)(43, "h3", 23),
-        n(44, "LIENS UTILES"),
-        e(),
-        t(45, "ul", 24)(46, "li")(47, "a", 29),
-        n(48, "Boostez votre entreprise"),
-        e()(),
-        t(49, "li")(50, "a", 30),
-        n(51, "Support pour Windows"),
-        e()(),
-        t(52, "li")(53, "a", 31),
-        n(54, "Support pour Mac"),
-        e()(),
-        t(55, "li")(56, "a", 32),
-        n(57, "Contactez-nous"),
-        e()()()(),
-        t(58, "div")(59, "h3", 23),
-        n(60, "NEWSLETTER"),
-        e(),
-        t(61, "p"),
-        n(62, "Abonnez-vous pour ne rien manquer de notre newsletter."),
-        e(),
-        l(63, "input", 33),
-        t(64, "button", 34),
-        n(65, "S'abonner"),
-        e()()(),
-        t(66, "div", 35)(67, "div", 36)(68, "p"),
-        n(69, "Copyright \xA9 2025 Mfinances S.R.L."),
-        e(),
-        t(70, "div")(71, "a", 37),
-        n(72, "Conditions g\xE9n\xE9rales"),
-        e(),
-        t(73, "span", 38),
-        n(74, "\u2022"),
-        e(),
-        t(75, "a", 37),
-        n(76, "Mentions l\xE9gales"),
-        e()()()()());
+          l(4, "i", 3),
+          n(5, " 20 Rue de la Magnanerie"),
+          e(),
+          t(6, "p"),
+          n(7, "\xE0 1180 Uccle"),
+          e(),
+          t(8, "p", 4),
+          l(9, "i", 5),
+          t(10, "a", 6),
+          n(11, "+32 2 886 05 50"),
+          e()(),
+          t(12, "p", 4),
+          l(13, "i", 7),
+          t(14, "a", 8),
+          n(15, "info@mfinances.be"),
+          e()(),
+          t(16, "div", 9)(17, "a", 10),
+          l(18, "i", 11),
+          e(),
+          t(19, "a", 12),
+          l(20, "i", 13),
+          e(),
+          t(21, "a", 14),
+          l(22, "i", 15),
+          e(),
+          t(23, "a", 16),
+          l(24, "i", 17),
+          e(),
+          t(25, "a", 18),
+          l(26, "i", 19),
+          e(),
+          t(27, "a", 20),
+          l(28, "i", 21),
+          e()()(),
+          t(29, "div", 22)(30, "h3", 23),
+          n(31, "\xC0 PROPOS"),
+          e(),
+          t(32, "ul", 24)(33, "li")(34, "a", 25),
+          n(35, "\xC0 propos"),
+          e()(),
+          t(36, "li")(37, "a", 26),
+          n(38, "Nos services"),
+          e()(),
+          t(39, "li")(40, "a", 27),
+          n(41, "Nos tarifs"),
+          e()()()(),
+          t(42, "div", 28)(43, "h3", 23),
+          n(44, "LIENS UTILES"),
+          e(),
+          t(45, "ul", 24)(46, "li")(47, "a", 29),
+          n(48, "Boostez votre entreprise"),
+          e()(),
+          t(49, "li")(50, "a", 30),
+          n(51, "Support pour Windows"),
+          e()(),
+          t(52, "li")(53, "a", 31),
+          n(54, "Support pour Mac"),
+          e()(),
+          t(55, "li")(56, "a", 32),
+          n(57, "Contactez-nous"),
+          e()()()(),
+          t(58, "div")(59, "h3", 23),
+          n(60, "NEWSLETTER"),
+          e(),
+          t(61, "p"),
+          n(62, "Abonnez-vous pour ne rien manquer de notre newsletter."),
+          e(),
+          l(63, "input", 33),
+          t(64, "button", 34),
+          n(65, "S'abonner"),
+          e()()(),
+          t(66, "div", 35)(67, "div", 36)(68, "p"),
+          n(69, "Copyright \xA9 2025 Mfinances S.R.L."),
+          e(),
+          t(70, "div")(71, "a", 37),
+          n(72, "Conditions g\xE9n\xE9rales"),
+          e(),
+          t(73, "span", 38),
+          n(74, "\u2022"),
+          e(),
+          t(75, "a", 37),
+          n(76, "Mentions l\xE9gales"),
+          e()()()()());
     },
     styles: [
       '.footer-container[_ngcontent-%COMP%]{background-color:#fff;color:#333;padding:4rem 0 0}.footer-content[_ngcontent-%COMP%]{display:flex;justify-content:space-between;max-width:1200px;margin:0 auto;gap:3rem}.contact-section[_ngcontent-%COMP%]{background-color:#1a2c51;color:#fff;padding:2.5rem;border-radius:12px;box-shadow:0 8px 24px #0a174426;transition:transform .3s ease}.contact-section[_ngcontent-%COMP%]:hover{transform:translateY(-5px)}.contact-section[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{margin:.7rem 0;font-size:.95rem;display:flex;align-items:center;gap:.5rem}.section-title[_ngcontent-%COMP%]{color:#333;font-size:1.1rem;font-weight:600;margin-bottom:1.8rem;position:relative;padding-left:1rem;letter-spacing:.5px}.section-title[_ngcontent-%COMP%]:before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:4px;height:80%;background-color:#ff3c3c;border-radius:4px}.footer-links[_ngcontent-%COMP%]{list-style:none;padding:0;margin:0}.footer-links[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]{margin-bottom:1rem}.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{color:#555;text-decoration:none;transition:all .3s ease;font-size:.95rem;position:relative;padding-left:0}.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:before{content:"\\2192";opacity:0;margin-right:.5rem;transform:translate(-10px);display:inline-block;transition:all .3s ease}.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{color:#0a1744;padding-left:.5rem}.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover:before{opacity:1;transform:translate(0)}.newsletter-input[_ngcontent-%COMP%]{padding:.8rem 1rem;border:2px solid #eee;border-radius:6px;width:100%;max-width:300px;margin-bottom:1rem;transition:border-color .3s ease;font-size:.95rem}.newsletter-input[_ngcontent-%COMP%]:focus{outline:none;border-color:#0a1744}.subscribe-button[_ngcontent-%COMP%]{background-color:#ff3c3c;color:#fff;border:none;padding:.8rem 1.8rem;border-radius:6px;cursor:pointer;transition:all .3s ease;font-weight:500;font-size:.95rem}.subscribe-button[_ngcontent-%COMP%]:hover{background-color:#0a1744;transform:translateY(-2px);box-shadow:0 4px 12px #0a174426}.social-links[_ngcontent-%COMP%]{margin-top:1.5rem;display:flex;gap:1rem}.social-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{color:#fff;text-decoration:none;background-color:#ffffff1a;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .3s ease}.social-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{background-color:#ff3c3c;transform:translateY(-3px)}.bottom-bar[_ngcontent-%COMP%]{margin-top:3rem;background-color:#1a2c51;color:#fff;padding:1.5rem 0;width:100%}.bottom-bar-content[_ngcontent-%COMP%]{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 2rem}.bottom-bar[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{margin:0}.bottom-bar[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{color:#fff;text-decoration:none;transition:color .3s ease}.tap-info[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{color:inherit}.tap-info[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:hover, .tap-info[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:hover   a[_ngcontent-%COMP%]{color:#ff3c3c;cursor:pointer}.bottom-bar[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{color:#ff3c3c}@media (max-width: 768px){.bottom-bar-content[_ngcontent-%COMP%]{flex-direction:column;gap:1rem;text-align:center}}@media (max-width: 992px){.footer-content[_ngcontent-%COMP%]{flex-wrap:wrap;gap:2rem}.contact-section[_ngcontent-%COMP%]{width:100%}}@media (max-width: 768px){.footer-container[_ngcontent-%COMP%]{padding:3rem 1rem}.bottom-bar[_ngcontent-%COMP%]{flex-direction:column;gap:1rem;text-align:center}}',
@@ -14368,7 +14367,7 @@ function ho(a, o, i = new Map(), s = new Map()) {
         (u = g),
         (d = p);
     }),
-    r.length)
+      r.length)
   )
     throw qs(r);
   return c;
@@ -14438,11 +14437,11 @@ function er(a) {
   let o = !0;
   return (
     ze.style &&
-      !Xs(a) &&
-      ((o = a in ze.style),
+    !Xs(a) &&
+    ((o = a in ze.style),
       !o &&
-        io &&
-        (o = "Webkit" + a.charAt(0).toUpperCase() + a.slice(1) in ze.style)),
+      io &&
+      (o = "Webkit" + a.charAt(0).toUpperCase() + a.slice(1) in ze.style)),
     o
   );
 }
@@ -14450,7 +14449,7 @@ function tr() {
   return typeof document < "u" ? document.body : null;
 }
 function _o(a, o) {
-  for (; o; ) {
+  for (; o;) {
     if (o === a) return !0;
     o = ci(o);
   }
@@ -14462,42 +14461,42 @@ function bo(a, o, i) {
   return s ? [s] : [];
 }
 var di = (() => {
-    class a {
-      validateStyleProperty(i) {
-        return er(i);
-      }
-      containsElement(i, s) {
-        return _o(i, s);
-      }
-      getParentElement(i) {
-        return ci(i);
-      }
-      query(i, s, r) {
-        return bo(i, s, r);
-      }
-      computeStyle(i, s, r) {
-        return r || "";
-      }
-      animate(i, s, r, c, d, u = [], m) {
-        return new Qe(r, c);
-      }
-      static {
-        this.ɵfac = function (s) {
-          return new (s || a)();
-        };
-      }
-      static {
-        this.ɵprov = Me({ token: a, factory: a.ɵfac });
-      }
+  class a {
+    validateStyleProperty(i) {
+      return er(i);
     }
-    return a;
-  })(),
+    containsElement(i, s) {
+      return _o(i, s);
+    }
+    getParentElement(i) {
+      return ci(i);
+    }
+    query(i, s, r) {
+      return bo(i, s, r);
+    }
+    computeStyle(i, s, r) {
+      return r || "";
+    }
+    animate(i, s, r, c, d, u = [], m) {
+      return new Qe(r, c);
+    }
+    static {
+      this.ɵfac = function (s) {
+        return new (s || a)();
+      };
+    }
+    static {
+      this.ɵprov = Me({ token: a, factory: a.ɵfac });
+    }
+  }
+  return a;
+})(),
   qe = class {
     static {
       this.NOOP = new di();
     }
   },
-  He = class {};
+  He = class { };
 var nr = 1e3,
   vo = "{{",
   ir = "}}",
@@ -14525,7 +14524,7 @@ function en(a, o, i) {
 }
 function or(a, o, i) {
   let s =
-      /^(-?[\.\d]+)(m?s)(?:\s+(-?[\.\d]+)(m?s))?(?:\s+([-a-z]+(?:\(.+?\))?))?$/i,
+    /^(-?[\.\d]+)(m?s)(?:\s+(-?[\.\d]+)(m?s))?(?:\s+([-a-z]+(?:\(.+?\))?))?$/i,
     r,
     c = 0,
     d = "";
@@ -14582,7 +14581,7 @@ function xo(a) {
   let o = [];
   if (typeof a == "string") {
     let i;
-    for (; (i = Qn.exec(a)); ) o.push(i[1]);
+    for (; (i = Qn.exec(a));) o.push(i[1]);
     Qn.lastIndex = 0;
   }
   return o;
@@ -14610,7 +14609,7 @@ function cr(a, o, i) {
       (i.forEach((c, d) => {
         s.has(d) || r.push(d), s.set(d, c);
       }),
-      r.length)
+        r.length)
     )
       for (let c = 1; c < o.length; c++) {
         let d = o[c];
@@ -14655,36 +14654,36 @@ function mi(a, o) {
   return window.getComputedStyle(a)[o];
 }
 var dr = new Set([
-    "width",
-    "height",
-    "minWidth",
-    "minHeight",
-    "maxWidth",
-    "maxHeight",
-    "left",
-    "top",
-    "bottom",
-    "right",
-    "fontSize",
-    "outlineWidth",
-    "outlineOffset",
-    "paddingTop",
-    "paddingLeft",
-    "paddingBottom",
-    "paddingRight",
-    "marginTop",
-    "marginLeft",
-    "marginBottom",
-    "marginRight",
-    "borderRadius",
-    "borderWidth",
-    "borderTopWidth",
-    "borderLeftWidth",
-    "borderRightWidth",
-    "borderBottomWidth",
-    "textIndent",
-    "perspective",
-  ]),
+  "width",
+  "height",
+  "minWidth",
+  "minHeight",
+  "maxWidth",
+  "maxHeight",
+  "left",
+  "top",
+  "bottom",
+  "right",
+  "fontSize",
+  "outlineWidth",
+  "outlineOffset",
+  "paddingTop",
+  "paddingLeft",
+  "paddingBottom",
+  "paddingRight",
+  "marginTop",
+  "marginLeft",
+  "marginBottom",
+  "marginRight",
+  "borderRadius",
+  "borderWidth",
+  "borderTopWidth",
+  "borderLeftWidth",
+  "borderRightWidth",
+  "borderBottomWidth",
+  "textIndent",
+  "perspective",
+]),
   tn = class extends He {
     normalizePropertyName(o, i) {
       return ui(o);
@@ -14944,8 +14943,8 @@ var ro = "",
                   c >= f.startTime &&
                   r <= f.endTime &&
                   (i.errors.push(ks(m, f.startTime, f.endTime, c, r)),
-                  (g = !1)),
-                (c = f.startTime)),
+                    (g = !1)),
+                  (c = f.startTime)),
                 g && p.set(m, { startTime: c, endTime: r }),
                 i.options && rr(u, i.options, i.errors);
             });
@@ -15130,23 +15129,23 @@ function pi(a, o, i, s, r, c, d = null, u = !1) {
   };
 }
 var pt = class {
-    constructor() {
-      this._map = new Map();
-    }
-    get(o) {
-      return this._map.get(o) || [];
-    }
-    append(o, i) {
-      let s = this._map.get(o);
-      s || this._map.set(o, (s = [])), s.push(...i);
-    }
-    has(o) {
-      return this._map.has(o);
-    }
-    clear() {
-      this._map.clear();
-    }
-  },
+  constructor() {
+    this._map = new Map();
+  }
+  get(o) {
+    return this._map.get(o) || [];
+  }
+  append(o, i) {
+    let s = this._map.get(o);
+    s || this._map.set(o, (s = [])), s.push(...i);
+  }
+  has(o) {
+    return this._map.has(o);
+  }
+  clear() {
+    this._map.clear();
+  }
+},
   vr = 1,
   Er = ":enter",
   xr = new RegExp(Er, "g"),
@@ -15156,225 +15155,225 @@ function Co(a, o, i, s, r, c = new Map(), d = new Map(), u, m, p = []) {
   return new Jn().buildKeyframes(a, o, i, s, r, c, d, u, m, p);
 }
 var Jn = class {
-    buildKeyframes(o, i, s, r, c, d, u, m, p, f = []) {
-      p = p || new pt();
-      let g = new Zn(o, i, p, r, c, f, []);
-      g.options = m;
-      let h = m.delay ? De(m.delay) : 0;
-      g.currentTimeline.delayNextStep(h),
-        g.currentTimeline.setStyles([d], null, g.errors, m),
-        he(this, s, g);
-      let x = g.timelines.filter((v) => v.containsAnimation());
-      if (x.length && u.size) {
-        let v;
-        for (let C = x.length - 1; C >= 0; C--) {
-          let R = x[C];
-          if (R.element === i) {
-            v = R;
-            break;
-          }
-        }
-        v &&
-          !v.allowOnlyTimelineStyles() &&
-          v.setStyles([u], null, g.errors, m);
-      }
-      return x.length
-        ? x.map((v) => v.buildKeyframes())
-        : [pi(i, [], [], [], 0, h, "", !1)];
-    }
-    visitTrigger(o, i) {}
-    visitState(o, i) {}
-    visitTransition(o, i) {}
-    visitAnimateChild(o, i) {
-      let s = i.subInstructions.get(i.element);
-      if (s) {
-        let r = i.createSubContext(o.options),
-          c = i.currentTimeline.currentTime,
-          d = this._visitSubInstructions(s, r, r.options);
-        c != d && i.transformIntoNewTimeline(d);
-      }
-      i.previousNode = o;
-    }
-    visitAnimateRef(o, i) {
-      let s = i.createSubContext(o.options);
-      s.transformIntoNewTimeline(),
-        this._applyAnimationRefDelays([o.options, o.animation.options], i, s),
-        this.visitReference(o.animation, s),
-        i.transformIntoNewTimeline(s.currentTimeline.currentTime),
-        (i.previousNode = o);
-    }
-    _applyAnimationRefDelays(o, i, s) {
-      for (let r of o) {
-        let c = r?.delay;
-        if (c) {
-          let d =
-            typeof c == "number" ? c : De(mt(c, r?.params ?? {}, i.errors));
-          s.delayNextStep(d);
+  buildKeyframes(o, i, s, r, c, d, u, m, p, f = []) {
+    p = p || new pt();
+    let g = new Zn(o, i, p, r, c, f, []);
+    g.options = m;
+    let h = m.delay ? De(m.delay) : 0;
+    g.currentTimeline.delayNextStep(h),
+      g.currentTimeline.setStyles([d], null, g.errors, m),
+      he(this, s, g);
+    let x = g.timelines.filter((v) => v.containsAnimation());
+    if (x.length && u.size) {
+      let v;
+      for (let C = x.length - 1; C >= 0; C--) {
+        let R = x[C];
+        if (R.element === i) {
+          v = R;
+          break;
         }
       }
+      v &&
+        !v.allowOnlyTimelineStyles() &&
+        v.setStyles([u], null, g.errors, m);
     }
-    _visitSubInstructions(o, i, s) {
-      let c = i.currentTimeline.currentTime,
-        d = s.duration != null ? De(s.duration) : null,
-        u = s.delay != null ? De(s.delay) : null;
-      return (
-        d !== 0 &&
-          o.forEach((m) => {
-            let p = i.appendInstructionToTimeline(m, d, u);
-            c = Math.max(c, p.duration + p.delay);
-          }),
-        c
-      );
+    return x.length
+      ? x.map((v) => v.buildKeyframes())
+      : [pi(i, [], [], [], 0, h, "", !1)];
+  }
+  visitTrigger(o, i) { }
+  visitState(o, i) { }
+  visitTransition(o, i) { }
+  visitAnimateChild(o, i) {
+    let s = i.subInstructions.get(i.element);
+    if (s) {
+      let r = i.createSubContext(o.options),
+        c = i.currentTimeline.currentTime,
+        d = this._visitSubInstructions(s, r, r.options);
+      c != d && i.transformIntoNewTimeline(d);
     }
-    visitReference(o, i) {
-      i.updateOptions(o.options, !0),
-        he(this, o.animation, i),
-        (i.previousNode = o);
+    i.previousNode = o;
+  }
+  visitAnimateRef(o, i) {
+    let s = i.createSubContext(o.options);
+    s.transformIntoNewTimeline(),
+      this._applyAnimationRefDelays([o.options, o.animation.options], i, s),
+      this.visitReference(o.animation, s),
+      i.transformIntoNewTimeline(s.currentTimeline.currentTime),
+      (i.previousNode = o);
+  }
+  _applyAnimationRefDelays(o, i, s) {
+    for (let r of o) {
+      let c = r?.delay;
+      if (c) {
+        let d =
+          typeof c == "number" ? c : De(mt(c, r?.params ?? {}, i.errors));
+        s.delayNextStep(d);
+      }
     }
-    visitSequence(o, i) {
-      let s = i.subContextCount,
-        r = i,
-        c = o.options;
-      if (
-        c &&
-        (c.params || c.delay) &&
-        ((r = i.createSubContext(c)),
+  }
+  _visitSubInstructions(o, i, s) {
+    let c = i.currentTimeline.currentTime,
+      d = s.duration != null ? De(s.duration) : null,
+      u = s.delay != null ? De(s.delay) : null;
+    return (
+      d !== 0 &&
+      o.forEach((m) => {
+        let p = i.appendInstructionToTimeline(m, d, u);
+        c = Math.max(c, p.duration + p.delay);
+      }),
+      c
+    );
+  }
+  visitReference(o, i) {
+    i.updateOptions(o.options, !0),
+      he(this, o.animation, i),
+      (i.previousNode = o);
+  }
+  visitSequence(o, i) {
+    let s = i.subContextCount,
+      r = i,
+      c = o.options;
+    if (
+      c &&
+      (c.params || c.delay) &&
+      ((r = i.createSubContext(c)),
         r.transformIntoNewTimeline(),
         c.delay != null)
-      ) {
-        r.previousNode.type == T.Style &&
-          (r.currentTimeline.snapshotCurrentStyles(), (r.previousNode = on));
-        let d = De(c.delay);
-        r.delayNextStep(d);
-      }
-      o.steps.length &&
-        (o.steps.forEach((d) => he(this, d, r)),
+    ) {
+      r.previousNode.type == T.Style &&
+        (r.currentTimeline.snapshotCurrentStyles(), (r.previousNode = on));
+      let d = De(c.delay);
+      r.delayNextStep(d);
+    }
+    o.steps.length &&
+      (o.steps.forEach((d) => he(this, d, r)),
         r.currentTimeline.applyStylesToKeyframe(),
         r.subContextCount > s && r.transformIntoNewTimeline()),
-        (i.previousNode = o);
-    }
-    visitGroup(o, i) {
-      let s = [],
-        r = i.currentTimeline.currentTime,
-        c = o.options && o.options.delay ? De(o.options.delay) : 0;
-      o.steps.forEach((d) => {
-        let u = i.createSubContext(o.options);
-        c && u.delayNextStep(c),
-          he(this, d, u),
-          (r = Math.max(r, u.currentTimeline.currentTime)),
-          s.push(u.currentTimeline);
+      (i.previousNode = o);
+  }
+  visitGroup(o, i) {
+    let s = [],
+      r = i.currentTimeline.currentTime,
+      c = o.options && o.options.delay ? De(o.options.delay) : 0;
+    o.steps.forEach((d) => {
+      let u = i.createSubContext(o.options);
+      c && u.delayNextStep(c),
+        he(this, d, u),
+        (r = Math.max(r, u.currentTimeline.currentTime)),
+        s.push(u.currentTimeline);
+    }),
+      s.forEach((d) => i.currentTimeline.mergeTimelineCollectedStyles(d)),
+      i.transformIntoNewTimeline(r),
+      (i.previousNode = o);
+  }
+  _visitTiming(o, i) {
+    if (o.dynamic) {
+      let s = o.strValue,
+        r = i.params ? mt(s, i.params, i.errors) : s;
+      return en(r, i.errors);
+    } else return { duration: o.duration, delay: o.delay, easing: o.easing };
+  }
+  visitAnimate(o, i) {
+    let s = (i.currentAnimateTimings = this._visitTiming(o.timings, i)),
+      r = i.currentTimeline;
+    s.delay && (i.incrementTime(s.delay), r.snapshotCurrentStyles());
+    let c = o.style;
+    c.type == T.Keyframes
+      ? this.visitKeyframes(c, i)
+      : (i.incrementTime(s.duration),
+        this.visitStyle(c, i),
+        r.applyStylesToKeyframe()),
+      (i.currentAnimateTimings = null),
+      (i.previousNode = o);
+  }
+  visitStyle(o, i) {
+    let s = i.currentTimeline,
+      r = i.currentAnimateTimings;
+    !r && s.hasCurrentStyleProperties() && s.forwardFrame();
+    let c = (r && r.easing) || o.easing;
+    o.isEmptyStep
+      ? s.applyEmptyStep(c)
+      : s.setStyles(o.styles, c, i.errors, i.options),
+      (i.previousNode = o);
+  }
+  visitKeyframes(o, i) {
+    let s = i.currentAnimateTimings,
+      r = i.currentTimeline.duration,
+      c = s.duration,
+      u = i.createSubContext().currentTimeline;
+    (u.easing = s.easing),
+      o.styles.forEach((m) => {
+        let p = m.offset || 0;
+        u.forwardTime(p * c),
+          u.setStyles(m.styles, m.easing, i.errors, i.options),
+          u.applyStylesToKeyframe();
       }),
-        s.forEach((d) => i.currentTimeline.mergeTimelineCollectedStyles(d)),
-        i.transformIntoNewTimeline(r),
-        (i.previousNode = o);
+      i.currentTimeline.mergeTimelineCollectedStyles(u),
+      i.transformIntoNewTimeline(r + c),
+      (i.previousNode = o);
+  }
+  visitQuery(o, i) {
+    let s = i.currentTimeline.currentTime,
+      r = o.options || {},
+      c = r.delay ? De(r.delay) : 0;
+    c &&
+      (i.previousNode.type === T.Style ||
+        (s == 0 && i.currentTimeline.hasCurrentStyleProperties())) &&
+      (i.currentTimeline.snapshotCurrentStyles(), (i.previousNode = on));
+    let d = s,
+      u = i.invokeQuery(
+        o.selector,
+        o.originalSelector,
+        o.limit,
+        o.includeSelf,
+        !!r.optional,
+        i.errors
+      );
+    i.currentQueryTotal = u.length;
+    let m = null;
+    u.forEach((p, f) => {
+      i.currentQueryIndex = f;
+      let g = i.createSubContext(o.options, p);
+      c && g.delayNextStep(c),
+        p === i.element && (m = g.currentTimeline),
+        he(this, o.animation, g),
+        g.currentTimeline.applyStylesToKeyframe();
+      let h = g.currentTimeline.currentTime;
+      d = Math.max(d, h);
+    }),
+      (i.currentQueryIndex = 0),
+      (i.currentQueryTotal = 0),
+      i.transformIntoNewTimeline(d),
+      m &&
+      (i.currentTimeline.mergeTimelineCollectedStyles(m),
+        i.currentTimeline.snapshotCurrentStyles()),
+      (i.previousNode = o);
+  }
+  visitStagger(o, i) {
+    let s = i.parentContext,
+      r = i.currentTimeline,
+      c = o.timings,
+      d = Math.abs(c.duration),
+      u = d * (i.currentQueryTotal - 1),
+      m = d * i.currentQueryIndex;
+    switch (c.duration < 0 ? "reverse" : c.easing) {
+      case "reverse":
+        m = u - m;
+        break;
+      case "full":
+        m = s.currentStaggerTime;
+        break;
     }
-    _visitTiming(o, i) {
-      if (o.dynamic) {
-        let s = o.strValue,
-          r = i.params ? mt(s, i.params, i.errors) : s;
-        return en(r, i.errors);
-      } else return { duration: o.duration, delay: o.delay, easing: o.easing };
-    }
-    visitAnimate(o, i) {
-      let s = (i.currentAnimateTimings = this._visitTiming(o.timings, i)),
-        r = i.currentTimeline;
-      s.delay && (i.incrementTime(s.delay), r.snapshotCurrentStyles());
-      let c = o.style;
-      c.type == T.Keyframes
-        ? this.visitKeyframes(c, i)
-        : (i.incrementTime(s.duration),
-          this.visitStyle(c, i),
-          r.applyStylesToKeyframe()),
-        (i.currentAnimateTimings = null),
-        (i.previousNode = o);
-    }
-    visitStyle(o, i) {
-      let s = i.currentTimeline,
-        r = i.currentAnimateTimings;
-      !r && s.hasCurrentStyleProperties() && s.forwardFrame();
-      let c = (r && r.easing) || o.easing;
-      o.isEmptyStep
-        ? s.applyEmptyStep(c)
-        : s.setStyles(o.styles, c, i.errors, i.options),
-        (i.previousNode = o);
-    }
-    visitKeyframes(o, i) {
-      let s = i.currentAnimateTimings,
-        r = i.currentTimeline.duration,
-        c = s.duration,
-        u = i.createSubContext().currentTimeline;
-      (u.easing = s.easing),
-        o.styles.forEach((m) => {
-          let p = m.offset || 0;
-          u.forwardTime(p * c),
-            u.setStyles(m.styles, m.easing, i.errors, i.options),
-            u.applyStylesToKeyframe();
-        }),
-        i.currentTimeline.mergeTimelineCollectedStyles(u),
-        i.transformIntoNewTimeline(r + c),
-        (i.previousNode = o);
-    }
-    visitQuery(o, i) {
-      let s = i.currentTimeline.currentTime,
-        r = o.options || {},
-        c = r.delay ? De(r.delay) : 0;
-      c &&
-        (i.previousNode.type === T.Style ||
-          (s == 0 && i.currentTimeline.hasCurrentStyleProperties())) &&
-        (i.currentTimeline.snapshotCurrentStyles(), (i.previousNode = on));
-      let d = s,
-        u = i.invokeQuery(
-          o.selector,
-          o.originalSelector,
-          o.limit,
-          o.includeSelf,
-          !!r.optional,
-          i.errors
-        );
-      i.currentQueryTotal = u.length;
-      let m = null;
-      u.forEach((p, f) => {
-        i.currentQueryIndex = f;
-        let g = i.createSubContext(o.options, p);
-        c && g.delayNextStep(c),
-          p === i.element && (m = g.currentTimeline),
-          he(this, o.animation, g),
-          g.currentTimeline.applyStylesToKeyframe();
-        let h = g.currentTimeline.currentTime;
-        d = Math.max(d, h);
-      }),
-        (i.currentQueryIndex = 0),
-        (i.currentQueryTotal = 0),
-        i.transformIntoNewTimeline(d),
-        m &&
-          (i.currentTimeline.mergeTimelineCollectedStyles(m),
-          i.currentTimeline.snapshotCurrentStyles()),
-        (i.previousNode = o);
-    }
-    visitStagger(o, i) {
-      let s = i.parentContext,
-        r = i.currentTimeline,
-        c = o.timings,
-        d = Math.abs(c.duration),
-        u = d * (i.currentQueryTotal - 1),
-        m = d * i.currentQueryIndex;
-      switch (c.duration < 0 ? "reverse" : c.easing) {
-        case "reverse":
-          m = u - m;
-          break;
-        case "full":
-          m = s.currentStaggerTime;
-          break;
-      }
-      let f = i.currentTimeline;
-      m && f.delayNextStep(m);
-      let g = f.currentTime;
-      he(this, o.animation, i),
-        (i.previousNode = o),
-        (s.currentStaggerTime =
-          r.currentTime - g + (r.startTime - s.currentTimeline.startTime));
-    }
-  },
+    let f = i.currentTimeline;
+    m && f.delayNextStep(m);
+    let g = f.currentTime;
+    he(this, o.animation, i),
+      (i.previousNode = o),
+      (s.currentStaggerTime =
+        r.currentTime - g + (r.startTime - s.currentTimeline.startTime));
+  }
+},
   on = {},
   Zn = class a {
     constructor(o, i, s, r, c, d, u, m) {
@@ -15461,10 +15460,10 @@ var Jn = class {
     }
     appendInstructionToTimeline(o, i, s) {
       let r = {
-          duration: i ?? o.duration,
-          delay: this.currentTimeline.currentTime + (s ?? 0) + o.delay,
-          easing: "",
-        },
+        duration: i ?? o.duration,
+        delay: this.currentTimeline.currentTime + (s ?? 0) + o.delay,
+        easing: "",
+      },
         c = new Xn(
           this._driver,
           o.element,
@@ -15513,10 +15512,10 @@ var Jn = class {
         (this._backFill = new Map()),
         (this._currentEmptyStepKeyframe = null),
         this._elementTimelineStylesLookup ||
-          (this._elementTimelineStylesLookup = new Map()),
+        (this._elementTimelineStylesLookup = new Map()),
         (this._globalTimelineStyles = this._elementTimelineStylesLookup.get(i)),
         this._globalTimelineStyles ||
-          ((this._globalTimelineStyles = this._localTimelineStyles),
+        ((this._globalTimelineStyles = this._localTimelineStyles),
           this._elementTimelineStylesLookup.set(i, this._localTimelineStyles)),
         this._loadKeyframe();
     }
@@ -15558,7 +15557,7 @@ var Jn = class {
       this._currentKeyframe && (this._previousKeyframe = this._currentKeyframe),
         (this._currentKeyframe = this._keyframes.get(this.duration)),
         this._currentKeyframe ||
-          ((this._currentKeyframe = new Map()),
+        ((this._currentKeyframe = new Map()),
           this._keyframes.set(this.duration, this._currentKeyframe));
     }
     forwardFrame() {
@@ -15589,7 +15588,7 @@ var Jn = class {
         let p = mt(m, c, s);
         this._pendingStyles.set(u, p),
           this._localTimelineStyles.has(u) ||
-            this._backFill.set(u, this._globalTimelineStyles.get(u) ?? we),
+          this._backFill.set(u, this._globalTimelineStyles.get(u) ?? we),
           this._updateStyle(u, p);
       }
     }
@@ -15598,10 +15597,10 @@ var Jn = class {
         (this._pendingStyles.forEach((o, i) => {
           this._currentKeyframe.set(i, o);
         }),
-        this._pendingStyles.clear(),
-        this._localTimelineStyles.forEach((o, i) => {
-          this._currentKeyframe.has(i) || this._currentKeyframe.set(i, o);
-        }));
+          this._pendingStyles.clear(),
+          this._localTimelineStyles.forEach((o, i) => {
+            this._currentKeyframe.has(i) || this._currentKeyframe.set(i, o);
+          }));
     }
     snapshotCurrentStyles() {
       for (let [o, i] of this._localTimelineStyles)
@@ -15773,12 +15772,12 @@ var qn = {},
         g.length
           ? lo(i, this._triggerName, s, r, F, v, R, [], [], G, Q, L, g)
           : (D.forEach((W) => {
-              let y = W.element,
-                _ = _e(G, y, new Set());
-              W.preStyleProps.forEach((M) => _.add(M));
-              let N = _e(Q, y, new Set());
-              W.postStyleProps.forEach((M) => N.add(M)), y !== i && U.add(y);
-            }),
+            let y = W.element,
+              _ = _e(G, y, new Set());
+            W.preStyleProps.forEach((M) => _.add(M));
+            let N = _e(Q, y, new Set());
+            W.postStyleProps.forEach((M) => N.add(M)), y !== i && U.add(y);
+          }),
             lo(
               i,
               this._triggerName,
@@ -15905,23 +15904,23 @@ var Pr = new pt(),
       if (
         (c
           ? ((d = Co(
-              this._driver,
-              i,
-              c,
-              Eo,
-              Gn,
-              new Map(),
-              new Map(),
-              s,
-              Pr,
-              r
-            )),
+            this._driver,
+            i,
+            c,
+            Eo,
+            Gn,
+            new Map(),
+            new Map(),
+            s,
+            Pr,
+            r
+          )),
             d.forEach((f) => {
               let g = _e(u, f.element, new Map());
               f.postStyleProps.forEach((h) => g.set(h, null));
             }))
           : (r.push(Vs()), (d = [])),
-        r.length)
+          r.length)
       )
         throw Us(r);
       u.forEach((f, g) => {
@@ -15930,9 +15929,9 @@ var Pr = new pt(),
         });
       });
       let m = d.map((f) => {
-          let g = u.get(f.element);
-          return this._buildPlayer(f, new Map(), g);
-        }),
+        let g = u.get(f.element);
+        return this._buildPlayer(f, new Map(), g);
+      }),
         p = Ne(m);
       return (
         this._playersById.set(o, p),
@@ -15954,7 +15953,7 @@ var Pr = new pt(),
     }
     listen(o, i, s, r) {
       let c = li(i, "", "", "");
-      return ai(this._getPlayer(o), s, c, r), () => {};
+      return ai(this._getPlayer(o), s, c, r), () => { };
     }
     command(o, i, s, r) {
       if (s == "register") {
@@ -16089,15 +16088,15 @@ var Pr = new pt(),
         u = this._engine.statesByElement.get(o);
       u ||
         (Ee(o, Qt),
-        Ee(o, Qt + "-" + i),
-        this._engine.statesByElement.set(o, (u = new Map())));
+          Ee(o, Qt + "-" + i),
+          this._engine.statesByElement.set(o, (u = new Map())));
       let m = u.get(i),
         p = new gt(s, this.id);
       if (
         (!(s && s.hasOwnProperty("value")) && m && p.absorbOptions(m.options),
-        u.set(i, p),
-        m || (m = Vn),
-        !(p.value === ut) && m.value === p.value)
+          u.set(i, p),
+          m || (m = Vn),
+          !(p.value === ut) && m.value === p.value)
       ) {
         if (!jr(m.params, p.params)) {
           let C = [],
@@ -16106,8 +16105,8 @@ var Pr = new pt(),
           C.length
             ? this._engine.reportError(C)
             : this._engine.afterFlush(() => {
-                je(o, R), Oe(o, U);
-              });
+              je(o, R), Oe(o, U);
+            });
         }
         return;
       }
@@ -16136,7 +16135,7 @@ var Pr = new pt(),
           isFallbackTransition: v,
         }),
         v ||
-          (Ee(o, uo),
+        (Ee(o, uo),
           d.onStart(() => {
             Je(o, uo);
           })),
@@ -16169,7 +16168,7 @@ var Pr = new pt(),
       let i = this._engine.playersByElement.get(o);
       i &&
         (i.forEach((s) => s.destroy()),
-        this._engine.playersByElement.delete(o));
+          this._engine.playersByElement.delete(o));
     }
     _signalRemovalForInnerTriggers(o, i) {
       let s = this._engine.driver.query(o, Xt, !0);
@@ -16196,7 +16195,7 @@ var Pr = new pt(),
               f && u.push(f);
             }
           }),
-          u.length)
+            u.length)
         )
           return (
             this._engine.markElementAsRemoved(this.id, o, !0, i, d),
@@ -16236,7 +16235,7 @@ var Pr = new pt(),
       let s = this._engine;
       if (
         (o.childElementCount && this._signalRemovalForInnerTriggers(o, i),
-        this.triggerLeaveAnimation(o, i, !0))
+          this.triggerLeaveAnimation(o, i, !0))
       )
         return;
       let r = !1;
@@ -16245,7 +16244,7 @@ var Pr = new pt(),
         if (c && c.length) r = !0;
         else {
           let d = o;
-          for (; (d = d.parentNode); )
+          for (; (d = d.parentNode);)
             if (s.statesByElement.get(d)) {
               r = !0;
               break;
@@ -16258,8 +16257,8 @@ var Pr = new pt(),
         let c = o[Se];
         (!c || c === wo) &&
           (s.afterFlush(() => this.clearElementCache(o)),
-          s.destroyInnerAnimations(o),
-          s._onRemovalComplete(o, i));
+            s.destroyInnerAnimations(o),
+            s._onRemovalComplete(o, i));
       }
     }
     insertNode(o, i) {
@@ -16287,8 +16286,8 @@ var Pr = new pt(),
             }),
             r.markedForDestroy
               ? this._engine.afterFlush(() => {
-                  r.destroy();
-                })
+                r.destroy();
+              })
               : i.push(s);
         }),
         (this._queue = []),
@@ -16298,8 +16297,8 @@ var Pr = new pt(),
           return c == 0 || d == 0
             ? c - d
             : this._engine.driver.containsElement(s.element, r.element)
-            ? 1
-            : -1;
+              ? 1
+              : -1;
         })
       );
     }
@@ -16331,7 +16330,7 @@ var Pr = new pt(),
         (this.namespacesByHostElement = new Map()),
         (this.collectedEnterElements = []),
         (this.collectedLeaveElements = []),
-        (this.onRemovalComplete = (r, c) => {});
+        (this.onRemovalComplete = (r, c) => { });
     }
     get queuedPlayers() {
       let o = [];
@@ -16359,7 +16358,7 @@ var Pr = new pt(),
       if (s.length - 1 >= 0) {
         let d = !1,
           u = this.driver.getParentElement(i);
-        for (; u; ) {
+        for (; u;) {
           let m = r.get(u);
           if (m) {
             let p = s.indexOf(m);
@@ -16382,15 +16381,15 @@ var Pr = new pt(),
     }
     destroy(o, i) {
       o &&
-        (this.afterFlush(() => {}),
-        this.afterFlushAnimationsDone(() => {
-          let s = this._fetchNamespace(o);
-          this.namespacesByHostElement.delete(s.hostElement);
-          let r = this._namespaceList.indexOf(s);
-          r >= 0 && this._namespaceList.splice(r, 1),
-            s.destroy(i),
-            delete this._namespaceLookup[o];
-        }));
+        (this.afterFlush(() => { }),
+          this.afterFlushAnimationsDone(() => {
+            let s = this._fetchNamespace(o);
+            this.namespacesByHostElement.delete(s.hostElement);
+            let r = this._namespaceList.indexOf(s);
+            r >= 0 && this._namespaceList.splice(r, 1),
+              s.destroy(i),
+              delete this._namespaceLookup[o];
+          }));
     }
     _fetchNamespace(o) {
       return this._namespaceLookup[o];
@@ -16435,7 +16434,7 @@ var Pr = new pt(),
       i
         ? this.disabledNodes.has(o) || (this.disabledNodes.add(o), Ee(o, Hn))
         : this.disabledNodes.has(o) &&
-          (this.disabledNodes.delete(o), Je(o, Hn));
+        (this.disabledNodes.delete(o), Je(o, Hn));
     }
     removeNode(o, i, s) {
       if (Jt(i)) {
@@ -16456,7 +16455,7 @@ var Pr = new pt(),
         });
     }
     listen(o, i, s, r, c) {
-      return Jt(i) ? this._fetchNamespace(o).listen(i, s, r, c) : () => {};
+      return Jt(i) ? this._fetchNamespace(o).listen(i, s, r, c) : () => { };
     }
     _buildInstruction(o, i, s, r, c) {
       return o.transition.build(
@@ -16476,7 +16475,7 @@ var Pr = new pt(),
       let i = this.driver.query(o, Xt, !0);
       i.forEach((s) => this.destroyActiveAnimationsForElement(s)),
         this.playersByQueriedElement.size != 0 &&
-          ((i = this.driver.query(o, $n, !0)),
+        ((i = this.driver.query(o, $n, !0)),
           i.forEach((s) => this.finishActiveQueriedAnimationOnElement(s)));
     }
     destroyActiveAnimationsForElement(o) {
@@ -16518,8 +16517,8 @@ var Pr = new pt(),
           (this.newHostElements.forEach((s, r) =>
             this._balanceNamespaceList(s, r)
           ),
-          this.newHostElements.clear()),
-        this.totalAnimations && this.collectedEnterElements.length)
+            this.newHostElements.clear()),
+          this.totalAnimations && this.collectedEnterElements.length)
       )
         for (let s = 0; s < this.collectedEnterElements.length; s++) {
           let r = this.collectedEnterElements[s];
@@ -16542,18 +16541,18 @@ var Pr = new pt(),
         }
       if (
         ((this.totalQueuedPlayers = 0),
-        (this.collectedEnterElements.length = 0),
-        (this.collectedLeaveElements.length = 0),
-        this._flushFns.forEach((s) => s()),
-        (this._flushFns = []),
-        this._whenQuietFns.length)
+          (this.collectedEnterElements.length = 0),
+          (this.collectedLeaveElements.length = 0),
+          this._flushFns.forEach((s) => s()),
+          (this._flushFns = []),
+          this._whenQuietFns.length)
       ) {
         let s = this._whenQuietFns;
         (this._whenQuietFns = []),
           i.length
             ? Ne(i).onDone(() => {
-                s.forEach((r) => r());
-              })
+              s.forEach((r) => r());
+            })
             : s.forEach((r) => r());
       }
     }
@@ -16592,10 +16591,10 @@ var Pr = new pt(),
         S &&
           S.setForRemoval &&
           (R.push(E),
-          U.add(E),
-          S.hasAnimation
-            ? this.driver.query(E, Nr, !0).forEach((P) => U.add(P))
-            : G.add(E));
+            U.add(E),
+            S.hasAnimation
+              ? this.driver.query(E, Nr, !0).forEach((P) => U.add(P))
+              : G.add(E));
       }
       let Q = new Map(),
         F = go(h, Array.from(U));
@@ -16695,7 +16694,7 @@ var Pr = new pt(),
         let E = b.element;
         s.has(E) &&
           (W.set(E, E),
-          this._beforeAnimationBuild(b.player.namespaceId, b.instruction, L));
+            this._beforeAnimationBuild(b.player.namespaceId, b.instruction, L));
       }),
         r.forEach((b) => {
           let E = b.element;
@@ -16740,7 +16739,7 @@ var Pr = new pt(),
           if (W.size > 1) {
             let q = E,
               re = [];
-            for (; (q = q.parentNode); ) {
+            for (; (q = q.parentNode);) {
               let k = W.get(q);
               if (k) {
                 $ = k;
@@ -16825,9 +16824,9 @@ var Pr = new pt(),
       }
       return (
         (s || r) &&
-          (d = d.filter(
-            (u) => !((s && s != u.namespaceId) || (r && r != u.triggerName))
-          )),
+        (d = d.filter(
+          (u) => !((s && s != u.namespaceId) || (r && r != u.triggerName))
+        )),
         d
       );
     }
@@ -16915,13 +16914,13 @@ var Pr = new pt(),
     setRealPlayer(o) {
       this._containsRealPlayer ||
         ((this._player = o),
-        this._queuedCallbacks.forEach((i, s) => {
-          i.forEach((r) => ai(o, s, void 0, r));
-        }),
-        this._queuedCallbacks.clear(),
-        (this._containsRealPlayer = !0),
-        this.overrideTotalTime(o.totalTime),
-        (this.queued = !1));
+          this._queuedCallbacks.forEach((i, s) => {
+            i.forEach((r) => ai(o, s, void 0, r));
+          }),
+          this._queuedCallbacks.clear(),
+          (this._containsRealPlayer = !0),
+          this.overrideTotalTime(o.totalTime),
+          (this.queued = !1));
     }
     getRealPlayer() {
       return this._player;
@@ -17082,7 +17081,7 @@ var Ze = class {
     (this._driver = i),
       (this._normalizer = s),
       (this._triggerCache = {}),
-      (this.onRemovalComplete = (r, c) => {}),
+      (this.onRemovalComplete = (r, c) => { }),
       (this._transitionEngine = new oi(o.body, i, s)),
       (this._timelineEngine = new ni(o.body, i, s)),
       (this._transitionEngine.onRemovalComplete = (r, c) =>
@@ -17171,24 +17170,24 @@ var si = class a {
     this._state < 1 &&
       (this._startStyles &&
         Oe(this._element, this._startStyles, this._initialStyles),
-      (this._state = 1));
+        (this._state = 1));
   }
   finish() {
     this.start(),
       this._state < 2 &&
-        (Oe(this._element, this._initialStyles),
+      (Oe(this._element, this._initialStyles),
         this._endStyles &&
-          (Oe(this._element, this._endStyles), (this._endStyles = null)),
+        (Oe(this._element, this._endStyles), (this._endStyles = null)),
         (this._state = 1));
   }
   destroy() {
     this.finish(),
       this._state < 3 &&
-        (a.initialStylesByElement.delete(this._element),
+      (a.initialStylesByElement.delete(this._element),
         this._startStyles &&
-          (je(this._element, this._startStyles), (this._endStyles = null)),
+        (je(this._element, this._startStyles), (this._endStyles = null)),
         this._endStyles &&
-          (je(this._element, this._endStyles), (this._endStyles = null)),
+        (je(this._element, this._endStyles), (this._endStyles = null)),
         Oe(this._element, this._initialStyles),
         (this._state = 3));
   }
@@ -17206,143 +17205,143 @@ function Hr(a) {
   return a === "display" || a === "position";
 }
 var an = class {
-    constructor(o, i, s, r) {
-      (this.element = o),
-        (this.keyframes = i),
-        (this.options = s),
-        (this._specialStyles = r),
-        (this._onDoneFns = []),
-        (this._onStartFns = []),
-        (this._onDestroyFns = []),
-        (this._initialized = !1),
-        (this._finished = !1),
-        (this._started = !1),
-        (this._destroyed = !1),
-        (this._originalOnDoneFns = []),
-        (this._originalOnStartFns = []),
-        (this.time = 0),
-        (this.parentPlayer = null),
-        (this.currentSnapshot = new Map()),
-        (this._duration = s.duration),
-        (this._delay = s.delay || 0),
-        (this.time = this._duration + this._delay);
-    }
-    _onFinish() {
-      this._finished ||
-        ((this._finished = !0),
+  constructor(o, i, s, r) {
+    (this.element = o),
+      (this.keyframes = i),
+      (this.options = s),
+      (this._specialStyles = r),
+      (this._onDoneFns = []),
+      (this._onStartFns = []),
+      (this._onDestroyFns = []),
+      (this._initialized = !1),
+      (this._finished = !1),
+      (this._started = !1),
+      (this._destroyed = !1),
+      (this._originalOnDoneFns = []),
+      (this._originalOnStartFns = []),
+      (this.time = 0),
+      (this.parentPlayer = null),
+      (this.currentSnapshot = new Map()),
+      (this._duration = s.duration),
+      (this._delay = s.delay || 0),
+      (this.time = this._duration + this._delay);
+  }
+  _onFinish() {
+    this._finished ||
+      ((this._finished = !0),
         this._onDoneFns.forEach((o) => o()),
         (this._onDoneFns = []));
-    }
-    init() {
-      this._buildPlayer(), this._preparePlayerBeforeStart();
-    }
-    _buildPlayer() {
-      if (this._initialized) return;
-      this._initialized = !0;
-      let o = this.keyframes;
-      (this.domPlayer = this._triggerWebAnimation(
-        this.element,
-        o,
-        this.options
-      )),
-        (this._finalKeyframe = o.length ? o[o.length - 1] : new Map());
-      let i = () => this._onFinish();
-      this.domPlayer.addEventListener("finish", i),
-        this.onDestroy(() => {
-          this.domPlayer.removeEventListener("finish", i);
-        });
-    }
-    _preparePlayerBeforeStart() {
-      this._delay ? this._resetDomPlayerState() : this.domPlayer.pause();
-    }
-    _convertKeyframesToObject(o) {
-      let i = [];
-      return (
-        o.forEach((s) => {
-          i.push(Object.fromEntries(s));
-        }),
-        i
-      );
-    }
-    _triggerWebAnimation(o, i, s) {
-      return o.animate(this._convertKeyframesToObject(i), s);
-    }
-    onStart(o) {
-      this._originalOnStartFns.push(o), this._onStartFns.push(o);
-    }
-    onDone(o) {
-      this._originalOnDoneFns.push(o), this._onDoneFns.push(o);
-    }
-    onDestroy(o) {
-      this._onDestroyFns.push(o);
-    }
-    play() {
-      this._buildPlayer(),
-        this.hasStarted() ||
-          (this._onStartFns.forEach((o) => o()),
-          (this._onStartFns = []),
-          (this._started = !0),
-          this._specialStyles && this._specialStyles.start()),
-        this.domPlayer.play();
-    }
-    pause() {
-      this.init(), this.domPlayer.pause();
-    }
-    finish() {
-      this.init(),
-        this._specialStyles && this._specialStyles.finish(),
-        this._onFinish(),
-        this.domPlayer.finish();
-    }
-    reset() {
-      this._resetDomPlayerState(),
-        (this._destroyed = !1),
-        (this._finished = !1),
-        (this._started = !1),
-        (this._onStartFns = this._originalOnStartFns),
-        (this._onDoneFns = this._originalOnDoneFns);
-    }
-    _resetDomPlayerState() {
-      this.domPlayer && this.domPlayer.cancel();
-    }
-    restart() {
-      this.reset(), this.play();
-    }
-    hasStarted() {
-      return this._started;
-    }
-    destroy() {
-      this._destroyed ||
-        ((this._destroyed = !0),
+  }
+  init() {
+    this._buildPlayer(), this._preparePlayerBeforeStart();
+  }
+  _buildPlayer() {
+    if (this._initialized) return;
+    this._initialized = !0;
+    let o = this.keyframes;
+    (this.domPlayer = this._triggerWebAnimation(
+      this.element,
+      o,
+      this.options
+    )),
+      (this._finalKeyframe = o.length ? o[o.length - 1] : new Map());
+    let i = () => this._onFinish();
+    this.domPlayer.addEventListener("finish", i),
+      this.onDestroy(() => {
+        this.domPlayer.removeEventListener("finish", i);
+      });
+  }
+  _preparePlayerBeforeStart() {
+    this._delay ? this._resetDomPlayerState() : this.domPlayer.pause();
+  }
+  _convertKeyframesToObject(o) {
+    let i = [];
+    return (
+      o.forEach((s) => {
+        i.push(Object.fromEntries(s));
+      }),
+      i
+    );
+  }
+  _triggerWebAnimation(o, i, s) {
+    return o.animate(this._convertKeyframesToObject(i), s);
+  }
+  onStart(o) {
+    this._originalOnStartFns.push(o), this._onStartFns.push(o);
+  }
+  onDone(o) {
+    this._originalOnDoneFns.push(o), this._onDoneFns.push(o);
+  }
+  onDestroy(o) {
+    this._onDestroyFns.push(o);
+  }
+  play() {
+    this._buildPlayer(),
+      this.hasStarted() ||
+      (this._onStartFns.forEach((o) => o()),
+        (this._onStartFns = []),
+        (this._started = !0),
+        this._specialStyles && this._specialStyles.start()),
+      this.domPlayer.play();
+  }
+  pause() {
+    this.init(), this.domPlayer.pause();
+  }
+  finish() {
+    this.init(),
+      this._specialStyles && this._specialStyles.finish(),
+      this._onFinish(),
+      this.domPlayer.finish();
+  }
+  reset() {
+    this._resetDomPlayerState(),
+      (this._destroyed = !1),
+      (this._finished = !1),
+      (this._started = !1),
+      (this._onStartFns = this._originalOnStartFns),
+      (this._onDoneFns = this._originalOnDoneFns);
+  }
+  _resetDomPlayerState() {
+    this.domPlayer && this.domPlayer.cancel();
+  }
+  restart() {
+    this.reset(), this.play();
+  }
+  hasStarted() {
+    return this._started;
+  }
+  destroy() {
+    this._destroyed ||
+      ((this._destroyed = !0),
         this._resetDomPlayerState(),
         this._onFinish(),
         this._specialStyles && this._specialStyles.destroy(),
         this._onDestroyFns.forEach((o) => o()),
         (this._onDestroyFns = []));
-    }
-    setPosition(o) {
-      this.domPlayer === void 0 && this.init(),
-        (this.domPlayer.currentTime = o * this.time);
-    }
-    getPosition() {
-      return +(this.domPlayer.currentTime ?? 0) / this.time;
-    }
-    get totalTime() {
-      return this._delay + this._duration;
-    }
-    beforeDestroy() {
-      let o = new Map();
-      this.hasStarted() &&
-        this._finalKeyframe.forEach((s, r) => {
-          r !== "offset" && o.set(r, this._finished ? s : mi(this.element, r));
-        }),
-        (this.currentSnapshot = o);
-    }
-    triggerCallback(o) {
-      let i = o === "start" ? this._onStartFns : this._onDoneFns;
-      i.forEach((s) => s()), (i.length = 0);
-    }
-  },
+  }
+  setPosition(o) {
+    this.domPlayer === void 0 && this.init(),
+      (this.domPlayer.currentTime = o * this.time);
+  }
+  getPosition() {
+    return +(this.domPlayer.currentTime ?? 0) / this.time;
+  }
+  get totalTime() {
+    return this._delay + this._duration;
+  }
+  beforeDestroy() {
+    let o = new Map();
+    this.hasStarted() &&
+      this._finalKeyframe.forEach((s, r) => {
+        r !== "offset" && o.set(r, this._finished ? s : mi(this.element, r));
+      }),
+      (this.currentSnapshot = o);
+  }
+  triggerCallback(o) {
+    let i = o === "start" ? this._onStartFns : this._onDoneFns;
+    i.forEach((s) => s()), (i.length = 0);
+  }
+},
   ln = class {
     validateStyleProperty(o) {
       return !0;
@@ -17576,9 +17575,9 @@ var dn = class {
   end() {
     this._cdRecurDepth--,
       this._cdRecurDepth == 0 &&
-        this._zone.runOutsideAngular(() => {
-          this._scheduleCountTask(), this.engine.flush(this._microtaskId);
-        }),
+      this._zone.runOutsideAngular(() => {
+        this._scheduleCountTask(), this.engine.flush(this._microtaskId);
+      }),
       this.delegate.end && this.delegate.end();
   }
   whenRenderingDone() {
@@ -17611,10 +17610,10 @@ function Qr(a, o, i) {
   return new dn(a, o, i);
 }
 var Do = [
-    { provide: He, useFactory: Wr },
-    { provide: Ze, useClass: $r },
-    { provide: Pi, useFactory: Qr, deps: [Bi, Ze, Ue] },
-  ],
+  { provide: He, useFactory: Wr },
+  { provide: Ze, useClass: $r },
+  { provide: Pi, useFactory: Qr, deps: [Bi, Ze, Ue] },
+],
   To = [
     { provide: qe, useFactory: () => new ln() },
     { provide: vn, useValue: "BrowserAnimations" },

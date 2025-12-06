@@ -1,6 +1,5 @@
 .header {
-  background: url("../../../assets/img/vente/banner-img-1.webp") no-repeat
-    center center/cover;
+  background: url("../../../assets/img/vente/banner-img-1.webp") no-repeat center center/cover;
   min-height: 500px;
   position: relative;
   display: flex;
@@ -79,8 +78,10 @@
 .video-container::before {
   content: "";
   display: block;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio */
 }
+
 .video-container {
   height: 450px;
 }
@@ -93,6 +94,7 @@
   height: 100%;
   border: 0;
 }
+
 .video-thumbnail {
   position: absolute;
   top: 0;
@@ -341,6 +343,7 @@ business-section {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+
   .container,
   .container2 {
     grid-template-columns: 1fr;
@@ -357,6 +360,7 @@ business-section {
 }
 
 @media (max-width: 576px) {
+
   .business-section,
   business-section {
     padding: 3rem 1.5rem;
@@ -489,6 +493,7 @@ business-section {
 }
 
 @media (max-width: 1024px) {
+
   .content-container,
   .container2 {
     grid-template-columns: 1fr;
@@ -511,6 +516,7 @@ business-section {
 }
 
 @media (max-width: 768px) {
+
   .video-promotion-section,
   .business-section,
   business-section {
@@ -567,7 +573,7 @@ business-section {
 }
 
 .subtitle {
-  color: #64748b;
+  color: #03143c;
   font-size: 1.1rem;
   line-height: 1.6;
 }

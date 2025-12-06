@@ -48,7 +48,7 @@
 /* Subtitle */
 .intro-subtitle {
     font-size: 1.15rem;
-    color: #64748b;
+    color: #03143c;
     line-height: 1.7;
     font-weight: 400;
 }
@@ -102,7 +102,7 @@
 
 .benefit-text {
     font-size: 0.875rem;
-    color: #64748b;
+    color: #03143c;
     margin: 0;
 }
 
@@ -274,7 +274,7 @@
 
 .badge-label {
     font-size: 0.75rem;
-    color: #64748b;
+    color: #03143c;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;

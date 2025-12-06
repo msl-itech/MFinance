@@ -19,4 +19,10 @@ export class WhyExternalisedComponent {
     // Réactiver le scroll du body
     document.body.style.overflow = '';
   }
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

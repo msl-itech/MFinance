@@ -49,7 +49,7 @@
 
 .section-subtitle {
     font-size: 1.15rem;
-    color: #64748b;
+    color: #03143c;
     line-height: 1.7;
     max-width: 600px;
     margin: 0 auto;
@@ -219,7 +219,7 @@
 
 .service-desc {
     font-size: 0.95rem;
-    color: #64748b;
+    color: #03143c;
     line-height: 1.6;
     margin: 0;
 }
@@ -317,7 +317,7 @@
 .stat-label {
     display: block;
     font-size: 0.875rem;
-    color: #64748b;
+    color: #03143c;
     font-weight: 500;
 }
 
@@ -330,7 +330,7 @@
 
 .odoo-description {
     font-size: 1.1rem;
-    color: #64748b;
+    color: #03143c;
     line-height: 1.7;
 }
 
@@ -387,7 +387,7 @@
 
 .difference-subtitle {
     font-size: 1.1rem;
-    color: #64748b;
+    color: #03143c;
     line-height: 1.7;
 }
 
@@ -470,7 +470,7 @@
 
 .diff-desc {
     font-size: 0.95rem;
-    color: #64748b;
+    color: #03143c;
     line-height: 1.6;
     margin: 0;
 }
@@ -582,5 +582,69 @@
 
     .service-icon i {
         font-size: 1.5rem;
+    }
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+
+.text-dark-blue {
+    color: #0a2463 !important;
+}
+
+.cta-glass-panel {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.cta-glass-panel:hover {
+    transform: translateY(-5px);
+}
+
+/* Button Styling specific to this section if global class is missing features */
+.cta-glass-panel .btn-custom-red {
+    background: linear-gradient(135deg, #ff3333 0%, #ff6b6a 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(243, 73, 71, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cta-glass-panel .btn-custom-red:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(243, 73, 71, 0.4);
+    background: linear-gradient(135deg, #ff4444 0%, #ff7c7b 100%);
+}
+
+/* Responsive adjustments for CTA */
+@media (max-width: 768px) {
+    .cta-glass-panel {
+        padding: 2rem !important;
+        border-radius: 20px;
+    }
+
+    .cta-glass-panel h3 {
+        font-size: 1.5rem;
+    }
+
+    .cta-glass-panel p {
+        font-size: 1rem !important;
+    }
+
+    .cta-glass-panel .btn {
+        width: 100%;
+        justify-content: center;
     }
 }

@@ -25,7 +25,7 @@
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: #64748b;
+    color: #03143c;
     font-weight: 400;
     max-width: 600px;
     margin: 0 auto;
@@ -103,7 +103,7 @@
 /* Step Description */
 .step-desc {
     font-size: 0.95rem;
-    color: #64748b;
+    color: #03143c;
     line-height: 1.6;
     margin: 0;
 }
@@ -186,4 +186,51 @@
 
 .step-item[data-aos="fade-up"] {
     animation: fadeInUp 0.5s ease-out;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    text-decoration: none;
+}
+
+.btn-lg {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+}
+
+.btn-custom-red {
+    background: linear-gradient(135deg, #ff3333 0%, #ff6b6a 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(243, 73, 71, 0.3);
+}
+
+.btn-custom-red:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(243, 73, 71, 0.4);
+    background: linear-gradient(135deg, #ff4444 0%, #ff7c7b 100%);
+}
+
+.pulse-button {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(243, 73, 71, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(243, 73, 71, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(243, 73, 71, 0);
+    }
 }

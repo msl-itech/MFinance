@@ -23,6 +23,8 @@ import { ServiceDepartementComponent } from './departement-comptable/service-dep
 import { WhyExternalisedComponent } from './departement-comptable/why-externalised/why-externalised.component';
 import { AvantagesComponent } from './departement-comptable/avantages/avantages.component';
 import { ProfilComponent } from './comptabilite/profil/profil.component';
+import { HeroSectioV2Component } from './comptabilite/hero-sectio-v2/hero-sectio-v2.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,9 +44,12 @@ import { ProfilComponent } from './comptabilite/profil/profil.component';
     WhyExternalisedComponent,
     AvantagesComponent,
     ProfilComponent,
+    HeroSectioV2Component,
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     ServicesRoutingModule,
     ShardeModuleModule,
     CreationEntrepriseMobileComponent,
