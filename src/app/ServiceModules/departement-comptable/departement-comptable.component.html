@@ -580,7 +580,8 @@
 
 <app-contact-form-layout [config]="formConfig" [currentStep]="currentStep" [totalSteps]="totalSteps"
     [formSubmitted]="formSubmitted" [isStepValid]="isStepValid" [isFormValid]="isFormValid" [isLoading]="isLoading"
-    (nextStep)="onNextStep()" (previousStep)="onPreviousStep()" (submit)="onSubmit()" (reset)="onReset()" id="contactSection">
+    (nextStep)="onNextStep()" (previousStep)="onPreviousStep()" (submit)="onSubmit()" (reset)="onReset()"
+    id="contactSection">
     <div slot="form-content">
         <!-- Étape 1: Secteur d'activité -->
         <div *ngIf="currentStep === 1" class="step-content">

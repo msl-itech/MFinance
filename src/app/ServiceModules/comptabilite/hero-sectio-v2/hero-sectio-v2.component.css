@@ -1,410 +1,479 @@
-/* Typography Enhancements */
-h1,
-h2,
-h3,
-h4,
-h5,
-.display-4,
-.display-5 {
-    letter-spacing: -0.02em;
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:host {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    color: #ffffff;
 }
 
-.text-gradient {
-    background: linear-gradient(135deg, #fff 0%, #ff3333 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.text-red-glow {
-    color: #ff3333;
-    text-shadow: 0 0 20px rgba(243, 73, 71, 0.4);
-}
-
-.text-white-60 {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.text-white-80 {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-/* HERO SECTION */
-/* HERO SECTION */
-/* HERO SECTION */
+/* --- HERO SECTION CONTAINER --- */
 .hero-section {
-    min-height: 90vh;
     position: relative;
-    overflow: hidden;
-    /* Deep rich purple-black background */
-    background: radial-gradient(circle at center, #1a0525 0%, #000000 100%);
+    min-height: 85vh;
+    /* slightly less tall than full screen for better view of content below */
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    /* Dark center for text, but allow colors to breathe */
-    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.6) 0%, rgb(8 16 46 / 59%) 100%);
-    z-index: 2;
-    /* Sit on top of cards (z-index 1) */
-    pointer-events: none;
-    backdrop-filter: blur(1px);
-}
-
-.glow-bg {
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.5;
-    /* Boosted opacity */
-    z-index: 0;
-}
-
-.top-right {
-    top: -200px;
-    right: -200px;
-    /* Vibrant pink/magenta glow */
-    background: radial-gradient(circle, #ff0066, transparent 65%);
-}
-
-.bottom-left {
-    bottom: -200px;
-    left: -200px;
-    /* Vibrant deep blue/purple glow */
-    background: radial-gradient(circle, #5500ff, transparent 65%);
-}
-
-/* ✨ ODOO TEXT SLIDER ANIMATION - HYPER MOTION ✨ */
-.odoo-slider-wrapper {
-    position: absolute;
-    width: 100%;
     overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
-    /* Ajout d'un léger motion blur pour effet de vitesse */
-    filter: blur(0.3px);
+    /* Updated Background to #1a2c51 based */
+    background: linear-gradient(135deg, #1a2c51 0%, #0d1629 100%);
 }
 
-.top-slider {
-    top: 15%;
-    transform: rotate(-5deg);
-}
-
-.bottom-slider {
-    bottom: 15%;
-    transform: rotate(5deg);
-}
-
-.odoo-slider-track {
-    display: flex;
-    gap: 60px;
-    /* Réduit de 80px à 60px pour plus de densité */
-    animation: scroll-left 15s linear infinite;
-    /* Accéléré de 40s à 15s */
-    will-change: transform;
-    /* Optimisation GPU pour fluidité maximale */
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
-
-.odoo-slider-track.reverse {
-    animation: scroll-right 15s linear infinite;
-    /* Accéléré de 40s à 15s */
-}
-
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0) translateZ(0);
-    }
-
-    100% {
-        transform: translateX(-50%) translateZ(0);
-    }
-}
-
-@keyframes scroll-right {
-    0% {
-        transform: translateX(-50%) translateZ(0);
-    }
-
-    100% {
-        transform: translateX(0) translateZ(0);
-    }
-}
-
-.odoo-text-item {
+.content-container {
     position: relative;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 220px;
-    height: 140px;
-    padding: 20px;
-    /* More colored tint in cards */
-    background: linear-gradient(145deg, rgba(160, 20, 160, 0.2) 0%, rgba(40, 5, 50, 0.5) 100%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.2),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    transform: translateZ(0);
-    will-change: transform;
-}
-
-.odoo-text-item::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.01));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-}
-
-.odoo-text-item:hover {
-    background: linear-gradient(145deg, rgba(139, 0, 139, 0.25) 0%, rgba(40, 0, 40, 0.6) 100%);
-    transform: translateY(-8px) scale(1.02) translateZ(0);
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.3),
-        0 0 20px rgba(139, 0, 139, 0.2),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-.odoo-text-main {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.9);
-    /* Slightly brighter */
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    background: linear-gradient(135deg, #ffffff 0%, #dcdcdc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-.odoo-version-badge {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #fff;
-    background: linear-gradient(135deg, #ff3333 0%, #ff6b6a 100%);
-    padding: 4px 12px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(243, 73, 71, 0.3);
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    border: none;
-}
-
-.odoo-text-item:hover .odoo-version-badge {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(243, 73, 71, 0.5);
-}
-
-.odoo-text-item:hover .odoo-text-main {
-    opacity: 1;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-
-}
-
-/* Pause animation on hover */
-.odoo-slider-wrapper:hover .odoo-slider-track {
-    animation-play-state: paused;
-}
-
-.hero-title {
-    font-size: clamp(3rem, 6vw, 5rem);
-    font-weight: 800;
-    line-height: 1.1;
-}
-
-.hero-subtitle {
-    font-size: 1.25rem;
-    max-width: 600px;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.badge-pill {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 8px 16px;
-    border-radius: 50px;
+/* --- BACKGROUND AMBIENCE --- */
+.background-ambient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.soft-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.3;
+    /* Adjusted opacity for cleaner look */
+    animation: orb-float 20s infinite ease-in-out alternate;
+}
+
+.orb-purple {
+    width: 600px;
+    height: 600px;
+    background: #ff3333;
+    /* Red accent instead of purple */
+    top: -150px;
+    left: -100px;
+    opacity: 0.15;
+    /* Subtle red glow */
+}
+
+.orb-blue {
+    width: 700px;
+    height: 700px;
+    background: #1a2c51;
+    /* Dark blue backing */
+    bottom: -200px;
+    right: -150px;
+    animation-delay: -5s;
+    opacity: 0.4;
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.2;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+}
+
+/* --- NEW: CINEMATIC BACKGROUND TEXT ANIMATION --- */
+.cinematic-bg-text-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%) rotate(-5deg);
+    z-index: 2;
+    /* Behind content (10), above background (1) */
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0.06;
+    /* Very subtle */
+    mix-blend-mode: overlay;
+}
+
+.cinematic-text-track {
+    display: flex;
+    white-space: nowrap;
+    gap: 4rem;
+    animation: scroll-text 40s linear infinite;
+}
+
+.cinematic-text-item {
+    font-size: 8vw;
+    font-weight: 800;
+    color: white;
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes orb-float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(40px, 60px) scale(1.1);
+    }
+}
+
+/* --- ODOO HIGHLIGHT BADGE --- */
+.odoo-highlight-wrapper {
+    margin-bottom: 2rem;
+    perspective: 1000px;
+}
+
+.odoo-glass-badge {
     display: inline-flex;
     align-items: center;
-    font-size: 0.9rem;
-    font-weight: 500;
-    backdrop-filter: blur(10px);
-    color: #fff;
+    gap: 16px;
+    padding: 10px 24px 10px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 60px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+    /* Constant floating animation */
+    animation: badge-float 6s ease-in-out infinite;
 }
 
-.badge-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #10b981;
-    border-radius: 50%;
-    margin-right: 8px;
-    box-shadow: 0 0 10px #10b981;
-    animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
+@keyframes badge-float {
 
     0%,
     100% {
-        opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 
     50% {
-        opacity: 0.6;
-        transform: scale(1.2);
+        transform: translateY(-10px);
     }
 }
 
-/* BUTTONS AWWWARDS STYLE */
-.btn-awwwards {
-    border: none;
-    padding: 16px 32px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    display: inline-flex;
+.odoo-glass-badge:hover {
+    animation-play-state: paused;
+    transform: translateY(-2px) scale(1.02);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.odoo-icon-bg {
+    width: 44px;
+    height: 44px;
+    /* Red Gradient for Badge Icon */
+    background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+    border-radius: 50%;
+    display: flex;
     align-items: center;
-    text-decoration: none;
-}
-
-.btn-primary-glow {
-    background: #ff3333;
-    color: white;
-    box-shadow: 0 10px 30px rgba(243, 73, 71, 0.3);
-}
-
-.btn-primary-glow:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 40px rgba(243, 73, 71, 0.5);
-}
-
-.btn-glass {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    backdrop-filter: blur(10px);
-}
-
-.btn-glass:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-}
-
-.mouse {
-    width: 26px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(255, 51, 51, 0.4);
     position: relative;
 }
 
-.mouse::before {
+/* Pulse effect for the Odoo icon */
+.odoo-icon-bg::after {
     content: '';
     position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 2px;
-    animation: scroll-down 2s infinite;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 51, 51, 0.5);
+    animation: icon-pulse 2s infinite;
 }
 
-@keyframes scroll-down {
+@keyframes icon-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
 
-    0%,
     100% {
+        transform: scale(1.5);
         opacity: 0;
-        top: 8px;
+    }
+}
+
+.odoo-letter {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+}
+
+.odoo-badge-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+}
+
+.odoo-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.odoo-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #ffffff, #ffcccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glow-effect {
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-20deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -60%;
+        opacity: 0;
     }
 
     50% {
-        opacity: 1;
-        top: 16px;
+        opacity: 0.5;
+    }
+
+    100% {
+        left: 160%;
+        opacity: 0;
     }
 }
 
-/* Responsive Design */
+/* --- TYPOGRAPHY --- */
+.hero-title {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.text-soft-gradient {
+    /* Using the Red accent for the gradient text */
+    background: linear-gradient(135deg, #ffffff 0%, #ff6666 50%, #ff3333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+/* Clean underline or decoration if desired */
+/* .text-soft-gradient::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 100%;
+    height: 4px;
+    background: inherit;
+    border-radius: 4px;
+    opacity: 0.3;
+} */
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    /* Slightly brighter for readability */
+    max-width: 680px;
+    margin-bottom: 48px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.hero-subtitle strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* --- BUTTONS --- */
+.cta-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-soft-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    /* Red Button */
+    background-color: #ff3333;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(255, 51, 51, 0.3);
+}
+
+.btn-soft-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 51, 51, 0.4);
+    background-color: #e60000;
+}
+
+.btn-soft-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-soft-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* --- FLOATING DECORATIONS --- */
+.floating-elements {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.float-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+}
+
+.card-left {
+    top: 20%;
+    left: 2%;
+    /* Pushed to edge */
+    transform: rotate(-10deg);
+    animation: float-slow 6s infinite ease-in-out;
+}
+
+.card-right {
+    bottom: 20%;
+    right: 2%;
+    /* Pushed to edge */
+    transform: rotate(8deg);
+    animation: float-slow 7s infinite ease-in-out reverse;
+}
+
+.float-card i {
+    font-size: 1.4rem;
+}
+
+.card-left i {
+    color: #ff3333;
+}
+
+/* Greenish for charts */
+.card-right i {
+    color: #ffffff;
+}
+
+/* Blue for check/compliance */
+
+@keyframes float-slow {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-10deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-8deg);
+    }
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 992px) {
-    .odoo-slider-wrapper {
+    .heroes-title {
+        font-size: 3rem;
+    }
+
+    .cinematic-text-item {
+        font-size: 10rem;
+        /* maintain readability/visibility on smaller screens but keep it large */
+    }
+
+    .float-card {
         display: none;
-        /* Masquer sur tablette/mobile pour éviter la surcharge */
-    }
-
-    .hero-title {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
+        /* Hide floating cards on smaller screens to reduce clutter */
     }
 }
 
 @media (max-width: 768px) {
-    .hero-section {
-        min-height: 80vh;
-        padding: 24px 16px;
+    .odoo-glass-badge {
+        padding-right: 20px;
     }
 
-    .btn-awwwards {
-        padding: 14px 24px;
-        font-size: 0.9rem;
-    }
-
-    .d-flex.gap-3 {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .btn-awwwards {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 576px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.25rem;
     }
 
     .hero-subtitle {
         font-size: 1rem;
+        margin-bottom: 32px;
     }
 
-    .badge-pill {
-        font-size: 0.8rem;
-        padding: 6px 12px;
+    .cta-wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-soft-primary,
+    .btn-soft-secondary {
+        width: 100%;
+    }
+
+    .cinematic-bg-text-wrapper {
+        top: 20%;
     }
 }
