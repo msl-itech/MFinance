@@ -234,9 +234,7 @@
 .odoo-name {
     font-size: 1.1rem;
     font-weight: 700;
-    background: linear-gradient(to right, #ffffff, #ffcccc);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .glow-effect {
@@ -391,7 +389,7 @@
 
 .card-left {
     top: 20%;
-    left: 2%;
+    left: 0%;
     /* Pushed to edge */
     transform: rotate(-10deg);
     animation: float-slow 6s infinite ease-in-out;
@@ -399,7 +397,7 @@
 
 .card-right {
     bottom: 20%;
-    right: 2%;
+    right: 1%;
     /* Pushed to edge */
     transform: rotate(8deg);
     animation: float-slow 7s infinite ease-in-out reverse;
