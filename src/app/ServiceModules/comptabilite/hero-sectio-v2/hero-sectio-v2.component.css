@@ -90,11 +90,11 @@
     transform: translateY(-50%) rotate(-5deg);
     z-index: 2;
     /* Behind content (10), above background (1) */
-    pointer-events: none;
+    /* pointer-events: none; */
     overflow: hidden;
-    opacity: 0.06;
-    /* Very subtle */
-    mix-blend-mode: overlay;
+    opacity: 0.15;
+    /* Adjusted for visibility of colored text */
+    /* mix-blend-mode: overlay; Removed to show accurate colors */
 }
 
 .cinematic-text-track {
@@ -108,7 +108,7 @@
     font-size: 8vw;
     font-weight: 800;
     color: white;
-    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    /* -webkit-text-stroke: 2px rgb(255, 255, 255); */
     text-transform: uppercase;
     letter-spacing: 4px;
 }
@@ -234,7 +234,9 @@
 .odoo-name {
     font-size: 1.1rem;
     font-weight: 700;
+    background: linear-gradient(to right, #ffffff, #ffcccc);
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .glow-effect {
@@ -389,7 +391,7 @@
 
 .card-left {
     top: 20%;
-    left: 0%;
+    left: -2%;
     /* Pushed to edge */
     transform: rotate(-10deg);
     animation: float-slow 6s infinite ease-in-out;
@@ -397,7 +399,7 @@
 
 .card-right {
     bottom: 20%;
-    right: 1%;
+    right: 0%;
     /* Pushed to edge */
     transform: rotate(8deg);
     animation: float-slow 7s infinite ease-in-out reverse;
