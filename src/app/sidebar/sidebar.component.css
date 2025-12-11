@@ -1,7 +1,6 @@
 /* Header Styles */
 .header {
-  background: url("../../assets/img/bg/bg_about.webp") no-repeat center
-    center/cover;
+  background: url("../../assets/img/bg/bg_about.webp") no-repeat center center/cover;
   height: 300px;
   position: relative;
   display: flex;
@@ -18,9 +17,12 @@
 }
 
 .container {
-  max-width: 1200px; /* Limiter la largeur maximale pour un alignement visuel */
-  margin: 0 auto; /* Centrer la section horizontalement */
-  text-align: left; /* Garder le contenu textuel aligné à gauche, si nécessaire */
+  max-width: 1200px;
+  /* Limiter la largeur maximale pour un alignement visuel */
+  margin: 0 auto;
+  /* Centrer la section horizontalement */
+  text-align: left;
+  /* Garder le contenu textuel aligné à gauche, si nécessaire */
 }
 
 .container h1 {
@@ -39,9 +41,11 @@
   .header {
     height: 150px;
   }
+
   .container h1 {
     font-size: 2em;
   }
+
   .container p {
     font-size: 0.9em;
   }
@@ -51,12 +55,15 @@
   .header {
     height: 120px;
   }
+
   .container {
     margin-left: 10px;
   }
+
   .container h1 {
     font-size: 1.5em;
   }
+
   .container p {
     font-size: 0.8em;
   }
@@ -68,10 +75,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center; /* Centrer le texte */
-  padding: 60px 20px; /* Ajustement du padding pour éviter que le contenu touche les bords */
-  box-sizing: border-box; /* Assurer que le padding n'affecte pas les dimensions */
-  width: 100%; /* Assurer que la section occupe toute la largeur */
+  text-align: center;
+  /* Centrer le texte */
+  padding: 60px 20px;
+  /* Ajustement du padding pour éviter que le contenu touche les bords */
+  box-sizing: border-box;
+  /* Assurer que le padding n'affecte pas les dimensions */
+  width: 100%;
+  /* Assurer que la section occupe toute la largeur */
 }
 
 /* Sidebar Widget */
@@ -93,7 +104,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 18px;
-  color: #787b84;
+  color: #03143c;
   background-color: #fff;
   padding: 17px 20px;
   border-radius: 10px;
@@ -103,7 +114,8 @@
 
 .sidebar-widget .widget-category li a:hover,
 .sidebar-widget .widget-category li a.active {
-  background-color: #f34947; /* Assuming var(--color-primary) is #F34947 */
+  background-color: #f34947;
+  /* Assuming var(--color-primary) is #F34947 */
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(243, 73, 71, 0.3);
@@ -114,7 +126,7 @@
   .sidebar-widget {
     margin-bottom: 2rem;
   }
-  
+
   .sidebar-widget .widget {
     background-color: #ffffff;
     padding: 20px;
@@ -289,7 +301,7 @@
 }
 
 .sidebar-widget .widget-download .xb-item--size {
-  color: #787b84;
+  color: #03143c;
   font-size: 14px;
   border-top: 1px solid #edf3f5;
   padding-top: 4px;
@@ -418,6 +430,7 @@ single-content-feature .xb-item--inner.color-4::before {
 li a {
   text-decoration: none;
 }
+
 p {
   color: #020203;
 }
@@ -435,6 +448,7 @@ p {
   border-radius: 8px;
   padding: 6px;
 }
+
 .hadding h3 {
   color: #0e1124;
   font-size: 36px;
@@ -446,14 +460,17 @@ p {
 a {
   text-decoration: none;
 }
+
 .service-faq {
   background-color: #1a2c51;
 }
-.contact-info {
-}
+
+.contact-info {}
+
 .contact-info i {
   color: #ff3333;
 }
+
 .contact-info p {
   color: #0e1124;
 }
@@ -464,10 +481,12 @@ a {
 }
 
 .sticky-container {
-  position: relative; /* Conteneur de référence */
+  position: relative;
+  /* Conteneur de référence */
 }
 
 .sliding-image {
   position: sticky;
-  top: 10px; /* Distance par rapport au haut de la page */
+  top: 10px;
+  /* Distance par rapport au haut de la page */
 }

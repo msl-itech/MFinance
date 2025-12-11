@@ -1,0 +1,1016 @@
+<!-- Hero Section Premium -->
+<section class="hero-dept-compta">
+    <div class="hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <div class="container position-relative">
+        <div class="hero-content" data-aos="fade-up">
+            <!-- Badge Premium -->
+            <!-- <div class="premium-badge" data-aos="fade-down">
+                <span class="badge-icon">
+                    <i class="fas fa-building"></i>
+                </span>
+                <span class="badge-text">Solution Entreprise</span>
+            </div> -->
+
+            <!-- Titre Principal avec Animation -->
+            <h1 class="hero-title" data-aos="zoom-in" data-aos-delay="100">
+                Externalisez votre
+                <span class="title-highlight">Département Comptable sur Odoo</span>
+                <span class="title-subtitle">tout en gardant un service dédié</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                Le meilleur des deux mondes : L’expertise comptable Odoo, comme en interne. Sans recrutement.
+                Vous restez sur votre cœur de métier et nous sur le nôtre : <span style="color: red;">vos
+                    chiffres.</span>
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                <button class="btn-primary-premium" (click)="scrollToContact()">
+                    <span>Réserver un appel gratuit</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn-secondary-premium" (click)="scrollToSection('avantages')">
+                    <span>Découvrir les avantages</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+
+            <!-- Stats Bar -->
+            <!-- <div class="stats-bar" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">1-5+</div>
+                        <div class="stat-label">Collaborateurs dédiés</div>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Intégré à Odoo</div>
+                    </div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">24/48h</div>
+                        <div class="stat-label">Temps de réponse</div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <!-- <div class="scroll-indicator-wrapper">
+        <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+        </div>
+    </div> -->
+</section>
+
+<!-- Introduction Section avec Split Design -->
+<section class="intro-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- Colonne Gauche : Accordéon -->
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="intro-content">
+                    <span class="section-label">Le Défi</span>
+                    <h2 class="section-title">
+                        Un département comptable interne :
+                        <span class="text-gradient">coûteux et complexe</span>
+                    </h2>
+                    <p class="section-description">
+                        Créer et faire fonctionner un département comptable interne demande des ressources
+                        humaines, techniques et financières importantes. Mais pour beaucoup de grandes entreprises,
+                        ce n'est ni leur cœur de métier, ni une priorité stratégique directe — tout en étant
+                        indispensable pour la conformité, la transparence financière et la prise de décision.
+                    </p>
+
+                    <!-- Accordéon Élégant -->
+                    <div class="accordion-elegant">
+                        <!-- Accordion Item 1: Notre Solution -->
+                        <div class="accordion-item" [class.active]="activeAccordionItem === 1">
+                            <div class="accordion-header" (click)="toggleAccordion(1)">
+                                <div class="accordion-header-content">
+                                    <div class="accordion-icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <h3>Notre Solution Hybride</h3>
+                                </div>
+                                <div class="accordion-toggle">
+                                    <i class="fas" [class.fa-chevron-down]="activeAccordionItem !== 1"
+                                        [class.fa-chevron-up]="activeAccordionItem === 1"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content" [@slideDown]="activeAccordionItem === 1 ? 'open' : 'closed'">
+                                <div class="accordion-body">
+                                    <p class="accordion-text">
+                                        Chez MFinances, nous avons développé un service unique : l'externalisation
+                                        complète de votre
+                                        département comptable, totalement intégré à votre structure et opéré directement
+                                        dans votre
+                                        environnement Odoo.
+                                    </p>
+                                    <div class="accordion-highlight">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Une équipe dédiée qui travaille comme si elle faisait partie de votre
+                                            entreprise</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 2: Notre Engagement -->
+                        <div class="accordion-item" [class.active]="activeAccordionItem === 2">
+                            <div class="accordion-header" (click)="toggleAccordion(2)">
+                                <div class="accordion-header-content">
+                                    <div class="accordion-icon">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <h3>Notre Engagement</h3>
+                                </div>
+                                <div class="accordion-toggle">
+                                    <i class="fas" [class.fa-chevron-down]="activeAccordionItem !== 2"
+                                        [class.fa-chevron-up]="activeAccordionItem === 2"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content" [@slideDown]="activeAccordionItem === 2 ? 'open' : 'closed'">
+                                <div class="accordion-body">
+                                    <p class="accordion-text">
+                                        <strong>Vous offrir la qualité, la réactivité et la personnalisation d'un
+                                            service interne,</strong>
+                                        avec le niveau d'exigence d'un cabinet d'expertise comptable en formation
+                                        continue.
+                                    </p>
+                                    <p class="accordion-text">
+                                        Vous bénéficiez ainsi d'une équipe dédiée, toujours à jour, stable et
+                                        performante — sans
+                                        avoir à recruter, former ou superviser en interne.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 3: Notre Promesse -->
+                        <div class="accordion-item" [class.active]="activeAccordionItem === 3">
+                            <div class="accordion-header" (click)="toggleAccordion(3)">
+                                <div class="accordion-header-content">
+                                    <div class="accordion-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <h3>Notre Promesse</h3>
+                                </div>
+                                <div class="accordion-toggle">
+                                    <i class="fas" [class.fa-chevron-down]="activeAccordionItem !== 3"
+                                        [class.fa-chevron-up]="activeAccordionItem === 3"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content" [@slideDown]="activeAccordionItem === 3 ? 'open' : 'closed'">
+                                <div class="accordion-body">
+                                    <p class="accordion-text">
+                                        Un service comptable sur mesure, opéré par des experts constamment formés,
+                                        intégrés à
+                                        votre structure Odoo — sans les contraintes RH, sans les risques de compétence,
+                                        et avec
+                                        une charge fixe parfaitement maîtrisée.
+                                    </p>
+                                    <div class="accordion-features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-times-circle"></i>
+                                            <span>Sans contraintes RH</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <span>Sans risques de compétence</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-euro-sign"></i>
+                                            <span>Charge fixe maîtrisée</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonne Droite : Image uniquement -->
+            <div class="col-lg-6" data-aos="fade-left">
+                <!-- Image Section -->
+                <div class="image-container">
+                    <img src="../../../assets/img/webp/44.webp" alt="Département Comptable Externalisé"
+                        class="img-fluid rounded-4 shadow-lg">
+                    <div class="image-overlay">
+                        <div class="overlay-badge">
+                            <i class="fas fa-cubes"></i>
+                            <span>Intégration Odoo Complète</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-why-externalised></app-why-externalised>
+
+
+<!-- Ce que nous prenons en charge - Bento Grid -->
+<app-service-departement></app-service-departement>
+<app-avantages></app-avantages>
+<!-- À qui s'adresse ce service - Cards Premium avec Images -->
+<!-- <section class="target-section" id="target">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-label">Notre Service</span>
+            <h2 class="section-title">
+                À qui s'adresse <span class="text-gradient">ce service ?</span>
+            </h2>
+            <p class="section-subtitle">
+                Notre solution s'adapte à différents profils d'entreprises exigeantes
+            </p>
+        </div>
+
+        <div class="target-grid-elegant">
+            <div class="target-card-elegant" data-aos="fade-up">
+                <div class="card-image-wrapper">
+                    <img src="../../../assets/img/services/h7_about4-min.jpg.png" alt="Grandes Entreprises"
+                        class="card-image">
+                    <div class="card-overlay">
+                        <div class="overlay-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content-elegant">
+                    <h3>Grandes Entreprises</h3>
+                    <p>Groupes multi-structures nécessitant une gestion comptable professionnelle et structurée</p>
+                    <div class="card-badge-elegant">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Multi-structures</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="target-card-elegant" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-image-wrapper">
+                    <div class="card-image-placeholder"
+                        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="overlay-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content-elegant">
+                    <h3>Sociétés en Croissance</h3>
+                    <p>Besoin de structuration financière sans alourdir les effectifs internes</p>
+                    <div class="card-badge-elegant">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Scale-up</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="target-card-elegant" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-image-wrapper">
+                    <img src="../../../assets/img/logo/odoo_logo.png" alt="Utilisateurs Odoo"
+                        class="card-image card-image-logo">
+                    <div class="card-overlay">
+                        <div class="overlay-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content-elegant">
+                    <h3>Utilisateurs Odoo</h3>
+                    <p>Entreprises dont l'ERP principal est Odoo et souhaitant une intégration native</p>
+                    <div class="card-badge-elegant">
+                        <i class="fas fa-cubes"></i>
+                        <span>ERP Odoo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="target-card-elegant" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-image-wrapper">
+                    <div class="card-image-placeholder"
+                        style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="overlay-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content-elegant">
+                    <h3>Service Haut Niveau</h3>
+                    <p>Structures souhaitant l'excellence et la qualité sans internaliser</p>
+                    <div class="card-badge-elegant">
+                        <i class="fas fa-crown"></i>
+                        <span>Premium</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="target-card-elegant" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-image-wrapper">
+                    <img src="../../../assets/img/services/Fiabilite_Container.png" alt="Directions Financières"
+                        class="card-image">
+                    <div class="card-overlay">
+                        <div class="overlay-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content-elegant">
+                    <h3>Directions Financières</h3>
+                    <p>Partenaire de confiance pour la tenue comptable et le reporting stratégique</p>
+                    <div class="card-badge-elegant">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Partenariat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- Avantages - Grid Moderne -->
+<section class="advantages-section" id="avantages">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-label">Bénéfices</span>
+            <h2 class="section-title">
+                Les avantages <span class="text-gradient">pour vous</span>
+            </h2>
+        </div>
+
+        <div class="advantages-grid">
+            <div class="advantage-card" data-aos="fade-up">
+                <div class="advantage-number">01</div>
+                <div class="advantage-icon">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <h3>Souplesse Maximale</h3>
+                <p>Pas de contrat de travail, pas de gestion RH</p>
+            </div>
+
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="advantage-number">02</div>
+                <div class="advantage-icon">
+                    <i class="fas fa-euro-sign"></i>
+                </div>
+                <h3>Maîtrise des Coûts</h3>
+                <p>Tarification claire, ajustable, sans surprise</p>
+            </div>
+
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="advantage-number">03</div>
+                <div class="advantage-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Expertise Immédiate</h3>
+                <p>Pas de formation ou montée en compétence</p>
+            </div>
+
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="advantage-number">04</div>
+                <div class="advantage-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Continuité Garantie</h3>
+                <p>Pas d'absence ou départ non anticipé</p>
+            </div>
+
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="advantage-number">05</div>
+                <div class="advantage-icon">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <h3>Maîtrise Odoo</h3>
+                <p>Notre environnement de travail quotidien</p>
+            </div>
+
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="advantage-number">06</div>
+                <div class="advantage-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Réduction Charges</h3>
+                <p>Salaires, supervision, IT optimisés</p>
+            </div>
+
+            <div class="advantage-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="advantage-number">07</div>
+                <div class="advantage-icon">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <h3>Soutien Stratégique</h3>
+                <p>Nous vous aidons à piloter, pas juste tenir</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comment ça fonctionne - Timeline -->
+<section class="process-section">
+    <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-label">Notre Processus</span>
+            <h2 class="section-title">
+                Comment ça <span class="text-gradient">fonctionne ?</span>
+            </h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-marker">
+                    <span class="timeline-number">1</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Analyse Initiale</h3>
+                    <p>Compréhension de votre structure, besoins, outils (Odoo, flux, contraintes)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-marker">
+                    <span class="timeline-number">2</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Plan d'Externalisation</h3>
+                    <p>Définition du rôle du collaborateur ou de l'équipe dédiée</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-marker">
+                    <span class="timeline-number">3</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Paramétrage Odoo</h3>
+                    <p>Configuration et définition des circuits d'information</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-marker">
+                    <span class="timeline-number">4</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Démarrage</h3>
+                    <p>Lancement progressif ou immédiat de la collaboration</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-marker">
+                    <span class="timeline-number">5</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Suivi Mensuel</h3>
+                    <p>Reporting régulier et points de synchronisation</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-marker">
+                    <span class="timeline-number">6</span>
+                </div>
+                <div class="timeline-content">
+                    <h3>Évolutivité</h3>
+                    <p>Le service s'adapte à votre croissance et besoins ponctuels</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Témoignage Client - Card Premium -->
+<!-- <section class="testimonial-section">
+    <div class="container">
+        <div class="testimonial-card" data-aos="zoom-in">
+            <div class="testimonial-quote">
+                <i class="fas fa-quote-left"></i>
+            </div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">
+                    "Nous souhaitions structurer notre département comptable sans devoir recruter en interne.
+                    Avec MFinances, nous avons un collaborateur dédié qui travaille dans Odoo, qui comprend notre
+                    secteur,
+                    et qui nous rend des comptes comme s'il faisait partie de l'équipe. Plus besoin de superviser,
+                    plus de formation à gérer. C'est un vrai soulagement pour notre direction."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name">Romain</div>
+                        <div class="author-title">Directeur Financier</div>
+                        <div class="author-company">Groupe de services en Wallonie</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-decoration"></div>
+        </div>
+    </div>
+</section> -->
+
+<!-- CTA Final - Premium -->
+<section class="cta-final-section">
+    <div class="cta-background">
+        <!-- <div class="cta-orb cta-orb-1"></div>
+        <div class="cta-orb cta-orb-2"></div> -->
+    </div>
+
+    <div class="container position-relative">
+        <div class="cta-content text-center" data-aos="zoom-in">
+            <h2 class="cta-title">
+                Prêt à externaliser votre
+                <span class="text-gradient">département comptable ?</span>
+            </h2>
+            <p class="cta-description">
+                Discutons de votre projet lors d'un appel gratuit de 30 minutes
+            </p>
+
+            <div class="cta-buttons">
+                <a href="https://calendly.com/mfinances/rdv-client-en-teleconference" target="_blank"
+                    class="btn-cta-primary">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Réserver un appel gratuit</span>
+                </a>
+                <button class="btn-cta-secondary" (click)="scrollToContact()">
+                    <i class="fas fa-envelope"></i>
+                    <span>Demander une offre</span>
+                </button>
+            </div>
+
+            <div class="cta-trust">
+                <i class="fas fa-shield-alt"></i>
+                <span>Sans engagement • Réponse sous 72h • Confidentiel</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-contact-form-layout [config]="formConfig" [currentStep]="currentStep" [totalSteps]="totalSteps"
+    [formSubmitted]="formSubmitted" [isStepValid]="isStepValid" [isFormValid]="isFormValid" [isLoading]="isLoading"
+    (nextStep)="onNextStep()" (previousStep)="onPreviousStep()" (submit)="onSubmit()" (reset)="onReset()"
+    id="contactSection">
+    <div slot="form-content">
+        <!-- Étape 1: Secteur d'activité -->
+        <div *ngIf="currentStep === 1" class="step-content">
+            <h3 class="step-title">1. Secteur d'activité</h3>
+            <p class="step-description">
+                Quel est le secteur principal de votre entreprise ?
+            </p>
+
+            <div class="form-group">
+                <div class="custom-radio-group">
+                    <label class="custom-radio-option" [class.selected]="formData.secteur === 'commerce'">
+                        <input type="radio" name="secteur" value="commerce" [(ngModel)]="formData.secteur"
+                            (change)="onSecteurChange('commerce')" required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-store text-primary mb-2"></i>
+                            <h6 class="mb-1">Commerce</h6>
+                            <small class="text-muted">Vente de produits et services</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-radio-option" [class.selected]="formData.secteur === 'services'">
+                        <input type="radio" name="secteur" value="services" [(ngModel)]="formData.secteur"
+                            (change)="onSecteurChange('services')" required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-handshake text-success mb-2"></i>
+                            <h6 class="mb-1">Services</h6>
+                            <small class="text-muted">Prestations de services</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-radio-option" [class.selected]="formData.secteur === 'industrie'">
+                        <input type="radio" name="secteur" value="industrie" [(ngModel)]="formData.secteur"
+                            (change)="onSecteurChange('industrie')" required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-industry text-warning mb-2"></i>
+                            <h6 class="mb-1">Industrie</h6>
+                            <small class="text-muted">Production et fabrication</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-radio-option" [class.selected]="formData.secteur === 'autre'">
+                        <input type="radio" name="secteur" value="autre" [(ngModel)]="formData.secteur"
+                            (change)="onSecteurChange('autre')" required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-ellipsis-h text-info mb-2"></i>
+                            <h6 class="mb-1">Autre secteur</h6>
+                            <small class="text-muted">Précisez votre domaine</small>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreSecteur">
+                    <div class="custom-input-group">
+                        <label for="secteur_autre" class="form-label">
+                            <i class="fas fa-edit me-2"></i>Précisez votre secteur
+                        </label>
+                        <input type="text" class="form-control custom-input" id="secteur_autre" name="secteur_autre"
+                            [(ngModel)]="formData.secteur_autre" placeholder="Décrivez votre secteur d'activité..."
+                            maxlength="200" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Étape 2: Revenus annuels -->
+        <div *ngIf="currentStep === 2" class="step-content">
+            <h3 class="step-title">2. Revenus annuels estimés</h3>
+            <p class="step-description">
+                Quel est votre chiffre d'affaires annuel moyen ?
+            </p>
+
+            <div class="form-group">
+                <div class="custom-radio-group">
+                    <label class="custom-radio-option" [class.selected]="formData.revenus === 'moins-1m'">
+                        <input type="radio" name="revenus" value="moins-1m" [(ngModel)]="formData.revenus" required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-seedling text-success mb-2"></i>
+                            <h6 class="mb-1">Moins de 1M € / an</h6>
+                            <small class="text-muted">Petite structure</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-radio-option" [class.selected]="formData.revenus === '1m-5m'">
+                        <input type="radio" name="revenus" value="1m-5m" [(ngModel)]="formData.revenus" required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-chart-line text-primary mb-2"></i>
+                            <h6 class="mb-1">1M – 5M € / an</h6>
+                            <small class="text-muted">Structure en croissance</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-radio-option" [class.selected]="formData.revenus === '5m-10m'">
+                        <input type="radio" name="revenus" value="5m-10m" [(ngModel)]="formData.revenus" required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-building text-warning mb-2"></i>
+                            <h6 class="mb-1">5M – 10M € / an</h6>
+                            <small class="text-muted">Entreprise établie</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-radio-option" [class.selected]="formData.revenus === 'plus-10m'">
+                        <input type="radio" name="revenus" value="plus-10m" [(ngModel)]="formData.revenus" required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-crown text-danger mb-2"></i>
+                            <h6 class="mb-1">Plus de 10M € / an</h6>
+                            <small class="text-muted">Grande entreprise</small>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Étape 3: Environnement Odoo -->
+        <div *ngIf="currentStep === 3" class="step-content">
+            <h3 class="step-title">3. Votre environnement Odoo</h3>
+            <p class="step-description">
+                Utilisez-vous Odoo comme ERP principal ?
+            </p>
+
+            <div class="form-group">
+                <div class="custom-radio-group">
+                    <label class="custom-radio-option" [class.selected]="formData.utilisationOdoo === 'oui'">
+                        <input type="radio" name="utilisationOdoo" value="oui" [(ngModel)]="formData.utilisationOdoo"
+                            required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-check-circle text-success mb-2"></i>
+                            <h6 class="mb-1">Oui</h6>
+                            <small class="text-muted">Nous utilisons Odoo</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-radio-option" [class.selected]="formData.utilisationOdoo === 'non'">
+                        <input type="radio" name="utilisationOdoo" value="non" [(ngModel)]="formData.utilisationOdoo"
+                            required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-times-circle text-danger mb-2"></i>
+                            <h6 class="mb-1">Non</h6>
+                            <small class="text-muted">Nous n'utilisons pas Odoo</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-radio-option" [class.selected]="formData.utilisationOdoo === 'en-cours'">
+                        <input type="radio" name="utilisationOdoo" value="en-cours"
+                            [(ngModel)]="formData.utilisationOdoo" required />
+                        <span class="radio-checkmark"></span>
+                        <div class="radio-content">
+                            <i class="fas fa-cog text-warning mb-2"></i>
+                            <h6 class="mb-1">Nous sommes en train de l'implémenter</h6>
+                            <small class="text-muted">En cours de déploiement</small>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Sous-question si "Non" -->
+                <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="formData.utilisationOdoo === 'non'">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>💡 Souhaitez-vous être conseillé(e) sur l'intégration comptable dans Odoo ?</strong>
+                        <div class="mt-3">
+                            <div class="d-flex gap-3">
+                                <label class="custom-radio-option flex-fill"
+                                    [class.selected]="formData.conseilOdoo === 'oui'">
+                                    <input type="radio" name="conseilOdoo" value="oui"
+                                        [(ngModel)]="formData.conseilOdoo" />
+                                    <span class="radio-checkmark"></span>
+                                    <div class="radio-content">
+                                        <h6 class="mb-0">Oui</h6>
+                                    </div>
+                                </label>
+
+                                <label class="custom-radio-option flex-fill"
+                                    [class.selected]="formData.conseilOdoo === 'non'">
+                                    <input type="radio" name="conseilOdoo" value="non"
+                                        [(ngModel)]="formData.conseilOdoo" />
+                                    <span class="radio-checkmark"></span>
+                                    <div class="radio-content">
+                                        <h6 class="mb-0">Non</h6>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Étape 4: Coordonnées & Disponibilités -->
+        <div *ngIf="currentStep === 4" class="step-content">
+            <h3 class="step-title">4. Vos coordonnées & disponibilités</h3>
+            <p class="step-description">
+                Pour recevoir votre mini-diagnostic et être recontacté(e) sous 72h.
+            </p>
+
+            <div class="form-group">
+                <h6 class="mb-3"><i class="fas fa-user-circle me-2"></i>Coordonnées :</h6>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="custom-input-group">
+                            <label for="nom" class="form-label">
+                                <i class="fas fa-user me-2"></i>Nom complet
+                                <span class="badge bg-success ms-2">✅ obligatoire</span>
+                            </label>
+                            <input type="text" class="form-control custom-input" id="nom" name="nom"
+                                [(ngModel)]="formData.nom" placeholder="Votre nom et prénom" required />
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="custom-input-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope me-2"></i>Email professionnel
+                                <span class="badge bg-success ms-2">✅ obligatoire</span>
+                            </label>
+                            <input type="email" class="form-control custom-input" id="email" name="email"
+                                [(ngModel)]="formData.email" placeholder="votre@email.com" required />
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="custom-input-group">
+                            <label for="telephone" class="form-label">
+                                <i class="fas fa-phone me-2"></i>Téléphone
+                                <span class="badge bg-success ms-2">✅ obligatoire</span>
+                            </label>
+                            <input type="tel" class="form-control custom-input" id="telephone" name="telephone"
+                                [(ngModel)]="formData.telephone" placeholder="+32 XXX XX XX XX" required />
+                        </div>
+                    </div>
+                </div>
+
+                <h6 class="mb-3 mt-4"><i class="fas fa-clock me-2"></i>Créneaux de contact préférés :</h6>
+
+                <div class="mb-3">
+                    <label class="form-label">À quel moment préférez-vous être contacté ?</label>
+                    <div class="d-flex flex-wrap gap-2">
+                        <label class="custom-radio-option flex-fill"
+                            [class.selected]="formData.creneauContact === '9h-12h'">
+                            <input type="radio" name="creneauContact" value="9h-12h"
+                                [(ngModel)]="formData.creneauContact" />
+                            <span class="radio-checkmark"></span>
+                            <div class="radio-content">
+                                <h6 class="mb-0">9h à 12h</h6>
+                            </div>
+                        </label>
+
+                        <label class="custom-radio-option flex-fill"
+                            [class.selected]="formData.creneauContact === '12h-15h'">
+                            <input type="radio" name="creneauContact" value="12h-15h"
+                                [(ngModel)]="formData.creneauContact" />
+                            <span class="radio-checkmark"></span>
+                            <div class="radio-content">
+                                <h6 class="mb-0">12h à 15h</h6>
+                            </div>
+                        </label>
+
+                        <label class="custom-radio-option flex-fill"
+                            [class.selected]="formData.creneauContact === '15h-18h'">
+                            <input type="radio" name="creneauContact" value="15h-18h"
+                                [(ngModel)]="formData.creneauContact" />
+                            <span class="radio-checkmark"></span>
+                            <div class="radio-content">
+                                <h6 class="mb-0">15h à 18h</h6>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Jour préféré :</label>
+                    <div class="d-flex flex-wrap gap-2">
+                        <label class="custom-radio-option flex-fill"
+                            [class.selected]="formData.jourPrefere === 'lundi'">
+                            <input type="radio" name="jourPrefere" value="lundi" [(ngModel)]="formData.jourPrefere" />
+                            <span class="radio-checkmark"></span>
+                            <div class="radio-content">
+                                <h6 class="mb-0">Lundi</h6>
+                            </div>
+                        </label>
+
+                        <label class="custom-radio-option flex-fill"
+                            [class.selected]="formData.jourPrefere === 'mardi'">
+                            <input type="radio" name="jourPrefere" value="mardi" [(ngModel)]="formData.jourPrefere" />
+                            <span class="radio-checkmark"></span>
+                            <div class="radio-content">
+                                <h6 class="mb-0">Mardi</h6>
+                            </div>
+                        </label>
+
+                        <label class="custom-radio-option flex-fill"
+                            [class.selected]="formData.jourPrefere === 'mercredi'">
+                            <input type="radio" name="jourPrefere" value="mercredi"
+                                [(ngModel)]="formData.jourPrefere" />
+                            <span class="radio-checkmark"></span>
+                            <div class="radio-content">
+                                <h6 class="mb-0">Mercredi</h6>
+                            </div>
+                        </label>
+
+                        <label class="custom-radio-option flex-fill"
+                            [class.selected]="formData.jourPrefere === 'jeudi'">
+                            <input type="radio" name="jourPrefere" value="jeudi" [(ngModel)]="formData.jourPrefere" />
+                            <span class="radio-checkmark"></span>
+                            <div class="radio-content">
+                                <h6 class="mb-0">Jeudi</h6>
+                            </div>
+                        </label>
+
+                        <label class="custom-radio-option flex-fill"
+                            [class.selected]="formData.jourPrefere === 'vendredi'">
+                            <input type="radio" name="jourPrefere" value="vendredi"
+                                [(ngModel)]="formData.jourPrefere" />
+                            <span class="radio-checkmark"></span>
+                            <div class="radio-content">
+                                <h6 class="mb-0">Vendredi</h6>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <h6 class="mb-3 mt-4"><i class="fas fa-shield-alt me-2"></i>Consentement RGPD :</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="consentementRGPD"
+                        [(ngModel)]="formData.consentementRGPD" name="consentementRGPD" required />
+                    <label class="form-check-label" for="consentementRGPD">
+                        J'accepte que mes données soient utilisées pour être recontacté(e) dans le cadre de cette
+                        demande.
+                        <span class="text-danger">*</span>
+                    </label>
+                </div>
+
+                <div class="alert alert-info mt-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
+                        <div>
+                            <h6 class="mb-1">📞 Rendez-vous garanti sous 72h</h6>
+                            <small>Un conseiller vous appellera pour un échange gratuit et personnalisé. Vous recevrez
+                                ensuite votre mini-diagnostic par email.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Étape 5: Besoins spécifiques -->
+        <div *ngIf="currentStep === 5" class="step-content">
+            <h3 class="step-title">5. Vos besoins spécifiques</h3>
+            <p class="step-description">
+                Quels sont vos besoins actuels ? (plusieurs réponses possibles)
+            </p>
+
+            <div class="form-group">
+                <div class="custom-checkbox-group">
+                    <label class="custom-checkbox-option">
+                        <input type="checkbox" name="besoins" value="comptabilite"
+                            (change)="onBesoinChange('comptabilite', $event)" />
+                        <span class="checkbox-checkmark"></span>
+                        <div class="checkbox-content">
+                            <i class="fas fa-calculator text-primary mb-2"></i>
+                            <h6 class="mb-1">Tenue de la comptabilité</h6>
+                            <small class="text-muted">Gestion quotidienne des comptes</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-checkbox-option">
+                        <input type="checkbox" name="besoins" value="declarations-fiscales"
+                            (change)="onBesoinChange('declarations-fiscales', $event)" />
+                        <span class="checkbox-checkmark"></span>
+                        <div class="checkbox-content">
+                            <i class="fas fa-file-alt text-success mb-2"></i>
+                            <h6 class="mb-1">Déclarations fiscales</h6>
+                            <small class="text-muted">TVA, impôts et obligations légales</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-checkbox-option">
+                        <input type="checkbox" name="besoins" value="conseil-gestion"
+                            (change)="onBesoinChange('conseil-gestion', $event)" />
+                        <span class="checkbox-checkmark"></span>
+                        <div class="checkbox-content">
+                            <i class="fas fa-chart-line text-warning mb-2"></i>
+                            <h6 class="mb-1">Conseil en gestion financière</h6>
+                            <small class="text-muted">Optimisation et stratégie</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-checkbox-option">
+                        <input type="checkbox" name="besoins" value="optimisation-statut"
+                            (change)="onBesoinChange('optimisation-statut', $event)" />
+                        <span class="checkbox-checkmark"></span>
+                        <div class="checkbox-content">
+                            <i class="fas fa-cogs text-info mb-2"></i>
+                            <h6 class="mb-1">Optimisation du statut</h6>
+                            <small class="text-muted">Social et fiscal</small>
+                        </div>
+                    </label>
+
+                    <label class="custom-checkbox-option">
+                        <input type="checkbox" name="besoins" value="autre"
+                            (change)="onBesoinChange('autre', $event)" />
+                        <span class="checkbox-checkmark"></span>
+                        <div class="checkbox-content">
+                            <i class="fas fa-plus text-secondary mb-2"></i>
+                            <h6 class="mb-1">Autre besoin</h6>
+                            <small class="text-muted">Précisez vos besoins spécifiques</small>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreBesoin">
+                    <div class="custom-input-group">
+                        <label for="besoins_autre" class="form-label">
+                            <i class="fas fa-edit me-2"></i>Précisez vos autres besoins
+                        </label>
+                        <textarea class="form-control custom-input" id="besoins_autre" name="besoins_autre"
+                            [(ngModel)]="formData.besoins_autre" placeholder="Décrivez vos besoins spécifiques..."
+                            rows="3" maxlength="300"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-contact-form-layout>

@@ -1,0 +1,94 @@
+<style>
+    /* Scoped styles are in the CSS file, but we can keep component-specific minor tweaks here if absolutely necessary, 
+       though it's better to move them to .css. Left empty for now. */
+    .hero-section {
+        margin-top: 45px;
+    }
+</style>
+<header class="hero-section">
+    <!-- Soft Background Elements for Depth and Ambience -->
+    <div class="background-ambient">
+        <div class="soft-orb orb-purple"></div>
+        <div class="soft-orb orb-blue"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- NEW: Cinematic Background Animation -->
+    <div class="cinematic-bg-text-wrapper">
+        <div class="cinematic-text-track">
+            <span class="cinematic-text-item"><span style="color: #714b67;">ODOO</span> <span
+                    style="color: #ff5757;">FINANCES</span></span>
+            <span class="cinematic-text-item">•</span>
+            <span class="cinematic-text-item"><span style="color: #714b67;">ODOO</span> <span
+                    style="color: #ff5757;">FINANCES</span></span>
+            <span class="cinematic-text-item">•</span>
+            <span class="cinematic-text-item"><span style="color: #714b67;">ODOO</span> <span
+                    style="color: #ff5757;">FINANCES</span></span>
+            <span class="cinematic-text-item">•</span>
+            <!-- duplicated -->
+            <span class="cinematic-text-item"><span style="color: #714b67;">ODOO</span> <span
+                    style="color: #ff5757;">FINANCES</span></span>
+            <span class="cinematic-text-item">•</span>
+            <span class="cinematic-text-item"><span style="color: #714b67;">ODOO</span> <span
+                    style="color: #ff5757;">FINANCES</span></span>
+            <span class="cinematic-text-item">•</span>
+            <span class="cinematic-text-item"><span style="color: #714b67;">ODOO</span> <span
+                    style="color: #ff5757;">FINANCES</span></span>
+            <span class="cinematic-text-item">•</span>
+        </div>
+    </div>
+
+    <div class="content-container z-relative" style="margin-top:25px">
+
+        <!-- ✨ Odoo Finances Highlight Badge ✨ -->
+        <div class="odoo-highlight-wrapper" data-aos="fade-down" data-aos-duration="1000">
+            <div class="odoo-glass-badge">
+                <span class="odoo-icon-bg">
+                    <span class="odoo-letter">O</span>
+                </span>
+                <div class="odoo-badge-content">
+                    <span class="odoo-label">Expertise Certifiée</span>
+                    <span class="odoo-name"><span style="color: #a259ff;">Odoo</span> <span
+                            style="color: #ff5757;">Finances</span></span>
+                </div>
+                <div class="glow-effect"></div>
+            </div>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="hero-title" data-aos="zoom-in" data-aos-delay="200">
+            Votre Comptabilité, <br>
+            <span class="text-soft-gradient">Réinventée & Sans Stress.</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+            En tant qu'indépendant ou dirigeant, concentrez-vous sur l'essentiel.
+            MFinances allie l'humain à la puissance technologique d'<strong>Odoo</strong>
+            <br>pour une gestion financière fluide, transparente et proactive.
+        </p>
+
+        <!-- Call to Actions -->
+        <div class="cta-wrapper" data-aos="fade-up" data-aos-delay="400">
+            <button (click)="scrollToSection('contactSection')" class="btn-soft-primary">
+                <span>Discuter de mon projet</span>
+                <i class="fas fa-arrow-right ms-2"></i>
+            </button>
+            <button (click)="scrollToSection('services')" class="btn-soft-secondary">
+                <span>Découvrir nos solutions</span>
+            </button>
+        </div>
+
+        <!-- Floating UI Elements representing Finance/Odoo (CSS only decoration) -->
+        <div class="floating-elements" aria-hidden="true">
+            <div class="float-card card-left" data-aos="fade-right" data-aos-delay="600">
+                <i class="fas fa-chart-pie"></i>
+                <span>Analyses</span>
+            </div>
+            <div class="float-card card-right" data-aos="fade-left" data-aos-delay="700">
+                <i class="fas fa-check-circle"></i>
+                <span>Conformité</span>
+            </div>
+        </div>
+    </div>
+</header>

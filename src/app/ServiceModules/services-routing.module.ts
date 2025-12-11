@@ -11,6 +11,7 @@ import { FiscaliteComponent } from './fiscalite/fiscalite.component';
 import { PageServiceComponent } from './page-service/page-service.component';
 import { ComptabiliteMobileComponent } from '../features-mobile/comptabilite-mobile/comptabilite-mobile.component';
 import { ServiceMobileComponent } from '../features-mobile/service-mobile/service-mobile.component';
+import { DepartementComptableComponent } from './departement-comptable/departement-comptable.component';
 const routes: Routes = [
      {
     path: '',
@@ -32,26 +33,27 @@ const routes: Routes = [
     ],
     component: ServiceMobileComponent,
   },
-    {
-    path: 'comptabilite',
-    canMatch: [
-      () => {
-        const deviceService = inject(DeviceService);
-        return !deviceService.shouldUseMobileVersion();
-      },
-    ],
-    component: ComptabiliteComponent,
-  },
-  {
-    path: 'comptabilite',
-    canMatch: [
-      () => {
-        const deviceService = inject(DeviceService);
-        return deviceService.shouldUseMobileVersion();
-      },
-    ],
-    component: ComptabiliteMobileComponent,
-  },
+  //   {
+  //   path: 'comptabilite',
+  //   canMatch: [
+  //     () => {
+  //       const deviceService = inject(DeviceService);
+  //       return !deviceService.shouldUseMobileVersion();
+  //     },
+  //   ],
+  //   component: ComptabiliteComponent,
+  // },
+  // {
+  //   path: 'comptabilite',
+  //   canMatch: [
+  //     () => {
+  //       const deviceService = inject(DeviceService);
+  //       return deviceService.shouldUseMobileVersion();
+  //     },
+  //   ],
+  //   component: ComptabiliteMobileComponent,
+  // },
+      { path: 'comptabilite', component: ComptabiliteComponent },
   {
     path: 'creation-entreprise',
     canMatch: [
@@ -113,6 +115,18 @@ const routes: Routes = [
     ],
     component: FiscaliteMobileComponent,
   },
+  // {
+  //   path: 'departement-comptable',
+  //   canMatch: [
+  //     () => {
+  //       const deviceService = inject(DeviceService);
+  //       return !deviceService.shouldUseMobileVersion();
+  //     },
+  //   ],
+  //   component: DepartementComptableComponent,
+  // },
+    { path: 'departement-comptable', component: DepartementComptableComponent },
+
 ];
 
 @NgModule({
