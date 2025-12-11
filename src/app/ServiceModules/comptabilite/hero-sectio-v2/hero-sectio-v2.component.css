@@ -391,7 +391,7 @@
 
 .card-left {
     top: 20%;
-    left: -2%;
+    left: -5%;
     /* Pushed to edge */
     transform: rotate(-10deg);
     animation: float-slow 6s infinite ease-in-out;
