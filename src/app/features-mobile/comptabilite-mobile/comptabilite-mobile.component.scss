@@ -45,13 +45,24 @@ $text-muted: #6c757d;
 }
 
 h1 {
-  font-size: 28px;
-  line-height: 1.2;
+  font-size: 40px; // Larger font size
+  line-height: 1.1;
   font-weight: 800;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 
   .highlight {
     color: $primary-red;
+    position: relative;
+    display: inline-block;
+
+    .scribble-underline {
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      width: 100%;
+      height: 20px;
+      pointer-events: none;
+    }
   }
 }
 
@@ -345,71 +356,118 @@ p {
   }
 }
 
-// Formulas
-.formula-card {
-  padding: 0;
+// Formulas V2 - New Design
+.formula-card-v2 {
+  background: white;
+  border-radius: 24px;
+  padding: 30px 20px;
+  text-align: center;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 280px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 
   &.featured {
-    border: 2px solid $primary-red;
-    transform: scale(1.05);
-    z-index: 10;
-    box-shadow: 0 10px 30px rgba(255, 51, 51, 0.15);
+    .badge-recommended {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: $primary-red;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
   }
 
-  .badge-rec {
-    background: $primary-red;
-    color: white;
-    text-align: center;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 5px;
-    text-transform: uppercase;
-  }
+  .formula-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
 
-  .card-header-formula {
-    background: #f8f9fb;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid $border-gray;
-    color: $dark-blue !important; // Force dark color to override section inheritance
-
-    h4 {
-      margin: 0;
+    i {
       font-size: 22px;
+    }
+
+    &.formula-icon-blue {
+      background: #E8EEF7;
+
+      i {
+        color: #3B5998;
+      }
+    }
+
+    &.formula-icon-yellow {
+      background: #FFF8E1;
+
+      i {
+        color: #FFB300;
+      }
+    }
+
+    &.formula-icon-navy {
+      background: #E8EEF7;
+
+      i {
+        color: $dark-blue;
+      }
+    }
+  }
+
+  .formula-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $dark-blue;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .formula-desc {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-formula {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &.btn-formula-blue {
+      background: #3B5998;
+      color: white;
+    }
+
+    &.btn-formula-yellow {
+      background: #FFB300;
       color: $dark-blue;
     }
 
-    .price-tag {
-      display: block;
-      font-size: 13px;
-      color: #6c757d;
-      margin-top: 5px;
-    }
-  }
-
-  .card-body-formula {
-    padding: 20px;
-    color: $dark-blue; // Ensure body text is also dark
-
-    .check-list {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      margin-bottom: 15px;
-
-      li {
-        margin-bottom: 10px;
-        font-size: 14px;
-
-        &:before {
-          content: "✓";
-          color: $success-green;
-          margin-right: 8px;
-          font-weight: bold;
-        }
-      }
+    &.btn-formula-outline {
+      background: transparent;
+      border: 2px solid $dark-blue;
+      color: $dark-blue;
     }
   }
 }
@@ -418,7 +476,44 @@ p {
 .process-timeline {
   position: relative;
   margin-bottom: 20px;
+}
 
+// Step Icon Wrapper - for process cards
+.step-icon-wrapper {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($primary-red, 0.1);
+  border-radius: 12px;
+  margin: 0 auto;
+
+  i {
+    font-size: 22px;
+  }
+
+  .step-number {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 22px;
+    height: 22px;
+    background: $primary-red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.process-timeline {
   .instruction-hint {
     font-size: 12px;
     color: $text-muted;
@@ -544,6 +639,18 @@ p {
       justify-content: center;
       font-weight: bold;
       margin-right: 12px;
+    }
+
+    strong {
+      display: block;
+      color: $dark-blue;
+      margin-bottom: 2px;
+    }
+
+    small {
+      display: block;
+      color: $text-muted;
+      font-size: 13px;
     }
   }
 }

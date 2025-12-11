@@ -1,0 +1,253 @@
+// Variables
+$primary-red: #ff3333;
+$dark-blue: #1a2c51;
+$light-gray: #f8f9fb;
+$success-green: #25D366;
+$border-gray: #e6e9f1;
+$text-muted: #6c757d;
+
+:host {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    color: $dark-blue;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+// Global utilities
+.section-padding {
+    padding: 20px 15px;
+}
+
+.text-red {
+    color: $primary-red;
+}
+
+.text-blue {
+    color: $dark-blue;
+}
+
+.text-green {
+    color: $success-green;
+}
+
+.bg-light-gray {
+    background-color: $light-gray;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-dark-blue {
+    background-color: $dark-blue;
+    color: white;
+}
+
+.bg-red {
+    background-color: $primary-red;
+}
+
+.bg-light-red {
+    background-color: rgba(255, 51, 51, 0.05);
+}
+
+h1 {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: $dark-blue;
+
+    .highlight {
+        color: $primary-red;
+    }
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: $dark-blue;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+p {
+    line-height: 1.5;
+    color: #555;
+    font-size: 14px;
+}
+
+// Buttons
+.btn-primary-red {
+    background-color: $primary-red;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
+    transition: transform 0.2s;
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid $primary-red;
+    color: $primary-red;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+
+    &:active {
+        background-color: rgba(255, 51, 51, 0.1);
+    }
+}
+
+// Cards
+.advantage-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    text-align: center;
+    border: 1px solid $border-gray;
+
+    &.hover-shadow {
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        &:active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+// Horizontal Scroll Container
+.horizontal-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 5px 5px 15px 5px; // Padding for shadow visibility
+    -webkit-overflow-scrolling: touch;
+
+    &.snap-x {
+        scroll-snap-type: x mandatory;
+    }
+
+    &.snap-center {
+        scroll-snap-type: x mandatory;
+    }
+
+    &.hide-scroll {
+        scrollbar-width: none;
+
+        /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;
+            /* Chrome/Safari */
+        }
+    }
+
+    .scroll-item {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        max-width: 300px;
+
+        &.item-card {
+            flex: 0 0 70%;
+        }
+
+        &.item-card-wide {
+            flex: 0 0 80%;
+        }
+
+        &.item-card-full {
+            flex: 0 0 90%;
+        }
+    }
+}
+
+// Hero
+.hero-mobile {
+    padding: 30px 20px 20px;
+    text-align: center;
+    background-color: $dark-blue;
+    color: white;
+
+    h1 {
+        color: white;
+
+        .highlight {
+            color: $primary-red; // Ensure red pops on dark blue
+        }
+    }
+
+    .hero-subtitle p {
+        margin-bottom: 5px;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .hero-cta {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+}
+
+// Service List Clean
+.service-list-clean {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+
+        &::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: $primary-red;
+            font-weight: bold;
+        }
+
+        strong {
+            color: $dark-blue;
+        }
+    }
+}
+
+// Accordion overrides for mobile
+.accordion-button {
+    font-size: 16px;
+
+    &:not(.collapsed) {
+        color: $primary-red;
+        background-color: rgba(255, 51, 51, 0.05);
+        box-shadow: none;
+    }
+
+    &:focus {
+        box-shadow: none;
+        border-color: rgba(255, 51, 51, 0.5);
+    }
+}

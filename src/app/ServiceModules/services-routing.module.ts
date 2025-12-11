@@ -12,8 +12,9 @@ import { PageServiceComponent } from './page-service/page-service.component';
 import { ComptabiliteMobileComponent } from '../features-mobile/comptabilite-mobile/comptabilite-mobile.component';
 import { ServiceMobileComponent } from '../features-mobile/service-mobile/service-mobile.component';
 import { DepartementComptableComponent } from './departement-comptable/departement-comptable.component';
+import { DepartementComptableMobileComponent } from '../features-mobile/departement-comptable-mobile/departement-comptable-mobile.component';
 const routes: Routes = [
-     {
+  {
     path: '',
     canMatch: [
       () => {
@@ -33,7 +34,7 @@ const routes: Routes = [
     ],
     component: ServiceMobileComponent,
   },
-    {
+  {
     path: 'comptabilite',
     canMatch: [
       () => {
@@ -118,13 +119,26 @@ const routes: Routes = [
   //   path: 'departement-comptable',
   //   canMatch: [
   //     () => {
-  //       const deviceService = inject(DeviceService);
-  //       return !deviceService.shouldUseMobileVersion();
-  //     },
-  //   ],
-  //   component: DepartementComptableComponent,
-  // },
-    { path: 'departement-comptable', component: DepartementComptableComponent },
+  {
+    path: 'departement-comptable',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return !deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: DepartementComptableComponent,
+  },
+  {
+    path: 'departement-comptable',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: DepartementComptableMobileComponent,
+  },
 
 ];
 
@@ -132,4 +146,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ServicesRoutingModule {}
+export class ServicesRoutingModule { }

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { ComptabiliteMobileComponent } from '../features-mobile/comptabilite-mobile/comptabilite-mobile.component';
 import { CreationEntrepriseMobileComponent } from '../features-mobile/creation-entreprise-mobile/creation-entreprise-mobile.component';
 import { DeclarationImpotMobileComponent } from '../features-mobile/declaration-impot-mobile/declaration-impot-mobile.component';
+import { DepartementComptableMobileComponent } from '../features-mobile/departement-comptable-mobile/departement-comptable-mobile.component';
 import { FiscaliteMobileComponent } from '../features-mobile/fiscalite-mobile/fiscalite-mobile.component';
 import { ShardeModuleModule } from '../sharde-module/sharde-module.module';
 import { ComptabiliteComponent } from './comptabilite/comptabilite.component';
@@ -56,6 +57,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FiscaliteMobileComponent,
     DeclarationImpotMobileComponent,
     ComptabiliteMobileComponent,
+    DepartementComptableMobileComponent,
   ],
 })
 export class ServicesModule { }

@@ -1,11 +1,16 @@
 <!-- 1. Hero Section -->
 <section class="hero-mobile">
   <div class="container">
-    <h1 data-aos="fade-up">Votre comptabilité,<br><span class="highlight">sans stress, vraiment.</span></h1>
+    <h1 data-aos="fade-up">Votre <br> comptabilité,<br><span class="highlight position-relative d-inline-block">sans
+        stress,
+        <svg class="scribble-underline" viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2,15 Q50,5 100,12 T198,15" fill="none" stroke="#ff3333" stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </span><br>vraiment.</h1>
 
-    <div class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
-      <p>Indépendant ou dirigeant ? Concentrez-vous sur l'essentiel.</p>
-      <p>Nous nous occupons du reste.</p>
+    <div class="hero-subtitle my-4" data-aos="fade-up" data-aos-delay="100">
+      <p class="mb-2">En tant qu’indépendant ou dirigeant,<br>concentrez-vous sur l’essentiel.</p>
+      <p>MFinances allie l’humain à la technologie<br>Odoo pour une gestion claire,<br>fluide et sans stress.</p>
     </div>
 
     <div class="hero-cta" data-aos="fade-up" data-aos-delay="200">
@@ -52,7 +57,7 @@
     </div>
     <div class="scroll-item item-card">
       <div class="advantage-card">
-        <i class="fas fa-check-shield fa-2x text-red mb-2"></i>
+        <i class="fas fa-clipboard-check fa-2x text-red mb-2"></i>
         <h3>Conformité sans erreur</h3>
         <p class="small text-muted mb-0">Moins d'erreurs, moins de stress</p>
       </div>
@@ -184,7 +189,7 @@
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
           aria-expanded="true" aria-controls="collapseOne">
-          <i class="fas fa-calculator text-red me-3"></i>Comptabilité courante
+          <i class="fas fa-calculator text-red me-3"></i>Comptabilité et Fiscalité
         </button>
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
@@ -214,7 +219,8 @@
           <ul class="service-list-clean">
             <li><strong>Tableaux de bord</strong><br><span class="text-muted small">Indicateurs clés en temps
                 réel.</span></li>
-            <li><strong>Prévisionnel</strong><br><span class="text-muted small">Anticipez votre trésorerie à 12
+            <li><strong> Trésorerie Prévisionnelle</strong><br><span class="text-muted small">Anticipez votre trésorerie
+                à 12
                 mois.</span></li>
           </ul>
         </div>
@@ -245,63 +251,45 @@
 </section>
 
 <!-- 5. Formules (Carousel 1 carte visible) -->
-<section class="section-padding bg-dark-blue">
+<section class="section-padding bg-dark-blue section-formules">
   <div class="text-center mb-4">
-    <h2 class="text-white">Nos Formules</h2>
-    <p class="text-white-50 small">À partir de 150€/mois</p>
+    <h2 class="text-white">Choisissez votre formule</h2>
+    <p class="text-white-50">Une solution comptable claire,<br>pour chaque profil</p>
   </div>
 
   <div class="horizontal-scroll-container snap-center">
     <!-- Base -->
     <div class="scroll-item item-card-full">
-      <div class="formula-card">
-        <div class="card-header-formula">
-          <h4>Base</h4>
-          <span class="price-tag">Indépendants</span>
+      <div class="formula-card-v2">
+        <div class="formula-icon formula-icon-blue">
+          <i class="fas fa-file-alt"></i>
         </div>
-        <div class="card-body-formula">
-          <ul class="check-list">
-            <li>Tenue comptable</li>
-            <li>Déclarations TVA</li>
-            <li>Support Email</li>
-          </ul>
-          <button class="btn-outline w-100 mt-3" routerLink="/tarif">Voir le tarif</button>
-        </div>
+        <h4 class="formula-title">Formule<br>Base</h4>
+        <p class="formula-desc">Pour les société unipersonnel avec peu de volume</p>
+        <button class="btn-formula btn-formula-blue" routerLink="/tarif">Voir le tarif</button>
       </div>
     </div>
     <!-- Premium -->
     <div class="scroll-item item-card-full">
-      <div class="formula-card featured">
-        <div class="badge-rec">Recommandé</div>
-        <div class="card-header-formula">
-          <h4 class="text-red">Premium</h4>
-          <span class="price-tag">PME & Croissance</span>
+      <div class="formula-card-v2 featured">
+        <div class="badge-recommended">Recommandée</div>
+        <div class="formula-icon formula-icon-yellow">
+          <i class="fas fa-star"></i>
         </div>
-        <div class="card-body-formula">
-          <ul class="check-list">
-            <li>Tout "Base" +</li>
-            <li>Bilan intermédiaire</li>
-            <li>Conseil trimestriel</li>
-          </ul>
-          <button class="btn-primary-red w-100 mt-3" routerLink="/tarif">Choisir cette offre</button>
-        </div>
+        <h4 class="formula-title">Formule<br>Premium</h4>
+        <p class="formula-desc">Pour sociétés en croissance ou PME actives</p>
+        <button class="btn-formula btn-formula-yellow" routerLink="/tarif">Choisir cette formule</button>
       </div>
     </div>
     <!-- Excellence -->
     <div class="scroll-item item-card-full">
-      <div class="formula-card">
-        <div class="card-header-formula">
-          <h4>Excellence</h4>
-          <span class="price-tag">Sur mesure</span>
+      <div class="formula-card-v2">
+        <div class="formula-icon formula-icon-navy">
+          <i class="fas fa-crown"></i>
         </div>
-        <div class="card-body-formula">
-          <ul class="check-list">
-            <li>Gestion complète</li>
-            <li>Audit Odoo</li>
-            <li>Support Prioritaire</li>
-          </ul>
-          <button class="btn-outline w-100 mt-3" routerLink="/tarif">En savoir plus</button>
-        </div>
+        <h4 class="formula-title">Formule<br>Excellence</h4>
+        <p class="formula-desc">Pour les groupes et les structures complexes</p>
+        <button class="btn-formula btn-formula-outline" routerLink="/tarif">En savoir plus</button>
       </div>
     </div>
   </div>
@@ -310,59 +298,78 @@
 <!-- 6. Processus (Cards Horizontal) -->
 <section class="section-padding bg-white">
   <h2 class="mb-4 text-center">Comment ça marche ?</h2>
-  <p class="text-muted text-center small mb-4">Un démarrage simple en 4 étapes</p>
+  <p class="text-muted text-center small mb-4">Un démarrage simple en 6 étapes</p>
 
   <div class="horizontal-scroll-container snap-center">
     <!-- Step 1 -->
-    <div class="scroll-item" style="width: 250px;">
+    <div class="scroll-item" style="width: 220px;">
       <div class="advantage-card h-100 border-0 shadow-sm bg-light-gray">
-        <div class="d-flex align-items-center mb-3">
-          <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center fw-bold me-3"
-            style="width: 32px; height: 32px;">1</div>
-          <h5 class="fw-bold mb-0">Contact</h5>
+        <div class="step-icon-wrapper mb-3">
+          <div class="step-number">1</div>
+          <i class="fas fa-phone-alt text-red"></i>
         </div>
-        <p class="small text-muted mb-0">On écoute vos besoins et on définit ensemble le périmètre lors d'un premier
-          échange.</p>
+        <h5 class="fw-bold mb-2">Contact gratuit</h5>
+        <p class="small text-muted mb-0">On écoute vos besoins</p>
       </div>
     </div>
 
     <!-- Step 2 -->
-    <div class="scroll-item" style="width: 250px;">
+    <div class="scroll-item" style="width: 220px;">
       <div class="advantage-card h-100 border-0 shadow-sm bg-light-gray">
-        <div class="d-flex align-items-center mb-3">
-          <div
-            class="rounded-circle bg-white text-danger border border-danger d-flex align-items-center justify-content-center fw-bold me-3"
-            style="width: 32px; height: 32px;">2</div>
-          <h5 class="fw-bold mb-0">Audit</h5>
+        <div class="step-icon-wrapper mb-3">
+          <div class="step-number">2</div>
+          <i class="fas fa-search text-red"></i>
         </div>
-        <p class="small text-muted mb-0">Analyse de vos outils et volume de factures pour créer une offre sur mesure.
-        </p>
+        <h5 class="fw-bold mb-2">Analyse</h5>
+        <p class="small text-muted mb-0">Activité, outils, volume</p>
       </div>
     </div>
 
     <!-- Step 3 -->
-    <div class="scroll-item" style="width: 250px;">
+    <div class="scroll-item" style="width: 220px;">
       <div class="advantage-card h-100 border-0 shadow-sm bg-light-gray">
-        <div class="d-flex align-items-center mb-3">
-          <div
-            class="rounded-circle bg-white text-danger border border-danger d-flex align-items-center justify-content-center fw-bold me-3"
-            style="width: 32px; height: 32px;">3</div>
-          <h5 class="fw-bold mb-0">Setup</h5>
+        <div class="step-icon-wrapper mb-3">
+          <div class="step-number">3</div>
+          <i class="fas fa-cogs text-red"></i>
         </div>
-        <p class="small text-muted mb-0">Configuration du dossier, intégration Odoo et formation aux outils.</p>
+        <h5 class="fw-bold mb-2">Mise en place</h5>
+        <p class="small text-muted mb-0">Accès + calendrier</p>
       </div>
     </div>
 
     <!-- Step 4 -->
-    <div class="scroll-item" style="width: 250px;">
+    <div class="scroll-item" style="width: 220px;">
       <div class="advantage-card h-100 border-0 shadow-sm bg-light-gray">
-        <div class="d-flex align-items-center mb-3">
-          <div
-            class="rounded-circle bg-white text-danger border border-danger d-flex align-items-center justify-content-center fw-bold me-3"
-            style="width: 32px; height: 32px;">4</div>
-          <h5 class="fw-bold mb-0">Suivi</h5>
+        <div class="step-icon-wrapper mb-3">
+          <div class="step-number">4</div>
+          <i class="fas fa-sync-alt text-red"></i>
         </div>
-        <p class="small text-muted mb-0">Gestion mensuelle, tableaux de bord et conseils proactifs.</p>
+        <h5 class="fw-bold mb-2">Suivi comptable</h5>
+        <p class="small text-muted mb-0">Mensuel / trimestriel</p>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="scroll-item" style="width: 220px;">
+      <div class="advantage-card h-100 border-0 shadow-sm bg-light-gray">
+        <div class="step-icon-wrapper mb-3">
+          <div class="step-number">5</div>
+          <i class="fas fa-chart-line text-red"></i>
+        </div>
+        <h5 class="fw-bold mb-2">Prévisionnel</h5>
+        <p class="small text-muted mb-0">Vision claire de votre trésorerie</p>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="scroll-item" style="width: 220px;">
+      <div class="advantage-card h-100 border-0 shadow-sm bg-light-gray">
+        <div class="step-icon-wrapper mb-3">
+          <div class="step-number">6</div>
+          <i class="fas fa-lightbulb text-red"></i>
+        </div>
+        <h5 class="fw-bold mb-2">Conseil</h5>
+        <p class="small text-muted mb-0">Fiscalité et pilotage tout au long de l'année</p>
       </div>
     </div>
   </div>
