@@ -14,7 +14,7 @@ export class AboutMobileComponent implements OnInit {
   isScrolled = false;
   showContactForm = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     // Initialisation du composant
@@ -55,7 +55,7 @@ export class AboutMobileComponent implements OnInit {
     // Action immédiate de contact
     this.showContactForm = true;
     // Peut déclencher l'ouverture d'un modal ou rediriger vers contact
-    window.open('https://calendly.com/mfinances/rdv-client-en-teleconference', '_blank');
+    window.open('https://odoo.mfinances.be/book/4781b4d3', '_blank');
   }
 
   // Méthodes d'interaction
@@ -68,6 +68,6 @@ export class AboutMobileComponent implements OnInit {
   }
 
   scheduleAppointment(): void {
-    window.open('https://calendly.com/mfinances/rdv-client-en-teleconference', '_blank');
+    window.open('https://odoo.mfinances.be/book/4781b4d3', '_blank');
   }
 }

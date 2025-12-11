@@ -27,8 +27,7 @@
 
     .header {
       background: linear-gradient(rgba(26, 44, 81, 0.9), rgba(26, 44, 81, 0.9)),
-        url("../../assets/img/services/Background_Compta.png") no-repeat center
-          center/cover;
+        url("../../assets/img/services/Background_Compta.png") no-repeat center center/cover;
     }
 
     /* Cards et sections */
@@ -376,9 +375,11 @@
       0% {
         transform: scale(1);
       }
+
       50% {
         transform: scale(1.05);
       }
+
       100% {
         transform: scale(1);
       }
@@ -756,12 +757,10 @@
     .formule-separator span {
       width: 1px;
       height: 100px;
-      background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(26, 44, 81, 0.1),
-        transparent
-      );
+      background: linear-gradient(to bottom,
+          transparent,
+          rgba(26, 44, 81, 0.1),
+          transparent);
     }
 
     @keyframes pulse {
@@ -769,10 +768,12 @@
         transform: translate(-50%, -50%) scale(1);
         opacity: 0.6;
       }
+
       50% {
         transform: translate(-50%, -50%) scale(1.2);
         opacity: 0;
       }
+
       100% {
         transform: translate(-50%, -50%) scale(1);
         opacity: 0.6;
@@ -820,12 +821,10 @@
       .formule-separator span {
         width: 100%;
         height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(26, 44, 81, 0.1),
-          transparent
-        );
+        background: linear-gradient(to right,
+            transparent,
+            rgba(26, 44, 81, 0.1),
+            transparent);
       }
 
       .formule-item {
@@ -984,6 +983,7 @@
         opacity: 0;
         transform: translateY(10px) scale(0.95);
       }
+
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -1066,6 +1066,7 @@
         opacity: 0;
         transform: scale(0.9);
       }
+
       to {
         opacity: 1;
         transform: scale(1);
@@ -1277,11 +1278,8 @@
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
           <div class="image-wrapper">
-            <img
-              src="../../assets/img/webp/15.webp"
-              alt="Professionnelle de la comptabilité"
-              class="img-fluid rounded shadow"
-            />
+            <img src="../../assets/img/webp/15.webp" alt="Professionnelle de la comptabilité"
+              class="img-fluid rounded shadow" />
           </div>
         </div>
         <div class="col-lg-6 col-md-12">
@@ -1375,12 +1373,8 @@
             <div class="price-badge premium">À partir de 450€/mois</div>
             <h3>
               Offre
-              <span
-                class="premium-hover"
-                style="color: white !important"
-                (mouseenter)="showPremiumTooltip = true"
-                (mouseleave)="showPremiumTooltip = false"
-              >
+              <span class="premium-hover" style="color: white !important" (mouseenter)="showPremiumTooltip = true"
+                (mouseleave)="showPremiumTooltip = false">
                 Premium
                 <i class="fas fa-video premium-icon"></i>
                 <!-- Tooltip vidéo existant -->
@@ -1392,15 +1386,10 @@
                     </button>
                   </div>
                   <div class="tooltip-video">
-                    <iframe
-                      width="100%"
-                      height="200"
-                      src="https://www.youtube.com/embed/hZplCFSNXlk"
-                      title="Premium MFinances"
-                      frameborder="0"
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/hZplCFSNXlk"
+                      title="Premium MFinances" frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    >
+                      allowfullscreen>
                     </iframe>
                   </div>
                 </div>
@@ -1439,12 +1428,8 @@
             <div class="price-badge excellence">À partir de 650€/mois</div>
             <h3>
               Offre
-              <span
-                class="excellence-hover"
-                style="color: white !important"
-                (mouseenter)="showExcellenceTooltip = true"
-                (mouseleave)="showExcellenceTooltip = false"
-              >
+              <span class="excellence-hover" style="color: white !important" (mouseenter)="showExcellenceTooltip = true"
+                (mouseleave)="showExcellenceTooltip = false">
                 Excellence<i class="fas fa-video excellence-icon"></i>
                 <!-- Tooltip vidéo existant -->
                 <div class="excellence-tooltip" *ngIf="showExcellenceTooltip">
@@ -1455,15 +1440,10 @@
                     </button>
                   </div>
                   <div class="tooltip-video">
-                    <iframe
-                      width="100%"
-                      height="200"
-                      src="https://www.youtube.com/embed/XJrFJicX7S0"
-                      title="Excellence MFinances"
-                      frameborder="0"
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/XJrFJicX7S0"
+                      title="Excellence MFinances" frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    >
+                      allowfullscreen>
                     </iframe>
                   </div>
                 </div>
@@ -1545,15 +1525,10 @@
                   <i class="fas fa-play"></i>
                 </div>
               </div>
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/gAF_Jw6_T7Q"
-                title="Présentation des tarifs MFinances"
-                frameborder="0"
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gAF_Jw6_T7Q"
+                title="Présentation des tarifs MFinances" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              >
+                allowfullscreen>
               </iframe>
             </div>
           </div>
@@ -1616,7 +1591,8 @@
       <!-- CTA après la vidéo -->
       <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
         <div class="col-12">
-          <div class="p-4" style="background: rgba(243, 73, 71, 0.05); border-radius: 16px; border: 2px solid rgba(243, 73, 71, 0.2);">
+          <div class="p-4"
+            style="background: rgba(243, 73, 71, 0.05); border-radius: 16px; border: 2px solid rgba(243, 73, 71, 0.2);">
             <div class="row align-items-center">
               <div class="col-md-8">
                 <h4 class="mb-2" style="color: #f34947; font-weight: 700;">
@@ -1628,8 +1604,10 @@
                 </p>
               </div>
               <div class="col-md-4 text-md-end mt-3 mt-md-0">
-                <a href="https://calendly.com/mfinances/rdv-client-en-teleconference" target="_blank" rel="noopener noreferrer" class="btn btn-lg px-4 py-3" style="background: #f34947; color: white; border-radius: 10px; font-weight: 600; width: 100%; text-decoration: none;">
-                  <i class="fas fa-calendar-alt me-2" style="color:white" ></i>
+                <a href="https://odoo.mfinances.be/book/4781b4d3" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-lg px-4 py-3"
+                  style="background: #f34947; color: white; border-radius: 10px; font-weight: 600; width: 100%; text-decoration: none;">
+                  <i class="fas fa-calendar-alt me-2" style="color:white"></i>
                   Prendre RDV
                 </a>
               </div>
@@ -1655,9 +1633,7 @@
               </th>
               <th style="background-color: #1a2c51">
                 Tarif Mensuel<br />
-                <small style="color: white"
-                  ><span style="color: #f34947">à partir de</span></small
-                >
+                <small style="color: white"><span style="color: #f34947">à partir de</span></small>
               </th>
               <th style="background-color: #1a2c51; border-radius: 0 10px 0 0">
                 Ce qui est inclus
@@ -1667,24 +1643,15 @@
           <tbody>
             <tr class="pricing-row">
               <td class="formule-name">
-                <div
-                  class="formule-title"
-                  style="color: #1a2c51; font-size: 1.3em; font-weight: 600"
-                >
+                <div class="formule-title" style="color: #1a2c51; font-size: 1.3em; font-weight: 600">
                   Base
                 </div>
-                <div
-                  class="formule-subtitle"
-                  style="color: #666; font-size: 0.9em; margin-top: 5px"
-                >
+                <div class="formule-subtitle" style="color: #666; font-size: 0.9em; margin-top: 5px">
                   Pour démarrer sereinement
                 </div>
               </td>
               <td class="price-cell">
-                <div
-                  class="price"
-                  style="color: #f34947; font-size: 1.8em; font-weight: 700"
-                >
+                <div class="price" style="color: #f34947; font-size: 1.8em; font-weight: 700">
                   350€
                 </div>
                 <div class="price-period" style="color: #666; font-size: 0.9em">
@@ -1693,119 +1660,84 @@
               </td>
               <td>
                 <ul class="features-list" style="margin: 0; padding: 0">
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Situation intermédiaire tous les 6 mois
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Analyse du résultat fiscal actuel et prévisionnel
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Suivi administratif régulier
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Accès direct à notre expert-comptable
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Conseils fiscaux personnalisés
                   </li>
                 </ul>
               </td>
             </tr>
-            <tr
-              class="pricing-row premium-row"
-              style="background-color: rgba(26, 44, 81, 0.05)"
-            >
+            <tr class="pricing-row premium-row" style="background-color: rgba(26, 44, 81, 0.05)">
               <td class="formule-name">
-                <div
-                  class="formule-title"
-                  style="color: #1a2c51; font-size: 1.3em; font-weight: 600"
-                >
-                  <span
-                    class="premium-hover"
-                    style="color: #1a2c51 !important"
-                    (mouseenter)="showPremiumTooltip = true"
-                    (mouseleave)="showPremiumTooltip = false"
-                  >
+                <div class="formule-title" style="color: #1a2c51; font-size: 1.3em; font-weight: 600">
+                  <span class="premium-hover" style="color: #1a2c51 !important" (mouseenter)="showPremiumTooltip = true"
+                    (mouseleave)="showPremiumTooltip = false">
                     Premium
                     <i class="fas fa-video premium-icon"></i>
 
@@ -1818,32 +1750,21 @@
                         </button>
                       </div>
                       <div class="tooltip-video">
-                        <iframe
-                          width="100%"
-                          height="200"
-                          src="https://www.youtube.com/embed/hZplCFSNXlk"
-                          title="Premium MFinances"
-                          frameborder="0"
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/hZplCFSNXlk"
+                          title="Premium MFinances" frameborder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        >
+                          allowfullscreen>
                         </iframe>
                       </div>
                     </div>
                   </span>
                 </div>
-                <div
-                  class="formule-subtitle"
-                  style="color: #666; font-size: 0.9em; margin-top: 5px"
-                >
+                <div class="formule-subtitle" style="color: #666; font-size: 0.9em; margin-top: 5px">
                   Pour une croissance maîtrisée
                 </div>
               </td>
               <td class="price-cell">
-                <div
-                  class="price"
-                  style="color: #f34947; font-size: 1.8em; font-weight: 700"
-                >
+                <div class="price" style="color: #f34947; font-size: 1.8em; font-weight: 700">
                   450€
                 </div>
                 <div class="price-period" style="color: #666; font-size: 0.9em">
@@ -1852,158 +1773,110 @@
               </td>
               <td>
                 <ul class="features-list" style="margin: 0; padding: 0">
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Tous les services de l'offre Base +
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Définition annuelle d'objectifs budgétaires
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Situation intermédiaire tous les trimestres
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Contrôle budgétaire trimestriel
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Correction proactive de trajectoire financière
                   </li>
                 </ul>
               </td>
             </tr>
-            <tr
-              class="pricing-row excellence-row"
-              style="background-color: rgba(26, 44, 81, 0.1)"
-            >
+            <tr class="pricing-row excellence-row" style="background-color: rgba(26, 44, 81, 0.1)">
               <td class="formule-name">
-                <div
-                  class="formule-title excellence-hover"
-                  style="color: #1a2c51; font-size: 1.3em; font-weight: 600"
-                  (mouseenter)="showExcellenceTooltip = true"
-                  (mouseleave)="showExcellenceTooltip = false"
-                >
+                <div class="formule-title excellence-hover" style="color: #1a2c51; font-size: 1.3em; font-weight: 600"
+                  (mouseenter)="showExcellenceTooltip = true" (mouseleave)="showExcellenceTooltip = false">
                   Excellence
-                  <i
-                    class="fas fa-video excellence-icon"
-                    style="margin-left: 8px; color: #f34947; font-size: 0.8em"
-                  ></i>
+                  <i class="fas fa-video excellence-icon"
+                    style="margin-left: 8px; color: #f34947; font-size: 0.8em"></i>
 
                   <!-- Tooltip vidéo -->
                   <div class="excellence-tooltip" *ngIf="showExcellenceTooltip">
                     <div class="tooltip-header">
                       <h4>Découvrez l'Excellence en action</h4>
-                      <button
-                        class="expand-btn"
-                        (click)="openExcellenceModal()"
-                      >
+                      <button class="expand-btn" (click)="openExcellenceModal()">
                         <i class="fas fa-expand"></i>
                       </button>
                     </div>
                     <div class="tooltip-video">
-                      <iframe
-                        width="100%"
-                        height="200"
-                        src="https://www.youtube.com/embed/XJrFJicX7S0"
-                        title="Excellence MFinances"
-                        frameborder="0"
+                      <iframe width="100%" height="200" src="https://www.youtube.com/embed/XJrFJicX7S0"
+                        title="Excellence MFinances" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                      >
+                        allowfullscreen>
                       </iframe>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="formule-subtitle"
-                  style="color: #666; font-size: 0.9em; margin-top: 5px"
-                >
+                <div class="formule-subtitle" style="color: #666; font-size: 0.9em; margin-top: 5px">
                   Pour une performance optimale
                 </div>
               </td>
               <td class="price-cell">
-                <div
-                  class="price"
-                  style="color: #f34947; font-size: 1.8em; font-weight: 700"
-                >
+                <div class="price" style="color: #f34947; font-size: 1.8em; font-weight: 700">
                   650€
                 </div>
                 <div class="price-period" style="color: #666; font-size: 0.9em">
@@ -2012,99 +1885,74 @@
               </td>
               <td>
                 <ul class="features-list" style="margin: 0; padding: 0">
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Tous les services de l'offre Premium +
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Situation intermédiaire chaque mois
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Projection régulière de la trésorerie future
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Estimation continue des liquidités disponibles
                   </li>
-                  <li
-                    style="
+                  <li style="
                       color: #1a2c51;
                       margin-bottom: 10px;
                       position: relative;
                       padding-left: 25px;
-                    "
-                  >
-                    <i
-                      class="fas fa-check"
-                      style="
+                    ">
+                    <i class="fas fa-check" style="
                         color: #f34947;
                         position: absolute;
                         left: 0;
                         top: 4px;
-                      "
-                    ></i>
+                      "></i>
                     Anticipation proactive des besoins de financement
                   </li>
                 </ul>
@@ -2117,20 +1965,25 @@
       <!-- CTA après le tableau des prix -->
       <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
         <div class="col-12">
-          <div class="text-center p-5" style="background: linear-gradient(135deg, #1a2c51 0%, #2d5a87 100%); border-radius: 16px; box-shadow: 0 8px 30px rgba(26, 44, 81, 0.3);">
+          <div class="text-center p-5"
+            style="background: linear-gradient(135deg, #1a2c51 0%, #2d5a87 100%); border-radius: 16px; box-shadow: 0 8px 30px rgba(26, 44, 81, 0.3);">
             <h3 class="text-white mb-3" style="font-weight: 700; font-size: 28px;">
               <i class="fas fa-star me-2"></i>
               Chaque formule inclut nos garanties qualité
             </h3>
             <p class="text-white mb-4" style="font-size: 18px; opacity: 0.95;">
-              Situations intermédiaires régulières, suivi administratif optimisé et accompagnement personnalisé pour tous nos clients.
+              Situations intermédiaires régulières, suivi administratif optimisé et accompagnement personnalisé pour
+              tous nos clients.
             </p>
             <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-              <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; color: #1a2c51;">
+              <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3"
+                style="border-radius: 10px; font-weight: 700; color: #1a2c51;">
                 <i class="fas fa-rocket me-2"></i>
                 Commencer maintenant
               </button>
-              <a href="https://calendly.com/mfinances/rdv-client-en-teleconference" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; border: 2px solid white; text-decoration: none;">
+              <a href="https://odoo.mfinances.be/book/4781b4d3" target="_blank" rel="noopener noreferrer"
+                class="btn btn-outline-light btn-lg px-5 py-3"
+                style="border-radius: 10px; font-weight: 700; border: 2px solid white; text-decoration: none;">
                 <i class="fas fa-video me-2" styler="color:red"></i>
                 Consultation gratuite
               </a>
@@ -2146,12 +1999,8 @@
       <h2 class="text-center mb-5">
         <div style="color: white">
           <i class="fas fa-rocket"></i> Zoom sur l'Offre
-          <span
-            class="excellence-hover"
-            style="color: white"
-            (mouseenter)="showExcellenceTooltip2 = true"
-            (mouseleave)="showExcellenceTooltip2 = false"
-          >
+          <span class="excellence-hover" style="color: white" (mouseenter)="showExcellenceTooltip2 = true"
+            (mouseleave)="showExcellenceTooltip2 = false">
             Excellence<i class="fas fa-video excellence-icon"></i>
             <div class="excellence-tooltip" *ngIf="showExcellenceTooltip2">
               <div class="tooltip-header">
@@ -2161,15 +2010,10 @@
                 </button>
               </div>
               <div class="tooltip-video">
-                <iframe
-                  width="100%"
-                  height="200"
-                  src="https://www.youtube.com/embed/XJrFJicX7S0"
-                  title="Excellence MFinances"
-                  frameborder="0"
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/XJrFJicX7S0"
+                  title="Excellence MFinances" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                >
+                  allowfullscreen>
                 </iframe>
               </div>
             </div>
@@ -2183,15 +2027,10 @@
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
           <div id="video-excellence" class="video-wrapper rounded shadow">
-            <iframe
-              width="100%"
-              height="100%"
-              [src]="videoUrl2"
-              title="L'essentiel de votre comptabilité"
+            <iframe width="100%" height="100%" [src]="videoUrl2" title="L'essentiel de votre comptabilité"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
+              allowfullscreen>
             </iframe>
           </div>
         </div>
@@ -2246,7 +2085,8 @@
               <i class="fas fa-trophy me-2"></i>
               L'Excellence vous intéresse ?
             </p>
-            <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; color: #1a2c51;">
+            <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3"
+              style="border-radius: 10px; font-weight: 700; color: #1a2c51;">
               <i class="fas fa-paper-plane me-2" style="color:red"></i>
               Demandez votre devis personnalisé
             </button>
@@ -2309,7 +2149,8 @@
       <!-- CTA après les cas d'étude -->
       <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
         <div class="col-12">
-          <div class="p-5" style="background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%); border-radius: 16px; box-shadow: 0 8px 30px rgba(255, 75, 75, 0.3);">
+          <div class="p-5"
+            style="background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%); border-radius: 16px; box-shadow: 0 8px 30px rgba(255, 75, 75, 0.3);">
             <div class="text-center">
               <h3 class="text-white mb-3" style="font-weight: 700; font-size: 28px;">
                 <i class="fas fa-shield-alt me-2"></i>
@@ -2318,7 +2159,8 @@
               <p class="text-white mb-4" style="font-size: 18px; opacity: 0.95;">
                 Rejoignez les entrepreneurs qui pilotent leur entreprise avec sérénité et anticipation.
               </p>
-              <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3" style="border-radius: 10px; font-weight: 700; color: #ff4b4b;">
+              <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3"
+                style="border-radius: 10px; font-weight: 700; color: #ff4b4b;">
                 <i class="fas fa-handshake me-2"></i>
                 Rejoindre Mfinances
               </button>
@@ -2380,38 +2222,23 @@
   <!-- Vidéos cachées pour les liens -->
   <div style="display: none">
     <div id="video-base" class="video-wrapper">
-      <iframe
-        width="100%"
-        height="100%"
-        [src]="videoUrl"
-        title="L'essentiel de votre comptabilité"
-        frameborder="0"
+      <iframe width="100%" height="100%" [src]="videoUrl" title="L'essentiel de votre comptabilité" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      >
+        allowfullscreen>
       </iframe>
     </div>
 
     <div id="video-premium" class="video-wrapper">
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/iaec1s9QEXU"
-        title="L'essentiel de votre comptabilité"
-        frameborder="0"
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/iaec1s9QEXU"
+        title="L'essentiel de votre comptabilité" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      >
+        allowfullscreen>
       </iframe>
     </div>
   </div>
 
   <!-- Modal Excellence Vidéo -->
-  <div
-    class="excellence-modal"
-    *ngIf="showExcellenceModal"
-    (click)="closeExcellenceModal()"
-  >
+  <div class="excellence-modal" *ngIf="showExcellenceModal" (click)="closeExcellenceModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">
       <div class="modal-header">
         <h3>Découvrez l'Excellence MFinances</h3>
@@ -2420,26 +2247,17 @@
         </button>
       </div>
       <div class="modal-video">
-        <iframe
-          width="100%"
-          height="400"
-          src="https://www.youtube.com/embed/XJrFJicX7S0"
-          title="Excellence MFinances"
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/XJrFJicX7S0" title="Excellence MFinances"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        >
+          allowfullscreen>
         </iframe>
       </div>
     </div>
   </div>
 
   <!-- Modal Premium Vidéo -->
-  <div
-    class="excellence-modal"
-    *ngIf="showPremiumModal"
-    (click)="closePremiumModal()"
-  >
+  <div class="excellence-modal" *ngIf="showPremiumModal" (click)="closePremiumModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">
       <div class="modal-header">
         <h3>Découvrez l'offre Premium MFinances</h3>
@@ -2448,15 +2266,10 @@
         </button>
       </div>
       <div class="modal-video">
-        <iframe
-          width="100%"
-          height="400"
-          src="https://www.youtube.com/embed/hZplCFSNXlk"
-          title="Premium MFinances"
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/hZplCFSNXlk" title="Premium MFinances"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        >
+          allowfullscreen>
         </iframe>
       </div>
     </div>

@@ -1,269 +1,408 @@
+<!-- 1. Hero Section -->
+<section class="hero-mobile">
+  <div class="container">
+    <h1 data-aos="fade-up">Votre comptabilité,<br><span class="highlight">sans stress, vraiment.</span></h1>
 
-  <!-- Section 8 - Formulaire de Contact -->
-  <section id="contactSection" class="contact-section">
-    <app-contact-form-layout
-      [config]="formConfig"
-      [currentStep]="currentStep"
-      [totalSteps]="totalSteps"
-      [formSubmitted]="formSubmitted"
-      [isStepValid]="isStepValid"
-      [isFormValid]="isFormValid"
-      [isLoading]="isLoading"
-      (nextStep)="onNextStep()"
-      (previousStep)="onPreviousStep()"
-      (submit)="onSubmit()"
-      (reset)="onReset()"
-    >
-      <div slot="form-content">
-        <!-- Étape 1: Quel est votre principal défi comptable ? -->
-        <div *ngIf="currentStep === 1" class="step-content">
-          <h3 class="step-title mb-4">1. Quel est votre principal défi comptable ?</h3>
-          <p class="step-description mb-4">
-            Sélectionnez l'option qui correspond le mieux à votre situation actuelle :
-          </p>
+    <div class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+      <p>Indépendant ou dirigeant ? Concentrez-vous sur l'essentiel.</p>
+      <p>Nous nous occupons du reste.</p>
+    </div>
 
-          <div class="form-group">
-            <div class="custom-radio-group">
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.defiComptable === 'tenue-livres-complexe'"
-              >
-                <input
-                  type="radio"
-                  name="defiComptable"
-                  value="tenue-livres-complexe"
-                  [(ngModel)]="formData.defiComptable"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-book text-danger mb-2"></i>
-                  <h6 class="mb-1">Tenue des livres complexe</h6>
-                  <small class="text-muted">J'ai du mal à tenir mes livres comptables à jour et de manière correcte</small>
-                </div>
-              </label>
+    <div class="hero-cta" data-aos="fade-up" data-aos-delay="200">
+      <button class="btn-primary-red pulse-button" (click)="scrollTo('contactSection')">
+        Recevoir mon devis personnalisé
+      </button>
+    </div>
+  </div>
+</section>
 
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.defiComptable === 'declarations-fiscales'"
-              >
-                <input
-                  type="radio"
-                  name="defiComptable"
-                  value="declarations-fiscales"
-                  [(ngModel)]="formData.defiComptable"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-file-invoice text-danger mb-2"></i>
-                  <h6 class="mb-1">Déclarations fiscales</h6>
-                  <small class="text-muted">Les déclarations périodiques et annuelles me stressent</small>
-                </div>
-              </label>
+<!-- NOUVEAU: Mini Formulaire Rapide -->
+<!-- <section class="section-padding bg-light-gray">
+  <div class="mini-contact-card" data-aos="fade-up">
+    <h4><i class="fas fa-bolt text-red me-2"></i>Besoin d'aller vite ?</h4>
+    <div class="mini-form-inline">
+      <input type="text" placeholder="Votre Nom" class="form-control mb-2" [(ngModel)]="miniForm.name">
+      <input type="email" placeholder="Votre Email" class="form-control mb-2" [(ngModel)]="miniForm.email">
+      <button class="btn-outline w-100" (click)="onQuickContact()">Être contacté</button>
+    </div>
+  </div>
+</section> -->
 
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.defiComptable === 'analyse-financiere'"
-              >
-                <input
-                  type="radio"
-                  name="defiComptable"
-                  value="analyse-financiere"
-                  [(ngModel)]="formData.defiComptable"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-chart-line text-danger mb-2"></i>
-                  <h6 class="mb-1">Analyse financière</h6>
-                  <small class="text-muted">Je ne comprends pas bien mes chiffres et mes rapports</small>
-                </div>
-              </label>
+<!-- 2. Avantages Client (Slider) -->
+<section class="section-padding bg-white">
+  <div class="header-group mb-4">
+    <h2>Pourquoi MFinances ?</h2>
+    <p class="text-muted small">Des avantages concrets pour votre quotidien.</p>
+  </div>
 
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.defiComptable === 'optimisation-fiscale'"
-              >
-                <input
-                  type="radio"
-                  name="defiComptable"
-                  value="optimisation-fiscale"
-                  [(ngModel)]="formData.defiComptable"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-percentage text-danger mb-2"></i>
-                  <h6 class="mb-1">Optimisation fiscale</h6>
-                  <small class="text-muted">Je cherche à optimiser ma fiscalité légalement</small>
-                </div>
-              </label>
-            </div>
-          </div>
+  <div class="horizontal-scroll-container snap-x">
+    <div class="scroll-item item-card">
+      <div class="advantage-card">
+        <i class="fas fa-clock fa-2x text-red mb-2"></i>
+        <h3>Gagner du temps</h3>
+        <p class="small text-muted mb-0">Automatisation des tâches clés</p>
+      </div>
+    </div>
+    <div class="scroll-item item-card">
+      <div class="advantage-card">
+        <i class="fas fa-chart-line fa-2x text-red mb-2"></i>
+        <h3>Décisions éclairées</h3>
+        <p class="small text-muted mb-0">Données fiables en temps réel</p>
+      </div>
+    </div>
+    <div class="scroll-item item-card">
+      <div class="advantage-card">
+        <i class="fas fa-check-shield fa-2x text-red mb-2"></i>
+        <h3>Conformité sans erreur</h3>
+        <p class="small text-muted mb-0">Moins d'erreurs, moins de stress</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloc Odoo Redesigné -->
+  <div class="odoo-promo mt-4 mx-3" data-aos="zoom-in">
+    <div class="d-flex align-items-center mb-2">
+      <span class="odoo-badge me-2">Expert Odoo</span>
+      <h4 class="mb-0 fs-6">Vous utilisez déjà Odoo ?</h4>
+    </div>
+    <p class="small mb-3 text-start">MFinances vous accompagne sans doublons, sans perte d'info.</p>
+    <button class="btn btn-sm btn-outline-danger rounded-pill px-4" (click)="scrollTo('contactSection')">Découvrir notre
+      expertise Odoo</button>
+  </div>
+</section>
+
+<!-- 3. Public Cible (Slider regroupé) -->
+<section class="section-padding bg-light-gray">
+  <h2 class="mb-4 text-center">Pour qui ?</h2>
+
+  <div class="horizontal-scroll-container snap-center hide-scroll">
+
+    <!-- 1. Indépendants -->
+    <a routerLink="/profil-independant" class="scroll-item item-card-wide text-decoration-none">
+      <div class="advantage-card hover-shadow">
+        <i class="fas fa-user-tie fa-2x text-red mb-3"></i>
+        <h3 class="text-blue">Indépendants</h3>
+        <p class="text-muted mb-0">Personnes physiques ou en société</p>
+      </div>
+    </a>
+
+    <!-- 2. PME & Sociétés -->
+    <a routerLink="/societe-exploitation" class="scroll-item item-card-wide text-decoration-none">
+      <div class="advantage-card hover-shadow">
+        <i class="fas fa-building fa-2x text-red mb-3"></i>
+        <h3 class="text-blue">PME & Sociétés</h3>
+        <p class="text-muted mb-0">Sociétés commerciales</p>
+      </div>
+    </a>
+
+    <!-- 3. Professions Libérales -->
+    <a routerLink="/professionel-sante" class="scroll-item item-card-wide text-decoration-none">
+      <div class="advantage-card hover-shadow">
+        <i class="fas fa-user-md fa-2x text-red mb-3"></i>
+        <h3 class="text-blue">Professions Libérales</h3>
+        <p class="text-muted mb-0">Médecins, kinés, avocats, consultants</p>
+      </div>
+    </a>
+
+    <!-- 4. Startups -->
+    <a routerLink="/societe-moyen" class="scroll-item item-card-wide text-decoration-none">
+      <div class="advantage-card hover-shadow">
+        <i class="fas fa-rocket fa-2x text-red mb-3"></i>
+        <h3 class="text-blue">Startups</h3>
+        <p class="text-muted mb-0">Jeunes entreprises digitalisées</p>
+      </div>
+    </a>
+
+    <!-- 5. Holdings -->
+    <a routerLink="/societe-management-patrimoniale" class="scroll-item item-card-wide text-decoration-none">
+      <div class="advantage-card hover-shadow">
+        <i class="fas fa-briefcase fa-2x text-red mb-3"></i>
+        <h3 class="text-blue">Holdings</h3>
+        <p class="text-muted mb-0">Sociétés patrimoniales et familiales</p>
+      </div>
+    </a>
+
+    <!-- 6. ASBL -->
+    <a routerLink="/asbl" class="scroll-item item-card-wide text-decoration-none">
+      <div class="advantage-card hover-shadow">
+        <i class="fas fa-hands-helping fa-2x text-red mb-3"></i>
+        <h3 class="text-blue">ASBL</h3>
+        <p class="text-muted mb-0">Comptabilité adaptée au secteur associatif</p>
+      </div>
+    </a>
+
+    <!-- 7. Grandes Entreprises -->
+    <a routerLink="/grande-entreprise" class="scroll-item item-card-wide text-decoration-none">
+      <div class="advantage-card hover-shadow bg-gradient-red border-0">
+        <i class="fas fa-city fa-2x text-white mb-3"></i>
+        <h3 class="text-white">Grandes Entreprises</h3>
+        <p class="text-white-50 mb-0">Besoins complexes, reporting avancé</p>
+      </div>
+    </a>
+
+    <!-- 8. Promoteurs Immobiliers -->
+    <a routerLink="/promoteur-immobilier" class="scroll-item item-card-wide text-decoration-none">
+      <div class="advantage-card hover-shadow">
+        <i class="fas fa-hard-hat fa-2x text-red mb-3"></i>
+        <h3 class="text-blue">Promoteurs Immo</h3>
+        <p class="text-muted mb-0">Suivi opérations, TVA sur marge</p>
+      </div>
+    </a>
+
+    <!-- 9. Commerçants & Horeca -->
+    <a routerLink="/commercant-horeca" class="scroll-item item-card-wide text-decoration-none">
+      <div class="advantage-card hover-shadow">
+        <i class="fas fa-utensils fa-2x text-red mb-3"></i>
+        <h3 class="text-blue">Commerçants & Horeca</h3>
+        <p class="text-muted mb-0">Gestion des flux, stocks et rentabilité</p>
+      </div>
+    </a>
+
+    <!-- 10. Entreprises avec ERP -->
+    <a routerLink="/societe-exploitation" class="scroll-item item-card-wide text-decoration-none">
+      <div class="advantage-card hover-shadow">
+        <i class="fas fa-cubes fa-2x text-red mb-3"></i>
+        <h3 class="text-blue">Entreprises avec ERP</h3>
+        <p class="text-muted mb-0">Intégration Odoo sans ressaisie</p>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="text-center mt-2">
+    <p class="small text-muted"><i class="fas fa-arrow-right me-1"></i>Défilez pour voir tous les profils</p>
+  </div>
+</section>
+
+<!-- 4. Nos Services (3 Catégories) -->
+<section class="section-padding bg-white">
+  <h2 class="mb-4 text-center">Nos services comptables</h2>
+
+  <div class="accordion accordion-flush" id="servicesAccordion">
+    <!-- Catégorie 1 -->
+    <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+          <i class="fas fa-calculator text-red me-3"></i>Comptabilité courante
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#servicesAccordion">
+        <div class="accordion-body bg-light">
+          <ul class="service-list-clean">
+            <li><strong>Générale & Analytique</strong><br><span class="text-muted small">Suivi précis par pôle de
+                coûts.</span></li>
+            <li><strong>Fiscalité</strong><br><span class="text-muted small">Déclarations TVA, ISOC, IPP
+                optimisées.</span></li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!-- Étape 2: Quel type d'accompagnement recherchez-vous ? -->
-        <div *ngIf="currentStep === 2" class="step-content">
-          <h3 class="step-title mb-4">2. Quel type d'accompagnement recherchez-vous ?</h3>
-          <p class="step-description mb-4">Choisissez le niveau de service qui vous convient :</p>
-
-          <div class="form-group">
-            <div class="custom-radio-group">
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.accompagnement === 'gestion-complete'"
-              >
-                <input
-                  type="radio"
-                  name="accompagnement"
-                  value="gestion-complete"
-                  [(ngModel)]="formData.accompagnement"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-hands-helping text-danger mb-2"></i>
-                  <h6 class="mb-1">Gestion complète</h6>
-                  <small class="text-muted">Je veux déléguer entièrement ma comptabilité</small>
-                </div>
-              </label>
-
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.accompagnement === 'conseil-ponctuel'"
-              >
-                <input
-                  type="radio"
-                  name="accompagnement"
-                  value="conseil-ponctuel"
-                  [(ngModel)]="formData.accompagnement"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-comments text-danger mb-2"></i>
-                  <h6 class="mb-1">Conseil ponctuel</h6>
-                  <small class="text-muted">J'ai besoin de conseils experts de temps en temps</small>
-                </div>
-              </label>
-
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.accompagnement === 'formation-outils'"
-              >
-                <input
-                  type="radio"
-                  name="accompagnement"
-                  value="formation-outils"
-                  [(ngModel)]="formData.accompagnement"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-graduation-cap text-danger mb-2"></i>
-                  <h6 class="mb-1">Formation et outils</h6>
-                  <small class="text-muted">Je veux apprendre et être autonome avec de bons outils</small>
-                </div>
-              </label>
-
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.accompagnement === 'audit-diagnostic'"
-              >
-                <input
-                  type="radio"
-                  name="accompagnement"
-                  value="audit-diagnostic"
-                  [(ngModel)]="formData.accompagnement"
-                  required
-                />
-                <span class="radio-checkmark"></span>
-                <div class="radio-content">
-                  <i class="fas fa-search-plus text-danger mb-2"></i>
-                  <h6 class="mb-1">Audit et diagnostic</h6>
-                  <small class="text-muted">Je veux faire le point sur ma situation actuelle</small>
-                </div>
-              </label>
-            </div>
-          </div>
+    <!-- Catégorie 2 -->
+    <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <i class="fas fa-chart-pie text-red me-3"></i>Gestion Financière
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+        data-bs-parent="#servicesAccordion">
+        <div class="accordion-body bg-light">
+          <ul class="service-list-clean">
+            <li><strong>Tableaux de bord</strong><br><span class="text-muted small">Indicateurs clés en temps
+                réel.</span></li>
+            <li><strong>Prévisionnel</strong><br><span class="text-muted small">Anticipez votre trésorerie à 12
+                mois.</span></li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!-- Étape 3: Coordonnées -->
-        <div *ngIf="currentStep === 3" class="step-content">
-          <h3 class="step-title mb-4">3. Vos coordonnées</h3>
-          <p class="step-description mb-4">
-            <i class="fas fa-phone text-danger me-2"></i>
-            Pour recevoir votre consultation personnalisée, merci de compléter vos coordonnées
-          </p>
+    <!-- Catégorie 3 -->
+    <div class="accordion-item border-0 mb-3 shadow-sm rounded overflow-hidden">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <i class="fas fa-code-branch text-red me-3"></i>ERP & Odoo
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+        data-bs-parent="#servicesAccordion">
+        <div class="accordion-body bg-light">
+          <ul class="service-list-clean">
+            <li><strong>Intégration</strong><br><span class="text-muted small">Connectez vos ventes et achats.</span>
+            </li>
+            <li><strong>Configuration</strong><br><span class="text-muted small">Paramétrage sur mesure de votre
+                ERP.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <div class="form-group">
-            <div class="row g-3">
-              <div class="col-12">
-                <div class="custom-input-group">
-                  <label for="nom" class="form-label">
-                    <i class="fas fa-user me-2"></i>Nom complet
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control custom-input"
-                    id="nom"
-                    name="nom"
-                    [(ngModel)]="formData.nom"
-                    placeholder="Votre nom et prénom"
-                    required
-                  />
-                </div>
-              </div>
+<!-- 5. Formules (Carousel 1 carte visible) -->
+<section class="section-padding bg-dark-blue">
+  <div class="text-center mb-4">
+    <h2 class="text-white">Nos Formules</h2>
+    <p class="text-white-50 small">À partir de 150€/mois</p>
+  </div>
 
-              <div class="col-12">
-                <div class="custom-input-group">
-                  <label for="email" class="form-label">
-                    <i class="fas fa-envelope me-2"></i>Email
-                    <span class="badge bg-success ms-2">✅ obligatoire</span>
-                  </label>
-                  <input
-                    type="email"
-                    class="form-control custom-input"
-                    id="email"
-                    name="email"
-                    [(ngModel)]="formData.email"
-                    placeholder="votre@email.com"
-                    required
-                  />
-                </div>
-              </div>
+  <div class="horizontal-scroll-container snap-center">
+    <!-- Base -->
+    <div class="scroll-item item-card-full">
+      <div class="formula-card">
+        <div class="card-header-formula">
+          <h4>Base</h4>
+          <span class="price-tag">Indépendants</span>
+        </div>
+        <div class="card-body-formula">
+          <ul class="check-list">
+            <li>Tenue comptable</li>
+            <li>Déclarations TVA</li>
+            <li>Support Email</li>
+          </ul>
+          <button class="btn-outline w-100 mt-3" routerLink="/tarif">Voir le tarif</button>
+        </div>
+      </div>
+    </div>
+    <!-- Premium -->
+    <div class="scroll-item item-card-full">
+      <div class="formula-card featured">
+        <div class="badge-rec">Recommandé</div>
+        <div class="card-header-formula">
+          <h4 class="text-red">Premium</h4>
+          <span class="price-tag">PME & Croissance</span>
+        </div>
+        <div class="card-body-formula">
+          <ul class="check-list">
+            <li>Tout "Base" +</li>
+            <li>Bilan intermédiaire</li>
+            <li>Conseil trimestriel</li>
+          </ul>
+          <button class="btn-primary-red w-100 mt-3" routerLink="/tarif">Choisir cette offre</button>
+        </div>
+      </div>
+    </div>
+    <!-- Excellence -->
+    <div class="scroll-item item-card-full">
+      <div class="formula-card">
+        <div class="card-header-formula">
+          <h4>Excellence</h4>
+          <span class="price-tag">Sur mesure</span>
+        </div>
+        <div class="card-body-formula">
+          <ul class="check-list">
+            <li>Gestion complète</li>
+            <li>Audit Odoo</li>
+            <li>Support Prioritaire</li>
+          </ul>
+          <button class="btn-outline w-100 mt-3" routerLink="/tarif">En savoir plus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-              <div class="col-12">
-                <div class="custom-input-group">
-                  <label for="telephone" class="form-label">
-                    <i class="fas fa-phone me-2"></i>Téléphone
-                    <span class="badge bg-success ms-2">✅ obligatoire</span>
-                  </label>
-                  <input
-                    type="tel"
-                    class="form-control custom-input"
-                    id="telephone"
-                    name="telephone"
-                    [(ngModel)]="formData.telephone"
-                    placeholder="+32 XXX XX XX XX"
-                    required
-                  />
-                </div>
-              </div>
-            </div>
+<!-- 6. Processus (Cards Horizontal) -->
+<section class="section-padding bg-white">
+  <h2 class="mb-4 text-center">Comment ça marche ?</h2>
+  <p class="text-muted text-center small mb-4">Un démarrage simple en 4 étapes</p>
 
-            <div class="alert alert-info mt-4">
-              <div class="d-flex align-items-center">
-                <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
-                <div>
-                  <h6 class="mb-1">📞 Un expert comptable vous appelle sous 72h</h6>
-                  <small>Consultation gratuite et confidentielle.</small>
-                </div>
-              </div>
-            </div>
+  <div class="horizontal-scroll-container snap-center">
+    <!-- Step 1 -->
+    <div class="scroll-item" style="width: 250px;">
+      <div class="advantage-card h-100 border-0 shadow-sm bg-light-gray">
+        <div class="d-flex align-items-center mb-3">
+          <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center fw-bold me-3"
+            style="width: 32px; height: 32px;">1</div>
+          <h5 class="fw-bold mb-0">Contact</h5>
+        </div>
+        <p class="small text-muted mb-0">On écoute vos besoins et on définit ensemble le périmètre lors d'un premier
+          échange.</p>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="scroll-item" style="width: 250px;">
+      <div class="advantage-card h-100 border-0 shadow-sm bg-light-gray">
+        <div class="d-flex align-items-center mb-3">
+          <div
+            class="rounded-circle bg-white text-danger border border-danger d-flex align-items-center justify-content-center fw-bold me-3"
+            style="width: 32px; height: 32px;">2</div>
+          <h5 class="fw-bold mb-0">Audit</h5>
+        </div>
+        <p class="small text-muted mb-0">Analyse de vos outils et volume de factures pour créer une offre sur mesure.
+        </p>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="scroll-item" style="width: 250px;">
+      <div class="advantage-card h-100 border-0 shadow-sm bg-light-gray">
+        <div class="d-flex align-items-center mb-3">
+          <div
+            class="rounded-circle bg-white text-danger border border-danger d-flex align-items-center justify-content-center fw-bold me-3"
+            style="width: 32px; height: 32px;">3</div>
+          <h5 class="fw-bold mb-0">Setup</h5>
+        </div>
+        <p class="small text-muted mb-0">Configuration du dossier, intégration Odoo et formation aux outils.</p>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="scroll-item" style="width: 250px;">
+      <div class="advantage-card h-100 border-0 shadow-sm bg-light-gray">
+        <div class="d-flex align-items-center mb-3">
+          <div
+            class="rounded-circle bg-white text-danger border border-danger d-flex align-items-center justify-content-center fw-bold me-3"
+            style="width: 32px; height: 32px;">4</div>
+          <h5 class="fw-bold mb-0">Suivi</h5>
+        </div>
+        <p class="small text-muted mb-0">Gestion mensuelle, tableaux de bord et conseils proactifs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-3">
+    <p class="small text-muted"><i class="fas fa-arrow-right me-1"></i>Défilez pour voir les étapes</p>
+  </div>
+</section>
+
+<!-- 7. Témoignages (Slider Clean) -->
+<section class="section-padding bg-light-gray">
+  <h2 class="text-center mb-4">Ils nous font confiance</h2>
+  <div class="horizontal-scroll-container snap-center">
+    <div class="scroll-item item-card-quote">
+      <div class="testimonial-card-clean">
+        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+        <p class="quote-text">"MFinances m’a permis d’anticiper mes périodes creuses. Top !"</p>
+        <div class="user-info">
+          <div class="avatar-placeholder">C</div>
+          <div>
+            <strong>Cindie</strong>
+            <small>Kiné à Bruxelles</small>
           </div>
         </div>
       </div>
-    </app-contact-form-layout>
-  </section>
+    </div>
+    <div class="scroll-item item-card-quote">
+      <div class="testimonial-card-clean">
+        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+        <p class="quote-text">"L'intégration Odoo est parfaite. Je gagne des heures."</p>
+        <div class="user-info">
+          <div class="avatar-placeholder">D</div>
+          <div>
+            <strong>Damien</strong>
+            <small>Directeur Agence</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-zone-contact id="contactSection"></app-zone-contact>

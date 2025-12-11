@@ -33,27 +33,26 @@ const routes: Routes = [
     ],
     component: ServiceMobileComponent,
   },
-  //   {
-  //   path: 'comptabilite',
-  //   canMatch: [
-  //     () => {
-  //       const deviceService = inject(DeviceService);
-  //       return !deviceService.shouldUseMobileVersion();
-  //     },
-  //   ],
-  //   component: ComptabiliteComponent,
-  // },
-  // {
-  //   path: 'comptabilite',
-  //   canMatch: [
-  //     () => {
-  //       const deviceService = inject(DeviceService);
-  //       return deviceService.shouldUseMobileVersion();
-  //     },
-  //   ],
-  //   component: ComptabiliteMobileComponent,
-  // },
-      { path: 'comptabilite', component: ComptabiliteComponent },
+    {
+    path: 'comptabilite',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return !deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: ComptabiliteComponent,
+  },
+  {
+    path: 'comptabilite',
+    canMatch: [
+      () => {
+        const deviceService = inject(DeviceService);
+        return deviceService.shouldUseMobileVersion();
+      },
+    ],
+    component: ComptabiliteMobileComponent,
+  },
   {
     path: 'creation-entreprise',
     canMatch: [

@@ -33,12 +33,12 @@ export class StockTresorerieMobileComponent implements OnInit {
     description: 'Libérez des liquidités et améliorez votre trésorerie avec un diagnostic personnalisé gratuit.',
     phoneButton: 'Appelez-nous',
     contactButton: 'Contactez-nous',
-    
+
     // En-tête du formulaire
     formTitle: 'Diagnostic Stock Express',
     formDescription: 'Évaluez votre gestion en 3 minutes',
     badge: 'GRATUIT ET CONFIDENTIEL',
-    
+
     // Boutons et messages
     submitButton: 'Recevoir mon diagnostic',
     successTitle: '🎉 Merci pour votre demande !',
@@ -60,7 +60,7 @@ export class StockTresorerieMobileComponent implements OnInit {
     private router: Router,
     private odooService: OdooService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     // Initialisation du composant
@@ -85,7 +85,7 @@ export class StockTresorerieMobileComponent implements OnInit {
   }
 
   contactExpert(): void {
-    window.open('https://calendly.com/mfinances/rdv-client-en-teleconference', '_blank');
+    window.open('https://odoo.mfinances.be/book/4781b4d3', '_blank');
   }
 
   // Méthodes pour le formulaire

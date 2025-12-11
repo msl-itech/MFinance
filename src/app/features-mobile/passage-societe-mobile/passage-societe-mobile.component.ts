@@ -125,12 +125,12 @@ export class PassageSocieteMobileComponent implements OnInit {
     description: 'Obtenez votre diagnostic gratuit et découvrez si le passage en société vous est profitable.',
     phoneButton: 'Appelez-nous',
     contactButton: 'Contactez-nous',
-    
+
     // En-tête du formulaire
     formTitle: 'Diagnostic personnalisé',
     formDescription: 'Répondez à quelques questions pour recevoir votre analyse complète',
     badge: 'GRATUIT ET SANS ENGAGEMENT',
-    
+
     // Boutons et messages
     submitButton: 'Recevoir mon diagnostic',
     successTitle: '🎉 Merci pour votre demande !',
@@ -153,7 +153,7 @@ export class PassageSocieteMobileComponent implements OnInit {
     besoins_autre: ''
   };
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     // Initialisation du composant
@@ -199,25 +199,25 @@ export class PassageSocieteMobileComponent implements OnInit {
   }
 
   contactExpert(): void {
-    window.open('https://calendly.com/mfinances/rdv-client-en-teleconference', '_blank');
+    window.open('https://odoo.mfinances.be/book/4781b4d3', '_blank');
   }
 
   // Méthodes pour le formulaire
   get isStepValid(): boolean {
     switch (this.currentStep) {
       case 1:
-        return !!this.formData.situation && 
-               (this.formData.situation !== 'autre' || !!this.formData.situation_autre);
+        return !!this.formData.situation &&
+          (this.formData.situation !== 'autre' || !!this.formData.situation_autre);
       case 2:
-        return !!this.formData.motivation && 
-               (this.formData.motivation !== 'autre' || !!this.formData.motivation_autre);
+        return !!this.formData.motivation &&
+          (this.formData.motivation !== 'autre' || !!this.formData.motivation_autre);
       case 3:
         return !!this.formData.nom && !!this.formData.email && !!this.formData.telephone;
       case 4:
         return !!this.formData.connaissance;
       case 5:
-        return this.formData.besoins.length > 0 && 
-               (!this.formData.besoins.includes('autre') || !!this.formData.besoins_autre);
+        return this.formData.besoins.length > 0 &&
+          (!this.formData.besoins.includes('autre') || !!this.formData.besoins_autre);
       default:
         return false;
     }
@@ -253,7 +253,7 @@ export class PassageSocieteMobileComponent implements OnInit {
         this.formData.besoins.splice(index, 1);
       }
     }
-    
+
     this.showAutreBesoin = this.formData.besoins.includes('autre');
     if (!this.showAutreBesoin) {
       this.formData.besoins_autre = '';

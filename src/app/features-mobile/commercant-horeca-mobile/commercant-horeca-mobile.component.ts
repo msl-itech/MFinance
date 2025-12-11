@@ -283,7 +283,7 @@ export class CommercantHorecaMobileComponent implements OnInit, OnDestroy {
         return !!this.horecaForm.get('chiffreAffaires')?.value;
       case 3:
         // Au moins un besoin sélectionné
-        return this.besoinsOptions.some(besoin => 
+        return this.besoinsOptions.some(besoin =>
           this.horecaForm.get(`besoin_${besoin.value}`)?.value
         );
       case 4:
@@ -378,12 +378,12 @@ export class CommercantHorecaMobileComponent implements OnInit, OnDestroy {
   }
 
   scheduleAppointment(): void {
-     const calendlyUrl = 'https://calendly.com/mfinances/rdv-client-en-teleconference';
+    const calendlyUrl = 'https://odoo.mfinances.be/book/4781b4d3';
     window.open(calendlyUrl, '_blank');
   }
 
   openHorecaContact(): void {
-    const calendlyUrl = 'https://calendly.com/mfinances/rdv-client-en-teleconference';
+    const calendlyUrl = 'https://odoo.mfinances.be/book/4781b4d3';
     window.open(calendlyUrl, '_blank');
   }
 

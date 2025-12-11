@@ -53,7 +53,7 @@ export class IndependantMobileComponent implements OnInit {
   showFullIntro = false;
   activeFaqCategory = 'fiscalite';
   currentStepIndex = 0;
-  
+
   // Formulaire d'évaluation
   independantForm!: FormGroup;
   currentFormStep = 1;
@@ -100,7 +100,7 @@ export class IndependantMobileComponent implements OnInit {
     {
       question: "Quelles sont les obligations fiscales d'un indépendant ?",
       answer: "Déclarer vos revenus au SPF Finances, tenir une comptabilité adaptée à votre chiffre d'affaires et effectuer les déclarations TVA si vous y êtes assujetti.",
-      category: "fiscalite", 
+      category: "fiscalite",
       isOpen: false,
       priority: true
     },
@@ -273,7 +273,7 @@ export class IndependantMobileComponent implements OnInit {
   }
 
   scheduleAppointment(): void {
-    window.open('https://calendly.com/mfinances/rdv-client-en-teleconference', '_blank');
+    window.open('https://odoo.mfinances.be/book/4781b4d3', '_blank');
   }
 
   openIndependantContact(): void {
@@ -303,7 +303,7 @@ export class IndependantMobileComponent implements OnInit {
         return !!this.independantForm.get('revenuAnnuel')?.value;
       case 3:
         // Au moins un besoin doit être sélectionné
-        return this.besoinsOptions.some(besoin => 
+        return this.besoinsOptions.some(besoin =>
           this.independantForm.get(`besoin_${besoin.value}`)?.value
         );
       case 4:

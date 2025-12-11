@@ -23,7 +23,7 @@ export class FormCodePromoComponent {
   constructor(
     private odooService: OdooService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   submitForm(form: NgForm): void {
     if (form.invalid) {
@@ -31,7 +31,7 @@ export class FormCodePromoComponent {
       return;
     }
     const calendlyBaseUrl =
-      'https://calendly.com/mfinances/rdv-client-en-teleconference';
+      'https://odoo.mfinances.be/book/4781b4d3';
 
     const leadData = {
       name: this.formData.name,

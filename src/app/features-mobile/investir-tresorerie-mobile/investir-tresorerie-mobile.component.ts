@@ -80,12 +80,12 @@ export class InvestirTresorerieMobileComponent implements OnInit {
     description: 'En 3 minutes, découvrez si votre projet va booster ou plomber votre trésorerie.',
     phoneButton: 'Appelez-nous',
     contactButton: 'Contactez-nous',
-    
+
     // En-tête du formulaire
     formTitle: 'Diagnostic personnalisé',
     formDescription: 'Formulaire rapide – 5 étapes – Gratuit & Confidentiel',
     badge: 'GRATUIT ET CONFIDENTIEL',
-    
+
     // Boutons et messages
     submitButton: 'Recevoir mon diagnostic',
     successTitle: '🎉 Merci pour votre demande !',
@@ -111,7 +111,7 @@ export class InvestirTresorerieMobileComponent implements OnInit {
     private router: Router,
     private odooService: OdooService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     // Initialisation du composant
@@ -157,7 +157,7 @@ export class InvestirTresorerieMobileComponent implements OnInit {
   }
 
   contactExpert(): void {
-    window.open('https://calendly.com/mfinances/rdv-client-en-teleconference', '_blank');
+    window.open('https://odoo.mfinances.be/book/4781b4d3', '_blank');
   }
 
   // Méthodes pour le formulaire
@@ -166,15 +166,15 @@ export class InvestirTresorerieMobileComponent implements OnInit {
       case 1:
         return !!this.formData.souhaite_investir;
       case 2:
-        return !!this.formData.frein_principal && 
-               (this.formData.frein_principal !== 'autre' || !!this.formData.frein_autre);
+        return !!this.formData.frein_principal &&
+          (this.formData.frein_principal !== 'autre' || !!this.formData.frein_autre);
       case 3:
         return !!this.formData.nom && !!this.formData.email && !!this.formData.telephone;
       case 4:
         return !!this.formData.chiffre_affaires;
       case 5:
-        return !!this.formData.type_activite && 
-               (this.formData.type_activite !== 'autre' || !!this.formData.activite_autre);
+        return !!this.formData.type_activite &&
+          (this.formData.type_activite !== 'autre' || !!this.formData.activite_autre);
       default:
         return false;
     }
