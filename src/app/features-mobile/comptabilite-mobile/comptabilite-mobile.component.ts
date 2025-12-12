@@ -5,11 +5,12 @@ import { Router } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
+import { ZoneContactMobileComponent } from "../../zone-contact-mobile/zone-contact-mobile.component";
 
 @Component({
   selector: 'app-comptabilite-mobile',
   standalone: true,
-  imports: [CommonModule, ShardeModuleModule, FormsModule],
+  imports: [CommonModule, ShardeModuleModule, FormsModule, ZoneContactMobileComponent],
   templateUrl: './comptabilite-mobile.component.html',
   styleUrls: ['./comptabilite-mobile.component.scss'],
   animations: [
