@@ -127,7 +127,7 @@ import { filter, takeUntil } from 'rxjs/operators';
                   <a
                     routerLink="/services/comptabilite"
                     (click)="closeMobileMenu()"
-                    >Comptabilité</a
+                    >Comptabilité Odoo </a
                   >
                 </li>
                 <li>
@@ -142,6 +142,13 @@ import { filter, takeUntil } from 'rxjs/operators';
                     routerLink="/services/declaration-impot"
                     (click)="closeMobileMenu()"
                     >Déclaration d'impôt</a
+                  >
+                </li>
+                <li>
+                  <a
+                    routerLink="/services/departement-comptable"
+                    (click)="closeMobileMenu()"
+                    >Externaliser votre département<br> comptable</a
                   >
                 </li>
               </ul>
