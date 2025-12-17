@@ -23,63 +23,63 @@ export class ProfilTypeMobileComponent implements OnInit, OnDestroy {
   private resizeListener?: () => void;
 
   items: ProfileItem[] = [
-    { 
-      image: 'assets/img/webp/6.webp', 
-      title: 'Indépendant & Startup', 
+    {
+      image: 'assets/img/webp/6.webp',
+      title: 'Indépendant & Startup',
       description: 'Devenir indépendant, c\'est plus qu\'un simple changement de statut. C\'est une aventure excitante, un saut vers la liberté professionnelle et une occasion unique de concrétiser vos idées.',
-      route: '/profil-independant' 
+      route: '/profil-independant'
     },
-    { 
-      image: 'assets/img/webp/57.avif', 
-      title: 'ASBL', 
+    {
+      image: 'assets/img/webp/57.avif',
+      title: 'ASBL',
       description: 'Les Associations Sans But Lucratif en Belgique sont des structures incontournables pour porter des projets sociaux, culturels, éducatifs ou environnementaux essentiels à notre société.',
-      route: '/asbl' 
+      route: '/asbl'
     },
-    { 
-      image: 'assets/img/webp/19.webp', 
-      title: 'Commerçant & HORECA', 
+    {
+      image: 'assets/img/webp/19.webp',
+      title: 'Commerçant & HORECA',
       description: 'En tant que commerçant ou acteur du secteur HORECA (hôtellerie, restauration, cafés), vous jonglez quotidiennement avec de multiples responsabilités administratives et financières.',
-      route: '/commercant-horeca' 
+      route: '/commercant-horeca'
     },
-    { 
-      image: 'assets/img/webp/21.webp', 
-      title: 'Personnel de santé', 
+    {
+      image: 'assets/img/webp/21.webp',
+      title: 'Personnel de santé',
       description: 'Médecins, dentistes, vétérinaires ou kinésithérapeutes, votre quotidien oscille entre la prise en charge des patients et la gestion de vos obligations comptables et fiscales.',
-      route: '/professionel-sante' 
+      route: '/professionel-sante'
     },
-    { 
-      image: 'assets/img/webp/patrimonial.webp', 
-      title: 'Société Management Patrimoniale', 
+    {
+      image: 'assets/img/webp/patrimonial.webp',
+      title: 'Société Management Patrimoniale',
       description: 'La Société de Management Patrimoniale permet au dirigeant d\'entreprise de facturer ses prestations à sa société d\'exploitation tout en optimisant sa situation fiscale personnelle.',
-      route: '/societe-management-patrimoniale' 
+      route: '/societe-management-patrimoniale'
     },
-    { 
-      image: 'assets/img/webp/54.avif', 
-      title: 'Société de moyens', 
+    {
+      image: 'assets/img/webp/54.avif',
+      title: 'Société de moyens',
       description: 'Une société de moyens est une structure juridique conçue pour permettre à des professionnels, souvent issus des professions libérales, de mutualiser leurs ressources et leurs coûts.',
-      route: '/societe-moyen' 
+      route: '/societe-moyen'
     },
-    { 
-      image: 'assets/img/webp/53.avif', 
-      title: 'Société d\'exploitation', 
+    {
+      image: 'assets/img/webp/53.avif',
+      title: 'Société d\'exploitation',
       description: 'Une société d\'exploitation est le pilier de votre activité professionnelle ou commerciale. Elle se concentre sur la création de valeur à travers une activité opérationnelle rentable.',
-      route: '/societe-exploitation' 
+      route: '/societe-exploitation'
     },
-    { 
-      image: 'assets/img/webp/immobilier.webp', 
-      title: 'Promoteur immobilier', 
+    {
+      image: 'assets/img/webp/immobilier.webp',
+      title: 'Promoteur immobilier',
       description: 'La promotion immobilière est une activité complexe qui exige une gestion rigoureuse des finances, de la fiscalité, et des flux de trésorerie pour garantir la rentabilité de vos projets.',
-      route: '/promoteur-immobilier' 
+      route: '/promoteur-immobilier'
     },
-    { 
-      image: 'assets/img/webp/grande_entreprise.webp', 
-      title: 'Grande Entreprise', 
+    {
+      image: 'assets/img/webp/grande_entreprise.webp',
+      title: 'Grande Entreprise',
       description: 'Les grandes entreprises évoluent dans un environnement complexe où une gestion rigoureuse des finances est essentielle pour garantir leur compétitivité et leur développement durable.',
-      route: '/grande-entreprise' 
+      route: '/grande-entreprise'
     }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.setupResizeListener();
@@ -123,6 +123,42 @@ export class ProfilTypeMobileComponent implements OnInit, OnDestroy {
     if (index >= 0 && index < this.items.length) {
       this.currentIndex = index;
     }
+  }
+
+  // Touch/Swipe handling
+  private touchStartX = 0;
+  private touchEndX = 0;
+  private isSwiping = false;
+
+  onTouchStart(event: TouchEvent): void {
+    this.touchStartX = event.touches[0].clientX;
+    this.isSwiping = true;
+  }
+
+  onTouchMove(event: TouchEvent): void {
+    if (!this.isSwiping) return;
+    this.touchEndX = event.touches[0].clientX;
+  }
+
+  onTouchEnd(): void {
+    if (!this.isSwiping) return;
+
+    const swipeThreshold = 50; // Minimum distance for swipe
+    const diff = this.touchStartX - this.touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swipe left -> next slide
+        this.nextSlide();
+      } else {
+        // Swipe right -> previous slide
+        this.prevSlide();
+      }
+    }
+
+    this.isSwiping = false;
+    this.touchStartX = 0;
+    this.touchEndX = 0;
   }
 
   // Transform calculation for slider

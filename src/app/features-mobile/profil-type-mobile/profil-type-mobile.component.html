@@ -15,10 +15,7 @@
     <!-- Progress Indicator -->
     <div class="progress-indicator">
       <div class="progress-bar">
-        <div
-          class="progress-fill"
-          [style.width.%]="getProgressPercentage()"
-        ></div>
+        <div class="progress-fill" [style.width.%]="getProgressPercentage()"></div>
       </div>
       <span class="progress-text">
         {{ currentIndex + 1 }} / {{ items.length }}
@@ -26,14 +23,11 @@
     </div>
 
     <!-- Cards Slider -->
-    <div class="cards-wrapper">
+    <div class="cards-wrapper" (touchstart)="onTouchStart($event)" (touchmove)="onTouchMove($event)"
+      (touchend)="onTouchEnd()">
       <div class="cards-slider" [style.transform]="getTransform()">
-        <div
-          class="profile-card"
-          *ngFor="let item of items; let i = index"
-          [class.active]="i === currentIndex"
-          (click)="navigateToProfile(item.route)"
-        >
+        <div class="profile-card" *ngFor="let item of items; let i = index" [class.active]="i === currentIndex"
+          (click)="navigateToProfile(item.route)">
           <!-- Card Image -->
           <div class="card-image">
             <img [src]="item.image" [alt]="item.title" class="profile-image" />
@@ -61,33 +55,26 @@
       </div>
     </div>
 
+    <!-- Swipe Hint -->
+    <div class="swipe-hint">
+      <i class="fas fa-hand-pointer"></i>
+      <span>Glissez pour naviguer</span>
+    </div>
+
     <!-- Navigation Controls -->
     <div class="navigation-controls">
-      <button
-        class="nav-btn prev"
-        (click)="prevSlide()"
-        [disabled]="currentIndex === 0"
-        aria-label="Profil précédent"
-      >
+      <button class="nav-btn prev" (click)="prevSlide()" [disabled]="currentIndex === 0" aria-label="Profil précédent">
         <i class="fas fa-chevron-left"></i>
       </button>
 
       <!-- Dots Navigation -->
       <div class="dots-navigation">
-        <span
-          class="dot"
-          *ngFor="let item of items; let i = index"
-          [class.active]="i === currentIndex"
-          (click)="goToSlide(i)"
-        ></span>
+        <span class="dot" *ngFor="let item of items; let i = index" [class.active]="i === currentIndex"
+          (click)="goToSlide(i)"></span>
       </div>
 
-      <button
-        class="nav-btn next"
-        (click)="nextSlide()"
-        [disabled]="currentIndex === items.length - 1"
-        aria-label="Profil suivant"
-      >
+      <button class="nav-btn next" (click)="nextSlide()" [disabled]="currentIndex === items.length - 1"
+        aria-label="Profil suivant">
         <i class="fas fa-chevron-right"></i>
       </button>
     </div>

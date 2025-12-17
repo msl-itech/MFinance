@@ -5,11 +5,12 @@ import { Router } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
+import { ZoneContactMobileComponent } from "../../zone-contact-mobile/zone-contact-mobile.component";
 
 @Component({
   selector: 'app-comptabilite-mobile',
   standalone: true,
-  imports: [CommonModule, ShardeModuleModule, FormsModule],
+  imports: [CommonModule, ShardeModuleModule, FormsModule, ZoneContactMobileComponent],
   templateUrl: './comptabilite-mobile.component.html',
   styleUrls: ['./comptabilite-mobile.component.scss'],
   animations: [
@@ -37,12 +38,12 @@ export class ComptabiliteMobileComponent implements OnInit {
     description: 'Faites de votre comptabilité un véritable levier de croissance. Nos experts vous accompagnent.',
     phoneButton: 'Appelez-nous',
     contactButton: 'Contactez-nous',
-    
+
     // En-tête du formulaire
     formTitle: 'Consultation comptable personnalisée',
     formDescription: 'En 3 minutes, décrivez vos besoins. Un expert comptable vous rappelle sous 72h.',
     badge: 'CONSULTATION GRATUITE & CONFIDENTIELLE',
-    
+
     // Boutons et messages
     submitButton: 'Recevoir ma consultation gratuite',
     successTitle: '💼 Merci pour votre demande !',
@@ -60,7 +61,27 @@ export class ComptabiliteMobileComponent implements OnInit {
     telephone: ''
   };
 
-  constructor(private router: Router) {}
+  // Mini Formulaire
+  miniForm = {
+    name: '',
+    email: ''
+  };
+
+  // Timeline Step
+  activeStep = 1;
+
+  constructor(private router: Router) { }
+
+  onQuickContact(): void {
+    if (this.miniForm.name && this.miniForm.email) {
+      console.log('Quick Contact:', this.miniForm);
+      // Pre-fill main form if needed or just submit
+      this.formData.nom = this.miniForm.name;
+      this.formData.email = this.miniForm.email;
+      this.currentStep = 3; // Jump to contact details ? Or just scroll
+      this.scrollTo('contactSection');
+    }
+  }
 
   ngOnInit(): void {
     // Initialisation du composant
@@ -72,6 +93,10 @@ export class ComptabiliteMobileComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  scrollTo(sectionId: string): void {
+    this.scrollToSection(sectionId);
   }
 
   // Méthodes pour le formulaire

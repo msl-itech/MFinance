@@ -35,7 +35,7 @@ export class AsblMobileComponent implements OnInit {
   isScrolled = false;
   showFullIntro = false;
   activeService = '';
-  
+
   // Formulaire d'évaluation
   evaluationForm!: FormGroup;
   currentStep = 1;
@@ -142,7 +142,7 @@ export class AsblMobileComponent implements OnInit {
         top: offsetPosition,
         behavior: 'smooth'
       });
-      
+
       this.activeService = sectionId;
     }
   }
@@ -172,7 +172,7 @@ export class AsblMobileComponent implements OnInit {
   }
 
   scheduleAppointment(): void {
-    window.open('https://calendly.com/mfinances/rdv-client-en-teleconference', '_blank');
+    window.open('https://odoo.mfinances.be/book/4781b4d3', '_blank');
   }
 
   openAsblContact(): void {

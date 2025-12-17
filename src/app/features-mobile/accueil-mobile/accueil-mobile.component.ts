@@ -29,7 +29,7 @@ export class AccueilMobileComponent implements OnInit {
   // État du composant
   isScrolled = false;
   showAllServices = false;
-  totalServices = 4;
+  totalServices = 5;
   currentStep = 1;
   formSubmitted = false;
 
@@ -117,7 +117,7 @@ export class AccueilMobileComponent implements OnInit {
     if (this.isFormValid()) {
       // Simulation d'envoi du formulaire
       console.log('Données formulaire:', this.formData);
-      
+
       // Simulation d'appel API
       setTimeout(() => {
         this.formSubmitted = true;
@@ -153,7 +153,7 @@ export class AccueilMobileComponent implements OnInit {
       source: 'accueil-mobile',
       timestamp: new Date().toISOString(),
     };
-    
+
     console.log('Envoi des données:', formDataToSend);
     // Ici, vous pouvez implémenter l'appel à votre service API
   }
