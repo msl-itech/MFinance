@@ -268,7 +268,7 @@ p {
 
 // Hero Section - Premium Dark with Gradient
 .hero-mobile {
-    padding: 50px 24px 40px;
+    padding: 100px 24px 40px;
     text-align: center;
     background: $gradient-premium;
     color: white;
@@ -340,7 +340,7 @@ p {
     min-height: 70vh;
     display: flex;
     align-items: center;
-    padding: 60px 20px 40px;
+    padding: 100px 20px 40px;
     background: linear-gradient(165deg, #0f1a2e 0%, $dark-blue 50%, darken($dark-blue, 10%) 100%);
     overflow: hidden;
 }

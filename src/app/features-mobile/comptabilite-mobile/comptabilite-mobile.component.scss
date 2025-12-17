@@ -135,7 +135,7 @@ p {
 
 // Hero
 .hero-mobile {
-  padding: 60px 20px 40px;
+  padding: 100px 20px 40px;
   text-align: center;
   background-color: $dark-blue;
   color: white;
@@ -441,6 +441,9 @@ p {
   }
 
   .btn-formula {
+    display: block; // Ensure width 100% works
+    text-decoration: none !important; // Remove underline for links
+    text-align: center; // Center text like a button
     border: none;
     border-radius: 10px;
     padding: 12px 24px;
