@@ -7,57 +7,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   isSidebarActive: boolean = false;
-  activeSubmenus: { [key: string]: boolean } = {};
+  // Track open submenus by their ID/Key
+  openSubmenus: Set<string> = new Set<string>();
+
+  constructor() { }
 
   ngOnInit() {
-    this.initializeMobileMenu();
-  }
-
-  private initializeMobileMenu() {
-    // Sélecteurs pour le menu mobile
-    const menuToggle = document.querySelector(
-      '.mobile-nav-icon'
-    ) as HTMLElement;
-    const menuClose = document.querySelector('.menu-close') as HTMLElement;
-    const sidebar = document.querySelector('.mobile-sidebar') as HTMLElement;
-    const overlay = document.querySelector('.overlay') as HTMLElement;
-
-    // Fonction pour basculer le menu
-    const toggleSidebar = () => {
-      sidebar.classList.toggle('mobile-menu-active');
-      overlay.classList.toggle('active');
-    };
-
-    // Ajout des écouteurs d'événements
-    menuToggle?.addEventListener('click', toggleSidebar);
-    menuClose?.addEventListener('click', toggleSidebar);
-    overlay?.addEventListener('click', toggleSidebar);
-
-    // Gestion des sous-menus
-    const submenuLinks = document.querySelectorAll(
-      '.mobile-nav-list .has-submenu'
-    );
-    submenuLinks.forEach((item) => {
-      item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const submenu = (item as HTMLElement).nextElementSibling as HTMLElement;
-        if (submenu && submenu.classList.contains('sub-menu')) {
-          submenu.classList.toggle('open');
-        }
-      });
-    });
+    // No manual query selectors needed
   }
 
   toggleSidebar(): void {
     this.isSidebarActive = !this.isSidebarActive;
+    if (!this.isSidebarActive) {
+      this.closeAllSubmenus();
+    }
   }
 
-  toggleSubmenu(menu: string): void {
-    for (let key in this.activeSubmenus) {
-      if (key !== menu) {
-        this.activeSubmenus[key] = false;
-      }
+  closeSidebar(): void {
+    this.isSidebarActive = false;
+    this.closeAllSubmenus();
+  }
+
+  toggleSubmenu(menuKey: string, event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
     }
-    this.activeSubmenus[menu] = !this.activeSubmenus[menu];
+
+    if (this.openSubmenus.has(menuKey)) {
+      this.openSubmenus.delete(menuKey);
+    } else {
+      // Optional: Close others if we want accordion behavior (only one open at a time)
+      // this.openSubmenus.clear(); 
+      this.openSubmenus.add(menuKey);
+    }
+  }
+
+  isSubmenuOpen(menuKey: string): boolean {
+    return this.openSubmenus.has(menuKey);
+  }
+
+  private closeAllSubmenus(): void {
+    this.openSubmenus.clear();
   }
 }

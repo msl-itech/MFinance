@@ -368,7 +368,7 @@ import { filter, takeUntil } from 'rxjs/operators';
       </div>
 
       <!-- Contenu principal -->
-      <main class="mobile-main" [style.margin-top.px]="headerHeight">
+      <main class="mobile-main">
         <router-outlet></router-outlet>
       </main>
 

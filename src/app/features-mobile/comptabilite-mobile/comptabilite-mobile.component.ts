@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { ShardeModuleModule } from '../../sharde-module/sharde-module.module';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
@@ -10,7 +10,7 @@ import { ZoneContactMobileComponent } from "../../zone-contact-mobile/zone-conta
 @Component({
   selector: 'app-comptabilite-mobile',
   standalone: true,
-  imports: [CommonModule, ShardeModuleModule, FormsModule, ZoneContactMobileComponent],
+  imports: [CommonModule, ShardeModuleModule, FormsModule, ZoneContactMobileComponent, RouterModule],
   templateUrl: './comptabilite-mobile.component.html',
   styleUrls: ['./comptabilite-mobile.component.scss'],
   animations: [
