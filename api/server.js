@@ -109,6 +109,36 @@ function getMetaTagsForRoute(route, subRoute = null) {
 
 // Handler pour les requêtes API de Vercel
 const handler = (req, res) => {
+  // Analyser le problème de la page blanche - DEFINED AT TOP OF HANDLER SCOPE
+  function analyseIndexHtml(indexPath) {
+    if (fs.existsSync(indexPath)) {
+      try {
+        const content = fs.readFileSync(indexPath, "utf8");
+        console.log(
+          `Taille du fichier index.html: ${content.length} caractères`
+        );
+
+        // Vérifier les éléments essentiels
+        const hasHeadTag = content.includes("<head>");
+        const hasBodyTag = content.includes("<body>");
+        const hasScriptTag = content.includes("<script");
+        const hasBaseHref = content.includes('<base href="/');
+
+        console.log(`Analyse du fichier index.html:
+          - head tag: ${hasHeadTag ? "Oui" : "Non"}
+          - body tag: ${hasBodyTag ? "Oui" : "Non"}
+          - script tag: ${hasScriptTag ? "Oui" : "Non"}
+          - base href: ${hasBaseHref ? "Oui" : "Non"}`);
+
+        return content;
+      } catch (err) {
+        console.error(`Erreur lors de l'analyse de ${indexPath}:`, err);
+        return null;
+      }
+    }
+    return null;
+  }
+
   try {
     // Trouver le dossier de build
     const DIST_FOLDER = findBuildFolder();
@@ -166,36 +196,6 @@ const handler = (req, res) => {
     }
 
     console.log(`Traitement comme route SPA: ${route}`);
-
-    // Analyser le problème de la page blanche
-    function analyseIndexHtml(indexPath) {
-      if (fs.existsSync(indexPath)) {
-        try {
-          const content = fs.readFileSync(indexPath, "utf8");
-          console.log(
-            `Taille du fichier index.html: ${content.length} caractères`
-          );
-
-          // Vérifier les éléments essentiels
-          const hasHeadTag = content.includes("<head>");
-          const hasBodyTag = content.includes("<body>");
-          const hasScriptTag = content.includes("<script");
-          const hasBaseHref = content.includes('<base href="/');
-
-          console.log(`Analyse du fichier index.html:
-            - head tag: ${hasHeadTag ? "Oui" : "Non"}
-            - body tag: ${hasBodyTag ? "Oui" : "Non"}
-            - script tag: ${hasScriptTag ? "Oui" : "Non"}
-            - base href: ${hasBaseHref ? "Oui" : "Non"}`);
-
-          return content;
-        } catch (err) {
-          console.error(`Erreur lors de l'analyse de ${indexPath}:`, err);
-          return null;
-        }
-      }
-      return null;
-    }
 
     // Pour les routes Angular, nous allons toujours servir l'index.html
     const indexPath = path.join(DIST_FOLDER, "index.html");
@@ -382,18 +382,16 @@ const handler = (req, res) => {
         <body>
           <div class="container">
             <h1>MFinances</h1>
-            ${
-              route === "error"
-                ? `<p>Une erreur est survenue lors du chargement de la page.</p>`
-                : `<p>Bienvenue chez MFinances, votre cabinet d'expertise comptable à Bruxelles.</p>`
-            }
+            ${route === "error"
+        ? `<p>Une erreur est survenue lors du chargement de la page.</p>`
+        : `<p>Bienvenue chez MFinances, votre cabinet d'expertise comptable à Bruxelles.</p>`
+      }
             <p>Nous vous accompagnons dans la gestion comptable et fiscale de votre entreprise.</p>
             <a href="/" class="btn">Accéder au site</a>
-            ${
-              errorMsg
-                ? `<p class="error">Détails techniques: ${errorMsg}</p>`
-                : ""
-            }
+            ${errorMsg
+        ? `<p class="error">Détails techniques: ${errorMsg}</p>`
+        : ""
+      }
           </div>
           <script>
             console.log("Page de secours chargée");
