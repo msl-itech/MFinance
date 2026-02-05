@@ -1,0 +1,438 @@
+/* ============================================
+   COST COMPARISON - PREMIUM TABLE DESIGN
+   ============================================ */
+
+.cost-comparison-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #0B1120 0%, #1a2744 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cost-comparison-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+/* Section Header */
+.section-header {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ff3333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #ff3333, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.section-subtitle strong {
+    color: #ffffff;
+}
+
+/* Tables Container */
+.tables-container {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .tables-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+/* Cost Table */
+.cost-table {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Table Header */
+.table-header {
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+}
+
+.table-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.table-icon.internal {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+}
+
+.table-icon.mfinances {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.table-header h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    flex: 1;
+}
+
+.badge-savings {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Table Content */
+.table-content {
+    flex: 1;
+}
+
+.table-row {
+    display: grid;
+    padding: 18px 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+}
+
+.internal-table .table-row {
+    grid-template-columns: 2fr 1fr 1.2fr;
+}
+
+.mfinances-table .table-row {
+    grid-template-columns: 1.5fr 1.3fr 0.9fr 0.9fr;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row:not(.header):hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.table-row.header {
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table-row span {
+    display: flex;
+    align-items: center;
+}
+
+.col-role {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    gap: 12px;
+}
+
+.role-icon {
+    font-size: 1.3rem;
+}
+
+.col-salary,
+.col-half,
+.col-third {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+.col-cost {
+    font-weight: 600;
+}
+
+.col-cost.highlight {
+    color: #ef4444;
+}
+
+.col-full {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.col-full .monthly {
+    font-weight: 600;
+    color: #10b981;
+}
+
+.col-full .annual {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.daf-row .daf-price {
+    grid-column: span 1;
+}
+
+.daf-price .hourly {
+    font-weight: 600;
+    color: #10b981;
+}
+
+/* Table Footer */
+.table-footer {
+    padding: 20px 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: auto;
+}
+
+.cost-warning {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fbbf24;
+    font-size: 0.9rem;
+}
+
+.cost-warning i {
+    font-size: 1.1rem;
+}
+
+.cost-benefit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #10b981;
+    font-size: 0.9rem;
+}
+
+.cost-benefit i {
+    font-size: 1.1rem;
+}
+
+/* VS Divider */
+.vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.vs-badge-large {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #0a2463, #1a3a7d);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1024px) {
+    .vs-divider {
+        width: 100%;
+    }
+
+    .vs-badge-large {
+        transform: rotate(90deg);
+    }
+}
+
+/* CTA */
+.comparison-cta {
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.cta-content h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    max-width: 600px;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 36px;
+    background: linear-gradient(135deg, #ff3333, #ff6b6b);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(243, 73, 71, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(243, 73, 71, 0.5);
+}
+
+.cta-button i {
+    font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cost-comparison-section {
+        padding: 60px 0;
+    }
+
+    .tables-container {
+        margin: 0 -16px;
+    }
+
+    .cost-table {
+        border-radius: 20px;
+    }
+
+    .table-header {
+        padding: 20px 24px;
+    }
+
+    .table-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .table-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .table-row {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+
+    .internal-table .table-row {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .internal-table .col-salary {
+        display: none;
+    }
+
+    .mfinances-table .table-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mfinances-table .col-half,
+    .mfinances-table .col-third {
+        display: none;
+    }
+
+    .table-footer {
+        padding: 16px 20px;
+    }
+
+    .cta-content {
+        padding: 28px 24px;
+        margin: 0 16px;
+    }
+
+    .cta-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        padding: 16px 28px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .role-icon {
+        display: none;
+    }
+
+    .badge-savings {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+}

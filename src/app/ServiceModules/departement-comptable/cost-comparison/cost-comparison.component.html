@@ -1,0 +1,123 @@
+<section class="cost-comparison-section" id="comparatif">
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header text-center" data-aos="fade-up">
+            <span class="section-label"><i class="fas fa-lightbulb"></i> Comparatif</span>
+            <h2 class="section-title">
+                Ce que coûte vraiment un <span class="text-gradient">service comptable interne</span>
+            </h2>
+            <p class="section-subtitle">
+                Beaucoup de dirigeants comparent l'externalisation à un simple salaire brut.
+                Mais une ressource interne coûte bien plus : charges sociales, congés, supervision, outils, turnover…
+                <br><strong>Voici un comparatif clair, basé sur les moyennes en Wallonie.</strong>
+            </p>
+        </div>
+
+        <!-- Tables Container -->
+        <div class="tables-container">
+            <!-- Internal Costs Table -->
+            <div class="cost-table internal-table" data-aos="fade-right">
+                <div class="table-header">
+                    <div class="table-icon internal">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Coût d'un poste interne</h3>
+                </div>
+
+                <div class="table-content">
+                    <div class="table-row header">
+                        <span class="col-role">Poste</span>
+                        <span class="col-salary">Salaire brut annuel</span>
+                        <span class="col-cost">Coût employeur estimé</span>
+                    </div>
+
+                    <div class="table-row" *ngFor="let item of internalCosts">
+                        <span class="col-role">
+                            <i [class]="item.icon" class="role-icon"></i>
+                            {{ item.role }}
+                        </span>
+                        <span class="col-salary">{{ formatCurrency(item.grossSalary) }}</span>
+                        <span class="col-cost highlight">~{{ formatCurrency(item.employerCost) }}/an</span>
+                    </div>
+                </div>
+
+                <div class="table-footer">
+                    <div class="cost-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Sans compter : formation, turnover, outils, supervision...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-divider" data-aos="zoom-in">
+                <span class="vs-badge-large">VS</span>
+            </div>
+
+            <!-- MFINANCES Costs Table -->
+            <div class="cost-table mfinances-table" data-aos="fade-left">
+                <div class="table-header">
+                    <div class="table-icon mfinances">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Tarifs MFINANCES</h3>
+                    <span class="badge-savings">Jusqu'à -40%</span>
+                </div>
+
+                <div class="table-content">
+                    <div class="table-row header">
+                        <span class="col-role">Poste externalisé</span>
+                        <span class="col-full">Temps plein</span>
+                        <span class="col-half">Mi-temps</span>
+                        <span class="col-third">Tiers-temps</span>
+                    </div>
+
+                    <ng-container *ngFor="let item of mfinancesCosts">
+                        <div class="table-row" *ngIf="item.fullTime">
+                            <span class="col-role">
+                                <i [class]="item.icon" class="role-icon"></i>
+                                {{ item.role }}
+                            </span>
+                            <span class="col-full">
+                                <span class="monthly">{{ formatCurrency(item.fullTime.monthly) }}/mois</span>
+                                <span class="annual">→ {{ formatCurrency(item.fullTime.annual) }}/an</span>
+                            </span>
+                            <span class="col-half">{{ formatCurrency(item.halfTime.monthly) }}/mois</span>
+                            <span class="col-third">{{ formatCurrency(item.thirdTime.monthly) }}/mois</span>
+                        </div>
+                        <div class="table-row daf-row" *ngIf="!item.fullTime">
+                            <span class="col-role">
+                                <i [class]="item.icon" class="role-icon"></i>
+                                {{ item.role }}
+                            </span>
+                            <span class="col-full daf-price">
+                                <span class="hourly">{{ formatCurrency(item.hourlyRate) }} / heure HTVA</span>
+                            </span>
+                            <span class="col-half">—</span>
+                            <span class="col-third">—</span>
+                        </div>
+                    </ng-container>
+                </div>
+
+                <div class="table-footer mfinances-footer">
+                    <div class="cost-benefit">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Tout inclus : expertise, outils, support, continuité</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="comparison-cta" data-aos="fade-up">
+            <div class="cta-content">
+                <h3><i class="fas fa-bullseye"></i> Simulez votre besoin et découvrez l'économie réalisée par rapport à
+                    un recrutement</h3>
+                <button class="cta-button" (click)="scrollToSimulator()">
+                    <i class="fas fa-calculator"></i>
+                    Lancer la simulation
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

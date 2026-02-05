@@ -1,0 +1,148 @@
+<div class="diagnostic-result-page">
+    <div class="container">
+        <!-- Header -->
+        <div class="result-page-header" data-aos="fade-up">
+            <div class="logo-section">
+                <img src="assets/img/logo/logo.png" alt="MFINANCES" class="logo">
+            </div>
+
+            <div class="header-content" *ngIf="isSharedView">
+                <span class="shared-badge">
+                    <i class="fas fa-share-alt"></i>
+                    Résultat partagé
+                </span>
+                <p class="context-message">
+                    Ce lien vous a été partagé pour obtenir un avis. Ce simulateur permet de comparer
+                    les coûts internes vs externalisés dans un contexte Odoo.
+                </p>
+            </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="result-card" *ngIf="hasResult && result" data-aos="fade-up" data-aos-delay="100">
+            <div class="result-card-header">
+                <div class="result-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h1>Résultat du diagnostic</h1>
+                <p class="subtitle">Estimation basée sur les moyennes en Wallonie</p>
+            </div>
+
+            <!-- Context Info -->
+            <div class="context-info">
+                <div class="info-item" *ngIf="result.sector">
+                    <i class="fas fa-building"></i>
+                    <span>Secteur : {{ getSectorLabel(result.sector) }}</span>
+                </div>
+                <div class="info-item" *ngIf="result.revenue">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>CA : {{ getRevenueLabel(result.revenue) }}</span>
+                </div>
+                <div class="info-item" *ngIf="result.usesOdoo">
+                    <i class="fas fa-cubes"></i>
+                    <span>Odoo : {{ getOdooLabel(result.usesOdoo) }}</span>
+                </div>
+            </div>
+
+            <!-- Main Comparison -->
+            <div class="main-comparison">
+                <div class="comparison-box internal">
+                    <span class="box-label">Coût interne estimé</span>
+                    <span class="box-value">{{ formatCurrency(result.totalInternalCost) }}</span>
+                    <span class="box-period">par an</span>
+                </div>
+
+                <div class="vs-circle">
+                    <span>VS</span>
+                </div>
+
+                <div class="comparison-box mfinances">
+                    <span class="box-label">Coût MFINANCES</span>
+                    <span class="box-value">{{ formatCurrency(result.totalMfinancesCost) }}</span>
+                    <span class="box-period">par an</span>
+                </div>
+            </div>
+
+            <!-- Savings Highlight -->
+            <div class="savings-banner">
+                <div class="savings-icon">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="savings-info">
+                    <span class="savings-label"><i class="fas fa-coins"></i> Économie réalisée</span>
+                    <div class="savings-values">
+                        <span class="savings-amount">{{ formatCurrency(result.savings) }}</span>
+                        <span class="savings-percentage">soit {{ result.savingsPercent }}% d'économie</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Details -->
+            <div class="profiles-detail">
+                <h3>
+                    <i class="fas fa-users"></i>
+                    Détail par profil
+                </h3>
+                <div class="profiles-table">
+                    <div class="profile-row header">
+                        <span class="col-profile">Profil</span>
+                        <span class="col-freq">Fréquence</span>
+                        <span class="col-internal">Interne</span>
+                        <span class="col-mfinances">MFINANCES</span>
+                        <span class="col-saving">Économie</span>
+                    </div>
+                    <div class="profile-row" *ngFor="let profile of result.profiles">
+                        <span class="col-profile">
+                            <i [class]="profile.icon"></i>
+                            {{ profile.label }}
+                        </span>
+                        <span class="col-freq">{{ profile.frequency }}</span>
+                        <span class="col-internal text-danger">{{ formatCurrency(profile.internalCost) }}</span>
+                        <span class="col-mfinances text-success">{{ formatCurrency(profile.mfinancesCost) }}</span>
+                        <span class="col-saving text-highlight">
+                            {{ formatCurrency(profile.internalCost - profile.mfinancesCost) }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- No Result State -->
+        <div class="no-result" *ngIf="!hasResult" data-aos="fade-up">
+            <div class="no-result-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h2>Aucun résultat disponible</h2>
+            <p>Ce diagnostic n'est plus disponible ou a expiré.</p>
+            <button class="primary-btn" (click)="scrollToSimulator()">
+                <i class="fas fa-calculator"></i>
+                Faire une nouvelle simulation
+            </button>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section" *ngIf="hasResult" data-aos="fade-up" data-aos-delay="200">
+            <h2>Intéressé par ces résultats ?</h2>
+            <div class="cta-buttons">
+                <button class="cta-btn primary" (click)="bookCall()">
+                    <i class="fas fa-calendar-check"></i>
+                    Réserver un appel gratuit
+                </button>
+                <button class="cta-btn secondary" (click)="scrollToSimulator()">
+                    <i class="fas fa-calculator"></i>
+                    Tester le simulateur
+                </button>
+            </div>
+            <p class="cta-note">
+                <i class="fas fa-shield-alt"></i>
+                Sans engagement • Réponse sous 72h
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="result-footer">
+            <p>© {{ 2025 }} MFINANCES - Votre département comptable externalisé sur Odoo</p>
+            <a href="https://www.mfinances.be" target="_blank">www.mfinances.be</a>
+        </div>
+    </div>
+</div>
