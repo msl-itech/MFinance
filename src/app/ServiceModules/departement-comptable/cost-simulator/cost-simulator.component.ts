@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { OdooService } from '../../../services/odoo.service';
+import { ToastrService } from 'ngx-toastr';
 
 interface ProfileSelection {
     profile: string;
@@ -180,7 +182,10 @@ export class CostSimulatorComponent implements OnInit {
 
     preferredDays = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'];
 
-    constructor() { }
+    constructor(
+        private odooService: OdooService,
+        private toastr: ToastrService
+    ) { }
 
     ngOnInit(): void {
         // Initialize profile frequencies
@@ -315,7 +320,109 @@ export class CostSimulatorComponent implements OnInit {
 
             // Store result in localStorage for sharing
             this.storeResultForSharing();
+
+            // Envoyer les données vers Odoo
+            this.sendToOdoo();
         }, 1500);
+    }
+
+    sendToOdoo(): void {
+        if (!this.simulationResult) return;
+
+        // Construction de la description HTML complète
+        const descriptionParts = [
+            `<h3>📊 Résultats de la simulation - Département Comptable</h3>`,
+            `<div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">`,
+            `<h4 style="color: #28a745; margin-top: 0;">💰 Économie potentielle</h4>`,
+            `<p style="font-size: 18px; margin: 10px 0;"><strong>${this.formatCurrency(this.simulationResult.savings)}</strong> (${this.simulationResult.savingsPercent}% d'économie)</p>`,
+            `<p style="margin: 5px 0;">Coût interne estimé: <strong>${this.formatCurrency(this.simulationResult.totalInternalCost)}</strong></p>`,
+            `<p style="margin: 5px 0;">Coût MFINANCES: <strong>${this.formatCurrency(this.simulationResult.totalMfinancesCost)}</strong></p>`,
+            `</div>`,
+
+            `<h4>🏢 Contexte entreprise</h4>`,
+            `<ul>`,
+            `<li><strong>Secteur:</strong> ${this.getSectorLabel(this.simulationResult.sector)}</li>`,
+            `<li><strong>Chiffre d'affaires:</strong> ${this.getRevenueLabel(this.simulationResult.revenue)}</li>`,
+            `<li><strong>Utilise Odoo:</strong> ${this.getOdooLabel(this.simulationResult.usesOdoo)}</li>`,
+            `</ul>`,
+
+            `<h4>👥 Profils sélectionnés et fréquences</h4>`,
+            `<table style="width: 100%; border-collapse: collapse; margin: 10px 0;">`,
+            `<thead>`,
+            `<tr style="background: #e9ecef;">`,
+            `<th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Profil</th>`,
+            `<th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Fréquence</th>`,
+            `<th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Durée</th>`,
+            `<th style="padding: 8px; text-align: right; border: 1px solid #ddd;">Coût interne</th>`,
+            `<th style="padding: 8px; text-align: right; border: 1px solid #ddd;">Coût MFINANCES</th>`,
+            `<th style="padding: 8px; text-align: right; border: 1px solid #ddd;">Économie</th>`,
+            `</tr>`,
+            `</thead>`,
+            `<tbody>`,
+            ...this.simulationResult.profiles.map(p =>
+                `<tr>` +
+                `<td style="padding: 8px; border: 1px solid #ddd;">${p.label}</td>` +
+                `<td style="padding: 8px; border: 1px solid #ddd;">${p.frequency}</td>` +
+                `<td style="padding: 8px; border: 1px solid #ddd;">${p.months} mois</td>` +
+                `<td style="padding: 8px; text-align: right; border: 1px solid #ddd; color: #dc3545;">${this.formatCurrency(p.internalCost)}</td>` +
+                `<td style="padding: 8px; text-align: right; border: 1px solid #ddd; color: #28a745;">${this.formatCurrency(p.mfinancesCost)}</td>` +
+                `<td style="padding: 8px; text-align: right; border: 1px solid #ddd; font-weight: bold;">${this.formatCurrency(p.internalCost - p.mfinancesCost)}</td>` +
+                `</tr>`
+            ),
+            `</tbody>`,
+            `</table>`,
+
+            `<h4>📞 Préférences de contact</h4>`,
+            `<ul>`,
+            this.simulationResult.userInfo.preferredTime ? `<li><strong>Créneau préféré:</strong> ${this.simulationResult.userInfo.preferredTime}</li>` : '',
+            this.simulationResult.userInfo.preferredDay ? `<li><strong>Jour préféré:</strong> ${this.simulationResult.userInfo.preferredDay}</li>` : '',
+            `</ul>`,
+
+            `<hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">`,
+            `<p style="color: #6c757d; font-size: 12px; margin-top: 15px;">`,
+            `<em>🔗 Lien du résultat: ${this.getShareUrl()}</em>`,
+            `</p>`
+        ];
+
+        const fullDescription = descriptionParts.filter(p => p).join('\n');
+
+        const leadData = {
+            name: this.formData.name,
+            phone: this.formData.phone,
+            email_from: this.formData.email,
+            description: fullDescription
+        };
+
+        this.odooService.createLead(leadData).subscribe({
+            next: (response) => {
+                console.log('Lead créé avec succès dans Odoo:', response);
+                this.toastr.success(
+                    'Vos résultats ont été enregistrés. Un conseiller vous contactera sous 72h.',
+                    'Simulation enregistrée !'
+                );
+            },
+            error: (error) => {
+                console.error('Erreur lors de l\'envoi vers Odoo:', error);
+                // On n'affiche pas d'erreur à l'utilisateur pour ne pas gâcher l'expérience
+                // Les résultats sont déjà affichés
+            }
+        });
+    }
+
+    // Méthodes helper pour les labels
+    getSectorLabel(sector: string): string {
+        const sectorObj = this.sectors.find(s => s.value === sector);
+        return sectorObj ? sectorObj.label : (this.formData.sectorOther || sector);
+    }
+
+    getRevenueLabel(revenue: string): string {
+        const revenueObj = this.revenues.find(r => r.value === revenue);
+        return revenueObj ? revenueObj.label : revenue;
+    }
+
+    getOdooLabel(usesOdoo: string): string {
+        const odooObj = this.odooOptions.find(o => o.value === usesOdoo);
+        return odooObj ? odooObj.label : usesOdoo;
     }
 
     storeResultForSharing(): void {
