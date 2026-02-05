@@ -27,6 +27,11 @@ import { ProfilComponent } from './comptabilite/profil/profil.component';
 import { HeroSectioV2Component } from './comptabilite/hero-sectio-v2/hero-sectio-v2.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// Cost Simulator Components
+import { CostSimulatorComponent } from './departement-comptable/cost-simulator/cost-simulator.component';
+import { CostComparisonComponent } from './departement-comptable/cost-comparison/cost-comparison.component';
+import { DiagnosticResultComponent } from './departement-comptable/diagnostic-result/diagnostic-result.component';
+
 @NgModule({
   declarations: [
     ComptabiliteComponent,
@@ -46,6 +51,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AvantagesComponent,
     ProfilComponent,
     HeroSectioV2Component,
+    // Cost Simulator Components
+    CostSimulatorComponent,
+    CostComparisonComponent,
+    DiagnosticResultComponent,
   ],
   imports: [
     CommonModule,

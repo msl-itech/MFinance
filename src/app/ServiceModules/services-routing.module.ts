@@ -13,6 +13,8 @@ import { ComptabiliteMobileComponent } from '../features-mobile/comptabilite-mob
 import { ServiceMobileComponent } from '../features-mobile/service-mobile/service-mobile.component';
 import { DepartementComptableComponent } from './departement-comptable/departement-comptable.component';
 import { DepartementComptableMobileComponent } from '../features-mobile/departement-comptable-mobile/departement-comptable-mobile.component';
+import { DiagnosticResultComponent } from './departement-comptable/diagnostic-result/diagnostic-result.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -115,10 +117,6 @@ const routes: Routes = [
     ],
     component: FiscaliteMobileComponent,
   },
-  // {
-  //   path: 'departement-comptable',
-  //   canMatch: [
-  //     () => {
   {
     path: 'departement-comptable',
     canMatch: [
@@ -139,7 +137,11 @@ const routes: Routes = [
     ],
     component: DepartementComptableMobileComponent,
   },
-
+  // Diagnostic Result Page (shareable)
+  {
+    path: 'diagnostic/resultat',
+    component: DiagnosticResultComponent,
+  },
 ];
 
 @NgModule({

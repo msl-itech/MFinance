@@ -1,0 +1,115 @@
+<section class="cost-comparison-mobile-section section-padding bg-white mt-4" id="comparatif-mobile">
+    <div class="container px-4">
+        <!-- Header -->
+        <div class="section-header text-center mb-4" data-aos="fade-up">
+            <span class="section-label">
+                <i class="fas fa-lightbulb"></i> Comparatif
+            </span>
+            <h2 class="section-title-mobile">
+                Ce que coûte vraiment un <span class="text-red">service comptable interne</span>
+            </h2>
+            <p class="section-subtitle-mobile">
+                Une ressource interne coûte bien plus qu'un simple salaire : charges sociales, congés, supervision, outils, turnover…
+                <br><strong>Voici un comparatif clair basé sur les moyennes en Wallonie.</strong>
+            </p>
+        </div>
+
+        <!-- Horizontal Scroll for Internal Costs -->
+        <div class="comparison-section mb-4">
+            <h3 class="comparison-title text-center mb-3">
+                <i class="fas fa-building text-red"></i> Coûts internes
+            </h3>
+            <div class="horizontal-scroll-container snap-center">
+                <div class="scroll-item" *ngFor="let item of internalCosts">
+                    <div class="cost-card internal-card">
+                        <div class="card-icon">
+                            <i [class]="item.icon"></i>
+                        </div>
+                        <h4 class="card-role">{{ item.role }}</h4>
+                        <div class="card-salary">
+                            <span class="label">Salaire brut</span>
+                            <span class="value">{{ formatCurrency(item.grossSalary) }}</span>
+                        </div>
+                        <div class="card-cost">
+                            <span class="label">Coût employeur</span>
+                            <span class="value highlight">{{ formatCurrency(item.employerCost) }}/an</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cost-warning text-center mt-3">
+                <i class="fas fa-exclamation-triangle text-warning"></i>
+                <span class="small text-muted">Sans compter : formation, turnover, outils, supervision...</span>
+            </div>
+        </div>
+
+        <!-- VS Divider -->
+        <div class="vs-divider-mobile" data-aos="zoom-in">
+            <div class="vs-badge">VS</div>
+        </div>
+
+        <!-- Horizontal Scroll for MFINANCES Costs -->
+        <div class="comparison-section">
+            <h3 class="comparison-title text-center mb-3">
+                <i class="fas fa-handshake text-success"></i> Tarifs MFINANCES
+                <span class="badge-savings">Jusqu'à -40%</span>
+            </h3>
+            <div class="horizontal-scroll-container snap-center">
+                <div class="scroll-item" *ngFor="let item of mfinancesCosts">
+                    <div class="cost-card mfinances-card" *ngIf="item.fullTime">
+                        <div class="card-icon">
+                            <i [class]="item.icon"></i>
+                        </div>
+                        <h4 class="card-role">{{ item.role }}</h4>
+                        <div class="pricing-options">
+                            <div class="price-option">
+                                <span class="label">Temps plein</span>
+                                <span class="value">{{ formatCurrency(item.fullTime.monthly) }}/mois</span>
+                                <span class="annual">{{ formatCurrency(item.fullTime.annual) }}/an</span>
+                            </div>
+                            <div class="price-option">
+                                <span class="label">Mi-temps</span>
+                                <span class="value">{{ formatCurrency(item.halfTime.monthly) }}/mois</span>
+                            </div>
+                            <div class="price-option">
+                                <span class="label">Tiers-temps</span>
+                                <span class="value">{{ formatCurrency(item.thirdTime.monthly) }}/mois</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cost-card mfinances-card daf-card" *ngIf="!item.fullTime">
+                        <div class="card-icon">
+                            <i [class]="item.icon"></i>
+                        </div>
+                        <h4 class="card-role">{{ item.role }}</h4>
+                        <div class="pricing-options">
+                            <div class="price-option">
+                                <span class="label">Tarif horaire</span>
+                                <span class="value">{{ formatCurrency(item.hourlyRate) }}/h</span>
+                                <span class="annual">HTVA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cost-benefit text-center mt-3">
+                <i class="fas fa-check-circle text-success"></i>
+                <span class="small">Tout inclus : expertise, outils, support, continuité</span>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section-mobile text-center mt-5" data-aos="fade-up">
+            <h3 class="cta-title">
+                <i class="fas fa-bullseye"></i> Simulez votre besoin
+            </h3>
+            <p class="cta-description">
+                Découvrez l'économie réalisée par rapport à un recrutement
+            </p>
+            <button class="btn-cta-primary" (click)="scrollToSimulator()">
+                <i class="fas fa-calculator"></i>
+                Lancer la simulation
+            </button>
+        </div>
+    </div>
+</section>

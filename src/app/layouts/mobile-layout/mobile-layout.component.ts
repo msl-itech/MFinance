@@ -491,7 +491,7 @@ export class MobileLayoutComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onScroll(): void {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const documentHeight =

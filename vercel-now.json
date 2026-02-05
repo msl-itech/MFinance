@@ -16,6 +16,6 @@
     }
   ],
   "env": {
-    "NODE_OPTIONS": "--legacy-peer-deps"
+    "NODE_ENV": "production"
   }
 }
