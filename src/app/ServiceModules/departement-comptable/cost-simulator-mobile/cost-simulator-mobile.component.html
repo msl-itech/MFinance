@@ -1,0 +1,306 @@
+<section class="cost-simulator-mobile-section section-padding bg-light-gray mt-4" id="simulateur-mobile">
+    <div class="container px-4">
+        <!-- Header -->
+        <div class="simulator-header text-center mb-4" data-aos="fade-up">
+            <span class="section-label">
+                <i class="fas fa-calculator"></i> Simulateur
+            </span>
+            <h2 class="section-title-mobile">
+                Calculez votre <span class="text-gradient">économie</span>
+            </h2>
+            <p class="section-subtitle-mobile">
+                Découvrez combien vous pourriez économiser en externalisant votre service comptable
+            </p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" *ngIf="!showResult">
+            <div class="progress-bar-wrapper">
+                <div class="progress-fill" [style.width.%]="progressPercent"></div>
+            </div>
+            <div class="progress-text">Étape {{ currentStep }}/{{ totalSteps }}</div>
+        </div>
+
+        <!-- Simulator Card -->
+        <div class="simulator-card">
+            <!-- Steps Content -->
+            <div class="step-wrapper">
+                <!-- Step 1: Sector -->
+                <div *ngIf="currentStep === 1" class="step-content" @slideInOut>
+                    <div class="step-header">
+                        <span class="step-number">1/7</span>
+                        <h3 class="step-title">Secteur d'activité</h3>
+                        <p class="step-description">Quel est votre secteur ?</p>
+                    </div>
+                    <div class="options-grid">
+                        <button *ngFor="let sector of sectors" class="option-btn"
+                            [class.selected]="formData.sector === sector.value"
+                            (click)="formData.sector = sector.value">
+                            <i [class]="sector.icon"></i>
+                            <span>{{ sector.label }}</span>
+                        </button>
+                    </div>
+                    <div class="other-input" *ngIf="formData.sector === 'autre'">
+                        <input type="text" class="form-input" placeholder="Précisez..."
+                            [(ngModel)]="formData.sectorOther">
+                    </div>
+                </div>
+
+                <!-- Step 2: Revenue -->
+                <div *ngIf="currentStep === 2" class="step-content" @slideInOut>
+                    <div class="step-header">
+                        <span class="step-number">2/7</span>
+                        <h3 class="step-title">Chiffre d'affaires</h3>
+                        <p class="step-description">CA annuel moyen</p>
+                    </div>
+                    <div class="options-grid">
+                        <button *ngFor="let rev of revenues" class="option-btn"
+                            [class.selected]="formData.revenue === rev.value"
+                            (click)="formData.revenue = rev.value">
+                            <i [class]="rev.icon"></i>
+                            <span>{{ rev.label }}</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Odoo -->
+                <div *ngIf="currentStep === 3" class="step-content" @slideInOut>
+                    <div class="step-header">
+                        <span class="step-number">3/7</span>
+                        <h3 class="step-title">Environnement Odoo</h3>
+                        <p class="step-description">Utilisez-vous Odoo ?</p>
+                    </div>
+                    <div class="options-grid-3">
+                        <button *ngFor="let opt of odooOptions" class="option-btn"
+                            [class.selected]="formData.usesOdoo === opt.value"
+                            (click)="formData.usesOdoo = opt.value">
+                            <i [class]="opt.icon"></i>
+                            <span>{{ opt.label }}</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Profiles -->
+                <div *ngIf="currentStep === 4" class="step-content" @slideInOut>
+                    <div class="step-header">
+                        <span class="step-number">4/7</span>
+                        <h3 class="step-title">Profils souhaités</h3>
+                        <p class="step-description">Plusieurs choix possibles</p>
+                    </div>
+                    <div class="options-grid">
+                        <button *ngFor="let profile of profiles" class="option-btn multi-select"
+                            [class.selected]="isProfileSelected(profile.value)"
+                            (click)="toggleProfile(profile.value)">
+                            <div class="checkbox-indicator" *ngIf="isProfileSelected(profile.value)">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <i [class]="profile.icon"></i>
+                            <span>{{ profile.label }}</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Frequencies -->
+                <div *ngIf="currentStep === 5" class="step-content" @slideInOut>
+                    <div class="step-header">
+                        <span class="step-number">5/7</span>
+                        <h3 class="step-title">Fréquence souhaitée</h3>
+                        <p class="step-description">Pour chaque profil</p>
+                    </div>
+                    <div class="profiles-frequency">
+                        <div *ngFor="let profileKey of formData.selectedProfiles" class="profile-config">
+                            <div class="profile-header">
+                                <i [class]="getProfileIcon(profileKey)"></i>
+                                <h4>{{ getProfileLabel(profileKey) }}</h4>
+                            </div>
+                            <div class="frequency-btns">
+                                <button *ngFor="let freq of frequencies" class="freq-btn"
+                                    [class.selected]="formData.profileFrequencies[profileKey]?.frequency === freq.value"
+                                    (click)="formData.profileFrequencies[profileKey].frequency = freq.value">
+                                    {{ freq.label }}
+                                </button>
+                            </div>
+                            <div class="duration-selector">
+                                <label><i class="fas fa-calendar"></i> Durée</label>
+                                <select class="form-input" [(ngModel)]="formData.profileFrequencies[profileKey].months">
+                                    <option [value]="1">1 mois</option>
+                                    <option [value]="2">2 mois</option>
+                                    <option [value]="3">3 mois</option>
+                                    <option [value]="4">4 mois</option>
+                                    <option [value]="5">5 mois</option>
+                                    <option [value]="6">6 mois</option>
+                                    <option [value]="7">7 mois</option>
+                                    <option [value]="8">8 mois</option>
+                                    <option [value]="9">9 mois</option>
+                                    <option [value]="10">10 mois</option>
+                                    <option [value]="11">11 mois</option>
+                                    <option [value]="12">12 mois</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Contact -->
+                <div *ngIf="currentStep === 6" class="step-content" @slideInOut>
+                    <div class="step-header">
+                        <span class="step-number">6/7</span>
+                        <h3 class="step-title">Vos coordonnées</h3>
+                        <p class="step-description">Pour votre diagnostic</p>
+                    </div>
+                    <div class="contact-form">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> Nom *</label>
+                            <input type="text" class="form-input" placeholder="Votre nom"
+                                [(ngModel)]="formData.name">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> Email *</label>
+                            <input type="email" class="form-input" placeholder="votre@email.com"
+                                [(ngModel)]="formData.email">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone"></i> Téléphone *</label>
+                            <input type="tel" class="form-input" placeholder="+32 XXX XX XX XX"
+                                [(ngModel)]="formData.phone">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-clock"></i> Créneau préféré</label>
+                            <select class="form-input" [(ngModel)]="formData.preferredTime">
+                                <option value="">Sélectionnez...</option>
+                                <option *ngFor="let time of preferredTimes" [value]="time.value">
+                                    {{ time.label }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-calendar"></i> Jour préféré</label>
+                            <select class="form-input" [(ngModel)]="formData.preferredDay">
+                                <option value="">Sélectionnez...</option>
+                                <option *ngFor="let day of preferredDays" [value]="day">{{ day }}</option>
+                            </select>
+                        </div>
+                        <div class="rgpd-consent">
+                            <label class="checkbox-label-custom">
+                                <input type="checkbox" [(ngModel)]="formData.rgpdConsent" id="rgpdConsent">
+                                <div class="custom-checkbox" [class.checked]="formData.rgpdConsent">
+                                    <i class="fas fa-check" *ngIf="formData.rgpdConsent"></i>
+                                </div>
+                                <span class="consent-text">J'accepte d'être recontacté(e) pour discuter de mes besoins <span class="required">*</span></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 7: Results -->
+                <div *ngIf="currentStep === 7 && showResult" class="step-content result-step" @slideInOut>
+                    <div class="result-header">
+                        <div class="result-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="result-title">Votre estimation</h3>
+                        <p class="result-subtitle">Basée sur les moyennes en Wallonie</p>
+                    </div>
+
+                    <div *ngIf="simulationResult" class="result-content">
+                        <!-- Comparison -->
+                        <div class="comparison-cards-mobile">
+                            <div class="comparison-card-mobile internal">
+                                <span class="card-label">Coût interne</span>
+                                <span class="card-value">{{ formatCurrency(simulationResult.totalInternalCost) }}</span>
+                                <span class="card-period">/an</span>
+                            </div>
+                            <div class="vs-badge-mobile">VS</div>
+                            <div class="comparison-card-mobile mfinances">
+                                <span class="card-label">MFINANCES</span>
+                                <span class="card-value">{{ formatCurrency(simulationResult.totalMfinancesCost) }}</span>
+                                <span class="card-period">/an</span>
+                            </div>
+                        </div>
+
+                        <!-- Savings -->
+                        <div class="savings-highlight-mobile">
+                            <div class="savings-icon">
+                                <i class="fas fa-piggy-bank"></i>
+                            </div>
+                            <div class="savings-content">
+                                <span class="savings-label">Économie réalisée</span>
+                                <span class="savings-value">{{ formatCurrency(simulationResult.savings) }}</span>
+                                <span class="savings-percent">{{ simulationResult.savingsPercent }}% d'économie</span>
+                            </div>
+                        </div>
+
+                        <!-- Profile Details -->
+                        <div class="profile-breakdown-mobile">
+                            <h4>Détail par profil</h4>
+                            <div class="breakdown-item" *ngFor="let profile of simulationResult.profiles">
+                                <div class="item-header">
+                                    <i [class]="profile.icon"></i>
+                                    <span class="item-name">{{ profile.label }}</span>
+                                </div>
+                                <div class="item-detail">
+                                    <span>{{ profile.frequency }} - {{ profile.months }} mois</span>
+                                </div>
+                                <div class="item-costs">
+                                    <div class="cost-item internal">
+                                        <span class="label">Interne</span>
+                                        <span class="value">{{ formatCurrency(profile.internalCost) }}</span>
+                                    </div>
+                                    <div class="cost-item mfinances">
+                                        <span class="label">MFINANCES</span>
+                                        <span class="value">{{ formatCurrency(profile.mfinancesCost) }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Share Section -->
+                        <div class="share-section-mobile">
+                            <h4><i class="fas fa-share-alt"></i> Partager ce résultat</h4>
+                            <p class="share-description">Demandez un avis à un associé ou expert</p>
+                            <div class="share-buttons">
+                                <button class="share-btn whatsapp" (click)="shareOnWhatsApp()">
+                                    <i class="fab fa-whatsapp"></i>
+                                    WhatsApp
+                                </button>
+                                <button class="share-btn copy" (click)="copyShareMessage()" [class.copied]="resultCopied">
+                                    <i class="fas" [class.fa-copy]="!resultCopied" [class.fa-check]="resultCopied"></i>
+                                    {{ resultCopied ? 'Copié !' : 'Copier' }}
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="result-cta-mobile">
+                            <a href="https://odoo.mfinances.be/book/4781b4d3" target="_blank" class="cta-btn primary">
+                                <i class="fas fa-calendar-check"></i>
+                                Réserver un appel
+                            </a>
+                            <button class="cta-btn secondary" (click)="resetSimulator()">
+                                <i class="fas fa-redo"></i>
+                                Nouvelle simulation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading -->
+                <div *ngIf="currentStep === 7 && isLoading" class="loading-state">
+                    <div class="loading-spinner"></div>
+                    <p>Calcul en cours...</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="simulator-nav-mobile" *ngIf="!showResult && !isLoading">
+                <button class="nav-btn prev" (click)="prevStep()" [disabled]="currentStep === 1">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="nav-btn next" (click)="nextStep()" [disabled]="!canProceed()">
+                    {{ currentStep === 6 ? 'Voir résultat' : 'Suivant' }}
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
