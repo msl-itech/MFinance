@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-avantages',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './avantages.component.css'
 })
 export class AvantagesComponent {
+  @Output() simulatorClick = new EventEmitter<void>();
 
+  onSimulatorClick(): void {
+    this.simulatorClick.emit();
+  }
 }

@@ -24,6 +24,22 @@ import { DEPT_COMPTA_FORM_CONFIG } from '../../shared/contact-form-layout/contac
       transition('closed <=> open', [
         animate('400ms cubic-bezier(0.4, 0, 0.2, 1)')
       ])
+    ]),
+    trigger('popupAnimation', [
+      state('closed', style({
+        opacity: '0',
+        transform: 'scale(0.9) translateY(20px)'
+      })),
+      state('open', style({
+        opacity: '1',
+        transform: 'scale(1) translateY(0)'
+      })),
+      transition('closed => open', [
+        animate('300ms cubic-bezier(0.4, 0, 0.2, 1)')
+      ]),
+      transition('open => closed', [
+        animate('200ms cubic-bezier(0.4, 0, 0.2, 1)')
+      ])
     ])
   ]
 })
@@ -39,6 +55,10 @@ export class DepartementComptableComponent implements AfterViewInit {
   formConfig = DEPT_COMPTA_FORM_CONFIG;
   showAutreSecteur = false;
   showAutreBesoin = false;
+
+  // Popup Simulateur
+  isSimulatorPopupOpen = false;
+  isFloatingPopupDismissed = false;
 
   // Données du formulaire
   formData = {
@@ -277,5 +297,21 @@ export class DepartementComptableComponent implements AfterViewInit {
     if (contactElement) {
       contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  // Méthodes pour le popup du simulateur
+  openSimulatorPopup(): void {
+    this.isSimulatorPopupOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeSimulatorPopup(): void {
+    this.isSimulatorPopupOpen = false;
+    document.body.style.overflow = '';
+  }
+
+  dismissFloatingPopup(event: Event): void {
+    event.stopPropagation();
+    this.isFloatingPopupDismissed = true;
   }
 }

@@ -2093,3 +2093,698 @@
         text-align: center;
     }
 }
+
+/* ============================================
+   CTA SIMULATOR SECTION
+   ============================================ */
+
+.cta-simulator-section {
+    padding: 60px 0;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.cta-simulator-card {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 24px;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(15, 23, 42, 0.25);
+}
+
+.cta-simulator-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff3333, #ff6b6b, #fbbf24);
+}
+
+.cta-simulator-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 51, 51, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.cta-simulator-content {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-simulator-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff3333, #ff6b6b);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(243, 73, 71, 0.4);
+}
+
+.cta-simulator-icon .icon-pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ff3333, #ff6b6b);
+    animation: ctaPulse 2s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes ctaPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0;
+    }
+}
+
+.cta-simulator-text {
+    flex: 1;
+}
+
+.cta-simulator-text h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+.cta-simulator-text p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.cta-simulator-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    background: linear-gradient(135deg, #ff3333, #ff6b6b);
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(243, 73, 71, 0.4);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.cta-simulator-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(243, 73, 71, 0.5);
+}
+
+.cta-simulator-btn i {
+    transition: transform 0.3s ease;
+}
+
+.cta-simulator-btn:hover i {
+    transform: translateX(5px);
+}
+
+.cta-simulator-badges {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.cta-simulator-badges span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.cta-simulator-badges span i {
+    color: #ff6b6b;
+}
+
+/* Responsive CTA Simulator */
+@media (max-width: 992px) {
+    .cta-simulator-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-simulator-text {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-simulator-card {
+        padding: 32px 24px;
+    }
+
+    .cta-simulator-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 1.5rem;
+    }
+
+    .cta-simulator-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .cta-simulator-text p {
+        font-size: 0.9rem;
+    }
+
+    .cta-simulator-btn {
+        padding: 14px 24px;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cta-simulator-badges {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .cta-simulator-badges span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-simulator-section {
+        padding: 40px 0;
+    }
+
+    .cta-simulator-card {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .cta-simulator-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+/* ============================================
+   SIMULATOR FLOATING CARD POPUP
+   ============================================ */
+
+/* Floating Card */
+.simulator-floating-card {
+    position: fixed;
+    right: 24px;
+    bottom: 100px;
+    z-index: 1000;
+    width: 320px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    animation: floatIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Close Button */
+.floating-card-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.floating-card-close:hover {
+    background: rgba(243, 73, 71, 0.2);
+    color: #ff3333;
+    transform: rotate(90deg);
+}
+
+/* Card Content */
+.floating-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+/* Icon */
+.floating-card-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #ff3333, #ff6b6b);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.6rem;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(243, 73, 71, 0.4);
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 12px 30px rgba(243, 73, 71, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 12px 40px rgba(243, 73, 71, 0.6);
+    }
+}
+
+.icon-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 24px;
+    height: 24px;
+    background: #fbbf24;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a2c51;
+    font-size: 0.7rem;
+    border: 2px solid rgba(15, 23, 42, 0.95);
+    animation: badgeBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes badgeBounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* Text */
+.floating-card-text h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.floating-card-text p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 6px 0 0 0;
+    line-height: 1.5;
+}
+
+/* Features */
+.floating-card-features {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.floating-card-features span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 12px;
+    border-radius: 50px;
+}
+
+.floating-card-features span i {
+    color: #ff6b6b;
+    font-size: 0.75rem;
+}
+
+/* CTA Button */
+.floating-card-cta {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #ff3333, #ff6b6b);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(243, 73, 71, 0.35);
+    margin-top: 4px;
+}
+
+.floating-card-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(243, 73, 71, 0.5);
+}
+
+.floating-card-cta i {
+    transition: transform 0.3s ease;
+}
+
+.floating-card-cta:hover i {
+    transform: translateX(4px);
+}
+
+/* Simulator Popup Overlay */
+.simulator-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 17, 32, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.simulator-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Popup Container */
+.simulator-popup-container {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+    max-width: 1200px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Popup Header */
+.simulator-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.popup-header-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.popup-header-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #ff3333, #ff6b6b);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.4rem;
+    box-shadow: 0 8px 24px rgba(243, 73, 71, 0.3);
+}
+
+.popup-header-text h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 4px 0;
+}
+
+.popup-header-text p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+.popup-close-btn {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-close-btn:hover {
+    background: rgba(243, 73, 71, 0.2);
+    color: #ff3333;
+    transform: rotate(90deg);
+}
+
+/* Popup Body */
+.simulator-popup-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.simulator-popup-body app-cost-simulator {
+    display: block;
+}
+
+/* Override simulator section inside popup to remove section padding */
+.simulator-popup-body ::ng-deep .cost-simulator-section {
+    padding: 20px 0;
+    min-height: auto;
+}
+
+.simulator-popup-body ::ng-deep .simulator-header {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.simulator-popup-body ::ng-deep .simulator-layout {
+    padding: 0 20px;
+}
+
+/* Scrollbar Styling for popup */
+.simulator-popup-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.simulator-popup-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.simulator-popup-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+}
+
+.simulator-popup-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive for Floating Card & Popup */
+@media (max-width: 768px) {
+    .simulator-floating-card {
+        right: 16px;
+        bottom: 80px;
+        width: 300px;
+    }
+
+    .floating-card-content {
+        padding: 20px;
+        gap: 14px;
+    }
+
+    .floating-card-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.4rem;
+    }
+
+    .floating-card-text h4 {
+        font-size: 1.05rem;
+    }
+
+    .floating-card-text p {
+        font-size: 0.8rem;
+    }
+
+    .floating-card-cta {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .simulator-popup-container {
+        border-radius: 16px;
+        max-height: 95vh;
+    }
+
+    .simulator-popup-header {
+        padding: 16px 20px;
+    }
+
+    .popup-header-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .popup-header-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .popup-close-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .simulator-floating-card {
+        right: 12px;
+        left: 12px;
+        bottom: 70px;
+        width: auto;
+    }
+
+    .floating-card-content {
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .floating-card-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 1.3rem;
+    }
+
+    .icon-badge {
+        width: 22px;
+        height: 22px;
+        font-size: 0.65rem;
+    }
+
+    .floating-card-text h4 {
+        font-size: 1rem;
+    }
+
+    .floating-card-features {
+        gap: 10px;
+    }
+
+    .floating-card-features span {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .floating-card-cta {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+
+    .simulator-popup-overlay {
+        padding: 10px;
+    }
+
+    .simulator-popup-container {
+        border-radius: 12px;
+    }
+
+    .simulator-popup-header {
+        padding: 14px 16px;
+        gap: 10px;
+    }
+
+    .popup-header-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    .popup-header-text h3 {
+        font-size: 1rem;
+    }
+
+    .popup-header-text p {
+        font-size: 0.8rem;
+    }
+}

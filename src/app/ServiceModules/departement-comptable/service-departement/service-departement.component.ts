@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-service-departement',
@@ -7,6 +7,12 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 })
 export class ServiceDepartementComponent implements OnInit, AfterViewInit {
   currentIndex: number = 0;
+
+  @Output() simulatorClick = new EventEmitter<void>();
+
+  onSimulatorClick(): void {
+    this.simulatorClick.emit();
+  }
 
   ngOnInit(): void {
     // Initialisation
