@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ToastrService } from 'ngx-toastr';
 import * as AOS from 'aos';
@@ -43,7 +43,7 @@ import { DEPT_COMPTA_FORM_CONFIG } from '../../shared/contact-form-layout/contac
     ])
   ]
 })
-export class DepartementComptableComponent implements AfterViewInit {
+export class DepartementComptableComponent implements AfterViewInit, OnInit, OnDestroy {
   // Gestion de l'accordéon
   activeAccordionItem: number = 1;
 
@@ -59,6 +59,9 @@ export class DepartementComptableComponent implements AfterViewInit {
   // Popup Simulateur
   isSimulatorPopupOpen = false;
   isFloatingPopupDismissed = false;
+  showFloatingPopup = false;
+  private floatingPopupTimer: any;
+  private simulatorObserver: IntersectionObserver | null = null;
 
   // Données du formulaire
   formData = {
@@ -91,10 +94,58 @@ export class DepartementComptableComponent implements AfterViewInit {
     private toastr: ToastrService
   ) { }
 
+  ngOnInit() {
+    // Afficher le popup flottant après 3 secondes
+    this.floatingPopupTimer = setTimeout(() => {
+      if (!this.isSimulatorPopupOpen) {
+        this.showFloatingPopup = true;
+      }
+    }, 3000);
+
+    // Observer pour masquer le popup quand on arrive sur la section simulateur
+    this.setupSimulatorObserver();
+  }
+
+  ngOnDestroy() {
+    // Nettoyer le timer si le composant est détruit
+    if (this.floatingPopupTimer) {
+      clearTimeout(this.floatingPopupTimer);
+    }
+    // Nettoyer l'observer
+    if (this.simulatorObserver) {
+      this.simulatorObserver.disconnect();
+    }
+  }
+
   ngAfterViewInit() {
     setTimeout(() => {
       AOS.refresh();
     }, 150);
+  }
+
+  private setupSimulatorObserver(): void {
+    // Attendre que le DOM soit prêt
+    setTimeout(() => {
+      const simulatorSection = document.getElementById('costSimulatorSection');
+      if (simulatorSection) {
+        this.simulatorObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Masquer le popup quand la section simulateur est visible
+                this.showFloatingPopup = false;
+              }
+            });
+          },
+          {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 // Déclencher quand 10% de la section est visible
+          }
+        );
+        this.simulatorObserver.observe(simulatorSection);
+      }
+    }, 500);
   }
 
   // Gestion du changement de secteur
@@ -302,6 +353,7 @@ export class DepartementComptableComponent implements AfterViewInit {
   // Méthodes pour le popup du simulateur
   openSimulatorPopup(): void {
     this.isSimulatorPopupOpen = true;
+    this.showFloatingPopup = false; // Masquer le popup flottant pendant la simulation
     document.body.style.overflow = 'hidden';
   }
 
