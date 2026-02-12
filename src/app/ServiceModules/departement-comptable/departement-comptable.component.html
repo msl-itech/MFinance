@@ -552,7 +552,9 @@
 <app-cost-comparison></app-cost-comparison>
 
 <!-- Simulateur de coût interactif -->
-<app-cost-simulator></app-cost-simulator>
+<div id="costSimulatorSection">
+    <app-cost-simulator></app-cost-simulator>
+</div>
 <!-- CTA Final - Premium -->
 <section class="cta-final-section">
     <div class="cta-background">
@@ -1027,8 +1029,8 @@
 </app-contact-form-layout>
 
 <!-- Floating Simulator Card Popup -->
-<div class="simulator-floating-card" *ngIf="!isSimulatorPopupOpen && !isFloatingPopupDismissed" data-aos="fade-up"
-    data-aos-offset="0">
+<div class="simulator-floating-card" *ngIf="showFloatingPopup && !isSimulatorPopupOpen && !isFloatingPopupDismissed"
+    data-aos="fade-up" data-aos-offset="0">
     <!-- Close button -->
     <button class="floating-card-close" (click)="dismissFloatingPopup($event)">
         <i class="fas fa-times"></i>
@@ -1039,24 +1041,25 @@
         <div class="floating-card-icon">
             <i class="fas fa-calculator"></i>
             <div class="icon-badge">
-                <i class="fas fa-bolt"></i>
+                <i class="fas fa-chart-line"></i>
             </div>
         </div>
 
         <div class="floating-card-text">
-            <h4>Combien pourriez-vous économiser ?</h4>
-            <p>Calculez vos économies en externalisant votre comptabilité</p>
-        </div>
-
-        <div class="floating-card-features">
-            <span><i class="fas fa-clock"></i> 2 min</span>
-            <span><i class="fas fa-shield-alt"></i> Gratuit</span>
+            <h4>Estimez le coût de votre département comptable externalisé</h4>
+            <p class="floating-card-subtitle">Simulation rapide et confidentielle</p>
+            <p class="floating-card-detail">avec collaborateurs dédiés, intégrés à votre environnement Odoo</p>
         </div>
 
         <button class="floating-card-cta" (click)="openSimulatorPopup()">
-            <span>Lancer le simulateur</span>
+            <span>Lancer la simulation</span>
             <i class="fas fa-arrow-right"></i>
         </button>
+
+        <div class="floating-card-reassurance">
+            <span><i class="fas fa-lock"></i> Confidentiel</span>
+            <span><i class="fas fa-chart-bar"></i> Sans engagement</span>
+        </div>
     </div>
 </div>
 

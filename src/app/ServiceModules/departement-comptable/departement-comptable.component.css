@@ -2327,8 +2327,9 @@
     right: 24px;
     bottom: 100px;
     z-index: 1000;
-    width: 320px;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+    width: 340px;
+    max-width: calc(100vw - 48px);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
     backdrop-filter: blur(20px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2451,11 +2452,74 @@
     line-height: 1.3;
 }
 
+.floating-card-text .floating-card-subtitle {
+    font-size: 0.95rem;
+    color: #fbbf24;
+    font-weight: 600;
+    margin: 8px 0 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.floating-card-text .floating-card-detail {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.5;
+    font-style: italic;
+}
+
 .floating-card-text p {
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);
     margin: 6px 0 0 0;
     line-height: 1.5;
+}
+
+/* Intro Section */
+.floating-card-intro {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 14px 16px;
+    border-left: 3px solid #ff6b6b;
+}
+
+.floating-card-intro p {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.floating-card-intro .floating-card-cta-text {
+    color: #fbbf24;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
+/* Reassurance Section */
+.floating-card-reassurance {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px 0 0 0;
+    margin-top: 4px;
+}
+
+.floating-card-reassurance span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.floating-card-reassurance span i {
+    color: #22c55e;
+    font-size: 0.7rem;
 }
 
 /* Features */
@@ -2665,7 +2729,8 @@
     .simulator-floating-card {
         right: 16px;
         bottom: 80px;
-        width: 300px;
+        width: 340px;
+        max-width: calc(100vw - 32px);
     }
 
     .floating-card-content {
@@ -2683,8 +2748,31 @@
         font-size: 1.05rem;
     }
 
-    .floating-card-text p {
+    .floating-card-text p,
+    .floating-card-text .floating-card-subtitle,
+    .floating-card-text .floating-card-detail {
         font-size: 0.8rem;
+    }
+
+    .floating-card-intro {
+        padding: 12px 14px;
+    }
+
+    .floating-card-intro p {
+        font-size: 0.78rem;
+    }
+
+    .floating-card-intro .floating-card-cta-text {
+        font-size: 0.8rem;
+    }
+
+    .floating-card-reassurance {
+        padding: 12px 14px;
+        gap: 6px;
+    }
+
+    .floating-card-reassurance span {
+        font-size: 0.72rem;
     }
 
     .floating-card-cta {
@@ -2726,38 +2814,65 @@
     }
 
     .floating-card-content {
-        padding: 18px;
-        gap: 12px;
-    }
-
-    .floating-card-icon {
-        width: 52px;
-        height: 52px;
-        font-size: 1.3rem;
-    }
-
-    .icon-badge {
-        width: 22px;
-        height: 22px;
-        font-size: 0.65rem;
-    }
-
-    .floating-card-text h4 {
-        font-size: 1rem;
-    }
-
-    .floating-card-features {
+        padding: 16px;
         gap: 10px;
     }
 
-    .floating-card-features span {
+    .floating-card-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+
+    .icon-badge {
+        width: 20px;
+        height: 20px;
+        font-size: 0.6rem;
+    }
+
+    .floating-card-text h4 {
+        font-size: 0.95rem;
+    }
+
+    .floating-card-text .floating-card-subtitle {
         font-size: 0.75rem;
-        padding: 5px 10px;
+    }
+
+    .floating-card-text .floating-card-detail {
+        font-size: 0.72rem;
+    }
+
+    .floating-card-intro {
+        padding: 10px 12px;
+    }
+
+    .floating-card-intro p {
+        font-size: 0.72rem;
+    }
+
+    .floating-card-intro .floating-card-cta-text {
+        font-size: 0.75rem;
+        margin-top: 8px;
+    }
+
+    .floating-card-reassurance {
+        padding: 10px 12px;
+        gap: 5px;
+    }
+
+    .floating-card-reassurance span {
+        font-size: 0.68rem;
+        gap: 8px;
+    }
+
+    .floating-card-reassurance span i {
+        width: 16px;
+        font-size: 0.65rem;
     }
 
     .floating-card-cta {
-        padding: 12px 18px;
-        font-size: 0.9rem;
+        padding: 11px 16px;
+        font-size: 0.85rem;
     }
 
     .simulator-popup-overlay {
