@@ -902,23 +902,47 @@
   }
 
   .section-title {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .section-title h2 {
     font-size: 2rem;
   }
 
+  .support-process {
+    gap: 1.2rem;
+  }
+
+  .support-container {
+    margin-bottom: 3rem;
+  }
+
   .process-step {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.2rem;
+    height: auto;
   }
 
   .step-icon {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
     margin-right: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .step-icon i {
+    font-size: 1.8rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .step-content p {
+    font-size: 0.95rem;
   }
 
   .contact-section {

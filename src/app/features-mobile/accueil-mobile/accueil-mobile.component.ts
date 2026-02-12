@@ -51,7 +51,7 @@ export class AccueilMobileComponent implements OnInit {
     // Initialisation du composant
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onScroll(): void {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     this.isScrolled = scrollTop > 10;
