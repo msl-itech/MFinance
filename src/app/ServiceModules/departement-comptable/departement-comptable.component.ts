@@ -350,6 +350,14 @@ export class DepartementComptableComponent implements AfterViewInit, OnInit, OnD
     }
   }
 
+  scrollToSimulator(): void {
+    this.showFloatingPopup = false;
+    const element = document.getElementById('costSimulatorSection');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
   // Méthodes pour le popup du simulateur
   openSimulatorPopup(): void {
     this.isSimulatorPopupOpen = true;
