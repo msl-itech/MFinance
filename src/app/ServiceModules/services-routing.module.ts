@@ -16,6 +16,15 @@ import { DepartementComptableMobileComponent } from '../features-mobile/departem
 import { DiagnosticResultComponent } from './departement-comptable/diagnostic-result/diagnostic-result.component';
 
 const routes: Routes = [
+  // ============================================
+  // REDIRECTIONS (ordre important - avant les routes réelles)
+  // ============================================
+  { path: 'declaration-impot', redirectTo: 'declaration-impots', pathMatch: 'full' },
+  { path: 'departement-comptable', redirectTo: 'departement-comptable-externalise', pathMatch: 'full' },
+
+  // ============================================
+  // ROUTES RÉELLES
+  // ============================================
   {
     path: '',
     canMatch: [
@@ -78,7 +87,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'declaration-impot',
+    path: 'declaration-impots',
     canMatch: [
       () => {
         const deviceService = inject(DeviceService);
@@ -88,7 +97,7 @@ const routes: Routes = [
     component: DeclarationImpotComponent,
   },
   {
-    path: 'declaration-impot',
+    path: 'declaration-impots',
     canMatch: [
       () => {
         const deviceService = inject(DeviceService);
@@ -118,7 +127,7 @@ const routes: Routes = [
     component: FiscaliteMobileComponent,
   },
   {
-    path: 'departement-comptable',
+    path: 'departement-comptable-externalise',
     canMatch: [
       () => {
         const deviceService = inject(DeviceService);
@@ -128,7 +137,7 @@ const routes: Routes = [
     component: DepartementComptableComponent,
   },
   {
-    path: 'departement-comptable',
+    path: 'departement-comptable-externalise',
     canMatch: [
       () => {
         const deviceService = inject(DeviceService);

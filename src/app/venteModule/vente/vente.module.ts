@@ -12,8 +12,10 @@ import { PromoSocieteComponent } from '../promo-societe/promo-societe.component'
 import { SalarieIndependantComponent } from '../salarie-independant/salarie-independant.component';
 import { TimelineGuerrePrixComponent } from '../timeline-guerre-prix/timeline-guerre-prix.component';
 import { TimelineSocieteComponent } from '../timeline-societe/timeline-societe.component';
-import { VenteRoutingModule } from './vente-routing.module';
+import { StrategieRoutingModule } from './vente-routing.module';
 
+// Note: Le dossier est toujours nommé "venteModule" pour préserver l'historique Git.
+// Seul le nom de la classe a été renommé de VenteModule → StrategieModule.
 @NgModule({
   declarations: [
     PassageSocieteComponent,
@@ -25,6 +27,6 @@ import { VenteRoutingModule } from './vente-routing.module';
     CompteCourantAdministrateurComponent,
     BoosteEntrepriseComponent,
   ],
-  imports: [CommonModule, FormsModule, ShardeModuleModule, VenteRoutingModule, PassageSocieteMobileComponent, SalarieIndependantMobileComponent],
+  imports: [CommonModule, FormsModule, ShardeModuleModule, StrategieRoutingModule, PassageSocieteMobileComponent, SalarieIndependantMobileComponent],
 })
-export class VenteModule {}
+export class StrategieModule {}

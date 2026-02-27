@@ -10,6 +10,15 @@ import { SalarieIndependantComponent } from '../salarie-independant/salarie-inde
 import { BoosteEntrepriseMobileComponent } from '../../features-mobile/booste-entreprise-mobile/booste-entreprise-mobile.component';
 
 const routes: Routes = [
+  // ============================================
+  // REDIRECTIONS (ordre important - avant les routes réelles)
+  // ============================================
+  { path: 'compte-courant', redirectTo: 'compte-courant-administrateur', pathMatch: 'full' },
+  { path: 'salarie-independant', redirectTo: 'salarie-vers-independant', pathMatch: 'full' },
+
+  // ============================================
+  // ROUTES RÉELLES
+  // ============================================
     {
       path: '',
       canMatch: [
@@ -51,7 +60,7 @@ const routes: Routes = [
     component: PassageSocieteMobileComponent,
   },
   {
-    path: 'compte-courant',
+    path: 'compte-courant-administrateur',
     canMatch: [
       () => {
         const deviceService = inject(DeviceService);
@@ -61,7 +70,7 @@ const routes: Routes = [
     component: CompteCourantAdministrateurComponent,
   },
   {
-    path: 'compte-courant',
+    path: 'compte-courant-administrateur',
     canMatch: [
       () => {
         const deviceService = inject(DeviceService);
@@ -71,11 +80,13 @@ const routes: Routes = [
     component: CompteCourantAdministrateurMobileComponent,
   },
 
-  { path: 'salarie-independant', component: SalarieIndependantComponent },
+  { path: 'salarie-vers-independant', component: SalarieIndependantComponent },
 ];
 
+// Note: Le dossier et fichier gardent leur nom original (vente-routing.module.ts)
+// pour préserver l'historique Git. Seule la classe est renommée.
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class VenteRoutingModule {}
+export class StrategieRoutingModule {}

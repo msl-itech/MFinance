@@ -2,35 +2,40 @@
 const fs = require("fs");
 const path = require("path");
 
-// Liste des routes à pré-rendre pour le SEO
+// Liste des routes à pré-rendre pour le SEO (MISE À JOUR RESTRUCTURATION 2025)
 const routes = [
   "",
-  "accueil",
-  "about",
+  "a-propos",
   "contact",
-  "tarif",
-  "profil-independant",
-  "absl",
-  "societe-management-patrimoniale",
-  "societe-moyen",
-  "societe-exploitation",
-  "commercant-horeca",
-  "professionel-sante",
-  "grande-entreprise",
-  "promoteur-immobilier",
+  "tarifs",
+  // Profils (métier)
+  "profils/independant-startup",
+  "profils/commercant-horeca",
+  "profils/professionnel-sante",
+  "profils/grande-entreprise",
+  "profils/promoteur-immobilier",
+  // Structures (juridique)
+  "structures/asbl",
+  "structures/societe-exploitation",
+  "structures/societe-management-patrimoniale",
+  "structures/societe-de-moyens",
+  // Services
   "services",
+  "services/creation-entreprise",
   "services/comptabilite",
   "services/fiscalite",
-  "services/creation-entreprise",
-  "services/declaration-impot",
-  "vente",
-  "vente/passage-en-societe",
-  "vente/compte-courant",
-  "vente/salarie-independant",
+  "services/declaration-impots",
+  "services/departement-comptable-externalise",
+  // Stratégie d'entreprise
+  "strategie",
+  "strategie/salarie-vers-independant",
+  "strategie/passage-en-societe",
+  "strategie/compte-courant-administrateur",
+  // Trésorerie
   "tresorerie",
   "tresorerie/tresorerie-benefice",
-  "tresorerie/investir-tresorerie",
-  "tresorerie/optimiser-stock",
+  "tresorerie/investir-sa-tresorerie",
+  "tresorerie/optimiser-son-stock",
   "tresorerie/alerte-tresorerie",
   "tresorerie/proteger-sa-tresorerie",
   "tresorerie/anticiper-sa-tresorerie",
@@ -46,12 +51,7 @@ function getMetaTagsForRoute(route, subRoute = null) {
       description:
         "MFinances est un cabinet d'expertise comptable à Bruxelles offrant des services de comptabilité, fiscalité et conseil aux entreprises et indépendants.",
     },
-    accueil: {
-      title: "MFinances - Cabinet d'expertise comptable à Bruxelles",
-      description:
-        "MFinances est un cabinet d'expertise comptable à Bruxelles offrant des services de comptabilité, fiscalité et conseil aux entreprises et indépendants.",
-    },
-    about: {
+    "a-propos": {
       title: "À propos de MFinances - Notre expertise comptable",
       description:
         "Découvrez MFinances, cabinet d'expertise comptable à Bruxelles. Notre équipe de professionnels vous accompagne dans la gestion financière de votre entreprise.",
@@ -61,65 +61,20 @@ function getMetaTagsForRoute(route, subRoute = null) {
       description:
         "Contactez notre cabinet d'expertise comptable à Bruxelles. Notre équipe est à votre disposition pour répondre à vos questions et vous accompagner.",
     },
-    tarif: {
+    tarifs: {
       title: "Tarifs MFinances - Services d'expertise comptable",
       description:
         "Découvrez nos tarifs pour nos services d'expertise comptable, fiscalité et conseil aux entreprises et indépendants à Bruxelles.",
-    },
-    "profil-independant": {
-      title: "Services comptables pour indépendants - MFinances",
-      description:
-        "MFinances propose des services comptables adaptés aux besoins des indépendants à Bruxelles. Comptabilité, fiscalité et conseil personnalisé.",
-    },
-    absl: {
-      title: "Services comptables pour ASBL - MFinances",
-      description:
-        "MFinances propose des services comptables spécialisés pour les ASBL à Bruxelles. Comptabilité, fiscalité et conseil adapté aux associations.",
-    },
-    "societe-management-patrimoniale": {
-      title: "Expertise comptable pour sociétés patrimoniales - MFinances",
-      description:
-        "MFinances accompagne les sociétés de management patrimonial à Bruxelles avec des services comptables et fiscaux adaptés à la gestion de patrimoine.",
-    },
-    "societe-moyen": {
-      title: "Services comptables pour PME - MFinances",
-      description:
-        "MFinances propose des services comptables et fiscaux adaptés aux PME à Bruxelles. Optimisation fiscale, comptabilité et conseil pour votre entreprise.",
-    },
-    "societe-exploitation": {
-      title: "Expertise comptable pour sociétés d'exploitation - MFinances",
-      description:
-        "MFinances accompagne les sociétés d'exploitation à Bruxelles avec des services comptables et fiscaux adaptés à leurs besoins spécifiques.",
-    },
-    "commercant-horeca": {
-      title: "Services comptables pour commerçants et Horeca - MFinances",
-      description:
-        "MFinances propose des services comptables spécialisés pour les commerçants et le secteur Horeca à Bruxelles. Comptabilité, fiscalité et conseil adapté.",
-    },
-    "professionel-sante": {
-      title: "Expertise comptable pour professionnels de santé - MFinances",
-      description:
-        "MFinances accompagne les professionnels de santé à Bruxelles avec des services comptables et fiscaux adaptés à leur secteur d'activité.",
-    },
-    "grande-entreprise": {
-      title: "Services comptables pour grandes entreprises - MFinances",
-      description:
-        "MFinances propose des services comptables et fiscaux pour les grandes entreprises à Bruxelles. Expertise, conseil et accompagnement personnalisé.",
-    },
-    "promoteur-immobilier": {
-      title: "Expertise comptable pour promoteurs immobiliers - MFinances",
-      description:
-        "MFinances accompagne les promoteurs immobiliers à Bruxelles avec des services comptables et fiscaux adaptés au secteur de l'immobilier.",
     },
     services: {
       title: "Nos services d'expertise comptable - MFinances",
       description:
         "Découvrez les services d'expertise comptable proposés par MFinances à Bruxelles. Comptabilité, fiscalité, audit et conseil pour votre entreprise.",
     },
-    vente: {
-      title: "Services de vente et acquisition - MFinances",
+    strategie: {
+      title: "Stratégie d'entreprise - MFinances",
       description:
-        "MFinances vous accompagne dans vos projets de vente et d'acquisition d'entreprises à Bruxelles. Expertise comptable et conseil personnalisé.",
+        "MFinances vous accompagne dans votre stratégie d'entreprise à Bruxelles. Passage en société, optimisation fiscale et conseil personnalisé.",
     },
     tresorerie: {
       title: "Gestion de trésorerie - MFinances",
@@ -130,6 +85,7 @@ function getMetaTagsForRoute(route, subRoute = null) {
 
   // Cas spécifiques pour les sous-routes
   if (subRoute) {
+    // Services
     if (route === "services") {
       if (subRoute === "comptabilite") {
         return {
@@ -149,48 +105,120 @@ function getMetaTagsForRoute(route, subRoute = null) {
           description:
             "MFinances vous accompagne dans la création de votre entreprise à Bruxelles. Conseil, démarches administratives et choix de la forme juridique.",
         };
-      } else if (subRoute === "declaration-impot") {
+      } else if (subRoute === "declaration-impots") {
         return {
           title:
             "Déclaration d'impôts pour entreprises et particuliers - MFinances",
           description:
             "MFinances vous accompagne dans la préparation et le dépôt de vos déclarations fiscales à Bruxelles. Service professionnel et personnalisé.",
         };
+      } else if (subRoute === "departement-comptable-externalise") {
+        return {
+          title: "Externalisation du département comptable - MFinances",
+          description:
+            "MFinances propose l'externalisation de votre département comptable à Bruxelles. Expertise, flexibilité et réduction des coûts.",
+        };
       }
-    } else if (route === "vente") {
+    }
+    // Profils
+    else if (route === "profils") {
+      if (subRoute === "independant-startup") {
+        return {
+          title: "Services comptables pour indépendants & Startups - MFinances",
+          description:
+            "MFinances propose des services comptables adaptés aux indépendants et startups à Bruxelles. Comptabilité, fiscalité et conseil personnalisé.",
+        };
+      } else if (subRoute === "commercant-horeca") {
+        return {
+          title: "Services comptables pour commerçants et Horeca - MFinances",
+          description:
+            "MFinances propose des services comptables spécialisés pour les commerçants et le secteur Horeca à Bruxelles. Comptabilité, fiscalité et conseil adapté.",
+        };
+      } else if (subRoute === "professionnel-sante") {
+        return {
+          title: "Expertise comptable pour professionnels de santé - MFinances",
+          description:
+            "MFinances accompagne les professionnels de santé à Bruxelles avec des services comptables et fiscaux adaptés à leur secteur d'activité.",
+        };
+      } else if (subRoute === "grande-entreprise") {
+        return {
+          title: "Services comptables pour grandes entreprises - MFinances",
+          description:
+            "MFinances propose des services comptables et fiscaux pour les grandes entreprises à Bruxelles. Expertise, conseil et accompagnement personnalisé.",
+        };
+      } else if (subRoute === "promoteur-immobilier") {
+        return {
+          title: "Expertise comptable pour promoteurs immobiliers - MFinances",
+          description:
+            "MFinances accompagne les promoteurs immobiliers à Bruxelles avec des services comptables et fiscaux adaptés au secteur de l'immobilier.",
+        };
+      }
+    }
+    // Structures
+    else if (route === "structures") {
+      if (subRoute === "asbl") {
+        return {
+          title: "Services comptables pour ASBL - MFinances",
+          description:
+            "MFinances propose des services comptables spécialisés pour les ASBL à Bruxelles. Comptabilité, fiscalité et conseil adapté aux associations.",
+        };
+      } else if (subRoute === "societe-exploitation") {
+        return {
+          title: "Expertise comptable pour sociétés d'exploitation - MFinances",
+          description:
+            "MFinances accompagne les sociétés d'exploitation à Bruxelles avec des services comptables et fiscaux adaptés à leurs besoins spécifiques.",
+        };
+      } else if (subRoute === "societe-management-patrimoniale") {
+        return {
+          title: "Expertise comptable pour sociétés patrimoniales - MFinances",
+          description:
+            "MFinances accompagne les sociétés de management patrimonial à Bruxelles avec des services comptables et fiscaux adaptés à la gestion de patrimoine.",
+        };
+      } else if (subRoute === "societe-de-moyens") {
+        return {
+          title: "Services comptables pour sociétés de moyens - MFinances",
+          description:
+            "MFinances propose des services comptables et fiscaux adaptés aux sociétés de moyens à Bruxelles. Optimisation fiscale, comptabilité et conseil.",
+        };
+      }
+    }
+    // Stratégie
+    else if (route === "strategie") {
       if (subRoute === "passage-en-societe") {
         return {
           title: "Accompagnement pour le passage en société - MFinances",
           description:
             "MFinances vous accompagne dans votre projet de passage en société à Bruxelles. Conseil fiscal, comptable et juridique personnalisé.",
         };
-      } else if (subRoute === "compte-courant") {
+      } else if (subRoute === "compte-courant-administrateur") {
         return {
-          title: "Gestion du compte courant d'associé - MFinances",
+          title: "Gestion du compte courant administrateur - MFinances",
           description:
-            "MFinances vous propose son expertise pour la gestion optimale de votre compte courant d'associé à Bruxelles. Conseil fiscal et comptable adapté.",
+            "MFinances vous propose son expertise pour la gestion optimale de votre compte courant administrateur à Bruxelles. Conseil fiscal et comptable adapté.",
         };
-      } else if (subRoute === "salarie-independant") {
+      } else if (subRoute === "salarie-vers-independant") {
         return {
           title: "Passage de salarié à indépendant - MFinances",
           description:
             "MFinances vous accompagne dans votre transition de salarié à indépendant à Bruxelles. Conseil fiscal, comptable et administratif personnalisé.",
         };
       }
-    } else if (route === "tresorerie") {
+    }
+    // Trésorerie
+    else if (route === "tresorerie") {
       if (subRoute === "tresorerie-benefice") {
         return {
           title: "Gestion de la trésorerie et des bénéfices - MFinances",
           description:
             "MFinances vous accompagne dans l'optimisation de votre trésorerie et la gestion de vos bénéfices à Bruxelles.",
         };
-      } else if (subRoute === "investir-tresorerie") {
+      } else if (subRoute === "investir-sa-tresorerie") {
         return {
           title: "Conseils pour investir votre trésorerie - MFinances",
           description:
             "MFinances vous propose des solutions pour investir judicieusement votre trésorerie d'entreprise à Bruxelles.",
         };
-      } else if (subRoute === "optimiser-stock") {
+      } else if (subRoute === "optimiser-son-stock") {
         return {
           title:
             "Optimisation des stocks pour améliorer la trésorerie - MFinances",
@@ -231,6 +259,7 @@ function getMetaTagsForRoute(route, subRoute = null) {
   return metaTags[route] || metaTags[""];
 }
 
+// ... Reste du code inchangé (fonctions findBuildFolder et generateStaticHtmlFiles)
 // Fonction pour trouver le dossier de build Angular
 function findBuildFolder() {
   console.log("Recherche du dossier de build...");

@@ -1,45 +1,23 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/server.js",
-      "use": "@vercel/node",
-      "config": {
-        "memory": 1024,
-        "maxDuration": 10
-      }
-    },
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/mfinances/browser",
-        "buildCommand": "npm run build"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/media/(.*)",
-      "dest": "/media/$1"
-    },
-    {
-      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|xml|txt)$)",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/server.js"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "redirects": [
+    { "source": "/accueil", "destination": "/", "permanent": true },
+    { "source": "/about", "destination": "/a-propos", "permanent": true },
+    { "source": "/tarif", "destination": "/tarifs", "permanent": true },
+    { "source": "/profil-independant", "destination": "/profils/independant-startup", "permanent": true },
+    { "source": "/commercant-horeca", "destination": "/profils/commercant-horeca", "permanent": true },
+    { "source": "/professionel-sante", "destination": "/profils/professionnel-sante", "permanent": true },
+    { "source": "/grande-entreprise", "destination": "/profils/grande-entreprise", "permanent": true },
+    { "source": "/promoteur-immobilier", "destination": "/profils/promoteur-immobilier", "permanent": true },
+    { "source": "/asbl", "destination": "/structures/asbl", "permanent": true },
+    { "source": "/absl", "destination": "/structures/asbl", "permanent": true },
+    { "source": "/societe-exploitation", "destination": "/structures/societe-exploitation", "permanent": true },
+    { "source": "/societe-management-patrimoniale", "destination": "/structures/societe-management-patrimoniale", "permanent": true },
+    { "source": "/societe-moyen", "destination": "/structures/societe-de-moyens", "permanent": true },
+    { "source": "/services/declaration-impot", "destination": "/services/declaration-impots", "permanent": true },
+    { "source": "/services/departement-comptable", "destination": "/services/departement-comptable-externalise", "permanent": true },
+    { "source": "/vente", "destination": "/strategie", "permanent": true },
+    { "source": "/vente/:path*", "destination": "/strategie/:path*", "permanent": true },
+    { "source": "/tresorerie/investir-tresorerie", "destination": "/tresorerie/investir-sa-tresorerie", "permanent": true },
+    { "source": "/tresorerie/optimiser-stock", "destination": "/tresorerie/optimiser-son-stock", "permanent": true }
+  ]
 }

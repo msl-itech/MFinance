@@ -23,41 +23,59 @@ export const MOBILE_ROUTES: Routes = [
     path: '',
     component: MobileLayoutComponent,
     children: [
-      { path: '', redirectTo: 'accueil', pathMatch: 'full' },
-      {
-        path: 'accueil',
-        component: AccueilMobileComponent,
-      },
+      // ============================================
+      // REDIRECTIONS 301 (ordre important - avant les routes réelles)
+      // ============================================
+      { path: 'accueil', redirectTo: '/', pathMatch: 'full' },
+      { path: 'about', redirectTo: '/a-propos', pathMatch: 'full' },
+      { path: 'tarif', redirectTo: '/tarifs', pathMatch: 'full' },
+
+      // Profils (métier) - Redirections
+      { path: 'profil-independant', redirectTo: '/profils/independant-startup', pathMatch: 'full' },
+      { path: 'commercant-horeca', redirectTo: '/profils/commercant-horeca', pathMatch: 'full' },
+      { path: 'professionel-sante', redirectTo: '/profils/professionnel-sante', pathMatch: 'full' },
+      { path: 'grande-entreprise', redirectTo: '/profils/grande-entreprise', pathMatch: 'full' },
+      { path: 'promoteur-immobilier', redirectTo: '/profils/promoteur-immobilier', pathMatch: 'full' },
+
+      // Structures (juridique) - Redirections
+      { path: 'asbl', redirectTo: '/structures/asbl', pathMatch: 'full' },
+      { path: 'absl', redirectTo: '/structures/asbl', pathMatch: 'full' },
+      { path: 'societe-exploitation', redirectTo: '/structures/societe-exploitation', pathMatch: 'full' },
+      { path: 'societe-management-patrimoniale', redirectTo: '/structures/societe-management-patrimoniale', pathMatch: 'full' },
+      { path: 'societe-moyen', redirectTo: '/structures/societe-de-moyens', pathMatch: 'full' },
+
+      // Vente → Stratégie - Redirections
+      { path: 'vente', redirectTo: '/strategie', pathMatch: 'prefix' },
+
+      // ============================================
+      // ROUTES RÉELLES
+      // ============================================
+
+      // Page d'accueil
+      { path: '', component: AccueilMobileComponent },
+
+      // Pages de base
+      { path: 'a-propos', component: AboutMobileComponent },
+      { path: 'tarifs', component: TarifMobileComponent },
       { path: 'calculatrice', component: CalculatriceComponent },
       { path: 'support', component: SupportMobileComponent },
-      { path: 'about', component: AboutMobileComponent },
-      { path: 'tarif', component: TarifMobileComponent },
+      { path: 'contact', component: ContactComponent },
       { path: 'avis-google', component: AvisGoogleComponent },
 
-      { path: 'asbl', component: AsblMobileComponent },
+      // Profils (métier)
+      { path: 'profils/independant-startup', component: IndependantMobileComponent },
+      { path: 'profils/commercant-horeca', component: CommercantHorecaMobileComponent },
+      { path: 'profils/professionnel-sante', component: ProfessionnelSanteMobileComponent },
+      { path: 'profils/grande-entreprise', component: GrandeEntrepriseMobileComponent },
+      { path: 'profils/promoteur-immobilier', component: ProfilPromoteurImmobilierMobileComponent },
 
-      { path: 'profil-independant', component: IndependantMobileComponent },
-      {
-        path: 'societe-management-patrimoniale',
-        component: SocieteManagementPatrimonialeMobileComponent,
-      },
-      { path: 'societe-moyen', component: SocieteMoyenMobileComponent },
-      {
-        path: 'societe-exploitation',
-        component: SocieteExploitationMobileComponent,
-      },
-      { path: 'commercant-horeca', component: CommercantHorecaMobileComponent },
-      {
-        path: 'professionel-sante',
-        component: ProfessionnelSanteMobileComponent,
-      },
+      // Structures (juridique)
+      { path: 'structures/asbl', component: AsblMobileComponent },
+      { path: 'structures/societe-exploitation', component: SocieteExploitationMobileComponent },
+      { path: 'structures/societe-management-patrimoniale', component: SocieteManagementPatrimonialeMobileComponent },
+      { path: 'structures/societe-de-moyens', component: SocieteMoyenMobileComponent },
 
-      { path: 'grande-entreprise', component: GrandeEntrepriseMobileComponent },
-      {
-        path: 'promoteur-immobilier',
-        component: ProfilPromoteurImmobilierMobileComponent,
-      },
-      { path: 'contact', component: ContactComponent },
+      // Modules
       {
         path: 'services',
         loadChildren: () =>
@@ -66,10 +84,10 @@ export const MOBILE_ROUTES: Routes = [
           ),
       },
       {
-        path: 'vente',
+        path: 'strategie',
         loadChildren: () =>
           import('../venteModule/vente/vente.module').then(
-            (m) => m.VenteModule
+            (m) => m.StrategieModule
           ),
       },
       {
@@ -83,6 +101,7 @@ export const MOBILE_ROUTES: Routes = [
         path: 'tresorerie-benefice-mobile',
         component: TresorerieBeneficeMobileComponent,
       },
+
       // Route wildcard pour la page 404
       { path: '**', component: NotFoundComponent },
     ],

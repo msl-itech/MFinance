@@ -28,12 +28,12 @@ export class TresorerieMobileComponent implements OnInit {
     {
       title: 'Investir sans risque',
       readingTime: 7,
-      route: '/tresorerie/investir-tresorerie'
+      route: '/tresorerie/investir-sa-tresorerie'
     },
     {
       title: 'Optimiser la gestion des stocks',
       readingTime: 6,
-      route: '/tresorerie/optimiser-stock'
+      route: '/tresorerie/optimiser-son-stock'
     },
     {
       title: 'SOS Trésorerie : Garder le cap',
@@ -93,7 +93,7 @@ export class TresorerieMobileComponent implements OnInit {
 
   // Méthode pour naviguer vers la page tarif
   goToTarif(): void {
-    this.router.navigate(['/tarif']);
+    this.router.navigate(['/tarifs']);
   }
 
   // Méthode pour sélectionner une situation

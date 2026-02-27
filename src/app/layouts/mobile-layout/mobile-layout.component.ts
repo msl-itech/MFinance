@@ -26,7 +26,7 @@ import { filter, takeUntil } from 'rxjs/operators';
       <header class="mobile-header" [class.scrolled]="isScrolled">
         <div class="mobile-header-content">
           <div class="mobile-logo">
-            <a routerLink="/accueil" (click)="closeMobileMenu()">
+            <a routerLink="/" (click)="closeMobileMenu()">
               <img
                 src="assets/img/logo/logoMfinances.png"
                 alt="MFinances"
@@ -91,13 +91,13 @@ import { filter, takeUntil } from 'rxjs/operators';
               <span class="nav-section-title">Navigation</span>
             </li>
             <li>
-              <a routerLink="/accueil" (click)="closeMobileMenu()">
+              <a routerLink="/" (click)="closeMobileMenu()">
                 <i class="fas fa-home"></i>
                 <span>Accueil</span>
               </a>
             </li>
             <li>
-              <a routerLink="/about" (click)="closeMobileMenu()">
+              <a routerLink="/a-propos" (click)="closeMobileMenu()">
                 <i class="fas fa-info-circle"></i>
                 <span>À propos</span>
               </a>
@@ -139,14 +139,14 @@ import { filter, takeUntil } from 'rxjs/operators';
                 </li>
                 <li>
                   <a
-                    routerLink="/services/declaration-impot"
+                    routerLink="/services/declaration-impots"
                     (click)="closeMobileMenu()"
                     >Déclaration d'impôt</a
                   >
                 </li>
                 <li>
                   <a
-                    routerLink="/services/departement-comptable"
+                    routerLink="/services/departement-comptable-externalise"
                     (click)="closeMobileMenu()"
                     >Externaliser votre département<br> comptable</a
                   >
@@ -166,54 +166,54 @@ import { filter, takeUntil } from 'rxjs/operators';
               </button>
               <ul class="nav-submenu" *ngIf="secteurActiviteExpanded">
                 <li>
-                  <a routerLink="/asbl" (click)="closeMobileMenu()">Asbl</a>
+                  <a routerLink="/structures/asbl" (click)="closeMobileMenu()">Asbl</a>
                 </li>
                 <li>
                   <a
-                    routerLink="/profil-independant"
+                    routerLink="/profils/independant-startup"
                     (click)="closeMobileMenu()"
                     >Indépendant</a
                   >
                 </li>
                 <li>
-                  <a routerLink="/societe-moyen" (click)="closeMobileMenu()"
+                  <a routerLink="/structures/societe-de-moyens" (click)="closeMobileMenu()"
                     >Société de moyen</a
                   >
                 </li>
                 <li>
                   <a
-                    routerLink="/societe-exploitation"
+                    routerLink="/structures/societe-exploitation"
                     (click)="closeMobileMenu()"
                     >Société d'exploitation</a
                   >
                 </li>
                 <li>
                   <a
-                    routerLink="/societe-management-patrimoniale"
+                    routerLink="/structures/societe-management-patrimoniale"
                     (click)="closeMobileMenu()"
                     >Société de management patrimonial</a
                   >
                 </li>
                 <li>
-                  <a routerLink="/commercant-horeca" (click)="closeMobileMenu()"
+                  <a routerLink="/profils/commercant-horeca" (click)="closeMobileMenu()"
                     >Commerçant HORECA</a
                   >
                 </li>
                 <li>
                   <a
-                    routerLink="/professionel-sante"
+                    routerLink="/profils/professionnel-sante"
                     (click)="closeMobileMenu()"
                     >Professionnel de santé</a
                   >
                 </li>
                 <li>
-                  <a routerLink="/grande-entreprise" (click)="closeMobileMenu()"
+                  <a routerLink="/profils/grande-entreprise" (click)="closeMobileMenu()"
                     >Grande entreprise</a
                   >
                 </li>
                 <li>
                   <a
-                    routerLink="/promoteur-immobilier"
+                    routerLink="/profils/promoteur-immobilier"
                     (click)="closeMobileMenu()"
                     >Promoteur immobilier</a
                   >
@@ -222,7 +222,7 @@ import { filter, takeUntil } from 'rxjs/operators';
             </li>
 
              <li>
-              <a routerLink="/tarif" (click)="closeMobileMenu()">
+              <a routerLink="/tarifs" (click)="closeMobileMenu()">
                 <i class="fas fa-euro-sign"></i>
                 <span>Tarifs</span>
               </a>
@@ -240,27 +240,27 @@ import { filter, takeUntil } from 'rxjs/operators';
               </button>
               <ul class="nav-submenu" *ngIf="boostezEntrepriseExpanded">
                 <li>
-                  <a routerLink="/vente" (click)="closeMobileMenu()"
+                  <a routerLink="/strategie" (click)="closeMobileMenu()"
                     >Vue d'ensemble</a
                   >
                 </li>
                 <li>
                   <a
-                    routerLink="/vente/salarie-independant"
+                    routerLink="/strategie/salarie-vers-independant"
                     (click)="closeMobileMenu()"
                     >Salarié et indépendants</a
                   >
                 </li>
                 <li>
                   <a
-                    routerLink="/vente/passage-en-societe"
+                    routerLink="/strategie/passage-en-societe"
                     (click)="closeMobileMenu()"
                     >Passage en société</a
                   >
                 </li>
                 <li>
                   <a
-                    routerLink="/vente/compte-courant"
+                    routerLink="/strategie/compte-courant-administrateur"
                     (click)="closeMobileMenu()"
                     >Compte Courant administrateur</a
                   >
@@ -290,14 +290,14 @@ import { filter, takeUntil } from 'rxjs/operators';
                 </li>
                 <li>
                   <a
-                    routerLink="/tresorerie/investir-tresorerie"
+                    routerLink="/tresorerie/investir-sa-tresorerie"
                     (click)="closeMobileMenu()"
                     >Investir sans risquer</a
                   >
                 </li>
                 <li>
                   <a
-                    routerLink="/tresorerie/optimiser-stock"
+                    routerLink="/tresorerie/optimiser-son-stock"
                     (click)="closeMobileMenu()"
                     >Optimisez vos Stocks</a
                   >
@@ -375,7 +375,7 @@ import { filter, takeUntil } from 'rxjs/operators';
       <!-- Navigation bottom adaptive -->
       <nav class="mobile-bottom-nav" *ngIf="showBottomNav">
         <a
-          routerLink="/accueil"
+          routerLink="/"
           class="bottom-nav-item"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
@@ -388,7 +388,7 @@ import { filter, takeUntil } from 'rxjs/operators';
           <span>Menu</span>
         </button> -->
         <a
-          routerLink="/about"
+          routerLink="/a-propos"
           class="bottom-nav-item"
           routerLinkActive="active"
         >
@@ -401,7 +401,7 @@ import { filter, takeUntil } from 'rxjs/operators';
           <span>Appel</span>
         </button>
         <a
-          routerLink="/tarif"
+          routerLink="/tarifs"
           class="bottom-nav-item"
           routerLinkActive="active"
         >
@@ -463,10 +463,10 @@ export class MobileLayoutComponent implements OnInit, OnDestroy {
 
   // Titres des pages
   private pageTitles: { [key: string]: string } = {
-    '/accueil': '',
-    '/about': 'À propos',
+    '/': '',
+    '/a-propos': 'À propos',
     '/services': 'Services',
-    '/tarif': 'Tarifs',
+    '/tarifs': 'Tarifs',
     '/contact': 'Contact',
   };
 
@@ -517,7 +517,7 @@ export class MobileLayoutComponent implements OnInit, OnDestroy {
     // Déterminer si on doit montrer le bouton retour
     this.showBackButton =
       cleanUrl.includes('/services/') ||
-      cleanUrl.includes('/vente/') ||
+      cleanUrl.includes('/strategie/') ||
       cleanUrl.includes('/tresorerie/');
 
     // Cacher la bottom nav sur certaines pages
@@ -565,7 +565,7 @@ export class MobileLayoutComponent implements OnInit, OnDestroy {
     if (window.history.length > 1) {
       window.history.back();
     } else {
-      this.router.navigate(['/accueil']);
+      this.router.navigate(['/']);
     }
   }
 
@@ -583,7 +583,7 @@ export class MobileLayoutComponent implements OnInit, OnDestroy {
 
   openQuickServices(): void {
     // Ouvre le menu ou navigue vers services selon le contexte
-    if (this.router.url === '/accueil') {
+    if (this.router.url === '/') {
       this.toggleMobileMenu();
     } else {
       this.router.navigate(['/services']);

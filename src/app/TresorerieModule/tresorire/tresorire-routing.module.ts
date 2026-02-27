@@ -18,6 +18,15 @@ import { TresorerieBeneficeComponent } from '../tresorerie-benefice/tresorerie-b
 import { TresoreriePageComponent } from '../tresorerie-page/tresorerie-page.component';
 
 const routes: Routes = [
+  // ============================================
+  // REDIRECTIONS (ordre important - avant les routes réelles)
+  // ============================================
+  { path: 'investir-tresorerie', redirectTo: 'investir-sa-tresorerie', pathMatch: 'full' },
+  { path: 'optimiser-stock', redirectTo: 'optimiser-son-stock', pathMatch: 'full' },
+
+  // ============================================
+  // ROUTES RÉELLES
+  // ============================================
   {
     path: '',
     canMatch: [
@@ -60,7 +69,7 @@ const routes: Routes = [
     component: TresorerieBeneficeMobileComponent,
   },
   {
-    path: 'investir-tresorerie',
+    path: 'investir-sa-tresorerie',
     canMatch: [
       () => {
         const deviceService = inject(DeviceService);
@@ -70,7 +79,7 @@ const routes: Routes = [
     component: InvestirTresorerieComponent,
   },
   {
-    path: 'investir-tresorerie',
+    path: 'investir-sa-tresorerie',
     canMatch: [
       () => {
         const deviceService = inject(DeviceService);
@@ -81,7 +90,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'optimiser-stock',
+    path: 'optimiser-son-stock',
     canMatch: [
       () => {
         const deviceService = inject(DeviceService);
@@ -91,7 +100,7 @@ const routes: Routes = [
     component: StockTresorerieComponent,
   },
   {
-    path: 'optimiser-stock',
+    path: 'optimiser-son-stock',
     canMatch: [
       () => {
         const deviceService = inject(DeviceService);

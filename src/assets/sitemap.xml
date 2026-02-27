@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+    <!-- Pages de base -->
     <url>
         <loc>https://www.mfinances.be/</loc>
         <changefreq>daily</changefreq>
@@ -8,74 +9,76 @@
     </url>
 
     <url>
-        <loc>https://www.mfinances.be/about</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/a-propos</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.mfinances.be/tarif</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/tarifs</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://www.mfinances.be/absl</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://www.mfinances.be/profil-independant</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://www.mfinances.be/societe-management-patrimoniale</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://www.mfinances.be/societe-moyen</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://www.mfinances.be/societe-exploitation</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://www.mfinances.be/commercant-horeca</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://www.mfinances.be/professionel-sante</loc>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://www.mfinances.be/contact</loc>
-        <changefreq>daily</changefreq>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Profils (métier) -->
+    <url>
+        <loc>https://www.mfinances.be/profils/independant-startup</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.mfinances.be/grande-entreprise</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/profils/commercant-horeca</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.mfinances.be/promoteur-immobilier</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/profils/professionnel-sante</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.mfinances.be/profils/grande-entreprise</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.mfinances.be/profils/promoteur-immobilier</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Structures (juridique) -->
+    <url>
+        <loc>https://www.mfinances.be/structures/asbl</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.mfinances.be/structures/societe-exploitation</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.mfinances.be/structures/societe-management-patrimoniale</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.mfinances.be/structures/societe-de-moyens</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 
@@ -87,76 +90,100 @@
     </url>
 
     <url>
+        <loc>https://www.mfinances.be/services/creation-entreprise</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
         <loc>https://www.mfinances.be/services/comptabilite</loc>
-        <changefreq>daily</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://www.mfinances.be/services/fiscalite</loc>
-        <changefreq>daily</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://www.mfinances.be/services/creation-entreprise</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/services/declaration-impots</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://www.mfinances.be/services/declaration-impot</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/services/departement-comptable-externalise</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
-    <!-- Vente -->
+    <!-- Stratégie d'entreprise -->
     <url>
-        <loc>https://www.mfinances.be/vente/passage-en-societe</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/strategie</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.mfinances.be/strategie/salarie-vers-independant</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://www.mfinances.be/vente/compte-courant</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/strategie/passage-en-societe</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://www.mfinances.be/vente/salarie-independant</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/strategie/compte-courant-administrateur</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <!-- Trésorerie -->
     <url>
+        <loc>https://www.mfinances.be/tresorerie</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
         <loc>https://www.mfinances.be/tresorerie/tresorerie-benefice</loc>
-        <changefreq>daily</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://www.mfinances.be/tresorerie/investir-tresorerie</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/tresorerie/investir-sa-tresorerie</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://www.mfinances.be/tresorerie/optimiser-stock</loc>
-        <changefreq>daily</changefreq>
+        <loc>https://www.mfinances.be/tresorerie/optimiser-son-stock</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://www.mfinances.be/tresorerie/alerte-tresorerie</loc>
-        <changefreq>daily</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://www.mfinances.be/tresorerie/proteger-sa-tresorerie</loc>
-        <changefreq>daily</changefreq>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://www.mfinances.be/tresorerie/anticiper-sa-tresorerie</loc>
+        <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
 

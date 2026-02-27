@@ -6,23 +6,31 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
-  categories = [
-    { name: 'Independant et Startup', route: '/profil-independant' },
-    { name: 'ASBL', route: '/asbl' },
-    {
-      name: 'Sociétés d’exploitation commerciale ou civile',
-      route: '/societe-exploitation',
-    },
-    {
-      name: 'Sociétés de management patrimoniale',
-      route: '/societe-management-patrimoniale',
-    },
-    { name: 'Sociétés de moyens', route: '/societe-moyen' },
-    { name: 'Commercant & Horeca', route: '/commercant-horeca' },
-    { name: 'Professionel de santé', route: '/professionel-sante' },
-    { name: 'Grande Entreprise', route: '/grande-entreprise' },
-    { name: 'Promoteur Immobilier', route: '/promoteur-immobilier' },
+  // Profils (métier)
+  profils = [
+    { name: 'Indépendant & Startup', route: '/profils/independant-startup' },
+    { name: 'Commerçant & Horeca', route: '/profils/commercant-horeca' },
+    { name: 'Professionnel de santé', route: '/profils/professionnel-sante' },
+    { name: 'Grande Entreprise', route: '/profils/grande-entreprise' },
+    { name: 'Promoteur Immobilier', route: '/profils/promoteur-immobilier' },
   ];
+
+  // Structures (juridique)
+  structures = [
+    { name: 'ASBL', route: '/structures/asbl' },
+    {
+      name: "Société d'exploitation",
+      route: '/structures/societe-exploitation',
+    },
+    {
+      name: 'Société de management patrimoniale',
+      route: '/structures/societe-management-patrimoniale',
+    },
+    { name: 'Société de moyens', route: '/structures/societe-de-moyens' },
+  ];
+
+  // Combinaison pour compatibilité avec l'ancien code
+  categories = [...this.profils, ...this.structures];
 
   maxVisibleCategories = 9;
 
