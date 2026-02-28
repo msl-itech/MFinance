@@ -45,6 +45,9 @@ h4 {
 .profil-tag-container {
   margin-bottom: 1rem;
 }
+.hadding h2 span::before {
+   display: none;
+}
 
 .profil-tag {
   display: inline-flex;
