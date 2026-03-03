@@ -4,11 +4,20 @@ import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../services/meta.service';
 import { OdooService } from '../services/odoo.service';
 import { MANAGEMENT_PATRIMONIAL_FORM_CONFIG } from '../shared/contact-form-layout/contact-form-configs';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-profil-societe-management-patrimoniale',
   templateUrl: './profil-societe-management-patrimoniale.component.html',
   styleUrl: './profil-societe-management-patrimoniale.component.css',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('400ms ease-in', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class ProfilSocieteManagementPatrimonialeComponent implements OnInit {
   managementForm: FormGroup = new FormGroup({});
@@ -300,5 +309,11 @@ export class ProfilSocieteManagementPatrimonialeComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  // Gestion du diagnostic
+  onDiagnosticComplete(result: any): void {
+    console.log('Diagnostic complété:', result);
+    // Vous pouvez ajouter une logique supplémentaire ici si nécessaire
   }
 }

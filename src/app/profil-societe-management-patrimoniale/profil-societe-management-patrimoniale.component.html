@@ -300,6 +300,156 @@
   </div>
 </section>
 
+<!-- Section Diagnostic Interactif -->
+<section class="diagnostic-interactive-section py-5" id="diagnostic" style="background: #f8f9fb;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="display-5 fw-bold mb-3">
+        Une Société de Management Patrimoniale<br/>
+        <span class="bg-danger text-white px-3 py-1 rounded">est-elle faite pour vous ?</span>
+      </h2>
+      <p class="text-muted">Répondez à 5 questions pour le découvrir en 2 minutes</p>
+    </div>
+    <app-diagnostic-management-patrimonial
+      (diagnosticComplete)="onDiagnosticComplete($event)">
+    </app-diagnostic-management-patrimonial>
+  </div>
+</section>
+
+<!-- Section "Pour Qui ?" -->
+<section class="pour-qui-section py-5" style="background: white;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="display-5 fw-bold">
+        Pour <span class="text-danger">qui</span> ?
+      </h2>
+      <p class="text-muted">Découvrez si cette solution correspond à votre profil</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Carte "Vous êtes concerné" -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="pour-qui-card qualified h-100 p-4 rounded-3 shadow-sm">
+          <h3 class="h4 fw-bold mb-4 text-success">
+            ✅ Vous êtes concerné si...
+          </h3>
+          <ul class="list-unstyled">
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-euro-sign me-3 text-success" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Revenus > 150 000€/an</strong>
+                <p class="mb-0 text-muted small">Vous générez des revenus professionnels significatifs</p>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-chart-line me-3 text-success" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Plusieurs sources de revenus</strong>
+                <p class="mb-0 text-muted small">Activité principale + mandats/consultings/dividendes</p>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-bullseye me-3 text-success" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Vision patrimoniale 5-10 ans</strong>
+                <p class="mb-0 text-muted small">Vous pensez long terme et constitution de patrimoine</p>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-lightbulb me-3 text-success" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Objectif d'optimisation fiscale</strong>
+                <p class="mb-0 text-muted small">Vous souhaitez structurer vos revenus intelligemment</p>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-home me-3 text-success" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Projet d'investissement immobilier</strong>
+                <p class="mb-0 text-muted small">Acquisition de biens locatifs ou patrimoniaux</p>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-users me-3 text-success" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Préparation de la transmission</strong>
+                <p class="mb-0 text-muted small">Anticiper la succession et protéger vos proches</p>
+              </div>
+            </li>
+          </ul>
+          <div class="text-center mt-4">
+            <button
+              (click)="scrollToSection('diagnostic')"
+              class="btn btn-success btn-lg px-4 py-2 rounded-pill">
+              Faire le diagnostic →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte "Pas prioritaire" -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="pour-qui-card non-qualified h-100 p-4 rounded-3 shadow-sm">
+          <h3 class="h4 fw-bold mb-4 text-danger">
+            ❌ Pas prioritaire si...
+          </h3>
+          <ul class="list-unstyled">
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-arrow-down me-3 text-danger" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Revenus < 100 000€/an</strong>
+                <p class="mb-0 text-muted small">Les coûts de structure ne seraient pas optimaux</p>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-graduation-cap me-3 text-danger" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Début d'activité (< 2 ans)</strong>
+                <p class="mb-0 text-muted small">Focalisez-vous d'abord sur le développement</p>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-wallet me-3 text-danger" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Besoin de liquidités immédiates</strong>
+                <p class="mb-0 text-muted small">Si vous dépensez tous vos revenus actuellement</p>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-ban me-3 text-danger" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Aucun projet patrimonial</strong>
+                <p class="mb-0 text-muted small">Pas d'intérêt pour l'investissement ou la transmission</p>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-balance-scale me-3 text-danger" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Situation fiscale simple</strong>
+                <p class="mb-0 text-muted small">Un seul revenu salarié déjà optimisé</p>
+              </div>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-clock me-3 text-danger" style="font-size: 1.5rem; min-width: 30px;"></i>
+              <div>
+                <strong>Vision court terme uniquement</strong>
+                <p class="mb-0 text-muted small">Pas d'intérêt pour la planification long terme</p>
+              </div>
+            </li>
+          </ul>
+          <div class="text-center mt-4">
+            <button
+              (click)="scrollToSection('formulaire-evaluation')"
+              class="btn btn-outline-danger btn-lg px-4 py-2 rounded-pill">
+              Demander conseil quand même
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="bg-custom--primary">
   <div class="works sec-padding">
     <div class="container">
@@ -658,6 +808,124 @@
     </div>
   </div>
 </div>
+
+<!-- Section Cas Concret Détaillé -->
+<section class="case-study-section py-5" style="background: #f8f9fb;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="display-5 fw-bold">
+        Cas concret : <span class="text-danger">Dirigeant, 200 000€/an</span>
+      </h2>
+      <p class="text-muted">Économie fiscale réelle sur 5 ans</p>
+    </div>
+
+    <div class="case-study-detailed">
+      <div class="row g-4 align-items-stretch">
+        <!-- AVANT -->
+        <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+          <div class="comparison-card before h-100 p-4 rounded-3 shadow">
+            <div class="card-header mb-4">
+              <span class="badge bg-danger">AVANT</span>
+              <h3 class="h4 fw-bold mt-2">Sans SMP</h3>
+            </div>
+
+            <div class="metrics">
+              <div class="metric-item mb-4">
+                <div class="metric-label text-muted small">Revenus annuels</div>
+                <div class="metric-value h3 fw-bold">200 000€</div>
+                <div class="metric-detail text-muted small">Salaire + dividendes classiques</div>
+              </div>
+
+              <div class="metric-item mb-4">
+                <div class="metric-label text-muted small">Impôts payés</div>
+                <div class="metric-value h3 fw-bold text-danger">85 000€/an</div>
+                <div class="metric-detail text-muted small">42,5% de taxation effective</div>
+              </div>
+
+              <div class="metric-item mb-4">
+                <div class="metric-label text-muted small">Patrimoine</div>
+                <div class="metric-value h5">Croissance limitée</div>
+                <div class="metric-detail text-muted small">Peu de capacité d'investissement</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-label text-muted small">Optimisation</div>
+                <div class="metric-value h5">Aucune</div>
+                <div class="metric-detail text-muted small">Structure fiscale non optimisée</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARROW -->
+        <div class="col-lg-2 d-flex align-items-center justify-content-center" data-aos="zoom-in" data-aos-delay="200">
+          <div class="transformation-arrow text-center">
+            <div class="arrow-icon">
+              <i class="fas fa-arrow-right fa-3x text-danger"></i>
+            </div>
+            <div class="arrow-label mt-3">
+              <span class="badge bg-danger px-3 py-2">SMP créée avec MFINANCES</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- APRÈS -->
+        <div class="col-lg-5" data-aos="fade-left" data-aos-delay="300">
+          <div class="comparison-card after h-100 p-4 rounded-3 shadow">
+            <div class="card-header mb-4">
+              <span class="badge bg-success">APRÈS</span>
+              <h3 class="h4 fw-bold mt-2">Avec SMP</h3>
+            </div>
+
+            <div class="metrics">
+              <div class="metric-item mb-4">
+                <div class="metric-label text-muted small">Management fees structurés</div>
+                <div class="metric-value h3 fw-bold text-success">120 000€</div>
+                <div class="metric-detail text-muted small">Déductibles de la société d'exploitation</div>
+              </div>
+
+              <div class="metric-item mb-4">
+                <div class="metric-label text-muted small">Économie fiscale annuelle</div>
+                <div class="metric-value h3 fw-bold text-success">25 000€/an</div>
+                <div class="metric-detail text-muted small">Réinvestis dans le patrimoine</div>
+              </div>
+
+              <div class="metric-item mb-4">
+                <div class="metric-label text-muted small">Patrimoine constitué (5 ans)</div>
+                <div class="metric-value h5 fw-bold">1,2M€</div>
+                <div class="metric-detail text-muted small">Immobilier + placements diversifiés</div>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-label text-muted small">ROI sur structuration</div>
+                <div class="metric-value h5 fw-bold text-success">400%</div>
+                <div class="metric-detail text-muted small">Retour sur investissement exceptionnel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONCLUSION -->
+      <div class="row mt-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-12">
+          <div class="case-conclusion p-4 rounded-3 text-white text-center" style="background: #1a2c51;">
+            <h4 class="fw-bold mb-3">
+              🎯 Résultat : <span class="text-warning">125 000€ économisés</span> sur 5 ans
+            </h4>
+            <p class="mb-4">+ Patrimoine immobilier valorisable + Transmission optimisée</p>
+            <button
+              (click)="scrollToSection('diagnostic')"
+              class="btn btn-danger btn-lg px-4 py-2 rounded-pill">
+              <i class="fas fa-calculator me-2"></i>
+              Estimer mon potentiel d'économies
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="container my-5">
   <div class="rounded-4 bg-custom--primary text-white px-4">

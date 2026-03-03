@@ -2,3 +2,133 @@
     background-color: #1a2c51;
   }
 
+/* Section "Pour Qui ?" Styles */
+.pour-qui-section .pour-qui-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.pour-qui-section .pour-qui-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pour-qui-section .pour-qui-card.qualified {
+  border-left: 4px solid #10b981;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.pour-qui-section .pour-qui-card.non-qualified {
+  border-left: 4px solid #ef4444;
+  background: linear-gradient(135deg, #fef2f2 0%, #f8f9fb 100%);
+}
+
+.pour-qui-section .pour-qui-card ul li {
+  transition: transform 0.2s ease;
+}
+
+.pour-qui-section .pour-qui-card ul li:hover {
+  transform: translateX(5px);
+}
+
+/* Section Cas Concret Détaillé Styles */
+.case-study-section .comparison-card {
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #e5e7eb;
+}
+
+.case-study-section .comparison-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.case-study-section .comparison-card.before {
+  background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+  border-left: 4px solid #ef4444;
+}
+
+.case-study-section .comparison-card.after {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+  border-left: 4px solid #10b981;
+}
+
+.case-study-section .card-header .badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+}
+
+.case-study-section .metric-item {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.case-study-section .metric-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.case-study-section .metric-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.case-study-section .metric-value {
+  margin-bottom: 0.25rem;
+}
+
+.case-study-section .metric-detail {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.case-study-section .transformation-arrow {
+  padding: 1rem;
+}
+
+.case-study-section .arrow-icon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.case-study-section .case-conclusion {
+  box-shadow: 0 10px 30px rgba(26, 44, 81, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .case-study-section .transformation-arrow {
+    margin: 2rem 0;
+  }
+
+  .case-study-section .transformation-arrow .arrow-icon i {
+    transform: rotate(90deg);
+  }
+
+  .pour-qui-section .pour-qui-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .case-study-section .comparison-card {
+    margin-bottom: 2rem;
+  }
+
+  .case-study-section .metric-value {
+    font-size: 1.5rem !important;
+  }
+}
+

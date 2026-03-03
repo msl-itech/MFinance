@@ -35,6 +35,111 @@
   <!-- Sidebar Mobile Navigation -->
   <app-sidebar-mobile></app-sidebar-mobile>
 
+  <!-- Section Diagnostic Interactif -->
+  <section class="diagnostic-interactive-section" id="diagnostic">
+    <div class="section-header">
+      <div class="diagnostic-badge">
+        <span>🎯 DIAGNOSTIC GRATUIT</span>
+      </div>
+      <h2 class="section-title">
+        Une société de management est-elle adaptée à votre situation&nbsp;?
+      </h2>
+      <p class="section-subtitle">
+        Répondez à 5 questions. Vous recevez immédiatement un premier avis personnalisé.
+      </p>
+    </div>
+
+    <app-diagnostic-management-patrimonial
+      (diagnosticComplete)="onDiagnosticComplete($event)">
+    </app-diagnostic-management-patrimonial>
+  </section>
+
+  <!-- Section Pour Qui ? -->
+  <section class="pour-qui-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        Cette solution est-elle faite pour vous&nbsp;?
+      </h2>
+      <p class="section-subtitle">
+        Filtrage des profils adaptés pour maximiser votre gain de temps
+      </p>
+    </div>
+
+    <div class="pour-qui-grid">
+      <div class="pour-qui-card qualified">
+        <div class="card-icon">✅</div>
+        <h3>Vous êtes concerné si...</h3>
+        <ul class="pour-qui-list">
+          <li>
+            <span class="check-icon">💰</span>
+            <span>Revenus professionnels > <strong>150 000€/an</strong></span>
+          </li>
+          <li>
+            <span class="check-icon">💼</span>
+            <span><strong>Plusieurs sources</strong> de revenus (consulting, dividendes, etc.)</span>
+          </li>
+          <li>
+            <span class="check-icon">📅</span>
+            <span>Vision patrimoniale <strong>à 5-10 ans</strong></span>
+          </li>
+          <li>
+            <span class="check-icon">🎯</span>
+            <span>Objectif d'<strong>optimisation fiscale</strong> structurée</span>
+          </li>
+          <li>
+            <span class="check-icon">🏠</span>
+            <span>Projet d'<strong>investissement immobilier</strong></span>
+          </li>
+          <li>
+            <span class="check-icon">👨‍👩‍👧‍👦</span>
+            <span>Préparation de la <strong>transmission</strong></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pour-qui-card non-qualified">
+        <div class="card-icon">❌</div>
+        <h3>Pas prioritaire si...</h3>
+        <ul class="pour-qui-list">
+          <li>
+            <span class="cross-icon">🌱</span>
+            <span>Activité en <strong>démarrage</strong> (< 2 ans)</span>
+          </li>
+          <li>
+            <span class="cross-icon">📊</span>
+            <span>Revenus < <strong>80 000€/an</strong></span>
+          </li>
+          <li>
+            <span class="cross-icon">📉</span>
+            <span>Revenus <strong>irréguliers</strong> ou imprévisibles</span>
+          </li>
+          <li>
+            <span class="cross-icon">⏱️</span>
+            <span>Pas de <strong>vision long terme</strong></span>
+          </li>
+          <li>
+            <span class="cross-icon">📋</span>
+            <span>Pas de <strong>comptabilité structurée</strong></span>
+          </li>
+          <li>
+            <span class="cross-icon">🎲</span>
+            <span>Volonté de <strong>rester simple</strong></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pour-qui-cta">
+      <p class="cta-text">
+        Vous vous retrouvez dans le profil "concerné" ?
+      </p>
+      <button class="cta-btn-primary" (click)="scrollToSection('diagnostic')">
+        <span class="btn-icon">📊</span>
+        Faire le diagnostic gratuit
+      </button>
+    </div>
+  </section>
+
   <!-- Section Introduction Simplifiée -->
   <section class="intro-section">
     <div class="intro-content">
@@ -276,12 +381,84 @@
       </div>
     </div>
 
-    <!-- Résultat concret -->
-    <div class="result-highlight">
-      <div class="result-icon">🏆</div>
-      <div class="result-text">
-        <h4>Résultat concret : –25% d'impôts en 5 ans</h4>
-        <p>+ 1,2M€ de patrimoine constitué</p>
+    <!-- Cas Concret Détaillé -->
+    <div class="case-study-detailed">
+      <div class="case-study-header">
+        <div class="case-icon">💼</div>
+        <h3>Cas concret : Laurent, consultant IT</h3>
+        <p class="case-subtitle">Comment une société de management lui a permis d'économiser 25 000€/an</p>
+      </div>
+
+      <div class="case-comparison">
+        <!-- AVANT -->
+        <div class="comparison-card before">
+          <div class="card-badge">❌ AVANT (Sans SMP)</div>
+          <div class="card-content">
+            <div class="case-metric">
+              <span class="metric-label">Revenus annuels</span>
+              <span class="metric-value">200 000€</span>
+            </div>
+            <div class="case-metric negative">
+              <span class="metric-label">Impôts payés</span>
+              <span class="metric-value">85 000€/an</span>
+              <span class="metric-detail">Taxation directe personne physique</span>
+            </div>
+            <div class="case-metric">
+              <span class="metric-label">Patrimoine</span>
+              <span class="metric-value">Croissance limitée</span>
+              <span class="metric-detail">Difficile d'investir après impôts</span>
+            </div>
+            <div class="case-metric">
+              <span class="metric-label">Optimisation</span>
+              <span class="metric-value">Aucune</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flèche transformation -->
+        <div class="transformation-arrow">
+          <div class="arrow-icon">→</div>
+          <div class="arrow-label">SMP créée avec MFINANCES</div>
+        </div>
+
+        <!-- APRÈS -->
+        <div class="comparison-card after">
+          <div class="card-badge success">✅ APRÈS (Avec SMP)</div>
+          <div class="card-content">
+            <div class="case-metric">
+              <span class="metric-label">Management fees structurés</span>
+              <span class="metric-value highlight">120 000€</span>
+              <span class="metric-detail">Facturés à la société d'exploitation</span>
+            </div>
+            <div class="case-metric positive">
+              <span class="metric-label">Économie fiscale annuelle</span>
+              <span class="metric-value highlight">25 000€/an</span>
+              <span class="metric-detail">Grâce à l'optimisation structurée</span>
+            </div>
+            <div class="case-metric">
+              <span class="metric-label">Patrimoine constitué (5 ans)</span>
+              <span class="metric-value highlight">1,2M€</span>
+              <span class="metric-detail">Immobilier + placements diversifiés</span>
+            </div>
+            <div class="case-metric">
+              <span class="metric-label">ROI sur structuration</span>
+              <span class="metric-value highlight">400%</span>
+              <span class="metric-detail">Coût création 6 000€ vs 25k€/an économisés</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-conclusion">
+        <div class="conclusion-icon">🎯</div>
+        <div class="conclusion-text">
+          <h4>Résultat : 125 000€ économisés sur 5 ans</h4>
+          <p>Laurent a transformé sa charge fiscale en patrimoine durable. <strong>Et vous ?</strong></p>
+        </div>
+        <button class="case-cta-btn" (click)="scrollToSection('diagnostic')">
+          <span class="btn-icon">📊</span>
+          Estimer mon potentiel d'économies
+        </button>
       </div>
     </div>
   </section>

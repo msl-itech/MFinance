@@ -1,0 +1,209 @@
+<div class="diagnostic-container">
+  <!-- Questions Section -->
+  <div class="diagnostic-questions" *ngIf="!showResult">
+    <!-- Progress Bar -->
+    <div class="progress-wrapper">
+      <div class="progress-info">
+        <span class="progress-label">Question {{ currentQuestionIndex + 1 }} sur {{ questions.length }}</span>
+        <span class="progress-percentage">{{ progressPercentage }}%</span>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" [style.width.%]="progressPercentage"></div>
+      </div>
+    </div>
+
+    <!-- Question Card -->
+    <div class="question-card" @slideInOut>
+      <div class="question-header">
+        <h3 class="question-title">{{ currentQuestion.question }}</h3>
+        <p class="question-description" *ngIf="currentQuestion.description">
+          {{ currentQuestion.description }}
+        </p>
+      </div>
+
+      <!-- Options Grid -->
+      <div class="options-grid">
+        <div
+          *ngFor="let option of currentQuestion.options"
+          class="option-card"
+          [class.selected]="currentAnswer === option.value"
+          (click)="selectOption(option)"
+        >
+          <div class="option-icon">{{ option.icon }}</div>
+          <div class="option-content">
+            <div class="option-label">{{ option.label }}</div>
+            <div class="option-sublabel">{{ option.sublabel }}</div>
+          </div>
+          <div class="option-check" *ngIf="currentAnswer === option.value">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2"/>
+              <path d="M8 12l2.5 2.5L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="question-navigation">
+        <button
+          class="btn btn-secondary"
+          (click)="previousQuestion()"
+          [disabled]="isFirstQuestion"
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"/>
+          </svg>
+          Précédent
+        </button>
+
+        <button
+          class="btn btn-primary"
+          (click)="nextQuestion()"
+          [disabled]="!currentAnswer"
+        >
+          <span *ngIf="!isLastQuestion">Suivant</span>
+          <span *ngIf="isLastQuestion">Voir mon résultat</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result Section -->
+  <div class="diagnostic-result" *ngIf="showResult && result" @fadeIn>
+    <!-- Score Badge -->
+    <div class="score-badge" [class]="'score-' + result.level">
+      <div class="score-circle">
+        <div class="score-value">{{ result.score }}</div>
+        <div class="score-max">/{{ result.maxScore }}</div>
+      </div>
+      <div class="score-label">
+        <span *ngIf="result.level === 'low'">🟢</span>
+        <span *ngIf="result.level === 'medium'">🟡</span>
+        <span *ngIf="result.level === 'high'">🔴</span>
+        {{ result.title }}
+      </div>
+    </div>
+
+    <!-- Result Content -->
+    <div class="result-content">
+      <h3 class="result-title">Votre diagnostic personnalisé</h3>
+
+      <div class="result-card">
+        <div class="result-section">
+          <h4>Analyse de votre situation</h4>
+          <p>{{ result.description }}</p>
+        </div>
+
+        <div class="result-section recommendation">
+          <h4>Notre recommandation</h4>
+          <p>{{ result.recommendation }}</p>
+        </div>
+
+        <!-- Answers Summary -->
+        <div class="result-section answers-summary">
+          <h4>Vos réponses</h4>
+          <div class="answer-item">
+            <span class="answer-icon">💰</span>
+            <span class="answer-text">CA : {{ getRevenusLabel(result.answers.revenus) }}</span>
+          </div>
+          <div class="answer-item">
+            <span class="answer-icon">⏱️</span>
+            <span class="answer-text">Stabilité : {{ getStabiliteLabel(result.answers.stabilite) }}</span>
+          </div>
+          <div class="answer-item">
+            <span class="answer-icon">🎯</span>
+            <span class="answer-text">Objectif : {{ getObjectifLabel(result.answers.objectif) }}</span>
+          </div>
+          <div class="answer-item">
+            <span class="answer-icon">📊</span>
+            <span class="answer-text">Ressenti : {{ getResentiLabel(result.answers.ressenti) }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="result-actions">
+        <button class="btn btn-primary btn-large" (click)="scrollToContact()">
+          {{ result.ctaText }}
+        </button>
+        <button class="btn btn-secondary" (click)="restartDiagnostic()">
+          Refaire le diagnostic
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email Capture Modal -->
+  <div class="modal-overlay" *ngIf="showEmailModal" (click)="closeEmailModal()" @fadeIn>
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeEmailModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M6 6l12 12M6 18L18 6" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-icon">📧</div>
+        <h3>Recevez votre rapport PDF détaillé</h3>
+        <p>Obtenez une analyse complète de votre situation avec des recommandations personnalisées</p>
+      </div>
+
+      <form class="modal-form" (submit)="submitEmail(); $event.preventDefault()">
+        <div class="form-group">
+          <label for="modal-nom">Votre nom</label>
+          <input
+            type="text"
+            id="modal-nom"
+            [(ngModel)]="emailData.nom"
+            name="nom"
+            placeholder="Jean Dupont"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="modal-email">Votre email</label>
+          <input
+            type="email"
+            id="modal-email"
+            [(ngModel)]="emailData.email"
+            name="email"
+            placeholder="jean@exemple.be"
+            required
+          />
+        </div>
+
+        <div class="modal-benefits">
+          <div class="benefit-item">
+            <span class="benefit-icon">✅</span>
+            <span>Rapport PDF détaillé</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">✅</span>
+            <span>Analyse personnalisée</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">✅</span>
+            <span>Recommandations d'experts</span>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary btn-large"
+          [disabled]="isLoadingEmail"
+        >
+          <span *ngIf="!isLoadingEmail">Recevoir mon rapport PDF</span>
+          <span *ngIf="isLoadingEmail">Envoi en cours...</span>
+        </button>
+
+        <p class="modal-note">
+          Vous pouvez également fermer cette fenêtre et consulter vos résultats ci-dessus.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
