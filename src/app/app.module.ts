@@ -6,7 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { AlerteTresorerieComponent } from './TresorerieModule/alerte-tresorerie/alerte-tresorerie.component';
 import { AboutComponent } from './about/about.component';
 import { AbslComponent } from './absl/absl.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -90,7 +89,6 @@ import { DiagnosticManagementPatrimonialComponent } from './features-mobile/soci
     TestScrollComponent,
     TarifComponent,
     EconomieAnalysieComponent,
-    AlerteTresorerieComponent,
     FooterComponent,
     PromoBannerComponent,
     NotFoundComponent,
@@ -142,4 +140,4 @@ import { DiagnosticManagementPatrimonialComponent } from './features-mobile/soci
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

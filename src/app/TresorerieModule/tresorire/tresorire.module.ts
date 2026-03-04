@@ -7,6 +7,7 @@ import { AccompagnementMobileComponent } from '../../features-mobile/accompagnem
 import { StockTresorerieComponent } from '../../venteModule/stock-tresorerie/stock-tresorerie.component';
 import { TimelineStockComponent } from '../../venteModule/timeline-stock/timeline-stock.component';
 import { AccompagnementComponent } from '../accompagnement/accompagnement.component';
+import { AlerteTresorerieComponent } from '../alerte-tresorerie/alerte-tresorerie.component';
 import { AnticiperTresorerieComponent } from '../anticiper-tresorerie/anticiper-tresorerie.component';
 import { BlockFidelisationComponent } from '../block-fidelisation/block-fidelisation.component';
 import { BlockNegligerTresorerieComponent } from '../block-negliger-tresorerie/block-negliger-tresorerie.component';
@@ -20,6 +21,7 @@ import { TresorerieMobileComponent } from '../../features-mobile/tresorerie-mobi
 import { ProtegerTresorerieMobileComponent } from '../../features-mobile/proteger-tresorerie-mobile/proteger-tresorerie-mobile.component';
 import { StockTresorerieMobileComponent } from '../../features-mobile/stock-tresorerie-mobile/stock-tresorerie-mobile.component';
 import { TresorireRoutingModule } from './tresorire-routing.module';
+import { DiagnosticModule } from '../../shared/diagnostic/diagnostic.module';
 
 @NgModule({
   declarations: [
@@ -35,12 +37,14 @@ import { TresorireRoutingModule } from './tresorire-routing.module';
     AnticiperTresorerieComponent,
     TimelineStockComponent,
     AccompagnementComponent,
+    AlerteTresorerieComponent,
   ],
   imports: [
     CommonModule,
     TresorireRoutingModule,
     ShardeModuleModule,
     FormsModule,
+    DiagnosticModule,
     TresorerieMobileComponent,
     ProtegerTresorerieMobileComponent,
     StockTresorerieMobileComponent,

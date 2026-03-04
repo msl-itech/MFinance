@@ -369,10 +369,10 @@
             Bénéficiez d'un diagnostic gratuit et découvrez comment optimiser vos flux financiers.
           </p>
           <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-            <button (click)="scrollToSection('contact-button')" class="btn btn-light btn-lg px-5 py-3"
+            <button (click)="startDiagnostic()" class="btn btn-light btn-lg px-5 py-3"
               style="border-radius: 10px; font-weight: 700; color: #ff4b4b;">
               <i class="fas fa-clipboard-check me-2"></i>
-              Diagnostic gratuit
+              Faire mon diagnostic (2 min)
             </button>
             <a href="https://odoo.mfinances.be/book/4781b4d3" target="_blank" rel="noopener noreferrer"
               class="btn btn-outline-light btn-lg px-5 py-3"
@@ -808,10 +808,10 @@
               </p>
             </div>
             <div class="col-md-4 text-md-end mt-3 mt-md-0">
-              <button (click)="scrollToSection('contact-button')" class="btn btn-danger btn-lg px-4 py-3"
+              <button (click)="startDiagnostic()" class="btn btn-danger btn-lg px-4 py-3"
                 style="border-radius: 10px; font-weight: 600; width: 100%;">
-                <i class="fas fa-phone-alt me-2"></i>
-                Contactez-nous
+                <i class="fas fa-chart-line me-2"></i>
+                Lancer le diagnostic
               </button>
             </div>
           </div>
@@ -964,6 +964,84 @@
     }
   </style>
 </section>
+
+<!-- ============================================ -->
+<!-- SECTION DIAGNOSTIC HUB - PRIORITÉ MARKETING -->
+<!-- ============================================ -->
+<section id="diagnosticSection" class="diagnostic-hub-section py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+  <div class="container">
+    <!-- Introduction du diagnostic -->
+    <div class="diagnostic-intro text-center mb-5" data-aos="fade-up">
+      <span class="badge mb-3 px-4 py-2" style="background: #ff4b4b; color: white; font-size: 14px; border-radius: 25px;">
+        ⚡ Confidentiel • Sans engagement • 2 minutes
+      </span>
+      <h2 class="mb-3" style="color: #1e293b; font-weight: 700; font-size: 2.5rem;">
+        Votre trésorerie est-elle solide ?
+      </h2>
+      <p class="text-muted mb-4" style="font-size: 18px; max-width: 700px; margin: 0 auto;">
+        Répondez à 6 questions et obtenez un diagnostic personnalisé immédiat avec des recommandations adaptées à votre situation
+      </p>
+    </div>
+
+    <!-- Bouton CTA principal (si diagnostic pas encore lancé) -->
+    <div *ngIf="!showDiagnostic" class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="diagnostic-cta-box p-5 mx-auto" style="max-width: 800px; background: linear-gradient(135deg, #fee2e2 0%, #fef2f2 100%); border-radius: 20px; border: 2px solid #fca5a5;">
+        <div class="row align-items-center">
+          <div class="col-md-8 text-md-start text-center mb-3 mb-md-0">
+            <h4 class="mb-2" style="color: #991b1b; font-weight: 700;">
+              <i class="fas fa-chart-pie me-2"></i>
+              Évaluez la santé de votre trésorerie
+            </h4>
+            <p class="mb-0" style="color: #7f1d1d;">
+              Un diagnostic rapide pour identifier vos forces et points d'amélioration
+            </p>
+          </div>
+          <div class="col-md-4 text-md-end text-center">
+            <button
+              class="btn btn-danger btn-lg px-5 py-3 w-100"
+              (click)="startDiagnostic()"
+              style="border-radius: 12px; font-weight: 700; font-size: 18px; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);">
+              <i class="fas fa-play-circle me-2"></i>
+              Lancer le diagnostic
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bénéfices en dessous du CTA -->
+      <div class="row mt-4 justify-content-center">
+        <div class="col-md-4 text-center mb-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="benefit-badge p-3" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            <i class="fas fa-tachometer-alt text-danger mb-2" style="font-size: 2rem;"></i>
+            <p class="mb-0" style="font-weight: 600; color: #2d3436;">Score instantané</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center mb-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="benefit-badge p-3" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            <i class="fas fa-user-tie text-danger mb-2" style="font-size: 2rem;"></i>
+            <p class="mb-0" style="font-weight: 600; color: #2d3436;">Analyse personnalisée</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center mb-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="benefit-badge p-3" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            <i class="fas fa-lightbulb text-danger mb-2" style="font-size: 2rem;"></i>
+            <p class="mb-0" style="font-weight: 600; color: #2d3436;">Recommandations ciblées</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Composant Diagnostic (s'affiche au clic) -->
+    <div *ngIf="showDiagnostic" class="diagnostic-container-wrapper" data-aos="fade-up">
+      <app-diagnostic-container
+        [config]="diagnosticConfig"
+        [showEmailCapture]="true"
+        (diagnosticComplete)="onDiagnosticComplete($event)"
+      ></app-diagnostic-container>
+    </div>
+  </div>
+</section>
+
 <div class="business-section my-5 py-5">
   <div class="container2">
     <!-- Contenu textuel -->
@@ -994,8 +1072,8 @@
           vous accompagner.
         </p>
 
-        <button (click)="scrollToSection('contactSection')" class="cta-button" id="contact-button">
-          Demandez votre diagnostic gratuit
+        <button (click)="startDiagnostic()" class="cta-button" id="contact-button">
+          Faire mon diagnostic gratuit
           <i class="fas fa-arrow-right"></i>
         </button>
       </div>
