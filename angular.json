@@ -53,8 +53,6 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "src/assets/js/plugins/mobile-menu.js",
-              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/aos/dist/aos.js"
             ]
           },
@@ -112,8 +110,6 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "src/assets/js/plugins/mobile-menu.js",
-              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/aos/dist/aos.js"
             ]
           }

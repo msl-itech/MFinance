@@ -66,12 +66,6 @@ export const MOBILE_ROUTES: Routes = [
       { path: 'contact', component: ContactComponent },
       { path: 'avis-google', component: AvisGoogleComponent },
 
-      // Pages légales (RGPD)
-      { path: 'politique-confidentialite', component: PolitiqueConfidentialiteComponent },
-      { path: 'conditions-generales', component: ConditionsGeneralesComponent },
-      { path: 'mentions-legales', component: MentionsLegalesComponent },
-      { path: 'politique-cookies', component: PolitiqueCookiesComponent },
-
       // Profils (métier)
       { path: 'profils/independant-startup', component: IndependantMobileComponent },
       { path: 'profils/commercant-horeca', component: CommercantHorecaMobileComponent },

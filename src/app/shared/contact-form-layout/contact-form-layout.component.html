@@ -124,7 +124,7 @@
     z-index: 2;
   }
 
-  .contact-text h1 {
+  .contact-text h2 {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 30px;
@@ -205,7 +205,7 @@
 
   /* Styles responsive */
   @media (max-width: 767px) {
-    .contact-text h1 {
+    .contact-text h2 {
       font-size: 2rem;
     }
 
@@ -232,7 +232,7 @@
   }
 
   @media (max-width: 575px) {
-    .contact-text h1 {
+    .contact-text h2 {
       font-size: 1.75rem;
     }
 
@@ -270,7 +270,7 @@
       <!-- Texte à gauche -->
       <div class="col-lg-5 contact-text">
         <p class="text-uppercase font-weight-bold">{{ config.eyebrow }}</p>
-        <h1 [innerHTML]="config.title"></h1>
+        <h2 [innerHTML]="config.title"></h2>
         <p [innerHTML]="config.description"></p>
         <div class="contact-button mt-4">
           <a href="tel:+3228838686" class="btn btn-red">{{

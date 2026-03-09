@@ -14,10 +14,6 @@ import { SocieteExploitationMobileComponent } from '../features-mobile/societe-e
 import { SocieteManagementPatrimonialeMobileComponent } from '../features-mobile/societe-management-patrimoniale-mobile/societe-management-patrimoniale-mobile.component';
 import { SocieteMoyenMobileComponent } from '../features-mobile/societe-moyen-mobile/societe-moyen-mobile.component';
 import { SupportMobileComponent } from '../features-mobile/support-mobile/support-mobile.component';
-import { PolitiqueConfidentialiteComponent } from '../politique-confidentialite/politique-confidentialite.component';
-import { ConditionsGeneralesComponent } from '../conditions-generales/conditions-generales.component';
-import { MentionsLegalesComponent } from '../mentions-legales/mentions-legales.component';
-import { PolitiqueCookiesComponent } from '../politique-cookies/politique-cookies.component';
 import { TarifMobileComponent } from '../features-mobile/tarif-mobile/tarif-mobile.component';
 import { TresorerieBeneficeMobileComponent } from '../features-mobile/tresorerie-benefice-mobile/tresorerie-benefice-mobile.component';
 import { MobileLayoutComponent } from '../layouts/mobile-layout/mobile-layout.component';
@@ -65,12 +61,6 @@ export const MOBILE_ROUTES: Routes = [
       { path: 'support', component: SupportMobileComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'avis-google', component: AvisGoogleComponent },
-
-      // Pages légales (RGPD)
-      { path: 'politique-confidentialite', component: PolitiqueConfidentialiteComponent },
-      { path: 'conditions-generales', component: ConditionsGeneralesComponent },
-      { path: 'mentions-legales', component: MentionsLegalesComponent },
-      { path: 'politique-cookies', component: PolitiqueCookiesComponent },
 
       // Profils (métier)
       { path: 'profils/independant-startup', component: IndependantMobileComponent },

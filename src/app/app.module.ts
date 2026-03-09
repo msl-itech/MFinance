@@ -62,6 +62,10 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
 import { CalculatriceComponent } from './calculatrice/calculatrice.component';
 import { DiagnosticManagementPatrimonialComponent } from './features-mobile/societe-management-patrimoniale-mobile/diagnostic-management-patrimonial.component';
+import { PolitiqueConfidentialiteComponent } from './politique-confidentialite/politique-confidentialite.component';
+import { ConditionsGeneralesComponent } from './conditions-generales/conditions-generales.component';
+import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
+import { PolitiqueCookiesComponent } from './politique-cookies/politique-cookies.component';
 
 
 @NgModule({
@@ -94,6 +98,10 @@ import { DiagnosticManagementPatrimonialComponent } from './features-mobile/soci
     NotFoundComponent,
     SupportComponent,
     CalculatriceComponent,
+    PolitiqueConfidentialiteComponent,
+    ConditionsGeneralesComponent,
+    MentionsLegalesComponent,
+    PolitiqueCookiesComponent,
   ],
   imports: [
     BrowserModule,

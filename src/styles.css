@@ -13,35 +13,36 @@
   justify-content: center;
   padding: 1rem;
 
-  .video-modal-content {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    aspect-ratio: 16/9;
+}
 
-    .close-video {
-      position: absolute;
-      top: -3rem;
-      right: 0;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      z-index: 10;
-      transition: color 0.3s ease;
+.video-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+}
 
-      &:hover {
-        color: $primary-red;
-      }
-    }
+.video-modal-content .close-video {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
 
-    .video-frame {
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-    }
-  }
+.video-modal-content .close-video:hover {
+  color: #ff3b30;
+}
+
+.video-modal-content .video-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
 }
 
 .service-single {
@@ -389,7 +390,7 @@ button.cta-button {
   margin-bottom: 0.5rem;
 }
 
-.radio-content h6 {
+.radio-content .h6-title {
   font-weight: 600;
   color: #2c3e50;
   margin-bottom: 0.25rem;
@@ -483,7 +484,7 @@ button.cta-button {
   margin-bottom: 0.5rem;
 }
 
-.checkbox-content h6 {
+.checkbox-content .h6-title {
   font-weight: 600;
   color: #2c3e50;
   margin-bottom: 0.25rem;
@@ -845,5 +846,130 @@ button.cta-button {
   .popup-btn-primary {
     padding: 0.6rem 0.8rem;
     font-size: 0.8rem;
+  }
+}
+
+/* =================================
+   LEGAL PAGES CHARTER
+   ================================= */
+.legal-page-container {
+  background-color: #f8f9fb;
+  padding: 150px 0 4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a2c51;
+}
+
+.legal-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.legal-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a2c51;
+  margin-bottom: 0.5rem;
+}
+
+.legal-header .text-muted {
+  color: #6c757d !important;
+  font-size: 1.1rem;
+}
+
+.legal-content-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e6e9f1;
+}
+
+.legal-content-card section {
+  margin-bottom: 2.5rem !important;
+}
+
+.legal-content-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a2c51;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e6e9f1;
+  position: relative;
+}
+
+.legal-content-card h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #ff3b30;
+}
+
+.legal-content-card h3,
+.legal-content-card .h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a2c51;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.legal-content-card p,
+.legal-content-card li {
+  color: #374151;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.legal-content-card ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.legal-content-card li {
+  margin-bottom: 0.5rem;
+}
+
+.legal-content-card a {
+  color: #ff3b30;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.legal-content-card a:hover {
+  color: #cc2e26;
+  text-decoration: underline;
+}
+
+.btn-legal-back {
+  background: transparent;
+  color: #1a2c51;
+  border: 2px solid #1a2c51;
+  padding: 0.6rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-legal-back:hover {
+  background: #1a2c51;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(26, 44, 81, 0.2);
+}
+
+@media (max-width: 768px) {
+  .legal-content-card {
+    padding: 1.5rem;
+  }
+
+  .legal-header h1 {
+    font-size: 2rem;
   }
 }
