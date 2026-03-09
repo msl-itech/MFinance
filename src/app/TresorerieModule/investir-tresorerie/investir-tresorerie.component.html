@@ -1,15 +1,29 @@
 <header class="header">
   <div class="header-overlay">
     <div class="container">
-      <h1 class="text-white">
-        Investissements : Assurez votre Croissance sans Compromettre votre
-        Trésorerie
+      <h1 class="text-white" style="font-weight: 700;">
+        Investir dans votre entreprise sans<br> mettre votre trésorerie en danger
       </h1>
-      <p class="text-white mt-3">
-        Financer un investissement peut être risqué pour votre trésorerie.
-        Découvrez comment prendre des décisions éclairées grâce à des stratégies
-        simples et efficaces.
+      <p class="text-white mt-3" style="font-size: 1.1rem;">
+        Un investissement mal financé peut vider votre trésorerie et mettre votre entreprise en difficulté.<br />
+        Découvrez comment financer intelligemment vos projets<br> pour soutenir votre croissance sans fragiliser votre
+        équilibre financier.
       </p>
+      <!-- <div class="mt-4">
+        <div class="d-flex flex-column flex-md-row gap-3">
+          <button (click)="scrollToSection('diagnosticSection')" class="btn btn-danger btn-lg px-4 py-3"
+            style="border-radius: 10px; font-weight: 600;">
+            Faire mon diagnostic investissement (2 minutes)
+          </button>
+          <a href="https://odoo.mfinances.be/book/4781b4d3" target="_blank"
+            class="btn btn-outline-light btn-lg px-4 py-3" style="border-radius: 10px; font-weight: 600;">
+            Demander un audit de trésorerie
+          </a>
+        </div>
+        <p class="text-white mt-3" style="font-size: 0.9rem; margin-bottom: 0;">
+          <i class="fas fa-check-circle" style="color: #28a745;"></i> +20 ans d’accompagnement de dirigeants et PME
+        </p>
+      </div> -->
     </div>
   </div>
 </header>
@@ -23,58 +37,47 @@
         REGARDEZ LA VIDÉO SUR CETTE PAGE
       </div>
       <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/ojdCKrUenL8?list=PLAMEY6kkUU7RWmsuOEBY7x7_8xIl0cmnr"
-          allowfullscreen
-          class="border-0"
-        ></iframe>
+        <iframe src="https://www.youtube.com/embed/ojdCKrUenL8?list=PLAMEY6kkUU7RWmsuOEBY7x7_8xIl0cmnr" allowfullscreen
+          class="border-0"></iframe>
       </div>
     </div>
 
     <!-- Text Side -->
     <div class="text-side">
       <h2 class="title">
-        Trésorerie :
-        <span class="highlight">Transformez le Stress en Succès</span>
+        Pourquoi certains investissements <span class="highlight">mettent les entreprises en difficulté ?</span>
       </h2>
 
       <div class="content-text">
         <p class="intro">
-          Investir dans son entreprise est une étape clé pour assurer sa
-          croissance. Mais trop souvent, les entrepreneurs se lancent sans
-          réfléchir aux impacts sur leur trésorerie, ce qui peut rapidement
-          tourner au cauchemar financier.
+          Investir dans son entreprise est une étape clé pour assurer sa croissance.<br />
+          Mais trop souvent, les entrepreneurs se lancent sans mesurer l’impact sur leur trésorerie.
         </p>
-        <div
-          class="home2-about-list d-flex flex-column gap-3 mb-3"
-          style="font-size: 18px"
-        >
+        <p class="intro" style="font-weight: 600;">
+          Un investissement peut être rentable… et pourtant mettre votre entreprise en difficulté s’il est mal financé.
+        </p>
+        <p>Dans cet épisode de “Trésorerie : Transformez le Stress en Succès”, Mika Musungayi explique :</p>
+        <div class="home2-about-list d-flex flex-column gap-3 mb-3" style="font-size: 18px">
           <span data-aos="fade-right" data-aos-duration="800">
-            <i class="fas fa-check-circle text-danger"></i> Pourquoi la
-            trésorerie est essentielle pour la santé de votre entreprise.
+            <i class="fas fa-check-circle text-danger"></i> pourquoi la trésorerie est essentielle pour la santé de
+            votre entreprise
           </span>
           <span data-aos="fade-right" data-aos-duration="1000">
-            <i class="fas fa-check-circle text-danger"></i> Une comparaison des
-            options de financement comme l'autofinancement, les prêts bancaires
-            et le leasing.
+            <i class="fas fa-check-circle text-danger"></i> les différences entre autofinancement, emprunt bancaire et
+            leasing
           </span>
           <span data-aos="fade-right" data-aos-duration="1000">
-            <i class="fas fa-check-circle text-danger"></i> Des conseils
-            pratiques pour éviter les erreurs courantes grâce à des outils
-            simples.
+            <i class="fas fa-check-circle text-danger"></i> comment éviter les erreurs d’investissement grâce à une
+            bonne planification financière
           </span>
         </div>
 
         <div class="mt-4">
           <div class="d-flex flex-column flex-md-row gap-3">
-            <button
-              (click)="openFormFromPopup()"
-              class="btn btn-danger btn-lg px-4 py-3"
+            <button (click)="scrollToSection('diagnosticSection')" class="btn btn-danger btn-lg px-4 py-3"
               style="border-radius: 10px; font-weight: 600;">
-              <i class="fas fa-chart-bar me-2"></i>
-              Diagnostic investissement gratuit
+              Faire mon diagnostic investissement
             </button>
-            
           </div>
         </div>
       </div>
@@ -101,31 +104,36 @@
 
       <div class="content-text">
         <p class="intro">
-          Dans le podcast, nous évoquons l'histoire de Marianne, une
-          entrepreneure pleine d'enthousiasme qui décide d'investir dans une
-          machine coûteuse.
+          Marianne, entrepreneure dynamique, décide d’investir dans une machine coûteuse.
         </p>
-        <div
-          class="home2-about-list d-flex flex-column gap-3 mb-3"
-          style="font-size: 18px"
-        >
+        <p>Son raisonnement est simple :</p>
+        <blockquote style="font-style: italic; border-left: 4px solid #f34947; padding-left: 15px; margin: 20px 0;">
+          “Je préfère payer comptant et ne rien devoir à personne.”
+        </blockquote>
+        <p>Mais cette décision provoque un effet inattendu :</p>
+        <div class="home2-about-list d-flex flex-column gap-3 mb-3" style="font-size: 18px">
           <span data-aos="fade-right" data-aos-duration="800">
-            <i class="fas fa-check-circle text-danger"></i> Son erreur ? Elle
-            finance l'achat sur ses fonds propres pour "ne rien devoir à
-            personne".
+            <i class="fas fa-times-circle text-danger"></i> sa trésorerie est vidée
           </span>
           <span data-aos="fade-right" data-aos-duration="800">
-            <i class="fas fa-check-circle text-danger"></i> Résultat : sa
-            trésorerie est vidée, et elle ne peut plus faire face à ses dépenses
-            courantes.
+            <i class="fas fa-times-circle text-danger"></i> elle ne peut plus payer certaines charges
           </span>
-          <button
-              (click)="scrollToSection('solutions')"
-              class="btn btn-outline-danger btn-lg px-4 py-3"
-              style="border-radius: 10px; font-weight: 600;">
-              <i class="fas fa-hand-holding-usd me-2"></i>
-              Voir les solutions
-            </button>
+          <span data-aos="fade-right" data-aos-duration="800">
+            <i class="fas fa-times-circle text-danger"></i> un simple imprévu devient un risque majeur
+          </span>
+        </div>
+
+        <p class="mt-4" style="font-weight: bold; color: #333; background: #fff3f3; padding: 15px; border-radius: 8px;">
+          Conclusion : Un investissement doit être un levier de croissance, pas un risque pour votre stabilité
+          financière.
+        </p>
+
+        <div class="mt-4">
+          <button (click)="scrollToSection('solutions')" class="btn btn-outline-danger btn-lg px-4 py-3"
+            style="border-radius: 10px; font-weight: 600;">
+            <i class="fas fa-hand-holding-usd me-2"></i>
+            Voir les solutions de financement
+          </button>
         </div>
       </div>
     </div>
@@ -138,84 +146,97 @@
       </div>
 
       <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/4f01rkCw8ZA"
-          allowfullscreen
-          class="border-0"
-        ></iframe>
+        <iframe src="https://www.youtube.com/embed/4f01rkCw8ZA" allowfullscreen class="border-0"></iframe>
       </div>
     </div>
   </div>
 </div>
 
-<div class="background sec-padding">
+<div id="solutions" class="background sec-padding">
   <div class="container gap-4">
     <div class="row align-items-center">
       <div class="col-lg-6" data-aos="flip-left" data-aos-duration="800">
         <div class="home2-about-img">
-          <img
-            src="../../../assets/img/webp/fiscalite_entreprise_3_mfinances.webp"
-            alt=""
-          />
+          <img src="../../../assets/img/webp/fiscalite_entreprise_3_mfinances.webp" alt="" />
         </div>
       </div>
 
       <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
         <div class="hadding hadding-p">
-          <h1>Trois solutions pour financer vos investissements sans danger</h1>
-          <!-- <p style="font-size: 18px">
-                      Un point souvent négligé est la possibilité de déduire des frais professionnels. 
-                  </p> -->
+          <h2>Trois façons de financer un investissement sans fragiliser votre trésorerie</h2>
         </div>
         <div class="space10"></div>
-        <div
-          class="home2-about-list d-flex flex-column gap-3 mb-3"
-          style="font-size: 18px"
-        >
-          <span data-aos="fade-right" data-aos-duration="800">
-            <i class="fas fa-check-circle text-danger"></i>
-            <span class="fw-bold" style="color: #f34947"> Autofinancement</span>
-            <p>
-              Comme Marianne, vous pourriez être tenté de tout payer comptant,
-              mais cela peut rapidement fragiliser votre trésorerie.
-            </p>
-          </span>
-          <span data-aos="fade-right" data-aos-duration="1000">
-            <i class="fas fa-check-circle text-danger"></i>
-            <span class="fw-bold" style="color: #f34947">
-              Emprunt bancaire</span
-            >
-            <p>
-              Si Marianne avait opté pour un prêt à faible taux, elle aurait pu
-              conserver ses liquidités pour gérer ses dépenses courantes.
-            </p>
-          </span>
-          <span data-aos="fade-right" data-aos-duration="1000">
-            <i class="fas fa-check-circle text-danger"></i>
-            <span class="fw-bold" style="color: #f34947"> Leasing</span>
-            <p>
-              Un leasing aurait permis à Marianne d'étaler ses paiements tout en
-              utilisant immédiatement la machine
-            </p>
-          </span>
+
+        <!-- 1 Autofinancement -->
+        <div class="mb-4">
+          <h4 style="color: #f34947; font-weight: bold;"><i class="fas fa-piggy-bank me-2"></i> 1. Autofinancement</h4>
+          <p>Payer comptant peut sembler rassurant. Mais cette solution :</p>
+          <ul class="home2-about-list" style="font-size: 16px; margin-left: 20px;">
+            <li><i class="fas fa-minus text-danger" style="font-size:12px; margin-right:5px;"></i> réduit votre réserve
+              de sécurité</li>
+            <li><i class="fas fa-minus text-danger" style="font-size:12px; margin-right:5px;"></i> augmente votre risque
+              en cas d’imprévu</li>
+            <li><i class="fas fa-minus text-danger" style="font-size:12px; margin-right:5px;"></i> limite votre capacité
+              d’investissement futur</li>
+          </ul>
+          <p style="font-style: italic; color: #555;">À privilégier pour des investissements limités.</p>
         </div>
-        <div
-          class="home2-about-list d-flex flex-column gap-3 mb-3"
-          style="font-size: 18px"
-        >
-          <p>
-            Un investissement doit être un levier de croissance, pas un boulet
-            pour votre trésorerie. En analysant vos besoins, en planifiant avec
-            précision et en choisissant la bonne solution de financement, vous
-            pouvez développer votre entreprise tout en restant financièrement
-            serein
-          </p>
+
+        <!-- 2 Emprunt bancaire -->
+        <div class="mb-4">
+          <h4 style="color: #f34947; font-weight: bold;"><i class="fas fa-university me-2"></i> 2. Emprunt bancaire</h4>
+          <p>Un emprunt permet de :</p>
+          <ul class="home2-about-list" style="font-size: 16px; margin-left: 20px;">
+            <li><i class="fas fa-check text-success" style="font-size:12px; margin-right:5px;"></i> préserver votre
+              trésorerie</li>
+            <li><i class="fas fa-check text-success" style="font-size:12px; margin-right:5px;"></i> étaler la charge
+              financière</li>
+            <li><i class="fas fa-check text-success" style="font-size:12px; margin-right:5px;"></i> adapter le
+              financement à la durée de vie de l’investissement</li>
+          </ul>
+          <p style="font-style: italic; color: #555;">Si le retour sur investissement est prévisible, le crédit peut
+            être la solution la plus saine.</p>
         </div>
+
+        <!-- 3 Leasing -->
+        <div class="mb-4">
+          <h4 style="color: #f34947; font-weight: bold;"><i class="fas fa-file-contract me-2"></i> 3. Leasing</h4>
+          <p>Le leasing est particulièrement adapté pour :</p>
+          <ul class="home2-about-list mb-2" style="font-size: 16px; margin-left: 20px;">
+            <li><i class="fas fa-angle-right" style="margin-right:5px;"></i> équipements technologiques</li>
+            <li><i class="fas fa-angle-right" style="margin-right:5px;"></i> machines industrielles</li>
+            <li><i class="fas fa-angle-right" style="margin-right:5px;"></i> matériel nécessitant des mises à jour</li>
+          </ul>
+          <p><strong>Avantages :</strong></p>
+          <ul class="home2-about-list" style="font-size: 16px; margin-left: 20px;">
+            <li><i class="fas fa-check text-success" style="font-size:12px; margin-right:5px;"></i> paiements étalés
+            </li>
+            <li><i class="fas fa-check text-success" style="font-size:12px; margin-right:5px;"></i> trésorerie préservée
+            </li>
+            <li><i class="fas fa-check text-success" style="font-size:12px; margin-right:5px;"></i> accès immédiat à
+              l’équipement</li>
+          </ul>
+        </div>
+
         <div class="space10"></div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- 5️⃣ DIAGNOSTIC PREMIUM INVESTISSEMENT -->
+<section id="diagnosticSection" class="diagnostic-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="title" style="font-weight: bold; font-size: 2.5rem; color: #333;">Votre entreprise peut-elle <span
+          class="highlight">investir sans risque ?</span></h2>
+      <p class="lead" style="font-size: 1.1rem; color: #555;">Répondez à quelques questions et découvrez si votre
+        trésorerie vous permet d’investir sereinement.<br />Durée : moins de 2 minutes</p>
+    </div>
+    <!-- Composant du Quizz -->
+    <app-diagnostic-container [config]="diagnosticConfig"></app-diagnostic-container>
+  </div>
+</section>
 
 <section>
   <div class="service-faq sec-padding">
@@ -233,24 +254,14 @@
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
                   Pourquoi est-il risqué de financer un investissement avec mes
                   fonds propres ?
                 </button>
               </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Utiliser vos fonds propres peut sembler être une solution
                   simple et rapide, mais cela peut vider vos réserves et
@@ -266,24 +277,14 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Quelle est la meilleure option pour financer un investissement
                   ?
                 </button>
               </h2>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   La meilleure option dépend de votre situation financière, de
                   vos besoins et de la nature de l'investissement. Voici un
@@ -309,23 +310,13 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   Comment puis-je évaluer si un investissement est rentable ?
                 </button>
               </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Posez-vous les questions suivantes :
                   <ul>
@@ -346,23 +337,13 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingFour">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
-                  aria-expanded="false"
-                  aria-controls="collapseFour"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                   Quels sont les risques associés à un leasing ?
                 </button>
               </h2>
-              <div
-                id="collapseFour"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingFour"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Le leasing offre des avantages comme la flexibilité et des
                   paiements réguliers, mais comporte aussi des inconvénients :
@@ -388,24 +369,14 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingFive">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFive"
-                  aria-expanded="false"
-                  aria-controls="collapseFive"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                   Comment éviter de fragiliser ma trésorerie lors d'un
                   investissement ?
                 </button>
               </h2>
-              <div
-                id="collapseFive"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingFive"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Voici quelques conseils :
                   <ul>
@@ -431,23 +402,13 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingSix">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseSix"
-                  aria-expanded="false"
-                  aria-controls="collapseSix"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                   Que faire si ma trésorerie est déjà sous tension ?
                 </button>
               </h2>
-              <div
-                id="collapseSix"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingSix"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Si votre trésorerie est tendue, évitez d'engager un
                   investissement majeur. Vous pourriez plutôt :
@@ -468,23 +429,13 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingSeven">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseSeven"
-                  aria-expanded="false"
-                  aria-controls="collapseSeven"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                   Quelles aides ou subventions puis-je obtenir en Belgique ?
                 </button>
               </h2>
-              <div
-                id="collapseSeven"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingSeven"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   En Belgique, plusieurs dispositifs peuvent vous aider à
                   financer vos investissements, tels que :
@@ -505,24 +456,14 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingEight">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseEight"
-                  aria-expanded="false"
-                  aria-controls="collapseEight"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                   Pourquoi un tableau de trésorerie prévisionnel est-il
                   indispensable ?
                 </button>
               </h2>
-              <div
-                id="collapseEight"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingEight"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Un tableau de trésorerie prévisionnel vous permet de :
                   <ul>
@@ -543,23 +484,13 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingNine">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseNine"
-                  aria-expanded="false"
-                  aria-controls="collapseNine"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                   Quelle leçon retenir de l'histoire de Marianne ?
                 </button>
               </h2>
-              <div
-                id="collapseNine"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingNine"
-                data-bs-parent="#accordionExample"
-              >
+              <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   L'erreur de Marianne est d'avoir financé une machine coûteuse
                   uniquement sur ses fonds propres. Cette décision a vidé sa
@@ -592,53 +523,26 @@
           </p>
           <div class="space20"></div>
           <div class="help-list">
-            <div
-              class="help-item"
-              data-aos="fade-up"
-              data-aos-duration="600"
-              data-aos-delay="100"
-            >
+            <div class="help-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
               <i class="fas fa-chart-line"></i>
               <span>Analyser vos besoins financiers</span>
             </div>
-            <div
-              class="help-item"
-              data-aos="fade-up"
-              data-aos-duration="600"
-              data-aos-delay="200"
-            >
+            <div class="help-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
               <i class="fas fa-table"></i>
               <span>Construire un tableau de trésorerie prévisionnel</span>
             </div>
-            <div
-              class="help-item"
-              data-aos="fade-up"
-              data-aos-duration="600"
-              data-aos-delay="300"
-            >
+            <div class="help-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
               <i class="fas fa-balance-scale"></i>
               <span>Comparer les options de financement disponibles</span>
             </div>
-            <div
-              class="help-item"
-              data-aos="fade-up"
-              data-aos-duration="600"
-              data-aos-delay="400"
-            >
+            <div class="help-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
               <i class="fas fa-hand-holding-usd"></i>
-              <span
-                >Identifier des aides ou subventions adaptées à vos
-                projets</span
-              >
+              <span>Identifier des aides ou subventions adaptées à vos
+                projets</span>
             </div>
           </div>
           <div class="space30"></div>
-          <div
-            class="contact-cta"
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="500"
-          >
+          <div class="contact-cta" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
             <i class="fas fa-phone-alt"></i>
             <a href="tel:+3228860550" class="text-decoration-none">
               <p>
@@ -651,15 +555,39 @@
       </div>
       <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
         <div class="help-image">
-          <img
-            src="../../../assets/img/vente/image_strategies_dynamique2_page.webp"
-            alt="MFINANCES accompagnement"
-          />
+          <img src="../../../assets/img/vente/image_strategies_dynamique2_page.webp" alt="MFINANCES accompagnement" />
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- 9️⃣ CTA final -->
+<section class="final-cta-section py-5"
+  style="background: linear-gradient(135deg, #1f2937, #111827); color: white; text-align: center;">
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8" data-aos="zoom-in" data-aos-duration="800">
+        <h2 class="mb-4" style="font-weight: 700; font-size: 2.2rem; color: #fff;">
+          Investir intelligemment commence par une bonne visibilité financière.
+        </h2>
+        <p class="lead mb-5" style="color: #cbd5e1; font-size: 1.15rem;">
+          Avant de financer un investissement, il est essentiel de comprendre son impact sur votre trésorerie.
+        </p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+          <button (click)="scrollToSection('diagnosticSection')" class="btn btn-danger btn-lg px-4 py-3"
+            style="font-weight: 600; border-radius: 8px; border: none;">
+            Faire mon diagnostic investissement
+          </button>
+          <a href="https://odoo.mfinances.be/book/4781b4d3" target="_blank"
+            class="btn btn-outline-light btn-lg px-4 py-3" style="font-weight: 600; border-radius: 8px;">
+            Planifier un audit de trésorerie
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Pop-up de promotion du formulaire -->
 <div *ngIf="showPopup" class="popup-overlay" (click)="closePopup()">
@@ -708,19 +636,9 @@
 
 <!-- Section du formulaire -->
 <section id="contactSection" class="contact-section">
-  <app-contact-form-layout
-    [config]="formConfig"
-    [currentStep]="currentStep"
-    [totalSteps]="totalSteps"
-    [formSubmitted]="formSubmitted"
-    [isStepValid]="isStepValid()"
-    [isFormValid]="isFormValid()"
-    [isLoading]="isLoading"
-    (nextStep)="onNextStep()"
-    (previousStep)="onPreviousStep()"
-    (submit)="onSubmit()"
-    (reset)="onReset()"
-  >
+  <app-contact-form-layout [config]="formConfig" [currentStep]="currentStep" [totalSteps]="totalSteps"
+    [formSubmitted]="formSubmitted" [isStepValid]="isStepValid()" [isFormValid]="isFormValid()" [isLoading]="isLoading"
+    (nextStep)="onNextStep()" (previousStep)="onPreviousStep()" (submit)="onSubmit()" (reset)="onReset()">
     <div slot="form-content">
       <!-- Étape 1: Souhaitez-vous investir prochainement ? -->
       <div *ngIf="currentStep === 1" class="step-content">
@@ -733,47 +651,25 @@
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.souhaite_investir === 'oui'"
-            >
-              <input
-                type="radio"
-                name="souhaite_investir"
-                value="oui"
-                [(ngModel)]="formData.souhaite_investir"
-                (change)="onSouhaiteInvestirChange('oui')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.souhaite_investir === 'oui'">
+              <input type="radio" name="souhaite_investir" value="oui" [(ngModel)]="formData.souhaite_investir"
+                (change)="onSouhaiteInvestirChange('oui')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-check-circle text-success mb-2"></i>
                 <h6 class="mb-1">Oui</h6>
-                <small class="text-muted"
-                  >J'ai un projet d'investissement en cours</small
-                >
+                <small class="text-muted">J'ai un projet d'investissement en cours</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.souhaite_investir === 'non'"
-            >
-              <input
-                type="radio"
-                name="souhaite_investir"
-                value="non"
-                [(ngModel)]="formData.souhaite_investir"
-                (change)="onSouhaiteInvestirChange('non')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.souhaite_investir === 'non'">
+              <input type="radio" name="souhaite_investir" value="non" [(ngModel)]="formData.souhaite_investir"
+                (change)="onSouhaiteInvestirChange('non')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-times-circle text-secondary mb-2"></i>
                 <h6 class="mb-1">Non</h6>
-                <small class="text-muted"
-                  >Pas de projet d'investissement pour le moment</small
-                >
+                <small class="text-muted">Pas de projet d'investissement pour le moment</small>
               </div>
             </label>
           </div>
@@ -792,90 +688,48 @@
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="
+            <label class="custom-radio-option" [class.selected]="
                 formData.frein_principal === 'manque-tresorerie'
-              "
-            >
-              <input
-                type="radio"
-                name="frein_principal"
-                value="manque-tresorerie"
-                [(ngModel)]="formData.frein_principal"
-                (change)="onFreinChange('manque-tresorerie')"
-                required
-              />
+              ">
+              <input type="radio" name="frein_principal" value="manque-tresorerie"
+                [(ngModel)]="formData.frein_principal" (change)="onFreinChange('manque-tresorerie')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-piggy-bank text-danger mb-2"></i>
                 <h6 class="mb-1">Manque de trésorerie</h6>
-                <small class="text-muted"
-                  >Je n'ai pas assez de liquidités disponibles</small
-                >
+                <small class="text-muted">Je n'ai pas assez de liquidités disponibles</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="
+            <label class="custom-radio-option" [class.selected]="
                 formData.frein_principal === 'doutes-rentabilite'
-              "
-            >
-              <input
-                type="radio"
-                name="frein_principal"
-                value="doutes-rentabilite"
-                [(ngModel)]="formData.frein_principal"
-                (change)="onFreinChange('doutes-rentabilite')"
-                required
-              />
+              ">
+              <input type="radio" name="frein_principal" value="doutes-rentabilite"
+                [(ngModel)]="formData.frein_principal" (change)="onFreinChange('doutes-rentabilite')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-question-circle text-warning mb-2"></i>
                 <h6 class="mb-1">Doutes sur la rentabilité</h6>
-                <small class="text-muted"
-                  >Je ne suis pas sûr que l'investissement sera rentable</small
-                >
+                <small class="text-muted">Je ne suis pas sûr que l'investissement sera rentable</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="
+            <label class="custom-radio-option" [class.selected]="
                 formData.frein_principal === 'pas-plan-financement'
-              "
-            >
-              <input
-                type="radio"
-                name="frein_principal"
-                value="pas-plan-financement"
-                [(ngModel)]="formData.frein_principal"
-                (change)="onFreinChange('pas-plan-financement')"
-                required
-              />
+              ">
+              <input type="radio" name="frein_principal" value="pas-plan-financement"
+                [(ngModel)]="formData.frein_principal" (change)="onFreinChange('pas-plan-financement')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-file-invoice text-info mb-2"></i>
                 <h6 class="mb-1">Pas de plan de financement</h6>
-                <small class="text-muted"
-                  >Je n'ai pas de stratégie de financement claire</small
-                >
+                <small class="text-muted">Je n'ai pas de stratégie de financement claire</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.frein_principal === 'autre'"
-            >
-              <input
-                type="radio"
-                name="frein_principal"
-                value="autre"
-                [(ngModel)]="formData.frein_principal"
-                (change)="onFreinChange('autre')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.frein_principal === 'autre'">
+              <input type="radio" name="frein_principal" value="autre" [(ngModel)]="formData.frein_principal"
+                (change)="onFreinChange('autre')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-ellipsis-h text-primary mb-2"></i>
@@ -885,23 +739,13 @@
             </label>
           </div>
 
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreFrein"
-          >
+          <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreFrein">
             <div class="custom-input-group">
               <label for="frein_autre" class="form-label">
                 <i class="fas fa-edit me-2"></i>Précisez votre frein principal
               </label>
-              <input
-                type="text"
-                class="form-control custom-input"
-                id="frein_autre"
-                name="frein_autre"
-                [(ngModel)]="formData.frein_autre"
-                placeholder="Décrivez votre frein principal..."
-                maxlength="200"
-              />
+              <input type="text" class="form-control custom-input" id="frein_autre" name="frein_autre"
+                [(ngModel)]="formData.frein_autre" placeholder="Décrivez votre frein principal..." maxlength="200" />
             </div>
           </div>
         </div>
@@ -925,15 +769,8 @@
                 <label for="nom" class="form-label">
                   <i class="fas fa-user me-2"></i>Nom complet
                 </label>
-                <input
-                  type="text"
-                  class="form-control custom-input"
-                  id="nom"
-                  name="nom"
-                  [(ngModel)]="formData.nom"
-                  placeholder="Votre nom et prénom"
-                  required
-                />
+                <input type="text" class="form-control custom-input" id="nom" name="nom" [(ngModel)]="formData.nom"
+                  placeholder="Votre nom et prénom" required />
               </div>
             </div>
 
@@ -943,15 +780,8 @@
                   <i class="fas fa-envelope me-2"></i>Email
                   <span class="badge bg-success ms-2">✅ obligatoire</span>
                 </label>
-                <input
-                  type="email"
-                  class="form-control custom-input"
-                  id="email"
-                  name="email"
-                  [(ngModel)]="formData.email"
-                  placeholder="votre@email.com"
-                  required
-                />
+                <input type="email" class="form-control custom-input" id="email" name="email"
+                  [(ngModel)]="formData.email" placeholder="votre@email.com" required />
               </div>
             </div>
 
@@ -961,15 +791,8 @@
                   <i class="fas fa-phone me-2"></i>Téléphone
                   <span class="badge bg-success ms-2">✅ obligatoire</span>
                 </label>
-                <input
-                  type="tel"
-                  class="form-control custom-input"
-                  id="telephone"
-                  name="telephone"
-                  [(ngModel)]="formData.telephone"
-                  placeholder="+32 XXX XX XX XX"
-                  required
-                />
+                <input type="tel" class="form-control custom-input" id="telephone" name="telephone"
+                  [(ngModel)]="formData.telephone" placeholder="+32 XXX XX XX XX" required />
               </div>
             </div>
           </div>
@@ -981,10 +804,8 @@
                 <h6 class="mb-1">
                   📞 Un expert MFINANCES vous appellera sous 72h
                 </h6>
-                <small
-                  >L'échange est gratuit, confidentiel et sans
-                  engagement.</small
-                >
+                <small>L'échange est gratuit, confidentiel et sans
+                  engagement.</small>
               </div>
             </div>
           </div>
@@ -1003,38 +824,20 @@
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.chiffre_affaires === 'moins-100k'"
-            >
-              <input
-                type="radio"
-                name="chiffre_affaires"
-                value="moins-100k"
-                [(ngModel)]="formData.chiffre_affaires"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.chiffre_affaires === 'moins-100k'">
+              <input type="radio" name="chiffre_affaires" value="moins-100k" [(ngModel)]="formData.chiffre_affaires"
+                required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-seedling text-success mb-2"></i>
                 <h6 class="mb-1">Moins de 100K €/an</h6>
-                <small class="text-muted"
-                  >Jeune entreprise ou activité réduite</small
-                >
+                <small class="text-muted">Jeune entreprise ou activité réduite</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.chiffre_affaires === '100k-200k'"
-            >
-              <input
-                type="radio"
-                name="chiffre_affaires"
-                value="100k-200k"
-                [(ngModel)]="formData.chiffre_affaires"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.chiffre_affaires === '100k-200k'">
+              <input type="radio" name="chiffre_affaires" value="100k-200k" [(ngModel)]="formData.chiffre_affaires"
+                required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-chart-line text-primary mb-2"></i>
@@ -1043,17 +846,9 @@
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.chiffre_affaires === '200k-500k'"
-            >
-              <input
-                type="radio"
-                name="chiffre_affaires"
-                value="200k-500k"
-                [(ngModel)]="formData.chiffre_affaires"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.chiffre_affaires === '200k-500k'">
+              <input type="radio" name="chiffre_affaires" value="200k-500k" [(ngModel)]="formData.chiffre_affaires"
+                required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-trending-up text-warning mb-2"></i>
@@ -1062,17 +857,9 @@
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.chiffre_affaires === 'plus-500k'"
-            >
-              <input
-                type="radio"
-                name="chiffre_affaires"
-                value="plus-500k"
-                [(ngModel)]="formData.chiffre_affaires"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.chiffre_affaires === 'plus-500k'">
+              <input type="radio" name="chiffre_affaires" value="plus-500k" [(ngModel)]="formData.chiffre_affaires"
+                required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-building text-info mb-2"></i>
@@ -1107,40 +894,20 @@
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'horeca'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="horeca"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('horeca')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.type_activite === 'horeca'">
+              <input type="radio" name="type_activite" value="horeca" [(ngModel)]="formData.type_activite"
+                (change)="onActiviteChange('horeca')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-utensils text-danger mb-2"></i>
                 <h6 class="mb-1">Horeca</h6>
-                <small class="text-muted"
-                  >Restaurant, café, bar, hôtel...</small
-                >
+                <small class="text-muted">Restaurant, café, bar, hôtel...</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'commerce-detail'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="commerce-detail"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('commerce-detail')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.type_activite === 'commerce-detail'">
+              <input type="radio" name="type_activite" value="commerce-detail" [(ngModel)]="formData.type_activite"
+                (change)="onActiviteChange('commerce-detail')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-store text-primary mb-2"></i>
@@ -1149,18 +916,9 @@
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'commerce-gros'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="commerce-gros"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('commerce-gros')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.type_activite === 'commerce-gros'">
+              <input type="radio" name="type_activite" value="commerce-gros" [(ngModel)]="formData.type_activite"
+                (change)="onActiviteChange('commerce-gros')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-warehouse text-success mb-2"></i>
@@ -1169,62 +927,31 @@
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'services'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="services"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('services')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.type_activite === 'services'">
+              <input type="radio" name="type_activite" value="services" [(ngModel)]="formData.type_activite"
+                (change)="onActiviteChange('services')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-handshake text-info mb-2"></i>
                 <h6 class="mb-1">Services</h6>
-                <small class="text-muted"
-                  >Conseil, prestation de services...</small
-                >
+                <small class="text-muted">Conseil, prestation de services...</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'sante'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="sante"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('sante')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.type_activite === 'sante'">
+              <input type="radio" name="type_activite" value="sante" [(ngModel)]="formData.type_activite"
+                (change)="onActiviteChange('sante')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-heartbeat text-danger mb-2"></i>
                 <h6 class="mb-1">Santé</h6>
-                <small class="text-muted"
-                  >Médecin, dentiste, pharmacie...</small
-                >
+                <small class="text-muted">Médecin, dentiste, pharmacie...</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.type_activite === 'autre'"
-            >
-              <input
-                type="radio"
-                name="type_activite"
-                value="autre"
-                [(ngModel)]="formData.type_activite"
-                (change)="onActiviteChange('autre')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.type_activite === 'autre'">
+              <input type="radio" name="type_activite" value="autre" [(ngModel)]="formData.type_activite"
+                (change)="onActiviteChange('autre')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-ellipsis-h text-secondary mb-2"></i>
@@ -1235,47 +962,26 @@
           </div>
 
           <!-- Champ conditionnel pour "Autre" -->
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreActivite"
-          >
+          <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreActivite">
             <div class="custom-input-group">
               <label for="activite_autre" class="form-label">
                 <i class="fas fa-edit me-2"></i>Précisez votre activité
               </label>
-              <input
-                type="text"
-                class="form-control custom-input"
-                id="activite_autre"
-                name="activite_autre"
-                [(ngModel)]="formData.activite_autre"
-                placeholder="Décrivez votre activité..."
-                maxlength="200"
-              />
+              <input type="text" class="form-control custom-input" id="activite_autre" name="activite_autre"
+                [(ngModel)]="formData.activite_autre" placeholder="Décrivez votre activité..." maxlength="200" />
             </div>
           </div>
 
           <!-- Étape 5 bis: Type de marchandises (conditionnelle) -->
-          <div
-            class="mt-4 animate__animated animate__fadeInDown"
-            *ngIf="showMarchandises"
-          >
+          <div class="mt-4 animate__animated animate__fadeInDown" *ngIf="showMarchandises">
             <h4 class="step-subtitle mb-3">
               Quel type de marchandises vendez-vous principalement ?
             </h4>
 
             <div class="custom-radio-group">
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.type_marchandises === 'alimentaires'"
-              >
-                <input
-                  type="radio"
-                  name="type_marchandises"
-                  value="alimentaires"
-                  [(ngModel)]="formData.type_marchandises"
-                  required
-                />
+              <label class="custom-radio-option" [class.selected]="formData.type_marchandises === 'alimentaires'">
+                <input type="radio" name="type_marchandises" value="alimentaires"
+                  [(ngModel)]="formData.type_marchandises" required />
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-apple-alt text-success mb-2"></i>
@@ -1284,19 +990,11 @@
                 </div>
               </label>
 
-              <label
-                class="custom-radio-option"
-                [class.selected]="
+              <label class="custom-radio-option" [class.selected]="
                   formData.type_marchandises === 'maison-decoration'
-                "
-              >
-                <input
-                  type="radio"
-                  name="type_marchandises"
-                  value="maison-decoration"
-                  [(ngModel)]="formData.type_marchandises"
-                  required
-                />
+                ">
+                <input type="radio" name="type_marchandises" value="maison-decoration"
+                  [(ngModel)]="formData.type_marchandises" required />
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-home text-primary mb-2"></i>
@@ -1305,19 +1003,11 @@
                 </div>
               </label>
 
-              <label
-                class="custom-radio-option"
-                [class.selected]="
+              <label class="custom-radio-option" [class.selected]="
                   formData.type_marchandises === 'vetements-accessoires'
-                "
-              >
-                <input
-                  type="radio"
-                  name="type_marchandises"
-                  value="vetements-accessoires"
-                  [(ngModel)]="formData.type_marchandises"
-                  required
-                />
+                ">
+                <input type="radio" name="type_marchandises" value="vetements-accessoires"
+                  [(ngModel)]="formData.type_marchandises" required />
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-tshirt text-info mb-2"></i>
@@ -1326,40 +1016,22 @@
                 </div>
               </label>
 
-              <label
-                class="custom-radio-option"
-                [class.selected]="
+              <label class="custom-radio-option" [class.selected]="
                   formData.type_marchandises === 'equipements-techniques'
-                "
-              >
-                <input
-                  type="radio"
-                  name="type_marchandises"
-                  value="equipements-techniques"
-                  [(ngModel)]="formData.type_marchandises"
-                  required
-                />
+                ">
+                <input type="radio" name="type_marchandises" value="equipements-techniques"
+                  [(ngModel)]="formData.type_marchandises" required />
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-tools text-warning mb-2"></i>
                   <h6 class="mb-1">Équipements et matériel technique</h6>
-                  <small class="text-muted"
-                    >Électronique, machines, outils...</small
-                  >
+                  <small class="text-muted">Électronique, machines, outils...</small>
                 </div>
               </label>
 
-              <label
-                class="custom-radio-option"
-                [class.selected]="formData.type_marchandises === 'autre'"
-              >
-                <input
-                  type="radio"
-                  name="type_marchandises"
-                  value="autre"
-                  [(ngModel)]="formData.type_marchandises"
-                  required
-                />
+              <label class="custom-radio-option" [class.selected]="formData.type_marchandises === 'autre'">
+                <input type="radio" name="type_marchandises" value="autre" [(ngModel)]="formData.type_marchandises"
+                  required />
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-ellipsis-h text-secondary mb-2"></i>

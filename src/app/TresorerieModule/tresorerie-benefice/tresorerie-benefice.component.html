@@ -664,6 +664,18 @@
   </div>
 </div>
 
+<!-- Section Diagnostic Trésorerie -->
+<section id="diagnosticSection" class="diagnostic-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="title">Testez la <span class="highlight">santé de votre trésorerie</span></h2>
+      <p class="lead" style="font-size: 1.1rem; color: #555;">Découvrez si votre bénéfice reflète réellement votre
+        situation financière en 2 minutes.</p>
+    </div>
+    <app-diagnostic-container [config]="diagnosticConfig"></app-diagnostic-container>
+  </div>
+</section>
+
 <!-- Section du formulaire -->
 <section id="contactSection" class="contact-section">
   <app-contact-form-layout [config]="formConfig" [currentStep]="currentStep" [totalSteps]="totalSteps"
