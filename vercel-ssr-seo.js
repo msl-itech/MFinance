@@ -627,18 +627,9 @@ function generateStaticHtmlFiles() {
       `<app-root data-route="${route}">`
     );
 
-    // Ajouter une div avec les mots-clés en gras juste avant la fermeture du body
-    html = html.replace(
-      /<\/body>/,
-      `  <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
-        <h1 style="font-size: 0;">${
-          metaData.title ||
-          "MFinances - Cabinet d'expertise comptable à Bruxelles"
-        }</h1>
-        ${keywords.map((kw) => `<b>${kw}</b>`).join(" ")}
-      </div>
-    </body>`
-    );
+    // NOTE SEO 2025: Suppression de l'injection de h1 caché
+    // Cette technique de "keyword stuffing" invisible est obsolète et pénalisante
+    // Un seul h1 visible et pertinent par page est la meilleure pratique actuelle
 
     // Déterminer le chemin de sortie
     let outputPath;
