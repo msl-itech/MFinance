@@ -1,22 +1,190 @@
-<header class="header">
+<header class="header-enhanced">
   <div class="header-overlay">
     <div class="container">
-      <span style="color: red; font-size: 16px"
-        >BIENVENUE À MFINANCES EXPERT COMPTABLE À BRUXELLES</span
-      >
+      <div class="social-proof-badge">
+        <i class="fas fa-award"></i>
+        <span>+20 ans d'expérience</span>
+      </div>
+
       <h1 class="text-white">
-        Créer votre entreprise,<br />
-        Le passage en société
+        Passer en société :<br />
+        est-ce réellement rentable pour vous ?
       </h1>
-      <p class="text-white mt-3">
-        Déverrouiller le potentiel de votre entreprise : Le grand saut de
-        l'individuel à la société.
+
+      <p class="text-white mt-3 hero-subtitle">
+        Beaucoup d'entrepreneurs passent en société <strong>trop tôt... ou trop tard</strong>.<br />
+        Découvrez en 2 minutes si c'est le bon moment pour vous.
       </p>
+
+      <div class="hero-cta-wrapper">
+        <button (click)="scrollToSection('diagnosticSection')" class="cta-primary pulse-animation">
+          <i class="fas fa-check-circle"></i>
+          Vérifier si la société est rentable pour moi
+        </button>
+        <button (click)="scrollToSection('contactSection')" class="cta-secondary">
+          <i class="fas fa-calculator"></i>
+          Demander une simulation personnalisée
+        </button>
+      </div>
     </div>
   </div>
 </header>
 
-<div class="video-promotion-section">
+<!-- SECTION ÊTES-VOUS CONCERNÉ? -->
+<section class="concern-check-section bg-white">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Êtes-vous concerné par le passage en société&nbsp;?</h2>
+      <p>Voici les profils types qui bénéficient le plus de cette transformation</p>
+    </div>
+
+    <div class="concern-layout">
+      <!-- Image Side (Left) -->
+      <div class="concern-image-side">
+        <div class="image-wrapper shadow-lg rounded-4 overflow-hidden h-100">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop"
+            alt="Entrepreneur travaillant sur son business plan" class="section-illustration cover-image w-100 h-100"
+            style="object-fit: cover;" />
+        </div>
+      </div>
+
+      <!-- Text Side (Right) -->
+      <div class="concern-text-side">
+        <div class="concern-grid-vertical">
+          <!-- Card: Vous êtes concerné -->
+          <div class="concern-card concern-yes h-100">
+            <h3><i class="fas fa-check-circle"></i> Vous êtes concerné si...</h3>
+            <ul class="concern-list">
+              <li>
+                <i class="fas fa-check"></i>
+                <span>Votre CA dépasse <strong>70 000€/an</strong> de manière régulière</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span>Votre activité est <strong>stable depuis 12+ mois</strong></span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span>Vous payez plus de <strong>15 000€ d'impôts</strong> par an</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span>Vous souhaitez <strong>investir et développer</strong> votre activité</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span>Vous voulez <strong>protéger votre patrimoine</strong> personnel</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span>Vous cherchez une <strong>optimisation fiscale</strong> durable</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card: Pas prioritaire -->
+          <div class="concern-card concern-no h-100">
+            <h3><i class="fas fa-times-circle"></i> Pas prioritaire si...</h3>
+            <ul class="concern-list">
+              <li>
+                <i class="fas fa-times"></i>
+                <span>Votre activité est en <strong>démarrage récent</strong> (moins de 6 mois)</span>
+              </li>
+              <li>
+                <i class="fas fa-times"></i>
+                <span>Vos revenus sont <strong>irréguliers</strong> ou imprévisibles</span>
+              </li>
+              <li>
+                <i class="fas fa-times"></i>
+                <span>Vous n'avez <strong>pas de vision à moyen terme</strong></span>
+              </li>
+              <li>
+                <i class="fas fa-times"></i>
+                <span>Votre comptabilité n'est <strong>pas à jour</strong></span>
+              </li>
+              <li>
+                <i class="fas fa-times"></i>
+                <span>Vous ne souhaitez pas <strong>gérer une structure</strong> plus formelle</span>
+              </li>
+              <li>
+                <i class="fas fa-times"></i>
+                <span>Votre CA est <strong>inférieur à 40 000€/an</strong></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION TENSION STRATÉGIQUE -->
+<section class="tension-section bg-blue-1">
+  <div class="container">
+    <div class="tension-layout">
+      <!-- Text Side (Left) -->
+      <div class="tension-text-side">
+        <div class="tension-header">
+          <div class="tension-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <h2>Beaucoup d'entrepreneurs se trompent de timing</h2>
+          <p class="mb-4" style="font-size: 1.1rem; line-height: 1.6;">
+            Le choix du passage en société est une étape majeure. Agir au mauvais moment peut engendrer des coûts
+            considérables ou un manque à gagner fiscal important.
+          </p>
+        </div>
+
+        <div class="tension-grid">
+          <div class="tension-item tension-early shadow-sm">
+            <h3><i class="fas fa-clock"></i> Trop tôt</h3>
+            <ul>
+              <li>Activité pas encore stable</li>
+              <li>Coûts de structure > économies fiscales</li>
+              <li>Complexité administrative inutile</li>
+              <li>Perte de flexibilité</li>
+            </ul>
+            <div class="tension-result negative">
+              Résultat : <strong>Frais pour rien</strong>
+            </div>
+          </div>
+
+          <div class="tension-item tension-late shadow-sm">
+            <h3><i class="fas fa-hourglass-end"></i> Trop tard</h3>
+            <ul>
+              <li>Des milliers d'euros payés en trop</li>
+              <li>Opportunités d'optimisation manquées</li>
+              <li>Patrimoine personnel exposé</li>
+              <li>Difficulté à investir</li>
+            </ul>
+            <div class="tension-result negative">
+              Résultat : <strong>Argent perdu</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="tension-conclusion shadow-sm">
+          <p>
+            <strong>Le bon timing</strong> = quand les économies d'impôt dépassent largement les coûts
+            supplémentaires.<br />
+            C'est là que notre diagnostic et notre simulation à 1200€ prennent tout leur sens.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image Side (Right) -->
+      <div class="tension-image-side">
+        <div class="image-wrapper shadow-lg rounded-4 overflow-hidden h-100">
+          <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?q=80&w=1200&auto=format&fit=crop"
+            alt="Concept de timing et horloge" class="section-illustration cover-image w-100 h-100"
+            style="object-fit: cover; min-height: 400px;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="video-promotion-section bg-blue-2">
   <div class="content-container">
     <!-- Video Side -->
     <div class="video-side">
@@ -27,12 +195,8 @@
 
       <div class="video-container">
         <!-- <iframe width="627" height="352" src="https://www.youtube.com/embed/XyN5eZRnO8A" title="Pourquoi passer en société ?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="border-0"></iframe> -->
-        <iframe
-          src="https://www.youtube.com/embed/XyN5eZRnO8A"
-          title="Pourquoi passer en société ?"
-          allowfullscreen
-          class="border-0"
-        ></iframe>
+        <iframe src="https://www.youtube.com/embed/XyN5eZRnO8A" title="Pourquoi passer en société ?" allowfullscreen
+          class="border-0"></iframe>
       </div>
     </div>
 
@@ -47,10 +211,8 @@
       <div class="content-text">
         <p class="intro">
           L'art de l'économie d'impôt commence à 41 000 € de base imposable.
-          <span class="text-accent"
-            >Devenez une société et regardez votre argent travailler pour
-            vous</span
-          >.
+          <span class="text-accent">Devenez une société et regardez votre argent travailler pour
+            vous</span>.
         </p>
 
         <p class="benefits">
@@ -72,9 +234,169 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="business-section">
+<!-- SECTION CAS CONCRET -->
+<section class="case-study-section bg-white">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Cas concret : Laurent, consultant IT</h2>
+      <p>Comment un diagnostic de 1200€ lui a permis d'économiser 12 000€/an</p>
+    </div>
+
+    <!-- Image success story -->
+    <!-- <div class="section-image-wrapper">
+      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop"
+        alt="Équipe en réunion stratégique" class="section-illustration" />
+    </div> -->
+
+    <div class="case-timeline">
+      <div class="timeline-step">
+        <div class="timeline-number">1</div>
+        <div class="timeline-content">
+          <h3><i class="fas fa-user-circle"></i> Situation</h3>
+          <ul>
+            <li>Consultant IT indépendant</li>
+            <li>95 000€ de CA annuel</li>
+            <li>28 000€ d'impôts payés</li>
+            <li>En personne physique depuis 4 ans</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-arrow"><i class="fas fa-arrow-right"></i></div>
+
+      <div class="timeline-step">
+        <div class="timeline-number">2</div>
+        <div class="timeline-content">
+          <h3><i class="fas fa-question-circle"></i> Problème</h3>
+          <p class="problem-text">
+            "Je ne sais pas si passer en société changerait vraiment les choses.
+            Est-ce que ça vaut le coup avec tous les frais supplémentaires ?"
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-arrow"><i class="fas fa-arrow-right"></i></div>
+
+      <div class="timeline-step">
+        <div class="timeline-number">3</div>
+        <div class="timeline-content">
+          <h3><i class="fas fa-calculator"></i> Analyse MFINANCES</h3>
+          <ul>
+            <li>Diagnostic complet : 1200€</li>
+            <li>Simulation personnalisée créée</li>
+            <li>Économie fiscale calculée : <strong>12 000€/an</strong></li>
+            <li>Coût supplémentaire société : 3500€/an</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-arrow"><i class="fas fa-arrow-right"></i></div>
+
+      <div class="timeline-step">
+        <div class="timeline-number">4</div>
+        <div class="timeline-content">
+          <h3><i class="fas fa-trophy"></i> Résultat</h3>
+          <ul>
+            <li>SRL créée avec notre accompagnement</li>
+            <li>Économie nette année 1 : <strong class="highlight-green">8 500€</strong></li>
+            <li>Économie nette années suivantes : <strong class="highlight-green">12 000€/an</strong></li>
+            <li>ROI du diagnostic : <strong>700%</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-cta">
+      <p class="case-conclusion">
+        Laurent économise maintenant <strong>12 000€ par an</strong>. Et vous ?
+      </p>
+      <button (click)="scrollToSection('contactSection')" class="cta-primary">
+        <i class="fas fa-file-invoice"></i>
+        Recevoir mon estimation personnalisée
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION NOTRE MÉTHODE -->
+<section class="method-section bg-blue-1">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Notre méthode en 3 étapes</h2>
+      <p>Un processus clair et transparent pour prendre la bonne décision</p>
+    </div>
+
+    <!-- Image processus -->
+    <!-- <div class="section-image-wrapper">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+        alt="Équipe collaborant ensemble" class="section-illustration" />
+    </div> -->
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3>1. Diagnostic</h3>
+        <p>
+          Analyse approfondie de votre situation actuelle : revenus, charges, impôts,
+          objectifs. Nous identifions votre profil et vos leviers d'optimisation.
+        </p>
+        <div class="method-result">
+          ✓ Vue claire de votre situation
+        </div>
+      </div>
+
+      <div class="method-arrow">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+
+      <div class="method-card">
+        <div class="method-icon">
+          <i class="fas fa-calculator"></i>
+        </div>
+        <h3>2. Simulation</h3>
+        <p>
+          Calcul précis des économies potentielles vs coûts supplémentaires.
+          Comparaison chiffrée entre votre situation actuelle et en société.
+        </p>
+        <div class="method-result">
+          ✓ Chiffres concrets et fiables
+        </div>
+      </div>
+
+      <div class="method-arrow">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+
+      <div class="method-card">
+        <div class="method-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3>3. Décision</h3>
+        <p>
+          Note de synthèse comparative + RDV pour répondre à toutes vos questions.
+          Vous décidez en toute connaissance de cause.
+        </p>
+        <div class="method-result">
+          ✓ Décision éclairée et sereine
+        </div>
+      </div>
+    </div>
+
+    <div class="method-price">
+      <p>Tarif tout compris : <strong>1 200€</strong></p>
+      <p class="method-note">
+        Ce plan financier pourra être directement utilisé pour les formalités de création,
+        vous évitant ainsi des frais supplémentaires.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="business-section bg-white">
   <div class="container2">
     <!-- Contenu textuel -->
     <div class="content-side">
@@ -84,14 +406,10 @@
 
       <div class="content">
         <p>
-          <span class="highlight"
-            >Opter pour la transformation d'une entreprise individuelle en
-            société n'est pas une décision anodine,</span
-          >
-          <span class="highlight"
-            >Ce passage symbolise bien plus qu'un simple changement structurel
-            ;</span
-          >.
+          <span class="highlight">Opter pour la transformation d'une entreprise individuelle en
+            société n'est pas une décision anodine,</span>
+          <span class="highlight">Ce passage symbolise bien plus qu'un simple changement structurel
+            ;</span>.
         </p>
 
         <p>
@@ -104,11 +422,7 @@
           avenir professionnel.
         </p>
 
-        <button
-          (click)="scrollToSection('contactSection')"
-          class="cta-button"
-          style="cursor: pointer"
-        >
+        <button (click)="scrollToSection('contactSection')" class="cta-button" style="cursor: pointer">
           Lancer votre procédure
           <i class="fas fa-arrow-right"></i>
         </button>
@@ -117,23 +431,17 @@
 
     <!-- Image side -->
     <div class="image-side">
-      <img
-        src="../../../assets/img/vente/img_passage_en_societe1.webp"
-        alt="Entrepreneur travaillant"
-        class="feature-image"
-      />
+      <img src="../../../assets/img/vente/img_passage_en_societe1.webp" alt="Entrepreneur travaillant"
+        class="feature-image" />
     </div>
   </div>
-</div>
+</section>
 
-<div class="business-section">
+<section class="business-section bg-blue-3">
   <div class="container2">
     <div class="image-side">
-      <img
-        src="../../../assets/img/vente/avantage_passage_en_societe_mfin.webp"
-        alt="Entrepreneur travaillant"
-        class="feature-image"
-      />
+      <img src="../../../assets/img/vente/avantage_passage_en_societe_mfin.webp" alt="Entrepreneur travaillant"
+        class="feature-image" />
     </div>
 
     <!-- Contenu textuel -->
@@ -153,11 +461,7 @@
           niches fiscales qui organisent des rémunérations alternatives avec un
           traitement bien plus favorable.
         </p>
-        <button
-          (click)="scrollToSection('contactSection')"
-          class="cta-button"
-          style="cursor: pointer"
-        >
+        <button (click)="scrollToSection('contactSection')" class="cta-button" style="cursor: pointer">
           Parler à un expert
           <i class="fas fa-arrow-right"></i>
         </button>
@@ -166,97 +470,176 @@
 
     <!-- Image side -->
   </div>
-</div>
+</section>
 <app-timeline-societe></app-timeline-societe>
 
-<div class="container3">
-  <div class="header3">
-    <h1>
-      Offrez-vous une analyse personnalisée<br />de votre situation au prix de
-      1.200 €.
-    </h1>
-    <p>
-      MFinances transforme vos interrogations en opportunités et vous accompagne
-      en 4 étapes<br />grâce à son expertise sur mesure.
-    </p>
-  </div>
+<section class="pricing-analysis-section bg-white">
+  <div class="container3">
+    <div class="header3">
+      <h2 class="h1">
+        Offrez-vous une analyse personnalisée<br />de votre situation au prix de
+        1.200 €.
+      </h2>
+      <p>
+        MFinances transforme vos interrogations en opportunités et vous accompagne
+        en 4 étapes<br />grâce à son expertise sur mesure.
+      </p>
+    </div>
 
-  <div class="steps-container">
-    <div class="step-card">
-      <div
-        class="step-image"
-        style="
+    <div class="steps-container">
+      <div class="step-card">
+        <div class="step-image" style="
           background-image: url('../../../assets/img/vente/etape1_passage_en_societe_mfinan.webp');
-        "
-      ></div>
-      <h3>Étape 1</h3>
-      <p>
-        Nous vous présentons la situation de votre activité en personne physique
-        en mettant en évidence l'impôt qu'elle génère.
-      </p>
-    </div>
+        "></div>
+        <h3 class="h5">Étape 1</h3>
+        <p>
+          Nous vous présentons la situation de votre activité en personne physique
+          en mettant en évidence l'impôt qu'elle génère.
+        </p>
+      </div>
 
-    <div class="step-card">
-      <div
-        class="step-image"
-        style="
+      <div class="step-card">
+        <div class="step-image" style="
           background-image: url('../../../assets/img/vente/etape2_passage_en_societe_mfinan.webp');
-        "
-      ></div>
-      <h3>Étape 2</h3>
-      <p>
-        Nous élaborons le plan financier de votre activité sous forme de
-        société. Cela permet de projeter vos résultats financiers en tant que
-        société et de calculer les impôts associés. Vous pourrez utiliser ce
-        plan directement pour les formalités de création de votre société,
-        évitant ainsi des frais supplémentaires.
-      </p>
-    </div>
+        "></div>
+        <h3 class="h5">Étape 2</h3>
+        <p>
+          Nous élaborons le plan financier de votre activité sous forme de
+          société. Cela permet de projeter vos résultats financiers en tant que
+          société et de calculer les impôts associés. Vous pourrez utiliser ce
+          plan directement pour les formalités de création de votre société,
+          évitant ainsi des frais supplémentaires.
+        </p>
+      </div>
 
-    <div class="step-card">
-      <div
-        class="step-image"
-        style="
+      <div class="step-card">
+        <div class="step-image" style="
           background-image: url('../../../assets/img/vente/etape3_passage_en_societe_mfinan.webp');
-        "
-      ></div>
-      <h3>Étape 3</h3>
-      <p>
-        Nous réalisons une optimisation de votre pouvoir d'achat. Nous examinons
-        ensemble les différentes niches fiscales disponibles pour réduire
-        efficacement l'impôt sur votre rémunération.
-      </p>
-    </div>
+        "></div>
+        <h3 class="h5">Étape 3</h3>
+        <p>
+          Nous réalisons une optimisation de votre pouvoir d'achat. Nous examinons
+          ensemble les différentes niches fiscales disponibles pour réduire
+          efficacement l'impôt sur votre rémunération.
+        </p>
+      </div>
 
-    <div class="step-card">
-      <div
-        class="step-image"
-        style="
+      <div class="step-card">
+        <div class="step-image" style="
           background-image: url('../../../assets/img/vente/bcom-h-2-service-grid-img4-5 (1).webp');
-        "
-      ></div>
-      <h3>Étape 4</h3>
-      <p>
-        Nous rédigeons une note de synthèse comparative qui met en évidence
-        l'économie d'impôts que vous pourriez réaliser en concrétisant votre
-        passage en société. Et nous vous proposons un RDV pour répondre à toutes
-        vos questions.
-      </p>
+        "></div>
+        <h3 class="h5">Étape 4</h3>
+        <p>
+          Nous rédigeons une note de synthèse comparative qui met en évidence
+          l'économie d'impôts que vous pourriez réaliser en concrétisant votre
+          passage en société. Et nous vous proposons un RDV pour répondre à toutes
+          vos questions.
+        </p>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- SECTION POURQUOI NOUS? -->
+<section class="why-us-section bg-blue-2">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Pourquoi choisir MFINANCES pour votre passage en société ?</h2>
+      <p>Une expertise reconnue au service de votre réussite</p>
+    </div>
+
+    <!-- Image expertise -->
+    <!-- <div class="section-image-wrapper">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop"
+        alt="Experts en discussion" class="section-illustration" />
+    </div> -->
+
+    <div class="why-us-grid">
+      <div class="why-us-card">
+        <div class="why-us-icon">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <h3>+20 ans d'expérience</h3>
+        <p>
+          Depuis plus de deux décennies, nous accompagnons les entrepreneurs
+          dans leurs transformations stratégiques. Notre expertise vous garantit
+          des conseils fiables et éprouvés.
+        </p>
+      </div>
+
+      <div class="why-us-card">
+        <div class="why-us-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <h3>PME de 1 à 500 employés</h3>
+        <p>
+          Nous avons accompagné des entreprises de toutes tailles, de l'indépendant
+          solo à la PME structurée. Quelle que soit votre situation, nous avons
+          l'expérience adaptée.
+        </p>
+      </div>
+
+      <div class="why-us-card">
+        <div class="why-us-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Expertise complète</h3>
+        <p>
+          Au-delà du passage en société, nous vous accompagnons dans la structuration
+          avancée : holdings, optimisation patrimoniale, planification fiscale à long terme.
+        </p>
+      </div>
+    </div>
+
+    <div class="why-us-values">
+      <h3>Nos engagements</h3>
+      <div class="values-grid">
+        <div class="value-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Transparence totale sur les coûts et bénéfices</span>
+        </div>
+        <div class="value-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Analyse objective et indépendante</span>
+        </div>
+        <div class="value-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Accompagnement personnalisé de A à Z</span>
+        </div>
+        <div class="value-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Disponibilité et réactivité garanties</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION DIAGNOSTIC - Moment stratégique pour évaluer -->
+<section id="diagnosticSection" class="diagnostic-section bg-white">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="tag">Outil gratuit</span>
+      <h2>Faites le point sur votre situation en 2 minutes</h2>
+      <p class="diagnostic-intro">Maintenant que vous comprenez les enjeux, évaluez votre situation avec notre
+        diagnostic personnalisé</p>
+    </div>
+
+    <app-diagnostic-passage-societe (diagnosticComplete)="onDiagnosticComplete($event)">
+    </app-diagnostic-passage-societe>
+  </div>
+</section>
+
 <!-- <app-promo-societe></app-promo-societe> -->
-<section>
+<section class="faq-wrapper bg-blue-3">
   <div class="service-faq sec-padding">
     <div class="container">
       <div class="row">
         <div class="col-md-6 m-auto text-center">
           <div>
-            <h1>
-              FAQ :<span class="rectangle-red"
-                >Transformation de l'Entreprise Individuelle en Société</span
-              >
-            </h1>
+            <h2 class="h1">
+              FAQ :<span class="rectangle-red">Transformation de l'Entreprise Individuelle en Société</span>
+            </h2>
           </div>
         </div>
       </div>
@@ -265,25 +648,15 @@
         <div>
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
+              <div class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
                   Pourquoi devrais-je envisager de transformer mon entreprise
                   individuelle en société ?
                 </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   La transformation en société n'est pas seulement un changement
                   de structure, mais une évolution stratégique qui protège vos
@@ -294,25 +667,15 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
+              <div class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Quels sont les principaux avantages fiscaux de devenir une
                   société ?
                 </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   En tant que société, vous bénéficiez de taux d'imposition plus
                   cléments, avec des impôts sur les bénéfices à 20 % jusqu'à 100
@@ -323,25 +686,15 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
+              <div class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   Comment la constitution en société protège-t-elle mon
                   patrimoine personnel ?
                 </button>
-              </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   La constitution en société crée une séparation claire entre
                   vos biens personnels et professionnels, protégeant ainsi vos
@@ -351,25 +704,15 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingFour">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
-                  aria-expanded="false"
-                  aria-controls="collapseFour"
-                >
+              <div class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                   Quels sont les coûts initiaux liés à la transformation en
                   société ?
                 </button>
-              </h2>
-              <div
-                id="collapseFour"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingFour"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Les frais initiaux incluent les coûts des publications
                   légales, des cotisations et des frais de gestion comptable.
@@ -380,25 +723,15 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingFive">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFive"
-                  aria-expanded="false"
-                  aria-controls="collapseFive"
-                >
+              <div class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                   À partir de quel point la transformation en société
                   devient-elle rentable ?
                 </button>
-              </h2>
-              <div
-                id="collapseFive"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingFive"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Le seuil de rentabilité est atteint lorsque les économies
                   d'impôt réalisées surpassent les coûts opérationnels
@@ -409,25 +742,15 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingSix">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseSix"
-                  aria-expanded="false"
-                  aria-controls="collapseSix"
-                >
+              <div class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                   Quelles stratégies fiscales puis-je utiliser une fois
                   transformé en société ?
                 </button>
-              </h2>
-              <div
-                id="collapseSix"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingSix"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   En tant que société, vous pouvez exploiter des niches
                   fiscales, organiser des rémunérations alternatives et
@@ -437,25 +760,15 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingSeven">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseSeven"
-                  aria-expanded="false"
-                  aria-controls="collapseSeven"
-                >
+              <div class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                   Quelle est l'importance de la gestion proactive pour une
                   société ?
                 </button>
-              </h2>
-              <div
-                id="collapseSeven"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingSeven"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Une gestion proactive est essentielle pour maintenir la
                   continuité des revenus et assurer la sécurité financière de la
@@ -465,25 +778,15 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingEight">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseEight"
-                  aria-expanded="false"
-                  aria-controls="collapseEight"
-                >
+              <div class="accordion-header" id="headingEight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                   Comment le passage en société influence-t-il la prise de
                   décision économique ?
                 </button>
-              </h2>
-              <div
-                id="collapseEight"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingEight"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Devenir une société vous permet de prendre des décisions plus
                   stratégiques concernant la croissance, la répartition des
@@ -493,25 +796,15 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingNine">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseNine"
-                  aria-expanded="false"
-                  aria-controls="collapseNine"
-                >
+              <div class="accordion-header" id="headingNine">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                   Quelles précautions dois-je prendre lors de la transformation
                   en société ?
                 </button>
-              </h2>
-              <div
-                id="collapseNine"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingNine"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Il est crucial de bien comprendre les implications légales et
                   fiscales, de prévoir les coûts initiaux et de s'assurer de la
@@ -520,25 +813,15 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTen">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTen"
-                  aria-expanded="false"
-                  aria-controls="collapseTen"
-                >
+              <div class="accordion-header" id="headingTen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
                   Quelles perspectives s'offrent à l'entrepreneur après la
                   transformation en société ?
                 </button>
-              </h2>
-              <div
-                id="collapseTen"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingTen"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   La transformation en société ouvre de vastes perspectives pour
                   l'expansion commerciale, l'amélioration de la crédibilité sur
@@ -548,6 +831,108 @@
                 </div>
               </div>
             </div>
+
+            <!-- NOUVELLES QUESTIONS STRATÉGIQUES -->
+            <div class="accordion-item">
+              <div class="accordion-header" id="headingEleven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                  Comment savoir si c'est le bon moment pour moi ?
+                </button>
+              </div>
+              <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Le bon moment se détermine par trois critères principaux : (1) Un CA régulier
+                  supérieur à 70 000€/an, (2) Une activité stable depuis au moins 12 mois, et
+                  (3) Des impôts dépassant 15 000€/an. Si ces conditions sont réunies, une analyse
+                  détaillée révèle généralement des économies substantielles. Notre diagnostic
+                  gratuit en 4 questions vous donne une première indication immédiate.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" id="headingTwelve">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                  Combien vais-je réellement économiser ?
+                </button>
+              </div>
+              <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Les économies varient selon votre situation, mais pour un CA de 95 000€,
+                  l'économie fiscale moyenne se situe entre 8 000€ et 15 000€ par an. C'est
+                  précisément ce que notre simulation à 1200€ calcule : une comparaison chiffrée
+                  exacte entre votre situation actuelle et en société, en tenant compte de TOUS
+                  les coûts (comptabilité, cotisations sociales, impôts société) et de TOUS les
+                  avantages fiscaux disponibles.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" id="headingThirteen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                  Quels sont les vrais coûts cachés ?
+                </button>
+              </div>
+              <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Parlons franchement : les coûts supplémentaires d'une société incluent la
+                  comptabilité (2000-3000€/an), les cotisations sociales minimales
+                  (environ 800€/an), et quelques frais administratifs (500€/an). Total réaliste :
+                  3500€/an. Mais attention aux "faux coûts" : beaucoup confondent les cotisations
+                  sociales (qui ouvrent des droits pension) avec des charges pures. Notre analyse
+                  détaille tout cela sans langue de bois.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" id="headingFourteen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                  Est-ce que je peux revenir en arrière ?
+                </button>
+              </div>
+              <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Techniquement oui, mais c'est complexe et coûteux. C'est exactement pourquoi il
+                  est crucial de bien analyser AVANT de passer en société. Une erreur de timing
+                  peut vous coûter des milliers d'euros en frais inutiles. Notre simulation à 1200€
+                  vous évite ce risque en vous donnant une vision claire et chiffrée. Si l'analyse
+                  montre que ce n'est pas rentable, vous économisez potentiellement 10 000€ en
+                  frais de création + années de structure non optimale.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-header" id="headingFifteen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                  Que se passe-t-il après l'analyse à 1200€ ?
+                </button>
+              </div>
+              <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Vous recevez une note de synthèse complète avec (1) votre situation actuelle
+                  détaillée, (2) le plan financier de votre future société, (3) le calcul précis
+                  des économies année par année, et (4) l'optimisation de votre pouvoir d'achat
+                  via les niches fiscales. Ensuite, RDV pour répondre à toutes vos questions.
+                  Vous décidez en toute connaissance de cause. Aucune pression, aucun engagement.
+                  Si vous créez votre société avec nous, ce plan financier est directement utilisable
+                  pour les formalités, vous évitant des frais supplémentaires.
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -555,115 +940,65 @@
   </div>
 </section>
 
-<section id="contactSection" class="contact-section">
-  <app-contact-form-layout
-    [config]="formConfig"
-    [currentStep]="currentStep"
-    [totalSteps]="totalSteps"
-    [formSubmitted]="formSubmitted"
-    [isStepValid]="isStepValid()"
-    [isFormValid]="isFormValid()"
-    [isLoading]="isLoading"
-    (nextStep)="onNextStep()"
-    (previousStep)="onPreviousStep()"
-    (submit)="onSubmit()"
-    (reset)="onReset()"
-  >
+<section id="contactSection" class="contact-section bg-white">
+  <app-contact-form-layout [config]="formConfig" [currentStep]="currentStep" [totalSteps]="totalSteps"
+    [formSubmitted]="formSubmitted" [isStepValid]="isStepValid()" [isFormValid]="isFormValid()" [isLoading]="isLoading"
+    (nextStep)="onNextStep()" (previousStep)="onPreviousStep()" (submit)="onSubmit()" (reset)="onReset()">
     <div slot="form-content">
       <!-- Étape 1: Votre situation actuelle -->
       <div *ngIf="currentStep === 1" class="step-content">
-        <h3 class="step-title mb-4">
+        <div class="h3 step-title mb-4">
           1. Quelle est votre situation actuelle ?
-        </h3>
+        </div>
         <p class="step-description mb-4">
           Sélectionnez l'option qui vous correspond le mieux.
         </p>
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.situation === 'independant-nom-propre'"
-            >
-              <input
-                type="radio"
-                name="situation"
-                value="independant-nom-propre"
-                [(ngModel)]="formData.situation"
-                (change)="onSituationChange('independant-nom-propre')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.situation === 'independant-nom-propre'">
+              <input type="radio" name="situation" value="independant-nom-propre" [(ngModel)]="formData.situation"
+                (change)="onSituationChange('independant-nom-propre')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-user-tie text-danger mb-2"></i>
-                <h6 class="mb-1">Indépendant en nom propre</h6>
-                <small class="text-muted"
-                  >Je suis déjà indépendant en nom propre (personne
-                  physique)</small
-                >
+                <div class="h6 mb-1">Indépendant en nom propre</div>
+                <small class="text-muted">Je suis déjà indépendant en nom propre (personne
+                  physique)</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.situation === 'lancement-activite'"
-            >
-              <input
-                type="radio"
-                name="situation"
-                value="lancement-activite"
-                [(ngModel)]="formData.situation"
-                (change)="onSituationChange('lancement-activite')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.situation === 'lancement-activite'">
+              <input type="radio" name="situation" value="lancement-activite" [(ngModel)]="formData.situation"
+                (change)="onSituationChange('lancement-activite')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-rocket text-danger mb-2"></i>
-                <h6 class="mb-1">En phase de lancement</h6>
-                <small class="text-muted"
-                  >Je suis en train de lancer mon activité</small
-                >
+                <div class="h6 mb-1">En phase de lancement</div>
+                <small class="text-muted">Je suis en train de lancer mon activité</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.situation === 'autre'"
-            >
-              <input
-                type="radio"
-                name="situation"
-                value="autre"
-                [(ngModel)]="formData.situation"
-                (change)="onSituationChange('autre')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.situation === 'autre'">
+              <input type="radio" name="situation" value="autre" [(ngModel)]="formData.situation"
+                (change)="onSituationChange('autre')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-ellipsis-h text-danger mb-2"></i>
-                <h6 class="mb-1">Autre situation</h6>
+                <div class="h6 mb-1">Autre situation</div>
                 <small class="text-muted">Ma situation est différente</small>
               </div>
             </label>
           </div>
 
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreSituation"
-          >
+          <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreSituation">
             <div class="custom-input-group">
               <label for="situation_autre" class="form-label">
                 <i class="fas fa-edit me-2"></i>Précisez votre situation
               </label>
-              <input
-                type="text"
-                class="form-control custom-input"
-                id="situation_autre"
-                name="situation_autre"
-                [(ngModel)]="formData.situation_autre"
-                placeholder="Décrivez votre situation actuelle..."
-                maxlength="200"
-              />
+              <input type="text" class="form-control custom-input" id="situation_autre" name="situation_autre"
+                [(ngModel)]="formData.situation_autre" placeholder="Décrivez votre situation actuelle..."
+                maxlength="200" />
             </div>
           </div>
         </div>
@@ -671,145 +1006,85 @@
 
       <!-- Étape 2: Motivation pour passer en société -->
       <div *ngIf="currentStep === 2" class="step-content">
-        <h3 class="step-title mb-4">
+        <div class="h3 step-title mb-4">
           2. Pourquoi souhaitez-vous passer en société ?
-        </h3>
+        </div>
         <p class="step-description mb-4">
           Quelle est votre motivation principale ?
         </p>
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="
+            <label class="custom-radio-option" [class.selected]="
                 formData.motivation === 'reduire-pression-fiscale'
-              "
-            >
-              <input
-                type="radio"
-                name="motivation"
-                value="reduire-pression-fiscale"
-                [(ngModel)]="formData.motivation"
-                (change)="onMotivationChange('reduire-pression-fiscale')"
-                required
-              />
+              ">
+              <input type="radio" name="motivation" value="reduire-pression-fiscale" [(ngModel)]="formData.motivation"
+                (change)="onMotivationChange('reduire-pression-fiscale')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-chart-line text-danger mb-2"></i>
-                <h6 class="mb-1">Réduire ma pression fiscale</h6>
+                <div class="h6 mb-1">Réduire ma pression fiscale</div>
                 <small class="text-muted">Optimiser ma situation fiscale</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="
+            <label class="custom-radio-option" [class.selected]="
                 formData.motivation === 'proteger-biens-personnels'
-              "
-            >
-              <input
-                type="radio"
-                name="motivation"
-                value="proteger-biens-personnels"
-                [(ngModel)]="formData.motivation"
-                (change)="onMotivationChange('proteger-biens-personnels')"
-                required
-              />
+              ">
+              <input type="radio" name="motivation" value="proteger-biens-personnels" [(ngModel)]="formData.motivation"
+                (change)="onMotivationChange('proteger-biens-personnels')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-shield-alt text-danger mb-2"></i>
-                <h6 class="mb-1">Protéger mes biens personnels</h6>
-                <small class="text-muted"
-                  >Séparer patrimoine personnel et professionnel</small
-                >
+                <div class="h6 mb-1">Protéger mes biens personnels</div>
+                <small class="text-muted">Séparer patrimoine personnel et professionnel</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="
+            <label class="custom-radio-option" [class.selected]="
                 formData.motivation === 'accompagner-croissance'
-              "
-            >
-              <input
-                type="radio"
-                name="motivation"
-                value="accompagner-croissance"
-                [(ngModel)]="formData.motivation"
-                (change)="onMotivationChange('accompagner-croissance')"
-                required
-              />
+              ">
+              <input type="radio" name="motivation" value="accompagner-croissance" [(ngModel)]="formData.motivation"
+                (change)="onMotivationChange('accompagner-croissance')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-trending-up text-danger mb-2"></i>
-                <h6 class="mb-1">Accompagner la croissance</h6>
-                <small class="text-muted"
-                  >Structurer mon activité en expansion</small
-                >
+                <div class="h6 mb-1">Accompagner la croissance</div>
+                <small class="text-muted">Structurer mon activité en expansion</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.motivation === 'conseils-comptable'"
-            >
-              <input
-                type="radio"
-                name="motivation"
-                value="conseils-comptable"
-                [(ngModel)]="formData.motivation"
-                (change)="onMotivationChange('conseils-comptable')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.motivation === 'conseils-comptable'">
+              <input type="radio" name="motivation" value="conseils-comptable" [(ngModel)]="formData.motivation"
+                (change)="onMotivationChange('conseils-comptable')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-user-graduate text-danger mb-2"></i>
-                <h6 class="mb-1">Conseils de mon comptable</h6>
-                <small class="text-muted"
-                  >Suivre les recommandations de mon expert</small
-                >
+                <div class="h6 mb-1">Conseils de mon comptable</div>
+                <small class="text-muted">Suivre les recommandations de mon expert</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.motivation === 'autre'"
-            >
-              <input
-                type="radio"
-                name="motivation"
-                value="autre"
-                [(ngModel)]="formData.motivation"
-                (change)="onMotivationChange('autre')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.motivation === 'autre'">
+              <input type="radio" name="motivation" value="autre" [(ngModel)]="formData.motivation"
+                (change)="onMotivationChange('autre')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-question text-danger mb-2"></i>
-                <h6 class="mb-1">Autre raison</h6>
+                <div class="h6 mb-1">Autre raison</div>
                 <small class="text-muted">Ma motivation est différente</small>
               </div>
             </label>
           </div>
 
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreMotivation"
-          >
+          <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreMotivation">
             <div class="custom-input-group">
               <label for="motivation_autre" class="form-label">
                 <i class="fas fa-edit me-2"></i>Précisez votre motivation
               </label>
-              <input
-                type="text"
-                class="form-control custom-input"
-                id="motivation_autre"
-                name="motivation_autre"
-                [(ngModel)]="formData.motivation_autre"
-                placeholder="Décrivez votre motivation principale..."
-                maxlength="200"
-              />
+              <input type="text" class="form-control custom-input" id="motivation_autre" name="motivation_autre"
+                [(ngModel)]="formData.motivation_autre" placeholder="Décrivez votre motivation principale..."
+                maxlength="200" />
             </div>
           </div>
         </div>
@@ -817,9 +1092,9 @@
 
       <!-- Étape 3: Coordonnées -->
       <div *ngIf="currentStep === 3" class="step-content">
-        <h3 class="step-title mb-4">
+        <div class="h3 step-title mb-4">
           3. Vos coordonnées pour recevoir votre diagnostic
-        </h3>
+        </div>
         <p class="step-description mb-4">
           <i class="fas fa-phone text-danger me-2"></i>
           Merci de compléter ces informations pour que l'un de nos conseillers
@@ -833,15 +1108,8 @@
                 <label for="nom" class="form-label">
                   <i class="fas fa-user me-2"></i>Nom complet
                 </label>
-                <input
-                  type="text"
-                  class="form-control custom-input"
-                  id="nom"
-                  name="nom"
-                  [(ngModel)]="formData.nom"
-                  placeholder="Votre nom et prénom"
-                  required
-                />
+                <input type="text" class="form-control custom-input" id="nom" name="nom" [(ngModel)]="formData.nom"
+                  placeholder="Votre nom et prénom" required />
               </div>
             </div>
 
@@ -851,15 +1119,8 @@
                   <i class="fas fa-envelope me-2"></i>Email
                   <span class="badge bg-success ms-2">✅ obligatoire</span>
                 </label>
-                <input
-                  type="email"
-                  class="form-control custom-input"
-                  id="email"
-                  name="email"
-                  [(ngModel)]="formData.email"
-                  placeholder="votre@email.com"
-                  required
-                />
+                <input type="email" class="form-control custom-input" id="email" name="email"
+                  [(ngModel)]="formData.email" placeholder="votre@email.com" required />
               </div>
             </div>
 
@@ -869,15 +1130,8 @@
                   <i class="fas fa-phone me-2"></i>Téléphone
                   <span class="badge bg-success ms-2">✅ obligatoire</span>
                 </label>
-                <input
-                  type="tel"
-                  class="form-control custom-input"
-                  id="telephone"
-                  name="telephone"
-                  [(ngModel)]="formData.telephone"
-                  placeholder="+32 XXX XX XX XX"
-                  required
-                />
+                <input type="tel" class="form-control custom-input" id="telephone" name="telephone"
+                  [(ngModel)]="formData.telephone" placeholder="+32 XXX XX XX XX" required />
               </div>
             </div>
           </div>
@@ -886,10 +1140,8 @@
             <div class="d-flex align-items-center">
               <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
               <div>
-                <h6 class="mb-1">📞 Nous vous appelons sous 72h</h6>
-                <small
-                  >L'appel est gratuit, confidentiel, et sans engagement.</small
-                >
+                <div class="h6 mb-1">📞 Nous vous appelons sous 72h</div>
+                <small>L'appel est gratuit, confidentiel, et sans engagement.</small>
               </div>
             </div>
           </div>
@@ -898,75 +1150,45 @@
 
       <!-- Étape 4: Connaissance du fonctionnement d'une société -->
       <div *ngIf="currentStep === 4" class="step-content">
-        <h3 class="step-title mb-4">
+        <div class="h3 step-title mb-4">
           4. Connaissez-vous bien le fonctionnement d'une société ?
-        </h3>
+        </div>
         <p class="step-description mb-4">
           Évaluez votre niveau de connaissance actuel.
         </p>
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.connaissance === 'maitrise-regles'"
-            >
-              <input
-                type="radio"
-                name="connaissance"
-                value="maitrise-regles"
-                [(ngModel)]="formData.connaissance"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.connaissance === 'maitrise-regles'">
+              <input type="radio" name="connaissance" value="maitrise-regles" [(ngModel)]="formData.connaissance"
+                required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-graduation-cap text-danger mb-2"></i>
-                <h6 class="mb-1">Je maîtrise</h6>
-                <small class="text-muted"
-                  >Oui, je maîtrise les règles et implications</small
-                >
+                <div class="h6 mb-1">Je maîtrise</div>
+                <small class="text-muted">Oui, je maîtrise les règles et implications</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.connaissance === 'quelques-bases'"
-            >
-              <input
-                type="radio"
-                name="connaissance"
-                value="quelques-bases"
-                [(ngModel)]="formData.connaissance"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.connaissance === 'quelques-bases'">
+              <input type="radio" name="connaissance" value="quelques-bases" [(ngModel)]="formData.connaissance"
+                required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-book text-danger mb-2"></i>
-                <h6 class="mb-1">Quelques bases</h6>
-                <small class="text-muted"
-                  >J'ai quelques bases mais j'aimerais en savoir plus</small
-                >
+                <div class="h6 mb-1">Quelques bases</div>
+                <small class="text-muted">J'ai quelques bases mais j'aimerais en savoir plus</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.connaissance === 'pars-de-zero'"
-            >
-              <input
-                type="radio"
-                name="connaissance"
-                value="pars-de-zero"
-                [(ngModel)]="formData.connaissance"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.connaissance === 'pars-de-zero'">
+              <input type="radio" name="connaissance" value="pars-de-zero" [(ngModel)]="formData.connaissance"
+                required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-seedling text-danger mb-2"></i>
-                <h6 class="mb-1">Je pars de zéro</h6>
-                <small class="text-muted"
-                  >Non, je pars de zéro et j'ai besoin de guidance</small
-                >
+                <div class="h6 mb-1">Je pars de zéro</div>
+                <small class="text-muted">Non, je pars de zéro et j'ai besoin de guidance</small>
               </div>
             </label>
           </div>
@@ -975,9 +1197,9 @@
 
       <!-- Étape 5: Besoins prioritaires -->
       <div *ngIf="currentStep === 5" class="step-content">
-        <h3 class="step-title mb-4">
+        <div class="h3 step-title mb-4">
           5. De quoi avez-vous le plus besoin aujourd'hui ?
-        </h3>
+        </div>
         <p class="step-description mb-4">
           Sélectionnez vos besoins prioritaires.
           <small class="text-muted">(plusieurs réponses possibles)</small>
@@ -986,106 +1208,68 @@
         <div class="form-group">
           <div class="custom-checkbox-group">
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="comprendre-etapes-creation"
-                (change)="onBesoinChange('comprendre-etapes-creation', $event)"
-              />
+              <input type="checkbox" name="besoins" value="comprendre-etapes-creation"
+                (change)="onBesoinChange('comprendre-etapes-creation', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-list-ol text-danger mb-2"></i>
-                <h6 class="mb-1">Comprendre les étapes</h6>
-                <small class="text-muted"
-                  >Comprendre les étapes pour créer une société</small
-                >
+                <div class="h6 mb-1">Comprendre les étapes</div>
+                <small class="text-muted">Comprendre les étapes pour créer une société</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="savoir-bon-moment"
-                (change)="onBesoinChange('savoir-bon-moment', $event)"
-              />
+              <input type="checkbox" name="besoins" value="savoir-bon-moment"
+                (change)="onBesoinChange('savoir-bon-moment', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-clock text-danger mb-2"></i>
-                <h6 class="mb-1">Timing optimal</h6>
-                <small class="text-muted"
-                  >Savoir si c'est le bon moment pour moi</small
-                >
+                <div class="h6 mb-1">Timing optimal</div>
+                <small class="text-muted">Savoir si c'est le bon moment pour moi</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="avis-fiscal-objectif"
-                (change)="onBesoinChange('avis-fiscal-objectif', $event)"
-              />
+              <input type="checkbox" name="besoins" value="avis-fiscal-objectif"
+                (change)="onBesoinChange('avis-fiscal-objectif', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-calculator text-danger mb-2"></i>
-                <h6 class="mb-1">Avis fiscal objectif</h6>
-                <small class="text-muted"
-                  >Obtenir un avis fiscal objectif</small
-                >
+                <div class="h6 mb-1">Avis fiscal objectif</div>
+                <small class="text-muted">Obtenir un avis fiscal objectif</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="guidage-pas-a-pas"
-                (change)="onBesoinChange('guidage-pas-a-pas', $event)"
-              />
+              <input type="checkbox" name="besoins" value="guidage-pas-a-pas"
+                (change)="onBesoinChange('guidage-pas-a-pas', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-route text-danger mb-2"></i>
-                <h6 class="mb-1">Accompagnement complet</h6>
-                <small class="text-muted"
-                  >Être guidé pas à pas dans la création</small
-                >
+                <div class="h6 mb-1">Accompagnement complet</div>
+                <small class="text-muted">Être guidé pas à pas dans la création</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="autre"
-                (change)="onBesoinChange('autre', $event)"
-              />
+              <input type="checkbox" name="besoins" value="autre" (change)="onBesoinChange('autre', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-plus text-danger mb-2"></i>
-                <h6 class="mb-1">Autre besoin</h6>
+                <div class="h6 mb-1">Autre besoin</div>
                 <small class="text-muted">Un besoin spécifique</small>
               </div>
             </label>
           </div>
 
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreBesoin"
-          >
+          <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreBesoin">
             <div class="custom-input-group">
               <label for="besoins_autre" class="form-label">
                 <i class="fas fa-edit me-2"></i>Précisez vos autres besoins
               </label>
-              <textarea
-                class="form-control custom-input"
-                id="besoins_autre"
-                name="besoins_autre"
-                [(ngModel)]="formData.besoins_autre"
-                placeholder="Décrivez vos besoins spécifiques..."
-                rows="3"
-                maxlength="300"
-              ></textarea>
+              <textarea class="form-control custom-input" id="besoins_autre" name="besoins_autre"
+                [(ngModel)]="formData.besoins_autre" placeholder="Décrivez vos besoins spécifiques..." rows="3"
+                maxlength="300"></textarea>
             </div>
           </div>
         </div>

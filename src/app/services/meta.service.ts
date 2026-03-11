@@ -336,9 +336,9 @@ export class MetaService {
    */
   setPassageEnSocietePageMeta(): void {
     this.updateMetaTags(
-      'Passage en société - Accompagnement et conseil - MFinances',
-      'MFinances vous accompagne dans votre passage en société à Bruxelles. Conseils fiscaux, juridiques et comptables pour une transition réussie.',
-      'passage en société, création société, statut juridique, fiscalité, Bruxelles'
+      'Passer en Société: Est-ce Rentable pour Vous? | Diagnostic Gratuit | MFINANCES',
+      'Découvrez en 2 minutes si le passage en société est rentable pour vous. Diagnostic gratuit + simulation personnalisée par experts-comptables. +20 ans d\'expérience à Bruxelles.',
+      'passage en société, diagnostic gratuit, SRL Belgique, optimisation fiscale, expert-comptable Bruxelles, économie impôts, création société'
     );
   }
 

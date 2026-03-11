@@ -1,8 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
 import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
+import { DiagnosticConfig, DiagnosticResult } from '../../shared/diagnostic';
+import { DIAGNOSTIC_RESISTANCE_CONFIG } from './diagnostic-resistance.config';
 
 @Component({
   selector: 'app-alerte-tresorerie',
@@ -62,10 +65,17 @@ export class AlerteTresorerieComponent implements OnInit, OnDestroy {
     resetButton: 'Faire une nouvelle demande',
   };
 
+  // Configuration du diagnostic de résistance
+  diagnosticConfig: DiagnosticConfig = DIAGNOSTIC_RESISTANCE_CONFIG;
+
+  // Contrôle de l'affichage du diagnostic
+  showDiagnostic = false;
+
   constructor(
     private metaService: MetaService,
     private odooService: OdooService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -74,6 +84,15 @@ export class AlerteTresorerieComponent implements OnInit, OnDestroy {
 
     // Démarrer le timer pour le popup
     this.startPopupTimer();
+
+    // Vérifier si on doit afficher le diagnostic au chargement
+    const hash = window.location.hash;
+    if (hash === '#diagnostic') {
+      this.showDiagnostic = true;
+      setTimeout(() => {
+        this.scrollToSection('diagnosticSection');
+      }, 100);
+    }
   }
 
   ngOnDestroy() {
@@ -104,6 +123,27 @@ export class AlerteTresorerieComponent implements OnInit, OnDestroy {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  // Diagnostic methods
+  /**
+   * Affiche le diagnostic et scroll jusqu'à la section
+   */
+  startDiagnostic(): void {
+    this.showDiagnostic = true;
+    setTimeout(() => {
+      this.scrollToSection('diagnosticSection');
+    }, 100);
+  }
+
+  /**
+   * Callback appelé quand le diagnostic est terminé
+   */
+  onDiagnosticComplete(result: DiagnosticResult): void {
+    console.log('Diagnostic résistance terminé:', result);
+
+    // Pas de redirection automatique pour cette page
+    // Le résultat contient déjà le CTA pour contact
   }
 
   // Form methods

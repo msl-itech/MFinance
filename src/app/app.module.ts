@@ -6,7 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { AlerteTresorerieComponent } from './TresorerieModule/alerte-tresorerie/alerte-tresorerie.component';
 import { AboutComponent } from './about/about.component';
 import { AbslComponent } from './absl/absl.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -62,6 +61,11 @@ import { TimelinePatrimonialeComponent } from './timeline-patrimoniale/timeline-
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { EconomieAnalysieComponent } from './venteModule/economie-analysie/economie-analysie.component';
 import { CalculatriceComponent } from './calculatrice/calculatrice.component';
+import { DiagnosticManagementPatrimonialComponent } from './features-mobile/societe-management-patrimoniale-mobile/diagnostic-management-patrimonial.component';
+import { PolitiqueConfidentialiteComponent } from './politique-confidentialite/politique-confidentialite.component';
+import { ConditionsGeneralesComponent } from './conditions-generales/conditions-generales.component';
+import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
+import { PolitiqueCookiesComponent } from './politique-cookies/politique-cookies.component';
 
 
 @NgModule({
@@ -89,12 +93,15 @@ import { CalculatriceComponent } from './calculatrice/calculatrice.component';
     TestScrollComponent,
     TarifComponent,
     EconomieAnalysieComponent,
-    AlerteTresorerieComponent,
     FooterComponent,
     PromoBannerComponent,
     NotFoundComponent,
     SupportComponent,
     CalculatriceComponent,
+    PolitiqueConfidentialiteComponent,
+    ConditionsGeneralesComponent,
+    MentionsLegalesComponent,
+    PolitiqueCookiesComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,10 +109,11 @@ import { CalculatriceComponent } from './calculatrice/calculatrice.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ShardeModuleModule,
-    ImageOptimizerDirective,
     BrowserAnimationsModule,
     LayoutModule,
+    ShardeModuleModule,
+    ImageOptimizerDirective,
+    DiagnosticManagementPatrimonialComponent,
     DesktopLayoutComponent,
     MobileLayoutComponent,
     TarifMobileComponent,
@@ -140,4 +148,4 @@ import { CalculatriceComponent } from './calculatrice/calculatrice.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

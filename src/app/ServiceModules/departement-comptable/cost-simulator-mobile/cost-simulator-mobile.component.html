@@ -115,7 +115,7 @@
                             </div>
                             <div class="frequency-btns">
                                 <button *ngFor="let freq of frequencies" class="freq-btn"
-                                    [class.selected]="formData.profileFrequencies[profileKey]?.frequency === freq.value"
+                                    [class.selected]="formData.profileFrequencies[profileKey].frequency === freq.value"
                                     (click)="formData.profileFrequencies[profileKey].frequency = freq.value">
                                     {{ freq.label }}
                                 </button>

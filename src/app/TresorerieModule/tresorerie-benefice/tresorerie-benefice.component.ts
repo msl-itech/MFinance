@@ -3,7 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
 import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
-
+import { DiagnosticConfig } from '../../shared/diagnostic/diagnostic.models';
 @Component({
   selector: 'app-tresorerie-benefice',
   templateUrl: './tresorerie-benefice.component.html',
@@ -35,6 +35,134 @@ export class TresorerieBeneficeComponent implements OnInit {
     resetButton: 'Nouveau diagnostic',
   };
 
+  diagnosticConfig: DiagnosticConfig = {
+    id: 'tresorerie-benefice',
+    title: 'Votre bénéfice reflète-t-il vraiment votre trésorerie ?',
+    subtitle: 'Répondez à 8 questions stratégiques pour savoir si votre rentabilité correspond réellement à votre situation de trésorerie.',
+    questions: [
+      {
+        id: 'q1',
+        question: 'Vos clients paient en moyenne sous combien de jours ?',
+        options: [
+          { value: 'A', label: 'Plus de 60 jours', sublabel: '', icon: '⏳', points: 0 },
+          { value: 'B', label: 'Entre 30 et 60 jours', sublabel: '', icon: '📅', points: 2 },
+          { value: 'C', label: 'Moins de 30 jours', sublabel: '', icon: '⚡', points: 4 }
+        ]
+      },
+      {
+        id: 'q2',
+        question: 'Votre trésorerie vous permet-elle de payer sereinement vos charges ?',
+        options: [
+          { value: 'A', label: 'Non, c’est souvent tendu', sublabel: '', icon: '😰', points: 0 },
+          { value: 'B', label: 'Cela dépend des périodes', sublabel: '', icon: '⚖️', points: 2 },
+          { value: 'C', label: 'Oui, c’est globalement confortable', sublabel: '', icon: '🧘', points: 4 }
+        ]
+      },
+      {
+        id: 'q3',
+        question: 'Disposez-vous d’un tableau de trésorerie prévisionnel ?',
+        options: [
+          { value: 'A', label: 'Non', sublabel: '', icon: '❌', points: 0 },
+          { value: 'B', label: 'Oui, mais très simple', sublabel: '', icon: '📝', points: 2 },
+          { value: 'C', label: 'Oui, mis à jour régulièrement', sublabel: '', icon: '📊', points: 4 }
+        ]
+      },
+      {
+        id: 'q4',
+        question: 'Avant d’être payé par vos clients, devez-vous avancer certaines dépenses ?',
+        description: 'Par exemple : salaires, achats fournisseurs, matériel, sous-traitance, charges fixes',
+        options: [
+          { value: 'A', label: 'Oui, je dois souvent avancer des dépenses importantes', sublabel: '', icon: '💸', points: 0 },
+          { value: 'B', label: 'Oui, mais cela reste globalement maîtrisé', sublabel: '', icon: '⚖️', points: 2 },
+          { value: 'C', label: 'Non, je suis payé avant ou en même temps', sublabel: '', icon: '🛡️', points: 4 }
+        ]
+      },
+      {
+        id: 'q5',
+        question: 'La TVA ou les impôts créent-ils parfois une surprise financière ?',
+        options: [
+          { value: 'A', label: 'Oui, régulièrement', sublabel: '', icon: '⚠️', points: 0 },
+          { value: 'B', label: 'Parfois', sublabel: '', icon: '🤔', points: 2 },
+          { value: 'C', label: 'Non, ils sont anticipés', sublabel: '', icon: '✅', points: 4 }
+        ]
+      },
+      {
+        id: 'q6',
+        question: 'Avez-vous déjà eu un bénéfice positif… mais une trésorerie tendue ?',
+        options: [
+          { value: 'A', label: 'Oui, plusieurs fois', sublabel: '', icon: '🔄', points: 0 },
+          { value: 'B', label: 'Oui, ponctuellement', sublabel: '', icon: '📉', points: 2 },
+          { value: 'C', label: 'Non', sublabel: '', icon: '📈', points: 4 }
+        ]
+      },
+      {
+        id: 'q7',
+        question: 'Votre priorité actuelle est plutôt :',
+        options: [
+          { value: 'A', label: 'Stabiliser votre situation financière', sublabel: '', icon: '⚓', points: 0 },
+          { value: 'B', label: 'Structurer et sécuriser vos flux', sublabel: '', icon: '🏗️', points: 2 },
+          { value: 'C', label: 'Investir et développer votre entreprise', sublabel: '', icon: '🚀', points: 4 }
+        ]
+      },
+      {
+        id: 'q8',
+        question: 'Comment qualifieriez-vous votre niveau de stress financier ?',
+        options: [
+          { value: 'A', label: 'Élevé', sublabel: '', icon: '😫', points: 0 },
+          { value: 'B', label: 'Modéré', sublabel: '', icon: '😐', points: 2 },
+          { value: 'C', label: 'Faible', sublabel: '', icon: '😎', points: 3 }
+        ]
+      }
+    ],
+    scoringRules: {
+      maxScore: 31,
+      levels: {
+        low: { min: 0, max: 10, title: 'Bénéfice trompeur', badge: '🔴' },
+        medium: { min: 11, max: 20, title: 'Situation fragile', badge: '🟡' },
+        high: { min: 21, max: 31, title: 'Cohérence entre bénéfice et trésorerie', badge: '🟢' }
+      }
+    },
+    justifications: {
+      questionAnalysis: {
+        q1: { 'A': 'Vos délais clients supérieurs à 60 jours ralentissent votre cycle d’encaissement.' },
+        q3: { 'A': 'L’absence de tableau de trésorerie limite votre capacité d’anticipation.' },
+        q4: { 'A': 'Votre activité nécessite d’avancer certaines dépenses avant d’être payé, ce qui crée un besoin de trésorerie structurel.' },
+        q5: { 'A': 'Les échéances fiscales imprévues créent souvent des tensions brutales de trésorerie.' },
+        q6: { 'A': 'Le fait d’avoir déjà connu une trésorerie tendue malgré un bénéfice positif est un signal d’alerte fréquent.' },
+        q8: { 'A': 'Un stress financier élevé est souvent le signe d’une visibilité insuffisante sur les flux financiers.' }
+      }
+    },
+    profiles: [
+      {
+        id: 'benefice_trompeur',
+        name: 'Bénéfice trompeur',
+        condition: (answers, score) => score <= 10,
+        description: 'Votre diagnostic indique que votre bénéfice comptable ne reflète probablement pas votre situation réelle de trésorerie.\n\nVos réponses suggèrent que : \n- vos délais clients ralentissent vos encaissements\n- certaines dépenses doivent être avancées avant d’être payées\n- vos obligations fiscales ne sont pas totalement anticipées\n- vous ne disposez pas d’une visibilité claire sur vos flux financiers\n\nDans ce contexte, votre rentabilité peut masquer une fragilité de liquidité.\nUn imprévu (retard client, TVA, investissement) peut rapidement créer une tension.',
+        recommendation: 'Mettre en place rapidement : un tableau de trésorerie prévisionnel, une stratégie d’anticipation fiscale, une gestion active des encaissements.',
+        ctaText: 'Demander un audit de trésorerie',
+        redirectUrl: 'https://odoo.mfinances.be/book/4781b4d3'
+      },
+      {
+        id: 'fragile',
+        name: 'Situation fragile',
+        condition: (answers, score) => score > 10 && score <= 20,
+        description: 'Votre diagnostic montre que votre bénéfice et votre trésorerie sont partiellement alignés, mais certains points de vigilance subsistent.\n\nVotre situation indique que : \n- votre trésorerie dépend encore de certains décalages financiers\n- votre visibilité sur les flux pourrait être améliorée\n- certaines périodes pourraient générer des tensions\n\nVous disposez d’une base saine, mais une meilleure anticipation vous permettrait de sécuriser votre développement.',
+        recommendation: 'Structurer votre pilotage financier : suivi de trésorerie, optimisation des délais clients, anticipation TVA et impôts.',
+        ctaText: 'Recevoir une analyse personnalisée',
+        redirectUrl: 'https://odoo.mfinances.be/book/4781b4d3'
+      },
+      {
+        id: 'coherent',
+        name: 'Cohérence entre bénéfice et trésorerie',
+        condition: (answers, score) => score > 20,
+        description: 'Votre diagnostic montre une bonne cohérence entre votre rentabilité et votre trésorerie.\n\nVos réponses indiquent généralement que : \n- vos délais clients sont maîtrisés\n- vos obligations fiscales sont anticipées\n- vous disposez d’une visibilité financière satisfaisante\n- votre modèle économique limite les décalages de trésorerie\n\nVous avez déjà mis en place une discipline financière solide.\nLa prochaine étape consiste à utiliser cette stabilité pour optimiser votre stratégie : investissements, structuration patrimoniale, optimisation de rémunération.',
+        recommendation: 'Optimiser votre stratégie : investissements, structuration patrimoniale, optimisation de rémunération.',
+        ctaText: 'Planifier une consultation stratégique',
+        redirectUrl: 'https://odoo.mfinances.be/book/4781b4d3'
+      }
+    ]
+  };
+
   // État du formulaire
   currentStep = 1;
   totalSteps = 4;
@@ -63,7 +191,7 @@ export class TresorerieBeneficeComponent implements OnInit {
     private metaService: MetaService,
     private odooService: OdooService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Trésorerie Bénéfice

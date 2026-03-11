@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
 import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
+import { DiagnosticResult } from '../diagnostic-passage-societe/diagnostic-passage-societe.component';
 import * as AOS from 'aos';
 
 @Component({
@@ -61,6 +62,9 @@ export class PassageSocieteComponent implements OnInit, AfterViewInit {
   showAutreMotivation = false;
   showAutreBesoin = false;
 
+  // Diagnostic result
+  diagnosticResult: DiagnosticResult | null = null;
+
   constructor(
     private metaService: MetaService,
     private odooService: OdooService,
@@ -71,6 +75,9 @@ export class PassageSocieteComponent implements OnInit, AfterViewInit {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Passage en Société
     this.metaService.setPassageEnSocietePageMeta();
     window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Charger données diagnostic si disponibles
+    this.loadDiagnosticFromLocalStorage();
   }
 
   ngAfterViewInit() {
@@ -110,6 +117,10 @@ export class PassageSocieteComponent implements OnInit, AfterViewInit {
     // Assemblage de la description complète
     const descriptionParts = [
       `<h3>Diagnostic Passage en Société</h3>`,
+
+      // Ajouter résultat diagnostic si existe
+      this.diagnosticResult ? this.generateDiagnosticSummaryHTML() : '',
+
       `<p><strong>Situation actuelle:</strong> ${this.getSituationLabel()}</p>`,
       this.formData.situation_autre
         ? `<p><strong>Précision situation:</strong> ${this.formData.situation_autre}</p>`
@@ -297,5 +308,138 @@ export class PassageSocieteComponent implements OnInit, AfterViewInit {
     return this.formData.besoins.map(
       (besoin) => besoinsLabels[besoin as keyof typeof besoinsLabels] || besoin
     );
+  }
+
+  // Méthodes pour le diagnostic
+  onDiagnosticComplete(result: DiagnosticResult): void {
+    this.diagnosticResult = result;
+
+    // Stocker dans localStorage pour pré-remplissage du formulaire
+    this.storeDiagnosticInLocalStorage(result);
+
+    // Analytics tracking (optionnel)
+    // gtag('event', 'diagnostic_completed', { score: result.score, level: result.level });
+  }
+
+  private loadDiagnosticFromLocalStorage(): void {
+    const stored = localStorage.getItem('mfinances_diagnostic_passage_societe');
+    if (!stored) return;
+
+    try {
+      const data = JSON.parse(stored);
+      const thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
+
+      // Vérifier l'expiration
+      if (data.timestamp < thirtyDaysAgo) {
+        localStorage.removeItem('mfinances_diagnostic_passage_societe');
+        return;
+      }
+
+      // Charger les données si elles existent
+      if (data.email) this.formData.email = data.email;
+      if (data.nom) this.formData.nom = data.nom;
+
+      // Reconstruire le résultat du diagnostic
+      if (data.score && data.level && data.answers) {
+        this.diagnosticResult = {
+          score: data.score,
+          maxScore: 20,
+          level: data.level,
+          title: this.getDiagnosticTitle(data.level),
+          description: '',
+          recommendation: '',
+          ctaText: '',
+          ctaAction: data.level === 'high' ? 'contact' : (data.level === 'medium' ? 'analyze' : 'wait'),
+          answers: data.answers
+        };
+      }
+    } catch (error) {
+      console.error('Erreur lors du chargement du localStorage:', error);
+    }
+  }
+
+  private storeDiagnosticInLocalStorage(result: DiagnosticResult): void {
+    const data = {
+      timestamp: Date.now(),
+      score: result.score,
+      level: result.level,
+      answers: result.answers,
+      email: this.formData.email,
+      nom: this.formData.nom
+    };
+
+    localStorage.setItem('mfinances_diagnostic_passage_societe', JSON.stringify(data));
+  }
+
+  private generateDiagnosticSummaryHTML(): string {
+    if (!this.diagnosticResult) return '';
+
+    const levelLabels = {
+      low: '🟢 Pas prioritaire',
+      medium: '🟡 Zone charnière',
+      high: '🔴 Très probable rentable'
+    };
+
+    return `
+      <div style="background: #f0f9ff; padding: 15px; border-left: 4px solid #3b82f6; margin-bottom: 20px;">
+        <h4 style="color: #1e40af; margin: 0 0 10px 0;">📊 Résultat Diagnostic Préalable</h4>
+        <p><strong>Score:</strong> ${this.diagnosticResult.score}/20 - ${levelLabels[this.diagnosticResult.level]}</p>
+        <ul style="margin: 10px 0 0 0; padding-left: 20px;">
+          <li><strong>Revenus:</strong> ${this.getRevenusLabelFromValue(this.diagnosticResult.answers.revenus)}</li>
+          <li><strong>Stabilité:</strong> ${this.getStabiliteLabelFromValue(this.diagnosticResult.answers.stabilite)}</li>
+          <li><strong>Objectif:</strong> ${this.getObjectifLabelFromValue(this.diagnosticResult.answers.objectif)}</li>
+          <li><strong>Ressenti fiscal:</strong> ${this.getResentiLabelFromValue(this.diagnosticResult.answers.ressenti)}</li>
+        </ul>
+      </div>
+    `;
+  }
+
+  private getRevenusLabelFromValue(value: string): string {
+    const labels: { [key: string]: string } = {
+      'moins-40k': 'Moins de 40 000€',
+      '40-70k': '40 000€ - 70 000€',
+      '70-110k': '70 000€ - 110 000€',
+      'plus-110k': 'Plus de 110 000€'
+    };
+    return labels[value] || value;
+  }
+
+  private getStabiliteLabelFromValue(value: string): string {
+    const labels: { [key: string]: string } = {
+      'demarrage': 'Moins de 6 mois',
+      '6-12mois': '6 à 12 mois',
+      '1-2ans': '1 à 2 ans',
+      'plus-2ans': 'Plus de 2 ans'
+    };
+    return labels[value] || value;
+  }
+
+  private getObjectifLabelFromValue(value: string): string {
+    const labels: { [key: string]: string } = {
+      'optimiser-fiscal': 'Optimiser ma fiscalité',
+      'investir': 'Investir et développer',
+      'patrimoine': 'Protéger mon patrimoine',
+      'proteger': 'Séparer pro et perso'
+    };
+    return labels[value] || value;
+  }
+
+  private getResentiLabelFromValue(value: string): string {
+    const labels: { [key: string]: string } = {
+      'pas-clair': 'Je ne sais pas trop',
+      'ca-va': 'Ça va pour l\'instant',
+      'paie-trop': 'Je paie beaucoup d\'impôts',
+      'besoin-strategie': 'Je veux une vraie stratégie'
+    };
+    return labels[value] || value;
+  }
+
+  private getDiagnosticTitle(level: 'low' | 'medium' | 'high'): string {
+    const titles = {
+      low: 'Pas prioritaire (pour l\'instant)',
+      medium: 'À analyser (zone charnière)',
+      high: 'Très probable que ce soit rentable'
+    };
+    return titles[level];
   }
 }

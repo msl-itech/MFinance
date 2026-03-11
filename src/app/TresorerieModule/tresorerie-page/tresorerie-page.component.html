@@ -1,661 +1,381 @@
-<!-- Header inspiré du passage-en-societe -->
-<header class="header">
-  <div class="header-overlay">
+<!-- ============================================ -->
+<!-- HERO — Section stratégique pleine largeur   -->
+<!-- ============================================ -->
+<section class="hero-tresorerie">
+  <div class="hero-overlay">
     <div class="container">
-      <h1>Trésorerie</h1>
-      <p class="text-white">Accueil &gt; Trésorerie</p>
-    </div>
-  </div>
-</header>
-
-<!-- Section principale avec sidebar -->
-<section class="service-single pt-120 pb-80">
-  <div class="container">
-    <div class="row">
-      <!-- Sidebar personnalisée -->
-      <div class="col-lg-4">
-        <div class="sidebar-widget">
-          <div class="widget">
-            <h2>Nos articles trésorerie</h2>
-            <ul class="widget-category list-unstyled d-flex flex-column gap-2">
-              <li>
-                <a [routerLink]="['/tresorerie/tresorerie-benefice']" routerLinkActive="active">
-                  Trésorerie vs Bénéfices
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li>
-                <a [routerLink]="['/tresorerie/investir-tresorerie']" routerLinkActive="active">
-                  Investir sans risque
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li>
-                <a [routerLink]="['/tresorerie/optimiser-stock']" routerLinkActive="active">
-                  Gestion des stocks
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li>
-                <a [routerLink]="['/tresorerie/alerte-tresorerie']" routerLinkActive="active">
-                  SOS Trésorerie
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li>
-                <a [routerLink]="['/tresorerie/proteger-sa-tresorerie']" routerLinkActive="active">
-                  Fidélisation client
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li>
-                <a [routerLink]="['/tresorerie/anticiper-sa-tresorerie']" routerLinkActive="active">
-                  Anticipation financière
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </li>
-              <li>
-                <a [routerLink]="['/tresorerie/accompagnement']" routerLinkActive="active">
-                  Sécurité financière
-                  <span><i class="fa-solid fa-arrow-right"></i></span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="widget contact-widget">
-            <h2>Contact</h2>
-            <div class="contact-info d-flex gap-3 flex-column">
-              <p>
-                <i class="fas fa-map-marker-alt"></i> 20 Rue de la Magnanerie,
-                1180 Uccle
-              </p>
-              <p><i class="fas fa-phone-alt"></i> +32 2 886 05 50</p>
-              <p>
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:info@mfinances.be"> info&#64;mfinances.be</a>
-              </p>
-            </div>
-          </div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span><i class="fas fa-lock me-2"></i>Confidentiel – sans engagement</span>
         </div>
-      </div>
 
-      <!-- Main Content -->
-      <div class="col-lg-8">
-        <div class="main-content">
-          <h3 class="main-title">
-            Trésorerie : Transformez votre stress en succès
-          </h3>
+        <h1 class="hero-title">
+          La trésorerie : le vrai baromètre<br />de votre entreprise
+        </h1>
 
-          <p class="main-description intro-text">
-            Chez Mfinances, nous savons qu'une trésorerie mal maîtrisée est
-            l'une des principales causes de stress et parfois d'échec pour les
-            entrepreneurs.
-          </p>
-          <div class="banner-image-container mb-5">
-            <img src="../../../assets/img/vente/image_stock3_page_mfinances.webp" alt="Gestion de trésorerie"
-              class="banner-image" />
+        <p class="hero-subtitle mb-4">
+          Votre trésorerie est votre atout stratégique. Transformez votre approche financière
+          pour une croissance maîtrisée. Une entreprise rentable peut faire faillite si sa trésorerie est mal gérée.
+        </p>
+
+        <div class="hero-cta-group">
+          <button (click)="startDiagnostic()" class="hero-btn-primary">
+            <i class="fas fa-clipboard-check"></i>
+            Faire mon diagnostic de trésorerie
+            <!-- <span class="btn-sub">(2 minutes)</span> -->
+          </button>
+          <a href="https://odoo.mfinances.be/book/4781b4d3" target="_blank" rel="noopener noreferrer"
+            class="hero-btn-secondary">
+            <i class="fas fa-calendar-alt"></i>
+            Demander un audit de trésorerie
+          </a>
+        </div>
+
+        <div class="hero-social-proof">
+          <div class="proof-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Cabinet basé à Bruxelles – accompagnement de dirigeants depuis +20 ans</span>
           </div>
-          <div class="intro-section mt-4">
-            <div class="row align-items-center g-5">
-              <div class="col-md-5">
-                <div class="image-wrapper h-100">
-                  <img src="../../../assets/img/vente/image_strategies_dynamique2_page.webp" alt="Vision trésorerie"
-                    class="features-image" />
-                </div>
-              </div>
-              <div class="col-md-7">
-                <div class="content-wrapper">
-                  <p class="main-description">
-                    Et pourtant, une trésorerie bien gérée est votre meilleure
-                    arme stratégique pour garantir la stabilité et préparer la
-                    croissance de votre entreprise.
-                  </p>
-
-                  <p class="main-description highlight">
-                    👉 "Trésorerie : Transformez votre stress en succès" est
-                    votre espace dédié pour comprendre, analyser, et optimiser
-                    vos flux financiers avec des conseils pratiques, des outils
-                    simples et des stratégies concrètes adaptées aux réalités
-                    des entrepreneurs.
-                  </p>
-
-                  <div class="action-container mt-4">
-                    <button (click)="scrollToSection('tresorerie-section')" class="btn-action">
-                      Découvrez nos conseils d'experts
-                      <i class="fas fa-arrow-right"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="proof-divider">|</div>
+          <div class="proof-item">
+            <i class="fas fa-building"></i>
+            <span>PME, indépendants, groupes jusqu'à 500 salariés</span>
           </div>
-
-          <style>
-            .intro-text {
-              font-size: 1.2rem;
-              font-weight: 500;
-              color: #2d3436;
-              margin-bottom: 2rem;
-              max-width: 800px;
-            }
-
-            .intro-section {
-              margin-bottom: 3rem;
-            }
-
-            .image-wrapper {
-              height: 100%;
-              position: relative;
-              max-width: 500px;
-              margin: 0 auto;
-            }
-
-            .features-image {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              border-radius: 20px;
-              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            }
-
-            .content-wrapper {
-              max-width: 600px;
-            }
-
-            .main-description {
-              font-size: 1.1rem;
-              line-height: 1.6;
-              color: #4a5568;
-              margin-bottom: 2rem;
-            }
-
-            .main-description.highlight {
-              background: rgba(255, 75, 75, 0.1);
-              border-left: 4px solid #ff4b4b;
-              padding: 1rem;
-              border-radius: 0 8px 8px 0;
-              color: #2d3436;
-              font-weight: 500;
-            }
-
-            .action-container {
-              text-align: left;
-            }
-
-            .btn-action {
-              background: #ff4b4b;
-              color: white;
-              border: none;
-              padding: 1rem 2rem;
-              border-radius: 10px;
-              font-size: 1.1rem;
-              display: inline-flex;
-              align-items: center;
-              gap: 0.8rem;
-              transition: all 0.3s ease;
-              box-shadow: 0 4px 15px rgba(255, 75, 75, 0.2);
-            }
-
-            .btn-action:hover {
-              background: #ff3131;
-              transform: translateY(-2px);
-              box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
-            }
-
-            @media (max-width: 768px) {
-              .image-wrapper {
-                height: 300px;
-                margin-bottom: 2rem;
-              }
-
-              .action-container {
-                text-align: center;
-              }
-
-              .main-description {
-                text-align: left;
-              }
-            }
-
-            .banner-image-container {
-              width: 100%;
-              height: 400px;
-              overflow: hidden;
-              border-radius: 20px;
-              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            }
-
-            .banner-image {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-            }
-          </style>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Section Trésorerie -->
-<section class="tresorerie-section py-5" id="tresorerie-section">
+<!-- ============================================ -->
+<!-- SECTION 1 — Pourquoi la trésorerie est cruciale -->
+<!-- ============================================ -->
+<section class="why-critical-section py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="why-image-wrapper">
+          <img src="../../../assets/img/webp/treasur.webp" alt="Gestion de trésorerie" class="why-image" />
+          <div class="why-image-badge">
+            <i class="fas fa-chart-line"></i>
+            <span>Pilotage stratégique</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="why-content">
+          <span class="section-chip">Notre vision</span>
+          <h2 class="why-title">Pourquoi la trésorerie est-elle plus importante que le bénéfice ?</h2>
+          <p class="why-text">
+            Dans la gestion d'une entreprise, la trésorerie est plus importante que les bénéfices
+            pour assurer la continuité d'activité.
+          </p>
+          <div class="why-highlight-box">
+            <div class="why-highlight-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <p>
+              Même une entreprise déficitaire peut continuer d'exister, tant que sa trésorerie
+              reste suffisante pour faire face à ses obligations.
+            </p>
+          </div>
+          <p class="why-text">
+            La trésorerie n'est pas seulement un indicateur financier – c'est un outil stratégique
+            qui vous permet de saisir les opportunités, de résister aux crises et d'investir dans
+            votre croissance sans compromettre votre stabilité.
+          </p>
+          <button (click)="startDiagnostic()" class="why-cta-btn">
+            Évaluer ma trésorerie
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 2 — Diagnostic interactif Hub       -->
+<!-- ============================================ -->
+<section id="diagnosticSection" class="diagnostic-hub-section py-5">
+  <div class="container">
+    <!-- Introduction du diagnostic -->
+    <div class="diagnostic-intro text-center mb-5" data-aos="fade-up">
+      <span class="badge mb-3 px-4 py-2"
+        style="background: #ff4b4b; color: white; font-size: 14px; border-radius: 25px;">
+        <i class="fas fa-bolt me-2"></i> Confidentiel • Sans engagement • 2 minutes
+      </span>
+      <h2 class="mb-3" style="color: #1e293b; font-weight: 700; font-size: 2.5rem;">
+        Votre trésorerie est-elle solide ?
+      </h2>
+      <p class="text-muted mb-4" style="font-size: 18px; max-width: 700px; margin: 0 auto;">
+        Répondez à 6 questions et obtenez un diagnostic personnalisé immédiat avec des recommandations adaptées à votre
+        situation
+      </p>
+    </div>
+
+    <!-- Bouton CTA principal (si diagnostic pas encore lancé) -->
+    <div *ngIf="!showDiagnostic" class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="diagnostic-cta-box p-5 mx-auto"
+        style="max-width: 800px; background: linear-gradient(135deg, #fee2e2 0%, #fef2f2 100%); border-radius: 20px; border: 2px solid #fca5a5;">
+        <div class="row align-items-center">
+          <div class="col-md-8 text-md-start text-center mb-3 mb-md-0">
+            <h3 class="h4 mb-2" style="color: #991b1b; font-weight: 700;">
+              <i class="fas fa-chart-pie me-2"></i>
+              Évaluez la santé de votre trésorerie
+            </h3>
+            <p class="mb-0" style="color: #7f1d1d;">
+              Un diagnostic rapide pour identifier vos forces et points d'amélioration
+            </p>
+          </div>
+          <div class="col-md-4 text-md-end text-center">
+            <button class="btn btn-danger btn-lg px-5 py-3 w-100" (click)="startDiagnostic()"
+              style="border-radius: 12px; font-weight: 700; font-size: 18px; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);">
+              <i class="fas fa-play-circle me-2"></i>
+              Lancer le diagnostic
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bénéfices en dessous du CTA -->
+      <div class="row mt-4 justify-content-center">
+        <div class="col-md-4 text-center mb-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="benefit-badge p-3"
+            style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            <i class="fas fa-tachometer-alt text-danger mb-2" style="font-size: 2rem;"></i>
+            <p class="mb-0" style="font-weight: 600; color: #2d3436;">Score instantané</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center mb-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="benefit-badge p-3"
+            style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            <i class="fas fa-user-tie text-danger mb-2" style="font-size: 2rem;"></i>
+            <p class="mb-0" style="font-weight: 600; color: #2d3436;">Analyse personnalisée</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center mb-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="benefit-badge p-3"
+            style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            <i class="fas fa-lightbulb text-danger mb-2" style="font-size: 2rem;"></i>
+            <p class="mb-0" style="font-weight: 600; color: #2d3436;">Recommandations ciblées</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Composant Diagnostic (s'affiche au clic) -->
+    <div *ngIf="showDiagnostic" class="diagnostic-container-wrapper" data-aos="fade-up">
+      <app-diagnostic-container [config]="diagnosticConfig" [showEmailCapture]="true"
+        (diagnosticComplete)="onDiagnosticComplete($event)"></app-diagnostic-container>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 3 — Visibilité claire = pouvoir     -->
+<!-- ============================================ -->
+<section class="tresorerie-section py-5">
   <div class="container">
     <!-- En-tête de section -->
     <div class="section-header text-center mb-5">
       <span class="section-badge">Notre Vision</span>
-      <h2 class="section-title">La trésorerie, votre atout stratégique</h2>
+      <h2 class="section-title">Une visibilité claire sur votre trésorerie, c'est :</h2>
       <p class="section-subtitle">
         Transformez votre approche financière pour une croissance maîtrisée
       </p>
     </div>
 
-    <!-- Contenu Principal -->
-    <div class="row g-4">
-      <!-- Colonne de gauche - Texte principal -->
-      <div class="col-lg-6">
-        <div class="content-block">
-          <div class="key-point mb-4">
-            <h3>Importance</h3>
-            <p class="lead">
-              Dans la gestion d'une entreprise, la trésorerie est plus
-              importante que les bénéfices pour assurer la continuité
-              d'activité.
-            </p>
+    <!-- 3 cartes avantages -->
+    <div class="row g-4 justify-content-center mb-5">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="benefit-card">
+          <div class="benefit-card-icon">
+            <i class="fas fa-shield-alt"></i>
           </div>
-
-          <div class="highlight-box mb-4">
-            <p>
-              Même une entreprise déficitaire peut continuer d'exister, tant que
-              sa trésorerie reste suffisante pour faire face à ses obligations.
-            </p>
-          </div>
-
-          <div class="benefits-list">
-            <h3 class="mb-4 text-white">
-              Une visibilité claire sur votre trésorerie, c'est :
-            </h3>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <div class="benefit-content">
-                <h4>Sécuriser vos opérations</h4>
-                <p>Honorez vos engagements en toute sérénité</p>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div class="benefit-content">
-                <h4>Saisir les opportunités</h4>
-                <p>Investissez au bon moment sans risque</p>
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <i class="fas fa-bullseye"></i>
-              </div>
-              <div class="benefit-content">
-                <h4>Décider stratégiquement</h4>
-                <p>Prenez les meilleures décisions pour votre croissance</p>
-              </div>
-            </div>
-          </div>
+          <h3 class="benefit-card-title">✔ Sécuriser vos opérations</h3>
+          <p class="benefit-card-text">Honorez vos engagements en toute sérénité</p>
         </div>
       </div>
-
-      <!-- Colonne de droite - Offre -->
-      <div class="col-lg-6">
-        <div class="offer-block">
-          <div class="offer-content">
-            <div class="offer-header">
-              <span class="offer-badge" [routerLink]="['/tarif']" [fragment]="'excellence'" style="cursor: pointer">
-                <i class="fas fa-star"></i>
-                Programme Excellence
-              </span>
-              <h3>Optimisation</h3>
-              <p>
-                Un accompagnement sur mesure pour transformer vos défis en
-                opportunités
-              </p>
-            </div>
-
-            <div class="offer-features">
-              <div class="feature">
-                <i class="fas fa-check-circle"></i>
-                <span>Tableau de trésorerie prévisionnel personnalisé</span>
-              </div>
-              <div class="feature">
-                <i class="fas fa-check-circle"></i>
-                <span>Contrôle budgétaire trimestriel approfondi</span>
-              </div>
-              <div class="feature">
-                <i class="fas fa-check-circle"></i>
-                <span>Accompagnement stratégique continu</span>
-              </div>
-            </div>
-
-            <div class="offer-alert">
-              <i class="fas fa-lightbulb"></i>
-              <p>
-                L'anticipation est la clé pour transformer vos défis financiers
-                en leviers de croissance.
-              </p>
-            </div>
-
-            <a [routerLink]="['/tarif']" [fragment]="'excellence'" class="btn-primary">
-              Découvrir le Programme Excellence
-              <i class="fas fa-arrow-right"></i>
-            </a>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="benefit-card">
+          <div class="benefit-card-icon">
+            <i class="fas fa-chart-line"></i>
           </div>
+          <h3 class="benefit-card-title">✔ Saisir les opportunités</h3>
+          <p class="benefit-card-text">Investissez au bon moment sans risque</p>
         </div>
       </div>
-    </div>
-
-    <!-- CTA après la section bénéfices -->
-    <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
-      <div class="col-12">
-        <div class="text-center p-5"
-          style="background: linear-gradient(135deg, #ff4b4b 0%, #ff6b6b 100%); border-radius: 16px; box-shadow: 0 8px 30px rgba(255, 75, 75, 0.3);">
-          <h3 class="text-white mb-3" style="font-weight: 700; font-size: 28px;">
-            <i class="fas fa-rocket me-2"></i>
-            Prêt à maîtriser votre trésorerie ?
-          </h3>
-          <p class="text-white mb-4" style="font-size: 18px; opacity: 0.95;">
-            Bénéficiez d'un diagnostic gratuit et découvrez comment optimiser vos flux financiers.
-          </p>
-          <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-            <button (click)="scrollToSection('contact-button')" class="btn btn-light btn-lg px-5 py-3"
-              style="border-radius: 10px; font-weight: 700; color: #ff4b4b;">
-              <i class="fas fa-clipboard-check me-2"></i>
-              Diagnostic gratuit
-            </button>
-            <a href="https://odoo.mfinances.be/book/4781b4d3" target="_blank" rel="noopener noreferrer"
-              class="btn btn-outline-light btn-lg px-5 py-3"
-              style="border-radius: 10px; font-weight: 700; border: 2px solid white; text-decoration: none;">
-              <i class="fas fa-calendar-alt me-2"></i>
-              Prendre rendez-vous
-            </a>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="benefit-card">
+          <div class="benefit-card-icon">
+            <i class="fas fa-bullseye"></i>
           </div>
+          <h3 class="benefit-card-title">✔ Décider stratégiquement</h3>
+          <p class="benefit-card-text">Prenez les meilleures décisions pour votre croissance</p>
         </div>
       </div>
     </div>
   </div>
-
-  <style>
-    .offer-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #ff4b4b;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-    }
-
-    .tresorerie-section {
-      background-color: #1a2544;
-    }
-
-    .section-header {
-      margin-bottom: 4rem;
-    }
-
-    .section-badge {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: rgba(255, 255, 255, 0.1);
-      color: #ff4b4b;
-      border-radius: 25px;
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 1rem;
-    }
-
-    .section-subtitle {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .content-block {
-      padding: 2rem;
-    }
-
-    .key-point h3 {
-      color: white;
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .lead {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.6;
-    }
-
-    .highlight-box {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem;
-      border-radius: 12px;
-      border-left: 4px solid #ff4b4b;
-    }
-
-    .highlight-icon {
-      font-size: 1.5rem;
-    }
-
-    .highlight-box p {
-      margin: 0;
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .benefits-list {
-      margin-top: 3rem;
-    }
-
-    .benefits-list h3 {
-      color: white;
-      margin-bottom: 2rem;
-      font-size: 1.4rem;
-    }
-
-    .benefit-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      transition: all 0.3s ease;
-    }
-
-    .benefit-item:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .benefit-icon {
-      width: 50px;
-      height: 50px;
-      background: #ff4b4b;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
-    }
-
-    .benefit-content h4 {
-      color: white;
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .benefit-content p {
-      color: rgba(255, 255, 255, 0.7);
-      margin: 0;
-    }
-
-    .offer-block {
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      height: 100%;
-    }
-
-    .offer-content {
-      padding: 2.5rem;
-    }
-
-    .offer-header {
-      margin-bottom: 2rem;
-    }
-
-    .offer-header h3 {
-      font-size: 1.8rem;
-      color: white;
-      margin-bottom: 1rem;
-    }
-
-    .offer-header p {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 1.1rem;
-    }
-
-    .offer-features {
-      margin-bottom: 2rem;
-    }
-
-    .feature {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .feature span {
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 500;
-    }
-
-    .offer-alert {
-      background: rgba(255, 187, 0, 0.1);
-      border-radius: 12px;
-      padding: 1.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .offer-alert i {
-      color: #fbbf24;
-      font-size: 1.2rem;
-    }
-
-    .offer-alert p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      background: linear-gradient(45deg, #ff4b4b, #ff6b6b);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 500;
-      gap: 0.8rem;
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(255, 75, 75, 0.3);
-      color: white;
-    }
-
-    @media (max-width: 991px) {
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .content-block,
-      .offer-content {
-        padding: 1.5rem;
-      }
-
-      .offer-block {
-        margin-top: 2rem;
-      }
-    }
-  </style>
 </section>
 
+<!-- ============================================ -->
+<!-- SECTION 4 — 5 erreurs fréquentes            -->
+<!-- ============================================ -->
+<section class="errors-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="errors-header text-center mb-5" data-aos="fade-up">
+          <span class="section-chip dark">À éviter</span>
+          <h2 class="errors-title">5 erreurs qui fragilisent votre trésorerie</h2>
+          <p class="errors-subtitle">Chaque erreur vous coûte du cash. Identifiez-les et agissez.</p>
+        </div>
+
+        <div class="errors-list" data-aos="fade-up" data-aos-delay="100">
+          <a [routerLink]="['/tresorerie/tresorerie-benefice']" class="error-item">
+            <span class="error-number">01</span>
+            <div class="error-content">
+              <span class="error-icon"><i class="fas fa-money-bill-wave text-danger"></i></span>
+              <div>
+                <p class="error-text">Confondre bénéfice et cash</p>
+                <span class="error-link-label">Lire l'article <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <a [routerLink]="['/tresorerie/alerte-tresorerie']" class="error-item">
+            <span class="error-number">02</span>
+            <div class="error-content">
+              <span class="error-icon"><i class="fas fa-clock text-danger"></i></span>
+              <div>
+                <p class="error-text">Subir les délais clients sans processus de relance</p>
+                <span class="error-link-label">Lire l'article <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <a [routerLink]="['/tresorerie/anticiper-sa-tresorerie']" class="error-item">
+            <span class="error-number">03</span>
+            <div class="error-content">
+              <span class="error-icon"><i class="fas fa-calendar-alt text-danger"></i></span>
+              <div>
+                <p class="error-text">Oublier de provisionner la TVA et les impôts</p>
+                <span class="error-link-label">Lire l'article <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <a [routerLink]="['/tresorerie/optimiser-stock']" class="error-item">
+            <span class="error-number">04</span>
+            <div class="error-content">
+              <span class="error-icon"><i class="fas fa-box text-danger"></i></span>
+              <div>
+                <p class="error-text">Sous-estimer l'impact du stock sur la liquidité</p>
+                <span class="error-link-label">Lire l'article <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <a [routerLink]="['/tresorerie/anticiper-sa-tresorerie']" class="error-item">
+            <span class="error-number">05</span>
+            <div class="error-content">
+              <span class="error-icon"><i class="fas fa-chart-bar text-danger"></i></span>
+              <div>
+                <p class="error-text">Décider sans tableau de trésorerie prévisionnel</p>
+                <span class="error-link-label">Lire l'article <i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 5 — Programme Excellence (premium)  -->
+<!-- ============================================ -->
+<section class="excellence-section py-5">
+  <div class="container">
+    <div class="excellence-card" data-aos="fade-up">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="excellence-content">
+            <span class="excellence-badge">
+              <i class="fas fa-star"></i>
+              Programme Excellence
+            </span>
+            <h2 class="excellence-title">Pilotage stratégique de trésorerie</h2>
+            <p class="excellence-intro">
+              Un accompagnement sur mesure pour transformer vos défis en opportunités.
+            </p>
+            <div class="excellence-features">
+              <div class="ex-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Tableau de trésorerie prévisionnel personnalisé</span>
+              </div>
+              <div class="ex-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Contrôle budgétaire trimestriel approfondi</span>
+              </div>
+              <div class="ex-feature">
+                <i class="fas fa-check-circle"></i>
+                <span>Accompagnement stratégique continu</span>
+              </div>
+            </div>
+            <div class="excellence-quote">
+              <i class="fas fa-lightbulb"></i>
+              <p>L'anticipation est la clé pour transformer vos défis financiers en leviers de croissance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center text-lg-start">
+          <a [routerLink]="['/tarif']" [fragment]="'excellence'" class="excellence-cta">
+            Découvrir le Programme Excellence
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <p class="excellence-cta-note">Sans engagement • Confidentiel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTION 6 — Articles SEO (Hub)              -->
+<!-- ============================================ -->
 <section class="py-5 articles-tresorerie">
   <div class="container">
     <div class="row">
       <div class="col-md-12 mb-5">
-        <div class="section-title d-flex align-items-center">
+        <div class="d-flex align-items-center">
           <div class="title-icon">
             <i class="fas fa-book-open text-danger"></i>
           </div>
-          <h3 class="ms-3 mb-0 text-dark">Nos articles</h3>
+          <div class="ms-3">
+            <h2 class="mb-0 text-dark" style="font-size: 1.8rem; font-weight: 700;">Approfondir la gestion de votre
+              trésorerie</h2>
+            <p class="mb-0 text-muted">Nos articles experts pour piloter votre trésorerie</p>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Première colonne -->
+    <!-- Première colonne -->
+    <div class="row g-4">
       <div class="col-md-6">
         <a [routerLink]="['/tresorerie/tresorerie-benefice']" class="article-card mb-4" data-aos="fade-up"
           data-aos-delay="100">
           <div class="article-card-inner">
             <div class="card-number">01</div>
-            <div class="article-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
+            <div class="article-icon"><i class="fas fa-chart-line"></i></div>
             <div class="article-content">
-              <h4>
-                Pourquoi votre trésorerie est plus importante que vos bénéfices
-              </h4>
+              <h3>Pourquoi votre trésorerie est plus importante que vos bénéfices</h3>
               <div class="article-meta">
                 <span><i class="fas fa-clock me-2"></i>5 min de lecture</span>
                 <span><i class="fas fa-tag me-2"></i>Gestion</span>
               </div>
             </div>
-            <div class="article-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
+            <div class="article-arrow"><i class="fas fa-arrow-right"></i></div>
           </div>
         </a>
 
@@ -663,19 +383,15 @@
           data-aos-delay="200">
           <div class="article-card-inner">
             <div class="card-number">02</div>
-            <div class="article-icon">
-              <i class="fas fa-coins"></i>
-            </div>
+            <div class="article-icon"><i class="fas fa-coins"></i></div>
             <div class="article-content">
-              <h4>Investir sans mettre en danger sa trésorerie</h4>
+              <h3>Investir sans mettre en danger sa trésorerie</h3>
               <div class="article-meta">
                 <span><i class="fas fa-clock me-2"></i>7 min de lecture</span>
                 <span><i class="fas fa-tag me-2"></i>Investissement</span>
               </div>
             </div>
-            <div class="article-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
+            <div class="article-arrow"><i class="fas fa-arrow-right"></i></div>
           </div>
         </a>
 
@@ -683,359 +399,976 @@
           data-aos-delay="300">
           <div class="article-card-inner">
             <div class="card-number">03</div>
-            <div class="article-icon">
-              <i class="fas fa-boxes"></i>
-            </div>
+            <div class="article-icon"><i class="fas fa-boxes"></i></div>
             <div class="article-content">
-              <h4>Optimiser la gestion des stocks pour une trésorerie saine</h4>
+              <h3>Optimiser la gestion des stocks pour une trésorerie saine</h3>
               <div class="article-meta">
                 <span><i class="fas fa-clock me-2"></i>6 min de lecture</span>
                 <span><i class="fas fa-tag me-2"></i>Optimisation</span>
               </div>
             </div>
-            <div class="article-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
-        </a>
-
-        <a [routerLink]="['/tresorerie/alerte-tresorerie']" class="article-card mb-4" data-aos="fade-up"
-          data-aos-delay="400">
-          <div class="article-card-inner">
-            <div class="card-number">04</div>
-            <div class="article-icon">
-              <i class="fas fa-life-ring"></i>
-            </div>
-            <div class="article-content">
-              <h4>
-                SOS Trésorerie : Garder le cap face à la concurrence déloyale
-              </h4>
-              <div class="article-meta">
-                <span><i class="fas fa-clock me-2"></i>8 min de lecture</span>
-                <span><i class="fas fa-tag me-2"></i>Stratégie</span>
-              </div>
-            </div>
-            <div class="article-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
+            <div class="article-arrow"><i class="fas fa-arrow-right"></i></div>
           </div>
         </a>
       </div>
 
       <!-- Deuxième colonne -->
       <div class="col-md-6">
+        <a [routerLink]="['/tresorerie/alerte-tresorerie']" class="article-card mb-4" data-aos="fade-up"
+          data-aos-delay="100">
+          <div class="article-card-inner">
+            <div class="card-number">04</div>
+            <div class="article-icon"><i class="fas fa-life-ring"></i></div>
+            <div class="article-content">
+              <h3>SOS Trésorerie : Garder le cap face à la concurrence déloyale</h3>
+              <div class="article-meta">
+                <span><i class="fas fa-clock me-2"></i>8 min de lecture</span>
+                <span><i class="fas fa-tag me-2"></i>Stratégie</span>
+              </div>
+            </div>
+            <div class="article-arrow"><i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
         <a [routerLink]="['/tresorerie/proteger-sa-tresorerie']" class="article-card mb-4" data-aos="fade-up"
-          data-aos-delay="500">
+          data-aos-delay="200">
           <div class="article-card-inner">
             <div class="card-number">05</div>
-            <div class="article-icon">
-              <i class="fas fa-users"></i>
-            </div>
+            <div class="article-icon"><i class="fas fa-users"></i></div>
             <div class="article-content">
-              <h4>
-                Fidélisation et différenciation : des piliers pour votre
-                trésorerie
-              </h4>
+              <h3>Fidélisation et différenciation : des piliers pour votre trésorerie</h3>
               <div class="article-meta">
                 <span><i class="fas fa-clock me-2"></i>6 min de lecture</span>
                 <span><i class="fas fa-tag me-2"></i>Marketing</span>
               </div>
             </div>
-            <div class="article-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
+            <div class="article-arrow"><i class="fas fa-arrow-right"></i></div>
           </div>
         </a>
 
         <a [routerLink]="['/tresorerie/anticiper-sa-tresorerie']" class="article-card mb-4" data-aos="fade-up"
-          data-aos-delay="600">
+          data-aos-delay="300">
           <div class="article-card-inner">
             <div class="card-number">06</div>
-            <div class="article-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
+            <div class="article-icon"><i class="fas fa-shield-alt"></i></div>
             <div class="article-content">
-              <h4>L'anticipation, votre meilleure arme financière</h4>
+              <h3>L'anticipation, votre meilleure arme financière</h3>
               <div class="article-meta">
                 <span><i class="fas fa-clock me-2"></i>4 min de lecture</span>
                 <span><i class="fas fa-tag me-2"></i>Stratégie</span>
               </div>
             </div>
-            <div class="article-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
+            <div class="article-arrow"><i class="fas fa-arrow-right"></i></div>
           </div>
         </a>
-
-        <a [routerLink]="['/tresorerie/accompagnement']" class="article-card mb-4" data-aos="fade-up"
-          data-aos-delay="700">
-          <div class="article-card-inner">
-            <div class="card-number">07</div>
-            <div class="article-icon">
-              <i class="fas fa-trophy"></i>
-            </div>
-            <div class="article-content">
-              <h4>
-                Gagnez en sécurité financière : Transformez vos défis en
-                opportunités
-              </h4>
-              <div class="article-meta">
-                <span><i class="fas fa-clock me-2"></i>5 min de lecture</span>
-                <span><i class="fas fa-tag me-2"></i>Développement</span>
-              </div>
-            </div>
-            <div class="article-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- CTA après la liste d'articles -->
-    <div class="row mt-5" data-aos="fade-up" data-aos-duration="1000">
-      <div class="col-12">
-        <div class="p-4"
-          style="background: rgba(255, 75, 75, 0.05); border-radius: 16px; border: 2px solid rgba(255, 75, 75, 0.2);">
-          <div class="row align-items-center">
-            <div class="col-md-8">
-              <h4 class="mb-2" style="color: #ff4b4b; font-weight: 700;">
-                <i class="fas fa-lightbulb me-2"></i>
-                Besoin d'un accompagnement personnalisé ?
-              </h4>
-              <p class="mb-0" style="color: #2d3436; font-size: 1.1rem;">
-                Nos experts analysent votre situation et vous proposent des solutions concrètes adaptées à vos enjeux.
-              </p>
-            </div>
-            <div class="col-md-4 text-md-end mt-3 mt-md-0">
-              <button (click)="scrollToSection('contact-button')" class="btn btn-danger btn-lg px-4 py-3"
-                style="border-radius: 10px; font-weight: 600; width: 100%;">
-                <i class="fas fa-phone-alt me-2"></i>
-                Contactez-nous
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
-
-  <style>
-    .articles-tresorerie {
-      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    }
-
-    .section-title {
-      position: relative;
-      margin-bottom: 2rem;
-    }
-
-    .title-icon {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(45deg, #ff4b4b 0%, #ff6b6b 100%);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 15px rgba(255, 75, 75, 0.2);
-    }
-
-    .article-card {
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .article-card-inner {
-      background: white;
-      border-radius: 16px;
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .article-card:hover .article-card-inner {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      border-color: #ff4b4b;
-    }
-
-    /* .card-number {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      font-size: 3rem;
-      font-weight: 700;
-      color: rgba(255, 75, 75, 0.1);
-      line-height: 1;
-      z-index: 1;
-      transition: all 0.3s ease;
-    } */
-    .card-number {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      font-size: 4rem;
-      font-weight: 700;
-      color: rgba(0, 0, 0, 0.03);
-      line-height: 1;
-    }
-
-    .article-card:hover .card-number {
-      color: rgba(255, 75, 75, 0.15);
-      transform: scale(1.1);
-    }
-
-    .article-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(45deg, #ff4b4b 0%, #ff6b6b 100%);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      flex-shrink: 0;
-    }
-
-    .article-content {
-      flex-grow: 1;
-    }
-
-    .article-content h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #2d3436;
-    }
-
-    .article-meta {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
-      color: #636e72;
-    }
-
-    .article-arrow {
-      color: #ff4b4b;
-      font-size: 1.2rem;
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: all 0.3s ease;
-    }
-
-    .article-card:hover .article-arrow {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    @media (max-width: 768px) {
-      .article-meta {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .article-card-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .article-arrow {
-        display: none;
-      }
-
-      .card-number {
-        font-size: 2.5rem;
-        top: 0.3rem;
-        right: 0.3rem;
-      }
-    }
-  </style>
 </section>
-<div class="business-section my-5 py-5">
-  <div class="container2">
-    <!-- Contenu textuel -->
-    <div class="content-side">
-      <h2 class="title">Pourquoi la trésorerie<br />est-elle si cruciale ?</h2>
 
-      <div class="content">
-        <p>
-          <span class="highlight">
-            Une entreprise rentable peut faire faillite si sa trésorerie est mal
-            gérée.
-          </span>
-          <span class="highlight">
-            À l'inverse, une gestion efficace de vos liquidités peut vous
-            propulser au-delà de vos concurrents.
-          </span>
-        </p>
-
-        <p>
-          La trésorerie n'est pas seulement un indicateur financier – c'est un
-          outil stratégique qui vous permet de saisir les opportunités, de
-          résister aux crises et d'investir dans votre croissance sans
-          compromettre votre stabilité.
-        </p>
-
-        <p class="highlight-cta">
-          Ne laissez pas votre trésorerie au hasard. Nos experts sont là pour
-          vous accompagner.
-        </p>
-
-        <button (click)="scrollToSection('contactSection')" class="cta-button" id="contact-button">
-          Demandez votre diagnostic gratuit
-          <i class="fas fa-arrow-right"></i>
+<!-- ============================================ -->
+<!-- CTA FINAL                                   -->
+<!-- ============================================ -->
+<section class="cta-final-section py-5">
+  <div class="container">
+    <div class="cta-final-card" data-aos="fade-up">
+      <h2 class="cta-final-title">Ne laissez pas votre trésorerie au hasard</h2>
+      <p class="cta-final-intro">
+        La trésorerie n'est pas seulement un indicateur financier – c'est un outil stratégique qui vous permet :
+      </p>
+      <ul class="cta-final-list">
+        <li><i class="fas fa-check"></i> De saisir les opportunités au bon moment</li>
+        <li><i class="fas fa-check"></i> De résister aux crises sans compromettre votre activité</li>
+        <li><i class="fas fa-check"></i> D'investir sans fragiliser votre stabilité financière</li>
+      </ul>
+      <div class="cta-final-buttons">
+        <button (click)="startDiagnostic()" class="cta-final-btn-primary">
+          <i class="fas fa-clipboard-check"></i>
+          Faire le diagnostic maintenant
         </button>
+        <a href="https://odoo.mfinances.be/book/4781b4d3" target="_blank" rel="noopener noreferrer"
+          class="cta-final-btn-secondary">
+          <i class="fas fa-calendar-alt"></i>
+          Planifier un audit
+        </a>
       </div>
     </div>
-
-    <!-- Image side -->
-    <div class="image-side">
-      <img src="../../../assets/img/webp/treasur.webp" alt="Gestion de trésorerie" class="feature-image" />
-    </div>
   </div>
-</div>
+</section>
+
+<!-- Zone contact -->
 <app-zone-contact></app-zone-contact>
 
+<!-- ============================================ -->
+<!-- STYLES                                      -->
+<!-- ============================================ -->
 <style>
-  .highlight-cta {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #ff4b4b;
-    margin: 2rem 0;
+  /* ---- HERO ---- */
+  .hero-tresorerie {
+    background: linear-gradient(135deg, rgba(26, 37, 68, 0.9) 0%, rgba(15, 26, 53, 0.85) 60%, rgba(30, 41, 59, 0.9) 100%), url('../../../assets/img/bg/bg_about.webp') no-repeat center center/cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
   }
 
-  .cta-button {
+  .hero-tresorerie::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 75, 75, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-overlay {
+    width: 100%;
+    padding: 160px 0 80px 0;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 75, 75, 0.15);
+    border: 1px solid rgba(255, 75, 75, 0.4);
+    color: #ff8888;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid #ff4b4b;
+    background: rgba(255, 75, 75, 0.07);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .hero-tagline strong {
+    color: #ff8888;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    background: #ff4b4b;
+    background: linear-gradient(135deg, #ff4b4b 0%, #dc2626 100%);
     color: white;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
     border: none;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 700;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 25px rgba(255, 75, 75, 0.35);
   }
 
-  .cta-button:hover {
-    background: #ff3131;
-    transform: translateY(-2px);
+  .hero-btn-primary i {
+    margin-right: 0.5rem;
+  }
+
+  .hero-btn-primary .btn-sub {
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-left: 0.4rem;
+  }
+
+  .hero-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 75, 75, 0.45);
+  }
+
+  .hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 1.8rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .hero-btn-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.7);
     color: white;
-    box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .hero-social-proof {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .proof-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .proof-item i {
+    color: #ff4b4b;
+  }
+
+  .proof-divider {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 1.2rem;
+  }
+
+  /* ---- SECTION 1 — Pourquoi cruciale ---- */
+  .why-critical-section {
+    background: white;
+  }
+
+  .section-chip {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background: rgba(255, 75, 75, 0.1);
+    color: #ff4b4b;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .section-chip.dark {
+    background: rgba(30, 41, 59, 0.08);
+    color: #1e293b;
+  }
+
+  .why-image-wrapper {
+    position: relative;
+  }
+
+  .why-image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    object-fit: cover;
+    max-height: 450px;
+  }
+
+  .why-image-badge {
+    position: absolute;
+    bottom: -16px;
+    left: 24px;
+    background: linear-gradient(135deg, #ff4b4b, #dc2626);
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(255, 75, 75, 0.35);
+  }
+
+  .why-content {
+    padding-left: 1rem;
+  }
+
+  .why-title {
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+  }
+
+  .why-text {
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .why-highlight-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #fef2f2;
+    border-left: 4px solid #ff4b4b;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .why-highlight-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .why-highlight-box p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #7f1d1d;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  .why-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+  }
+
+  .why-cta-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 75, 75, 0.3);
+  }
+
+  /* ---- SECTION 2 — Diagnostic ---- */
+  .diagnostic-hub-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  }
+
+  .diagnostic-container-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ---- SECTION 3 — Visibilité ---- */
+  .tresorerie-section {
+    background-color: #1a2544;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ff4b4b;
+    border-radius: 25px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .benefit-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+  }
+
+  .benefit-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 75, 75, 0.3);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .benefit-card-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ff4b4b, #dc2626);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+    box-shadow: 0 8px 20px rgba(255, 75, 75, 0.35);
+  }
+
+  .benefit-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.8rem;
+  }
+
+  .benefit-card-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ---- SECTION 4 — 5 erreurs ---- */
+  .errors-section {
+    background: white;
+  }
+
+  .errors-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.8rem;
+  }
+
+  .errors-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+  }
+
+  .errors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .error-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #f1f5f9;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+    border-radius: 12px;
+  }
+
+  .error-item:last-child {
+    border-bottom: none;
+  }
+
+  .error-item:hover {
+    background: #fef2f2;
+    transform: translateX(6px);
+  }
+
+  .error-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgba(255, 75, 75, 0.15);
+    min-width: 56px;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .error-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .error-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+  }
+
+  .error-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+  }
+
+  .error-link-label {
+    font-size: 0.85rem;
+    color: #ff4b4b;
+    font-weight: 500;
+  }
+
+  .error-item:hover .error-number {
+    color: rgba(255, 75, 75, 0.35);
+  }
+
+  /* ---- SECTION 5 — Excellence ---- */
+  .excellence-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%);
+  }
+
+  .excellence-card {
+    background: linear-gradient(135deg, #1a2544 0%, #0f172a 100%);
+    border-radius: 24px;
+    padding: 3.5rem;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .excellence-card::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 75, 75, 0.1), transparent 70%);
+    pointer-events: none;
+  }
+
+  .excellence-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ff4b4b;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .excellence-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .excellence-intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .excellence-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .ex-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .ex-feature i {
+    color: #4ade80;
+    flex-shrink: 0;
+  }
+
+  .excellence-quote {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(255, 187, 0, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .excellence-quote i {
+    color: #fbbf24;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .excellence-quote p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .excellence-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, #ff4b4b, #dc2626);
+    color: white;
+    padding: 1.1rem 2rem;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 75, 75, 0.35);
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+
+  .excellence-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 35px rgba(255, 75, 75, 0.45);
+    color: white;
+  }
+
+  .excellence-cta-note {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.8rem;
+    margin: 0;
+  }
+
+  /* ---- SECTION 6 — Articles ---- */
+  .articles-tresorerie {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  }
+
+  .title-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #ff4b4b 0%, #ff6b6b 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(255, 75, 75, 0.2);
+    flex-shrink: 0;
+  }
+
+  .article-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .article-card-inner {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .article-card:hover .article-card-inner {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #ff4b4b;
+  }
+
+  .card-number {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.03);
+    line-height: 1;
+  }
+
+  .article-card:hover .card-number {
+    color: rgba(255, 75, 75, 0.12);
+  }
+
+  .article-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #ff4b4b 0%, #ff6b6b 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .article-content {
+    flex-grow: 1;
+  }
+
+  .article-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2d3436;
+  }
+
+  .article-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #636e72;
+  }
+
+  .article-arrow {
+    color: #ff4b4b;
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .article-card:hover .article-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ---- CTA FINAL ---- */
+  .cta-final-section {
+    background: linear-gradient(135deg, #1a2544 0%, #0f172a 100%);
+  }
+
+  .cta-final-card {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .cta-final-title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.2rem;
+  }
+
+  .cta-final-intro {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-final-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 2.5rem;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    text-align: left;
+  }
+
+  .cta-final-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .cta-final-list li i {
+    color: #4ade80;
+    flex-shrink: 0;
+  }
+
+  .cta-final-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .cta-final-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: linear-gradient(135deg, #ff4b4b, #dc2626);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 25px rgba(255, 75, 75, 0.4);
+  }
+
+  .cta-final-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 75, 75, 0.5);
+  }
+
+  .cta-final-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .cta-final-btn-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 991px) {
+    .excellence-card {
+      padding: 2.5rem 2rem;
+    }
+
+    .why-content {
+      padding-left: 0;
+      margin-top: 2rem;
+    }
+
+    .why-image-badge {
+      position: static;
+      display: inline-flex;
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-overlay {
+      padding: 60px 0;
+    }
+
+    .hero-cta-group {
+      flex-direction: column;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .hero-social-proof {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .proof-divider {
+      display: none;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .errors-title {
+      font-size: 1.6rem;
+    }
+
+    .error-item {
+      padding: 1.2rem 1rem;
+    }
+
+    .error-number {
+      font-size: 2rem;
+      min-width: 40px;
+    }
+
+    .article-meta {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .article-card-inner {
+      flex-wrap: wrap;
+    }
+
+    .article-arrow {
+      display: none;
+    }
+
+    .cta-final-buttons {
+      flex-direction: column;
+    }
+
+    .cta-final-btn-primary,
+    .cta-final-btn-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .excellence-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .error-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
   }
 </style>

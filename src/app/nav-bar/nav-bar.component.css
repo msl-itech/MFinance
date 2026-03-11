@@ -54,25 +54,26 @@
   gap: 0.3rem;
   font-size: 0.95rem;
   transition: color 0.3s ease;
-  white-space: nowrap; 
+  white-space: nowrap;
   display: inline-block;
 }
+
 .main-menu-ex ul {
   display: flex;
   gap: 0.5rem;
 }
 
 
-.main-menu-ex ul li:hover > a {
+.main-menu-ex ul li:hover>a {
   color: #ff4d4d;
 }
 
 /* Nouveau style pour garder la couleur du lien parent lors du survol des sous-menus */
-.main-menu-ex ul li:hover > a[href="/tresorerie/proteger-sa-tresorerie"] {
+.main-menu-ex ul li:hover>a[href="/tresorerie/proteger-sa-tresorerie"] {
   color: #ff4d4d;
 }
 
-.main-menu-ex ul li ul li:hover > a {
+.main-menu-ex ul li ul li:hover>a {
   color: #ffffff;
 }
 
@@ -100,7 +101,7 @@
   padding: 0.5rem 0;
 }
 
-.main-menu-ex ul li:hover > ul {
+.main-menu-ex ul li:hover>ul {
   display: flex;
 }
 
@@ -130,15 +131,15 @@
   z-index: 1000;
 }
 
-.main-menu-ex ul li.has-mega-menu:hover > .mega-menu-two-column {
+.main-menu-ex ul li.has-mega-menu:hover>.mega-menu-two-column {
   display: grid !important;
 }
 
-.main-menu-ex ul li.has-mega-menu:hover > a {
+.main-menu-ex ul li.has-mega-menu:hover>a {
   color: #ff4d4d;
 }
 
-.mega-menu-two-column .column h4 {
+.mega-menu-two-column .column .mega-menu-title {
   font-size: 0.75rem;
   font-weight: 700;
   color: #6b7280;
@@ -296,7 +297,7 @@
   background-color: #f5f5f5;
 }
 
-.has-submenu > a {
+.has-submenu>a {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -376,8 +377,7 @@
 .red-link:hover,
 .red-link:focus,
 .red-link:active {
-    color: #ff4d4d !important; 
-    font-weight: 500;            
-    text-decoration: none;     
+  color: #ff4d4d !important;
+  font-weight: 500;
+  text-decoration: none;
 }
-

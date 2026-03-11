@@ -16,6 +16,10 @@ import { ProfilSocieteMoyenComponent } from '../profil-societe-moyen/profil-soci
 import { SupportComponent } from '../support/support.component';
 import { TarifComponent } from '../tarif/tarif.component';
 import { CalculatriceComponent } from '../calculatrice/calculatrice.component';
+import { PolitiqueConfidentialiteComponent } from '../politique-confidentialite/politique-confidentialite.component';
+import { ConditionsGeneralesComponent } from '../conditions-generales/conditions-generales.component';
+import { MentionsLegalesComponent } from '../mentions-legales/mentions-legales.component';
+import { PolitiqueCookiesComponent } from '../politique-cookies/politique-cookies.component';
 
 export const DESKTOP_ROUTES: Routes = [
   {
@@ -66,6 +70,12 @@ export const DESKTOP_ROUTES: Routes = [
       { path: 'support', component: SupportComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'avis-google', component: AvisGoogleComponent },
+
+      // Pages légales (RGPD)
+      { path: 'politique-confidentialite', component: PolitiqueConfidentialiteComponent },
+      { path: 'conditions-generales', component: ConditionsGeneralesComponent },
+      { path: 'mentions-legales', component: MentionsLegalesComponent },
+      { path: 'politique-cookies', component: PolitiqueCookiesComponent },
 
       // Profils (métier)
       { path: 'profils/independant-startup', component: ProfilIndependantComponent },

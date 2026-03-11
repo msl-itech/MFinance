@@ -1,0 +1,181 @@
+<div class="diagnostic-container">
+  <!-- Questions -->
+  <div class="diagnostic-content" *ngIf="!showResult">
+    <!-- Progress bar -->
+    <div class="progress-section">
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="progressPercentage"></div>
+      </div>
+      <div class="progress-text">
+        Question {{ currentStep + 1 }} sur {{ totalSteps }}
+      </div>
+    </div>
+
+    <!-- Question -->
+    <div class="question-section" @slideInOut>
+      <h3 class="question-title">{{ currentQuestion.question }}</h3>
+      <p class="question-description" *ngIf="currentQuestion.description">
+        {{ currentQuestion.description }}
+      </p>
+
+      <div class="options-grid">
+        <div
+          *ngFor="let option of currentQuestion.options"
+          class="option-card"
+          [class.selected]="isSelected(currentQuestion.id, option.value)"
+          (click)="selectOption(currentQuestion.id, option.value)">
+          <div class="option-icon">
+            <i class="fas" [ngClass]="option.icon"></i>
+          </div>
+          <div class="option-content">
+            <div class="option-label">{{ option.label }}</div>
+            <div class="option-sublabel">{{ option.sublabel }}</div>
+          </div>
+          <div class="option-checkmark" *ngIf="isSelected(currentQuestion.id, option.value)">
+            <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation-section">
+      <button
+        class="btn-secondary"
+        (click)="previousStep()"
+        *ngIf="currentStep > 0">
+        <i class="fas fa-arrow-left me-2"></i>
+        Précédent
+      </button>
+
+      <button
+        class="btn-primary"
+        [disabled]="!canProceed()"
+        (click)="nextStep()">
+        <span *ngIf="currentStep < totalSteps - 1">
+          Suivant
+          <i class="fas fa-arrow-right ms-2"></i>
+        </span>
+        <span *ngIf="currentStep === totalSteps - 1">
+          Voir mon résultat
+          <i class="fas fa-chart-line ms-2"></i>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div class="result-section" *ngIf="showResult && result">
+    <div class="result-header">
+      <div class="score-badge" [ngClass]="'level-' + result.level">
+        <div class="score-number">{{ result.score }}/{{ result.maxScore }}</div>
+        <div class="score-label">points</div>
+      </div>
+
+      <h3 class="result-title" [ngClass]="'text-' + result.level">
+        {{ result.title }}
+      </h3>
+    </div>
+
+    <div class="result-content">
+      <div class="result-description">
+        <i class="fas fa-info-circle me-2"></i>
+        {{ result.description }}
+      </div>
+
+      <div class="result-recommendation">
+        <strong>Notre recommandation :</strong><br>
+        {{ result.recommendation }}
+      </div>
+
+      <!-- Personalized insights -->
+      <div class="result-insights">
+        <h4>Analyse de votre situation :</h4>
+        <ul>
+          <li *ngIf="result.score >= 5">
+            <i class="fas fa-check text-success me-2"></i>
+            Votre niveau de bénéfices crée un environnement favorable à une structuration avancée
+          </li>
+          <li *ngIf="answers.situation === 'important-fluctuant'">
+            <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+            Un compte courant important ou fluctuant nécessite une stratégie claire pour éviter les risques fiscaux
+          </li>
+          <li *ngIf="answers.horizon === 'long-terme'">
+            <i class="fas fa-bullseye text-info me-2"></i>
+            Votre vision long terme justifie une approche patrimoniale structurée
+          </li>
+          <li *ngIf="answers.fiscal === 'veux-optimiser'">
+            <i class="fas fa-lightbulb text-warning me-2"></i>
+            Votre volonté d'optimisation montre que vous êtes prêt pour une approche stratégique
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="result-actions">
+      <button
+        class="btn-cta"
+        [ngClass]="'btn-' + result.level"
+        (click)="scrollToContact()">
+        <i class="fas fa-calendar-check me-2"></i>
+        {{ result.ctaText }}
+      </button>
+
+      <button class="btn-restart" (click)="restartDiagnostic()">
+        <i class="fas fa-redo me-2"></i>
+        Recommencer le diagnostic
+      </button>
+    </div>
+  </div>
+
+  <!-- Email Modal -->
+  <div class="modal-overlay" *ngIf="showEmailModal" (click)="closeEmailModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeEmailModal()">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="modal-header">
+        <i class="fas fa-envelope-open-text"></i>
+        <h3>Recevez votre analyse détaillée</h3>
+      </div>
+
+      <div class="modal-body">
+        <p>
+          Nous vous envoyons par email une analyse personnalisée avec :
+        </p>
+        <ul>
+          <li><i class="fas fa-check text-success me-2"></i>Votre score détaillé</li>
+          <li><i class="fas fa-check text-success me-2"></i>Des recommandations spécifiques</li>
+          <li><i class="fas fa-check text-success me-2"></i>Les prochaines étapes conseillées</li>
+        </ul>
+
+        <div class="form-group">
+          <label for="userName">Nom complet</label>
+          <input
+            type="text"
+            id="userName"
+            class="form-control"
+            [(ngModel)]="userName"
+            placeholder="Votre nom et prénom">
+        </div>
+
+        <div class="form-group">
+          <label for="userEmail">Email</label>
+          <input
+            type="email"
+            id="userEmail"
+            class="form-control"
+            [(ngModel)]="userEmail"
+            placeholder="votre@email.com">
+        </div>
+
+        <button class="btn-submit" (click)="submitEmail()">
+          <i class="fas fa-paper-plane me-2"></i>
+          Recevoir mon analyse
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

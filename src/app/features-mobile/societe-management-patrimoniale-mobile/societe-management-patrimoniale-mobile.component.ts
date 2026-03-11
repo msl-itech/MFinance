@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormsModule } from '@angular/forms';
 import { SidebarMobileComponent } from '../sidebar-mobile/sidebar-mobile.component';
 import { ToastrService } from 'ngx-toastr';
 import { OdooService } from '../../services/odoo.service';
+import { DiagnosticManagementPatrimonialComponent } from './diagnostic-management-patrimonial.component';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 interface FaqItem {
   question: string;
@@ -48,9 +50,17 @@ interface BesoinOption {
 @Component({
   selector: 'app-societe-management-patrimoniale-mobile',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, SidebarMobileComponent],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, SidebarMobileComponent, DiagnosticManagementPatrimonialComponent],
   templateUrl: './societe-management-patrimoniale-mobile.component.html',
   styleUrls: ['./societe-management-patrimoniale-mobile.component.scss'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('400ms ease-in', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class SocieteManagementPatrimonialeMobileComponent implements OnInit, OnDestroy {
   @ViewChild('carouselContainer') carouselContainer!: ElementRef;
@@ -428,5 +438,11 @@ export class SocieteManagementPatrimonialeMobileComponent implements OnInit, OnD
 
   openMaps(): void {
     window.open('https://maps.google.com/?q=MFINANCES+Brussels', '_blank');
+  }
+
+  // Gestion du diagnostic
+  onDiagnosticComplete(result: any): void {
+    console.log('Diagnostic complété:', result);
+    // Vous pouvez ajouter une logique supplémentaire ici si nécessaire
   }
 }

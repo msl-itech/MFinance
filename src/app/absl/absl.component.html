@@ -82,8 +82,10 @@
   }
 
   .works-img {
-    overflow: hidden; /* Empêche le débordement de l'image */
-    position: relative; /* Permet les transformations absolues si nécessaire */
+    overflow: hidden;
+    /* Empêche le débordement de l'image */
+    position: relative;
+    /* Permet les transformations absolues si nécessaire */
   }
 
   /* Stylisation de l'image */
@@ -91,10 +93,13 @@
     max-width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.2s ease-out; /* Transition fluide lors des transformations */
+    transition: transform 0.2s ease-out;
+    /* Transition fluide lors des transformations */
   }
+
   .image-active {
-    transform: translateY(0); /* Position finale */
+    transform: translateY(0);
+    /* Position finale */
   }
 
   /* Styles pour le formulaire interactif */
@@ -116,13 +121,13 @@
     border-color: #ff3333 !important;
   }
 
-  .form-check-input:checked + .option-card {
+  .form-check-input:checked+.option-card {
     border-color: #ff3333 !important;
     background-color: rgba(255, 51, 51, 0.05);
     transform: scale(1.02);
   }
 
-  .form-check-input:checked + .option-card .card-body {
+  .form-check-input:checked+.option-card .card-body {
     color: #ff3333;
   }
 
@@ -136,10 +141,14 @@
   }
 
   .custom-image-size {
-    width: 80%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
-    height: auto; /* Maintient le ratio d'aspect */
-    max-width: 350px; /* Limite la taille maximale */
-    object-fit: contain; /* Préserve les proportions */
+    width: 80%;
+    /* Ajustez la largeur maximale (en pourcentage ou pixels) */
+    height: auto;
+    /* Maintient le ratio d'aspect */
+    max-width: 350px;
+    /* Limite la taille maximale */
+    object-fit: contain;
+    /* Préserve les proportions */
   }
 
   /* Améliorations pour la section CTA finale */
@@ -332,6 +341,7 @@
   }
 
   @media (max-width: 768px) {
+
     /* 1. Header réduit */
     .header {
       padding: 40px 0 20px;
@@ -365,12 +375,14 @@
     }
 
     .button-container .home2-btn {
-      display: none; /* Masquer les boutons fixes sur mobile */
+      display: none;
+      /* Masquer les boutons fixes sur mobile */
     }
 
     /* 4. Défis version mobile */
     .defis.row {
-      display: none; /* Masquer version desktop */
+      display: none;
+      /* Masquer version desktop */
     }
 
     .defis-mobile {
@@ -606,6 +618,7 @@
   }
 
   @media (max-width: 768px) {
+
     .main-image,
     .secondary-image {
       max-height: 250px;
@@ -665,6 +678,7 @@
   }
 
   @media (max-width: 576px) {
+
     .btn-red,
     .btn-outline-danger {
       white-space: normal;
@@ -771,7 +785,7 @@
 <header class="header">
   <div class="header-overlay">
     <div class="container">
-      <h1>ASBL</h1>
+      <div class="h1">ASBL</div>
       <p class="text-white">Accueil &gt; ASBL</p>
     </div>
   </div>
@@ -795,10 +809,10 @@
       <!-- Main Content -->
       <div class="col-lg-8">
         <div class="single-content">
-          <h3>Tout savoir sur L'ASBL</h3>
-          <h4>
+          <h1 class="h3">Tout savoir sur L'ASBL</h1>
+          <h2 class="h4">
             Accompagnement pour les ASBL : Donnez vie à votre mission sociale
-          </h4>
+          </h2>
 
           <!-- Version desktop -->
           <div class="intro-desktop">
@@ -825,9 +839,7 @@
               <strong>accompagnement sur mesure</strong> pour une
               <strong>gestion simplifiée</strong> de votre association.
             </p>
-            <a class="intro-toggle" onclick="toggleIntroExpanded()"
-              >+ En savoir plus</a
-            >
+            <a class="intro-toggle" onclick="toggleIntroExpanded()">+ En savoir plus</a>
             <div id="introExpanded" class="intro-expanded">
               <p>
                 Les ASBL belges portent des projets sociaux, culturels,
@@ -840,17 +852,11 @@
 
           <div class="button-container">
             <div class="home2-btn mb-4">
-              <button
-                (click)="scrollToSection('targetSection')"
-                class="btn-red"
-              >
+              <button (click)="scrollToSection('targetSection')" class="btn-red">
                 Découvrez ce que vous gagnerez avec nous
                 <i class="fa-solid fa-arrow-right ms-2"></i>
               </button>
-              <button
-                (click)="scrollToSection('formulaire-evaluation')"
-                class="btn btn-outline-danger"
-              >
+              <button (click)="scrollToSection('formulaire-evaluation')" class="btn btn-outline-danger">
                 🧭 Évaluez votre ASBL (2 min)
                 <i class="fa-solid fa-arrow-down ms-2"></i>
               </button>
@@ -863,24 +869,17 @@
         </div>
 
         <!-- Challenges Section Desktop -->
-        <h3>Les défis majeurs auxquels font face les ASBL</h3>
+        <h2 class="h3">Les défis majeurs auxquels font face les ASBL</h2>
         <div class="defis row align-items-center mt-10">
           <!-- Image -->
           <div class="col-md-4 col-sm-6 mx-auto">
-            <img
-              src="../../assets/img/webp/asbl_mini.webp"
-              alt="Défis ASBL"
-              class="img-fluid rounded-4"
-            />
+            <img src="../../assets/img/webp/asbl_mini.webp" alt="Défis ASBL" class="img-fluid rounded-4" />
           </div>
           <!-- Content -->
           <div class="col-md-8 mt-30 mt-md-0">
             <ul class="single-content-list list-unstyled pl-25">
               <li>
-                <i
-                  class="fa fa-star"
-                  style="font-size: 14px; color: #ff3333; margin-right: 6px"
-                ></i>
+                <i class="fa fa-star" style="font-size: 14px; color: #ff3333; margin-right: 6px"></i>
                 <strong>Respect des obligations légales :</strong>
                 <br />
                 La gestion administrative peut rapidement devenir chronophage,
@@ -889,10 +888,7 @@
                 compétentes.
               </li>
               <li>
-                <i
-                  class="fa fa-star"
-                  style="font-size: 14px; color: #ff3333; margin-right: 6px"
-                ></i>
+                <i class="fa fa-star" style="font-size: 14px; color: #ff3333; margin-right: 6px"></i>
                 <strong>Obtention et gestion des subsides :</strong>
                 <br />
                 Obtenir et gérer des subsides requiert une justification
@@ -900,10 +896,7 @@
                 par les financeurs.
               </li>
               <li>
-                <i
-                  class="fa fa-star"
-                  style="font-size: 14px; color: #ff3333; margin-right: 6px"
-                ></i>
+                <i class="fa fa-star" style="font-size: 14px; color: #ff3333; margin-right: 6px"></i>
                 <strong>Suivi des activités et des ressources :</strong>
                 <br />
                 Encadrer bénévoles et employés, répartir efficacement les frais
@@ -916,9 +909,9 @@
 
         <!-- Version mobile des défis avec emojis -->
         <div class="defis-mobile">
-          <h3 style="text-align: center; margin-bottom: 2rem">
+          <h2 class="h3" style="text-align: center; margin-bottom: 2rem">
             Les défis majeurs de votre ASBL
-          </h3>
+          </h2>
 
           <div class="defi-item">
             <div class="defi-emoji">📑</div>
@@ -961,11 +954,7 @@
             <i class="fas fa-arrow-right"></i>
           </a>
           <br />
-          <a
-            href="https://maps.google.com/?q=20+Rue+de+la+Magnanerie,+1180+Uccle"
-            target="_blank"
-            class="maps-link"
-          >
+          <a href="https://maps.google.com/?q=20+Rue+de+la+Magnanerie,+1180+Uccle" target="_blank" class="maps-link">
             📍 Voir sur Google Maps
           </a>
         </div>
@@ -981,10 +970,7 @@
     <a href="#targetSection" class="floating-btn floating-btn-primary">
       💰 Nos services
     </a>
-    <a
-      href="#formulaire-evaluation"
-      class="floating-btn floating-btn-secondary"
-    >
+    <a href="#formulaire-evaluation" class="floating-btn floating-btn-secondary">
       🧭 Évaluation
     </a>
   </div>
@@ -1012,49 +998,32 @@
       <div class="row align-items-center">
         <div class="col-md-12 col-lg-6">
           <div class="how-in-work-sec">
-            <div
-              class="hadding hadding-p"
-              data-aos="fade-right"
-              data-aos-duration="800"
-            >
-              <h1>
+            <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
+              <h2 class="h1">
                 Nos services pour <br /><span class="rectangle-red">
-                  les ASBL</span
-                >
-              </h1>
+                  les ASBL</span>
+              </h2>
             </div>
             <div class="space20"></div>
             <div class="works-items">
               <!-- Service 1 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1000"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1000">
                 <div class="me-3">
                   <div class="work-icon img-border">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-1.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Création et gestion administrative</h2>
+                  <h3 class="h2">Création et gestion administrative</h3>
                   <ul>
                     <li><strong>Rédaction et dépôt des statuts.</strong></li>
                     <li>
-                      <strong
-                        >Assistance pour l'enregistrement au Moniteur
-                        belge.</strong
-                      >
+                      <strong>Assistance pour l'enregistrement au Moniteur
+                        belge.</strong>
                     </li>
                     <li>
-                      <strong
-                        >Automatisation ou externalisation des tâches
-                        administratives (sur devis).</strong
-                      >
+                      <strong>Automatisation ou externalisation des tâches
+                        administratives (sur devis).</strong>
                     </li>
                     <li>
                       <strong>Suivi des obligations légales :</strong>
@@ -1066,22 +1035,14 @@
               </div>
 
               <!-- Service 2 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1200"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-2.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Gestion comptable et fiscale</h2>
+                  <h3 class="h2">Gestion comptable et fiscale</h3>
                   <ul>
                     <li>
                       <strong>Comptabilité générale :</strong> Consultez nos
@@ -1092,9 +1053,7 @@
                       par projet et répartition des frais généraux.
                     </li>
                     <li>
-                      <strong
-                        >Déclarations fiscales et TVA, si applicable.</strong
-                      >
+                      <strong>Déclarations fiscales et TVA, si applicable.</strong>
                     </li>
                     <li>
                       <strong>Préparation et dépôt des comptes annuels</strong>
@@ -1105,22 +1064,14 @@
               </div>
 
               <!-- Service 3 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1400"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-3.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Accompagnement en recherche de financements</h2>
+                  <h3 class="h2">Accompagnement en recherche de financements</h3>
                   <ul>
                     <li>
                       Les subsides locaux en Belgique sont souvent attribués par
@@ -1131,17 +1082,13 @@
                       pour chaque projet.
                     </li>
                     <li>
-                      <strong
-                        >Suivi des coûts grâce à la comptabilité
-                        analytique</strong
-                      >
+                      <strong>Suivi des coûts grâce à la comptabilité
+                        analytique</strong>
                       pour optimiser vos demandes de subsides.
                     </li>
                     <li>
-                      <strong
-                        >Consolidation des plans financiers dans un budget
-                        global</strong
-                      >, actualisé régulièrement pour garantir une trésorerie
+                      <strong>Consolidation des plans financiers dans un budget
+                        global</strong>, actualisé régulièrement pour garantir une trésorerie
                       saine.
                     </li>
                   </ul>
@@ -1149,22 +1096,14 @@
               </div>
 
               <!-- Service 4 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1400"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/about-vision-icon-2.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/about-vision-icon-2.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Gestion des ressources humaines</h2>
+                  <h3 class="h2">Gestion des ressources humaines</h3>
                   <ul>
                     <li>
                       <strong>Gestion des bénévoles :</strong> Respect des
@@ -1181,35 +1120,23 @@
               </div>
 
               <!-- Service 5 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1400"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-3.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Service de direction financière (CFO)</h2>
+                  <h3 class="h2">Service de direction financière (CFO)</h3>
                   <ul>
                     <li><strong>Analyse financière approfondie.</strong></li>
                     <li>
-                      <strong
-                        >Élaboration et suivi de budgets annuels et de
-                        trésorerie.</strong
-                      >
+                      <strong>Élaboration et suivi de budgets annuels et de
+                        trésorerie.</strong>
                     </li>
                     <li>
-                      <strong
-                        >Optimisation des ressources pour maximiser votre
-                        impact.</strong
-                      >
+                      <strong>Optimisation des ressources pour maximiser votre
+                        impact.</strong>
                     </li>
                     <li><strong>Tarif horaire :</strong> 135 € HTVA.</li>
                   </ul>
@@ -1219,11 +1146,8 @@
 
             <!-- Bouton CTA -->
             <div class="mt-4 text-center" data-aos="fade-up" data-aos-duration="1600">
-              <a
-                (click)="scrollToSection('formulaire-asbl')"
-                class="btn btn-danger btn-lg px-4 py-3"
-                style="border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer;"
-              >
+              <a (click)="scrollToSection('formulaire-asbl')" class="btn btn-danger btn-lg px-4 py-3"
+                style="border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer;">
                 <i class="fa-solid fa-comments me-2" style="color:white"></i>
                 Parlez à un expert
               </a>
@@ -1232,33 +1156,18 @@
         </div>
 
         <!-- Image de droite -->
-        <div
-          class="col-md-12 col-lg-6"
-          data-aos="flip-right"
-          data-aos-duration="1000"
-        >
+        <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
           <div class="works-img-gallery space-sm-50 img-border">
             <div class="d-flex flex-column gap-3">
               <div>
-                <img
-                  src="../../assets/img/webp/56.avif"
-                  alt="Image principale des services ASBL"
-                  class="img-fluid w-100 rounded-3"
-                />
+                <img src="../../assets/img/webp/56.avif" alt="Image principale des services ASBL"
+                  class="img-fluid w-100 rounded-3" />
               </div>
               <div>
-                <img
-                  src="../../assets/img/webp/5.webp"
-                  alt="Image secondaire 1"
-                  class="img-fluid w-100 rounded-3"
-                />
+                <img src="../../assets/img/webp/5.webp" alt="Image secondaire 1" class="img-fluid w-100 rounded-3" />
               </div>
               <div>
-                <img
-                  src="../../assets/img/webp/4.webp"
-                  alt="Image secondaire 2"
-                  class="img-fluid w-100 rounded-3"
-                />
+                <img src="../../assets/img/webp/4.webp" alt="Image secondaire 2" class="img-fluid w-100 rounded-3" />
               </div>
             </div>
           </div>
@@ -1273,30 +1182,18 @@
   <div class="about sec-padding" id="targetSection">
     <div class="container">
       <div class="row align-items-center">
-        <div
-          class="col-md-6 mb-4 mb-md-0"
-          data-aos="fade-right"
-          data-aos-duration="800"
-        >
+        <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="800">
           <div class="about-img img-border">
-            <img
-              src="../../assets/img/webp/8.webp"
-              alt="Pourquoi collaborer avec nous"
-              class="img-fluid rounded-4"
-            />
+            <img src="../../assets/img/webp/8.webp" alt="Pourquoi collaborer avec nous" class="img-fluid rounded-4" />
           </div>
         </div>
-        <div
-          class="col-md-6 space-sm-30"
-          data-aos="fade-left"
-          data-aos-duration="800"
-        >
+        <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
           <div class="about-haddings">
             <div class="hadding hadding-p">
               <p class="text-red">
                 <span class="text-red">Pourquoi collaborer avec nous ?</span>
               </p>
-              <h3>En choisissant MFINANCES, vous bénéficiez de :</h3>
+              <h2 class="h3">En choisissant MFINANCES, vous bénéficiez de :</h2>
             </div>
 
             <div class="check-list-all" style="padding: 1px 0 !important">
@@ -1340,9 +1237,8 @@
               </div>
             </div>
             <div class="home2-btn mt-4">
-              <button (click)="scrollToSection('formulaire-asbl')" class="btn-red"
-                >Contactez-nous <i class="fa-solid fa-arrow-right"></i
-              ></button>
+              <button (click)="scrollToSection('formulaire-asbl')" class="btn-red">Contactez-nous <i
+                  class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
         </div>
@@ -1358,10 +1254,10 @@
       <div class="row">
         <div class="col-md-6 m-auto text-center">
           <div class="hadding">
-            <h1 class="text-white">
+            <h2 class="h1 text-white">
               Questions fréquentes sur les <br />
               <span class="rectangle-red"> <b>ASBL en Belgique</b> </span>
-            </h1>
+            </h2>
           </div>
         </div>
       </div>
@@ -1369,19 +1265,14 @@
       <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
           <div class="service-details-img img-border">
-            <img
-              src="../../assets/img/webp/57.avif"
-              alt="FAQ ASBL"
-              appOptimizeImage
-              class="img-fluid rounded-4"
-            />
+            <img src="../../assets/img/webp/57.avif" alt="FAQ ASBL" appOptimizeImage class="img-fluid rounded-4" />
           </div>
         </div>
         <div class="col-md-6">
           <div class="hadding hadding-p space-sm-30 px-3 px-md-0">
-            <h2 class="text-white">
+            <h3 class="h2 text-white">
               L'ASBL peut-elle exercer une activité commerciale ?
-            </h2>
+            </h3>
             <p class="text-white">
               Oui, mais uniquement si cette activité sert à financer le but
               social de l'association. Les bénéfices doivent être réinvestis
@@ -1392,24 +1283,14 @@
 
           <div class="accordion px-3 px-md-0" id="accordionExample">
             <div class="accordion-item">
-              <h2 class="accordion-header active-header" id="headingOne">
-                <button
-                  class="accordion-button accordion-button-active"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
+              <div class="accordion-header active-header" id="headingOne">
+                <button class="accordion-button accordion-button-active" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   L'ASBL peut-elle exercer une activité commerciale ?
                 </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Oui, mais uniquement si cette activité sert à financer le but
                   social de l'association. Les bénéfices doivent être réinvestis
@@ -1418,24 +1299,14 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
+              <div class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Comment suivre efficacement les coûts par projet ?
                 </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Grâce à la comptabilité analytique, nous répartissons
                   précisément les frais directs et généraux pour justifier vos
@@ -1444,24 +1315,14 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
+              <div class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   Pourquoi surveiller les charges salariales ?
                 </button>
-              </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample"
-              >
+              </div>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   Les salaires représentent souvent un poste majeur des frais
                   généraux. Une surveillance régulière aide à anticiper leur
@@ -1494,43 +1355,27 @@
   <div class="rounded-4 bg-custom--primary text-white px-4 cta-final-section">
     <div class="row align-items-center h-100">
       <!-- Image visible uniquement à partir du md (desktop) -->
-      <div
-        class="col-md-6 justify-content-center align-items-end"
-        data-aos="fade-left"
-        data-aos-delay="200"
-      >
+      <div class="col-md-6 justify-content-center align-items-end" data-aos="fade-left" data-aos-delay="200">
         <div class="text-center">
-          <img
-            src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
-            alt="Personne souriante"
-            class="img-fluid custom-image-size"
-            style="z-index: 2; position: relative"
-          />
+          <img src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp" alt="Personne souriante"
+            class="img-fluid custom-image-size" style="z-index: 2; position: relative" />
         </div>
       </div>
 
       <!-- Texte et bouton, centrés sur mobile/tablette -->
       <div
         class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0 py-4"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >
+        data-aos="fade-right" data-aos-delay="400">
         <h2 class="fw-bold mb-4">
           Prêt à optimiser la gestion de votre <br />
-          <span class="bg-danger text-white px-2 py-1 rounded-2"
-            >ASBL en Belgique ?</span
-          >.
+          <span class="bg-danger text-white px-2 py-1 rounded-2">ASBL en Belgique ?</span>.
         </h2>
         <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
           Contactez-nous dès aujourd'hui pour une consultation gratuite !
           Demander un devis personnalisé
         </p>
-        <button
-          (click)="scrollToSection('formulaire-asbl')"
-          class="btn btn-danger btn-sm px-3 py-2 me-3"
-          data-aos="zoom-in"
-          data-aos-delay="800"
-        >
+        <button (click)="scrollToSection('formulaire-asbl')" class="btn btn-danger btn-sm px-3 py-2 me-3"
+          data-aos="zoom-in" data-aos-delay="800">
           Contactez-nous <i class="fas fa-arrow-right"></i>
         </button>
         <!-- <button
@@ -1545,27 +1390,14 @@
     </div>
   </div>
 </section>
-<app-contact-form-layout
-  id="formulaire-asbl"
-  [config]="formConfig"
-  [currentStep]="currentStep"
-  [totalSteps]="totalSteps"
-  [formSubmitted]="formSubmitted"
-  [isStepValid]="isCurrentStepValid()"
-  [isFormValid]="asblForm.valid"
-  [isLoading]="isLoading"
-  (nextStep)="nextStep()"
-  (previousStep)="previousStep()"
-  (submit)="onSubmit()"
-  (reset)="resetForm()"
->
+<app-contact-form-layout id="formulaire-asbl" [config]="formConfig" [currentStep]="currentStep"
+  [totalSteps]="totalSteps" [formSubmitted]="formSubmitted" [isStepValid]="isCurrentStepValid()"
+  [isFormValid]="asblForm.valid" [isLoading]="isLoading" (nextStep)="nextStep()" (previousStep)="previousStep()"
+  (submit)="onSubmit()" (reset)="resetForm()">
   <div slot="form-content" [formGroup]="asblForm">
     <!-- Étape 1: Type d'ASBL -->
-    <div
-      *ngIf="currentStep === 1"
-      class="step-content animate__animated animate__fadeIn"
-    >
-      <h5 class="mb-4 text-center fw-bold text-red">1. Type d'ASBL</h5>
+    <div *ngIf="currentStep === 1" class="step-content animate__animated animate__fadeIn">
+      <h3 class="h5 mb-4 text-center fw-bold text-red">1. Type d'ASBL</h3>
       <p class="text-center mb-4">
         Quel est le domaine principal de votre ASBL ?
       </p>
@@ -1573,18 +1405,13 @@
       <div class="row g-2 g-md-3">
         <div class="col-sm-6 col-md-6" *ngFor="let type of asblTypes">
           <label class="form-check-card">
-            <input
-              type="radio"
-              formControlName="typeAsbl"
-              [value]="type.value"
-              class="form-check-input d-none"
-            />
+            <input type="radio" formControlName="typeAsbl" [value]="type.value" class="form-check-input d-none" />
             <div class="card h-100 border-2 option-card">
               <div class="card-body text-center py-3">
                 <i [class]="type.icon" class="fa-2x text-danger mb-2"></i>
-                <h6 class="card-title mb-0">
+                <div class="h6 card-title mb-0">
                   {{ type.label }}
-                </h6>
+                </div>
               </div>
             </div>
           </label>
@@ -1594,23 +1421,15 @@
         <div class="col-12" *ngIf="asblForm.get('typeAsbl')?.value === 'autre'">
           <div class="mt-3">
             <label class="form-label">Précisez :</label>
-            <input
-              type="text"
-              class="form-control"
-              formControlName="autreType"
-              placeholder="Votre domaine..."
-            />
+            <input type="text" class="form-control" formControlName="autreType" placeholder="Votre domaine..." />
           </div>
         </div>
       </div>
     </div>
 
     <!-- Étape 2: Revenus annuels -->
-    <div
-      *ngIf="currentStep === 2"
-      class="step-content animate__animated animate__fadeIn"
-    >
-      <h5 class="mb-4 text-center fw-bold text-red">2. Revenus annuels</h5>
+    <div *ngIf="currentStep === 2" class="step-content animate__animated animate__fadeIn">
+      <h3 class="h5 mb-4 text-center fw-bold text-red">2. Revenus annuels</h3>
       <p class="text-center mb-4">
         Quel est le budget annuel moyen de votre ASBL ?
       </p>
@@ -1618,18 +1437,13 @@
       <div class="row g-2 g-md-3">
         <div class="col-sm-6 col-md-6" *ngFor="let budget of budgetRanges">
           <label class="form-check-card">
-            <input
-              type="radio"
-              formControlName="budgetAnnuel"
-              [value]="budget.value"
-              class="form-check-input d-none"
-            />
+            <input type="radio" formControlName="budgetAnnuel" [value]="budget.value" class="form-check-input d-none" />
             <div class="card h-100 border-2 option-card">
               <div class="card-body text-center py-3">
                 <i class="fas fa-euro-sign fa-2x text-success mb-2"></i>
-                <h6 class="card-title mb-0">
+                <div class="h6 card-title mb-0">
                   {{ budget.label }}
-                </h6>
+                </div>
               </div>
             </div>
           </label>
@@ -1638,93 +1452,46 @@
     </div>
 
     <!-- Étape 3: Coordonnées -->
-    <div
-      *ngIf="currentStep === 3"
-      class="step-content animate__animated animate__fadeIn"
-    >
-      <h5 class="mb-4 text-center fw-bold text-red">3. Vos coordonnées</h5>
+    <div *ngIf="currentStep === 3" class="step-content animate__animated animate__fadeIn">
+      <h3 class="h5 mb-4 text-center fw-bold text-red">3. Vos coordonnées</h3>
       <p class="text-center mb-4">
         Pour être recontacté(e) par un conseiller et recevoir votre diagnostic :
       </p>
 
       <div class="row g-3">
         <div class="col-sm-6">
-          <label class="form-label"
-            >Nom <span class="text-danger">*</span></label
-          >
-          <input
-            type="text"
-            class="form-control"
-            formControlName="nom"
-            placeholder="Votre nom"
-          />
-          <div
-            *ngIf="asblForm.get('nom')?.invalid && asblForm.get('nom')?.touched"
-            class="text-danger small mt-1"
-          >
+          <label class="form-label">Nom <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" formControlName="nom" placeholder="Votre nom" />
+          <div *ngIf="asblForm.get('nom')?.invalid && asblForm.get('nom')?.touched" class="text-danger small mt-1">
             Le nom est requis
           </div>
         </div>
         <div class="col-sm-6">
-          <label class="form-label"
-            >Prénom <span class="text-danger">*</span></label
-          >
-          <input
-            type="text"
-            class="form-control"
-            formControlName="prenom"
-            placeholder="Votre prénom"
-          />
-          <div
-            *ngIf="
+          <label class="form-label">Prénom <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" formControlName="prenom" placeholder="Votre prénom" />
+          <div *ngIf="
               asblForm.get('prenom')?.invalid && asblForm.get('prenom')?.touched
-            "
-            class="text-danger small mt-1"
-          >
+            " class="text-danger small mt-1">
             Le prénom est requis
           </div>
         </div>
         <div class="col-sm-6">
-          <label class="form-label"
-            >Email <span class="text-danger">*</span></label
-          >
-          <input
-            type="email"
-            class="form-control"
-            formControlName="email"
-            placeholder="votre@email.com"
-          />
-          <div
-            *ngIf="
+          <label class="form-label">Email <span class="text-danger">*</span></label>
+          <input type="email" class="form-control" formControlName="email" placeholder="votre@email.com" />
+          <div *ngIf="
               asblForm.get('email')?.invalid && asblForm.get('email')?.touched
-            "
-            class="text-danger small mt-1"
-          >
-            <span *ngIf="asblForm.get('email')?.errors?.['required']"
-              >L'email est requis</span
-            >
-            <span *ngIf="asblForm.get('email')?.errors?.['email']"
-              >Format d'email invalide</span
-            >
+            " class="text-danger small mt-1">
+            <span *ngIf="asblForm.get('email')?.errors?.['required']">L'email est requis</span>
+            <span *ngIf="asblForm.get('email')?.errors?.['email']">Format d'email invalide</span>
           </div>
         </div>
         <div class="col-sm-6">
-          <label class="form-label"
-            >Téléphone <span class="text-danger">*</span></label
-          >
-          <input
-            type="tel"
-            class="form-control"
-            formControlName="telephone"
-            placeholder="+32 4XX XX XX XX"
-          />
-          <div
-            *ngIf="
+          <label class="form-label">Téléphone <span class="text-danger">*</span></label>
+          <input type="tel" class="form-control" formControlName="telephone" placeholder="+32 4XX XX XX XX" />
+          <div *ngIf="
               asblForm.get('telephone')?.invalid &&
               asblForm.get('telephone')?.touched
-            "
-            class="text-danger small mt-1"
-          >
+            " class="text-danger small mt-1">
             Le téléphone est requis
           </div>
         </div>
@@ -1739,13 +1506,10 @@
     </div>
 
     <!-- Étape 4: Comptabilité -->
-    <div
-      *ngIf="currentStep === 4"
-      class="step-content animate__animated animate__fadeIn"
-    >
-      <h5 class="mb-4 text-center fw-bold text-red">
+    <div *ngIf="currentStep === 4" class="step-content animate__animated animate__fadeIn">
+      <h3 class="h5 mb-4 text-center fw-bold text-red">
         4. Tenue de la comptabilité
-      </h5>
+      </h3>
       <p class="text-center mb-4">
         Comment gérez-vous actuellement votre comptabilité ?
       </p>
@@ -1753,12 +1517,7 @@
       <div class="row g-3">
         <div class="col-12" *ngFor="let option of comptabiliteOptions">
           <label class="form-check-card">
-            <input
-              type="radio"
-              formControlName="comptabilite"
-              [value]="option.value"
-              class="form-check-input d-none"
-            />
+            <input type="radio" formControlName="comptabilite" [value]="option.value" class="form-check-input d-none" />
             <div class="card border-2 option-card">
               <div class="card-body py-3">
                 <div class="d-flex align-items-center">
@@ -1778,13 +1537,10 @@
     </div>
 
     <!-- Étape 5: Priorités -->
-    <div
-      *ngIf="currentStep === 5"
-      class="step-content animate__animated animate__fadeIn"
-    >
-      <h5 class="mb-4 text-center fw-bold text-red">
+    <div *ngIf="currentStep === 5" class="step-content animate__animated animate__fadeIn">
+      <h3 class="h5 mb-4 text-center fw-bold text-red">
         5. Vos priorités actuelles
-      </h5>
+      </h3>
       <p class="text-center mb-4">
         Quels sont vos besoins les plus urgents ? (Plusieurs choix possibles)
       </p>
@@ -1792,17 +1548,13 @@
       <div class="row g-2 g-md-3">
         <div class="col-sm-6 col-md-6" *ngFor="let priorite of priorites">
           <label class="form-check-card">
-            <input
-              type="checkbox"
-              [formControlName]="'priorite_' + priorite.value"
-              class="form-check-input d-none"
-            />
+            <input type="checkbox" [formControlName]="'priorite_' + priorite.value" class="form-check-input d-none" />
             <div class="card h-100 border-2 option-card">
               <div class="card-body text-center py-3">
                 <i [class]="priorite.icon" class="fa-2x text-warning mb-2"></i>
-                <h6 class="card-title mb-0">
+                <div class="h6 card-title mb-0">
                   {{ priorite.label }}
-                </h6>
+                </div>
               </div>
             </div>
           </label>
@@ -1812,12 +1564,8 @@
         <div class="col-12" *ngIf="asblForm.get('priorite_autre')?.value">
           <div class="mt-3">
             <label class="form-label">Précisez vos autres besoins :</label>
-            <textarea
-              class="form-control"
-              formControlName="autrePriorite"
-              rows="3"
-              placeholder="Décrivez vos besoins spécifiques..."
-            ></textarea>
+            <textarea class="form-control" formControlName="autrePriorite" rows="3"
+              placeholder="Décrivez vos besoins spécifiques..."></textarea>
           </div>
         </div>
       </div>

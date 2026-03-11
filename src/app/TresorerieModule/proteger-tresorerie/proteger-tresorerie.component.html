@@ -75,10 +75,10 @@
           <!-- CTA après la liste -->
           <div class="mt-4" data-aos="fade-up" data-aos-duration="1000">
             <div class="d-flex flex-column flex-md-row gap-3">
-              <button (click)="scrollToSection('contactSection')" class="btn btn-danger btn-lg px-4 py-3"
+              <button (click)="startDiagnostic()" class="btn btn-danger btn-lg px-4 py-3"
                 style="border-radius: 10px; font-weight: 600;">
                 <i class="fas fa-heart me-2"></i>
-                Tester ma stratégie de fidélisation
+                Faire le test Fidélisation (2 min)
               </button>
               <!-- <button
               (click)="scrollToSection('contactSection')"
@@ -131,17 +131,17 @@
                 <div class="mt-4" data-aos="fade-up" data-aos-duration="1000">
                   <div class="p-4"
                     style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 12px; border: 2px solid rgba(255, 255, 255, 0.2);">
-                    <h4 class="text-white mb-3" style="font-weight: 700;">
+                    <h3 class="h4 text-white mb-3" style="font-weight: 700;">
                       <i class="fas fa-lightbulb me-2"></i>
                       Évitez la guerre des prix !
-                    </h4>
+                    </h3>
                     <p class="text-white mb-3" style="opacity: 0.9;">
                       Découvrez comment fidéliser vos clients et protéger vos marges grâce à notre diagnostic gratuit.
                     </p>
-                    <button (click)="scrollToSection('contactSection')" class="btn btn-light px-4 py-2"
+                    <button (click)="startDiagnostic()" class="btn btn-light px-4 py-2"
                       style="border-radius: 8px; font-weight: 600; color: #ff4b4b;">
-                      <i class="fas fa-chart-line me-2"></i>
-                      Analyser ma fidélisation
+                      <i class="fas fa-heart me-2"></i>
+                      Faire le test fidélisation (2 min)
                     </button>
                   </div>
                 </div>
@@ -181,10 +181,10 @@
         Évaluez votre stratégie de fidélisation en 3 minutes et recevez des recommandations personnalisées.
       </p>
       <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-        <button (click)="scrollToSection('contactSection')" class="btn btn-light btn-lg px-5 py-3"
+        <button (click)="startDiagnostic()" class="btn btn-light btn-lg px-5 py-3"
           style="border-radius: 10px; font-weight: 700; color: #ff4b4b;">
-          <i class="fas fa-clipboard-check me-2"></i>
-          Commencer le diagnostic
+          <i class="fas fa-heart me-2"></i>
+          Lancer le test Fidélisation (2 min)
         </button>
         <a href="https://odoo.mfinances.be/book/4781b4d3" target="_blank" rel="noopener noreferrer"
           class="btn btn-outline-light btn-lg px-5 py-3"
@@ -203,7 +203,7 @@
         <div class="row">
           <div class="col-md-6 m-auto text-center">
             <div class="hadding">
-              <h1>FAQ : Gérer Sa Trésorerie Face à la Concurrence</h1>
+              <h2 class="h1">FAQ : Gérer Sa Trésorerie Face à la Concurrence</h2>
             </div>
           </div>
         </div>
@@ -212,12 +212,12 @@
           <div>
             <div class="accordion" id="accordionExample">
               <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
+                <div class="accordion-header" id="headingOne">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
                     Pourquoi ma trésorerie est-elle affectée par la concurrence ?
                   </button>
-                </h2>
+                </div>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
@@ -232,12 +232,12 @@
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
+                <div class="accordion-header" id="headingTwo">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Dois-je baisser mes prix pour contrer mes concurrents ?
                   </button>
-                </h2>
+                </div>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
@@ -251,12 +251,12 @@
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
+                <div class="accordion-header" id="headingThree">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     Comment savoir ce que mes clients recherchent vraiment ?
                   </button>
-                </h2>
+                </div>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
@@ -281,12 +281,12 @@
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
+                <div class="accordion-header" id="headingFour">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     Quels outils puis-je utiliser pour suivre ma trésorerie ?
                   </button>
-                </h2>
+                </div>
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
@@ -309,12 +309,12 @@
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
+                <div class="accordion-header" id="headingFive">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                     C'est quoi un CRM, et pourquoi en ai-je besoin ?
                   </button>
-                </h2>
+                </div>
                 <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
@@ -336,12 +336,12 @@
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSix">
+                <div class="accordion-header" id="headingSix">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                     Comment communiquer efficacement pour me démarquer ?
                   </button>
-                </h2>
+                </div>
                 <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
@@ -369,13 +369,13 @@
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSeven">
+                <div class="accordion-header" id="headingSeven">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                     Et si la concurrence continue d'attirer mes clients malgré
                     tout ?
                   </button>
-                </h2>
+                </div>
                 <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
@@ -399,13 +399,13 @@
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="headingEight">
+                <div class="accordion-header" id="headingEight">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
                     Comment constituer une réserve de trésorerie en cas de
                     difficultés ?
                   </button>
-                </h2>
+                </div>
                 <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
@@ -429,12 +429,12 @@
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="headingNine">
+                <div class="accordion-header" id="headingNine">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
                     Comment contacter MFINANCES pour un accompagnement ?
                   </button>
-                </h2>
+                </div>
                 <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
@@ -461,25 +461,101 @@
     </div>
   </section>
 
+  <!-- ============================================ -->
+  <!-- SECTION DIAGNOSTIC FIDÉLISATION -->
+  <!-- ============================================ -->
+  <section id="diagnosticSection" class="diagnostic-fidelisation-section py-5"
+    style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+    <div class="container">
+      <!-- Introduction -->
+      <div class="diagnostic-intro text-center mb-5" data-aos="fade-up">
+        <span class="badge mb-3 px-4 py-2"
+          style="background: #ff4b4b; color: white; font-size: 14px; border-radius: 50px;">
+          🛡️ Confidentiel • Sans engagement • 2 minutes
+        </span>
+        <h2 class="mb-3" style="color: #1e293b; font-weight: 700; font-size: 2.5rem;">
+          Vos clients reviennent-ils assez pour sécuriser votre trésorerie ?
+        </h2>
+        <p class="text-muted" style="font-size: 18px; max-width: 700px; margin: 0 auto;">
+          6 questions pour évaluer la maturité de votre stratégie de fidélisation et son impact réel sur votre flux de
+          trésorerie.
+        </p>
+      </div>
+
+      <!-- CTA Box (si diagnostic pas encore lancé) -->
+      <div *ngIf="!showDiagnostic" class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="cta-diagnostic-box p-4 mx-auto" style="max-width: 600px;
+                    background: linear-gradient(135deg, #fee2e2 0%, #fef2f2 100%);
+                    border-radius: 16px;
+                    border: 2px solid #fca5a5;">
+          <button (click)="startDiagnostic()" class="btn btn-danger btn-lg px-5 py-3 mb-4" style="border-radius: 10px;
+                   font-weight: 600;
+                   font-size: 18px;
+                   box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);">
+            <i class="fas fa-heart me-2"></i>
+            Lancer le test Fidélisation (2 min)
+          </button>
+
+          <!-- Bénéfices -->
+          <div class="row g-3 mt-2">
+            <div class="col-md-4">
+              <div class="benefit-badge p-3 text-center" style="background: white;
+                          border-radius: 12px;
+                          box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <div style="font-size: 28px; margin-bottom: 8px;">🎯</div>
+                <div style="font-size: 13px; font-weight: 600; color: #1e293b;">Score instantané</div>
+                <div style="font-size: 11px; color: #64748b;">sur 30 points</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="benefit-badge p-3 text-center" style="background: white;
+                          border-radius: 12px;
+                          box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <div style="font-size: 28px; margin-bottom: 8px;">📊</div>
+                <div style="font-size: 13px; font-weight: 600; color: #1e293b;">Analyse détaillée</div>
+                <div style="font-size: 11px; color: #64748b;">de vos réponses</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="benefit-badge p-3 text-center" style="background: white;
+                          border-radius: 12px;
+                          box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <div style="font-size: 28px; margin-bottom: 8px;">💡</div>
+                <div style="font-size: 13px; font-weight: 600; color: #1e293b;">Plan d'action</div>
+                <div style="font-size: 11px; color: #64748b;">personnalisé</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Composant diagnostic -->
+      <div *ngIf="showDiagnostic" data-aos="fade-up">
+        <app-diagnostic-container [config]="diagnosticConfig" [showEmailCapture]="true"
+          (diagnosticComplete)="onDiagnosticComplete($event)"></app-diagnostic-container>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA final avant le formulaire -->
   <div class="container my-5" data-aos="fade-up" data-aos-duration="1000">
     <div class="row align-items-center p-4"
       style="background: linear-gradient(135deg, rgba(255, 75, 75, 0.1) 0%, rgba(255, 75, 75, 0.05) 100%); border-radius: 16px; border: 2px solid rgba(255, 75, 75, 0.2);">
       <div class="col-lg-8 col-md-12 mb-3 mb-lg-0">
-        <h4 style="color: #ff4b4b; font-weight: 700; margin-bottom: 12px;">
+        <h3 class="h4" style="color: #ff4b4b; font-weight: 700; margin-bottom: 12px;">
           <i class="fas fa-question-circle me-2"></i>
           Encore des questions sur la fidélisation ?
-        </h4>
+        </h3>
         <p style="color: #333; margin-bottom: 0;">
           Nos experts sont là pour vous accompagner. Évaluez gratuitement votre stratégie de fidélisation ou
           contactez-nous directement.
         </p>
       </div>
       <div class="col-lg-4 col-md-12 text-lg-end">
-        <button (click)="scrollToSection('contactSection')" class="btn btn-danger btn-lg px-4 py-3 w-100 w-lg-auto"
+        <button (click)="startDiagnostic()" class="btn btn-danger btn-lg px-4 py-3 w-100 w-lg-auto"
           style="border-radius: 10px; font-weight: 600;">
-          <i class="fas fa-arrow-down me-2"></i>
-          Commencer maintenant
+          <i class="fas fa-heart me-2"></i>
+          Faire le test fidélisation (2 min)
         </button>
       </div>
     </div>
@@ -494,8 +570,8 @@
 
       <div class="popup-header">
         <i class="fas fa-shield-alt popup-icon"></i>
-        <h3>Fidélisez-vous assez pour éviter les promotions à perte ?
-          tic Stock Express</h3>
+        <div class="h3">Fidélisez-vous assez pour éviter les promotions à perte ?
+          tic Stock Express</div>
         <p>
           Évaluez gratuitement votre stratégie de fidélisation et son impact sur
           vos marges.
@@ -540,9 +616,9 @@
       <div slot="form-content">
         <!-- Étape 1: Clients reviennent-ils régulièrement -->
         <div *ngIf="currentStep === 1" class="step-content">
-          <h3 class="step-title mb-4">
+          <div class="step-title h3 mb-4">
             1. Vos clients reviennent-ils acheter régulièrement chez vous ?
-          </h3>
+          </div>
           <p class="step-description mb-4">Mesurez la fidélité perçue.</p>
 
           <div class="form-group">
@@ -554,7 +630,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-heart text-success mb-2"></i>
-                  <h6 class="mb-1">Oui, j'ai une clientèle régulière</h6>
+                  <div class="h6 mb-1">Oui, j'ai une clientèle régulière</div>
                   <small class="text-muted">Base fidèle et récurrente</small>
                 </div>
               </label>
@@ -568,7 +644,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-clock text-warning mb-2"></i>
-                  <h6 class="mb-1">Oui, mais c'est irrégulier</h6>
+                  <div class="h6 mb-1">Oui, mais c'est irrégulier</div>
                   <small class="text-muted">Fidélité partielle à améliorer</small>
                 </div>
               </label>
@@ -580,9 +656,9 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-exclamation-triangle text-danger mb-2"></i>
-                  <h6 class="mb-1">
+                  <div class="h6 mb-1">
                     Non, les clients achètent une fois, rarement plus
-                  </h6>
+                  </div>
                   <small class="text-muted">Besoin urgent de stratégie de fidélisation</small>
                 </div>
               </label>
@@ -594,7 +670,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-question-circle text-secondary mb-2"></i>
-                  <h6 class="mb-1">Je ne sais pas vraiment</h6>
+                  <div class="h6 mb-1">Je ne sais pas vraiment</div>
                   <small class="text-muted">Nécessité d'analyser les données clients</small>
                 </div>
               </label>
@@ -604,9 +680,9 @@
 
         <!-- Étape 2: Première réaction pour stimuler les ventes -->
         <div *ngIf="currentStep === 2" class="step-content">
-          <h3 class="step-title mb-4">
+          <div class="step-title h3 mb-4">
             2. Quelle est votre première réaction pour stimuler vos ventes ?
-          </h3>
+          </div>
           <p class="step-description mb-4">
             Pour comprendre l'approche commerciale dominante.
           </p>
@@ -622,7 +698,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-percentage text-danger mb-2"></i>
-                  <h6 class="mb-1">Je fais des promotions régulières</h6>
+                  <div class="h6 mb-1">Je fais des promotions régulières</div>
                   <small class="text-muted">Stratégie prix avec risque sur les marges</small>
                 </div>
               </label>
@@ -636,9 +712,9 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-star text-success mb-2"></i>
-                  <h6 class="mb-1">
+                  <div class="h6 mb-1">
                     J'offre des services en plus pour fidéliser
-                  </h6>
+                  </div>
                   <small class="text-muted">Approche valeur ajoutée</small>
                 </div>
               </label>
@@ -649,7 +725,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-arrow-down text-warning mb-2"></i>
-                  <h6 class="mb-1">Je baisse les prix quand il le faut</h6>
+                  <div class="h6 mb-1">Je baisse les prix quand il le faut</div>
                   <small class="text-muted">Réaction défensive concurrentielle</small>
                 </div>
               </label>
@@ -663,9 +739,9 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-award text-primary mb-2"></i>
-                  <h6 class="mb-1">
+                  <div class="h6 mb-1">
                     Je mise sur la qualité et le bouche-à-oreille
-                  </h6>
+                  </div>
                   <small class="text-muted">Stratégie différenciation premium</small>
                 </div>
               </label>
@@ -676,7 +752,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-ellipsis-h text-info mb-2"></i>
-                  <h6 class="mb-1">Autre</h6>
+                  <div class="h6 mb-1">Autre</div>
                   <small class="text-muted">Ma stratégie est différente</small>
                 </div>
               </label>
@@ -696,9 +772,9 @@
 
         <!-- Étape 3: Coordonnées -->
         <div *ngIf="currentStep === 3" class="step-content">
-          <h3 class="step-title mb-4">
+          <div class="step-title h3 mb-4">
             3. Vos coordonnées pour recevoir votre analyse
-          </h3>
+          </div>
           <p class="step-description mb-4">
             <i class="fas fa-lightbulb text-warning me-2"></i>
             Encore deux petites minutes ! Remplissez vos coordonnées pour recevoir
@@ -745,10 +821,10 @@
               <div class="d-flex align-items-center">
                 <i class="fas fa-phone-alt fa-2x text-success me-3"></i>
                 <div>
-                  <h6 class="mb-1">
+                  <div class="h6 mb-1">
                     📞 Un expert MFINANCES vous rappellera sous 72h, gratuitement
                     et sans engagement.
-                  </h6>
+                  </div>
                 </div>
               </div>
             </div>
@@ -757,9 +833,9 @@
 
         <!-- Étape 4: Chiffre d'affaires -->
         <div *ngIf="currentStep === 4" class="step-content">
-          <h3 class="step-title mb-4">
+          <div class="step-title h3 mb-4">
             4. Quel est votre chiffre d'affaires annuel moyen ?
-          </h3>
+          </div>
 
           <div class="form-group">
             <div class="custom-radio-group">
@@ -769,7 +845,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-seedling text-success mb-2"></i>
-                  <h6 class="mb-1">Moins de 100K €/an</h6>
+                  <div class="h6 mb-1">Moins de 100K €/an</div>
                   <small class="text-muted">Jeune entreprise ou activité réduite</small>
                 </div>
               </label>
@@ -780,7 +856,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-chart-line text-primary mb-2"></i>
-                  <h6 class="mb-1">100K à 200K €/an</h6>
+                  <div class="h6 mb-1">100K à 200K €/an</div>
                   <small class="text-muted">Entreprise en développement</small>
                 </div>
               </label>
@@ -791,7 +867,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-trending-up text-warning mb-2"></i>
-                  <h6 class="mb-1">200K à 500K €/an</h6>
+                  <div class="h6 mb-1">200K à 500K €/an</div>
                   <small class="text-muted">PME établie</small>
                 </div>
               </label>
@@ -802,7 +878,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-building text-info mb-2"></i>
-                  <h6 class="mb-1">Plus de 500K €/an</h6>
+                  <div class="h6 mb-1">Plus de 500K €/an</div>
                   <small class="text-muted">Grande entreprise</small>
                 </div>
               </label>
@@ -812,9 +888,9 @@
               <div class="d-flex align-items-center">
                 <i class="fas fa-check-circle fa-2x text-warning me-3"></i>
                 <div>
-                  <h6 class="mb-1">
+                  <div class="h6 mb-1">
                     ✅ Parfait ! Dernière question pour affiner vos résultats.
-                  </h6>
+                  </div>
                 </div>
               </div>
             </div>
@@ -823,7 +899,7 @@
 
         <!-- Étape 5: Type d'activité -->
         <div *ngIf="currentStep === 5" class="step-content">
-          <h3 class="step-title mb-4">5. Quel est votre type d'activité ?</h3>
+          <div class="step-title h3 mb-4">5. Quel est votre type d'activité ?</div>
 
           <div class="form-group">
             <div class="custom-radio-group">
@@ -833,7 +909,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-utensils text-primary mb-2"></i>
-                  <h6 class="mb-1">Horeca</h6>
+                  <div class="h6 mb-1">Horeca</div>
                   <small class="text-muted">Hôtels, restaurants, cafés</small>
                 </div>
               </label>
@@ -844,7 +920,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-store text-success mb-2"></i>
-                  <h6 class="mb-1">Commerce de détail</h6>
+                  <div class="h6 mb-1">Commerce de détail</div>
                   <small class="text-muted">Magasins, boutiques</small>
                 </div>
               </label>
@@ -855,7 +931,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-warehouse text-warning mb-2"></i>
-                  <h6 class="mb-1">Commerce de gros</h6>
+                  <div class="h6 mb-1">Commerce de gros</div>
                   <small class="text-muted">Distribution, grossiste</small>
                 </div>
               </label>
@@ -866,7 +942,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-heartbeat text-danger mb-2"></i>
-                  <h6 class="mb-1">Santé</h6>
+                  <div class="h6 mb-1">Santé</div>
                   <small class="text-muted">Professions médicales et paramédicales</small>
                 </div>
               </label>
@@ -877,7 +953,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-brain text-info mb-2"></i>
-                  <h6 class="mb-1">Service / prestation intellectuelle</h6>
+                  <div class="h6 mb-1">Service / prestation intellectuelle</div>
                   <small class="text-muted">Conseil, formation, expertise</small>
                 </div>
               </label>
@@ -888,7 +964,7 @@
                 <span class="radio-checkmark"></span>
                 <div class="radio-content">
                   <i class="fas fa-ellipsis-h text-secondary mb-2"></i>
-                  <h6 class="mb-1">Autre</h6>
+                  <div class="h6 mb-1">Autre</div>
                   <small class="text-muted">Mon activité est différente</small>
                 </div>
               </label>
@@ -907,9 +983,9 @@
 
             <!-- Question conditionnelle: Programme de fidélité -->
             <div class="mt-4 animate__animated animate__fadeInDown" *ngIf="showProgrammeFidelite">
-              <h4 class="step-subtitle mb-3">
+              <div class="step-subtitle h4 mb-3">
                 Avez-vous un programme de fidélité ou un outil CRM ?
-              </h4>
+              </div>
 
               <div class="custom-radio-group">
                 <label class="custom-radio-option" [class.selected]="
@@ -920,7 +996,7 @@
                   <span class="radio-checkmark"></span>
                   <div class="radio-content">
                     <i class="fas fa-check-circle text-success mb-2"></i>
-                    <h6 class="mb-1">Oui, structuré et actif</h6>
+                    <div class="h6 mb-1">Oui, structuré et actif</div>
                     <small class="text-muted">Programme mature et utilisé</small>
                   </div>
                 </label>
@@ -933,7 +1009,7 @@
                   <span class="radio-checkmark"></span>
                   <div class="radio-content">
                     <i class="fas fa-clock text-warning mb-2"></i>
-                    <h6 class="mb-1">Oui, mais peu utilisé</h6>
+                    <div class="h6 mb-1">Oui, mais peu utilisé</div>
                     <small class="text-muted">Potentiel d'optimisation</small>
                   </div>
                 </label>
@@ -946,7 +1022,7 @@
                   <span class="radio-checkmark"></span>
                   <div class="radio-content">
                     <i class="fas fa-exclamation-triangle text-danger mb-2"></i>
-                    <h6 class="mb-1">Non, pas encore</h6>
+                    <div class="h6 mb-1">Non, pas encore</div>
                     <small class="text-muted">Opportunité de développement</small>
                   </div>
                 </label>
@@ -957,7 +1033,7 @@
                   <span class="radio-checkmark"></span>
                   <div class="radio-content">
                     <i class="fas fa-question-circle text-secondary mb-2"></i>
-                    <h6 class="mb-1">Je ne sais pas</h6>
+                    <div class="h6 mb-1">Je ne sais pas</div>
                     <small class="text-muted">Besoin d'audit des outils existants</small>
                   </div>
                 </label>

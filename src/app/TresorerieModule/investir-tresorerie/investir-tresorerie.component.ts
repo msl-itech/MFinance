@@ -3,7 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { MetaService } from '../../services/meta.service';
 import { OdooService } from '../../services/odoo.service';
 import { ContactFormConfig } from '../../shared/contact-form-layout/contact-form-layout.component';
-
+import { DiagnosticConfig } from '../../shared/diagnostic/diagnostic.models';
 @Component({
   selector: 'app-investir-tresorerie',
   templateUrl: './investir-tresorerie.component.html',
@@ -62,11 +62,117 @@ export class InvestirTresorerieComponent implements OnInit, OnDestroy {
     resetButton: 'Faire une nouvelle demande',
   };
 
+  diagnosticConfig: DiagnosticConfig = {
+    id: 'investir-tresorerie',
+    title: 'Votre entreprise peut-elle investir sans risque ?',
+    subtitle: 'Répondez à quelques questions et découvrez si votre trésorerie vous permet d’investir sereinement.',
+    questions: [
+      {
+        id: 'q1',
+        question: 'Votre trésorerie actuelle couvre combien de mois de charges fixes ?',
+        options: [
+          { value: 'A', label: 'moins de 1 mois', sublabel: '', icon: '🔴', points: 0 },
+          { value: 'B', label: 'entre 1 et 3 mois', sublabel: '', icon: '🟡', points: 3 },
+          { value: 'C', label: 'plus de 3 mois', sublabel: '', icon: '🟢', points: 5 }
+        ]
+      },
+      {
+        id: 'q2',
+        question: 'Avez-vous simulé l’impact de cet investissement sur votre trésorerie ?',
+        options: [
+          { value: 'A', label: 'non', sublabel: '', icon: '❌', points: 0 },
+          { value: 'B', label: 'approximativement', sublabel: '', icon: '🤔', points: 3 },
+          { value: 'C', label: 'précisément avec un tableau prévisionnel', sublabel: '', icon: '📊', points: 5 }
+        ]
+      },
+      {
+        id: 'q3',
+        question: 'Votre investissement commence à générer du revenu dans combien de temps ?',
+        options: [
+          { value: 'A', label: 'plus de 12 mois', sublabel: '', icon: '⏳', points: 0 },
+          { value: 'B', label: 'entre 6 et 12 mois', sublabel: '', icon: '📅', points: 3 },
+          { value: 'C', label: 'moins de 6 mois', sublabel: '', icon: '⚡', points: 5 }
+        ]
+      },
+      {
+        id: 'q4',
+        question: 'Comment pensez-vous financer cet investissement ?',
+        options: [
+          { value: 'A', label: 'uniquement avec votre trésorerie', sublabel: '', icon: '🏦', points: 0 },
+          { value: 'B', label: 'financement mixte', sublabel: '', icon: '⚖️', points: 3 },
+          { value: 'C', label: 'financement externe adapté', sublabel: '', icon: '🤝', points: 5 }
+        ]
+      },
+      {
+        id: 'q5',
+        question: 'Votre entreprise a-t-elle déjà connu une tension de trésorerie ?',
+        options: [
+          { value: 'A', label: 'récemment', sublabel: '', icon: '⚠️', points: 0 },
+          { value: 'B', label: 'il y a longtemps', sublabel: '', icon: '🕰️', points: 3 },
+          { value: 'C', label: 'jamais', sublabel: '', icon: '🛡️', points: 5 }
+        ]
+      },
+      {
+        id: 'q6',
+        question: 'Disposez-vous d’un tableau de trésorerie prévisionnel ?',
+        options: [
+          { value: 'A', label: 'non', sublabel: '', icon: '❌', points: 0 },
+          { value: 'B', label: 'basique', sublabel: '', icon: '📝', points: 3 },
+          { value: 'C', label: 'dynamique et mis à jour', sublabel: '', icon: '📈', points: 5 }
+        ]
+      }
+    ],
+    scoringRules: {
+      maxScore: 30,
+      levels: {
+        low: { min: 0, max: 10, title: 'Investissement à risque', badge: '🔴' },
+        medium: { min: 11, max: 20, title: 'Investissement possible mais à sécuriser', badge: '🟡' },
+        high: { min: 21, max: 30, title: 'Investissement maîtrisé', badge: '🟢' }
+      }
+    },
+    justifications: {
+      questionAnalysis: {
+        q1: { 'A': 'Votre trésorerie couvre moins d\'1 mois de charges : votre marge de sécurité est limitée.' },
+        q2: { 'A': 'Sans simulation, vous exposez votre entreprise à des mauvaises surprises.', 'B': 'Une simulation approximative n\'est pas suffisante pour un investissement majeur.' },
+        q4: { 'A': 'Financer avec vos fonds propres peut réduire dangereusement votre réserve de sécurité.' }
+      }
+    },
+    profiles: [
+      {
+        id: 'risque',
+        name: 'Investissement à risque',
+        condition: (answers, score) => score <= 10,
+        description: 'Votre projet d’investissement pourrait fragiliser votre trésorerie.\n\nVos réponses indiquent :\n• peu de visibilité financière\n• financement mal structuré\n• risque de tension de trésorerie',
+        recommendation: 'Avant d’investir, il est essentiel de :\n• construire un tableau de trésorerie prévisionnel\n• analyser l’impact des remboursements\n• adapter le financement',
+        ctaText: 'Sécuriser mon investissement',
+        redirectUrl: 'https://odoo.mfinances.be/book/4781b4d3'
+      },
+      {
+        id: 'moyen',
+        name: 'Investissement possible mais à sécuriser',
+        condition: (answers, score) => score > 10 && score <= 20,
+        description: 'Votre entreprise peut probablement investir, mais certaines précautions sont nécessaires.\n\nVos réponses montrent :\n• une base financière correcte\n• mais une anticipation encore partielle',
+        recommendation: 'Pour sécuriser votre projet :\n• simuler plusieurs scénarios financiers\n• adapter le mode de financement\n• préserver un coussin de trésorerie',
+        ctaText: 'Optimiser mon investissement',
+        redirectUrl: 'https://odoo.mfinances.be/book/4781b4d3'
+      },
+      {
+        id: 'maitrise',
+        name: 'Investissement maîtrisé',
+        condition: (answers, score) => score > 20,
+        description: 'Votre entreprise semble capable d’investir sans mettre sa trésorerie en danger.\n\nVos réponses montrent :\n• une bonne visibilité financière\n• une capacité d’anticipation\n• une structure financière solide',
+        recommendation: 'La prochaine étape consiste à :\n• optimiser la structure de financement\n• sécuriser votre croissance\n• identifier les opportunités d’investissement',
+        ctaText: 'Optimiser ma stratégie d’investissement',
+        redirectUrl: 'https://odoo.mfinances.be/book/4781b4d3'
+      }
+    ]
+  };
+
   constructor(
     private metaService: MetaService,
     private odooService: OdooService,
     private toastr: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit() {
     // Utilisation du service de meta-données pour définir les meta-tags de la page Investir Trésorerie

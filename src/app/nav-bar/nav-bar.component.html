@@ -23,7 +23,8 @@
                 <li>
                   <a routerLink="/services/declaration-impots">Déclaration d'impôts</a>
                 </li>
-                <li><a routerLink="/services/departement-comptable-externalise">Externaliser votre département<br> comptable</a>
+                <li><a routerLink="/services/departement-comptable-externalise">Externaliser votre département<br>
+                    comptable</a>
                 </li>
               </ul>
             </li>
@@ -31,7 +32,7 @@
               <a href="javascript:void(0)">Profils & Structures <i class="fa-solid fa-angle-down"></i></a>
               <div class="mega-menu-two-column">
                 <div class="column">
-                  <h4>PROFILS</h4>
+                  <div class="mega-menu-title">PROFILS</div>
                   <ul>
                     <li>
                       <a routerLink="/profils/independant-startup">Indépendant & Startup</a>
@@ -51,7 +52,7 @@
                   </ul>
                 </div>
                 <div class="column">
-                  <h4>STRUCTURES</h4>
+                  <div class="mega-menu-title">STRUCTURES</div>
                   <ul>
                     <li>
                       <a routerLink="/structures/asbl">ASBL</a>
@@ -177,8 +178,8 @@
           </ul>
         </li>
         <li class="has-submenu">
-          <a (click)="toggleSubmenu('profils', $event)" style="cursor: pointer;">Profils <i
-              class="fas fa-chevron-down" [class.fa-chevron-up]="isSubmenuOpen('profils')"></i></a>
+          <a (click)="toggleSubmenu('profils', $event)" style="cursor: pointer;">Profils <i class="fas fa-chevron-down"
+              [class.fa-chevron-up]="isSubmenuOpen('profils')"></i></a>
           <ul class="sub-menu" [class.open]="isSubmenuOpen('profils')">
             <li>
               <a routerLink="/profils/independant-startup">Indépendant & Startup</a>

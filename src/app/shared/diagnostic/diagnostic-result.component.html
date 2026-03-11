@@ -1,0 +1,68 @@
+<div class="diagnostic-result">
+  <!-- Score Badge -->
+  <div class="score-badge" [class]="'score-' + result.level">
+    <div class="score-circle">
+      <div class="score-value">{{ result.score }}</div>
+      <div class="score-max">/{{ result.maxScore }}</div>
+    </div>
+    <div class="score-label">
+      <span>{{ badgeIcon }}</span>
+      {{ result.title }}
+    </div>
+  </div>
+
+  <!-- Result Content -->
+  <div class="result-content">
+    <h3 class="result-title">Votre diagnostic personnalisé</h3>
+
+    <!-- Profil détecté (si existe) -->
+    <div class="result-card" *ngIf="result.detailedAnalysis?.profile">
+      <div class="result-section profile-section">
+        <h4>🎯 Profil détecté</h4>
+        <p class="profile-name">{{ result.detailedAnalysis?.profile }}</p>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-section">
+        <h4>Analyse de votre situation</h4>
+        <p>{{ result.description }}</p>
+      </div>
+
+      <div class="result-section recommendation">
+        <h4>Notre recommandation</h4>
+        <p>{{ result.recommendation }}</p>
+      </div>
+
+      <!-- Answers Summary -->
+      <div class="result-section answers-summary">
+        <h4>Vos réponses</h4>
+        <div class="answer-item" *ngFor="let questionId of getQuestionKeys()">
+          <span class="answer-icon">{{ getAnswerIcon(questionId) }}</span>
+          <div class="answer-details">
+            <span class="answer-text">{{ getAnswerLabel(questionId) }}</span>
+            <p class="answer-analysis" *ngIf="getAnswerAnalysis(questionId)">
+              {{ getAnswerAnalysis(questionId) }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analyse croisée (si existe) -->
+      <div class="result-section cross-analysis" *ngIf="result.detailedAnalysis?.crossAnalysis">
+        <h4>⚠️ Point d'attention</h4>
+        <p>{{ result.detailedAnalysis?.crossAnalysis }}</p>
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="result-actions">
+      <button class="btn btn-primary btn-large" (click)="onContactClick()">
+        {{ result.ctaText }}
+      </button>
+      <button class="btn btn-secondary" (click)="restartDiagnostic()">
+        Refaire le diagnostic
+      </button>
+    </div>
+  </div>
+</div>

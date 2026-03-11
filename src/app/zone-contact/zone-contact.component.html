@@ -1,19 +1,7 @@
-<app-contact-form-layout
-  [config]="config"
-  [currentStep]="currentStep"
-  [totalSteps]="totalSteps"
-  [formSubmitted]="formSubmitted"
-  [isStepValid]="isStepValid"
-  [isFormValid]="isFormValid"
-  (nextStep)="onNextStep()"
-  (previousStep)="onPreviousStep()"
-  (submit)="onSubmit()"
-  (reset)="onReset()"
->
-  <div
-    slot="form-content"
-    class="step-content animate__animated animate__fadeIn"
-  >
+<app-contact-form-layout [config]="config" [currentStep]="currentStep" [totalSteps]="totalSteps"
+  [formSubmitted]="formSubmitted" [isStepValid]="isStepValid" [isFormValid]="isFormValid" (nextStep)="onNextStep()"
+  (previousStep)="onPreviousStep()" (submit)="onSubmit()" (reset)="onReset()">
+  <div slot="form-content" class="step-content animate__animated animate__fadeIn">
     <!-- ÉTAPE 1: Situation actuelle -->
     <div *ngIf="currentStep === 1">
       <h4 class="step-title">
@@ -25,44 +13,27 @@
       </p>
 
       <div class="custom-radio-group">
-        <label
-          *ngFor="let option of situationOptions"
-          class="custom-radio-option"
-          [class.selected]="formData.situation === option.value"
-        >
-          <input
-            type="radio"
-            [value]="option.value"
-            (change)="onSituationChange(option.value)"
-            [checked]="formData.situation === option.value"
-          />
+        <label *ngFor="let option of situationOptions" class="custom-radio-option"
+          [class.selected]="formData.situation === option.value">
+          <input type="radio" [value]="option.value" (change)="onSituationChange(option.value)"
+            [checked]="formData.situation === option.value" />
           <div class="radio-checkmark"></div>
           <div class="radio-content">
-            <div
-              style="font-size: 1.5rem; margin-bottom: 0.5rem"
-              [innerHTML]="option.icon"
-            ></div>
-            <h6>{{ option.title }}</h6>
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem" [innerHTML]="option.icon"></div>
+            <div class="h6-title">{{ option.title }}</div>
             <small>{{ option.description }}</small>
           </div>
         </label>
       </div>
 
       <!-- Champ "Autre" conditionnel -->
-      <div
-        class="custom-input-group mt-3"
-        *ngIf="formData.situation === 'autre'"
-      >
+      <div class="custom-input-group mt-3" *ngIf="formData.situation === 'autre'">
         <label class="form-label">
           <i class="fas fa-edit"></i>
           Précisez votre situation :
         </label>
-        <input
-          type="text"
-          class="form-control custom-input"
-          placeholder="Décrivez brièvement votre situation..."
-          [(ngModel)]="formData.situationAutre"
-        />
+        <input type="text" class="form-control custom-input" placeholder="Décrivez brièvement votre situation..."
+          [(ngModel)]="formData.situationAutre" />
       </div>
     </div>
 
@@ -84,13 +55,8 @@
               <i class="fas fa-user"></i>
               Nom *
             </label>
-            <input
-              type="text"
-              class="form-control custom-input"
-              placeholder="Votre nom et prénom"
-              [(ngModel)]="formData.nom"
-              required
-            />
+            <input type="text" class="form-control custom-input" placeholder="Votre nom et prénom"
+              [(ngModel)]="formData.nom" required />
           </div>
         </div>
 
@@ -100,13 +66,8 @@
               <i class="fas fa-envelope"></i>
               Email * <span class="badge bg-danger">obligatoire</span>
             </label>
-            <input
-              type="email"
-              class="form-control custom-input"
-              placeholder="votre.email@exemple.com"
-              [(ngModel)]="formData.email"
-              required
-            />
+            <input type="email" class="form-control custom-input" placeholder="votre.email@exemple.com"
+              [(ngModel)]="formData.email" required />
           </div>
         </div>
 
@@ -117,13 +78,8 @@
               Téléphone *
               <span class="badge bg-danger">obligatoire</span>
             </label>
-            <input
-              type="tel"
-              class="form-control custom-input"
-              placeholder="+32 X XX XX XX XX"
-              [(ngModel)]="formData.telephone"
-              required
-            />
+            <input type="tel" class="form-control custom-input" placeholder="+32 X XX XX XX XX"
+              [(ngModel)]="formData.telephone" required />
           </div>
         </div>
       </div>
@@ -153,19 +109,11 @@
           </label>
           <div class="mt-2">
             <div class="form-check mb-2" *ngFor="let creneau of creneauOptions">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                [id]="'creneau-' + creneau.value"
-                [checked]="formData.creneauHoraire.includes(creneau.value)"
-                (change)="
+              <input class="form-check-input" type="checkbox" [id]="'creneau-' + creneau.value"
+                [checked]="formData.creneauHoraire.includes(creneau.value)" (change)="
                   onCreneauChange(creneau.value, $any($event.target).checked)
-                "
-              />
-              <label
-                class="form-check-label"
-                [for]="'creneau-' + creneau.value"
-              >
+                " />
+              <label class="form-check-label" [for]="'creneau-' + creneau.value">
                 {{ creneau.label }}
               </label>
             </div>
@@ -178,10 +126,7 @@
               <i class="fas fa-calendar"></i>
               Avez-vous un jour préféré ?
             </label>
-            <select
-              class="form-control custom-input"
-              [(ngModel)]="formData.jourPrefere"
-            >
+            <select class="form-control custom-input" [(ngModel)]="formData.jourPrefere">
               <option value="">Sélectionnez un jour</option>
               <option value="Lundi">Lundi</option>
               <option value="Mardi">Mardi</option>
@@ -207,33 +152,24 @@
         :
       </p>
 
-      <div
-        class="alert alert-warning mb-4"
-        *ngIf="formData.sujetsImportants.length >= 2"
-      >
+      <div class="alert alert-warning mb-4" *ngIf="formData.sujetsImportants.length >= 2">
         <i class="fas fa-info-circle me-2"></i>
         Vous avez sélectionné le maximum de 2 sujets. Désélectionnez-en un pour
         en choisir un autre.
       </div>
 
       <div *ngFor="let category of sujetsOptions" class="mb-4">
-        <h6 class="text-primary mb-3">{{ category.category }}</h6>
+        <div class="h6-title text-primary mb-3">{{ category.category }}</div>
         <div class="row g-2">
           <div class="col-12" *ngFor="let item of category.items">
             <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                [id]="'sujet-' + item.value"
-                [checked]="formData.sujetsImportants.includes(item.value)"
-                [disabled]="
+              <input class="form-check-input" type="checkbox" [id]="'sujet-' + item.value"
+                [checked]="formData.sujetsImportants.includes(item.value)" [disabled]="
                   !formData.sujetsImportants.includes(item.value) &&
                   formData.sujetsImportants.length >= 2
-                "
-                (change)="
+                " (change)="
                   onSujetChange(item.value, $any($event.target).checked)
-                "
-              />
+                " />
               <label class="form-check-label" [for]="'sujet-' + item.value">
                 {{ item.label }}
               </label>
@@ -242,15 +178,10 @@
         </div>
       </div>
 
-      <div
-        class="alert alert-success"
-        *ngIf="formData.sujetsImportants.length > 0"
-      >
+      <div class="alert alert-success" *ngIf="formData.sujetsImportants.length > 0">
         <i class="fas fa-check me-2"></i>
-        <strong
-          >Sujets sélectionnés ({{ formData.sujetsImportants.length }}/2)
-          :</strong
-        >
+        <strong>Sujets sélectionnés ({{ formData.sujetsImportants.length }}/2)
+          :</strong>
         <ul class="mb-0 mt-2">
           <li *ngFor="let sujet of formData.sujetsImportants">
             {{ getSujetLabelPublic(sujet) }}

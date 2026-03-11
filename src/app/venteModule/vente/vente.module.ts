@@ -6,6 +6,7 @@ import { PassageSocieteMobileComponent } from '../../features-mobile/passage-soc
 import { SalarieIndependantMobileComponent } from '../../features-mobile/salarie-independant-mobile/salarie-independant-mobile.component';
 import { BoosteEntrepriseComponent } from '../booste-entreprise/booste-entreprise.component';
 import { CompteCourantAdministrateurComponent } from '../compte-courant-administrateur/compte-courant-administrateur.component';
+import { DiagnosticPassageSocieteComponent } from '../diagnostic-passage-societe/diagnostic-passage-societe.component';
 import { GuerrePrixComponent } from '../guerre-prix/guerre-prix.component';
 import { PassageSocieteComponent } from '../passage-societe/passage-societe.component';
 import { PromoSocieteComponent } from '../promo-societe/promo-societe.component';
@@ -13,12 +14,14 @@ import { SalarieIndependantComponent } from '../salarie-independant/salarie-inde
 import { TimelineGuerrePrixComponent } from '../timeline-guerre-prix/timeline-guerre-prix.component';
 import { TimelineSocieteComponent } from '../timeline-societe/timeline-societe.component';
 import { StrategieRoutingModule } from './vente-routing.module';
+import { DiagnosticCompteCourantComponent } from '../compte-courant-administrateur/diagnostic-compte-courant.component';
 
 // Note: Le dossier est toujours nommé "venteModule" pour préserver l'historique Git.
 // Seul le nom de la classe a été renommé de VenteModule → StrategieModule.
 @NgModule({
   declarations: [
     PassageSocieteComponent,
+    DiagnosticPassageSocieteComponent,
     TimelineSocieteComponent,
     PromoSocieteComponent,
     TimelineGuerrePrixComponent,
@@ -27,6 +30,6 @@ import { StrategieRoutingModule } from './vente-routing.module';
     CompteCourantAdministrateurComponent,
     BoosteEntrepriseComponent,
   ],
-  imports: [CommonModule, FormsModule, ShardeModuleModule, StrategieRoutingModule, PassageSocieteMobileComponent, SalarieIndependantMobileComponent],
+  imports: [CommonModule, FormsModule, ShardeModuleModule, StrategieRoutingModule, PassageSocieteMobileComponent, SalarieIndependantMobileComponent, DiagnosticCompteCourantComponent],
 })
 export class StrategieModule {}

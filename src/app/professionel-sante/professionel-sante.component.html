@@ -3,6 +3,7 @@
     position: relative;
     padding: 2rem 0;
   }
+
   .vertical-line {
     position: absolute;
     top: 0;
@@ -40,9 +41,12 @@
   }
 
   .custom-image-size {
-    width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
-    height: auto; /* Maintient le ratio d'aspect */
+    width: 70%;
+    /* Ajustez la largeur maximale (en pourcentage ou pixels) */
+    height: auto;
+    /* Maintient le ratio d'aspect */
   }
+
   .second-card {
     position: relative;
   }
@@ -130,8 +134,7 @@
   }
 
   .header {
-    background: url("../../assets/img/bg/bg_about.webp") no-repeat center
-      center/cover;
+    background: url("../../assets/img/bg/bg_about.webp") no-repeat center center/cover;
     min-height: 400px;
     position: relative;
     display: flex;
@@ -182,7 +185,7 @@
 <header class="header">
   <div class="header-overlay">
     <div class="container">
-      <h1>Professionnels de la santé</h1>
+      <div class="h1">Professionnels de la santé</div>
       <p class="text-white">Accueil &gt; Professionnels de la santé</p>
     </div>
   </div>
@@ -198,12 +201,12 @@
       <!-- Main Content -->
       <div class="col-lg-8">
         <div class="single-content">
-          <h2 class="display-5 fw-bold">
+          <h1 class="display-5 fw-bold">
             Des solutions adaptées à vos
             <span class="bg-custom--primary text-white px-2 rounded">
               défis spécifiques
             </span>
-          </h2>
+          </h1>
           <div>
             <p>
               Médecins, dentistes, vétérinaires ou kinésithérapeutes, votre
@@ -217,19 +220,13 @@
           </div>
           <div class="button-container">
             <div class="home2-btn mb-4" style="margin-left: 8px">
-              <button
-                (click)="scrollToSection('targetSection')"
-                class="btn-red"
-              >
+              <button (click)="scrollToSection('targetSection')" class="btn-red">
                 Découvrez ce que vous gagnerez avec nous
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
             <div class="home2-btn mb-4" style="margin-left: 8px">
-              <button
-                (click)="scrollToSection('contactSection')"
-                class="btn-outline-red"
-              >
+              <button (click)="scrollToSection('contactSection')" class="btn-outline-red">
                 🧭 Évaluez votre activité (2 min)
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
@@ -250,17 +247,11 @@
       <div class="row align-items-center">
         <div class="col-md-12 col-lg-6">
           <div class="how-in-work-sec">
-            <div
-              class="hadding hadding-p"
-              data-aos="fade-right"
-              data-aos-duration="800"
-            >
-              <h1>
-                Centres médicaux et professionnels de santé : <br /><span
-                  class="rectangle-red"
-                  >Optimisez votre organisation</span
-                >
-              </h1>
+            <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
+              <h2 class="h1">
+                Centres médicaux et professionnels de santé : <br /><span class="rectangle-red">Optimisez votre
+                  organisation</span>
+              </h2>
               <p>
                 Des solutions adaptées à chaque structure pour maximiser vos
                 revenus, mutualiser vos frais et simplifier la gestion
@@ -270,22 +261,14 @@
             <div class="space20"></div>
             <div class="works-items">
               <!-- Service 1 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1200"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-1.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Centres médicaux</h2>
+                  <h3 class="h2">Centres médicaux</h3>
                   <ul>
                     <li>
                       Organisez vos finances collectives avec une tenue
@@ -304,22 +287,14 @@
               </div>
 
               <!-- Service 2 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1400"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-2.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Associations médicales</h2>
+                  <h3 class="h2">Associations médicales</h3>
                   <ul>
                     <li>
                       Réduisez les coûts grâce à la mutualisation des charges
@@ -338,22 +313,14 @@
               </div>
 
               <!-- Service 3 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1600"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1600">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-3.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Professionnels indépendants</h2>
+                  <h3 class="h2">Professionnels indépendants</h3>
                   <ul>
                     <li>
                       Facturez vos prestations avec des management fees
@@ -372,18 +339,14 @@
               </div>
 
               <!-- Service 4 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1800"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1800">
                 <div class="me-3">
                   <div class="work-icon">
                     <i class="fa fa-cogs" aria-hidden="true"></i>
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Combinaison : Activité mixte</h2>
+                  <h3 class="h2">Combinaison : Activité mixte</h3>
                   <ul>
                     <li>
                       Combinez les avantages des modèles société d'exploitation
@@ -405,20 +368,13 @@
         </div>
 
         <!-- Image de droite -->
-        <div
-          class="col-md-12 col-lg-6"
-          data-aos="flip-right"
-          data-aos-duration="1000"
-        >
+        <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
           <div class="works-img space-sm-50 img-border">
             <img src="../../assets/img/webp/42.webp" alt="" class="img-fluid" />
           </div>
           <div class="mt-4 text-center" data-aos="fade-up" data-aos-duration="1200">
-            <a
-              (click)="scrollToSection('contactSection')"
-              class="btn btn-danger btn-lg px-4 py-3"
-              style="border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer;"
-            >
+            <a (click)="scrollToSection('contactSection')" class="btn btn-danger btn-lg px-4 py-3"
+              style="border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer;">
               Parlez à un expert
             </a>
           </div>
@@ -432,11 +388,7 @@
   <div class="home2-about sec-padding">
     <div class="container">
       <div class="row align-items-center">
-        <div
-          class="col-md-12 col-lg-6"
-          data-aos="flip-left"
-          data-aos-duration="800"
-        >
+        <div class="col-md-12 col-lg-6" data-aos="flip-left" data-aos-duration="800">
           <div class="home2-about-img img-border">
             <img src="../../assets/img/webp/31.webp" alt="" />
             <div class="home2-about-text">
@@ -450,14 +402,8 @@
             </div>
           </div>
         </div>
-        <div
-          class="col-md-12 col-lg-6"
-          data-aos="fade-left"
-          data-aos-duration="800"
-        >
-          <div
-            class="home2-hadding home2-hadding-p home2-about hadding-span home2-padding-after"
-          >
+        <div class="col-md-12 col-lg-6" data-aos="fade-left" data-aos-duration="800">
+          <div class="home2-hadding home2-hadding-p home2-about hadding-span home2-padding-after">
             <h2>
               Exemple concret : Maximisez vos avantages fiscaux et patrimoniaux
             </h2>
@@ -480,19 +426,16 @@
                 des impôts annuels de 60 %, soit 36 000 € économisés.
               </li>
               <li>
-                <img
-                  src="assets/img/icons/chek-cercle.svg"
-                  alt=""
-                />Constitution d'un patrimoine immobilier valorisé à 500 000 €
+                <img src="assets/img/icons/chek-cercle.svg" alt="" />Constitution d'un patrimoine immobilier valorisé à
+                500 000 €
                 sur 10 ans.
               </li>
             </ul>
           </div>
           <div class="space10"></div>
           <div class="home2-btn">
-            <a (click)="scrollToSection('contactSection')" style="cursor: pointer; color: white;"
-              >Contactez-Nous<i class="fa fa-arrow-right"></i
-            ></a>
+            <a (click)="scrollToSection('contactSection')" style="cursor: pointer; color: white;">Contactez-Nous<i
+                class="fa fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -503,11 +446,7 @@
 <div class="about sec-padding">
   <div class="container">
     <div class="row align-items-center">
-      <div
-        class="col-md-6 space-sm-30"
-        data-aos="fade-left"
-        data-aos-duration="800"
-      >
+      <div class="col-md-6 space-sm-30" data-aos="fade-left" data-aos-duration="800">
         <div class="about-haddings">
           <div class="home2-hadding hadding-p">
             <h2>
@@ -543,9 +482,8 @@
             gestion TVA.
           </p>
           <div class="home2-btn mt-4">
-            <a (click)="scrollToSection('contactSection')" style="cursor: pointer; color: white;"
-              >Contactez-nous <i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <a (click)="scrollToSection('contactSection')" style="cursor: pointer; color: white;">Contactez-nous <i
+                class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -563,11 +501,7 @@
     <div class="container">
       <div class="row align-items-center">
         <!-- Image de droite -->
-        <div
-          class="col-md-12 col-lg-6"
-          data-aos="flip-right"
-          data-aos-duration="1000"
-        >
+        <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
           <div class="works-img space-sm-50 img-border">
             <img src="../../assets/img/webp/1.webp" alt="" class="img-fluid" />
           </div>
@@ -575,37 +509,23 @@
 
         <div class="col-md-12 col-lg-6">
           <div class="how-in-work-sec">
-            <div
-              class="hadding hadding-p"
-              data-aos="fade-right"
-              data-aos-duration="800"
-            >
-              <h1>
+            <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
+              <h2 class="h1">
                 Les services de Mfinances pour les professionnels de la santé :
-                <br /><span class="rectangle-red"
-                  >Un accompagnement complet et sur mesure</span
-                >
-              </h1>
+                <br /><span class="rectangle-red">Un accompagnement complet et sur mesure</span>
+              </h2>
             </div>
             <div class="space20"></div>
             <div class="works-items">
               <!-- Service 1 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1200"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-1.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Développer et structurer votre activité médicale</h2>
+                  <h3 class="h2">Développer et structurer votre activité médicale</h3>
                   <ul>
                     <li>
                       Passage en société : Optimisez vos revenus et votre
@@ -632,25 +552,17 @@
               </div>
 
               <!-- Service 2 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1400"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-2.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>
+                  <h3 class="h2">
                     Préparer l'avenir : Sécurisez votre patrimoine et votre
                     succession
-                  </h2>
+                  </h3>
                   <ul>
                     <li>
                       Transmission ou cession de patientèle : Maximisez la
@@ -672,22 +584,14 @@
               </div>
 
               <!-- Service 3 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1600"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1600">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-3.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Créer votre entreprise dans le secteur médical</h2>
+                  <h3 class="h2">Créer votre entreprise dans le secteur médical</h3>
                   <ul>
                     <li>
                       Choix du statut juridique : Adaptez votre structure à vos
@@ -708,18 +612,14 @@
               </div>
 
               <!-- Service 4 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1800"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1800">
                 <div class="me-3">
                   <div class="work-icon">
                     <i class="fa fa-cogs" aria-hidden="true"></i>
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Simplifier la gestion de votre activité</h2>
+                  <h3 class="h2">Simplifier la gestion de votre activité</h3>
                   <ul>
                     <li>
                       Gestion comptable complète : Comptes annuels, déclarations
@@ -763,23 +663,13 @@
       <!-- Colonne droite (cartes) -->
       <div class="col-12 col-md-6 d-flex flex-column gap-4">
         <!-- Carte 1 -->
-        <div
-          class="custom-card p-4 d-flex align-items-start"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <div
-            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="../../assets/img/image/profil/Background+Border.png"
-              alt="Icone Expertise"
-              class="img-fluid"
-              style="max-width: 50px"
-            />
+        <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+            <img src="../../assets/img/image/profil/Background+Border.png" alt="Icone Expertise" class="img-fluid"
+              style="max-width: 50px" />
           </div>
           <div>
-            <h5 class="fw-semibold mb-2">Une expertise ciblée :</h5>
+            <h3 class="h5 fw-semibold mb-2">Une expertise ciblée :</h3>
             <p class="mb-0 text-muted">
               Nos spécialistes maîtrisent les spécificités du secteur médical et
               paramédical.
@@ -788,23 +678,13 @@
         </div>
 
         <!-- Carte 2 -->
-        <div
-          class="custom-card p-4 d-flex align-items-start second-card"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          <div
-            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="../../assets/img/image/profil/Background+Border2.png"
-              alt="Icone Accompagnement"
-              class="img-fluid"
-              style="max-width: 50px"
-            />
+        <div class="custom-card p-4 d-flex align-items-start second-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+            <img src="../../assets/img/image/profil/Background+Border2.png" alt="Icone Accompagnement" class="img-fluid"
+              style="max-width: 50px" />
           </div>
           <div>
-            <h5 class="fw-semibold mb-2">Un accompagnement global :</h5>
+            <h3 class="h5 fw-semibold mb-2">Un accompagnement global :</h3>
             <p class="mb-0 text-muted">
               De la création de votre structure à la transmission de votre
               activité, nous sommes à vos côtés à chaque étape.
@@ -813,23 +693,13 @@
         </div>
 
         <!-- Carte 3 -->
-        <div
-          class="custom-card p-4 d-flex align-items-start"
-          data-aos="fade-up"
-          data-aos-delay="600"
-        >
-          <div
-            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="../../assets/img/image/profil/Background+Border3.png"
-              alt="Icone Solutions"
-              class="img-fluid"
-              style="max-width: 50px"
-            />
+        <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="600">
+          <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+            <img src="../../assets/img/image/profil/Background+Border3.png" alt="Icone Solutions" class="img-fluid"
+              style="max-width: 50px" />
           </div>
           <div>
-            <h5 class="fw-semibold mb-2">Des solutions personnalisées :</h5>
+            <h3 class="h5 fw-semibold mb-2">Des solutions personnalisées :</h3>
             <p class="mb-0 text-muted">
               Adaptées à vos besoins, pour optimiser vos finances et faciliter
               votre quotidien.
@@ -845,43 +715,26 @@
   <div class="rounded-4 bg-custom--primary text-white px-4">
     <div class="row align-items-center">
       <!-- Image visible uniquement à partir du md (desktop) -->
-      <div
-        class="col-md-6 justify-content-center align-items-end"
-        data-aos="fade-left"
-        data-aos-delay="200"
-      >
-        <img
-          src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
-          alt="Personne souriante"
-          class="img-fluid custom-image-size"
-          style="z-index: 2; position: relative"
-        />
+      <div class="col-md-6 justify-content-center align-items-end" data-aos="fade-left" data-aos-delay="200">
+        <img src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp" alt="Personne souriante"
+          class="img-fluid custom-image-size" style="z-index: 2; position: relative" />
       </div>
 
       <!-- Texte et bouton, centrés sur mobile/tablette -->
       <div
         class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >
+        data-aos="fade-right" data-aos-delay="400">
         <h2 class="fw-bold mb-4">
           Confiez votre activité à<br />
-          <span class="bg-danger text-white px-2 py-1 rounded-2"
-            >des experts</span
-          >.
+          <span class="bg-danger text-white px-2 py-1 rounded-2">des experts</span>.
         </h2>
         <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
           Prenez rendez-vous dès aujourd'hui avec un conseiller Mfinances pour
           bénéficier d'une analyse personnalisée et d'un accompagnement complet.
           Transformez vos défis financiers en opportunités de croissance.
         </p>
-        <a
-          (click)="scrollToSection('contactSection')"
-          class="btn btn-danger btn-sm px-3 py-2"
-          data-aos="zoom-in"
-          data-aos-delay="800"
-          style="cursor: pointer; color: white;"
-        >
+        <a (click)="scrollToSection('contactSection')" class="btn btn-danger btn-sm px-3 py-2" data-aos="zoom-in"
+          data-aos-delay="800" style="cursor: pointer; color: white;">
           Contactez-nous <i class="fas fa-arrow-right"></i>
         </a>
       </div>
@@ -891,19 +744,9 @@
 
 <!-- Section formulaire de contact -->
 <section id="contactSection" class="contact-section">
-  <app-contact-form-layout
-    [config]="formConfig"
-    [currentStep]="currentStep"
-    [totalSteps]="totalSteps"
-    [formSubmitted]="formSubmitted"
-    [isStepValid]="isStepValid"
-    [isFormValid]="isFormValid"
-    [isLoading]="isLoading"
-    (nextStep)="onNextStep()"
-    (previousStep)="onPreviousStep()"
-    (submit)="onSubmit()"
-    (reset)="onReset()"
-  >
+  <app-contact-form-layout [config]="formConfig" [currentStep]="currentStep" [totalSteps]="totalSteps"
+    [formSubmitted]="formSubmitted" [isStepValid]="isStepValid" [isFormValid]="isFormValid" [isLoading]="isLoading"
+    (nextStep)="onNextStep()" (previousStep)="onPreviousStep()" (submit)="onSubmit()" (reset)="onReset()">
     <div slot="form-content">
       <!-- Étape 1: Profession -->
       <div *ngIf="currentStep === 1" class="step-content">
@@ -912,144 +755,80 @@
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.profession === 'medecin-generaliste'"
-            >
-              <input
-                type="radio"
-                name="profession"
-                value="medecin-generaliste"
-                [(ngModel)]="formData.profession"
-                (change)="onProfessionChange('medecin-generaliste')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.profession === 'medecin-generaliste'">
+              <input type="radio" name="profession" value="medecin-generaliste" [(ngModel)]="formData.profession"
+                (change)="onProfessionChange('medecin-generaliste')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-user-md text-danger mb-2"></i>
-                <h6 class="mb-1">Médecin généraliste</h6>
+                <div class="h6 mb-1">Médecin généraliste</div>
                 <small class="text-muted">Médecine générale</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.profession === 'medecin-specialiste'"
-            >
-              <input
-                type="radio"
-                name="profession"
-                value="medecin-specialiste"
-                [(ngModel)]="formData.profession"
-                (change)="onProfessionChange('medecin-specialiste')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.profession === 'medecin-specialiste'">
+              <input type="radio" name="profession" value="medecin-specialiste" [(ngModel)]="formData.profession"
+                (change)="onProfessionChange('medecin-specialiste')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-stethoscope text-danger mb-2"></i>
-                <h6 class="mb-1">Médecin spécialiste</h6>
+                <div class="h6 mb-1">Médecin spécialiste</div>
                 <small class="text-muted">Spécialité médicale</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.profession === 'dentiste'"
-            >
-              <input
-                type="radio"
-                name="profession"
-                value="dentiste"
-                [(ngModel)]="formData.profession"
-                (change)="onProfessionChange('dentiste')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.profession === 'dentiste'">
+              <input type="radio" name="profession" value="dentiste" [(ngModel)]="formData.profession"
+                (change)="onProfessionChange('dentiste')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-tooth text-danger mb-2"></i>
-                <h6 class="mb-1">Dentiste</h6>
+                <div class="h6 mb-1">Dentiste</div>
                 <small class="text-muted">Soins dentaires</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.profession === 'kinesitherapeute'"
-            >
-              <input
-                type="radio"
-                name="profession"
-                value="kinesitherapeute"
-                [(ngModel)]="formData.profession"
-                (change)="onProfessionChange('kinesitherapeute')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.profession === 'kinesitherapeute'">
+              <input type="radio" name="profession" value="kinesitherapeute" [(ngModel)]="formData.profession"
+                (change)="onProfessionChange('kinesitherapeute')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-hands text-danger mb-2"></i>
-                <h6 class="mb-1">Kinésithérapeute</h6>
+                <div class="h6 mb-1">Kinésithérapeute</div>
                 <small class="text-muted">Rééducation fonctionnelle</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.profession === 'infirmier'"
-            >
-              <input
-                type="radio"
-                name="profession"
-                value="infirmier"
-                [(ngModel)]="formData.profession"
-                (change)="onProfessionChange('infirmier')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.profession === 'infirmier'">
+              <input type="radio" name="profession" value="infirmier" [(ngModel)]="formData.profession"
+                (change)="onProfessionChange('infirmier')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-user-nurse text-danger mb-2"></i>
-                <h6 class="mb-1">Infirmier(ère)</h6>
+                <div class="h6 mb-1">Infirmier(ère)</div>
                 <small class="text-muted">Soins infirmiers</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.profession === 'autre'"
-            >
-              <input
-                type="radio"
-                name="profession"
-                value="autre"
-                [(ngModel)]="formData.profession"
-                (change)="onProfessionChange('autre')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.profession === 'autre'">
+              <input type="radio" name="profession" value="autre" [(ngModel)]="formData.profession"
+                (change)="onProfessionChange('autre')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-plus text-danger mb-2"></i>
-                <h6 class="mb-1">Autre profession</h6>
+                <div class="h6 mb-1">Autre profession</div>
                 <small class="text-muted">Précisez votre profession</small>
               </div>
             </label>
           </div>
 
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreProfession"
-          >
+          <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreProfession">
             <div class="custom-input-group">
               <label for="profession_autre" class="form-label">
                 <i class="fas fa-edit me-2"></i>Précisez votre profession
               </label>
-              <input
-                type="text"
-                class="form-control custom-input"
-                id="profession_autre"
-                name="profession_autre"
-                [(ngModel)]="formData.profession_autre"
-                placeholder="Décrivez votre profession..."
-                maxlength="200"
-              />
+              <input type="text" class="form-control custom-input" id="profession_autre" name="profession_autre"
+                [(ngModel)]="formData.profession_autre" placeholder="Décrivez votre profession..." maxlength="200" />
             </div>
           </div>
         </div>
@@ -1064,78 +843,42 @@
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.revenus === 'moins-50k'"
-            >
-              <input
-                type="radio"
-                name="revenus"
-                value="moins-50k"
-                [(ngModel)]="formData.revenus"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.revenus === 'moins-50k'">
+              <input type="radio" name="revenus" value="moins-50k" [(ngModel)]="formData.revenus" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-seedling text-danger mb-2"></i>
-                <h6 class="mb-1">Moins de 50K € / an</h6>
+                <div class="h6 mb-1">Moins de 50K € / an</div>
                 <small class="text-muted">Activité débutante</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.revenus === '50k-100k'"
-            >
-              <input
-                type="radio"
-                name="revenus"
-                value="50k-100k"
-                [(ngModel)]="formData.revenus"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.revenus === '50k-100k'">
+              <input type="radio" name="revenus" value="50k-100k" [(ngModel)]="formData.revenus" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-chart-line text-danger mb-2"></i>
-                <h6 class="mb-1">50K - 100K € / an</h6>
+                <div class="h6 mb-1">50K - 100K € / an</div>
                 <small class="text-muted">Activité en développement</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.revenus === '100k-200k'"
-            >
-              <input
-                type="radio"
-                name="revenus"
-                value="100k-200k"
-                [(ngModel)]="formData.revenus"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.revenus === '100k-200k'">
+              <input type="radio" name="revenus" value="100k-200k" [(ngModel)]="formData.revenus" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-building text-danger mb-2"></i>
-                <h6 class="mb-1">100K - 200K € / an</h6>
+                <div class="h6 mb-1">100K - 200K € / an</div>
                 <small class="text-muted">Activité établie</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.revenus === 'plus-200k'"
-            >
-              <input
-                type="radio"
-                name="revenus"
-                value="plus-200k"
-                [(ngModel)]="formData.revenus"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.revenus === 'plus-200k'">
+              <input type="radio" name="revenus" value="plus-200k" [(ngModel)]="formData.revenus" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-crown text-success mb-2"></i>
-                <h6 class="mb-1">Plus de 200K € / an</h6>
+                <div class="h6 mb-1">Plus de 200K € / an</div>
                 <small class="text-muted">Activité prospère</small>
               </div>
             </label>
@@ -1158,15 +901,8 @@
                 <label for="nom" class="form-label">
                   <i class="fas fa-user me-2"></i>Nom complet
                 </label>
-                <input
-                  type="text"
-                  class="form-control custom-input"
-                  id="nom"
-                  name="nom"
-                  [(ngModel)]="formData.nom"
-                  placeholder="Votre nom et prénom"
-                  required
-                />
+                <input type="text" class="form-control custom-input" id="nom" name="nom" [(ngModel)]="formData.nom"
+                  placeholder="Votre nom et prénom" required />
               </div>
             </div>
 
@@ -1176,15 +912,8 @@
                   <i class="fas fa-envelope me-2"></i>Email
                   <span class="badge bg-success ms-2">✅ obligatoire</span>
                 </label>
-                <input
-                  type="email"
-                  class="form-control custom-input"
-                  id="email"
-                  name="email"
-                  [(ngModel)]="formData.email"
-                  placeholder="votre@email.com"
-                  required
-                />
+                <input type="email" class="form-control custom-input" id="email" name="email"
+                  [(ngModel)]="formData.email" placeholder="votre@email.com" required />
               </div>
             </div>
 
@@ -1194,15 +923,8 @@
                   <i class="fas fa-phone me-2"></i>Téléphone
                   <span class="badge bg-success ms-2">✅ obligatoire</span>
                 </label>
-                <input
-                  type="tel"
-                  class="form-control custom-input"
-                  id="telephone"
-                  name="telephone"
-                  [(ngModel)]="formData.telephone"
-                  placeholder="+32 XXX XX XX XX"
-                  required
-                />
+                <input type="tel" class="form-control custom-input" id="telephone" name="telephone"
+                  [(ngModel)]="formData.telephone" placeholder="+32 XXX XX XX XX" required />
               </div>
             </div>
           </div>
@@ -1211,12 +933,10 @@
             <div class="d-flex align-items-center">
               <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
               <div>
-                <h6 class="mb-1">📞 Rendez-vous garanti sous 72h</h6>
-                <small
-                  >Un conseiller vous appellera pour un échange gratuit et
+                <div class="h6 mb-1">📞 Rendez-vous garanti sous 72h</div>
+                <small>Un conseiller vous appellera pour un échange gratuit et
                   personnalisé. Vous recevrez ensuite votre mini-diagnostic par
-                  email.</small
-                >
+                  email.</small>
               </div>
             </div>
           </div>
@@ -1232,59 +952,34 @@
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.comptabilite === 'moi-meme'"
-            >
-              <input
-                type="radio"
-                name="comptabilite"
-                value="moi-meme"
-                [(ngModel)]="formData.comptabilite"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.comptabilite === 'moi-meme'">
+              <input type="radio" name="comptabilite" value="moi-meme" [(ngModel)]="formData.comptabilite" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-user text-danger mb-2"></i>
-                <h6 class="mb-1">Je la gère moi-même</h6>
+                <div class="h6 mb-1">Je la gère moi-même</div>
                 <small class="text-muted">Gestion personnelle</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.comptabilite === 'comptable-externe'"
-            >
-              <input
-                type="radio"
-                name="comptabilite"
-                value="comptable-externe"
-                [(ngModel)]="formData.comptabilite"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.comptabilite === 'comptable-externe'">
+              <input type="radio" name="comptabilite" value="comptable-externe" [(ngModel)]="formData.comptabilite"
+                required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-user-tie text-danger mb-2"></i>
-                <h6 class="mb-1">Comptable externe</h6>
+                <div class="h6 mb-1">Comptable externe</div>
                 <small class="text-muted">Professionnel externe</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.comptabilite === 'pas-de-systeme'"
-            >
-              <input
-                type="radio"
-                name="comptabilite"
-                value="pas-de-systeme"
-                [(ngModel)]="formData.comptabilite"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.comptabilite === 'pas-de-systeme'">
+              <input type="radio" name="comptabilite" value="pas-de-systeme" [(ngModel)]="formData.comptabilite"
+                required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-question-circle text-danger mb-2"></i>
-                <h6 class="mb-1">Pas de système structuré</h6>
+                <div class="h6 mb-1">Pas de système structuré</div>
                 <small class="text-muted">À mettre en place</small>
               </div>
             </label>
@@ -1302,104 +997,68 @@
         <div class="form-group">
           <div class="custom-checkbox-group">
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="comptabilite"
-                (change)="onBesoinChange('comptabilite', $event)"
-              />
+              <input type="checkbox" name="besoins" value="comptabilite"
+                (change)="onBesoinChange('comptabilite', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-calculator text-danger mb-2"></i>
-                <h6 class="mb-1">Tenue de la comptabilité</h6>
-                <small class="text-muted"
-                  >Gestion quotidienne des comptes</small
-                >
+                <div class="h6 mb-1">Tenue de la comptabilité</div>
+                <small class="text-muted">Gestion quotidienne des comptes</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="declarations-fiscales"
-                (change)="onBesoinChange('declarations-fiscales', $event)"
-              />
+              <input type="checkbox" name="besoins" value="declarations-fiscales"
+                (change)="onBesoinChange('declarations-fiscales', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-file-alt text-danger mb-2"></i>
-                <h6 class="mb-1">Déclarations fiscales</h6>
-                <small class="text-muted"
-                  >TVA, impôts et obligations légales</small
-                >
+                <div class="h6 mb-1">Déclarations fiscales</div>
+                <small class="text-muted">TVA, impôts et obligations légales</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="conseil-gestion"
-                (change)="onBesoinChange('conseil-gestion', $event)"
-              />
+              <input type="checkbox" name="besoins" value="conseil-gestion"
+                (change)="onBesoinChange('conseil-gestion', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-chart-line text-danger mb-2"></i>
-                <h6 class="mb-1">Conseil en gestion financière</h6>
+                <div class="h6 mb-1">Conseil en gestion financière</div>
                 <small class="text-muted">Optimisation et stratégie</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="optimisation-statut"
-                (change)="onBesoinChange('optimisation-statut', $event)"
-              />
+              <input type="checkbox" name="besoins" value="optimisation-statut"
+                (change)="onBesoinChange('optimisation-statut', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-cogs text-danger mb-2"></i>
-                <h6 class="mb-1">Optimisation du statut</h6>
+                <div class="h6 mb-1">Optimisation du statut</div>
                 <small class="text-muted">Social et fiscal</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="autre"
-                (change)="onBesoinChange('autre', $event)"
-              />
+              <input type="checkbox" name="besoins" value="autre" (change)="onBesoinChange('autre', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-plus text-danger mb-2"></i>
-                <h6 class="mb-1">Autre besoin</h6>
-                <small class="text-muted"
-                  >Précisez vos besoins spécifiques</small
-                >
+                <div class="h6 mb-1">Autre besoin</div>
+                <small class="text-muted">Précisez vos besoins spécifiques</small>
               </div>
             </label>
           </div>
 
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreBesoin"
-          >
+          <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreBesoin">
             <div class="custom-input-group">
               <label for="besoins_autre" class="form-label">
                 <i class="fas fa-edit me-2"></i>Précisez vos autres besoins
               </label>
-              <textarea
-                class="form-control custom-input"
-                id="besoins_autre"
-                name="besoins_autre"
-                [(ngModel)]="formData.besoins_autre"
-                placeholder="Décrivez vos besoins spécifiques..."
-                rows="3"
-                maxlength="300"
-              ></textarea>
+              <textarea class="form-control custom-input" id="besoins_autre" name="besoins_autre"
+                [(ngModel)]="formData.besoins_autre" placeholder="Décrivez vos besoins spécifiques..." rows="3"
+                maxlength="300"></textarea>
             </div>
           </div>
         </div>
