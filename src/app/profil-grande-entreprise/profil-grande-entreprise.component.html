@@ -3,6 +3,7 @@
     position: relative;
     padding: 2rem 0;
   }
+
   .vertical-line {
     position: absolute;
     top: 0;
@@ -40,9 +41,12 @@
   }
 
   .custom-image-size {
-    width: 70%; /* Ajustez la largeur maximale (en pourcentage ou pixels) */
-    height: auto; /* Maintient le ratio d'aspect */
+    width: 70%;
+    /* Ajustez la largeur maximale (en pourcentage ou pixels) */
+    height: auto;
+    /* Maintient le ratio d'aspect */
   }
+
   .second-card {
     position: relative;
   }
@@ -130,8 +134,7 @@
   }
 
   .header {
-    background: url("../../assets/img/bg/bg_about.webp") no-repeat center
-      center/cover;
+    background: url("../../assets/img/bg/bg_about.webp") no-repeat center center/cover;
     min-height: 400px;
     position: relative;
     display: flex;
@@ -192,7 +195,8 @@
 
   .works-img2 {
     position: sticky;
-    top: 2rem; /* Ajustez cette valeur selon votre header */
+    top: 2rem;
+    /* Ajustez cette valeur selon votre header */
     height: fit-content;
     padding: 1rem;
   }
@@ -207,14 +211,16 @@
   .works-img2 img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Optionnel: pour des coins arrondis */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optionnel: pour ajouter une ombre */
+    border-radius: 8px;
+    /* Optionnel: pour des coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optionnel: pour ajouter une ombre */
   }
 </style>
 <header class="header">
   <div class="header-overlay">
     <div class="container">
-      <h1>Grande Entreprise</h1>
+      <div class="h1">Grande Entreprise</div>
       <p class="text-white">Accueil &gt; Grande Entreprise</p>
     </div>
   </div>
@@ -230,12 +236,12 @@
       <!-- Main Content -->
       <div class="col-lg-8">
         <div class="single-content">
-          <h2 class="display-5 fw-bold">
+          <h1 class="display-5 fw-bold">
             Anticipez, gérez et innovez pour maximiser
             <span class="bg-custom--primary text-white px-2 rounded">
               votre rentabilité
             </span>
-          </h2>
+          </h1>
           <div>
             <p>
               Les grandes entreprises évoluent dans un environnement complexe où
@@ -254,19 +260,13 @@
           </div>
           <div class="button-container">
             <div class="home2-btn mb-4" style="margin-left: 8px">
-              <button
-                (click)="scrollToSection('targetSection')"
-                class="btn-red"
-              >
+              <button (click)="scrollToSection('targetSection')" class="btn-red">
                 Découvrez ce que vous gagnerez avec nous
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
             <div class="home2-btn mb-4" style="margin-left: 8px">
-              <button
-                (click)="scrollToSection('contactSection')"
-                class="btn-outline-red"
-              >
+              <button (click)="scrollToSection('contactSection')" class="btn-outline-red">
                 🧭 Évaluez votre établissement (2 min)
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
@@ -281,12 +281,7 @@
           <!-- <h1>Transition numérique : Digitalisez vos processus pour un service client fluide</h1> -->
           <!-- Image -->
           <div class="col-md-4 custom-img">
-            <img
-              src="../../assets/img/webp/39.webp"
-              alt="Défis ASBL"
-              class="img-fluid"
-              style="border-radius: 16px"
-            />
+            <img src="../../assets/img/webp/39.webp" alt="Défis ASBL" class="img-fluid" style="border-radius: 16px" />
           </div>
           <!-- Content -->
           <div class="col-md-8 mt-30">
@@ -299,24 +294,15 @@
 
             <ul class="list-unstyled pl-25">
               <li>
-                <i
-                  class="fa fa-star"
-                  style="font-size: 14px; color: #ff3333; margin-right: 6px"
-                ></i>
+                <i class="fa fa-star" style="font-size: 14px; color: #ff3333; margin-right: 6px"></i>
                 Réduction des coûts opérationnels
               </li>
               <li>
-                <i
-                  class="fa fa-star"
-                  style="font-size: 14px; color: #ff3333; margin-right: 6px"
-                ></i>
+                <i class="fa fa-star" style="font-size: 14px; color: #ff3333; margin-right: 6px"></i>
                 Meilleure allocation des ressources
               </li>
               <li>
-                <i
-                  class="fa fa-star"
-                  style="font-size: 14px; color: #ff3333; margin-right: 6px"
-                ></i>
+                <i class="fa fa-star" style="font-size: 14px; color: #ff3333; margin-right: 6px"></i>
                 Capacité accrue à investir dans l'innovation
               </li>
             </ul>
@@ -335,37 +321,23 @@
         <!-- Contenu principal -->
         <div class="col-md-12 col-lg-6">
           <div class="how-in-work-sec">
-            <div
-              class="hadding hadding-p"
-              data-aos="fade-right"
-              data-aos-duration="800"
-            >
-              <h1>
+            <div class="hadding hadding-p" data-aos="fade-right" data-aos-duration="800">
+              <h2 class="h1">
                 Besoins spécifiques des grandes entreprises : <br />
-                <span class="rectangle-red"
-                  >Une gestion sur mesure pour des résultats concrets</span
-                >
-              </h1>
+                <span class="rectangle-red">Une gestion sur mesure pour des résultats concrets</span>
+              </h2>
             </div>
             <div class="space20"></div>
             <div class="works-items">
               <!-- Service 1 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1200"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1200">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-1.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-1.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Budgets prévisionnels dynamiques :</h2>
+                  <h3 class="h2">Budgets prévisionnels dynamiques :</h3>
                   <ul>
                     <li>
                       Le budget prévisionnel projette vos recettes et dépenses
@@ -383,22 +355,14 @@
                 </div>
               </div>
               <!-- Service 2 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1400"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1400">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-2.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-2.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Gestion proactive de la trésorerie :</h2>
+                  <h3 class="h2">Gestion proactive de la trésorerie :</h3>
                   <ul>
                     <li>
                       Identifiez à l'avance les périodes critiques pour éviter
@@ -416,22 +380,14 @@
                 </div>
               </div>
               <!-- Service 3 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1600"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1600">
                 <div class="me-3">
                   <div class="work-icon">
-                    <img
-                      src="../../assets/img/image/profil/works-icon-3.png"
-                      alt=""
-                      class="img-fluid"
-                    />
+                    <img src="../../assets/img/image/profil/works-icon-3.png" alt="" class="img-fluid" />
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Contrôle de gestion avancé :</h2>
+                  <h3 class="h2">Contrôle de gestion avancé :</h3>
                   <ul>
                     <li>
                       Mise en place de tableaux de bord personnalisés pour
@@ -449,18 +405,14 @@
                 </div>
               </div>
               <!-- Service 4 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="1800"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="1800">
                 <div class="me-3">
                   <div class="work-icon">
                     <i class="fa-solid fa-clock"></i>
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Flexibilité avec un DAF à temps partiel :</h2>
+                  <h3 class="h2">Flexibilité avec un DAF à temps partiel :</h3>
                   <ul>
                     <li>
                       Élaboration de business plans et supervision des projets
@@ -478,18 +430,14 @@
                 </div>
               </div>
               <!-- Service 5 -->
-              <div
-                class="work-item d-flex align-items-baseline"
-                data-aos="fade-right"
-                data-aos-duration="2000"
-              >
+              <div class="work-item d-flex align-items-baseline" data-aos="fade-right" data-aos-duration="2000">
                 <div class="me-3">
                   <div class="work-icon">
                     <i class="fa fa-cogs" aria-hidden="true"></i>
                   </div>
                 </div>
                 <div class="hadding hadding-p">
-                  <h2>Digitalisation et automatisation des processus :</h2>
+                  <h3 class="h2">Digitalisation et automatisation des processus :</h3>
                   <ul>
                     <li>
                       Intégrez des outils ERP et CRM pour centraliser vos
@@ -507,48 +455,29 @@
                 </div>
               </div>
               <div class="mt-4 text-center" data-aos="fade-up" data-aos-duration="1200">
-            <a
-              (click)="scrollToSection('contactSection')"
-              class="btn btn-danger btn-lg px-4 py-3"
-              style="border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer;"
-            >
-              Parlez à un expert
-            </a>
-          </div>
+                <a (click)="scrollToSection('contactSection')" class="btn btn-danger btn-lg px-4 py-3"
+                  style="border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer;">
+                  Parlez à un expert
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Image sticky -->
-        <div
-          class="col-md-12 col-lg-6"
-          data-aos="flip-right"
-          data-aos-duration="1000"
-        >
+        <div class="col-md-12 col-lg-6" data-aos="flip-right" data-aos-duration="1000">
           <div class="works-img-gallery space-sm-50 img-border">
             <div class="row g-3">
               <div class="col-12 mb-3">
-                <img
-                  src="../../assets/img/webp/5.webp"
-                  alt="Image illustrative"
-                  class="img-fluid w-100 main-image"
-                />
+                <img src="../../assets/img/webp/5.webp" alt="Image illustrative" class="img-fluid w-100 main-image" />
               </div>
               <div class="col-12">
-                <img
-                  src="../../assets/img/webp/grande_entreprise.webp"
-                  alt="Image illustrative"
-                  class="img-fluid w-100 secondary-image"
-                  appOptimizeImage
-                />
+                <img src="../../assets/img/webp/grande_entreprise.webp" alt="Image illustrative"
+                  class="img-fluid w-100 secondary-image" appOptimizeImage />
               </div>
               <div class="col-12">
-                <img
-                  src="../../assets/img/webp/16.webp"
-                  alt="Image illustrative"
-                  class="img-fluid w-100 secondary-image"
-                  appOptimizeImage
-                />
+                <img src="../../assets/img/webp/16.webp" alt="Image illustrative"
+                  class="img-fluid w-100 secondary-image" appOptimizeImage />
               </div>
             </div>
           </div>
@@ -579,7 +508,7 @@
           <span class="text-uppercase text-danger fw-bold small d-block mb-1">
             Etape
           </span>
-          <h5 class="fw-semibold mb-2">Situations mensuelles intermédiaires</h5>
+          <h3 class="h5 fw-semibold mb-2">Situations mensuelles intermédiaires</h3>
           <p class="mb-2">
             Produisez des rapports réguliers pour analyser les écarts et ajuster
             les stratégies en cours. Identifiez rapidement les anomalies pour
@@ -590,10 +519,7 @@
             évitant des pertes opérationnelles.
           </p>
           <!-- Numéro géant en fond -->
-          <span
-            class="position-absolute"
-            style="right: 1rem; bottom: -0.5rem; font-size: 72px; opacity: 0.1"
-          >
+          <span class="position-absolute" style="right: 1rem; bottom: -0.5rem; font-size: 72px; opacity: 0.1">
             01
           </span>
         </div>
@@ -603,9 +529,9 @@
           <span class="text-uppercase text-danger fw-bold small d-block mb-1">
             Etape
           </span>
-          <h5 class="fw-semibold mb-2">
+          <h3 class="h5 fw-semibold mb-2">
             Analyse approfondie des indicateurs financiers
-          </h5>
+          </h3>
           <p class="mb-2">
             Ratio de trésorerie, délai moyen de paiement clients (DSO), marge
             brute et rentabilité par projet.
@@ -614,10 +540,7 @@
             Avantage client : Une vision claire pour prioriser les actions<br />
             et allouer les budgets efficacement.
           </p>
-          <span
-            class="position-absolute"
-            style="right: 1rem; bottom: -0.5rem; font-size: 72px; opacity: 0.1"
-          >
+          <span class="position-absolute" style="right: 1rem; bottom: -0.5rem; font-size: 72px; opacity: 0.1">
             02
           </span>
         </div>
@@ -627,9 +550,9 @@
           <span class="text-uppercase text-danger fw-bold small d-block mb-1">
             Etape
           </span>
-          <h5 class="fw-semibold mb-2">
+          <h3 class="h5 fw-semibold mb-2">
             Automatisation des tâches et outils de suivi
-          </h5>
+          </h3>
           <p class="mb-2">
             Implémentez des logiciels adaptés pour réduire le temps passé sur
             les tâches administratives.
@@ -639,19 +562,14 @@
             répétitives,<br />
             et davantage consacrées à l'innovation et à la stratégie.
           </p>
-          <span
-            class="position-absolute"
-            style="right: 1rem; bottom: -0.5rem; font-size: 72px; opacity: 0.1"
-          >
+          <span class="position-absolute" style="right: 1rem; bottom: -0.5rem; font-size: 72px; opacity: 0.1">
             03
           </span>
         </div>
 
         <!-- Call to Action -->
-        <div class="mt-5 text-center position-relative overflow-hidden"
-             data-aos="fade-up"
-             data-aos-duration="1000"
-             style="background: linear-gradient(135deg, #ff3333 0%, #d32f2f 100%);
+        <div class="mt-5 text-center position-relative overflow-hidden" data-aos="fade-up" data-aos-duration="1000"
+          style="background: linear-gradient(135deg, #ff3333 0%, #d32f2f 100%);
                     border-radius: 20px;
                     padding: 60px 40px;
                     box-shadow: 0 10px 40px rgba(255, 51, 51, 0.2);">
@@ -666,16 +584,14 @@
             <div class="mb-3">
               <i class="fa-solid fa-rocket" style="font-size: 3rem; color: white; opacity: 0.9;"></i>
             </div>
-            <h4 class="fw-bold mb-3" style="color: white; font-size: 1.8rem;">
+            <h3 class="fw-bold mb-3" style="color: white; font-size: 1.8rem;">
               Prêt à optimiser la gestion financière de votre entreprise ?
-            </h4>
-            <p class="mb-4" style="color: rgba(255, 255, 255, 0.95); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+            </h3>
+            <p class="mb-4"
+              style="color: rgba(255, 255, 255, 0.95); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
               Découvrez comment nos solutions peuvent transformer vos processus et maximiser votre rentabilité.
             </p>
-            <a
-              (click)="scrollToSection('contactSection')"
-              class="btn btn-lg px-5 py-3"
-              style="background: white;
+            <a (click)="scrollToSection('contactSection')" class="btn btn-lg px-5 py-3" style="background: white;
                      color: #d32f2f;
                      border: none;
                      border-radius: 50px;
@@ -685,8 +601,7 @@
                      transition: all 0.3s ease;
                      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);"
               onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.3)'"
-              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0, 0, 0, 0.2)'"
-            >
+              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(0, 0, 0, 0.2)'">
               <i class="fa-solid fa-chart-line me-2"></i>
               Demandez un diagnostic personnalisé
             </a>
@@ -701,15 +616,15 @@
 
 <section class="bg-custom--primary mt-5">
   <div class="container py-5">
-    <h1 class="section-title">
+    <h2 class="h1 section-title">
       Exemples Concrets : Résultats obtenus avec MFINANCES
-    </h1>
+    </h2>
 
     <div class="row g-4">
       <!-- Cas Entreprise Industrielle -->
       <div class="col-md-6">
         <div class="case-card">
-          <h2 class="h4 text-danger">Entreprise industrielle multi-sites</h2>
+          <h3 class="h4 text-danger">Entreprise industrielle multi-sites</h3>
           <p class="problem text-dark">
             <strong>Problème :</strong> Manque de visibilité sur les flux
             financiers et tensions fréquentes sur la trésorerie.
@@ -736,9 +651,9 @@
       <!-- Cas Groupe Technologique -->
       <div class="col-md-6">
         <div class="case-card">
-          <h2 class="h4 text-danger">
+          <h3 class="h4 text-danger">
             Groupe technologique en pleine croissance
-          </h2>
+          </h3>
           <p class="problem text-dark">
             <strong>Problème :</strong> Retards dans les encaissements clients,
             entraînant des difficultés à financer l'innovation.
@@ -781,25 +696,15 @@
       <!-- Colonne droite (cartes) -->
       <div class="col-12 col-md-6 d-flex flex-column gap-4">
         <!-- Carte 1 -->
-        <div
-          class="custom-card p-4 d-flex align-items-start"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <div
-            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="../../assets/img/image/profil/Background+Border.png"
-              alt="Icone Expertise"
-              class="img-fluid"
-              style="max-width: 50px"
-            />
+        <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+            <img src="../../assets/img/image/profil/Background+Border.png" alt="Icone Expertise" class="img-fluid"
+              style="max-width: 50px" />
           </div>
           <div>
-            <h5 class="fw-semibold mb-2">
+            <h3 class="h5 fw-semibold mb-2">
               Un accompagnement stratégique et personnalisé
-            </h5>
+            </h3>
             <p class="mb-0 text-muted">
               Nos contrôleurs de gestion et DAF apportent des solutions
               spécifiques à vos défis.
@@ -808,23 +713,13 @@
         </div>
 
         <!-- Carte 2 -->
-        <div
-          class="custom-card p-4 d-flex align-items-start second-card"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          <div
-            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="../../assets/img/image/profil/Background+Border2.png"
-              alt="Icone Accompagnement"
-              class="img-fluid"
-              style="max-width: 50px"
-            />
+        <div class="custom-card p-4 d-flex align-items-start second-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+            <img src="../../assets/img/image/profil/Background+Border2.png" alt="Icone Accompagnement" class="img-fluid"
+              style="max-width: 50px" />
           </div>
           <div>
-            <h5 class="fw-semibold mb-2">Des outils modernes et flexibles</h5>
+            <h3 class="h5 fw-semibold mb-2">Des outils modernes et flexibles</h3>
             <p class="mb-0 text-muted">
               Intégration de tableaux de bord, ERP, et CRM pour un pilotage
               précis.
@@ -833,25 +728,15 @@
         </div>
 
         <!-- Carte 3 -->
-        <div
-          class="custom-card p-4 d-flex align-items-start"
-          data-aos="fade-up"
-          data-aos-delay="600"
-        >
-          <div
-            class="icon-wrapper me-3 d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="../../assets/img/image/profil/Background+Border3.png"
-              alt="Icone Solutions"
-              class="img-fluid"
-              style="max-width: 50px"
-            />
+        <div class="custom-card p-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="600">
+          <div class="icon-wrapper me-3 d-flex justify-content-center align-items-center">
+            <img src="../../assets/img/image/profil/Background+Border3.png" alt="Icone Solutions" class="img-fluid"
+              style="max-width: 50px" />
           </div>
           <div>
-            <h5 class="fw-semibold mb-2">
+            <h3 class="h5 fw-semibold mb-2">
               Des résultats concrets et mesurables
-            </h5>
+            </h3>
             <p class="mb-0 text-muted">
               Réduction des coûts opérationnels, amélioration des liquidités, et
               croissance durable.
@@ -867,43 +752,26 @@
   <div class="rounded-4 bg-custom--primary text-white px-4">
     <div class="row align-items-center">
       <!-- Image visible uniquement à partir du md (desktop) -->
-      <div
-        class="col-md-6 justify-content-center align-items-end"
-        data-aos="fade-left"
-        data-aos-delay="200"
-      >
-        <img
-          src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp"
-          alt="Personne souriante"
-          class="img-fluid custom-image-size"
-          style="z-index: 2; position: relative"
-        />
+      <div class="col-md-6 justify-content-center align-items-end" data-aos="fade-left" data-aos-delay="200">
+        <img src="../../assets/img/image/profil/h9_footer_banner_img 1 1.webp" alt="Personne souriante"
+          class="img-fluid custom-image-size" style="z-index: 2; position: relative" />
       </div>
 
       <!-- Texte et bouton, centrés sur mobile/tablette -->
       <div
         class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mt-4 mt-md-0"
-        data-aos="fade-right"
-        data-aos-delay="400"
-      >
+        data-aos="fade-right" data-aos-delay="400">
         <h2 class="fw-bold mb-4">
           Transformez vos défis <br />
-          <span class="bg-danger text-white px-2 py-1 rounded-2"
-            >en opportunités</span
-          >.
+          <span class="bg-danger text-white px-2 py-1 rounded-2">en opportunités</span>.
         </h2>
         <p class="mb-4" data-aos="fade-up" data-aos-delay="600">
           Contactez-nous dès aujourd'hui pour un diagnostic gratuit et découvrez
           comment MFINANCES peut optimiser vos processus financiers, améliorer
           votre trésorerie, et accélérer votre croissance.
         </p>
-        <a
-          (click)="scrollToSection('contactSection')"
-          class="btn btn-danger btn-sm px-3 py-2"
-          data-aos="zoom-in"
-          data-aos-delay="800"
-          style="cursor: pointer"
-        >
+        <a (click)="scrollToSection('contactSection')" class="btn btn-danger btn-sm px-3 py-2" data-aos="zoom-in"
+          data-aos-delay="800" style="cursor: pointer">
           Contactez-nous <i class="fas fa-arrow-right"></i>
         </a>
       </div>
@@ -913,19 +781,9 @@
 
 <!-- Section formulaire de contact -->
 <section id="contactSection" class="contact-section">
-  <app-contact-form-layout
-    [config]="formConfig"
-    [currentStep]="currentStep"
-    [totalSteps]="totalSteps"
-    [formSubmitted]="formSubmitted"
-    [isStepValid]="isStepValid"
-    [isFormValid]="isFormValid"
-    [isLoading]="isLoading"
-    (nextStep)="onNextStep()"
-    (previousStep)="onPreviousStep()"
-    (submit)="onSubmit()"
-    (reset)="onReset()"
-  >
+  <app-contact-form-layout [config]="formConfig" [currentStep]="currentStep" [totalSteps]="totalSteps"
+    [formSubmitted]="formSubmitted" [isStepValid]="isStepValid" [isFormValid]="isFormValid" [isLoading]="isLoading"
+    (nextStep)="onNextStep()" (previousStep)="onPreviousStep()" (submit)="onSubmit()" (reset)="onReset()">
     <div slot="form-content">
       <!-- Étape 1: Secteur d'activité -->
       <div *ngIf="currentStep === 1" class="step-content">
@@ -936,106 +794,59 @@
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.secteur === 'industrie'"
-            >
-              <input
-                type="radio"
-                name="secteur"
-                value="industrie"
-                [(ngModel)]="formData.secteur"
-                (change)="onSecteurChange('industrie')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.secteur === 'industrie'">
+              <input type="radio" name="secteur" value="industrie" [(ngModel)]="formData.secteur"
+                (change)="onSecteurChange('industrie')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-industry text-danger mb-2"></i>
-                <h6 class="mb-1">Industrie</h6>
+                <div class="h6 mb-1">Industrie</div>
                 <small class="text-muted">Production et manufacturier</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.secteur === 'services'"
-            >
-              <input
-                type="radio"
-                name="secteur"
-                value="services"
-                [(ngModel)]="formData.secteur"
-                (change)="onSecteurChange('services')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.secteur === 'services'">
+              <input type="radio" name="secteur" value="services" [(ngModel)]="formData.secteur"
+                (change)="onSecteurChange('services')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-handshake text-danger mb-2"></i>
-                <h6 class="mb-1">Services</h6>
-                <small class="text-muted"
-                  >Prestations de services B2B/B2C</small
-                >
+                <div class="h6 mb-1">Services</div>
+                <small class="text-muted">Prestations de services B2B/B2C</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.secteur === 'commerce'"
-            >
-              <input
-                type="radio"
-                name="secteur"
-                value="commerce"
-                [(ngModel)]="formData.secteur"
-                (change)="onSecteurChange('commerce')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.secteur === 'commerce'">
+              <input type="radio" name="secteur" value="commerce" [(ngModel)]="formData.secteur"
+                (change)="onSecteurChange('commerce')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-store text-danger mb-2"></i>
-                <h6 class="mb-1">Commerce</h6>
+                <div class="h6 mb-1">Commerce</div>
                 <small class="text-muted">Distribution et vente</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.secteur === 'autre'"
-            >
-              <input
-                type="radio"
-                name="secteur"
-                value="autre"
-                [(ngModel)]="formData.secteur"
-                (change)="onSecteurChange('autre')"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.secteur === 'autre'">
+              <input type="radio" name="secteur" value="autre" [(ngModel)]="formData.secteur"
+                (change)="onSecteurChange('autre')" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-ellipsis-h text-danger mb-2"></i>
-                <h6 class="mb-1">Autre secteur</h6>
+                <div class="h6 mb-1">Autre secteur</div>
                 <small class="text-muted">Précisez votre domaine</small>
               </div>
             </label>
           </div>
 
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreSecteur"
-          >
+          <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreSecteur">
             <div class="custom-input-group">
               <label for="secteur_autre" class="form-label">
                 <i class="fas fa-edit me-2"></i>Précisez votre secteur
               </label>
-              <input
-                type="text"
-                class="form-control custom-input"
-                id="secteur_autre"
-                name="secteur_autre"
-                [(ngModel)]="formData.secteur_autre"
-                placeholder="Décrivez votre secteur d'activité..."
-                maxlength="200"
-              />
+              <input type="text" class="form-control custom-input" id="secteur_autre" name="secteur_autre"
+                [(ngModel)]="formData.secteur_autre" placeholder="Décrivez votre secteur d'activité..."
+                maxlength="200" />
             </div>
           </div>
         </div>
@@ -1050,78 +861,42 @@
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.revenus === 'moins-1m'"
-            >
-              <input
-                type="radio"
-                name="revenus"
-                value="moins-1m"
-                [(ngModel)]="formData.revenus"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.revenus === 'moins-1m'">
+              <input type="radio" name="revenus" value="moins-1m" [(ngModel)]="formData.revenus" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-chart-line text-danger mb-2"></i>
-                <h6 class="mb-1">Moins de 1M € / an</h6>
+                <div class="h6 mb-1">Moins de 1M € / an</div>
                 <small class="text-muted">Entreprise en développement</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.revenus === '1m-5m'"
-            >
-              <input
-                type="radio"
-                name="revenus"
-                value="1m-5m"
-                [(ngModel)]="formData.revenus"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.revenus === '1m-5m'">
+              <input type="radio" name="revenus" value="1m-5m" [(ngModel)]="formData.revenus" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-building text-danger mb-2"></i>
-                <h6 class="mb-1">1M - 5M € / an</h6>
+                <div class="h6 mb-1">1M - 5M € / an</div>
                 <small class="text-muted">Entreprise établie</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.revenus === '5m-10m'"
-            >
-              <input
-                type="radio"
-                name="revenus"
-                value="5m-10m"
-                [(ngModel)]="formData.revenus"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.revenus === '5m-10m'">
+              <input type="radio" name="revenus" value="5m-10m" [(ngModel)]="formData.revenus" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-chart-bar text-danger mb-2"></i>
-                <h6 class="mb-1">5M - 10M € / an</h6>
+                <div class="h6 mb-1">5M - 10M € / an</div>
                 <small class="text-muted">Grande entreprise</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.revenus === 'plus-10m'"
-            >
-              <input
-                type="radio"
-                name="revenus"
-                value="plus-10m"
-                [(ngModel)]="formData.revenus"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.revenus === 'plus-10m'">
+              <input type="radio" name="revenus" value="plus-10m" [(ngModel)]="formData.revenus" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-crown text-danger mb-2"></i>
-                <h6 class="mb-1">Plus de 10M € / an</h6>
+                <div class="h6 mb-1">Plus de 10M € / an</div>
                 <small class="text-muted">Groupe d'entreprises</small>
               </div>
             </label>
@@ -1144,15 +919,8 @@
                 <label for="nom" class="form-label">
                   <i class="fas fa-user me-2"></i>Nom complet
                 </label>
-                <input
-                  type="text"
-                  class="form-control custom-input"
-                  id="nom"
-                  name="nom"
-                  [(ngModel)]="formData.nom"
-                  placeholder="Votre nom et prénom"
-                  required
-                />
+                <input type="text" class="form-control custom-input" id="nom" name="nom" [(ngModel)]="formData.nom"
+                  placeholder="Votre nom et prénom" required />
               </div>
             </div>
 
@@ -1162,15 +930,8 @@
                   <i class="fas fa-envelope me-2"></i>Email
                   <span class="badge bg-success ms-2">✅ obligatoire</span>
                 </label>
-                <input
-                  type="email"
-                  class="form-control custom-input"
-                  id="email"
-                  name="email"
-                  [(ngModel)]="formData.email"
-                  placeholder="votre@email.com"
-                  required
-                />
+                <input type="email" class="form-control custom-input" id="email" name="email"
+                  [(ngModel)]="formData.email" placeholder="votre@email.com" required />
               </div>
             </div>
 
@@ -1180,15 +941,8 @@
                   <i class="fas fa-phone me-2"></i>Téléphone
                   <span class="badge bg-success ms-2">✅ obligatoire</span>
                 </label>
-                <input
-                  type="tel"
-                  class="form-control custom-input"
-                  id="telephone"
-                  name="telephone"
-                  [(ngModel)]="formData.telephone"
-                  placeholder="+32 XXX XX XX XX"
-                  required
-                />
+                <input type="tel" class="form-control custom-input" id="telephone" name="telephone"
+                  [(ngModel)]="formData.telephone" placeholder="+32 XXX XX XX XX" required />
               </div>
             </div>
           </div>
@@ -1197,12 +951,10 @@
             <div class="d-flex align-items-center">
               <i class="fas fa-calendar-check fa-2x text-info me-3"></i>
               <div>
-                <h6 class="mb-1">📞 Rendez-vous garanti sous 72h</h6>
-                <small
-                  >Un conseiller vous appellera pour un échange gratuit et
+                <div class="h6 mb-1">📞 Rendez-vous garanti sous 72h</div>
+                <small>Un conseiller vous appellera pour un échange gratuit et
                   personnalisé. Vous recevrez ensuite votre mini-diagnostic par
-                  email.</small
-                >
+                  email.</small>
               </div>
             </div>
           </div>
@@ -1218,59 +970,32 @@
 
         <div class="form-group">
           <div class="custom-radio-group">
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.comptabilite === 'interne'"
-            >
-              <input
-                type="radio"
-                name="comptabilite"
-                value="interne"
-                [(ngModel)]="formData.comptabilite"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.comptabilite === 'interne'">
+              <input type="radio" name="comptabilite" value="interne" [(ngModel)]="formData.comptabilite" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-users text-danger mb-2"></i>
-                <h6 class="mb-1">En interne</h6>
+                <div class="h6 mb-1">En interne</div>
                 <small class="text-muted">Service comptable dédié</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.comptabilite === 'externe'"
-            >
-              <input
-                type="radio"
-                name="comptabilite"
-                value="externe"
-                [(ngModel)]="formData.comptabilite"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.comptabilite === 'externe'">
+              <input type="radio" name="comptabilite" value="externe" [(ngModel)]="formData.comptabilite" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-user-tie text-danger mb-2"></i>
-                <h6 class="mb-1">Par un cabinet externe</h6>
+                <div class="h6 mb-1">Par un cabinet externe</div>
                 <small class="text-muted">Professionnel externe</small>
               </div>
             </label>
 
-            <label
-              class="custom-radio-option"
-              [class.selected]="formData.comptabilite === 'aucun'"
-            >
-              <input
-                type="radio"
-                name="comptabilite"
-                value="aucun"
-                [(ngModel)]="formData.comptabilite"
-                required
-              />
+            <label class="custom-radio-option" [class.selected]="formData.comptabilite === 'aucun'">
+              <input type="radio" name="comptabilite" value="aucun" [(ngModel)]="formData.comptabilite" required />
               <span class="radio-checkmark"></span>
               <div class="radio-content">
                 <i class="fas fa-question-circle text-danger mb-2"></i>
-                <h6 class="mb-1">Système non structuré</h6>
+                <div class="h6 mb-1">Système non structuré</div>
                 <small class="text-muted">Besoin d'automatisation</small>
               </div>
             </label>
@@ -1288,102 +1013,68 @@
         <div class="form-group">
           <div class="custom-checkbox-group">
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="comptabilite"
-                (change)="onBesoinChange('comptabilite', $event)"
-              />
+              <input type="checkbox" name="besoins" value="comptabilite"
+                (change)="onBesoinChange('comptabilite', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-calculator text-danger mb-2"></i>
-                <h6 class="mb-1">Tenue de la comptabilité</h6>
-                <small class="text-muted"
-                  >Gestion quotidienne des comptes</small
-                >
+                <div class="h6 mb-1">Tenue de la comptabilité</div>
+                <small class="text-muted">Gestion quotidienne des comptes</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="audit-financier"
-                (change)="onBesoinChange('audit-financier', $event)"
-              />
+              <input type="checkbox" name="besoins" value="audit-financier"
+                (change)="onBesoinChange('audit-financier', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-search-dollar text-danger mb-2"></i>
-                <h6 class="mb-1">Audit financier</h6>
+                <div class="h6 mb-1">Audit financier</div>
                 <small class="text-muted">Contrôle et vérification</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="conseil-gestion"
-                (change)="onBesoinChange('conseil-gestion', $event)"
-              />
+              <input type="checkbox" name="besoins" value="conseil-gestion"
+                (change)="onBesoinChange('conseil-gestion', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-chart-line text-danger mb-2"></i>
-                <h6 class="mb-1">Conseil en gestion financière</h6>
+                <div class="h6 mb-1">Conseil en gestion financière</div>
                 <small class="text-muted">Optimisation et stratégie</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="optimisation-fiscale"
-                (change)="onBesoinChange('optimisation-fiscale', $event)"
-              />
+              <input type="checkbox" name="besoins" value="optimisation-fiscale"
+                (change)="onBesoinChange('optimisation-fiscale', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-percentage text-danger mb-2"></i>
-                <h6 class="mb-1">Optimisation fiscale</h6>
+                <div class="h6 mb-1">Optimisation fiscale</div>
                 <small class="text-muted">Réduction des charges fiscales</small>
               </div>
             </label>
 
             <label class="custom-checkbox-option">
-              <input
-                type="checkbox"
-                name="besoins"
-                value="autre"
-                (change)="onBesoinChange('autre', $event)"
-              />
+              <input type="checkbox" name="besoins" value="autre" (change)="onBesoinChange('autre', $event)" />
               <span class="checkbox-checkmark"></span>
               <div class="checkbox-content">
                 <i class="fas fa-plus text-danger mb-2"></i>
-                <h6 class="mb-1">Autre besoin</h6>
-                <small class="text-muted"
-                  >Précisez vos besoins spécifiques</small
-                >
+                <div class="h6 mb-1">Autre besoin</div>
+                <small class="text-muted">Précisez vos besoins spécifiques</small>
               </div>
             </label>
           </div>
 
-          <div
-            class="mt-3 animate__animated animate__fadeInDown"
-            *ngIf="showAutreBesoin"
-          >
+          <div class="mt-3 animate__animated animate__fadeInDown" *ngIf="showAutreBesoin">
             <div class="custom-input-group">
               <label for="besoins_autre" class="form-label">
                 <i class="fas fa-edit me-2"></i>Précisez vos autres besoins
               </label>
-              <textarea
-                class="form-control custom-input"
-                id="besoins_autre"
-                name="besoins_autre"
-                [(ngModel)]="formData.besoins_autre"
-                placeholder="Décrivez vos besoins spécifiques..."
-                rows="3"
-                maxlength="300"
-              ></textarea>
+              <textarea class="form-control custom-input" id="besoins_autre" name="besoins_autre"
+                [(ngModel)]="formData.besoins_autre" placeholder="Décrivez vos besoins spécifiques..." rows="3"
+                maxlength="300"></textarea>
             </div>
           </div>
         </div>

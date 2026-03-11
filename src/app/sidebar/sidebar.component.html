@@ -1,7 +1,7 @@
 <div class="sidebar-widget">
   <!-- Section Profils -->
   <div class="widget">
-    <h2>Profils</h2>
+    <div class="h2">Profils</div>
     <ul class="widget-category list-unstyled d-flex flex-column gap-2">
       <li *ngFor="let profil of profils">
         <a [routerLink]="profil.route" routerLinkActive="active">
@@ -14,7 +14,7 @@
 
   <!-- Section Structures -->
   <div class="widget mt-4">
-    <h2>Structures</h2>
+    <div class="h2">Structures</div>
     <ul class="widget-category list-unstyled d-flex flex-column gap-2">
       <li *ngFor="let structure of structures">
         <a [routerLink]="structure.route" routerLinkActive="active">
@@ -26,7 +26,7 @@
   </div>
 
   <div class="widget contact-widget">
-    <h2>Contact</h2>
+    <div class="h2">Contact</div>
     <div class="contact-info d-flex gap-3 flex-column">
       <p>
         <i class="fas fa-map-marker-alt"></i> 20 Rue de la Magnanerie, 1180
@@ -43,11 +43,8 @@
     </div>
 
     <div class="review-section mt-3">
-      <button
-        class="btn btn-warning btn-sm w-100"
-        (click)="openGoogleReview()"
-        style="border-radius: 20px; font-weight: 600"
-      >
+      <button class="btn btn-warning btn-sm w-100" (click)="openGoogleReview()"
+        style="border-radius: 20px; font-weight: 600">
         <i class="fab fa-google me-2"></i>Laisser un avis
       </button>
     </div>

@@ -29,7 +29,7 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="feature-text">
-                            <h4>2 minutes</h4>
+                            <div class="h4">2 minutes</div>
                             <p>pour obtenir votre estimation</p>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <div class="feature-text">
-                            <h4>100% gratuit</h4>
+                            <div class="h4">100% gratuit</div>
                             <p>sans aucun engagement</p>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             <i class="fas fa-chart-bar"></i>
                         </div>
                         <div class="feature-text">
-                            <h4>Données réelles</h4>
+                            <div class="h4">Données réelles</div>
                             <p>basées sur le marché wallon</p>
                         </div>
                     </div>
@@ -177,12 +177,12 @@
                             <div *ngFor="let profileKey of formData.selectedProfiles" class="profile-config" @fadeIn>
                                 <div class="profile-header">
                                     <i [class]="getProfileIcon(profileKey)"></i>
-                                    <h4>{{ getProfileLabel(profileKey) }}</h4>
+                                    <div class="h4">{{ getProfileLabel(profileKey) }}</div>
                                 </div>
 
                                 <div class="frequency-options">
                                     <button *ngFor="let freq of frequencies" class="freq-btn"
-                                        [class.selected]="formData.profileFrequencies[profileKey]?.frequency === freq.value"
+                                        [class.selected]="formData.profileFrequencies[profileKey].frequency === freq.value"
                                         (click)="formData.profileFrequencies[profileKey].frequency = freq.value">
                                         {{ freq.label }}
                                     </button>
@@ -302,7 +302,7 @@
 
                         <!-- Profile Breakdown -->
                         <div class="profile-breakdown" *ngIf="simulationResult">
-                            <h4>Détail par profil</h4>
+                            <div class="h4">Détail par profil</div>
                             <div class="breakdown-table">
                                 <div class="breakdown-row header">
                                     <span>Profil</span>
@@ -326,8 +326,9 @@
                         <div class="share-section">
                             <div class="share-header">
                                 <i class="fas fa-share-alt"></i>
-                                <h4><i class="fas fa-sync-alt"></i> Demandez un avis à un associé, un DAF ou un
-                                    expert-comptable</h4>
+                                <div class="h4"><i class="fas fa-sync-alt"></i> Demandez un avis à un associé, un DAF ou
+                                    un
+                                    expert-comptable</div>
                             </div>
                             <p class="share-description">
                                 Ce diagnostic peut être partagé à un proche ou collaborateur stratégique
