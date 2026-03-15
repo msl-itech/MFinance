@@ -18,16 +18,15 @@ export class MobileProfileNavigationComponent implements OnInit {
   @Input() currentProfile: string = '';
   
   profiles: ProfileOption[] = [
-    { name: 'Indépendant et Startup', route: '/profil-independant' },
-    { name: 'ASBL', route: '/absl' },
-    { name: 'Sociétés d\'exploitation', route: '/societe-exploitation' },
-    { name: 'Sociétés de management', route: '/societe-management-patrimoniale' },
-    { name: 'Sociétés de moyens', route: '/societe-moyen' },
-    { name: 'Commerçant & Horeca', route: '/commercant-horeca' },
-    { name: 'Professionnel de santé', route: '/professionel-sante' },
-    { name: 'Grande Entreprise', route: '/grande-entreprise' },
-    { name: 'Promoteur Immobilier', route: '/promoteur-immobilier' },
-    { name: 'Passage en société', route: '/vente/passage-en-societe' },
+    { name: 'Indépendant & Startup', route: '/profils/independant-startup' },
+    { name: 'Commerçant & Horeca', route: '/profils/commercant-horeca' },
+    { name: 'Professionnel de santé', route: '/profils/professionnel-sante' },
+    { name: 'Grande entreprise', route: '/profils/grande-entreprise' },
+    { name: 'Promoteur immobilier', route: '/profils/promoteur-immobilier' },
+    { name: 'ASBL', route: '/structures/asbl' },
+    { name: 'Société d\'exploitation', route: '/structures/societe-exploitation' },
+    { name: 'Société de management patrimoniale', route: '/structures/societe-management-patrimoniale' },
+    { name: 'Société de moyens', route: '/structures/societe-de-moyens' },
   ];
 
   constructor(private router: Router) {}
