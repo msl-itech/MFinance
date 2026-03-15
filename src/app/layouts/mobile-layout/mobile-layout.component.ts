@@ -154,49 +154,24 @@ import { filter, takeUntil } from 'rxjs/operators';
               </ul>
             </li>
 
-            <!-- Secteur d'activité avec sous-menu -->
-            <li
-              class="nav-expandable"
-              [class.expanded]="secteurActiviteExpanded"
-            >
-              <button class="nav-toggle" (click)="toggleSecteurActivite()">
-                <i class="fas fa-industry"></i>
-                <span>Secteur d'activité</span>
+            <!-- Profils avec sous-menu -->
+            <li class="nav-expandable" [class.expanded]="profilsExpanded">
+              <button class="nav-toggle" (click)="toggleProfils()">
+                <i class="fas fa-user-tie"></i>
+                <span>Profils</span>
                 <i class="fas fa-chevron-down nav-arrow"></i>
               </button>
-              <ul class="nav-submenu" *ngIf="secteurActiviteExpanded">
-                <li>
-                  <a routerLink="/structures/asbl" (click)="closeMobileMenu()">Asbl</a>
-                </li>
+              <ul class="nav-submenu" *ngIf="profilsExpanded">
                 <li>
                   <a
                     routerLink="/profils/independant-startup"
                     (click)="closeMobileMenu()"
-                    >Indépendant</a
-                  >
-                </li>
-                <li>
-                  <a routerLink="/structures/societe-de-moyens" (click)="closeMobileMenu()"
-                    >Société de moyen</a
-                  >
-                </li>
-                <li>
-                  <a
-                    routerLink="/structures/societe-exploitation"
-                    (click)="closeMobileMenu()"
-                    >Société d'exploitation</a
-                  >
-                </li>
-                <li>
-                  <a
-                    routerLink="/structures/societe-management-patrimoniale"
-                    (click)="closeMobileMenu()"
-                    >Société de management patrimonial</a
+                    >Indépendant & Startup</a
                   >
                 </li>
                 <li>
                   <a routerLink="/profils/commercant-horeca" (click)="closeMobileMenu()"
-                    >Commerçant HORECA</a
+                    >Commerçant & Horeca</a
                   >
                 </li>
                 <li>
@@ -221,6 +196,42 @@ import { filter, takeUntil } from 'rxjs/operators';
               </ul>
             </li>
 
+            <!-- Structures avec sous-menu -->
+            <li
+              class="nav-expandable"
+              [class.expanded]="structuresExpanded"
+            >
+              <button class="nav-toggle" (click)="toggleStructures()">
+                <i class="fas fa-building"></i>
+                <span>Structures</span>
+                <i class="fas fa-chevron-down nav-arrow"></i>
+              </button>
+              <ul class="nav-submenu" *ngIf="structuresExpanded">
+                <li>
+                  <a routerLink="/structures/asbl" (click)="closeMobileMenu()">ASBL</a>
+                </li>
+                <li>
+                  <a
+                    routerLink="/structures/societe-exploitation"
+                    (click)="closeMobileMenu()"
+                    >Société d'exploitation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    routerLink="/structures/societe-management-patrimoniale"
+                    (click)="closeMobileMenu()"
+                    >Société de management patrimoniale</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="/structures/societe-de-moyens" (click)="closeMobileMenu()"
+                    >Société de moyens</a
+                  >
+                </li>
+              </ul>
+            </li>
+
              <li>
               <a routerLink="/tarifs" (click)="closeMobileMenu()">
                 <i class="fas fa-euro-sign"></i>
@@ -228,27 +239,22 @@ import { filter, takeUntil } from 'rxjs/operators';
               </a>
             </li>
 
-            <!-- Boostez votre entreprise avec sous-menu -->
+            <!-- Stratégie d'entreprise avec sous-menu -->
             <li
               class="nav-expandable"
-              [class.expanded]="boostezEntrepriseExpanded"
+              [class.expanded]="strategieExpanded"
             >
-              <button class="nav-toggle" (click)="toggleBoostezEntreprise()">
+              <button class="nav-toggle" (click)="toggleStrategie()">
                 <i class="fas fa-rocket"></i>
-                <span>Boostez votre entreprise</span>
+                <span>Stratégie d'entreprise</span>
                 <i class="fas fa-chevron-down nav-arrow"></i>
               </button>
-              <ul class="nav-submenu" *ngIf="boostezEntrepriseExpanded">
-                <li>
-                  <a routerLink="/strategie" (click)="closeMobileMenu()"
-                    >Vue d'ensemble</a
-                  >
-                </li>
+              <ul class="nav-submenu" *ngIf="strategieExpanded">
                 <li>
                   <a
                     routerLink="/strategie/salarie-vers-independant"
                     (click)="closeMobileMenu()"
-                    >Salarié et indépendants</a
+                    >Salarié vers indépendant</a
                   >
                 </li>
                 <li>
@@ -262,7 +268,7 @@ import { filter, takeUntil } from 'rxjs/operators';
                   <a
                     routerLink="/strategie/compte-courant-administrateur"
                     (click)="closeMobileMenu()"
-                    >Compte Courant administrateur</a
+                    >Compte courant administrateur</a
                   >
                 </li>
               </ul>
@@ -277,11 +283,6 @@ import { filter, takeUntil } from 'rxjs/operators';
               </button>
               <ul class="nav-submenu" *ngIf="tresorerieExpanded">
                 <li>
-                  <a routerLink="/tresorerie" (click)="closeMobileMenu()"
-                    >Vue d'ensemble</a
-                  >
-                </li>
-                <li>
                   <a
                     routerLink="/tresorerie/tresorerie-benefice"
                     (click)="closeMobileMenu()"
@@ -292,14 +293,14 @@ import { filter, takeUntil } from 'rxjs/operators';
                   <a
                     routerLink="/tresorerie/investir-sa-tresorerie"
                     (click)="closeMobileMenu()"
-                    >Investir sans risquer</a
+                    >Investir sa trésorerie</a
                   >
                 </li>
                 <li>
                   <a
                     routerLink="/tresorerie/optimiser-son-stock"
                     (click)="closeMobileMenu()"
-                    >Optimisez vos Stocks</a
+                    >Optimiser son stock</a
                   >
                 </li>
                 <li>
@@ -323,13 +324,6 @@ import { filter, takeUntil } from 'rxjs/operators';
                     >Anticipez vos Finances</a
                   >
                 </li>
-                <!-- <li>
-                  <a
-                    routerLink="/tresorerie/accompagnement"
-                    (click)="closeMobileMenu()"
-                    >Service d'accompagnement</a
-                  >
-                </li> -->
               </ul>
             </li>
 
@@ -448,8 +442,9 @@ export class MobileLayoutComponent implements OnInit, OnDestroy {
   // État du composant
   isMobileMenuOpen = false;
   servicesExpanded = false;
-  secteurActiviteExpanded = false;
-  boostezEntrepriseExpanded = false;
+  profilsExpanded = false;
+  structuresExpanded = false;
+  strategieExpanded = false;
   tresorerieExpanded = false;
   isScrolled = false;
   showScrollTop = false;
@@ -539,8 +534,9 @@ export class MobileLayoutComponent implements OnInit, OnDestroy {
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
     this.servicesExpanded = false;
-    this.secteurActiviteExpanded = false;
-    this.boostezEntrepriseExpanded = false;
+    this.profilsExpanded = false;
+    this.structuresExpanded = false;
+    this.strategieExpanded = false;
     this.tresorerieExpanded = false;
     document.body.classList.remove('mobile-menu-open');
   }
@@ -549,12 +545,16 @@ export class MobileLayoutComponent implements OnInit, OnDestroy {
     this.servicesExpanded = !this.servicesExpanded;
   }
 
-  toggleSecteurActivite(): void {
-    this.secteurActiviteExpanded = !this.secteurActiviteExpanded;
+  toggleProfils(): void {
+    this.profilsExpanded = !this.profilsExpanded;
   }
 
-  toggleBoostezEntreprise(): void {
-    this.boostezEntrepriseExpanded = !this.boostezEntrepriseExpanded;
+  toggleStructures(): void {
+    this.structuresExpanded = !this.structuresExpanded;
+  }
+
+  toggleStrategie(): void {
+    this.strategieExpanded = !this.strategieExpanded;
   }
 
   toggleTresorerie(): void {
